@@ -225,7 +225,9 @@ if( ! function_exists( 'sc_article_box' ) )
 		$image = mfn_vc_image( $image );
 		
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;
@@ -376,7 +378,9 @@ if( ! function_exists( 'sc_flat_box' ) )
 		if( $background ) $background = 'style="background-color:'. $background .'"';
 		
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;
@@ -486,7 +490,7 @@ if( ! function_exists( 'sc_zoom_box' ) )
 		$content_image 	= mfn_vc_image( $content_image );
 		
 		// target
-		if( $target == 'prettyphoto' ){
+		if( $target == 'lightbox' ){
 			$target = 'rel="prettyphoto"';
 		} elseif( $target ){
 			$target = 'target="_blank"';
@@ -779,7 +783,9 @@ if( ! function_exists( 'sc_how_it_works' ) )
 		}
 		
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;
@@ -1752,7 +1758,9 @@ if( ! function_exists( 'sc_call_to_action' ) )
 		), $attr));
 		
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;
@@ -2049,6 +2057,8 @@ if( ! function_exists( 'sc_image' ) )
 			'alt'			=> '',
 			'caption'		=> '',
 			'margin'		=> '',
+			'margin_top'	=> '',	// alias for: margin
+			'margin_bottom'	=> '',
 			'align'			=> 'none',
 			'link'			=> '',
 			'link_image'	=> '',
@@ -2059,8 +2069,13 @@ if( ! function_exists( 'sc_image' ) )
 		), $attr));	
 		
 		// margin
-		if( $margin ){
-			$margin = 'style="margin-top:'. intval( $margin ) .'px"';
+		if( $margin_top ) $margin = $margin_top;
+		
+		if( $margin || $margin_bottom ){
+			$margin_tmp = '';
+			if( $margin ) $margin_tmp .= 'margin-top:'. intval( $margin ) .'px;';
+			if( $margin_bottom ) $margin_tmp .= 'margin-bottom:'. intval( $margin_bottom ) .'px;';
+			$margin = 'style="'. $margin_tmp .'"';
 		} else {
 			$margin = false;
 		}
@@ -2184,7 +2199,7 @@ if( ! function_exists( 'sc_hover_box' ) )
 		$image_hover = mfn_vc_image( $image_hover );
 		
 		// target
-		if( $target == 'prettyphoto' ){
+		if( $target == 'lightbox' ){
 			$target = 'rel="prettyphoto"';
 		} elseif( $target ){
 			$target = 'target="_blank"';
@@ -2223,7 +2238,9 @@ if( ! function_exists( 'sc_hover_color' ) )
 		), $attr));
 
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;
@@ -2325,7 +2342,9 @@ if( ! function_exists( 'sc_button' ) )
 		), $attr));
 		
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;
@@ -2715,7 +2734,9 @@ if( ! function_exists( 'sc_blockquote' ) )
 		), $attr));
 		
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;
@@ -2936,7 +2957,9 @@ if( ! function_exists( 'sc_icon_box' ) )
 		}
 		
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;
@@ -3010,7 +3033,9 @@ if( ! function_exists( 'sc_our_team' ) )
 		$image = mfn_vc_image( $image );
 		
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;
@@ -3095,11 +3120,14 @@ if( ! function_exists( 'sc_our_team_list' ) )
 		$image = mfn_vc_image( $image );
 
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;
 		}
+		
 		
 		$output = '<div class="team team_list clearfix">';
 		

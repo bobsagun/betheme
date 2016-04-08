@@ -15,6 +15,7 @@ if( false ) add_editor_style( '/css/style-editor.css' );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-formats', array( 'image', 'video', 'quote', 'link' ) );
 add_theme_support( 'post-thumbnails' );
+add_theme_support( 'title-tag' );
 
 
 /* ---------------------------------------------------------------------------
@@ -316,11 +317,15 @@ if( ! function_exists( 'mfn_user_agent' ) )
 
 		$user_agent = $_SERVER['HTTP_USER_AGENT'];
 
-		if( stripos( $user_agent, 'Chrome') !== false ){
+		if( stripos( $user_agent, 'Chrome/') !== false ){
 				
 			$user_agent = 'chrome';
 
-		} elseif( stripos( $user_agent, 'Safari') !== false ){
+		} elseif( ( stripos( $user_agent, 'Safari/') !== false ) && ( stripos( $user_agent, 'Mobile/') !== false ) ){
+				
+			$user_agent = 'safari mobile';
+			
+		} elseif( stripos( $user_agent, 'Safari/') !== false ){
 				
 			$user_agent = 'safari';
 			 
@@ -332,6 +337,24 @@ if( ! function_exists( 'mfn_user_agent' ) )
 		}
 
 		return $user_agent;
+	}
+}
+
+
+/* ---------------------------------------------------------------------------
+ * WP Mobile Detect
+ * --------------------------------------------------------------------------- */
+if( ! function_exists( 'mfn_is_mobile' ) )
+{
+	function mfn_is_mobile(){
+
+		$mobile = wp_is_mobile();
+		
+		if( mfn_opts_get( 'responsive-parallax' ) ){
+			$mobile = false;
+		}
+
+		return $mobile;
 	}
 }
 

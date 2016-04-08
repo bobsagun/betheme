@@ -689,7 +689,6 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 						'edit_pages'			=> 'Editor',
 						'edit_theme_options'	=> 'Administrator',
 						'hide'					=> 'HIDE for Everyone',
-// 						'disable'				=> 'DISABLE do not include builder files',
 					),
 				),
 					
@@ -779,12 +778,26 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					),
 				),
 					
+				// advanced
+					
 				array(
 					'id' 		=> 'advanced-info-advanced',
 					'type' 		=> 'info',
 					'title' 	=> '',
 					'desc' 		=> __('Advanced', 'mfn-opts'),
 					'class' 	=> 'mfn-info',
+				),
+					
+
+				array(
+					'id' 		=> 'builder-storage',
+					'type' 		=> 'select',
+					'title' 	=> __('Builder | Data Storage', 'mfn-opts'),
+					'desc' 		=> __('This option will <b>not</b> affect the existing pages, only newly created or updated', 'mfn-opts'),
+					'options' 	=> array(
+						'' 			=> 'Serialized | Readable format, required by some plugins',
+						'encode'	=> 'Encoded | Less data stored, compatible with WordPress Importer',
+					),
 				),
 					
 				array(
@@ -2757,6 +2770,15 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'options'	=> array( '0' => 'Off', '1' => 'On' ),
 					'std'		=> '0',
 				),
+					
+				array(
+					'id'		=> 'responsive-tr-header',
+					'type'		=> 'switch',
+					'title'		=> __('Transparent', 'mfn-opts'),
+					'desc'		=> __('Transparent Header <b>on mobile</b> < 768px', 'mfn-opts'),
+					'options'	=> array( '0' => 'Off', '1' => 'On' ),
+					'std'		=> '0',
+				),
 
 				array(
 					'id'		=> 'header-menu-mobile-sticky',
@@ -2766,7 +2788,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'options'	=> array( '0' => 'Off', '1' => 'On' ),
 					'std'		=> '0',
 				),
-				
+	
 				array(
 					'id'		=> 'header-menu-text',
 					'type'		=> 'text',
@@ -2785,15 +2807,6 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 						'right'		=> 'Right',
 						'hide'		=> 'Hide Icons & Action Button',
 					),
-				),
-					
-				array(
-					'id'		=> 'responsive-tr-header',
-					'type'		=> 'switch',
-					'title'		=> __('Transparent Header', 'mfn-opts'),
-					'desc'		=> __('Transparent Header <b>on mobile</b> < 768px', 'mfn-opts'),
-					'options'	=> array( '0' => 'Off', '1' => 'On' ),
-					'std'		=> '0',
 				),
 
 				array(
@@ -2826,10 +2839,21 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'no-section-bg',
 					'type' 		=> 'select',
-					'title' 	=> __('Section Background Image', 'mfn-opts'),
+					'title' 	=> __('Section | Background Image', 'mfn-opts'),
 					'options' 	=> array(
 						'' 			=> 'Always Show',
 						'tablet'	=> 'Show on Desktop only'
+					),
+				),
+					
+				array(
+					'id' 		=> 'responsive-parallax',
+					'type' 		=> 'select',
+					'title' 	=> __('Section | Parallax', 'mfn-opts'),
+					'desc' 		=> __('Works only with <b>Translate3d</b> parallax. May run slowly on older devices', 'mfn-opts'),
+					'options' 	=> array(
+						0 	=> 'Disable on mobile',
+						1	=> 'Enable on mobile',
 					),
 				),
 	
@@ -3092,10 +3116,10 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 			'fields'	=> array(
 
 				array(
-					'id' 		=> 'addons-info-scroll',
+					'id' 		=> 'addons-info-parallax',
 					'type' 		=> 'info',
 					'title' 	=> '',
-					'desc' 		=> __('Parallax & Scroll', 'mfn-opts'),
+					'desc' 		=> __('Parallax', 'mfn-opts'),
 					'class' 	=> 'mfn-info',
 				),
 					
@@ -3108,6 +3132,14 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 						'enllax' 		=> 'Enllax',
 						'stellar' 		=> 'Stellar | old',
 					),
+				),
+					
+				array(
+					'id' 		=> 'addons-info-scroll',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Scroll', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
 				),
 					
 				array(
@@ -3141,7 +3173,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'checkbox',
 					'title' 	=> __('Pretty Photo | Options', 'mfn-opts'),
 					'options' 	=> array(
-						'disable'			=> 'Disable',
+						'disable'			=> 'Disable<span>Disable prettyPhoto if you use other plugin</span>',
 						'disable-mobile'	=> 'Disable on Mobile only',
 						'title'				=> 'Show image alt text above prettyPhoto frame',
 					),
@@ -3151,7 +3183,6 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'prettyphoto',
 					'type' 		=> 'select',
 					'title' 	=> __('Pretty Photo | Style', 'mfn-opts'), 
-					'desc' 		=> __('Disable prettyPhoto if you use other plugin', 'mfn-opts'), 
 					'options' 	=> array(
 						'pp_default' 	=> 'Default',
 						'light_rounded' => 'Light Rounded',

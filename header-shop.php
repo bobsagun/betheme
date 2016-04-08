@@ -31,17 +31,6 @@
 	}
 ?>
 
-<title itemprop="name"><?php
-if( mfn_title() ){
-	echo mfn_title();
-} else {
-	global $page, $paged;
-	wp_title( '|', true, 'right' );
-	bloginfo( 'name' );
-	if ( $paged >= 2 || $page >= 2 ) echo ' | ' . sprintf( __( 'Page %s', 'betheme' ), max( $paged, $page ) );
-}
-?></title>
-
 <?php do_action('wp_seo'); ?>
 
 <link rel="shortcut icon" href="<?php mfn_opts_show( 'favicon-img', THEME_URI .'/images/favicon.ico' ); ?>" />	

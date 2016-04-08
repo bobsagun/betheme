@@ -202,7 +202,7 @@ function mfnBuilder(){
 		'icon_bar'			: '[icon_bar icon="icon-lamp" link="" target="_blank" size="" social=""]',
 		'icon_block'		: '[icon_block icon="icon-lamp" align="" color="" size="25"]',
 		'idea'				: '[idea]Insert your content here[/idea]',
-		'image'				: '[image src="" align="" caption="" link="" link_image="" target="" alt="" border="0" greyscale="0" animate=""]',
+		'image'				: '[image src="" width="" height="" align="" border="0" margin_top="" margin_bottom="" link="" link_image="" target="" alt="" caption="" greyscale="0" animate=""]',
 		'popup'				: '[popup title="Title" padding="0" button="0"]Insert your popup content here[/popup]',
 		'progress_icons'	: '[progress_icons icon="icon-heart-line" count="5" active="3" background=""]',
 		'share_box'			: '[share_box]',

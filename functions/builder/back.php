@@ -913,10 +913,16 @@ if( ! function_exists( 'mfn_builder_save' ) )
 		
 		if( $mfn_items ){
 			
-			// codex.wordpress.org/Function_Reference/update_post_meta
-			$new = wp_slash( $mfn_items );
-			
-			// $new = call_user_func( 'base'.'64_encode', serialize( $mfn_items ) );
+			if( mfn_opts_get('builder-storage') == 'encode' ){
+				
+				$new = call_user_func( 'base'.'64_encode', serialize( $mfn_items ) );
+				
+			} else {
+				
+				// codex.wordpress.org/Function_Reference/update_post_meta
+				$new = wp_slash( $mfn_items );
+				
+			}
 			
 		}
 		
