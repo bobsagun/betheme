@@ -175,7 +175,7 @@ if( ! function_exists( 'mfn_builder_print' ) )
 						$parallax = mfn_parallax_data();
 						
 						if( mfn_parallax_plugin() == 'translate3d' ){
-							if( wp_is_mobile() ){
+							if( mfn_is_mobile() ){
 								$section_bg['attachment'] = 'background-attachment:scroll';
 							} else {
 								$section_bg = array();
@@ -205,7 +205,7 @@ if( ! function_exists( 'mfn_builder_print' ) )
 				
 				
 					// parallax | translate3d -------
-					if( ! wp_is_mobile() && $parallax && mfn_parallax_plugin() == 'translate3d' ){
+					if( ! mfn_is_mobile() && $parallax && mfn_parallax_plugin() == 'translate3d' ){
 						echo '<img class="mfn-parallax" src="'. $section['attr']['bg_image'] .'" alt="'. __('parallax background','betheme') .'"/>';
 					}
 					
@@ -331,7 +331,7 @@ if( ! function_exists( 'mfn_builder_print' ) )
 											$parallax = mfn_parallax_data();
 											
 											if( mfn_parallax_plugin() == 'translate3d' ){
-												if( wp_is_mobile() ){
+												if( mfn_is_mobile() ){
 													$wrap_bg['attachment'] = 'background-attachment:scroll';
 												} else {
 													$wrap_bg = array();
@@ -353,7 +353,7 @@ if( ! function_exists( 'mfn_builder_print' ) )
 								
 								
 									// parallax | translate3d -------
-									if( ! wp_is_mobile() && $parallax && mfn_parallax_plugin() == 'translate3d' ){
+									if( ! mfn_is_mobile() && $parallax && mfn_parallax_plugin() == 'translate3d' ){
 										echo '<img class="mfn-parallax" src="'. $section['attr']['bg_image'] .'" alt="'. __('parallax background','betheme') .'"/>';
 									}
 								

@@ -27,14 +27,17 @@ if( get_post_meta( get_the_ID(), 'mfn-post-template', true ) == 'builder' ) $cla
 					// Template | Builder -----------------------------------------------
 
 					// prev & next post navigation
-					mfn_post_navigation_sort();
-					
-					$in_same_term = ( mfn_opts_get( 'prev-next-nav' ) == 'same-category' ) ? true : false;
-					$post_prev = get_adjacent_post( $in_same_term, '', true, 'portfolio-types' );
-					$post_next = get_adjacent_post( $in_same_term, '', false, 'portfolio-types' );
-					
-					echo mfn_post_navigation( $post_prev, 'prev', 'icon-left-open-big' );
-					echo mfn_post_navigation( $post_next, 'next', 'icon-right-open-big' );
+					if( mfn_opts_get( 'prev-next-nav' ) ){
+						
+						mfn_post_navigation_sort();
+						
+						$in_same_term = ( mfn_opts_get( 'prev-next-nav' ) == 'same-category' ) ? true : false;
+						$post_prev = get_adjacent_post( $in_same_term, '', true, 'portfolio-types' );
+						$post_next = get_adjacent_post( $in_same_term, '', false, 'portfolio-types' );
+						
+						echo mfn_post_navigation( $post_prev, 'prev', 'icon-left-open-big' );
+						echo mfn_post_navigation( $post_next, 'next', 'icon-right-open-big' );
+					}
 					
 					
 					while ( have_posts() ){

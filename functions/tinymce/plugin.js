@@ -169,7 +169,7 @@
 				}, {
 					text : 'Image',
 					onclick : function() {
-						editor.insertContent('[image src="" width="" height="" align="" caption="" link="" link_image="" target="" alt="" border="0" greyscale="0" animate=""]');
+						editor.insertContent('[image src="" width="" height="" align="" border="0" margin_top="" margin_bottom="" link="" link_image="" target="" alt="" caption="" greyscale="0" animate=""]');
 					}
 				}, {
 					text : 'Popup',
