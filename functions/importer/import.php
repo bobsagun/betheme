@@ -667,6 +667,7 @@ class mfnImport {
 								<option value="painter">Painter</option>
 								<option value="parallax">Parrallax</option>
 								<option value="party">Party</option>
+								<option value="perfume">Perfume</option>
 								<option value="pets">Pets</option>
 								<option value="pharmacy">Pharmacy</option>
 								<option value="photo">Photo</option>
@@ -678,6 +679,7 @@ class mfnImport {
 								<option value="portfolio">Portfolio</option>
 								<option value="pr">PR Agency</option>
 								<option value="press">Press</option>
+								<option value="print">Print</option>
 								<option value="profile">Profile</option>
 								<option value="recipes">Recipes</option>
 								<option value="records">Records</option>

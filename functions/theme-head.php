@@ -503,6 +503,10 @@ if( ! function_exists( 'mfn_scripts' ) )
 				wp_enqueue_script( 'jquery-stellar', 	THEME_URI. '/js/parallax/stellar.js', false, THEME_VERSION, true );
 			}
 			
+			if( mfn_opts_get( 'nice-scroll' ) == 'smooth' ){
+				wp_enqueue_script( 'jquery-smoothscroll', THEME_URI. '/js/parallax/smoothscroll.js', false, THEME_VERSION, true );
+			}
+			
 			// scripts config -----------------------------
 			mfn_scripts_config();
 			
@@ -770,7 +774,7 @@ if( ! function_exists( 'mfn_sidebar_classes' ) )
 
 		
 		// WooCommerce
-		if( function_exists('is_woocommerce') ){
+		if( function_exists( 'is_woocommerce' ) ){
 			
 			if( is_woocommerce() ){
 			
@@ -788,7 +792,7 @@ if( ! function_exists( 'mfn_sidebar_classes' ) )
 	
 			}
 			
-			if( is_product() && mfn_opts_get('shop-sidebar') == 'shop' ){
+			if( function_exists( 'is_product' ) && is_product() && mfn_opts_get( 'shop-sidebar' ) == 'shop' ){
 				$classes = false;
 			}
 			
@@ -895,7 +899,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 	
 		
 		// Nice Scroll ----------------------------------------
-		if( mfn_opts_get('nice-scroll') ) $classes[] = 'nice-scroll-on';
+		if( mfn_opts_get('nice-scroll') == '1' ) $classes[] = 'nice-scroll-on';
 		
 		
 		// Responsive -----------------------------------------

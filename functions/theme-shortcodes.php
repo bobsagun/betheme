@@ -434,7 +434,9 @@ if( ! function_exists( 'sc_photo_box' ) )
 		$image = mfn_vc_image( $image );
 		
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;
@@ -550,11 +552,13 @@ if( ! function_exists( 'sc_sliding_box' ) )
 		$image = mfn_vc_image( $image );
 		
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;
-		}	
+		}
 		
 		$output = '<div class="sliding_box">';
 			if( $animate ) $output .= '<div class="animate" data-anim-type="'. $animate .'">';
@@ -597,7 +601,9 @@ if( ! function_exists( 'sc_story_box' ) )
 		$image = mfn_vc_image( $image );
 		
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;
@@ -648,11 +654,13 @@ if( ! function_exists( 'sc_trailer_box' ) )
 		$image = mfn_vc_image( $image );
 		
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;
-		}	
+		}
 		
 		$output = '<div class="trailer_box">';
 			if( $animate ) $output .= '<div class="animate" data-anim-type="'. $animate .'">';
@@ -703,7 +711,9 @@ if( ! function_exists( 'sc_promo_box' ) )
 		}
 		
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;
@@ -845,7 +855,7 @@ if( ! function_exists( 'sc_blog' ) )
 			'posts_per_page'		=> intval($count),
 			'paged' 				=> $paged,
 			'post_status'			=> 'publish',
-			'ignore_sticky_posts'	=> 1
+			'ignore_sticky_posts'	=> 0,
 		);
 
 		// categories
@@ -979,18 +989,11 @@ if( ! function_exists( 'sc_blog_slider' ) )
 		if( ! $more )	$classes .= ' hide-more';
 		if( $style )	$classes .= ' '. $style;
 		
-		// thumbnail size
-// 		if( $style == 'flat' ){
-// 			$thumb_size = 'blog-vertical';
-// 		} else {
-// 			$thumb_size = 'blog';
-// 		}
-		
 		$args = array(
 			'posts_per_page'		=> intval($count),
 			'no_found_rows'			=> 1,
 			'post_status'			=> 'publish',
-			'ignore_sticky_posts'	=> 1
+			'ignore_sticky_posts'	=> 0,
 		);
 		
 		// categories
@@ -1078,7 +1081,7 @@ if( ! function_exists( 'sc_blog_news' ) )
 			'posts_per_page'		=> intval($count),
 			'no_found_rows'			=> 1,
 			'post_status'			=> 'publish',
-			'ignore_sticky_posts'	=> 1
+			'ignore_sticky_posts'	=> 0,
 		);
 		
 		// categories
@@ -1674,7 +1677,9 @@ if( ! function_exists( 'sc_pricing_item' ) )
 		$image = mfn_vc_image( $image );
 		
 		// target
-		if( $target ){
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
 			$target = 'target="_blank"';
 		} else {
 			$target = false;

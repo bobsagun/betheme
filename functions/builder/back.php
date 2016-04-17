@@ -841,11 +841,19 @@ if( ! function_exists( 'mfn_builder_save' ) )
 									
 									$tab = array();
 									$tab['title'] 	= stripslashes( $attr['title'][$tabs_count[$type]] );
-									$tab['content'] = preg_replace( '~\R~u', "\n", stripslashes( $attr['content'][$tabs_count[$type]] ) );
 									
-// 									$tab['content'] = stripslashes( $attr['content'][$tabs_count[$type]] );
-									
-									$item['fields']['tabs'][] = $tab;
+									if( mfn_opts_get( 'builder-storage' ) ){
+										
+										$tab['content'] = stripslashes( $attr['content'][$tabs_count[$type]] );
+										
+									} else {
+										
+										// core.trac.wordpress.org/ticket/34845
+										$tab['content'] = preg_replace( '~\R~u', "\n", stripslashes( $attr['content'][$tabs_count[$type]] ) );
+										
+									}
+
+									$item['fields']['tabs'][] = $tab;								
 									
 									
 									// FIX | Yoast SEO
@@ -862,13 +870,18 @@ if( ! function_exists( 'mfn_builder_save' ) )
 						} else {
 							
 							// All other items --------------------------------
-						
-							
-							// core.trac.wordpress.org/ticket/34845
-							$item['fields'][$attr_k] = preg_replace( '~\R~u', "\n", stripslashes( $attr[$count[$type]] ) );
-							
-							// $item['fields'][$attr_k] = stripslashes( $attr[$count[$type]] );
-							
+
+							if( mfn_opts_get( 'builder-storage' ) ){
+								
+								$item['fields'][$attr_k] = stripslashes( $attr[$count[$type]] );
+								
+							} else {
+								
+								// core.trac.wordpress.org/ticket/34845
+								$item['fields'][$attr_k] = preg_replace( '~\R~u', "\n", stripslashes( $attr[$count[$type]] ) );
+								
+							}
+
 							
 							// FIX | Yoast SEO
 							$seo_val = trim( $attr[$count[$type]] );
@@ -913,7 +926,7 @@ if( ! function_exists( 'mfn_builder_save' ) )
 		
 		if( $mfn_items ){
 			
-			if( mfn_opts_get('builder-storage') == 'encode' ){
+			if( mfn_opts_get( 'builder-storage' ) == 'encode' ){
 				
 				$new = call_user_func( 'base'.'64_encode', serialize( $mfn_items ) );
 				
