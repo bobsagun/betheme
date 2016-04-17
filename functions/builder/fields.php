@@ -121,7 +121,7 @@ if( ! function_exists( 'mfn_get_fields_section' ) )
 				'type' 		=> 'select',
 				'title' 	=> __('Separator', 'mfn-opts'),
 				'sub_desc'	=> __('Section Separator', 'mfn-opts'),
-				'desc' 		=> __('Works only with Background Color selected above.', 'mfn-opts'),
+				'desc' 		=> __('Works only with <b>background color</b> selected above. Do <b>not</b> work with parallax and some section\'s styles', 'mfn-opts'),
 				'options' 	=> array(
 					'' 						=> 'None',
 					'circle up' 			=> 'Circle Up',
@@ -3644,9 +3644,12 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'target',
 						'type' 		=> 'select',
-						'title' 	=> __('Open in new window', 'mfn-opts'),
-						'desc' 		=> __('Adds a target="_blank" attribute to the link.', 'mfn-opts'),
-						'options'	=> array( 0 => 'No', 1 => 'Yes' ),
+						'title' 	=> __('Link | Target', 'mfn-opts'),
+						'options'	=> array(
+							0 			=> 'Default | _self',
+							1 			=> 'New Tab or Window | _blank' ,
+							'lightbox' 	=> 'Lightbox (image or embed video)',
+						),
 					),
 						
 					array(
@@ -4126,6 +4129,16 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title' 	=> __('Period', 'mfn-opts'),
 						'class' 	=> 'small-text',
 					),
+
+					// description
+					
+					array(
+						'id' 		=> 'info_description',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Description', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
 						
 					array(
 						'id'		=> 'subtitle',
@@ -4141,35 +4154,58 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'std' 		=> '<ul><li><strong>List</strong> item</li></ul>',
 					),
 						
+					// button
+					
+					array(
+						'id' 		=> 'info_button',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Button', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id' 		=> 'link_title',
 						'type' 		=> 'text',
-						'title' 	=> __('Button Title', 'mfn-opts'),
+						'title' 	=> __('Button | Title', 'mfn-opts'),
 						'desc' 		=> __('Button will appear only if this field will be filled.', 'mfn-opts'),
+					),
+						
+					array(
+						'id'		=> 'icon',
+						'type' 		=> 'icon',
+						'title' 	=> __('Button | Icon', 'mfn-opts'),
+						'class'		=> 'small-text',
 					),
 						
 					array(
 						'id' 		=> 'link',
 						'type' 		=> 'text',
-						'title' 	=> __('Button Link', 'mfn-opts'),
+						'title' 	=> __('Button | Link', 'mfn-opts'),
 						'desc' 		=> __('Button will appear only if this field will be filled.', 'mfn-opts'),
 					),
-
-					array(
-						'id'		=> 'icon',
-						'type' 		=> 'icon',
-						'title' 	=> __('Button Icon', 'mfn-opts'),
-						'class'		=> 'small-text',
-					),
-
+						
 					array(
 						'id' 		=> 'target',
 						'type' 		=> 'select',
-						'title' 	=> __('Open in new window', 'mfn-opts'),
-						'desc' 		=> __('Adds a target="_blank" attribute to the link.', 'mfn-opts'),
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'title' 	=> __('Button | Target', 'mfn-opts'),
+						'options'	=> array(
+							0 			=> 'Default | _self',
+							1 			=> 'New Tab or Window | _blank' ,
+							'lightbox' 	=> 'Lightbox (image or embed video)',
+						),
 					),
 
+					// advanced
+					
+					array(
+						'id' 		=> 'info_advanced',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Advanced', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id' 		=> 'featured',
 						'type' 		=> 'select',
@@ -4196,6 +4232,16 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'options' 	=> mfn_get_animations(),
 					),
 
+					// custom
+					
+					array(
+						'id' 		=> 'info_custom',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Custom', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+					
 					array(
 						'id' 		=> 'classes',
 						'type' 		=> 'text',
@@ -4270,25 +4316,48 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'class'		=> 'full-width sc',
 					),
 						
+					// button
+						
+					array(
+						'id' 		=> 'info_button',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Button', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id' 		=> 'btn_text',
 						'type' 		=> 'text',
-						'title' 	=> __('Button Text', 'mfn-opts'),
+						'title' 	=> __('Button | Text', 'mfn-opts'),
 						'class' 	=> 'small-text',
 					),
 					array(
 						'id' 		=> 'btn_link',
 						'type' 		=> 'text',
-						'title' 	=> __('Button Link', 'mfn-opts'),
+						'title' 	=> __('Button | Link', 'mfn-opts'),
 						'class' 	=> 'small-text',
 					),
 						
 					array(
 						'id' 		=> 'target',
 						'type' 		=> 'select',
-						'title' 	=> __('Open in new window', 'mfn-opts'),
-						'desc' 		=> __('Adds a target="_blank" attribute to the link.', 'mfn-opts'),
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'title' 	=> __('Button | Target', 'mfn-opts'),
+						'options'	=> array(
+							0 			=> 'Default | _self',
+							1 			=> 'New Tab or Window | _blank' ,
+							'lightbox' 	=> 'Lightbox (image or embed video)',
+						),
+					),
+
+					// advanced
+						
+					array(
+						'id' 		=> 'info_advanced',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Advanced', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
 					),
 						
 					array(
@@ -4319,6 +4388,16 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'options' 	=> mfn_get_animations(),
 					),
 
+					// custom
+						
+					array(
+						'id' 		=> 'info_custom',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Custom', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id' 		=> 'classes',
 						'type' 		=> 'text',
@@ -4626,9 +4705,12 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'target',
 						'type' 		=> 'select',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
-						'title'		=> __('Open in new window', 'mfn-opts'),
-						'desc' 		=> __('Adds a target="_blank" attribute to the link.', 'mfn-opts'),
+						'title' 	=> __('Link | Target', 'mfn-opts'),
+						'options'	=> array(
+							0 			=> 'Default | _self',
+							1 			=> 'New Tab or Window | _blank' ,
+							'lightbox' 	=> 'Lightbox (image or embed video)',
+						),
 					),
 						
 					array(
@@ -4699,9 +4781,12 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'target',
 						'type' 		=> 'select',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
-						'title'		=> __('Open in new window', 'mfn-opts'),
-						'desc' 		=> __('Adds a target="_blank" attribute to the link.', 'mfn-opts'),
+						'title' 	=> __('Link | Target', 'mfn-opts'),
+						'options'	=> array(
+							0 			=> 'Default | _self',
+							1 			=> 'New Tab or Window | _blank' ,
+							'lightbox' 	=> 'Lightbox (image or embed video)',
+						),
 					),
 						
 					array(
@@ -4946,9 +5031,12 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'target',
 						'type' 		=> 'select',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
-						'title'		=> __('Open in new window', 'mfn-opts'),
-						'desc' 		=> __('Adds a target="_blank" attribute to the link.', 'mfn-opts'),
+						'title' 	=> __('Link | Target', 'mfn-opts'),
+						'options'	=> array(
+							0 			=> 'Default | _self',
+							1 			=> 'New Tab or Window | _blank' ,
+							'lightbox' 	=> 'Lightbox (image or embed video)',
+						),
 					),
 
 					array(

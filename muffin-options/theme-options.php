@@ -796,6 +796,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'desc' 		=> __('This option will <b>not</b> affect the existing pages, only newly created or updated', 'mfn-opts'),
 					'options' 	=> array(
 						'' 			=> 'Serialized | Readable format, required by some plugins',
+						'non-utf-8' => 'Serialized (safe mode) | Readable format, for non-UTF-8 server, etc.',
 						'encode'	=> 'Encoded | Less data stored, compatible with WordPress Importer',
 					),
 				),
@@ -1449,7 +1450,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'sidebar-info-post',
 					'type' 		=> 'info',
 					'title' 	=> '',
-					'desc' 		=> __('Posts <span>force sidebar</span>', 'mfn-opts'),
+					'desc' 		=> __('Single Posts <span>force sidebar</span>', 'mfn-opts'),
 					'class' 	=> 'mfn-info',
 				),
 					
@@ -1490,7 +1491,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'sidebar-info-project',
 					'type' 		=> 'info',
 					'title' 	=> '',
-					'desc' 		=> __('Projects <span>force sidebar</span>', 'mfn-opts'),
+					'desc' 		=> __('Single Portfolio Projects <span>force sidebar</span>', 'mfn-opts'),
 					'class' 	=> 'mfn-info',
 				),
 					
@@ -3144,11 +3145,14 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					
 				array(
 					'id' 		=> 'nice-scroll',
-					'type' 		=> 'switch',	// mfn-demo plugin uses nice scroll !!!
-					'title' 	=> __('Nice Scroll', 'mfn-opts'),
-					'desc' 		=> __('Scrollbar with a very similar ios/mobile style', 'mfn-opts'),
-					'options' 	=> array('1' => 'On','0' => 'Off'),
-					'std' 		=> '1'
+					'type' 		=> 'select',							// mfn-demo plugin uses nice scroll !!!
+					'title' 	=> __('Scroll | Plugin', 'mfn-opts'),
+					'desc' 		=> __('Nice Scroll do not support Ctrl+F properly', 'mfn-opts'),
+					'options' 	=> array(
+						'1' 		=> 'Nice Scroll | Scrollbar with iOS/mobile style',
+						'smooth' 	=> 'Smooth Scroll',
+						'0' 		=> 'Default Browser Scroll',
+					),
 				),
 					
 				array(
