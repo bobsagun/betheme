@@ -74,6 +74,17 @@ function mfn_register_sidebars() {
 		));
 	}
 	
+	// Page | Search ----------------------------------------------------------
+	register_sidebar(array(
+		'name'          => __('Page | Search', 'mfn-opts'),
+		'id'            => 'mfn-search',
+		'description'	=> __('Main sidebar for Search page that appears on the right. Leave it empty to use Full Width layout.','betheme'),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' 	=> '</aside>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	));
+	
 	// Forum | bbPress -----------------------------------------------------------
 	register_sidebar(array(
 		'name'          => __('Plugin | bbPress', 'mfn-opts'),

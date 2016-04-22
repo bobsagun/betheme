@@ -131,27 +131,18 @@ mfnSetup = {
         	if( windowH > parentH ){
         		parentH = windowH;
         	}
-        	
+
         	var diff = imageW / parentW;
-        	
-        	if( (imageH / diff) < parentH ){
+
+        	if( ( imageH / diff ) < parentH ){
         		
-        		w = imageW / (imageH / parentH);
+        		w = imageW / ( imageH / parentH );
         		h = parentH;
         		
         		if( w > imageW ){
-        			
-        			if( h > windowH ){
-        				
-        				w = imageW / (imageH / windowH);
-        				h = windowH;
-        				
-        			} else {
-        				
-        				w = imageW;
-            			h = imageH;
-            			
-        			}
+
+    				w = imageW;
+        			h = imageH;
 
         		}
         		

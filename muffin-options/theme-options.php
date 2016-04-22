@@ -59,25 +59,25 @@ if( ! function_exists( 'mfna_bg_position' ) )
 	 */
 	function mfna_bg_position( $el = false ){
 		$array = array(
-			'no-repeat;center top;;' 		=> 'Center Top No-Repeat',
-			'repeat;center top;;' 			=> 'Center Top Repeat',
-			'repeat-x;center top;;' 		=> 'Center Top Repeat-x',
-			'no-repeat;center bottom;;' 	=> 'Center Bottom No-Repeat',
-			'repeat;center bottom;;' 		=> 'Center Bottom Repeat',
-			'repeat-x;center bottom;;' 		=> 'Center Bottom Repeat-x',
+			'no-repeat;center top;;' 		=> __('Center Top No-Repeat', 'mfn-opts'),
+			'repeat;center top;;' 			=> __('Center Top Repeat', 'mfn-opts'),
+			'repeat-x;center top;;' 		=> __('Center Top Repeat-x', 'mfn-opts'),
+			'no-repeat;center bottom;;' 	=> __('Center Bottom No-Repeat', 'mfn-opts'),
+			'repeat;center bottom;;' 		=> __('Center Bottom Repeat', 'mfn-opts'),
+			'repeat-x;center bottom;;' 		=> __('Center Bottom Repeat-x', 'mfn-opts'),
 				
-			'no-repeat;center;;' 			=> 'Center No-Repeat',
-			'repeat;center;;' 				=> 'Center Repeat',
+			'no-repeat;center;;' 			=> __('Center No-Repeat', 'mfn-opts'),
+			'repeat;center;;' 				=> __('Center Repeat', 'mfn-opts'),
 				
-			'no-repeat;left top;;' 			=> 'Left Top No-Repeat',
-			'repeat;left top;;' 			=> 'Left Top Repeat',
-			'no-repeat;left bottom;;' 		=> 'Left Bottom No-Repeat',
-			'repeat;left bottom;;' 			=> 'Left Bottom Repeat',
+			'no-repeat;left top;;' 			=> __('Left Top No-Repeat', 'mfn-opts'),
+			'repeat;left top;;' 			=> __('Left Top Repeat', 'mfn-opts'),
+			'no-repeat;left bottom;;' 		=> __('Left Bottom No-Repeat', 'mfn-opts'),
+			'repeat;left bottom;;' 			=> __('Left Bottom Repeat', 'mfn-opts'),
 				
-			'no-repeat;right top;;' 		=> 'Right Top No-Repeat',
-			'repeat;right top;;' 			=> 'Right Top Repeat',
-			'no-repeat;right bottom;;' 		=> 'Right Bottom No-Repeat',
-			'repeat;right bottom;;' 		=> 'Right Bottom Repeat',
+			'no-repeat;right top;;' 		=> __('Right Top No-Repeat', 'mfn-opts'),
+			'repeat;right top;;' 			=> __('Right Top Repeat', 'mfn-opts'),
+			'no-repeat;right bottom;;' 		=> __('Right Bottom No-Repeat', 'mfn-opts'),
+			'repeat;right bottom;;' 		=> __('Right Bottom Repeat', 'mfn-opts'),
 		);
 		
 		if( $el == 'column' ){
@@ -89,16 +89,16 @@ if( ! function_exists( 'mfna_bg_position' ) )
 			
 			// Site Body | <html> tag
 			
-			$array['no-repeat;center top;fixed;;']			= 'Center No-Repeat Fixed';
-			$array['no-repeat;center;fixed;cover']			= 'Center No-Repeat Fixed Cover';
+			$array['no-repeat;center top;fixed;;']			= __('Center No-Repeat Fixed', 'mfn-opts');
+			$array['no-repeat;center;fixed;cover']			= __('Center No-Repeat Fixed Cover', 'mfn-opts');
 			
 		} else {
 			
 			// Section / Wrap
 			
-			$array['no-repeat;center top;fixed;;still']		= 'Center No-Repeat Fixed';			// Old Style Still Parallax
-			$array['no-repeat;center;fixed;cover;still']	= 'Center No-Repeat Fixed Cover';	// Old Style Still Parallax Cover
-			$array['no-repeat;center top;fixed;cover']		= 'Parallax';
+			$array['no-repeat;center top;fixed;;still']		= __('Center No-Repeat Fixed', 'mfn-opts');			// Old Style Still Parallax
+			$array['no-repeat;center;fixed;cover;still']	= __('Center No-Repeat Fixed Cover', 'mfn-opts');	// Old Style Still Parallax Cover
+			$array['no-repeat;center top;fixed;cover']		= __('Parallax', 'mfn-opts');
 			
 		}
 	
@@ -116,20 +116,20 @@ if( ! function_exists( 'mfna_skin' ) )
 	 */
 	function mfna_skin(){
 		return array(
-			'custom' 	=> '- Custom Skin -',
-			'one' 		=> '- One Color Skin -',
-			'blue'		=> 'Blue',
-			'brown'		=> 'Brown',
-			'chocolate'	=> 'Chocolate',
-			'gold'		=> 'Gold',
-			'green'		=> 'Green',
-			'olive'		=> 'Olive',
-			'orange'	=> 'Orange',
-			'pink'		=> 'Pink',
-			'red'		=> 'Red',
-			'sea'		=> 'Seagreen',
-			'violet'	=> 'Violet',
-			'yellow'	=> 'Yellow',
+			'custom' 	=> __('- Custom Skin -', 'mfn-opts'),
+			'one' 		=> __('- One Color Skin -', 'mfn-opts'),
+			'blue'		=> __('Blue', 'mfn-opts'),
+			'brown'		=> __('Brown', 'mfn-opts'),
+			'chocolate'	=> __('Chocolate', 'mfn-opts'),
+			'gold'		=> __('Gold', 'mfn-opts'),
+			'green'		=> __('Green', 'mfn-opts'),
+			'olive'		=> __('Olive', 'mfn-opts'),
+			'orange'	=> __('Orange', 'mfn-opts'),
+			'pink'		=> __('Pink', 'mfn-opts'),
+			'red'		=> __('Red', 'mfn-opts'),
+			'sea'		=> __('Seagreen', 'mfn-opts'),
+			'violet'	=> __('Violet', 'mfn-opts'),
+			'yellow'	=> __('Yellow', 'mfn-opts'),
 		);
 	}
 }
@@ -400,6 +400,16 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 						'hide' 		=> 'Hide',
 					),
 				),
+					
+				array(
+					'id' 		=> 'image-frame-caption',
+					'type' 		=> 'select',
+					'title' 	=> __('Caption', 'mfn-opts'),
+					'options' 	=> array(
+						'' 			=> 'Below the Image',
+						'on' 		=> 'On the Image',
+					),
+				),
 	
 				array(
 					'id' 		=> 'general-info-background',
@@ -429,10 +439,10 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'checkbox',
 					'title' 	=> __('Transparent', 'mfn-opts'),
 					'options' 	=> array(
-						'header'	=> 'Header',
-						'menu'		=> 'Top Bar with Menu <span>Works only with <b>headers at the top</b> and screen width > 768px</span>',
-						'content'	=> 'Content',
-						'footer'	=> 'Footer',	
+						'header'	=> __('Header', 'mfn-opts'),
+						'menu'		=> __('Top Bar with Menu <span>Works only with <b>headers at the top</b> and screen width > 768px</span>', 'mfn-opts'),
+						'content'	=> __('Content', 'mfn-opts'),
+						'footer'	=> __('Footer', 'mfn-opts'),	
 					),
 				),
 
@@ -525,9 +535,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'checkbox',
 					'title' 	=> __('Options', 'mfn-opts'),
 					'options' 	=> array(
-							'link'		=> 'Link to Homepage',
-							'h1-home'	=> 'Wrap into H1 tag on Homepage',
-							'h1-all'	=> 'Wrap into H1 tag on All other pages',
+							'link'		=> __('Link to Homepage', 'mfn-opts'),
+							'h1-home'	=> __('Wrap into H1 tag on Homepage', 'mfn-opts'),
+							'h1-all'	=> __('Wrap into H1 tag on All other pages', 'mfn-opts'),
 					),
 				),
 
@@ -684,11 +694,11 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Builder | Visibility', 'mfn-opts'),
 					'options' 	=> array(
-						'' 						=> '- Everyone -',
-						'publish_posts'			=> 'Author',
-						'edit_pages'			=> 'Editor',
-						'edit_theme_options'	=> 'Administrator',
-						'hide'					=> 'HIDE for Everyone',
+						'' 						=> __('- Everyone -', 'mfn-opts'),
+						'publish_posts'			=> __('Author', 'mfn-opts'),
+						'edit_pages'			=> __('Editor', 'mfn-opts'),
+						'edit_theme_options'	=> __('Administrator', 'mfn-opts'),
+						'hide'					=> __('HIDE for Everyone', 'mfn-opts'),
 					),
 				),
 					
@@ -697,8 +707,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Content | Display Order', 'mfn-opts'),
 					'options' 	=> array(
-						0 => 'Muffin Builder - WordPress Editor',
-						1 => 'WordPress Editor - Muffin Builder',
+						0 => __('Muffin Builder - WordPress Editor', 'mfn-opts'),
+						1 => __('WordPress Editor - Muffin Builder', 'mfn-opts'),
 					),
 				),
 					
@@ -726,8 +736,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('HTML Table', 'mfn-opts'),
 					'options' 	=> array(
-						'' 			=> 'Default',
-						'hover' 	=> 'Rows Hover'
+						'' 			=> __('Default', 'mfn-opts'),
+						'hover' 	=> __('Rows Hover', 'mfn-opts'),
 					),
 				),
 
@@ -756,13 +766,13 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Post Type | Disable', 'mfn-opts'),
 					'desc' 		=> __('If you do not want to use any of these Types, you can disable it', 'mfn-opts'),
 					'options' 	=> array(
-						'client'		=> 'Clients',
-						'layout'		=> 'Layouts',
-						'offer'			=> 'Offer',
-						'portfolio'		=> 'Portfolio',
-						'slide'			=> 'Slides',
-						'template'		=> 'Templates',
-						'testimonial'	=> 'Testimonials',
+						'client'		=> __('Clients', 'mfn-opts'),
+						'layout'		=> __('Layouts', 'mfn-opts'),
+						'offer'			=> __('Offer', 'mfn-opts'),
+						'portfolio'		=> __('Portfolio', 'mfn-opts'),
+						'slide'			=> __('Slides', 'mfn-opts'),
+						'template'		=> __('Templates', 'mfn-opts'),
+						'testimonial'	=> __('Testimonials', 'mfn-opts'),
 					),
 				),
 	
@@ -772,9 +782,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Theme Functions | Disable', 'mfn-opts'),
 					'desc' 		=> __('If you do not want to use any of these functions or use external plugins to do the same, you can disable it', 'mfn-opts'),
 					'options' 	=> array(
-						'demo-data'				=> 'BeTheme Demo Data',
-						'entrance-animations'	=> 'Entrance Animations',
-						'mega-menu'				=> 'Mega Menu',
+						'demo-data'				=> __('BeTheme Demo Data', 'mfn-opts'),
+						'entrance-animations'	=> __('Entrance Animations', 'mfn-opts'),
+						'mega-menu'				=> __('Mega Menu', 'mfn-opts'),
 					),
 				),
 					
@@ -795,9 +805,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Builder | Data Storage', 'mfn-opts'),
 					'desc' 		=> __('This option will <b>not</b> affect the existing pages, only newly created or updated', 'mfn-opts'),
 					'options' 	=> array(
-						'' 			=> 'Serialized | Readable format, required by some plugins',
-						'non-utf-8' => 'Serialized (safe mode) | Readable format, for non-UTF-8 server, etc.',
-						'encode'	=> 'Encoded | Less data stored, compatible with WordPress Importer',
+						'' 			=> __('Serialized | Readable format, required by some plugins', 'mfn-opts'),
+						'non-utf-8' => __('Serialized (safe mode) | Readable format, for non-UTF-8 server, etc.', 'mfn-opts'),
+						'encode'	=> __('Encoded | Less data stored, compatible with WordPress Importer', 'mfn-opts'),
 					),
 				),
 					
@@ -903,8 +913,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'checkbox',
 					'title' 	=> __('Options', 'mfn-opts'),
 					'options' 	=> array(
-						'full-width'	=> 'Full Width (for layout: Full Width)',
-						'header-boxed'	=> 'Boxed Sticky Header (for layout: Boxed)',
+						'full-width'	=> __('Full Width (for layout: Full Width)', 'mfn-opts'),
+						'header-boxed'	=> __('Boxed Sticky Header (for layout: Boxed)', 'mfn-opts'),
 					),
 				),
 					
@@ -914,9 +924,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title'		=> __('Minimalist', 'mfn-opts'),
 					'desc'		=> __('Header without background image & padding', 'mfn-opts'),
 					'options'	=> array(
-						'0' 		=> 'Default | OFF',
-						'1' 		=> 'Minimalist | ON',
-						'no' 		=> 'Minimalist without Header space',
+						'0' 		=> __('Default | OFF', 'mfn-opts'),
+						'1' 		=> __('Minimalist | ON', 'mfn-opts'),
+						'no' 		=> __('Minimalist without Header space', 'mfn-opts'),
 					),
 				),
 
@@ -940,9 +950,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Attachment', 'mfn-opts'),
 					'options'	=> array(
-						''			=> 'Default',
-						'fixed'		=> 'Fixed',
-						'parallax'	=> 'Parallax',
+						''			=> __('Default', 'mfn-opts'),
+						'fixed'		=> __('Fixed', 'mfn-opts'),
+						'parallax'	=> __('Parallax', 'mfn-opts'),
 					),
 				),
 					
@@ -967,9 +977,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type'		=> 'select',
 					'title'		=> __('Style', 'mfn-opts'),
 					'options'	=> array(
-						'white'		=> 'White',
-						'dark'		=> 'Dark',
-						'tb-color'	=> 'The same as Top Bar Left background',
+						'white'		=> __('White', 'mfn-opts'),
+						'dark'		=> __('Dark', 'mfn-opts'),
+						'tb-color'	=> __('The same as Top Bar Left background', 'mfn-opts'),
 					),
 				),
 	
@@ -994,11 +1004,11 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type'		=> 'select',
 					'title'		=> __('Style', 'mfn-opts'),
 					'options'	=> array(
-						'' 				=> 'Title on the Left',
-						'title-right' 	=> 'Title on the Right',
-						'both-left' 	=> 'Title & Breadcrumbs on the Left',
-						'both-right' 	=> 'Title & Breadcrumbs on the Right',
-						'both-center' 	=> 'Title & Breadcrumbs Centered',
+						'' 				=> __('Title on the Left', 'mfn-opts'),
+						'title-right' 	=> __('Title on the Right', 'mfn-opts'),
+						'both-left' 	=> __('Title & Breadcrumbs on the Left', 'mfn-opts'),
+						'both-right' 	=> __('Title & Breadcrumbs on the Right', 'mfn-opts'),
+						'both-center' 	=> __('Title & Breadcrumbs Centered', 'mfn-opts'),
 					),
 				),
 					
@@ -1007,8 +1017,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'checkbox',
 					'title' 	=> __('Hide', 'mfn-opts'),
 					'options' 	=> array(
-						'hide-breadcrumbs'	=> 'Breadcrumbs',
-						'hide-subheader'	=> '<b>Subheader</b>',
+						'hide-breadcrumbs'	=> __('Breadcrumbs', 'mfn-opts'),
+						'hide-subheader'	=> __('<b>Subheader</b>', 'mfn-opts'),
 					),
 				),
 					
@@ -1076,8 +1086,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'checkbox',
 					'title' 	=> __('Options', 'mfn-opts'),
 					'options' 	=> array(
-						'breadcrumbs-link'	=> 'Breadcrumbs | Last item is link (NOT for Shop)',
-						'slider-show'		=> 'Slider | Show subheader on pages with Slider',
+						'breadcrumbs-link'	=> __('Breadcrumbs | Last item is link (NOT for Shop)', 'mfn-opts'),
+						'slider-show'		=> __('Slider | Show subheader on pages with Slider', 'mfn-opts'),
 					),
 				),
 
@@ -1130,8 +1140,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'checkbox',
 					'title' 	=> __('Options', 'mfn-opts'),
 					'options' 	=> array(
-						'target'	=> 'Open in new window',
-						'scroll'	=> 'Scroll to section (use #SectionID as Link)',
+						'target'	=> __('Open in new window', 'mfn-opts'),
+						'scroll'	=> __('Scroll to section (use #SectionID as Link)', 'mfn-opts'),
 					),
 				),
 	
@@ -1148,10 +1158,10 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type'		=> 'select',
 					'title'		=> __('Search', 'mfn-opts'),
 					'options'	=> array(
-						'1' 		=> 'Icon | Default',
-						'shop' 		=> 'Icon | Search Shop Products only',
-						'input' 	=> 'Search Field',
-						'0' 		=> 'Hide',
+						'1' 		=> __('Icon | Default', 'mfn-opts'),
+						'shop' 		=> __('Icon | Search Shop Products only', 'mfn-opts'),
+						'input' 	=> __('Search Field', 'mfn-opts'),
+						'0' 		=> __('Hide', 'mfn-opts'),
 					),
 				),
 					
@@ -1169,11 +1179,11 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title'		=> __('Custom Switcher Style', 'mfn-opts'),
 					'desc'		=> __('Custom Language Switcher is independent of WPML switcher options', 'mfn-opts'),
 					'options'	=> array(
-						''					=> 'Dropdown | Flags',
-						'dropdown-name'		=> 'Dropdown | Language Name (native)',
-						'horizontal'		=> 'Horizontal | Flags',
-						'horizontal-code'	=> 'Horizontal | Language Code',
-						'hide'				=> 'Hide',
+						''					=> __('Dropdown | Flags', 'mfn-opts'),
+						'dropdown-name'		=> __('Dropdown | Language Name (native)', 'mfn-opts'),
+						'horizontal'		=> __('Horizontal | Flags', 'mfn-opts'),
+						'horizontal-code'	=> __('Horizontal | Language Code', 'mfn-opts'),
+						'hide'				=> __('Hide', 'mfn-opts'),
 					),
 				),
 					
@@ -1182,7 +1192,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'checkbox',
 					'title'		=> __('Custom Switcher Options', 'mfn-opts'),
 					'options' 	=> array(
-						'link-to-home'	=> 'Link to home of language for missing translations<span>Disable this option to skip languages with missing translation</span>',
+						'link-to-home'	=> __('Link to home of language for missing translations<span>Disable this option to skip languages with missing translation</span>', 'mfn-opts'),
 					),
 				),
 					
@@ -1200,10 +1210,10 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title'		=> __('Sliding Top', 'mfn-opts'),
 					'desc'		=> __('Widgetized Sliding Top position', 'mfn-opts'),
 					'options'	=> array(
-						'1' 		=> 'Right',
-						'center' 	=> 'Center',
-						'left' 		=> 'Left',
-						'0' 		=> 'Hide',
+						'1' 		=> __('Right', 'mfn-opts'),
+						'center' 	=> __('Center', 'mfn-opts'),
+						'left' 		=> __('Left', 'mfn-opts'),
+						'0' 		=> __('Hide', 'mfn-opts'),
 					),
 					'std'		=> '0',
 				),
@@ -1255,14 +1265,14 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title'		=> __('Style', 'mfn-opts'),
 					'desc'		=> __('For some header style only', 'mfn-opts'),
 					'options'	=> array(
-						''					=> 'Default',
-						'line-below'		=> 'Line below Menu',
-						'line-below-80'		=> 'Line below Link (80% width)',
-						'line-below-80-1'	=> 'Line below Link (80% width, 1px height)',
-						'arrow-top'			=> 'Arrow Top',
-						'arrow-bottom'		=> 'Arrow Bottom',
-						'highlight'			=> 'Highlight',
-						'hide'				=> 'HIDE Menu',
+						''					=> __('Default', 'mfn-opts'),
+						'line-below'		=> __('Line below Menu', 'mfn-opts'),
+						'line-below-80'		=> __('Line below Link (80% width)', 'mfn-opts'),
+						'line-below-80-1'	=> __('Line below Link (80% width, 1px height)', 'mfn-opts'),
+						'arrow-top'			=> __('Arrow Top', 'mfn-opts'),
+						'arrow-bottom'		=> __('Arrow Bottom', 'mfn-opts'),
+						'highlight'			=> __('Highlight', 'mfn-opts'),
+						'hide'				=> __('HIDE Menu', 'mfn-opts'),
 					),
 				),
 					
@@ -1270,11 +1280,12 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id'		=> 'menu-options',
 					'type' 		=> 'checkbox',
 					'title' 	=> __('Options', 'mfn-opts'),
-					'options' 	=> array(
-						'align-right'	=> 'Align Menu to Right',
-						'menu-arrows'	=> 'Menu Arrows for items with submenu',
-						'hide-borders'	=> 'Hide Border between Items',
-						'last'			=> 'Fold 2 Last Submenus to the Left<span>for Header Creative fold to Top</span>',
+					'options' 	=> array(							
+						'submenu-active'	=> __('Active for Submenu items', 'mfn-opts'),
+						'align-right'		=> __('Align Menu to Right', 'mfn-opts'),
+						'hide-borders'		=> __('Hide Border between Items', 'mfn-opts'),
+						'menu-arrows'		=> __('Menu Arrows for Items with Submenu', 'mfn-opts'),
+						'last'				=> __('Fold 2 Last Submenus to the Left<span>for Header Creative fold to Top</span>', 'mfn-opts'),
 					),
 				),
 					
@@ -1291,8 +1302,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'checkbox',
 					'title' 	=> __('Options', 'mfn-opts'),
 					'options' 	=> array(
-						'scroll'	=> 'Scrollable <span>for menu with large amount of items <b>without submenus</b></span>',
-						'dropdown'	=> 'Dropdown submenu <span>use with scrollable</span>',
+						'scroll'	=> __('Scrollable <span>for menu with large amount of items <b>without submenus</b></span>', 'mfn-opts'),
+						'dropdown'	=> __('Dropdown submenu <span>use with scrollable</span>', 'mfn-opts'),
 					),
 				),
 
@@ -1398,9 +1409,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Lines', 'mfn-opts'),
 					'sub_desc' 	=> __('Sidebar Lines Style', 'mfn-opts'),
 					'options' 	=> array(
-						''				=> 'Default',
-						'lines-boxed'	=> 'Sidebar Width',
-						'lines-hidden'	=> 'Hide Lines',
+						''				=> __('Default', 'mfn-opts'),
+						'lines-boxed'	=> __('Sidebar Width', 'mfn-opts'),
+						'lines-hidden'	=> __('Hide Lines', 'mfn-opts'),
 					),
 					'std' 		=> '',
 				),
@@ -1553,9 +1564,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Navigation Arrows', 'mfn-opts'),
 					'sub_desc' 	=> __('Show Prev/Next Navigation', 'mfn-opts'),
 					'options' 	=> array(
-						'0'				=> 'Hide',
-						'1'				=> 'Show',
-						'same-category'	=> 'Show | Navigate in the same category (excluding Shop)',
+						'0'				=> __('Hide', 'mfn-opts'),
+						'1'				=> __('Show', 'mfn-opts'),
+						'same-category'	=> __('Show | Navigate in the same category (excluding Shop)', 'mfn-opts'),
 					),
 					'std' 		=> '1'
 				),
@@ -1565,9 +1576,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Share Box', 'mfn-opts'),
 					'options' 	=> array(
-						'1' 			=> 'Show',
-						'0' 			=> 'Hide',
-						'hide-mobile' 	=> 'Hide on Mobile',
+						'1' 			=> __('Show', 'mfn-opts'),
+						'0' 			=> __('Hide', 'mfn-opts'),
+						'hide-mobile' 	=> __('Hide on Mobile', 'mfn-opts'),
 					),
 					'std' 		=> '1'
 				),
@@ -1604,6 +1615,19 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> '',
 					'desc' 		=> __('Single Post, Single Project', 'mfn-opts'),
 					'class' 	=> 'mfn-info',
+				),
+					
+				array(
+					'id' 		=> 'featured-image-caption',
+					'type' 		=> 'select',
+					'title' 	=> __('Featured Image Caption', 'mfn-opts'),
+					'desc' 		=> __('Caption for Featured Image can be set in Media Library', 'mfn-opts'),	
+					'options' 	=> array(
+						'' 				=> __('Show', 'mfn-opts'),
+						'hide' 			=> __('Hide', 'mfn-opts'),
+						'hide-mobile' 	=> __('Hide on Mobile', 'mfn-opts'),
+						
+					),
 				),
 
 				array(
@@ -1741,11 +1765,11 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Filters', 'mfn-opts'),
 					'options' 	=> array(
-						'1' 				=> 'Show',
-						'only-categories' 	=> 'Show only Categories',
-						'only-tags' 		=> 'Show only Tags',
-						'only-authors' 		=> 'Show only Authors',
-						'0' 				=> 'Hide',
+						'1' 				=> __('Show', 'mfn-opts'),
+						'only-categories' 	=> __('Show only Categories', 'mfn-opts'),
+						'only-tags' 		=> __('Show only Tags', 'mfn-opts'),
+						'only-authors' 		=> __('Show only Authors', 'mfn-opts'),
+						'0' 				=> __('Hide', 'mfn-opts'),
 					),
 					'std' 		=> '1'
 				),
@@ -1977,10 +2001,10 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Order by', 'mfn-opts'),
 					'options' 	=> array(
-						'date'			=> 'Date',
-						'menu_order' 	=> 'Menu order',
-						'title'			=> 'Title',
-						'rand'			=> 'Random',
+						'date'			=> __('Date', 'mfn-opts'),
+						'menu_order' 	=> __('Menu order', 'mfn-opts'),
+						'title'			=> __('Title', 'mfn-opts'),
+						'rand'			=> __('Random', 'mfn-opts'),
 					),
 					'std' 		=> 'date'
 				),
@@ -1990,8 +2014,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Order', 'mfn-opts'),
 					'options' 	=> array(
-						'ASC' 	=> 'Ascending',
-						'DESC'	=> 'Descending'
+						'ASC' 	=> __('Ascending', 'mfn-opts'),
+						'DESC'	=> __('Descending', 'mfn-opts'),
 					),
 					'std' 		=> 'DESC'
 				),
@@ -2002,11 +2026,11 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Project Link', 'mfn-opts'),
 					'sub_desc' 	=> __('Image and Title Link', 'mfn-opts'),
 					'options' 	=> array(
-						''			=> 'Details',
-						'popup'		=> 'Popup Image',
-						'disable'	=> 'Disable Details | Only Popup Image',
-						'_self'		=> 'Project Website | Open in the same window',
-						'_blank'	=> 'Project Website | Open in new window',
+						''			=> __('Details', 'mfn-opts'),
+						'popup'		=> __('Popup Image', 'mfn-opts'),
+						'disable'	=> __('Disable Details | Only Popup Image', 'mfn-opts'),
+						'_self'		=> __('Project Website | Open in the same window', 'mfn-opts'),
+						'_blank'	=> __('Project Website | Open in new window', 'mfn-opts'),
 					),
 				),
 
@@ -2025,9 +2049,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Filters', 'mfn-opts'),
 					'options' 	=> array( 
-						'1' 				=> 'Show', 
-						'only-categories' 	=> 'Show only Categories',
-						'0' 				=> 'Hide',
+						'1' 				=> __('Show', 'mfn-opts'), 
+						'only-categories' 	=> __('Show only Categories', 'mfn-opts'),
+						'0' 				=> __('Hide', 'mfn-opts'),
 					),
 					'std' 		=> '1'
 				),
@@ -2217,9 +2241,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Images', 'mfn-opts'),
 					'options' 	=> array(
-						'' 			=> '- Default -',
-						'secondary'	=> 'Show secondary image on hover',
-						'plugin'	=> 'Use external plugin for featured images',
+						'' 			=> __('- Default -', 'mfn-opts'),
+						'secondary'	=> __('Show secondary image on hover', 'mfn-opts'),
+						'plugin'	=> __('Use external plugin for featured images', 'mfn-opts'),
 					),
 				),
 					
@@ -2248,8 +2272,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Sidebar', 'mfn-opts'),
 					'sub_desc' 	=> __('Show Shop Page Sidebar on', 'mfn-opts'),
 					'options' 	=> array(
-						'' 			=> 'All (Shop, Categories, Products)',
-						'shop'		=> 'Shop & Categories',
+						'' 			=> __('All (Shop, Categories, Products)', 'mfn-opts'),
+						'shop'		=> __('Shop & Categories', 'mfn-opts'),
 					),
 				),
 					
@@ -2259,8 +2283,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Slider', 'mfn-opts'),
 					'sub_desc' 	=> __('Show Shop Page Slider on', 'mfn-opts'),
 					'options' 	=> array(
-						'' 			=> 'Main Shop Page',
-						'all'		=> 'All (Shop, Categories, Products)',
+						'' 			=> __('Main Shop Page', 'mfn-opts'),
+						'all'		=> __('All (Shop, Categories, Products)', 'mfn-opts'),
 					),
 				),
 	
@@ -2279,8 +2303,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Product Image', 'mfn-opts'),
 					'options' 	=> array(
-						'' 			=> '- Default -',
-						'plugin'	=> 'Use external plugin for featured images',
+						'' 			=> __('- Default -', 'mfn-opts'),
+						'plugin'	=> __('Use external plugin for featured images', 'mfn-opts'),
 					),
 				),
 					
@@ -2289,10 +2313,10 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Style', 'mfn-opts'),
 					'options' 	=> array(
-						'' 			=> 'Accordion next to image',
-						'wide' 		=> 'Accordion below image',
-						'tabs' 		=> 'Tabs next to image',
-						'wide tabs'	=> 'Tabs below image',
+						'' 			=> __('Accordion next to image', 'mfn-opts'),
+						'wide' 		=> __('Accordion below image', 'mfn-opts'),
+						'tabs' 		=> __('Tabs next to image', 'mfn-opts'),
+						'wide tabs'	=> __('Tabs below image', 'mfn-opts'),
 					),
 				),
 
@@ -2302,9 +2326,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Title', 'mfn-opts'),
 					'sub_desc' 	=> __('Show Product Title in', 'mfn-opts'),
 					'options' 	=> array(
-						'' 				=> 'Content',
-						'content-sub'	=> 'Content & Subheader',
-						'sub'			=> 'Subheader',
+						'' 				=> __('Content', 'mfn-opts'),
+						'content-sub'	=> __('Content & Subheader', 'mfn-opts'),
+						'sub'			=> __('Subheader', 'mfn-opts'),
 					),
 				),
 					
@@ -2381,8 +2405,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Crop', 'mfn-opts'),
 					'sub_desc' 	=> __('default: Resize & Crop', 'mfn-opts'),
 					'options' 	=> array( 
-						'crop' 		=> 'Resize & Crop',
-						'resize' 	=> 'Resize' 
+						'crop' 		=> __('Resize & Crop', 'mfn-opts'),
+						'resize' 	=> __('Resize', 'mfn-opts'), 
 					),
 				),
 					
@@ -2422,8 +2446,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Crop', 'mfn-opts'),
 					'sub_desc' 	=> __('default: Resize & Crop', 'mfn-opts'),
 					'options' 	=> array( 
-						'crop' 		=> 'Resize & Crop',
-						'resize' 	=> 'Resize' 
+						'crop' 		=> __('Resize & Crop', 'mfn-opts'),
+						'resize' 	=> __('Resize', 'mfn-opts'),  
 					),
 				),
 					
@@ -2574,7 +2598,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type'		=> 'select',
 					'title'		=> __('Layout', 'mfn-opts'),
 					'options'	=> array(
-						''												=> 'Default',
+						''												=> __('Default', 'mfn-opts'),
 						'4;one-fourth;one-fourth;one-fourth;one-fourth'	=> '1/4 1/4 1/4 1/4',
 						'3;one-fourth;one-fourth;one-second;'			=> '1/4 1/4 1/2',
 						'3;one-fourth;one-second;one-fourth;'			=> '1/4 1/2 1/4',
@@ -2593,10 +2617,10 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title'		=> __('Style', 'mfn-opts'),
 					'desc'		=> __('Sliding style does <b>not</b> work with transparent content', 'mfn-opts'),
 					'options'	=> array(
-						''			=> 'Default',
-						'fixed'		=> 'Fixed (covers content)',
-						'sliding'	=> 'Sliding (under content)',
-						'stick'		=> 'Stick to bottom if content is too short',
+						''			=> __('Default', 'mfn-opts'),
+						'fixed'		=> __('Fixed (covers content)', 'mfn-opts'),
+						'sliding'	=> __('Sliding (under content)', 'mfn-opts'),
+						'stick'		=> __('Stick to bottom if content is too short', 'mfn-opts'),
 					),
 				),
 					
@@ -2657,9 +2681,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Copyright & Social Bar', 'mfn-opts'),
 					'options' 	=> array(
-						'' 			=> 'Default',
-						'center' 	=> 'Center',
-						'1' 		=> 'Hide Copyright & Social Bar'
+						'' 			=> __('Default', 'mfn-opts'),
+						'center' 	=> __('Center', 'mfn-opts'),
+						'1' 		=> __('Hide Copyright & Social Bar', 'mfn-opts')
 					),
 				),
 					
@@ -2676,10 +2700,10 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type'		=> 'select',
 					'title'		=> __('Back to Top button', 'mfn-opts'),
 					'options'	=> array(
-						''				=> 'Default | in Copyright area',
-						'sticky'		=> 'Sticky',
-						'sticky scroll'	=> 'Sticky show on scroll',
-						'hide'			=> 'Hide',
+						''				=> __('Default | in Copyright area', 'mfn-opts'),
+						'sticky'		=> __('Sticky', 'mfn-opts'),
+						'sticky scroll'	=> __('Sticky show on scroll', 'mfn-opts'),
+						'hide'			=> __('Hide', 'mfn-opts'),
 					),
 				),
 
@@ -2803,10 +2827,10 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Top Bar Icons', 'mfn-opts'),
 					'options' 	=> array(
-						'left' 		=> 'Left',
-						'center'	=> 'Center',
-						'right'		=> 'Right',
-						'hide'		=> 'Hide Icons & Action Button',
+						'left' 		=> __('Left', 'mfn-opts'),
+						'center'	=> __('Center', 'mfn-opts'),
+						'right'		=> __('Right', 'mfn-opts'),
+						'hide'		=> __('Hide Icons & Action Button', 'mfn-opts'),
 					),
 				),
 
@@ -2832,8 +2856,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Hover Effects', 'mfn-opts'),
 					'options' 	=> array(
-						'' 			=> 'Always Enabled',
-						'tablet'	=> 'Enabled on Desktop only'
+						'' 			=> __('Always Enabled', 'mfn-opts'),
+						'tablet'	=> __('Enabled on Desktop only', 'mfn-opts')
 					),
 				),
 				
@@ -2842,8 +2866,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Section | Background Image', 'mfn-opts'),
 					'options' 	=> array(
-						'' 			=> 'Always Show',
-						'tablet'	=> 'Show on Desktop only'
+						'' 			=> __('Always Show', 'mfn-opts'),
+						'tablet'	=> __('Show on Desktop only', 'mfn-opts')
 					),
 				),
 					
@@ -2853,8 +2877,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Section | Parallax', 'mfn-opts'),
 					'desc' 		=> __('Works only with <b>Translate3d</b> parallax. May run slowly on older devices', 'mfn-opts'),
 					'options' 	=> array(
-						0 	=> 'Disable on mobile',
-						1	=> 'Enable on mobile',
+						0 	=> __('Disable on mobile', 'mfn-opts'),
+						1	=> __('Enable on mobile', 'mfn-opts'),
 					),
 				),
 	
@@ -3129,9 +3153,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Parallax | Plugin', 'mfn-opts'),
 					'options' 	=> array(
-						'translate3d' 	=> 'Translate3d',
-						'enllax' 		=> 'Enllax',
-						'stellar' 		=> 'Stellar | old',
+						'translate3d' 	=> __('Translate3d', 'mfn-opts'),
+						'enllax' 		=> __('Enllax', 'mfn-opts'),
+						'stellar' 		=> __('Stellar | old', 'mfn-opts'),
 					),
 				),
 					
@@ -3149,9 +3173,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Scroll | Plugin', 'mfn-opts'),
 					'desc' 		=> __('Nice Scroll do not support Ctrl+F properly', 'mfn-opts'),
 					'options' 	=> array(
-						'1' 		=> 'Nice Scroll | Scrollbar with iOS/mobile style',
-						'smooth' 	=> 'Smooth Scroll',
-						'0' 		=> 'Default Browser Scroll',
+						'1' 		=> __('Nice Scroll | Scrollbar with iOS/mobile style', 'mfn-opts'),
+						'smooth' 	=> __('Smooth Scroll', 'mfn-opts'),
+						'0' 		=> __('Default Browser Scroll', 'mfn-opts'),
 					),
 				),
 					
@@ -3177,9 +3201,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'checkbox',
 					'title' 	=> __('Pretty Photo | Options', 'mfn-opts'),
 					'options' 	=> array(
-						'disable'			=> 'Disable<span>Disable prettyPhoto if you use other plugin</span>',
-						'disable-mobile'	=> 'Disable on Mobile only',
-						'title'				=> 'Show image alt text above prettyPhoto frame',
+						'disable'			=> __('Disable<span>Disable prettyPhoto if you use other plugin</span>', 'mfn-opts'),
+						'disable-mobile'	=> __('Disable on Mobile only', 'mfn-opts'),
+						'title'				=> __('Show image alt text above prettyPhoto frame', 'mfn-opts'),
 					),
 				),
 
@@ -3188,12 +3212,12 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Pretty Photo | Style', 'mfn-opts'), 
 					'options' 	=> array(
-						'pp_default' 	=> 'Default',
-						'light_rounded' => 'Light Rounded',
-						'dark_rounded'	=> 'Dark Rounded',
-						'light_square' 	=> 'Light Square',
-						'dark_square'	=> 'Dark Square',
-						'facebook'		=> 'Facebook',
+						'pp_default' 	=> __('Default', 'mfn-opts'),
+						'light_rounded' => __('Light Rounded', 'mfn-opts'),
+						'dark_rounded'	=> __('Dark Rounded', 'mfn-opts'),
+						'light_square' 	=> __('Light Square', 'mfn-opts'),
+						'dark_square'	=> __('Dark Square', 'mfn-opts'),
+						'facebook'		=> __('Facebook', 'mfn-opts'),
 					),
 				),
 				
@@ -3264,8 +3288,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Revolution Slider', 'mfn-opts'),
 					'options' 	=> array(
-						''			=> 'Bundled with a Theme',
-						'disable'	=> 'I have purchased an extra licence on CodeCanyon',
+						''			=> __('Bundled with a Theme', 'mfn-opts'),
+						'disable'	=> __('I have purchased an extra licence on CodeCanyon', 'mfn-opts'),
 					),
 				),
 					
@@ -3274,8 +3298,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Layer Slider', 'mfn-opts'),
 					'options' 	=> array(
-						''			=> 'Bundled with a Theme',
-						'disable'	=> 'I have purchased an extra licence on CodeCanyon',
+						''			=> __('Bundled with a Theme', 'mfn-opts'),
+						'disable'	=> __('I have purchased an extra licence on CodeCanyon', 'mfn-opts'),
 					),
 				),
 					
@@ -3284,8 +3308,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Visual Composer', 'mfn-opts'),
 					'options' 	=> array(
-						''			=> 'Bundled with a Theme',
-						'disable'	=> 'I have purchased an extra licence on CodeCanyon',
+						''			=> __('Bundled with a Theme', 'mfn-opts'),
+						'disable'	=> __('I have purchased an extra licence on CodeCanyon', 'mfn-opts'),
 					),
 				),
 						

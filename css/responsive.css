@@ -889,6 +889,8 @@ html,body{overflow-x:hidden}
 	.single-photo-wrapper .share_wrapper { float: none; padding: 5px 15px 0; margin-bottom:20px; width: auto;}
 	.no-share-mobile .single-photo-wrapper .share_wrapper { display:none;}
 	
+	.wp-caption-text.hide-mobile{display:none}
+	
 	/* Post nav */
 	.post-nav { padding: 10px 10px 4px 90px; }
 	

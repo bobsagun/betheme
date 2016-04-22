@@ -47,6 +47,11 @@ blockquote:after{content:"";width:55px;height:40px;background:url(../images/bloc
 .image_frame a,.wp-caption a{display:block}
 
 .wp-caption-text{display:block;text-align:center;margin:0;padding:10px 0 5px;line-height:normal}
+.wp-caption-text.hide{display:none}
+
+.if-caption-on .image_frame{position:relative}
+.if-caption-on .wp-caption-text{background:rgba(0,0,0,.5);border-radius:3px;bottom:17px;color:rgba(255,255,255,.7);left:17px;padding:5px 10px!important;position:absolute}
+
 .image_frame.no_border .wp-caption-text,.if-zoom .image_frame:not(.has_border) .wp-caption-text{padding:10px 0;}
 .the_content_wrapper .image_frame,.the_content_wrapper .wp-caption{margin-bottom:20px}
 .the_content_wrapper .wp-caption.alignnone,.the_content_wrapper .wp-caption.aligncenter{clear:both}
@@ -233,10 +238,10 @@ select,textarea{padding:10px;outline:none;margin:0;width:230px;max-width:100%;di
 ul{list-style:none outside}
 ol{list-style:decimal}
 
-.column_column ul,.column_column ol,.column_visual ul,.column_visual ol,.mfn-acc ul,.mfn-acc ol,.ui-tabs-panel ul,.ui-tabs-panel ol,.the_content_wrapper ul,.the_content_wrapper ol{margin:0 0 15px 30px}
-.column_column ul li,.column_visual ul li,.mfn-acc ul li,.ui-tabs-panel ul li,.the_content_wrapper ul li{list-style:disc outside}
-.column_column ul li,.column_column ol li,.column_visual ul li,.column_visual ol li,.mfn-acc ul li,.mfn-acc ol li,.ui-tabs-panel ul li,.ui-tabs-panel ol li,.the_content_wrapper ul li,.the_content_wrapper ol li{margin-bottom:10px}
-.column_column ul li ul,.column_column ol li ol,.column_visual ul li ul,.column_visual ol li ol,.mfn-acc ul li ul,.mfn-acc ol li ol,.ui-tabs-panel ul li ul,.ui-tabs-panel ol li ol,.the_content_wrapper ul li ul,.the_content_wrapper ol li ol{margin-top:10px;margin-bottom:0}
+.column_column ul,.column_column ol,.column_helper ul,.column_helper ol,.column_visual ul,.column_visual ol,.mfn-acc ul,.mfn-acc ol,.ui-tabs-panel ul,.ui-tabs-panel ol,.the_content_wrapper ul,.the_content_wrapper ol{margin:0 0 15px 30px}
+.column_column ul li,.column_helper ul li,.column_visual ul li,.mfn-acc ul li,.ui-tabs-panel ul li,.the_content_wrapper ul li{list-style:disc outside}
+.column_column ul li,.column_column ol li,.column_helper ul li,.column_helper ol li,.column_visual ul li,.column_visual ol li,.mfn-acc ul li,.mfn-acc ol li,.ui-tabs-panel ul li,.ui-tabs-panel ol li,.the_content_wrapper ul li,.the_content_wrapper ol li{margin-bottom:10px}
+.column_column ul li ul,.column_column ol li ol,.column_helper ul li ul,.column_helper ol li ol,.column_visual ul li ul,.column_visual ol li ol,.mfn-acc ul li ul,.mfn-acc ol li ol,.ui-tabs-panel ul li ul,.ui-tabs-panel ol li ol,.the_content_wrapper ul li ul,.the_content_wrapper ol li ol{margin-top:10px;margin-bottom:0}
 
 ul.list_mixed,ul.list_check,ul.list_star,ul.list_idea{margin-left:0}
 ul.list_mixed li,ul.list_check li,ul.list_star li,ul.list_idea li{margin-bottom:20px;position:relative;list-style:none;padding-left:50px;margin-left:0}

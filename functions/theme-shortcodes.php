@@ -4460,6 +4460,7 @@ if( ! function_exists( 'sc_testimonials_list' ) )
 			'category' 	=> '',
 			'orderby' 	=> 'menu_order',
 			'order' 	=> 'ASC',
+			'style' 	=> '',	// [default], quote
 		), $attr));
 		
 		$args = array(
@@ -4473,11 +4474,18 @@ if( ! function_exists( 'sc_testimonials_list' ) )
 		
 		$query_tm = new WP_Query();
 		$query_tm->query( $args );
+		
+		// class
+		if( $style ){
+			$class = 'style_'. $style;
+		} else {
+			$class = '';
+		}
 
 		$output = '';
 		if ($query_tm->have_posts())
 		{
-			$output .= '<div class="testimonials_list">';
+			$output .= '<div class="testimonials_list '. $class .'">';
 			
 			while ($query_tm->have_posts())
 			{
@@ -4501,17 +4509,27 @@ if( ! function_exists( 'sc_testimonials_list' ) )
 					
 					$output .= '<div class="desc">';
 					
+						if( $style == 'quote' ){
+							$output .= '<div class="blockquote clearfix">';
+								$output .= '<blockquote>'. get_the_content() .'</blockquote>';
+							$output .= '</div>';
+							$output .= '<hr class="hr_color" />';
+						}
+						
 						$output .= '<h4>';
 							if( $link = get_post_meta(get_the_ID(), 'mfn-post-link', true) ) $output .= '<a target="_blank" href="'. $link .'">';
 								$output .= get_post_meta(get_the_ID(), 'mfn-post-author', true);
 							if( $link ) $output .= '</a>';
 						$output .= '</h4>';
-						
+	
 						$output .= '<p class="subtitle">'. get_post_meta(get_the_ID(), 'mfn-post-company', true) .'</p>';
-						$output .= '<hr class="hr_color" />';
-						$output .= '<div class="blockquote">';
-							$output .= '<blockquote>'. get_the_content() .'</blockquote>';
-						$output .= '</div>';
+
+						if( $style != 'quote' ){
+							$output .= '<hr class="hr_color" />';
+							$output .= '<div class="blockquote">';
+								$output .= '<blockquote>'. get_the_content() .'</blockquote>';
+							$output .= '</div>';
+						}
 						
 					$output .= '</div>';
 					

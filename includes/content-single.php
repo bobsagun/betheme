@@ -152,9 +152,17 @@ $translate['readmore'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-r
 					
 					<?php if( ! post_password_required() ): ?>
 						<div class="image_frame scale-with-grid <?php if( ! mfn_opts_get('blog-single-zoom') ) echo 'disabled'; ?>">
+						
 							<div class="image_wrapper">
 								<?php echo mfn_post_thumbnail( get_the_ID() ); ?>
 							</div>
+							
+							<?php 
+								if( $caption = get_post( get_post_thumbnail_id() )->post_excerpt ){
+							    	echo '<p class="wp-caption-text '. mfn_opts_get( 'featured-image-caption' ) .'">'. $caption .'</p>';
+								}
+							?>
+
 						</div>
 					<?php endif; ?>
 					
@@ -262,9 +270,15 @@ $translate['readmore'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-r
 										} else {
 	
 											echo '<div class="image_frame scale-with-grid">';
+											
 												echo '<div class="image_wrapper">';
 													echo mfn_post_thumbnail( get_the_ID(), 'portfolio' );
 												echo '</div>';
+												
+												if( $caption = get_post( get_post_thumbnail_id() )->post_excerpt ){
+													echo '<p class="wp-caption-text '. mfn_opts_get( 'featured-image-caption' ) .'">'. $caption .'</p>';
+												}
+												
 											echo '</div>';
 											
 										}
