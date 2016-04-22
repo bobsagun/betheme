@@ -1380,7 +1380,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'content',
 						'type' 		=> 'textarea',
 						'title' 	=> __('Content', 'mfn-opts'),
-						'desc' 		=> __('Shortcodes and HTML tags allowed.', 'mfn-opts'),
+						'desc' 		=> __('Shortcodes and HTML tags allowed. Some plugin\'s shortcodes work only in WordPress editor', 'mfn-opts'),
 						'class' 	=> 'full-width sc',
 						'validate' 	=> 'html',
 					),
@@ -1829,7 +1829,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'color_top',
 						'type' 		=> 'text',
 						'title' 	=> __('Color Top', 'mfn-opts'),
-						'desc' 		=> __('Use color name ( blue ) or hex ( #2991D6 )', 'mfn-opts'),
+						'desc' 		=> __('Use color name ( red ) or hex ( #ff0000 )', 'mfn-opts'),
 						'class' 	=> 'small-text',
 					),
 						
@@ -4954,6 +4954,16 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title' 	=> __('Order', 'mfn-opts'),
 						'options' 	=> array('ASC' => 'Ascending', 'DESC' => 'Descending'),
 						'std' 		=> 'DESC'
+					),
+						
+					array(
+						'id' 		=> 'style',
+						'type' 		=> 'select',
+						'title'		=> __('Style', 'mfn-opts'),
+						'options' 	=> array(
+							'' 			=> __('Default','mfn-opts'),
+							'quote' 	=> __('Quote above the author','mfn-opts'),
+						),
 					),
 
 					array(

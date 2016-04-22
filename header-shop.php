@@ -116,7 +116,7 @@
 				}
 				
 					
-				if( is_product() || ! mfn_slider( $shop_id ) || ( is_array( $subheader_advanced ) && isset( $subheader_advanced['slider-show'] ) ) ){
+				if( ! mfn_slider_isset( $shop_id ) || is_product() || ( is_array( $subheader_advanced ) && isset( $subheader_advanced['slider-show'] ) ) ){
 					
 					// Subheader | Options
 					$subheader_options = mfn_opts_get( 'subheader' );

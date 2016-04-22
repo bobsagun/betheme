@@ -20,8 +20,9 @@ $translate['readmore'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-r
 <div id="Content">
 	<div class="content_wrapper clearfix">
 
+	
 		<!-- .sections_group -->
-		<div class="sections_group" style="width:100% !important;">
+		<div class="sections_group">
 		
 			<div class="section">
 				<div class="section_wrapper clearfix">
@@ -109,6 +110,17 @@ $translate['readmore'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-r
 			</div>
 			
 		</div>
+		
+		
+		<!-- .four-columns - sidebar -->
+		<?php if( is_active_sidebar( 'mfn-search' ) ):  ?>
+			<div class="sidebar four columns">
+				<div class="widget-area clearfix <?php mfn_opts_show( 'sidebar-lines' ); ?>">
+					<?php dynamic_sidebar( 'mfn-search' ); ?>
+				</div>
+			</div>
+		<?php endif; ?>
+		
 
 	</div>
 </div>

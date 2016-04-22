@@ -253,56 +253,87 @@ if( ! function_exists( 'mfn_layout_ID' ) )
 
 
 /* ---------------------------------------------------------------------------
- * Get Slider
+ * Slider | Isset
+ * --------------------------------------------------------------------------- */
+if( ! function_exists( 'mfn_slider_isset' ) )
+{
+	function mfn_slider_isset( $id = false ){
+		
+		$slider = false;
+				
+		// Global Slider Shortcode
+		if( is_page() && mfn_opts_get( 'slider-shortcode' ) ){
+			return 'global';
+		}
+		
+		if( $id || is_home() || is_category() || is_tax() || get_post_type() == 'page' || ( get_post_type( mfn_ID() ) == 'portfolio' && get_post_meta( mfn_ID(), 'mfn-post-slider-header', true ) ) ){
+				
+			if( ! $id ) $id = mfn_ID(); // do NOT move it before IF
+			
+			if( get_post_meta( $id, 'mfn-post-slider', true ) ){
+				
+				// Revolution Slider
+				$slider = 'rev';
+				
+			} elseif( get_post_meta( $id, 'mfn-post-slider-layer', true ) ) {
+				
+				// Layer Slider
+				$slider = 'layer';
+				
+			} elseif( get_post_meta( $id, 'mfn-post-slider-shortcode', true ) ) {
+				
+				// Custom Slider
+				$slider = 'custom';
+				
+			}
+			
+		}
+
+		return $slider;
+	}
+}
+
+
+/* ---------------------------------------------------------------------------
+ * Slider | Get
  * --------------------------------------------------------------------------- */
 if( ! function_exists( 'mfn_slider' ) )
 {
 	function mfn_slider( $id = false ){
 		
 		$slider = false;
+		$slider_type = mfn_slider_isset( $id );
 		
+		if( ! $id ) $id = mfn_ID(); // do NOT move it before IF
 		
-		// Global Slider Shortcode
-		if( is_page() && $slider_global = mfn_opts_get('slider-shortcode') ){
+		switch ($slider_type) {
 			
-			$slider = '<div class="mfn-main-slider" id="mfn-global-slider">';
-				$slider .= do_shortcode( $slider_global );
-			$slider .= '</div>';
-			
-			return $slider;
-		}
-
-		
-		if( $id || is_home() || is_category() || is_tax() || get_post_type() == 'page' || ( get_post_type( mfn_ID() ) == 'portfolio' && get_post_meta( mfn_ID(), 'mfn-post-slider-header', true ) ) ){
-				
-			if( ! $id ) $id = mfn_ID(); // do NOT move it before IF
-			
-			if( $slider_key = get_post_meta( $id, 'mfn-post-slider', true ) ){
-				
-				// Revolution Slider
-				$slider = '<div class="mfn-main-slider" id="mfn-rev-slider">';
-					$slider .= do_shortcode('[rev_slider '. $slider_key .']');
+			case 'global':
+		        $slider = '<div class="mfn-main-slider" id="mfn-global-slider">';
+					$slider .= do_shortcode( mfn_opts_get('slider-shortcode') );
 				$slider .= '</div>';
-				
-			} elseif( $slider_key = get_post_meta( $id, 'mfn-post-slider-layer', true ) ) {
-				
-				// Layer Slider
-				$slider = '<div class="mfn-main-slider" id="mfn-layer-slider">';
-					$slider .= do_shortcode('[layerslider id="'. $slider_key .'"]');
+		        break;
+		        
+			case 'rev':
+		        $slider = '<div class="mfn-main-slider" id="mfn-rev-slider">';
+					$slider .= do_shortcode('[rev_slider '. get_post_meta( $id, 'mfn-post-slider', true ) .']');
 				$slider .= '</div>';
-				
-			} elseif( $slider_sc = get_post_meta( $id, 'mfn-post-slider-shortcode', true ) ) {
-				
-				// Custom Slider
-				$slider = '<div class="mfn-main-slider" id="mfn-custom-slider">';
-					$slider .= do_shortcode( $slider_sc );
+		        break;
+		        
+			case 'layer':
+		        $slider = '<div class="mfn-main-slider" id="mfn-layer-slider">';
+					$slider .= do_shortcode('[layerslider id="'. get_post_meta( $id, 'mfn-post-slider-layer', true ) .'"]');
 				$slider .= '</div>';
-				
-			}
-			
+		        break;
+		        
+			case 'custom':
+		        $slider = '<div class="mfn-main-slider" id="mfn-custom-slider">';
+					$slider .= do_shortcode( get_post_meta( $id, 'mfn-post-slider-shortcode', true ) );
+				$slider .= '</div>';
+		        break;
+		        
 		}
 		
-
 		return $slider;
 	}
 }
@@ -1273,6 +1304,7 @@ if( ! function_exists( 'mfn_post_thumbnail' ) )
 					if( $rev_slider ){
 						// Revolution Slider
 						$output .= do_shortcode('[rev_slider '. $rev_slider .']');
+						
 					} elseif( $lay_slider ){
 						// Layer Slider
 						$output .= do_shortcode('[layerslider id="'. $lay_slider .'"]');

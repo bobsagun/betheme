@@ -139,7 +139,7 @@
 						echo '</div>';
 						
 						
-					} elseif( ! mfn_slider() || ( is_array( $subheader_advanced ) && isset( $subheader_advanced['slider-show'] ) ) ){
+					} elseif( ! mfn_slider_isset() || ( is_array( $subheader_advanced ) && isset( $subheader_advanced['slider-show'] ) ) ){
 						// Page title -------------------------
 						
 						

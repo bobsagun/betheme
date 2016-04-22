@@ -55,8 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		#Top_bar .menu > li > ul.mfn-megamenu > li:last-child > ul{ border: 0; }
 		#Top_bar .menu > li > ul.mfn-megamenu > li > ul li { width: auto; }
 		
-		#Top_bar .menu > li > ul.mfn-megamenu a.mfn-megamenu-title { text-transform: uppercase; font-weight:400;}
-		#Top_bar .menu > li > ul.mfn-megamenu a.mfn-megamenu-title:hover { background:none;}
+		#Top_bar .menu > li > ul.mfn-megamenu a.mfn-megamenu-title { text-transform: uppercase; font-weight:400; background:none;}
 	
 		#Top_bar .menu > li > ul.mfn-megamenu a .menu-arrow { display: none; }
 			

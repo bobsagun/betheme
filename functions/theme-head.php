@@ -821,7 +821,18 @@ if( ! function_exists( 'mfn_sidebar_classes' ) )
 			}
 		}
 		
-		// Page Template: Blank Page, Under Construction
+		
+		// Page | Search
+		if( is_search() ){
+			if( is_active_sidebar( 'mfn-search' ) ){
+				$classes = ' with_aside aside_right';
+			} else {
+				$classes = false;
+			}
+			
+		}
+		
+		// Page | Blank Page, Under Construction
 		if( is_page_template( 'template-blank.php' ) || is_page_template( 'under-construction.php' ) ){
 			$classes = false;
 		}
@@ -846,7 +857,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		
 		
 		// Slider ---------------------------------------------
-		if( mfn_slider() ){
+		if( mfn_slider_isset() ){
 			if( function_exists('is_woocommerce') && is_woocommerce() ){			
 				// do nothing
 			} else {
@@ -931,6 +942,11 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		// Image Frame | Border -------------------------------
 		if( mfn_opts_get('image-frame-border') ){
 			$classes[] = 'if-border-'. mfn_opts_get('image-frame-border');
+		}
+		
+		// Image Frame | Caption -------------------------------
+		if( mfn_opts_get('image-frame-caption') ){
+			$classes[] = 'if-caption-on';
 		}
 		
 		
@@ -1058,17 +1074,20 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		
 		// Menu | Options ---------------------------
 		$menu_options = mfn_opts_get( 'menu-options' );
-		if( is_array( $menu_options ) && isset( $menu_options['align-right'] ) ){
-			$classes[] = 'menuo-right';
+		if( is_array( $menu_options ) && isset( $menu_options['submenu-active'] ) ){
+			$classes[] = 'menuo-sub-active';
 		}
 		if( is_array( $menu_options ) && isset( $menu_options['menu-arrows'] ) ){
 			$classes[] = 'menuo-arrows';
 		}
+		if( is_array( $menu_options ) && isset( $menu_options['last'] ) ){
+			$classes[] = 'menuo-last';
+		}
 		if( is_array( $menu_options ) && isset( $menu_options['hide-borders'] ) ){
 			$classes[] = 'menuo-no-borders';
 		}
-		if( is_array( $menu_options ) && isset( $menu_options['last'] ) ){
-			$classes[] = 'menuo-last';
+		if( is_array( $menu_options ) && isset( $menu_options['align-right'] ) ){
+			$classes[] = 'menuo-right';
 		}
 		
 		

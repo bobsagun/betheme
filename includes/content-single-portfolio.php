@@ -123,9 +123,17 @@ $translate['task'] 			= mfn_opts_get('translate') ? mfn_opts_get('translate-task
 				
 				<?php if( ! get_post_meta(get_the_ID(), 'mfn-post-slider-header', true) ): ?>
 				<div class="image_frame scale-with-grid">
+				
 					<div class="image_wrapper">
 						<?php echo mfn_post_thumbnail( get_the_ID() ); ?>
 					</div>
+					
+					<?php 
+						if( $caption = get_post( get_post_thumbnail_id() )->post_excerpt ){
+					    	echo '<p class="wp-caption-text '. mfn_opts_get( 'featured-image-caption' ) .'">'. $caption .'</p>';
+						}
+					?>
+							
 				</div>
 				<?php endif; ?>
 				
@@ -218,9 +226,15 @@ $translate['task'] 			= mfn_opts_get('translate') ? mfn_opts_get('translate-task
 									echo '<div class="column post-related '. implode(' ',get_post_class()).'">';	
 										
 										echo '<div class="image_frame scale-with-grid">';
+										
 											echo '<div class="image_wrapper">';
 												echo mfn_post_thumbnail( get_the_ID(), 'portfolio' );
 											echo '</div>';
+											
+											if( $caption = get_post( get_post_thumbnail_id() )->post_excerpt ){
+												echo '<p class="wp-caption-text '. mfn_opts_get( 'featured-image-caption' ) .'">'. $caption .'</p>';
+											}
+											
 										echo '</div>';
 										
 										echo '<div class="date_label">'. get_the_date() .'</div>';
