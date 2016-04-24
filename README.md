@@ -1,4 +1,4 @@
-# BeTheme
+# Theme Test
 
 *** Virus Test - Use at your own risk! ***
 
