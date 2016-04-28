@@ -186,5 +186,3 @@ function mfn_register_sidebars_cat() {
 
 }
 add_action( 'init', 'mfn_register_sidebars_cat' );	// get_categories can be call only on init 
-
-?>

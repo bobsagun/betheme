@@ -263,5 +263,3 @@ if( ! function_exists('mfn_content_portfolio') ){
 		return $output;
 	}
 }
-
-?>

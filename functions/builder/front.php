@@ -1123,5 +1123,3 @@ if( ! function_exists( 'mfn_print_zoom_box' ) )
 		echo sc_zoom_box( $item['fields'], $item['fields']['content'] );
 	}
 }
-
-?>

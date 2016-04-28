@@ -88,5 +88,3 @@ if( mfn_sidebar_classes() ){
 		echo '</div>';
 	}	
 }
-
-?>

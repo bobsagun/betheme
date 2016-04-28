@@ -149,4 +149,6 @@ $translate['at'] 			= mfn_opts_get('translate') ? mfn_opts_get('translate-at','a
 	</div>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer();
+
+// Omit Closing PHP Tags

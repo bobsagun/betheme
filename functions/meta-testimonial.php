@@ -211,5 +211,3 @@ function mfn_testimonial_save_data($post_id) {
 	}
 }
 add_action('save_post', 'mfn_testimonial_save_data');
-
-?>

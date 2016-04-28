@@ -125,4 +125,6 @@ $translate['readmore'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-r
 	</div>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer();
+
+// Omit Closing PHP Tags

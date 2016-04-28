@@ -19,8 +19,6 @@ $css_class .= $this->getCSSAnimation($css_animation);
 // $output .= '<div class="'.$css_class.'">'.wpb_js_remove_wpautop($content, true).'</div>'.$this->endBlockComment('toggle')."\n";
 
 
-
-
 $output .= '<div class="faq">';
 	$output .= '<div class="mfn-acc faq_wrapper">';
 
@@ -37,6 +35,4 @@ $output .= '<div class="faq">';
 $output .= '</div>'."\n";
 
 
-
-	
 echo $output;

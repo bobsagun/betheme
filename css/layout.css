@@ -1127,6 +1127,7 @@ body:not(.template-slider) #Header{min-height:250px}
 	.widget_mfn_menu ul li ul li a{padding-left:20px}
 	.widget_mfn_menu ul li ul li a:before{content:"-";margin-right:5px}
 	.widget_mfn_menu ul li ul li ul li a{padding-left:40px}
+	.widget_mfn_menu ul li ul li ul li ul li a{padding-left:60px}
 	
 	.widget_mfn_menu ul.submenus-hover li ul{overflow:hidden;max-height:0;-webkit-transition:max-height 1s ease-in-out;-moz-transition:max-height 1s ease-in-out;-o-transition:max-height 1s ease-in-out;transition:max-height 1s ease-in-out}
 	.widget_mfn_menu ul.submenus-hover li.current_page_item > ul,.widget_mfn_menu ul.submenus-hover li:hover > ul{max-height:10000px}

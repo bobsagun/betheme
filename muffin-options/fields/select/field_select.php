@@ -73,4 +73,3 @@ class MFN_Options_select extends MFN_Options{
 	}
 	
 }
-?>

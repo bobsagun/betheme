@@ -775,5 +775,3 @@ function mfn_fonts( $type = false )
 		return $fonts;
 	}
 }
-
-?>

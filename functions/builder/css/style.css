@@ -44,6 +44,8 @@
 
 /* Popup ----------------------------------------------------------------------------- */
 
+body.mfn-popup-open { overflow:hidden;}
+
 .mfn-popup { display:none; position:fixed; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,.7); z-index:9991;}
 .mfn-popup-inside { position:fixed; left:50%; top:50%; width:1205px; height:656px; margin-left:-602px; margin-top:-328px; z-index: 9992; background:#fff;}
 

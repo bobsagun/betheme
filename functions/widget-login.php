@@ -149,4 +149,3 @@ class Mfn_Login_Widget extends WP_Widget {
 		<?php
 	}
 }
-?>

@@ -321,5 +321,3 @@ function mfn_post_save_data($post_id) {
 	}
 }
 add_action('save_post', 'mfn_post_save_data');
-
-?>

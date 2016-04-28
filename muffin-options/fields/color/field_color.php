@@ -3,7 +3,7 @@ class MFN_Options_color extends MFN_Options{
 	
 	/**
 	 * Field Constructor.
-	*/
+	 */
 	function __construct( $field = array(), $value ='', $parent = NULL ){
 		if( is_object($parent) ) parent::__construct($parent->sections, $parent->args, $parent->extra_tabs);
 		$this->field = $field;
@@ -12,7 +12,7 @@ class MFN_Options_color extends MFN_Options{
 	
 	/**
 	 * Field Render Function.
-	*/
+	 */
 	function render( $meta = false ){
 
 		$class = ( isset( $this->field['class']) ) ? 'class="'.$this->field['class'].'" ' : '';
@@ -32,10 +32,9 @@ class MFN_Options_color extends MFN_Options{
 	
 	/**
 	 * Enqueue Function.
-	*/
+	 */
 	function enqueue(){
 		wp_enqueue_script('mfn-opts-field-color-js', MFN_OPTIONS_URI.'fields/color/field_color.js', array('jquery', 'farbtastic'), time(), true);
 	}
 	
 }
-?>

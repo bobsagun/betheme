@@ -226,5 +226,3 @@ if( ! function_exists('mfn_content_post') ){
 		return $output;
 	}
 }
-
-?>

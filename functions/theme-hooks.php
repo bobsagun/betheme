@@ -54,6 +54,3 @@ function mfn_hook_bottom()
 	echo '<!-- mfn_hook_bottom -->';
 }
 add_action( 'mfn_hook_bottom', 'mfn_hook_bottom' );
-
-
-?>

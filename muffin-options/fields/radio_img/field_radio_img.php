@@ -42,4 +42,3 @@ class MFN_Options_radio_img extends MFN_Options{
 	}
 	
 }
-?>

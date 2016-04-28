@@ -20,10 +20,17 @@ function mfn_page_meta_add(){
 	// Custom menu ------------------------------
 	$aMenus = array( 0 => '-- Default --' );
 	$oMenus = get_terms( 'nav_menu', array( 'hide_empty' => false ) );
+	
 
 	if( is_array($oMenus) ){
+
 		foreach( $oMenus as $menu ){
 			$aMenus[$menu->term_id] = $menu->name;
+
+			$term_trans_id = apply_filters( 'wpml_object_id', $menu->term_id, 'nav_menu', false );
+			if( $term_trans_id != $menu->term_id ){
+				unset( $aMenus[$menu->term_id] );
+			}
 		}
 	}
 	
@@ -321,5 +328,3 @@ function mfn_page_save_data($post_id) {
 	}
 }
 add_action('save_post', 'mfn_page_save_data');
-
-?>

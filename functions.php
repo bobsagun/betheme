@@ -12,7 +12,7 @@ define( 'THEME_DIR', get_template_directory() );
 define( 'THEME_URI', get_template_directory_uri() );
 
 define( 'THEME_NAME', 'betheme' );
-define( 'THEME_VERSION', '12.8' );
+define( 'THEME_VERSION', '12.9' );
 
 define( 'LIBS_DIR', THEME_DIR. '/functions' );
 define( 'LIBS_URI', THEME_URI. '/functions' );
@@ -167,5 +167,3 @@ if( ! mfn_opts_get( 'plugin-visual' ) ){
 		vc_set_as_theme();
 	}
 }
-
-?>

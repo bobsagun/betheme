@@ -442,5 +442,3 @@ function mfn_wp_setup_nav_menu_item($menu_item) {
 	$menu_item->description = apply_filters( 'nav_menu_description', $menu_item->post_content );
 	return $menu_item;
 }
-
-?>

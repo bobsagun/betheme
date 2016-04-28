@@ -64,4 +64,3 @@ class MFN_Options_checkbox extends MFN_Options{
 	}
 	
 }
-?>

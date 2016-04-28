@@ -29,4 +29,3 @@ if( $mfn_wp_version >= 3.9 ){
 	}
 	
 }
-?>

@@ -318,5 +318,3 @@ function mfn_layout_save_data($post_id) {
 	}
 }
 add_action('save_post', 'mfn_layout_save_data');
-
-?>

@@ -5050,4 +5050,3 @@ if( ! mfn_opts_get( 'sc-gallery-disable' ) ){
 	remove_shortcode( 'gallery' );
 	add_shortcode( 'gallery' , 'sc_gallery' );
 }
-?>

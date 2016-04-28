@@ -42,4 +42,3 @@ class MFN_Options_switch extends MFN_Options{
 	}
 	
 }
-?>

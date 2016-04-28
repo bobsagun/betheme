@@ -20,4 +20,3 @@ class MFN_Options_info extends MFN_Options{
 	}
 	
 }
-?>
