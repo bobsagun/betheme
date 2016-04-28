@@ -744,4 +744,3 @@ if ( ! class_exists('MFN_Options') ){
 	}
 	
 }
-?>

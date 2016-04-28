@@ -3,29 +3,17 @@ class MFN_Options_color_gradient extends MFN_Options{
 	
 	/**
 	 * Field Constructor.
-	 *
-	 * Required - must call the parent constructor, then assign field and value to vars, and obviously call the render field function
-	 *
-	 * @since MFN_Options 1.0
-	*/
+	 */
 	function __construct($field = array(), $value ='', $parent){
-		
 		parent::__construct($parent->sections, $parent->args, $parent->extra_tabs);
 		$this->field = $field;
-		$this->value = $value;
-		//$this->render();
-		
-	}//function
-	
-	
+		$this->value = $value;		
+	}
+
 	
 	/**
-	 * Field Render Function.
-	 *
-	 * Takes the vars and outputs the HTML for the field in the settings
-	 *
-	 * @since MFN_Options 1.0
-	*/
+	 * Field Render Function
+	 */
 	function render(){
 		
 		$class = (isset($this->field['class']))?$this->field['class']:'';
@@ -46,30 +34,15 @@ class MFN_Options_color_gradient extends MFN_Options{
 			
 			echo (isset($this->field['desc']) && !empty($this->field['desc']))?' <span class="description">'.$this->field['desc'].'</span>':'';
 
-
-		echo '</div>';
-		
-	}//function
+		echo '</div>';	
+	}
 	
 	
 	/**
-	 * Enqueue Function.
-	 *
-	 * If this field requires any scripts, or css define this function and register/enqueue the scripts/css
-	 *
-	 * @since MFN_Options 1.0
-	*/
+	 * Enqueue Function
+	 */
 	function enqueue(){
-		
-		wp_enqueue_script(
-			'mfn-opts-field-color-js', 
-			MFN_OPTIONS_URI.'fields/color/field_color.js', 
-			array('jquery', 'farbtastic'),
-			time(),
-			true
-		);
-		
-	}//function
+		wp_enqueue_script( 'mfn-opts-field-color-js', MFN_OPTIONS_URI.'fields/color/field_color.js', array('jquery', 'farbtastic'), time(), true );	
+	}
 	
-}//class
-?>
+}

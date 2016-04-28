@@ -78,4 +78,6 @@ if( get_post_meta( get_the_ID(), 'mfn-post-template', true ) == 'builder' ) $cla
 	</div>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer();
+
+// Omit Closing PHP Tags

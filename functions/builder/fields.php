@@ -5277,6 +5277,3 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 		
 	}
 }
-	
-
-?>

@@ -51,4 +51,3 @@ class MFN_Options_sliderbar extends MFN_Options{
 		wp_enqueue_script( 'mfn-opts-field-sliderbar-js', MFN_OPTIONS_URI.'fields/sliderbar/field_sliderbar.js', array('jquery', 'jquery-ui-core', 'jquery-ui-dialog'), time(), true );
 	}
 }
-?>

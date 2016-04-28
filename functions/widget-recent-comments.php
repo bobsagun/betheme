@@ -96,4 +96,3 @@ class Mfn_Recent_Comments_Widget extends WP_Widget {
 		<?php
 	}
 }
-?>

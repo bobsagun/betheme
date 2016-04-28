@@ -398,7 +398,7 @@ function mfnBuilder(){
 	jQuery('.mfn-add-item').click(function(){	
 		
 		// disable background content scrolling & dragging
-		jQuery('body').addClass('modal-open');
+		jQuery('body').addClass('mfn-popup-open');
 		jQuery('#mfn-content').find('.ui-sortable').sortable('disable');
 		
 		jQuery('#mfn-item-add').fadeIn(300);	
@@ -414,7 +414,7 @@ function mfnBuilder(){
 	jQuery('#mfn-item-add .mfn-ph-close').click(function(){
 		
 		// enable background content scrolling & dragging
-		jQuery('body').removeClass('modal-open');
+		jQuery('body').removeClass('mfn-popup-open');
 		jQuery('#mfn-content').find('.ui-sortable').sortable('enable');
 		
 		jQuery('#mfn-item-add').fadeOut(300);
@@ -477,7 +477,7 @@ function mfnBuilder(){
 		jQuery('#mfn-item-add').fadeOut(300);
 		
 		// enable background content scrolling & dragging
-		jQuery('body').removeClass('modal-open');
+		jQuery('body').removeClass('mfn-popup-open');
 		jQuery('#mfn-content').find('.ui-sortable').sortable('enable');
 		
 		// parent
@@ -602,7 +602,7 @@ function mfnBuilder(){
 
 		
 		// disable background content scrolling & dragging
-		jQuery('body').addClass('modal-open');
+		jQuery('body').addClass('mfn-popup-open');
 		jQuery('#mfn-content').find('.ui-sortable').sortable('disable');
 		jQuery(this).closest('.mfn-row').addClass('editing');
 		
@@ -677,7 +677,7 @@ function mfnBuilder(){
 
 	    
 		// Background Scrolling & Dragging | enable
-		jQuery('body').removeClass('modal-open');
+		jQuery('body').removeClass('mfn-popup-open');
 		jQuery('#mfn-content').find('.ui-sortable').sortable('enable');
 		jQuery(this).closest('.mfn-row').removeClass('editing');
 		

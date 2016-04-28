@@ -97,4 +97,3 @@ class Mfn_Flickr_Widget extends WP_Widget {
 		<?php
 	}
 }
-?>

@@ -221,5 +221,3 @@ function mfn_offer_save_data($post_id) {
 	}
 }
 add_action('save_post', 'mfn_offer_save_data');
-
-?>

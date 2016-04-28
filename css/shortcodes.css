@@ -1083,8 +1083,10 @@ ul.portfolio_grid li .image_frame{border:0;margin:0}
 
 /* Testimonials slider --------------------------------------------------------------- */
 .testimonials_slider{position:relative}
-.testimonials_slider a.slider_prev{position:absolute;left:0;top:140px;margin:0}
-.testimonials_slider a.slider_next{position:absolute;right:0;top:140px;margin:0}
+.testimonials_slider a.slider_prev,
+.testimonials_slider a.slider_next{position:absolute;top:140px;z-index:2;margin:0}
+.testimonials_slider a.slider_prev{left:0}
+.testimonials_slider a.slider_next{right:0}
 .testimonials_slider .slider_images{width:100%;height:auto;line-height:0;text-align:center;margin:0 0 30px;position:relative;z-index:2}
 .testimonials_slider .slider_images:before{content:"";display:block;height:100%;width:3000px;position:absolute;left:-1000px;top:0;z-index:1}
 .with_aside .testimonials_slider .slider_images:before{display:none}

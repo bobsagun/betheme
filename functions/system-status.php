@@ -359,4 +359,3 @@ class mfnServerStatus {
 }
 
 $mfnServerStatus = new mfnServerStatus;
-?>

@@ -43,4 +43,3 @@ class MFN_Options_custom extends MFN_Options{
 	}
 	
 }
-?>

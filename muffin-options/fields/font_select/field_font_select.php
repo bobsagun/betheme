@@ -52,4 +52,3 @@ class MFN_Options_font_select extends MFN_Options{
 	}
 	
 }
-?>

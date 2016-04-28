@@ -170,4 +170,6 @@ $translate['item-all'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-i
 	</div>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer();
+
+// Omit Closing PHP Tags

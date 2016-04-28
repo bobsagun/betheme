@@ -30,4 +30,3 @@ class MFN_Options_pages_select extends MFN_Options{
 	}
 	
 }
-?>

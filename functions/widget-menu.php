@@ -196,4 +196,3 @@ class Mfn_Menu_Widget extends WP_Widget {
 		<?php
 	}
 }
-?>

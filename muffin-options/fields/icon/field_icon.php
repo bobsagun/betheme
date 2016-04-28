@@ -493,4 +493,3 @@ class MFN_Options_icon extends MFN_Options{
 	}
 	
 }
-?>

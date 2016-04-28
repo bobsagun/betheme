@@ -91,5 +91,3 @@ function mfn_love( $return = '' ) {
 	global $mfn_love;
 	return $mfn_love->get();
 }
-
-?>

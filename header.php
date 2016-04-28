@@ -204,4 +204,6 @@
 			}
 		?>
 		
-		<?php do_action( 'mfn_hook_content_before' ); ?>
+		<?php do_action( 'mfn_hook_content_before' );
+		
+// Omit Closing PHP Tags

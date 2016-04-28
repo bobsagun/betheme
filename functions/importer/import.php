@@ -547,6 +547,7 @@ class mfnImport {
 								<option value="app2">App 2</option>
 								<option value="aquapark">Aquapark</option>
 								<option value="architect">Architect</option>
+								<option value="architect2">Architect 2</option>
 								<option value="art">Art</option>
 								<option value="asg">ASG</option>
 								<option value="baker">Baker</option>
@@ -735,6 +736,7 @@ class mfnImport {
 								<option value="webdesign">Web Design</option>
 								<option value="webmaster">Webmaster</option>
 								<option value="wedding">Wedding</option>
+								<option value="wedding2">Wedding 2</option>
 								<option value="wine">Wine</option>
 								<option value="xmas">Xmas</option>
 								<option value="yoga">Yoga</option>
@@ -942,4 +944,3 @@ class mfnImport {
 }
 
 $mfn_import = new mfnImport;
-?>

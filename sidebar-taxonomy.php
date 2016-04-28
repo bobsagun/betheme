@@ -37,4 +37,6 @@ if( ! $sidebar ){
 		?>
 	</div>
 </div>
-<?php endif; ?>
+<?php endif;
+
+// Omit Closing PHP Tags

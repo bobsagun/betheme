@@ -24,17 +24,6 @@ $translate['404-btn'] = mfn_opts_get('translate') ? mfn_opts_get('translate-404-
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <?php if( mfn_opts_get('responsive') ) echo '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">'; ?>
 
-<title><?php
-if( mfn_title() ){
-	echo mfn_title();
-} else {
-	global $page, $paged;
-	wp_title( '|', true, 'right' );
-	bloginfo( 'name' );
-	if ( $paged >= 2 || $page >= 2 ) echo ' | ' . sprintf( __( 'Page %s', 'betheme' ), max( $paged, $page ) );
-}
-?></title>
-
 <?php do_action('wp_seo'); ?>
 
 <link rel="shortcut icon" href="<?php mfn_opts_show('favicon-img',THEME_URI .'/images/favicon.ico'); ?>" type="image/x-icon" />	

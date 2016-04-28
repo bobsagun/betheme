@@ -92,4 +92,3 @@ class MFN_Options_tabs extends MFN_Options{
 	}
 	
 }
-?>

@@ -65,4 +65,3 @@ class MFN_Options_text extends MFN_Options{
 	}
 	
 }
-?>

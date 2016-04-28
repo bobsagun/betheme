@@ -1880,5 +1880,3 @@ if( ! function_exists( 'mfn_get_comment_excerpt' ) )
 		return apply_filters('get_comment_excerpt', $excerpt);
 	}
 }
-
-?>

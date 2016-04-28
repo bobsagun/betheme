@@ -116,5 +116,3 @@ function mfn_template_save_data($post_id) {
 	mfn_builder_save($post_id);
 }
 add_action('save_post', 'mfn_template_save_data');
-
-?>

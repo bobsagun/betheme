@@ -213,5 +213,3 @@ function mfn_slide_save_data($post_id) {
 	}
 }
 add_action('save_post', 'mfn_slide_save_data');
-
-?>

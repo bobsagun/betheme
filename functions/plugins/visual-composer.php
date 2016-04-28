@@ -2688,5 +2688,3 @@ if( ! function_exists( 'mfn_vc_integrateWithVC' ) )
 	
 	}
 }
-
-?>

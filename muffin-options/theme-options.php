@@ -944,7 +944,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Image', 'mfn-opts'),
 					'desc' 		=> __('Pages without slider. May be overridden for single page.', 'mfn-opts'),
 				),
-					
+	
 				array(
 					'id' 		=> 'img-subheader-attachment',
 					'type' 		=> 'select',
@@ -1058,6 +1058,14 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'subheader-image',
 					'type' 		=> 'upload',
 					'title' 	=> __('Image', 'mfn-opts'),
+				),
+					
+				array(
+					'id' 		=> 'subheader-position',
+					'type' 		=> 'select',
+					'title' 	=> __('Position', 'mfn-opts'),
+					'options' 	=> mfna_bg_position(1),
+					'std' 		=> 'center top no-repeat',
 				),
 					
 				array(
@@ -4890,5 +4898,3 @@ if( ! function_exists( 'mfn_upload_mimes' ) )
 	}
 }
 add_filter('upload_mimes', 'mfn_upload_mimes');
-
-?>

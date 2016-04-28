@@ -13,18 +13,18 @@
  * --------------------------------------------------------------------------- */
 if( ! function_exists( 'mfn_title' ) )
 {
-	function mfn_title()
+	function mfn_title( $title )
 	{
-		$title = false;
-		if( mfn_opts_get('mfn-seo') && mfn_ID() ){
-			if( get_post_meta( mfn_ID(), 'mfn-meta-seo-title', true ) ){
-				$title = stripslashes( get_post_meta( mfn_ID(), 'mfn-meta-seo-title', true ) );
+		if( mfn_opts_get( 'mfn-seo' ) && mfn_ID() ){
+			if( trim( get_post_meta( mfn_ID(), 'mfn-meta-seo-title', true ) ) ){
+				$title = esc_html( get_post_meta( mfn_ID(), 'mfn-meta-seo-title', true ) );
 			}
 		}
 		
 		return $title;
 	}
 }
+add_filter( 'pre_get_document_title', 'mfn_title' );
 
 
 /* ---------------------------------------------------------------------------
@@ -58,7 +58,7 @@ if( ! function_exists( 'mfn_seo' ) )
 		}
 	}
 }
-add_action('wp_seo', 'mfn_seo');
+add_action( 'wp_seo', 'mfn_seo' );
 
 
 /* ---------------------------------------------------------------------------
@@ -245,52 +245,76 @@ if( ! function_exists( 'mfn_styles_background' ) )
 	{
 		$output = '';
 		
+		
 		// HTML ----------------------------
+		
 		if( $layoutID = mfn_layout_ID() ){
-			$bg_img = get_post_meta( $layoutID, 'mfn-post-bg', true );
-			$bg_pos = get_post_meta( $layoutID, 'mfn-post-bg-pos', true );
+			$htmlB = get_post_meta( $layoutID, 'mfn-post-bg', true );
+			$htmlP = get_post_meta( $layoutID, 'mfn-post-bg-pos', true );
 		} else {
-			$bg_img = mfn_opts_get( 'img-page-bg' );
-			$bg_pos = mfn_opts_get( 'position-page-bg' );
+			$htmlB = mfn_opts_get( 'img-page-bg' );
+			$htmlP = mfn_opts_get( 'position-page-bg' );
 		}
-	
-		if( $bg_img ){
-	
+		
+		if( $htmlB ){
+		
 			$aBg 	= array();
-			$aBg[] 	= 'background-image:url('. $bg_img .')';
-	
-			if( $bg_pos ){
-				$background_attr = explode( ';', $bg_pos );
+			$aBg[] 	= 'background-image:url('. $htmlB .')';
+		
+			if( $htmlP ){
+				$background_attr = explode( ';', $htmlP );
 				if( $background_attr[0] ) $aBg[] = 'background-repeat:'. $background_attr[0];
 				if( $background_attr[1] ) $aBg[] = 'background-position:'. $background_attr[1];
 				if( $background_attr[2] ) $aBg[] = 'background-attachment:'. $background_attr[2];
 				if( $background_attr[3] ) $aBg[] = '-webkit-background-size:'. $background_attr[3];
 				if( $background_attr[3] ) $aBg[] = 'background-size:'. $background_attr[3];
 			}
-	
-			$background = implode('; ', $aBg );
-	
-			$output .= 'html {'. $background. ';}'."\n";
+			$background = implode( ';', $aBg );
+		
+			$output .= 'html{'. $background. '}'."\n";
 		}
 		
+		
 		// Subheader -----------------------
+		
 		if( get_post_meta( mfn_ID(), 'mfn-post-subheader-image', true ) ){
-			$output .= '#Subheader { background-image: url("'. get_post_meta( mfn_ID(), 'mfn-post-subheader-image', true ) .'");}'."\n";
-		} elseif( mfn_opts_get( 'subheader-image' ) ){
-			$output .= '#Subheader { background-image: url("'. mfn_opts_get( 'subheader-image' ) .'");}'."\n";
+			$subheaderB = get_post_meta( mfn_ID(), 'mfn-post-subheader-image', true );
+		} else {
+			$subheaderB = mfn_opts_get( 'subheader-image' );
+		}
+		$subheaderP = mfn_opts_get( 'subheader-position' );
+
+		if( $subheaderB ){
+		
+			$aBg 	= array();
+			$aBg[] 	= 'background-image:url('. $subheaderB .')';
+		
+			if( $subheaderP ){
+				$background_attr = explode( ';', $subheaderP );
+				if( $background_attr[0] ) $aBg[] = 'background-repeat:'. $background_attr[0];
+				if( $background_attr[1] ) $aBg[] = 'background-position:'. $background_attr[1];
+				if( $background_attr[2] ) $aBg[] = 'background-attachment:'. $background_attr[2];
+				if( $background_attr[3] ) $aBg[] = '-webkit-background-size:'. $background_attr[3];
+				if( $background_attr[3] ) $aBg[] = 'background-size:'. $background_attr[3];
+			}
+		
+			$background = implode( ';', $aBg );
+
+			$output .= '#Subheader{'. $background. '}'."\n";
 		}
 		
 		// Footer --------------------------
-		$footer_img = mfn_opts_get( 'footer-bg-img' );
-		$footer_pos = mfn_opts_get( 'footer-bg-img-position' );
 		
-		if( $footer_img ){
+		$footerB = mfn_opts_get( 'footer-bg-img' );
+		$footerP = mfn_opts_get( 'footer-bg-img-position' );
+		
+		if( $footerB ){
 		
 			$aBg 	= array();
-			$aBg[] 	= 'background-image:url('. $footer_img .')';
+			$aBg[] 	= 'background-image:url('. $footerB .')';
 		
-			if( $footer_pos ){
-				$background_attr = explode( ';', $footer_pos );
+			if( $footerP ){
+				$background_attr = explode( ';', $footerP );
 				if( $background_attr[0] ) $aBg[] = 'background-repeat:'. $background_attr[0];
 				if( $background_attr[1] ) $aBg[] = 'background-position:'. $background_attr[1];
 				if( $background_attr[2] ) $aBg[] = 'background-attachment:'. $background_attr[2];
@@ -298,12 +322,14 @@ if( ! function_exists( 'mfn_styles_background' ) )
 				if( $background_attr[3] ) $aBg[] = 'background-size:'. $background_attr[3];
 			}
 		
-			$background = implode('; ', $aBg );
+			$background = implode( ';', $aBg );
 		
-			$output .= '#Footer {'. $background. ';}'."\n";
+			$output .= '#Footer{'. $background. '}'."\n";
 		}
 		
+		
 		// Echo ----------------------------
+		
 		if( $output ){
 			echo '<!-- style | background -->'."\n";
 			echo '<style id="mfn-dnmc-bg-css">'."\n";
@@ -1151,5 +1177,3 @@ if( ! function_exists( 'mfn_remove_recent_comments_style' ) )
 	} 
 } 
 add_action( 'widgets_init', 'mfn_remove_recent_comments_style' ); 
-
-?>

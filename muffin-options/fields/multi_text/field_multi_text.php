@@ -71,4 +71,3 @@ class MFN_Options_multi_text extends MFN_Options{
 	}
 	
 }
-?>

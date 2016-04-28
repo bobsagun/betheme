@@ -98,4 +98,3 @@ class MFN_Options_textarea extends MFN_Options{
 		echo '</div>';
 	}
 }
-?>

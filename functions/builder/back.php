@@ -1180,6 +1180,3 @@ if( ! function_exists( 'mfn_get_sliders_layer' ) )
 		return $sliders;
 	}
 }
-	
-
-?>

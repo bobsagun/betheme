@@ -210,5 +210,3 @@ function mfn_wp_social_menu_bottom()
 	);
 	wp_nav_menu( $args );
 }
-
-?>
