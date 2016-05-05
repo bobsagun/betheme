@@ -732,6 +732,14 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				),
 					
 				array(
+					'id' 		=> 'google-maps-api-key',
+					'type' 		=> 'text',
+					'title' 	=> __('Google Maps API Key', 'mfn-opts'),
+					'sub_desc' 	=> __('optional', 'mfn-opts'),
+					'desc' 		=> __('If you are generating a large volume of queries to the Google Maps API please <a target="_blank" href="https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key">Get an API key</a>', 'mfn-opts'),
+				),
+					
+				array(
 					'id' 		=> 'table-hover',
 					'type' 		=> 'select',
 					'title' 	=> __('HTML Table', 'mfn-opts'),
@@ -3161,9 +3169,10 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Parallax | Plugin', 'mfn-opts'),
 					'options' 	=> array(
-						'translate3d' 	=> __('Translate3d', 'mfn-opts'),
-						'enllax' 		=> __('Enllax', 'mfn-opts'),
-						'stellar' 		=> __('Stellar | old', 'mfn-opts'),
+						'translate3d' 			=> __('Translate3d', 'mfn-opts'),
+						'translate3d no-safari' => __('Translate3d | Enllax in Safari (in some cases may run smoother)', 'mfn-opts'),
+						'enllax' 				=> __('Enllax', 'mfn-opts'),
+						'stellar' 				=> __('Stellar | old', 'mfn-opts'),
 					),
 				),
 					

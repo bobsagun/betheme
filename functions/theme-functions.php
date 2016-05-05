@@ -399,10 +399,12 @@ if( ! function_exists( 'mfn_parallax_plugin' ) )
 
 		$parallax = mfn_opts_get( 'parallax' );
 
-		if( $parallax == 'translate3d' && ( mfn_user_agent() == 'safari' ) ){
-				
-			$parallax = 'enllax';
-				
+		if( $parallax == 'translate3d no-safari' ){
+			if( mfn_user_agent() == 'safari' ){
+				$parallax = 'enllax';
+			} else {
+				$parallax = 'translate3d';
+			}		
 		}
 
 		return $parallax;

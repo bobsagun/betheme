@@ -522,7 +522,7 @@ if( ! function_exists( 'mfn_scripts' ) )
 			wp_enqueue_script( 'jquery-animations',		THEME_URI. '/assets/animations/animations.min.js', false, THEME_VERSION, true );
 			wp_enqueue_script( 'jquery-jplayer', 		THEME_URI. '/assets/jplayer/jplayer.min.js', false, THEME_VERSION, true );
 			
-			$parallax = mfn_opts_get( 'parallax' );
+			$parallax = mfn_parallax_plugin();
 			if( $parallax == 'translate3d' ){
 				wp_enqueue_script( 'jquery-mfn-parallax', THEME_URI. '/js/parallax/translate3d.js', false, THEME_VERSION, true );
 			} elseif( $parallax == 'stellar' ){

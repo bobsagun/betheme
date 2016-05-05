@@ -173,6 +173,7 @@
 				<?php if( mfn_opts_get('social-dribbble') ): ?><li class="dribbble"><a target="_blank" href="<?php mfn_opts_show('social-dribbble'); ?>" title="Dribbble"><i class="icon-dribbble"></i></a></li><?php endif; ?>
 				<?php if( mfn_opts_get('social-instagram') ): ?><li class="instagram"><a target="_blank" href="<?php mfn_opts_show('social-instagram'); ?>" title="Instagram"><i class="icon-instagram"></i></a></li><?php endif; ?>
 				<?php if( mfn_opts_get('social-behance') ): ?><li class="behance"><a target="_blank" href="<?php mfn_opts_show('social-behance'); ?>" title="Behance"><i class="icon-behance"></i></a></li><?php endif; ?>
+				<?php if( mfn_opts_get('social-tumblr') ): ?><li class="tumblr"><a target="_blank" href="<?php mfn_opts_show('social-tumblr'); ?>" title="Tumblr"><i class="icon-tumblr"></i></a></li><?php endif; ?>
 				<?php if( mfn_opts_get('social-vkontakte') ): ?><li class="vkontakte"><a target="_blank" href="<?php mfn_opts_show('social-vkontakte'); ?>" title="VKontakte"><i class="icon-vkontakte"></i></a></li><?php endif; ?>
 				<?php if( mfn_opts_get('social-viadeo') ): ?><li class="viadeo"><a target="_blank" href="<?php mfn_opts_show('social-viadeo'); ?>" title="Viadeo"><i class="icon-viadeo"></i></a></li><?php endif; ?>
 				<?php if( mfn_opts_get('social-xing') ): ?><li class="xing"><a target="_blank" href="<?php mfn_opts_show('social-xing'); ?>" title="Xing"><i class="icon-xing"></i></a></li><?php endif; ?>

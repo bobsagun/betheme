@@ -973,10 +973,13 @@
 
 				// isotope fix: second resize
 				
-				setTimeout(function(){
-					$('.lm_wrapper.isotope').isotope( 'layout');
-				},1000);
+				$('.lm_wrapper.isotope').imagesLoaded().progress( function() {
+					$('.lm_wrapper.isotope').isotope('layout');
+				});
 				
+//				setTimeout(function(){
+//					$('.lm_wrapper.isotope').isotope( 'layout');
+//				},1000);			
 				
 			});
 
@@ -1258,6 +1261,27 @@
 		
 		
 		/* ---------------------------------------------------------------------------
+		 * Widget | Muffin Menu | Hover on click
+		 * --------------------------------------------------------------------------- */	
+		$('.widget_mfn_menu ul.submenus-click').each(function(){
+			var el = $(this);
+			$( 'a', el ).click(function(e){
+				var li = $(this).closest('li');
+				
+				if( li.hasClass('hover') || ! li.hasClass('menu-item-has-children') ){
+					// link click
+				} else {
+					e.preventDefault();
+					li.siblings('li').removeClass('hover')
+						.find('li').removeClass('hover');
+					$(this).closest('li').addClass('hover');
+				}
+				
+			});
+		});
+		
+		
+		/* ---------------------------------------------------------------------------
 		 * WooCommerce
 		 * --------------------------------------------------------------------------- */	
 		function addToCart(){
@@ -1367,6 +1391,10 @@
 			isotopeFilter( $(this), $('.isotope') );
 		});
 		
+		
+		/* ---------------------------------------------------------------------------
+		 * Init
+		 * --------------------------------------------------------------------------- */
 		
 		// carouFredSel wrapper | Height
 		mfn_carouFredSel_height();
@@ -1576,10 +1604,10 @@
 	 * ----------------------------------------------------------------------------------------------------------------------- */
 	$(document).mouseup(function(e){
 		
-		// search
-		if( $("#searchform").has(e.target).length === 0 ){
-			if( $("#searchform").hasClass('focus') ){
-				$(this).find('.icon_close').click();
+		// Widget | Muffin Menu | Hover on click
+		if( $(".widget_mfn_menu ul.submenus-click").length ){
+			if( $(".widget_mfn_menu ul.submenus-click").has(e.target).length === 0 ){
+				$('.widget_mfn_menu ul.submenus-click li').removeClass('hover');
 			}
 		}
 		

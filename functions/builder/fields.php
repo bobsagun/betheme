@@ -2402,6 +2402,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'sub_desc'	=> __('Custom CSS Item Classes Names', 'mfn-opts'),
 						'desc'		=> __('Multiple classes should be separated with SPACE', 'mfn-opts'),
 					),
+						
+					array(
+						'id' 		=> 'style',
+						'type' 		=> 'text',
+						'title' 	=> __('Custom | Styles', 'mfn-opts'),
+						'sub_desc'	=> __('Custom inline CSS Styles', 'mfn-opts'),
+						'desc'		=> __('Example: <b>border: 1px solid #999;</b>', 'mfn-opts'),
+					),
+					
 								
 				),
 			),
