@@ -2240,6 +2240,7 @@ if( ! function_exists( 'sc_hover_color' ) )
 			'link'				=> '',
 			'class'				=> '',
 			'target'			=> '',
+			'style'				=> '',
 		), $attr));
 
 		// target
@@ -2257,7 +2258,7 @@ if( ! function_exists( 'sc_hover_color' ) )
 		} else {
 			$padding = false;
 		}
-		
+
 		// FIX | prettyphoto
 		if( strpos( $class, 'prettyphoto' ) !== false ){
 			$class 	= str_replace( 'prettyphoto', '', $class );
@@ -2266,7 +2267,7 @@ if( ! function_exists( 'sc_hover_color' ) )
 			$rel 	= false;
 		}
 		
-		$output = '<div class="hover_color" style="background:'. $background_hover .';" ontouchstart="this.classList.toggle(\'hover\');">';
+		$output = '<div class="hover_color" style="background:'. $background_hover .';'. esc_attr( $style ) .'" ontouchstart="this.classList.toggle(\'hover\');">';
 			$output .= '<div class="hover_color_bg" style="background:'. $background .';">';
 				if( $link ) $output .= '<a href="'. $link .'" '. $class .' '. $rel .' '. $target .'>';
 					$output .= '<div class="hover_color_wrapper" '. $padding .'>';
@@ -3865,8 +3866,12 @@ if( ! function_exists( 'sc_map' ) )
 		if( strpos( $controls , 'zoom' ) !== false ) 		$zoomControl = 'true';
 		if( strpos( $controls , 'mapType' ) !== false ) 	$mapTypeControl = 'true';
 		if( strpos( $controls , 'streetView' ) !== false ) 	$streetViewControl = 'true';
+
+		if( $api_key = trim( mfn_opts_get( 'google-maps-api-key' ) ) ){
+			$api_key = '?key='. $api_key;
+		}
 		
-		wp_enqueue_script( 'google-maps', 'http'. mfn_ssl() .'://maps.google.com/maps/api/js', false, THEME_VERSION, true );
+		wp_enqueue_script( 'google-maps', 'http'. mfn_ssl() .'://maps.google.com/maps/api/js'. $api_key, false, null, true );
 	
 		$output = '<script>';
 			//<![CDATA[
@@ -4801,7 +4806,7 @@ if( ! function_exists( 'sc_gallery' ) )
 			'link'       	=> '',
 				
 		// mfn custom ---------------------------
-			'style'			=> '',	// [default], flat, fancy
+			'style'			=> '',	// [default], flat, fancy, masonry
 			'greyscale'		=> '',	
 
 		), $attr, 'gallery' );

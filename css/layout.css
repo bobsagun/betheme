@@ -96,7 +96,7 @@ body.nice-scroll:not(.layout-boxed){padding-right:10px!important}
 .pager_lm:not(.loading){background:none}
 
 /* Pager single | blog post ---------------------------------------------------------- */
-.page-pager,.post-pager{margin-bottom:0}
+.page-pager,.post-pager{margin-bottom:0!important;}
 .pager-single{text-align:center;background:rgba(0,0,0,0.02);margin-top:15px;margin-bottom:40px}
 .pager-single span{height:45px;line-height:45px;display:inline-block;padding:0 9px;position:relative;font-weight:700}
 .pager-single a span{font-weight:400}
@@ -1132,6 +1132,9 @@ body:not(.template-slider) #Header{min-height:250px}
 	.widget_mfn_menu ul.submenus-hover li ul{overflow:hidden;max-height:0;-webkit-transition:max-height 1s ease-in-out;-moz-transition:max-height 1s ease-in-out;-o-transition:max-height 1s ease-in-out;transition:max-height 1s ease-in-out}
 	.widget_mfn_menu ul.submenus-hover li.current_page_item > ul,.widget_mfn_menu ul.submenus-hover li:hover > ul{max-height:10000px}
 	.widget_mfn_menu ul.submenu-active li.current-menu-parent > ul{max-height:10000px}
+	
+	.widget_mfn_menu ul.submenus-click li ul{overflow:hidden;max-height:0}
+	.widget_mfn_menu ul.submenus-click li.hover > ul{max-height:10000px}
 
 	/* Muffin login */
 	.mfn-login{overflow:hidden}

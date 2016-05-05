@@ -173,6 +173,7 @@ class Mfn_Menu_Widget extends WP_Widget {
 						echo '<option value="show" '. selected( $submenus, 'show', false ). '>'. __( 'Always show', 'mfn-opts' ) .'</option>';
 						echo '<option value="hover" '. selected( $submenus, 'hover', false ). '>'. __( 'Show on hover', 'mfn-opts' ) .'</option>';
 						echo '<option value="hover submenu-active" '. selected( $submenus, 'hover submenu-active', false ). '>'. __( 'Show on hover, always show active', 'mfn-opts' ) .'</option>';
+						echo '<option value="click" '. selected( $submenus, 'click', false ). '>'. __( 'Show on click', 'mfn-opts' ) .'</option>';
 					?>
 				</select>
 			</p>

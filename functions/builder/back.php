@@ -974,8 +974,12 @@ if( ! function_exists( 'mfn_builder_save' ) )
 					
 					// Insert BEFORE/AFTER current builder content
 
-					$import 	= unserialize( call_user_func( 'base'.'64_decode', $import ) );
-						
+					// FIX | Muffin Builder 2.0 Compatibility
+					
+					if( $import && ! is_array( $import ) ){
+						$import = unserialize( call_user_func( 'base'.'64_decode', $import ) );
+					}
+	
 					if( $import_type == 'before' ){
 						$mfn_items = array_merge ( $import, $mfn_items );
 					} else {

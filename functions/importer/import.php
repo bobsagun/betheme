@@ -570,6 +570,7 @@ class mfnImport {
 								<option value="business2">Bussiness 2</option>
 								<option value="cafe">Cafe</option>
 								<option value="callcenter">Call Center</option>
+								<option value="car">Car</option>
 								<option value="carpenter">Carpenter</option>
 								<option value="carrental">Car Rental</option>
 								<option value="carver">Carver</option>
@@ -651,6 +652,7 @@ class mfnImport {
 								<option value="library">Library</option>
 								<option value="lifestyle">Lifestyle</option>
 								<option value="loans">Loans</option>
+								<option value="makeup">Makeup</option>
 								<option value="marketing">Marketing</option>
 								<option value="massage">Massage</option>
 								<option value="mechanic">Mechanic</option>
