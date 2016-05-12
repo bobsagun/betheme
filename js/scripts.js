@@ -555,7 +555,7 @@
 				
 				
 				// active | remove
-				menu.find( 'li' ).removeClass( 'current-menu-item currenet-menu-parent current-menu-ancestor current-page-ancestor current_page_item current_page_parent current_page_ancestor' );
+				menu.find( 'li' ).removeClass( 'current-menu-item current-menu-parent current-menu-ancestor current-page-ancestor current_page_item current_page_parent current_page_ancestor' );
 			
 				
 				// active | add for first element if offset().top == 0 			
@@ -789,6 +789,18 @@
 				});
 				
 			}
+			
+		});
+		
+		
+		
+		$('a[rel^="prettyphoto[portfolio]"]').each(function(){
+			
+			var el = $(this);
+			var parent = el.closest('.column');
+			var index = $( ".column" ).index( parent );
+			
+			el.attr( 'rel', 'prettyphoto[portfolio-'+ index +']' );		
 			
 		});
 		

@@ -190,6 +190,10 @@ html,body{overflow-x:hidden}
 		#Header_creative #Top_bar { position: static; margin: 0 8%; width: 84%; }
 		#Header_creative #Top_bar #logo { height: 50px; line-height: 50px; padding: 5px 0; }
 		#Header_creative #Top_bar #logo img { max-height: 40px; }
+		
+		.logo-no-sticky-padding #Header_creative #Top_bar #logo{height:60px;line-height:60px;padding:0}
+		.logo-no-sticky-padding #Header_creative #Top_bar #logo img{max-height:60px}
+	
 		#Header_creative #Top_bar .responsive-menu-toggle { top: 12px; }
 		#Header_creative #Top_bar #header_cart { top: 21px; }
 		#Header_creative #Top_bar #search_button { top: 20px; }

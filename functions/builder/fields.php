@@ -886,7 +886,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 				'type'		=> 'button',
 				'title' 	=> __('Button', 'mfn-opts'),
 				'size' 		=> '1/4',
-				'cat' 		=> 'loops',
+				'cat' 		=> 'typography',
 				'fields'	=> array(
 
 					array(
@@ -5080,10 +5080,11 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 				
 			// Video  --------------------------------------------
 			'video' => array(
-				'type' => 'video',
-				'title' => __('Video', 'mfn-opts'), 
-				'size' => '1/4', 
-				'fields' => array(
+				'type' 		=> 'video',
+				'title' 	=> __('Video', 'mfn-opts'), 
+				'size' 		=> '1/4', 
+				'cat' 		=> 'elements',	
+				'fields' 	=> array(
 			
 					array(
 						'id' 		=> 'video',

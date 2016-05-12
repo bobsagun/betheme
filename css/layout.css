@@ -238,6 +238,19 @@ body:not(.template-slider) #Header{min-height:250px}
 	#Top_bar #logo:hover{text-decoration:none}
 	#Top_bar #logo img{vertical-align:middle;max-height:100%}
 	#Top_bar #logo img.logo-sticky,#Top_bar #logo img.logo-mobile{display:none}
+	
+	/* Logo | Advanced */
+	.logo-valign-top #Top_bar #logo img{vertical-align:top}
+	.logo-valign-bottom #Top_bar #logo img{vertical-align:bottom}
+	
+	.logo-no-margin #Top_bar .logo{margin-left:0!important;padding:0!important}
+	.logo-no-margin.header-plain #Top_bar .logo{margin:0!important}
+	.logo-no-margin #Header_creative .logo{margin-top:0!important}
+	
+	.logo-no-margin.header-fw #Top_bar .column{margin:0;width:100%}
+	
+	.logo-no-sticky-padding #Top_bar.is-sticky #logo{padding:0!important}
+	.logo-no-sticky-padding #Top_bar.is-sticky #logo img{max-height:60px!important}
 
 	/* Menu wrapper */
 	#Top_bar .menu_wrapper {float:left;z-index:201;}

@@ -697,6 +697,7 @@ class mfnImport {
 								<option value="science">Science</option>
 								<option value="security">Security</option>
 								<option value="seo">SEO</option>
+								<option value="seo2">SEO 2</option>
 								<option value="service">Service</option>
 								<option value="shop">Shop</option>
 								<option value="showcase">Showcase</option>
@@ -705,6 +706,7 @@ class mfnImport {
 								<option value="sketch">Sketch</option>
 								<option value="ski">Ski</option>
 								<option value="smart">Smart</option>
+								<option value="smarthome">Smart Home</option>
 								<option value="software">Software</option>
 								<option value="spa">Spa</option>
 								<option value="space">Space</option>

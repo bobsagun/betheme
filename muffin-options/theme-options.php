@@ -572,17 +572,38 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type'		=> 'text',
 					'title'		=> __('Height', 'mfn-opts'),
 					'sub_desc'	=> __('default: 60', 'mfn-opts'),
-					'desc'		=> __('px', 'mfn-opts'),
+					'desc'		=> __('px<br />Minimum height + padding = 60px', 'mfn-opts'),
 					'class'		=> 'small-text',
 				),
 					
 				array(
 					'id'		=> 'logo-vertical-padding',
 					'type'		=> 'text',
-					'title'		=> __('Vertical Padding', 'mfn-opts'),
+					'title'		=> __('<small>Vertical</small> Padding', 'mfn-opts'),
 					'sub_desc'	=> __('default: 15', 'mfn-opts'),
 					'desc'		=> __('px', 'mfn-opts'),
 					'class'		=> 'small-text',
+				),
+					
+				array(
+					'id' 		=> 'logo-vertical-align',
+					'type' 		=> 'select',
+					'title' 	=> __('<small>Vertical</small> Align', 'mfn-opts'),
+					'options' 	=> array(
+						'top' 		=> __('Top', 'mfn-opts'),
+						''			=> __('Middle', 'mfn-opts'),
+						'bottom'	=> __('Bottom', 'mfn-opts'),
+					),
+				),
+					
+				array(
+					'id' 		=> 'logo-advanced',
+					'type' 		=> 'checkbox',
+					'title' 	=> __('Advanced', 'mfn-opts'),
+					'options' 	=> array(
+						'no-margin' 		=> __('Remove Left margin<span>Top margin for Header Creative</span>', 'mfn-opts'),
+						'no-sticky-padding'	=> __('Remove Sticky Logo max-height & padding', 'mfn-opts'),
+					),
 				),
 	
 			),

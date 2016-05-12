@@ -734,6 +734,11 @@ if( ! function_exists( 'mfn_breadcrumbs' ) )
 		// Blog | Category --------------------------------
 		} elseif( is_category() ){
 			
+			$cat = get_term_by('name', single_cat_title('',false), 'category');
+			if( $cat && $cat->parent ){
+				$breadcrumbs[] = get_category_parents( $cat->parent, true, $separator );
+			}
+			
 			$breadcrumbs[] = '<a href="'. curPageURL() .'">' . single_cat_title('', false) . '</a>';
 			
 		// Blog | Author ----------------------------------
