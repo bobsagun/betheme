@@ -2124,6 +2124,7 @@ if( ! function_exists( 'sc_image' ) )
 		
 		// width x height, alt ----------------------------
 		
+		// deprecated since 13.1
 		if( $width ) $class_div .= ' inline-block';
 
 		if( ! $width ) 	$width 	= mfn_get_attachment_data( $src, 'width' );
@@ -4234,6 +4235,7 @@ if( ! function_exists( 'sc_progress_icons' ) )
 	{
 		extract(shortcode_atts(array(
 			'icon' 			=> 'icon-lamp',
+			'image' 		=> '',
 			'count' 		=> 5,
 			'active' 		=> 0,
 			'background' 	=> '',
@@ -4241,7 +4243,11 @@ if( ! function_exists( 'sc_progress_icons' ) )
 		
 		$output = '<div class="progress_icons" data-active="'. $active .'" data-color="'. $background .'">';
 			for ($i = 1; $i <= $count; $i++) {
-				$output .= '<span class="progress_icon"><i class="'. $icon .'"></i></span>';
+				if( $image ){
+					$output .= '<span class="progress_icon progress_image"><img src="'. $image .'" alt=""/></span>';
+				} else {
+					$output .= '<span class="progress_icon"><i class="'. $icon .'"></i></span>';
+				}
 			}
 		$output .= '</div>'."\n";
 	
