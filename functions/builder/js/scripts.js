@@ -87,6 +87,21 @@ function sortableWrapReceive(event, ui){
 	ui.item.find('.mfn-item-parent').val(targetWrapID);
 }
 
+// window.onbeforeunload
+function enableBeforeUnload(){
+	window.onbeforeunload = function(e){
+        return 'The changes you made will be lost if you navigate away from this page';
+    };
+}
+
+function disableBeforeUnload(){
+    window.onbeforeunload = null;
+}
+
+jQuery('form').submit(function(){
+	disableBeforeUnload();
+});
+
 
 
 /* ---------------------------------------------------------------------------
@@ -224,6 +239,8 @@ function mfnBuilder(){
 
 	// Section | Add -----------------------------------------------
 	jQuery('.mfn-row-add-btn').click(function(){
+		
+		enableBeforeUnload();
 
 		// clone; sortable init
 		var clone = jQuery('#mfn-rows .mfn-row').clone(true);
@@ -251,6 +268,9 @@ function mfnBuilder(){
 
 	// Section | Clone ---------------------------------------------
 	jQuery('.mfn-row .mfn-row-clone').click(function(){
+		
+		enableBeforeUnload();
+		
 		var element = jQuery(this).closest('.mfn-row');
 
 		// sortable destroy, clone
@@ -308,6 +328,8 @@ function mfnBuilder(){
 
 	// Wrap | Add ---------------------------------------------------
 	jQuery('.mfn-add-wrap').click(function(){
+		
+		enableBeforeUnload();
 
 		// parent
 		var parentDesktop 	= jQuery(this).closest('.mfn-row').find('.mfn-sortable-row').first();
@@ -340,6 +362,9 @@ function mfnBuilder(){
 
 	// Wrap | Clone ---------------------------------------------
 	jQuery('.mfn-wrap .mfn-wrap-clone').click(function(){
+		
+		enableBeforeUnload();
+		
 		var element = jQuery(this).closest('.mfn-wrap');
 
 		// sortable destroy, clone
@@ -360,6 +385,8 @@ function mfnBuilder(){
 	
 	// Wrap Divider | Add ---------------------------------------------------
 	jQuery('.mfn-add-divider').click(function(){
+		
+		enableBeforeUnload();
 
 		// parent
 		var parentDesktop 	= jQuery(this).closest('.mfn-row').find('.mfn-sortable-row').first();
@@ -395,7 +422,7 @@ function mfnBuilder(){
 	
 
 	// Popup | Open -----------------------------------------
-	jQuery('.mfn-add-item').click(function(){	
+	jQuery('.mfn-add-item').click(function(){
 		
 		// disable background content scrolling & dragging
 		jQuery('body').addClass('mfn-popup-open');
@@ -474,6 +501,8 @@ function mfnBuilder(){
 	// Item | Add --------------------------------------------
 	jQuery('#mfn-item-add .mfn-popup-items li a').click(function(){
 		
+		enableBeforeUnload();
+		
 		jQuery('#mfn-item-add').fadeOut(300);
 		
 		// enable background content scrolling & dragging
@@ -519,6 +548,9 @@ function mfnBuilder(){
 	
 	// Item | Clone ---------------------------------------------
 	jQuery('.mfn-item .mfn-item-clone').click(function(){
+		
+		enableBeforeUnload();
+		
 		var element = jQuery(this).closest('.mfn-element');
 		var clone 	= element.clone(true);
 
@@ -532,6 +564,9 @@ function mfnBuilder(){
 
 	// Element | Resize ++ -------------------------------------
 	jQuery('.mfn-item-size-inc').click(function(){
+		
+		enableBeforeUnload();
+		
 		var el = jQuery(this).closest('.mfn-element');
 
 		// wrap || item
@@ -558,6 +593,9 @@ function mfnBuilder(){
 	
 	// Element | Resize -- -------------------------------------
 	jQuery('.mfn-item-size-dec').click(function(){
+		
+		enableBeforeUnload();
+		
 		var el = jQuery(this).closest('.mfn-element');
 
 		// wrap || item
@@ -584,6 +622,9 @@ function mfnBuilder(){
 	
 	// Element | Delete --------------------------------------------
 	jQuery('.mfn-element-delete').click(function(){
+		
+		enableBeforeUnload();
+		
 		var item = jQuery(this).closest('.mfn-element');
 		
 		if( confirm( "You are about to delete this element.\nIt can not be restored at a later time! Continue?" ) ){
@@ -596,6 +637,8 @@ function mfnBuilder(){
 
 	// Element | Edit --------------------------------------------
 	jQuery('.mfn-element-edit').click(function(){
+		
+		enableBeforeUnload();
 		
 		var el = jQuery(this).closest('.mfn-element');
 		var meta = el.children('.mfn-element-meta');
@@ -640,10 +683,8 @@ function mfnBuilder(){
 		}
 		
 		// end: Tiny MCE Editor
-
 		
 		popup.fadeIn(300);
-		
 	});
 	
 	

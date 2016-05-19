@@ -1126,6 +1126,9 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		if( is_array( $logo_options ) && isset( $logo_options['no-margin'] ) ){
 			$classes[] = 'logo-no-margin';
 		}
+		if( is_array( $logo_options ) && isset( $logo_options['overflow'] ) ){
+			$classes[] = 'logo-overflow';
+		}
 		if( is_array( $logo_options ) && isset( $logo_options['no-sticky-padding'] ) ){
 			$classes[] = 'logo-no-sticky-padding';
 		}

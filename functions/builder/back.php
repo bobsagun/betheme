@@ -669,18 +669,18 @@ if( ! function_exists( 'mfn_builder_show' ) )
 						<textarea id="mfn-items-import" placeholder="Paste import data here."></textarea>
 						<a href="javascript:void(0);" class="mfn-btn-migrate btn-primary btn-import"><?php _e('Import','mfn-opts'); ?></a>	
 						<select name="mfn-items-import-type">
-							<option value="replace"><?php _e('REPLACE current builder content','mfn-opts'); ?></option>
 							<option value="before"><?php _e('Insert BEFORE current builder content','mfn-opts'); ?></option>
 							<option value="after"><?php _e('Insert AFTER current builder content','mfn-opts'); ?></option>
+							<option value="replace"><?php _e('REPLACE current builder content','mfn-opts'); ?></option>
 						</select>			
 					</div>
 					
 					<div class="migrate-wrapper templates-wrapper hide">
 						<a href="javascript:void(0);" class="mfn-btn-migrate btn-primary btn-template"><?php _e('Use Template','mfn-opts'); ?></a>	
-						<select name="mfn-items-import-template-type">
-							<option value="replace"><?php _e('REPLACE current builder content','mfn-opts'); ?></option>
+						<select name="mfn-items-import-template-type">						
 							<option value="before"><?php _e('Insert BEFORE current builder content','mfn-opts'); ?></option>
 							<option value="after"><?php _e('Insert AFTER current builder content','mfn-opts'); ?></option>
+							<option value="replace"><?php _e('REPLACE current builder content','mfn-opts'); ?></option>
 						</select>
 						<select id="mfn-items-import-template">
 							<option value=""><?php _e('-- Select --','mfn-opts'); ?></option>

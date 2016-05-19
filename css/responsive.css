@@ -348,6 +348,8 @@ html,body{overflow-x:hidden}
 	/* Top bar width */
 	#Top_bar .top_bar_left { width: 501px; }
 	
+	.logo-overflow #Top_bar #logo img{max-width:150px!important}
+	
 	/* .footer-sliding */
 	.footer-fixed #Content,
 	.footer-sliding #Content { margin-bottom: 0 !important; }
@@ -709,6 +711,8 @@ html,body{overflow-x:hidden}
 	#Top_bar #logo img.logo-main { display:none;}
 	#Top_bar #logo img.logo-mobile { display:inline-block;}
 	
+	.logo-overflow #Top_bar .logo{height:auto!important}
+	
 	#Top_bar .search_wrapper { top: auto; bottom:-129px; }
 	
 	#Action_bar .contact_details li,
@@ -970,6 +974,9 @@ html,body{overflow-x:hidden}
 	.offer a.slider_prev { left: 20px; top: 20px; margin: 0; }
 	.offer .slider_pagination { left: 20px; top: 65px; margin: 0; }
 	.offer a.slider_next { left: 20px; top: 111px; margin: 0; }
+	
+	.button-stroke .offer a.slider_prev{margin-top:-8px}
+	.button-stroke .offer a.slider_next{margin-top:6px}
 	
 	/* Offer thumb */
 	.offer_thumb { padding-left: 0; }
@@ -1301,6 +1308,6 @@ html,body{overflow-x:hidden}
 /* 	Retina | iPad | etc..
 /* 
 /* =========================================================================================================================== */
-@supports( -webkit-text-size-adjust:none ) and ( not (-ms-accelerator:true) ) {
-	html { background-attachment: scroll !important;}
+@supports( -webkit-text-size-adjust:none ) and ( not (-ms-accelerator:true) ){
+	html,.section.bg-cover{background-attachment:scroll!important}
 }

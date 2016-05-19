@@ -2327,7 +2327,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'background',
 						'type' 		=> 'text',
 						'title' 	=> __('Background color', 'mfn-opts'),
-						'desc' 		=> __('Use color name ( blue ) or hex ( #2991D6 )', 'mfn-opts'),
+						'desc' 		=> __('Use color name or hex. Example: <b>blue</b> or <b>#2991D6</b>', 'mfn-opts'),
 						'class' 	=> 'small-text',
 						'std' 		=> '#2991D6',
 					),
@@ -2336,9 +2336,25 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'background_hover',
 						'type' 		=> 'text',
 						'title' 	=> __('Background color | Hover', 'mfn-opts'),
-						'desc' 		=> __('Use color name ( blue ) or hex ( #2991D6 )', 'mfn-opts'),
+						'desc' 		=> __('Use color name or hex. Example: <b>navy</b> or <b>#236A9C</b>', 'mfn-opts'),
 						'class' 	=> 'small-text',
 						'std' 		=> '#2991D6',
+					),
+						
+					array(
+						'id' 		=> 'border',
+						'type' 		=> 'text',
+						'title' 	=> __('Border color', 'mfn-opts'),
+						'sub_desc' 	=> __('optional', 'mfn-opts'),
+						'class' 	=> 'small-text',
+					),
+						
+					array(
+						'id' 		=> 'border_hover',
+						'type' 		=> 'text',
+						'title' 	=> __('Border color | Hover', 'mfn-opts'),
+						'sub_desc' 	=> __('optional', 'mfn-opts'),
+						'class' 	=> 'small-text',
 					),
 						
 					array(

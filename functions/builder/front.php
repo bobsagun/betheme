@@ -170,7 +170,9 @@ if( ! function_exists( 'mfn_builder_print' ) )
 				
 				$parallax = false;
 				if( $section['attr']['bg_image'] && ( $section_bg_attr[2] == 'fixed' ) ){
+					
 					if( ! key_exists(4, $section_bg_attr) || $section_bg_attr[4] != 'still' ){
+						// Parallax
 						
 						$parallax = mfn_parallax_data();
 						
@@ -182,7 +184,11 @@ if( ! function_exists( 'mfn_builder_print' ) )
 							}
 						}
 						
+					} else {
+						// Fixed | Cover
+						$section_class .= ' bg-cover';
 					}
+					
 				}
 				
 				

@@ -2237,6 +2237,8 @@ if( ! function_exists( 'sc_hover_color' ) )
 		extract(shortcode_atts(array(
 			'background'		=> '',
 			'background_hover'	=> '',
+			'border'			=> '',
+			'border_hover'		=> '',
 			'padding'			=> '',
 			'link'				=> '',
 			'class'				=> '',
@@ -2268,8 +2270,8 @@ if( ! function_exists( 'sc_hover_color' ) )
 			$rel 	= false;
 		}
 		
-		$output = '<div class="hover_color" style="background:'. $background_hover .';'. esc_attr( $style ) .'" ontouchstart="this.classList.toggle(\'hover\');">';
-			$output .= '<div class="hover_color_bg" style="background:'. $background .';">';
+		$output = '<div class="hover_color" style="background:'. $background_hover .';border-color:'. $border_hover .';'. esc_attr( $style ) .'" ontouchstart="this.classList.toggle(\'hover\');">';
+			$output .= '<div class="hover_color_bg" style="background:'. $background .';border-color:'. $border .';">';
 				if( $link ) $output .= '<a href="'. $link .'" '. $class .' '. $rel .' '. $target .'>';
 					$output .= '<div class="hover_color_wrapper" '. $padding .'>';
 						$output .= do_shortcode($content);

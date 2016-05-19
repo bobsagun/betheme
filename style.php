@@ -526,6 +526,9 @@ blockquote {
 	line-height: <?php echo $aLogo['height']; ?>px;
 	padding: <?php echo $aLogo['vertical_padding']; ?>px 0;
 }
+.logo-overflow #Top_bar:not(.is-sticky) .logo {
+    height: <?php echo $aLogo['top_bar_right_H']; ?>px;
+}
 #Top_bar .menu > li > a {
     padding: <?php echo $aLogo['menu_padding']; ?>px 0;
 }
