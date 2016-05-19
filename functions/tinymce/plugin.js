@@ -302,7 +302,7 @@
 				}, {
 					text : 'Hover Color',
 					onclick : function() {
-						editor.insertContent('[hover_color background="" background_hover="" link="" padding="40px 30px" class="" target="" style=""]Insert your content here[/hover_color]');
+						editor.insertContent('[hover_color background="" background_hover="" border="" border_hover="" link="" padding="40px 30px" class="" target="" style=""]Insert your content here[/hover_color]');
 					}				
 				}, {
 					text : 'How It Works',
@@ -352,7 +352,7 @@
 				}, {
 					text : 'Portfolio',
 					onclick : function() {
-						editor.insertContent('[portfolio count="2" style="grid" columns="3" category="" orderby="date" order="DESC" related="0" filters="0" pagination="0" greyscale="0"]');
+						editor.insertContent('[portfolio count="2" style="grid" columns="3" category="" orderby="date" order="DESC" related="0" filters="0" pagination="0" load_more="0" greyscale="0"]');
 					}
 				}, {
 					text : 'Portfolio Slider',

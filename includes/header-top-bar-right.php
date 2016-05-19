@@ -2,14 +2,27 @@
 global $woocommerce;
 $translate['wpml-no'] = mfn_opts_get('translate') ? mfn_opts_get('translate-wpml-no','No translations available for this page') : __('No translations available for this page','betheme');
 
+// WooCommerce Cart
 $show_cart = trim( mfn_opts_get( 'shop-cart' ) );
-if( $show_cart == 1 ) $show_cart = 'icon-basket'; // Be < 4.9 compatibility
-
+if( $show_cart == 1 ) $show_cart = 'icon-basket';
 $has_cart = ( $woocommerce && $show_cart ) ? true : false;
-$header_search			= mfn_opts_get( 'header-search' );
-$header_action_link		= mfn_opts_get( 'header-action-link' );
 
-if( $has_cart || $header_search || $header_action_link || mfn_opts_get('header-wpml') != 'hide' ){
+// Search
+$header_search = mfn_opts_get( 'header-search' );
+
+// Action Button
+$header_action_link	= mfn_opts_get( 'header-action-link' );
+
+// WPML Icon
+if( has_nav_menu( 'lang-menu' ) ){
+	$wpml_icon = true;
+} elseif( function_exists( 'icl_get_languages' ) && mfn_opts_get('header-wpml') != 'hide' ){
+	$wpml_icon = true;
+} else {
+	$wpml_icon = false;
+}
+
+if( $has_cart || $header_search || $header_action_link || $wpml_icon ){
 	echo '<div class="top_bar_right">';
 		echo '<div class="top_bar_right_wrapper">';
 		

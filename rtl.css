@@ -3,95 +3,67 @@ Theme Name: Betheme
 Description: Adds support for languages written in a Right To Left (RTL) direction.
 */
 
+body{direction:rtl;unicode-bidi:embed}
+.mcb-wrap,.column,.columns{float:right}
+.the_content_wrapper{float:right}
 
-body { direction: rtl; unicode-bidi: embed;}
+/* Action Bar ------------------------------------------------------------------------ */
+#Action_bar .contact_details{float:right}
+#Action_bar .contact_details li:last-child{margin-left:0}
+#Action_bar .contact_details li{margin-right:0;margin-left:10px}
+#Action_bar .social{float:left}
+#Action_bar .social-menu{float:left}
+#Action_bar .social-menu li{margin-left:6px;margin-right:0;padding-left:6px;padding-right:0;border-left:1px solid rgba(255,255,255,.1);border-right:none}
+#Action_bar .social-menu li:last-child{margin-left:0;padding-left:0;border-left:0}
+#Action_bar .contact_details li > i{margin-right:0;margin-left:2px}
 
-.mcb-wrap,
-.column, .columns { float: right;}
+/* Top bar --------------------------------------------------------------------------- */
+#Top_bar .logo{float:right}
+#Top_bar .top_bar_left{float:right}
+#Top_bar .top_bar_right{float:left;padding:0 20px 0 10px}
+#Top_bar .top_bar_right::before{left:auto;right:-10px;transform:skewX(0deg) skewY(25deg)}
+#Top_bar .menu_wrapper{float:right}
+#Top_bar .menu > li{float:right}
+#Top_bar .menu > li:last-child > a span{border-right-width:1px solid rgba(0,0,0,0.05)}
+#Top_bar .menu > li:first-child > a span{border-right-width:0}
+#Top_bar .menu > li > ul.mfn-megamenu > li{float:right!important}
+#Top_bar .menu li ul:not(.mfn-megamenu){left:auto;right:0}
+#Top_bar .menu li ul:not(.mfn-megamenu) li ul{right:190px}
+#Top_bar .menu li ul li a .menu-arrow{left:7px;right:0;-moz-transform:scale(-1,1);-webkit-transform:scale(-1,1);-o-transform:scale(-1,1);-ms-transform:scale(-1,1);transform:scale(-1,1)}
+#Top_bar a.responsive-menu-toggle{left:10px;right:auto}
+#Top_bar a#header_cart{float:right;margin-left:1px;margin-right:0}
+#Top_bar a#header_cart span{left:8px;right:auto}
+#Top_bar a#search_button{float:right;margin-left:10px;margin-right:0}
+#Top_bar .wpml-languages{float:right;margin-left:10px;margin-right:0}
+#Top_bar .wpml-languages a.active{padding-left:6px;padding-right:10px}
+#Top_bar .wpml-languages a.active i{margin-left:0;margin-right:5px}
 
-.the_content_wrapper { float: left;}
-
-
-/* Action bar ---------- */
-
-#Action_bar {}
-
-	#Action_bar .contact_details { float: right; }
-	#Action_bar .contact_details li:last-child { margin-left: 0; }
-	#Action_bar .contact_details li{margin-right: 0; margin-left: 10px;}
+/* Search ---------------------------------------------------------------------------- */
+#Top_bar .search_wrapper input[type="text"]{padding-left:0;padding-right:35px}
+#Top_bar .search_wrapper .icon_close{right:auto;left:18px}
+#Top_bar .search_wrapper .icon_search{left:auto;right:18px}
 	
-	#Action_bar .social { float: left; }
-	
-	#Action_bar .social-menu { float: left;}
-	#Action_bar .social-menu li { margin-left: 6px; margin-right:0; padding-left: 6px; padding-right:0; border-left: 1px solid rgba(255,255,255,.1);border-right:none;}
-	#Action_bar .social-menu li:last-child { margin-left: 0px; padding-left: 0; border-left: 0;}
-	
-	#Action_bar .contact_details li > i { margin-right: 0; margin-left: 2px; }
+/* Header Stack ---------------------------------------------------------------------- */
+.header-stack #Top_bar .top_bar_right{left:0;right:auto}
+.header-stack #Top_bar .menu_wrapper{margin-right:0}
+.header-stack #Top_bar .menu li ul{left:auto;right:0}
+.header-magazine #Top_bar .logo{text-align:right}
+.header-magazine #Top_bar .banner_wrapper{left:20px;right:auto}
 
+/* Offer slider ---------------------------------------------------------------------- */
+.offer .offer_li .desc_wrapper .title{padding-left:160px;padding-right:0;text-align:right}
+.offer .offer_li .desc_wrapper .title a.button{right:auto;left:0}
+.offer .offer_li .desc_wrapper{text-align:right}
 
-/* Top bar ----------*/
+/* Lists ----------------------------------------------------------------------------- */
+ul.list_mixed li,ul.list_check li,ul.list_star li,ul.list_idea li{padding-right:50px;padding-left:0;margin-right:0}
+ul.list_check li,li.list_check{background-position:right 5px}
+ul.list_star li,li.list_star{background-position:right 5px}
+ul.list_idea li,li.list_idea{background-position:right 6px}
+ul.list_mixed li:after,ul.list_check li:after,ul.list_star li:after,ul.list_idea li:after{left:auto;right:0}
 
-#Top_bar {}
-
-	#Top_bar .logo { float: right;}
-	#Top_bar .top_bar_left { float: right;}
-	#Top_bar .top_bar_right { float: left;}
-	#Top_bar .top_bar_right::before { left:auto; right:-10px; transform: skewX(0deg) skewY(25deg);}
-	
-	#Top_bar .menu_wrapper { float: right; /*margin-right: 20px;*/ }
-	
-	#Top_bar .menu > li { float: right; }
-	#Top_bar .menu > li:last-child > a span { border-right-width: 1px solid rgba(0, 0, 0, 0.05); }
-	#Top_bar .menu > li:first-child > a span { border-right-width: 0; }
-	
-	#Top_bar .menu > li > ul.mfn-megamenu > li { float: right !important; }
-	#Top_bar .menu li ul:not(.mfn-megamenu) { left:auto; right:0;}
-	#Top_bar .menu li ul:not(.mfn-megamenu) li ul { right: 190px;}
-	
-	#Top_bar .menu li ul li a .menu-arrow { left:7px; right:0; 
-		-moz-transform: scale(-1, 1); -webkit-transform: scale(-1, 1); -o-transform: scale(-1, 1); -ms-transform: scale(-1, 1); transform: scale(-1, 1);}
-	
-	#Top_bar a.responsive-menu-toggle { left:10px; right:auto;}
-	
-	#Top_bar .wpml-languages a.active { padding-left:6px; padding-right:10px; }
-	#Top_bar .wpml-languages a.active i { margin-left:0; margin-right:5px;}
-
-
-/* Search ---------- */
-
-#Top_bar .search_wrapper {}
-
-	#Top_bar .search_wrapper input[type="text"] { padding-left: 0; padding-right: 35px; }
-	#Top_bar .search_wrapper .icon_close { right: auto; left: 18px; }
-	#Top_bar .search_wrapper .icon_search { left: auto; right: 18px; }
-	
-
-/* Header Stack ----------- */
-
-.header-stack {}
-
-	.header-stack #Top_bar .top_bar_right { left: 0; right: auto;}
-	.header-stack #Top_bar .menu_wrapper { margin-right: 0;}
-	.header-stack #Top_bar .menu li ul { left: auto; right: 0;}
-	.header-magazine #Top_bar .logo { text-align:right;}
-	.header-magazine #Top_bar .banner_wrapper { left: 20px; right: auto;}
-
-
-/* Offer slider */
-.offer .offer_li .desc_wrapper .title { padding-left: 160px; padding-right: 0; text-align: right; }
-.offer .offer_li .desc_wrapper .title a.button { right: auto; left: 0; }
-.offer .offer_li .desc_wrapper { text-align: right; }
-
-
-/* Lists */
-ul.list_mixed li, ul.list_check li, ul.list_star li, ul.list_idea li { padding-right: 50px; padding-left: 0;margin-right: 0; }
-ul.list_check li, li.list_check { background-position: right 5px; }
-ul.list_star li, li.list_star { background-position: right 5px;  }
-ul.list_idea li, li.list_idea { background-position: right 6px;  }
-ul.list_mixed li:after, ul.list_check li:after, ul.list_star li:after, ul.list_idea li:after { left: auto; right: 0; }
-
-dl > dt { float: right; }
-dl > dd { margin-right: 110px; margin-left: 0; }
+dl > dt{float:right}
+dl > dd{margin-right:110px;margin-left:0}
 
 
 /* Dropcap */

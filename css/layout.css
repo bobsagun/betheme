@@ -249,6 +249,16 @@ body:not(.template-slider) #Header{min-height:250px}
 	
 	.logo-no-margin.header-fw #Top_bar .column{margin:0;width:100%}
 	
+	.logo-overflow #Top_bar .logo{height:60px;position:relative;z-index:198}
+	.logo-overflow #Top_bar #logo{height:auto!important;z-index:199}
+	.logo-overflow #Top_bar #logo img{z-index:200}
+	
+	.logo-overflow #Top_bar.is-sticky #logo{height:auto!important}
+	.logo-overflow #Top_bar.is-sticky #logo img:not(.svg){max-height:110px!important}
+	
+	.logo-overflow.header-creative #Top_bar:not(.is-sticky) .logo,
+	.logo-overflow.header-stack #Top_bar:not(.is-sticky) .logo{height:auto}
+	
 	.logo-no-sticky-padding #Top_bar.is-sticky #logo{padding:0!important}
 	.logo-no-sticky-padding #Top_bar.is-sticky #logo img{max-height:60px!important}
 
@@ -545,6 +555,7 @@ body:not(.template-slider) #Header{min-height:250px}
 	.header-split #Header .top_bar_left .menu_left { float: left; width: 38%; text-align: center; }
 	.header-split #Header .top_bar_left .menu_right { float: right; width: 38%; text-align: center; }
 	.header-split #Header .top_bar_left .menu > li { display: inline-block; float: none; }
+	.header-split #Header .top_bar_left .menu li ul li a{padding:10px}
 	.header-split #Header .top_bar_left .logo { width: 100%; margin: 0; text-align: center; }
 	
 	@media only screen and (min-width: 1240px) {
@@ -611,8 +622,8 @@ body:not(.template-slider) #Header{min-height:250px}
 
 /* Header | Simple */	
 	.header-simple #Top_bar .top_bar_left { width:100% !important; background:none;}
-	.header-simple #Top_bar:not(.is-sticky) .top_bar_left { top:-40px;}
-	.header-simple.ab-show #Top_bar:not(.is-sticky) .top_bar_left { top:-30px;}
+	.header-simple #Top_bar:not(.is-sticky) .top_bar_left { top:-60px;}
+	.header-simple.ab-show #Top_bar:not(.is-sticky) .top_bar_left { top:0}
 	.header-simple #Top_bar .top_bar_right,
 	.header-simple #Top_bar .top_bar_right:before { display: none; }
 	.header-simple #Top_bar .menu > li > a span.description { margin:0 0 0 5px;}
@@ -639,7 +650,7 @@ body:not(.template-slider) #Header{min-height:250px}
 	.header-transparent #Top_bar .menu > li > a span { border-color: rgba(0, 0, 0, 0.03);}
 	.header-transparent #Top_bar .menu li > ul:not(.mfn-megamenu-bg) { background-image:none;}
 	
-	.header-transparent.ab-hide #Top_bar { top:30px;}
+	.header-transparent.ab-hide #Top_bar { top:0}
 
 		.header-transparent #Top_bar.is-sticky .menu_wrapper .menu > li > a { padding:0; }
 		.header-transparent #Top_bar.is-sticky .menu > li > a span:not(.description) { line-height: 60px; }

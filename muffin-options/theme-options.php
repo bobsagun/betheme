@@ -602,7 +602,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Advanced', 'mfn-opts'),
 					'options' 	=> array(
 						'no-margin' 		=> __('Remove Left margin<span>Top margin for Header Creative</span>', 'mfn-opts'),
-						'no-sticky-padding'	=> __('Remove Sticky Logo max-height & padding', 'mfn-opts'),
+						'overflow' 			=> __('Overflow Logo<span>For some header styles only</span>', 'mfn-opts'),
+						'no-sticky-padding'	=> __('Sticky Logo | Remove max-height & padding', 'mfn-opts'),
 					),
 				),
 	
