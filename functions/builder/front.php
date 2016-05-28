@@ -711,6 +711,17 @@ if( ! function_exists( 'mfn_print_faq' ) )
 	}
 }
 
+if( ! function_exists( 'mfn_print_feature_box' ) )
+{
+	/**
+	 * [feature_box]
+	 */
+	function mfn_print_feature_box( $item ) {
+		if( ! key_exists('content', $item['fields']) ) $item['fields']['content'] = '';
+		echo sc_feature_box( $item['fields'], $item['fields']['content'] );
+	}
+}
+
 if( ! function_exists( 'mfn_print_feature_list' ) )
 {
 	/**

@@ -3559,15 +3559,24 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'color-overlay-menu-button',
 					'type' 		=> 'color',
-					'title' 	=> __('Overlay Menu | Button', 'mfn-opts'),
+					'title' 	=> __('Overlay Menu | Button icon', 'mfn-opts'),
 					'desc' 		=> __('Header Overlay Menu only', 'mfn-opts'),
 					'std' 		=> '#2991d6',
+				),
+
+				array(
+					'id' 		=> 'background-overlay-menu-button',
+					'type' 		=> 'color',
+					'title' 	=> __('Overlay Menu | Button background', 'mfn-opts'),
+					'sub_desc' 	=> __('optional', 'mfn-opts'),
+					'desc' 		=> __('Header Overlay Menu only', 'mfn-opts'),
+					'std' 		=> '',
 				),
 					
 				array(
 					'id' 		=> 'background-overlay-menu',
 					'type' 		=> 'color',
-					'title' 	=> __('Overlay Menu | background', 'mfn-opts'),
+					'title' 	=> __('Overlay Menu | Menu background', 'mfn-opts'),
 					'desc' 		=> __('Header Overlay Menu only', 'mfn-opts'),
 					'std' 		=> '#2991d6',
 				),
@@ -3577,7 +3586,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'color',
 					'title' 	=> __('Overlay Menu | Link color', 'mfn-opts'),
 					'desc' 		=> __('Header Overlay Menu only', 'mfn-opts'),
-					'std' 		=> '#ffffff',
+					'std' 		=> '#FFFFFF',
 				),
 					
 				array(

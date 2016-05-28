@@ -22,7 +22,7 @@ require_once ABSPATH . 'wp-admin/includes/import.php';
 if ( ! class_exists( 'WP_Importer' ) ) {
 	$class_wp_importer = ABSPATH . 'wp-admin/includes/class-wp-importer.php';
 	if ( file_exists( $class_wp_importer ) )
-		require $class_wp_importer;
+		require_once $class_wp_importer;
 }
 
 // include WXR file parsers
@@ -63,7 +63,7 @@ class WP_Import extends WP_Importer {
 	var $url_remap = array();
 	var $featured_images = array();
 
-	function WP_Import() { /* nothing */ }
+	public function __construct(){ /* nothing */ }
 
 	/**
 	 * Registered callback function for the WordPress Importer
@@ -795,7 +795,7 @@ class WP_Import extends WP_Importer {
 		}
 
 		foreach ( $item['postmeta'] as $meta )
-			$$meta['key'] = $meta['value'];
+			${$meta['key']} = $meta['value'];
 
 		if ( 'taxonomy' == $_menu_item_type && isset( $this->processed_terms[intval($_menu_item_object_id)] ) ) {
 			$_menu_item_object_id = $this->processed_terms[intval($_menu_item_object_id)];
@@ -1106,7 +1106,7 @@ class WP_Import extends WP_Importer {
 	 * Added to http_request_timeout filter to force timeout at 60 seconds during import
 	 * @return int 60
 	 */
-	function bump_request_timeout( $val = false ) {
+	function bump_request_timeout($val) {
 		return 60;
 	}
 

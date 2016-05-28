@@ -715,8 +715,9 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 	
 /* Chart box ------------------------------------------------------------------------- */
 .chart_box{position:relative;text-align:center}
-.chart_box:before{content:"";display:block;z-index:2;width:124px;height:124px;border-width:1px;border-style:solid;position:absolute;left:50%;margin-left:-62px;top:8px;-webkit-border-radius:100%;border-radius:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background-color:#fff;background-image:url(../images/stripes/stripes_3_b.png)}
+.chart_box:before{content:"";display:block;z-index:2;width:138px;height:138px;border-width:1px;border-style:solid;position:absolute;left:50%;margin-left:-69px;top:1px;-webkit-border-radius:100%;border-radius:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background-color:#fff;background-image:url(../images/stripes/stripes_3_b.png)}
 .chart_box .chart{width:140px;margin:0 auto 10px;position:relative}
+.chart_box .chart canvas{position:relative;z-index:2}
 .chart_box .chart .icon,.chart_box .chart .image{width:70px;height:70px;line-height:70px;overflow:hidden;position:absolute;left:35px;top:35px;z-index:3;text-align:center}
 .chart_box .chart .icon{font-size:45px}
 .chart_box .chart .icon i:before{margin:0}
@@ -732,7 +733,7 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .progress_bars .bars_list li h6 .label{display:block;font-size:11px;line-height:17px;padding:0 5px;font-weight:400;position:absolute;right:0;top:1px;-webkit-border-radius:3px;border-radius:3px;background:rgba(0,0,0,.05);color:rgba(0,0,0,.35)}
 .progress_bars .bars_list li h6 .label em{font-style:normal}
 .progress_bars .bars_list li .bar{position:relative;width:100%;height:20px;-webkit-border-radius:3px;border-radius:3px;overflow:hidden;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background:rgba(0,0,0,.02);-webkit-box-shadow:inset 0 0 2px 2px rgba(0,0,0,0.04);box-shadow:inset 0 0 2px 2px rgba(0,0,0,0.04)}
-.progress_bars .bars_list li .bar .progress{display:block;height:20px;background-image:url(../images/progressbar.png);-webkit-box-shadow:inset 0 0 2px 2px rgba(0,0,0,0.04);box-shadow:inset 0 0 2px 2px rgba(0,0,0,0.04)}
+.progress_bars .bars_list li .bar .progress{display:block;height:100%;background-image:url(../images/progressbar.png);-webkit-box-shadow:inset 0 0 2px 2px rgba(0,0,0,0.04);box-shadow:inset 0 0 2px 2px rgba(0,0,0,0.04)}
 .progress_bars .bars_list:not(.hover) li .bar .progress{width:0!important}
 
 /* Animation */
@@ -799,6 +800,13 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 /* Animation */
 .flat_box .photo_wrapper .icon{-webkit-transition:all .4s ease-in-out;-moz-transition:all .4s ease-in-out;-o-transition:all .4s ease-in-out;transition:all .4s ease-in-out}
 .flat_box .photo_wrapper img{-webkit-transition:all .4s ease-in-out;-moz-transition:all .4s ease-in-out;-o-transition:all .4s ease-in-out;transition:all .4s ease-in-out}
+
+/* Feature box -------------------------------------------------------------------------- */
+.feature_box .feature_box_wrapper{display:table;padding:20px}
+.feature_box .feature_box_wrapper .photo_wrapper,.feature_box .feature_box_wrapper .desc_wrapper{display:table-cell;vertical-align:middle}
+.feature_box .feature_box_wrapper .photo_wrapper{width:50%;}
+.feature_box .feature_box_wrapper .photo_wrapper a{display:block;line-height:0}
+.feature_box .feature_box_wrapper .desc_wrapper{width:46%;padding-left:4%}
 
 /* Hover box ------------------------------------------------------------------------- */
 .hover_box{text-align:center;line-height:0}
@@ -1349,7 +1357,7 @@ a.icon_bar{color:#444!important}
 .style-simple ul.clients.clients_tiles li .client_wrapper::after{display:none}
 
 /* Progress bars */
-.style-simple .progress_bars .bars_list li .bar,.style-simple .progress_bars .bars_list li .bar .progress{height:5px}
+.style-simple .progress_bars .bars_list li .bar{height:5px}
 .style-simple .progress_bars .bars_list li .bar{box-shadow:0 0 0 0 rgba(0,0,0,0) inset;background:rgba(0,0,0,0.03);border-radius:0}
 .style-simple .progress_bars .bars_list li .bar .progress{background-image:none}
 

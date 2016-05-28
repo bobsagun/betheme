@@ -296,7 +296,11 @@ body:not(.template-slider) #Header{min-height:250px}
 		/* Search */
 		#Top_bar a#search_button{position:relative;top:9px;display:block;float:left;font-size:20px;line-height:20px;margin-right:10px}
 		#Top_bar a#search_button.has-input input{display:inline-block;margin:-5px 0 0;padding:8px;position:relative;top:-2px;width:130px}
-		#Top_bar a.button.action_button{top:-2px;margin:0 10px 0 0;color:#fff}
+		
+		/* Action Button */
+		#Top_bar a.button.action_button{top:-2px;margin:0 10px 0 0}
+		body.button-stroke #Top_bar a.button.action_button{top:-4px}
+		body:not(.button-stroke) #Top_bar a.button.action_button{color:#fff}
 		
 		/* WPML */
 		#Top_bar .wpml-languages{display:block;float:left;position:relative;z-index:210;margin-right:10px}
@@ -660,7 +664,7 @@ body:not(.template-slider) #Header{min-height:250px}
 	.header-overlay #Top_bar #logo { height:auto;}
 	.header-overlay .top_bar_right { display:none;}
 	
-	.header-overlay .overlay-menu-toggle { position:absolute; right:40px; top:40px; font-size:30px; z-index:9911;}
+	.header-overlay .overlay-menu-toggle{position:absolute;right:40px;top:40px;height:45px;width:45px;line-height:45px;text-align:center;font-size:30px;z-index:9911}
 	.header-overlay .overlay-menu-toggle.focus { color:#fff; 
 		-webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s;}
 		
