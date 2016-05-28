@@ -265,6 +265,7 @@ if( ! function_exists( 'sc_helper' ) )
 	{
 		extract(shortcode_atts(array(
 			'title' 	=> '',
+			'title_tag' => 'h4',
 			
 			'title1' 	=> '',
 			'content1' 	=> '',
@@ -288,7 +289,9 @@ if( ! function_exists( 'sc_helper' ) )
 
 			$output .= '<div class="helper_header">';
 			
-				if( $title ) $output .= '<h4 class="title">'. $title .'</h4>';
+				if( $title ){
+					$output .= '<'. $title_tag .' class="title">'. $title .'</'. $title_tag .'>';
+				}
 				
 				$output .= '<div class="links">';
 				
@@ -405,6 +408,63 @@ if( ! function_exists( 'sc_flat_box' ) )
 					
 				if( $link ) $output .= '</a>';
 				
+			if( $animate ) $output .= '</div>';
+		$output .= '</div>'."\n";
+
+		return $output;
+	}
+}
+
+
+/* ---------------------------------------------------------------------------
+ * Flat Box [feature_box] [/feature_box]
+ * --------------------------------------------------------------------------- */
+if( ! function_exists( 'sc_feature_box' ) )
+{
+	function sc_feature_box( $attr, $content = null )
+	{
+		extract(shortcode_atts(array(
+			'image' 		=> '',
+			'title' 		=> '',
+			'background' 	=> '',	
+			'link' 			=> '',
+			'target' 		=> '',		
+			'animate' 		=> '',
+		), $attr));
+		
+		// image | visual composer fix
+		$image = mfn_vc_image( $image );
+		
+		// background
+		if( $background ) $background = 'style="background-color:'. $background .'"';
+		
+		// target
+		if( $target == 'lightbox' ){
+			$target = 'rel="prettyphoto"';
+		} elseif( $target ){
+			$target = 'target="_blank"';
+		} else {
+			$target = false;
+		}
+
+		$output = '<div class="feature_box">';
+			if( $animate ) $output .= '<div class="animate" data-anim-type="'. $animate .'">';
+				
+				$output .= '<div class="feature_box_wrapper" '. $background .'>';
+				
+					$output .= '<div class="photo_wrapper">';
+						if( $link ) $output .= '<a href="'. $link .'" '. $target .'>';
+							$output .= '<img class="scale-with-grid" src="'. $image .'" alt="'. mfn_get_attachment_data( $image, 'alt' ) .'" width="'. mfn_get_attachment_data( $image, 'width' ) .'" height="'. mfn_get_attachment_data( $image, 'height' ) .'" />';
+						if( $link ) $output .= '</a>';
+					$output .= '</div>';
+					
+					$output .= '<div class="desc_wrapper">';							
+						if( $title ) $output .= '<h4>'. $title .'</h4>';
+						if( $content )$output .= '<div class="desc">'. do_shortcode($content) .'</div>';							
+					$output .= '</div>';
+					
+				$output .= '</div>';
+			
 			if( $animate ) $output .= '</div>';
 		$output .= '</div>'."\n";
 
@@ -1827,11 +1887,12 @@ if( ! function_exists( 'sc_chart' ) )
 	function sc_chart( $attr, $content = null )
 	{
 		extract(shortcode_atts(array(
+			'title' 		=> '',
 			'percent' 		=> '',
 			'label' 		=> '',
 			'icon'	 		=> '',
 			'image'	 		=> '',
-			'title' 		=> '',
+			'line_width'	=> '',	
 		), $attr));
 		
 		// image | visual composer fix
@@ -1844,8 +1905,11 @@ if( ! function_exists( 'sc_chart' ) )
 			$color =  mfn_opts_get( 'color-counter', '#2991D6' );
 		}
 		
+		// line width
+		if( $line_width ) $line_width = 'data-line-width="'. intval( $line_width ) .'"';
+		
 		$output = '<div class="chart_box">';
-			$output .= '<div class="chart" data-percent="'. intval($percent) .'" data-color="'.  $color .'">';
+			$output .= '<div class="chart" data-percent="'. intval( $percent ) .'" data-bar-color="'.  $color .'" '. $line_width .'>';
 				if( $image ){
 					$output .= '<div class="image"><img class="scale-with-grid" src="'. $image .'" alt="'. mfn_get_attachment_data( $image, 'alt' ) .'" width="'. mfn_get_attachment_data( $image, 'width' ) .'" height="'. mfn_get_attachment_data( $image, 'height' ) .'"/></div>';
 				} elseif( $icon ){
@@ -4289,21 +4353,22 @@ if( ! function_exists( 'sc_bar' ) )
 	function sc_bar( $attr, $content = null )
 	{
 		extract(shortcode_atts(array(
-			'title' => '',
-			'value' => 0,
+			'title' 	=> '',
+			'value' 	=> 0,
+			'size' 		=> '',
 		), $attr));
 	
-		$value = intval( $value );
-	
+		if( $size ) $size = 'style="height:'. intval( $size ) .'px"';
+		
 		$output  = '<li>';
 		
 			$output .= '<h6>';
 				$output .= $title;
-				$output .= '<span class="label">'. $value .'<em>%</em></span>';
+				$output .= '<span class="label">'. intval( $value ) .'<em>%</em></span>';
 			$output .= '</h6>';
 			
-			$output .= '<div class="bar">';
-				$output .= '<span class="progress" style="width:'. $value .'%"></span>';
+			$output .= '<div class="bar" '. $size .'>';
+				$output .= '<span class="progress" style="width:'. intval( $value ) .'%"></span>';
 			$output .= '</div>';
 			
 		$output .= '</li>'."\n";
@@ -5019,6 +5084,7 @@ add_shortcode( 'fancy_divider', 'sc_fancy_divider' );
 add_shortcode( 'fancy_heading', 'sc_fancy_heading' );
 add_shortcode( 'faq', 'sc_faq' );
 add_shortcode( 'faq_item', 'sc_faq_item' );
+add_shortcode( 'feature_box', 'sc_feature_box' );
 add_shortcode( 'feature_list', 'sc_feature_list' );
 add_shortcode( 'flat_box', 'sc_flat_box' );
 add_shortcode( 'helper', 'sc_helper' );

@@ -1502,13 +1502,11 @@
 			offset		: '100%',
 			triggerOnce	: true,
 			handler		: function(){
-				
-				var color = $(this).attr('data-color');
+
 				var lineW = simple ? 4 : 8;
 				
 				$(this).easyPieChart({
 					animate		: 1000,
-					barColor	: color,
 					lineCap		: 'circle',
 					lineWidth	: lineW,
 					size		: 140,

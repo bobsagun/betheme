@@ -250,7 +250,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	#Header .top_bar_right {
 		background-color: <?php mfn_opts_show( 'background-top-right', '#f5f5f5' ) ?>;
 	}
-	#Top_bar .top_bar_right a { 
+	#Top_bar .top_bar_right a:not(.action_button) { 
 		color: <?php mfn_opts_show( 'color-top-right-a', '#444444' ) ?>;
 	}
 	
@@ -342,9 +342,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		background: <?php mfn_opts_show( 'background-search', '#2991D6' ) ?>; 
 	}
 
-	
 	.overlay-menu-toggle {
 		color: <?php mfn_opts_show( 'color-overlay-menu-button', '#2991D6' ) ?> !important; 
+		background: <?php mfn_opts_show( 'background-overlay-menu-button', 'transparent' ) ?>; 
 	}
 	#Overlay {
 		background: <?php hex2rgba( mfn_opts_get( 'background-overlay-menu', '#2991D6' ), .95, true ) ?>;

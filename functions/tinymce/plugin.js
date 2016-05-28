@@ -179,7 +179,7 @@
 				}, {
 					text : 'Progress Icons',
 					onclick : function() {
-						editor.insertContent('[progress_icons icon="icon-heart-line" count="5" active="3" background=""]');
+						editor.insertContent('[progress_icons icon="icon-heart-line" image="" count="5" active="3" background=""]');
 					}
 				}, {
 					text : 'Share Box',
@@ -242,7 +242,7 @@
 				}, {
 					text : 'Chart',
 					onclick : function() {
-						editor.insertContent('[chart percent="" label="" icon="" image="" title=""]');
+						editor.insertContent('[chart title="" percent="" label="" icon="" image="" line_width=""]');
 					}				
 				}, {
 					text : 'Clients',
@@ -283,6 +283,11 @@
 					text : 'FAQ',
 					onclick : function() {
 						editor.insertContent('[faq title="" open1st="0" openAll="0"][faq_item title="Title" number="1"]Content[/faq_item][/faq]');
+					}
+				}, {
+					text : 'Feature Box',
+					onclick : function() {
+						editor.insertContent('[feature_box image="" title="" background="" link="" target=""]Insert your content here[/feature_box]');
 					}
 				}, {
 					text : 'Feature List',
@@ -367,7 +372,7 @@
 				}, {
 					text : 'Progress Bars',
 					onclick : function() {
-						editor.insertContent('[progress_bars title=""][bar title="Bar1" value="50"][/progress_bars]');
+						editor.insertContent('[progress_bars title=""][bar title="Bar1" value="50" size="20"][/progress_bars]');
 					}
 				}, {
 					text : 'Promo Box',

@@ -464,6 +464,19 @@ class mfnImport {
 			</div>
 			
 			<?php 
+				$phpversion = 0;
+				if ( function_exists( 'phpversion' ) ){
+					$phpversion = floatval( phpversion() );
+				}
+			
+				if( ( $phpversion >= 7 ) && is_plugin_active( 'wordpress-importer/wordpress-importer.php' )){
+					echo '<div class="mfn-message error php-7">';
+						echo 'Default WordPress Importer plugin is not compatible with PHP '. $phpversion .', please deactivate this plugin before demo data import.';
+					echo '</div>';	
+				}
+			?>
+			
+			<?php 
 				$test_error = false;
 				$test_file 	= LIBS_URI . '/importer/demo/menu.txt';
 				
@@ -658,6 +671,7 @@ class mfnImport {
 								<option value="mechanic">Mechanic</option>
 								<option value="media">Media</option>
 								<option value="medic">Medic</option>
+								<option value="medic2">Medic 2</option>
 								<option value="mining">Mining</option>
 								<option value="model">Model</option>
 								<option value="movie">Movie</option>
