@@ -646,7 +646,7 @@ if( ! function_exists( 'mfn_page_title' ) )
 			// Blog | Year --------------------------------
 			$title = get_the_time('Y');
 			
-		} elseif( is_single() ){
+		} elseif( is_single() || is_page() ){
 			
 			// Single -------------------------------------
 			$title = get_the_title( mfn_ID() );
@@ -1341,10 +1341,10 @@ if( ! function_exists( 'mfn_post_thumbnail' ) )
  * Single | Post Navigation | Sort
  * --------------------------------------------------------------------------- */
 
-// next ----------
-if( ! function_exists( 'mfn_filter_next_post_sort' ) )
+// previous ----------
+if( ! function_exists( 'mfn_filter_previous_post_sort' ) )
 {
-	function mfn_filter_next_post_sort( $sort ){
+	function mfn_filter_previous_post_sort( $sort ){
 		if( mfn_get_portfolio_order() == 'ASC' ){
 			$order = 'DESC';
 		} else {
@@ -1355,9 +1355,9 @@ if( ! function_exists( 'mfn_filter_next_post_sort' ) )
 	}
 }
 
-if( ! function_exists( 'mfn_filter_next_post_where' ) )
+if( ! function_exists( 'mfn_filter_previous_post_where' ) )
 {
-	function mfn_filter_next_post_where( $where ){
+	function mfn_filter_previous_post_where( $where ){
 		global $post, $wpdb;
 		$orderby = mfn_get_portfolio_orderby();
 		$where = preg_replace( "/(.*)p.post_type/", "AND p.post_type", $where );
@@ -1373,18 +1373,18 @@ if( ! function_exists( 'mfn_filter_next_post_where' ) )
 	}
 }
 
-// previous ----------
-if( ! function_exists( 'mfn_filter_previous_post_sort' ) )
+// next ----------
+if( ! function_exists( 'mfn_filter_next_post_sort' ) )
 {
-	function mfn_filter_previous_post_sort( $sort ){
+	function mfn_filter_next_post_sort( $sort ){
 		$sort = "ORDER BY p.". esc_sql( mfn_get_portfolio_orderby() ) ." ". esc_sql( mfn_get_portfolio_order() ) ." LIMIT 1";
 		return $sort;
 	}
 }
 
-if( ! function_exists( 'mfn_filter_previous_post_where' ) )
+if( ! function_exists( 'mfn_filter_next_post_where' ) )
 {
-	function mfn_filter_previous_post_where( $where ){
+	function mfn_filter_next_post_where( $where ){
 		global $post, $wpdb;
 		$orderby = mfn_get_portfolio_orderby();
 		$where = preg_replace( "/(.*)p.post_type/", "AND p.post_type", $where );
@@ -1430,10 +1430,10 @@ if( ! function_exists( 'mfn_get_portfolio_orderby' ) )
 if( ! function_exists( 'mfn_post_navigation_sort' ) )
 {
 	function mfn_post_navigation_sort(){
-		add_filter( 'get_next_post_sort', 'mfn_filter_next_post_sort' );
-		add_filter( 'get_next_post_where', 'mfn_filter_next_post_where' );
 		add_filter( 'get_previous_post_sort', 'mfn_filter_previous_post_sort' );
 		add_filter( 'get_previous_post_where', 'mfn_filter_previous_post_where' );
+		add_filter( 'get_next_post_sort', 'mfn_filter_next_post_sort' );
+		add_filter( 'get_next_post_where', 'mfn_filter_next_post_where' );	
 	}
 }
 
@@ -1801,7 +1801,7 @@ if( ! function_exists( 'mfn_register_required_plugins' ) )
 				'slug'     				=> 'js_composer',
 				'source'   				=> THEME_DIR .'/plugins/js_composer.zip',
 				'required' 				=> false,
-				'version' 				=> '4.11.2.1',
+				'version' 				=> '4.12',
 			),
 	
 		);

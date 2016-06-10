@@ -328,7 +328,9 @@
 			        if( newActive ){
 				        var menu = $('#menu');
 				        menu.find('li').removeClass('current-menu-item current-menu-parent current-menu-ancestor current_page_item current_page_parent current_page_ancestor');
-				        $( active, menu ).closest('li').addClass('current-menu-item');
+				        $( active, menu )
+				        	.closest('li').addClass('current-menu-item')
+				        	.closest('.menu > li').addClass('current-menu-item');
 			        }
 				}
 			
@@ -552,25 +554,31 @@
 					
 				});
 				
-				
-				
-				// active | remove
-				menu.find( 'li' ).removeClass( 'current-menu-item current-menu-parent current-menu-ancestor current-page-ancestor current_page_item current_page_parent current_page_ancestor' );
-			
-				
-				// active | add for first element if offset().top == 0 			
-				var first = $( '.menu > li:first-child', menu );
-				var firstA  = first.children('a');
-				
-				if( firstA.attr( 'data-hash' ) ){		
-					var hash = firstA.attr( 'data-hash' );
-					hash = '[data-id="'+ hash +'"]';
+
+				// active
+				if( $( '.menu > li.current-menu-item, .menu > li.current-menu-parent, .menu > li.current-menu-ancestor, .menu > li.current-page-ancestor, .menu > li.current_page_item, .menu > li.current_page_parent, .menu > li.current_page_ancestor', menu ).length ){
 					
-					var wpadminbarH = $('#wpadminbar').innerHeight() * 1;
+					// remove duplicated 
+					$( '.menu > li.current-menu-item, .menu > li.current-menu-parent, .menu > li.current-menu-ancestor, .menu > li.current-page-ancestor, .menu > li.current_page_item, .menu > li.current_page_parent, .menu > li.current_page_ancestor', menu )
+						.not(':first').removeClass( 'current-menu-item current-menu-parent current-menu-ancestor current-page-ancestor current_page_item current_page_parent current_page_ancestor' );
 					
-					if( $(hash).length && ( $(hash).offset().top == wpadminbarH ) ){
-						first.addClass( 'current-menu-item' );
+				} else {
+					
+					// add to first if none is active
+					var first = $( '.menu > li:first-child', menu );
+					var firstA  = first.children('a');
+					
+					if( firstA.attr( 'data-hash' ) ){		
+						var hash = firstA.attr( 'data-hash' );
+						hash = '[data-id="'+ hash +'"]';
+						
+						var wpadminbarH = $('#wpadminbar').innerHeight() * 1;
+						
+						if( $(hash).length && ( $(hash).offset().top == wpadminbarH ) ){
+							first.addClass( 'current-menu-item' );
+						}
 					}
+					
 				}
 
 				
@@ -580,7 +588,9 @@
 					
 					// active
 					menu.find('li').removeClass('current-menu-item');
-					$(this).closest('li').addClass('current-menu-item');
+					$(this)
+						.closest('li').addClass('current-menu-item')
+						.closest('.menu > li').addClass('current-menu-item');
 	
 					var hash = $(this).attr('data-hash');
 					hash = '[data-id="'+ hash +'"]';

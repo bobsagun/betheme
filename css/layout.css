@@ -238,6 +238,7 @@ body:not(.template-slider) #Header{min-height:250px}
 	#Top_bar #logo:hover{text-decoration:none}
 	#Top_bar #logo img{vertical-align:middle;max-height:100%}
 	#Top_bar #logo img.logo-sticky,#Top_bar #logo img.logo-mobile{display:none}
+	#Top_bar .text-logo #logo{font-weight:300}
 	
 	/* Logo | Advanced */
 	.logo-valign-top #Top_bar #logo img{vertical-align:top}
@@ -334,7 +335,7 @@ body:not(.template-slider) #Header{min-height:250px}
 #Top_bar .page-menu > li > a{padding:15px 20px}
 #Top_bar .menu > li > a:after{content:"";height:4px;width:100%;position:absolute;left:0;top:-4px;z-index:203;opacity:0;filter:alpha(opacity=0)}
 #Top_bar .menu > li > a span:not(.description){display:block;line-height:60px;padding:0 20px;white-space:nowrap;border-right-width:1px;border-style:solid}
-#Top_bar .menu > li > a span.description{font-size:11px;line-height:12px!important;margin:-15px -15px 0;color:#aaa;font-weight:300;text-align:center;display:block}
+#Top_bar .menu > li > a span.description{font-size:11px;line-height:12px!important;margin:-12px -15px 0;color:#aaa;font-weight:300;text-align:center;display:block}
 #Top_bar .menu > li:last-child > a span{border:0}
 #Top_bar .menu > li > a:hover{text-decoration:none}
 

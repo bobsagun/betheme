@@ -47,8 +47,8 @@ class mfnImport {
 			
 		}
 	
-		wp_enqueue_style( 'mfn.import', LIBS_URI. '/importer/import.css', false, time(), 'all');
-		wp_enqueue_script( 'mfn.import', LIBS_URI. '/importer/import.js', false, time(), true );
+		wp_enqueue_style( 'mfn-import', LIBS_URI. '/importer/import.css', false, time(), 'all');
+		wp_enqueue_script( 'mfn-import', LIBS_URI. '/importer/import.js', false, time(), true );
 	}
 	
 	
@@ -554,6 +554,7 @@ class mfnImport {
 								<option value="accountant">Accountant</option>
 								<option value="adagency">Ad Agency</option>
 								<option value="agency">Agency</option>
+								<option value="agency2">Agency 2</option>
 								<option value="agro">Agro</option>
 								<option value="animals">Animals</option>
 								<option value="app">App</option>
