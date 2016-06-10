@@ -282,9 +282,11 @@ html,body{overflow-x:hidden}
 		.portfolio_group.grid.col-5 .portfolio-item,
 		.portfolio_group.masonry.col-5 .portfolio-item,
 		.portfolio_group.masonry-hover.col-5 .portfolio-item,
+		.portfolio_group.masonry-minimal.col-5 .portfolio-item,
 		.portfolio_group.grid.col-6 .portfolio-item,
 		.portfolio_group.masonry.col-6 .portfolio-item,
-		.portfolio_group.masonry-hover.col-6 .portfolio-item { width: 22.99%;}
+		.portfolio_group.masonry-hover.col-6 .portfolio-item,
+		.portfolio_group.masonry-minimal.col-6 .portfolio-item { width: 22.99%;}
 		
 		/* Portfolio | Columns | Flat */			
 		.portfolio_group.flat.col-5 .portfolio-item,			
@@ -408,12 +410,15 @@ html,body{overflow-x:hidden}
 		.portfolio_group.grid.col-4 .portfolio-item,
 		.portfolio_group.masonry.col-4 .portfolio-item,
 		.portfolio_group.masonry-hover.col-4 .portfolio-item,
+		.portfolio_group.masonry-minimal.col-4 .portfolio-item,
 		.portfolio_group.grid.col-5 .portfolio-item,
 		.portfolio_group.masonry.col-5 .portfolio-item,
 		.portfolio_group.masonry-hover.col-5 .portfolio-item,
+		.portfolio_group.masonry-minimal.col-5 .portfolio-item,
 		.portfolio_group.grid.col-6 .portfolio-item,
 		.portfolio_group.masonry.col-6 .portfolio-item,
-		.portfolio_group.masonry-hover.col-6 .portfolio-item { width: 31.33%;}
+		.portfolio_group.masonry-hover.col-6 .portfolio-item,
+		.portfolio_group.masonry-minimal.col-6 .portfolio-item { width: 31.33%;}
 		
 		/* Flat */			
 		.portfolio_group.flat.col-4 .portfolio-item,

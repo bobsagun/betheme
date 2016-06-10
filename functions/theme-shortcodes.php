@@ -1133,6 +1133,7 @@ if( ! function_exists( 'sc_blog_news' ) )
 			'count'				=> 5,
 			'category'			=> '',
 			'category_multi'	=> '',
+			'excerpt'			=> '',
 			'link'				=> '',
 			'link_title'		=> '',
 		), $attr));
@@ -1167,13 +1168,17 @@ if( ! function_exists( 'sc_blog_news' ) )
 						$output .= '</div>';
 						
 						$output .= '<div class="desc">';
+						
 							$output .= '<h5><a href="'. get_permalink() .'">'. get_the_title() .'</a></h5>';
 							
+							if( $excerpt ) $output .= '<div class="post-excerpt">'. get_the_excerpt() .'</div>';
+
 							$output .= '<div class="desc_footer">';
 								$output .= '<span class="date"><i class="icon-clock"></i> '. get_the_date() .'</span>';
 								if( comments_open() ) $output .= '<i class="icon-comment-empty-fa"></i> <a href="'. get_comments_link() .'" class="post-comments">'. get_comments_number() .'</a>';
 								$output .= '<div class="button-love">'. mfn_love() .'</div>';
 							$output .= '</div>';
+							
 						$output .= '</div>';
 						
 					$output .= '</li>';
@@ -1388,9 +1393,18 @@ if( ! function_exists( 'sc_contact_box' ) )
 							$output .= '</li>';
 						}
 						if( $www ){
+							
+							if( strpos( $www, 'http' ) === 0 ){
+								$url = $www;
+								$www = str_replace( 'http://', '', $www );
+								$www = str_replace( 'https://', '', $www );
+							} else {
+								$url = 'http'. mfn_ssl() .'://'. $www;
+							}
+							
 							$output .= '<li class="www">';
 								$output .= '<span class="icon"><i class="icon-link"></i></span>';
-								$output .= '<p><a target="_blank" href="http'. mfn_ssl() .'://'. $www .'">'. $www .'</a></p>';
+								$output .= '<p><a target="_blank" href="'. $url .'">'. $www .'</a></p>';
 							$output .= '</li>';
 						}
 					$output .= '</ul>';

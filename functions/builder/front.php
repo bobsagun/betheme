@@ -313,6 +313,11 @@ if( ! function_exists( 'mfn_builder_print' ) )
 									if( $wrap['attr']['padding'] )  $wrap_style[] = 'padding:'. $wrap['attr']['padding'];
 									if( $wrap['attr']['bg_color'] ) $wrap_style[] = 'background-color:'. $wrap['attr']['bg_color'];
 									
+									// move up -------
+									if( key_exists( 'move_up', $wrap['attr'] ) && $wrap['attr']['move_up'] ){
+										$wrap_style[] = 'margin-top:-'. intval( $wrap['attr']['move_up'] ) .'px';
+									}
+									
 									// background image attributes
 									
 									if( $wrap['attr']['bg_image'] ){
@@ -360,9 +365,9 @@ if( ! function_exists( 'mfn_builder_print' ) )
 								
 									// parallax | translate3d -------
 									if( ! mfn_is_mobile() && $parallax && mfn_parallax_plugin() == 'translate3d' ){
-										echo '<img class="mfn-parallax" src="'. $section['attr']['bg_image'] .'" alt="'. __('parallax background','betheme') .'"/>';
+										echo '<img class="mfn-parallax" src="'. $wrap['attr']['bg_image'] .'" alt="'. __('parallax background','betheme') .'"/>';
 									}
-								
+									
 									
 									echo '<div class="mcb-wrap-inner">'; 
 										
@@ -620,7 +625,7 @@ if( ! function_exists( 'mfn_print_column' ) )
 			$style .= ' '. $item['fields']['style'];
 		}
 
-		echo '<div class="column_attr'. $column_class .'" '. $column_attr .' style="'. $style .'">';
+		echo '<div class="column_attr clearfix'. $column_class .'" '. $column_attr .' style="'. $style .'">';
 			echo do_shortcode( $item['fields']['content'] );
 		echo '</div>';
 	}

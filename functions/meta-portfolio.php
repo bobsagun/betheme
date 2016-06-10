@@ -153,6 +153,7 @@ function mfn_portfolio_meta_add() {
 				'id' 		=> 'mfn-post-layout',
 				'type' 		=> 'radio_img',
 				'title' 	=> __('Layout', 'mfn-opts'),
+				'desc' 		=> __('<b>Full width</b> sections works only <b>without</b> sidebars', 'mfn-opts'),
 				'options' 	=> array(
 					'no-sidebar' 	=> array('title' => 'Full width. No sidebar', 'img' => MFN_OPTIONS_URI.'img/1col.png'),
 					'left-sidebar' 	=> array('title' => 'Left Sidebar', 'img' => MFN_OPTIONS_URI.'img/2cl.png'),
@@ -185,6 +186,7 @@ function mfn_portfolio_meta_add() {
 				'options' 	=> array(
 					'' 			=> __( 'Default Template', 'mfn-opts' ),
 					'builder' 	=> __( 'Builder', 'mfn-opts' ),
+					'intro' 	=> __( 'Intro Header', 'mfn-opts' ),
 				),
 			),
 				
@@ -277,6 +279,23 @@ function mfn_portfolio_meta_add() {
 			),
 				
 			array(
+				'id'		=> 'mfn-post-hide-title',
+				'type'		=> 'switch',
+				'title'		=> __('Subheader | Hide', 'mfn-opts'),
+				'options'	=> array('1' => 'On', '0' => 'Off'),
+				'std'		=> '0'
+			),
+				
+			array(
+				'id' 		=> 'mfn-post-remove-padding',
+				'type' 		=> 'switch',
+				'title' 	=> __('Content | Remove Padding', 'mfn-opts'),
+				'desc' 		=> __('Remove default Content Padding', 'mfn-opts'),
+				'options' 	=> array('1' => 'On','0' => 'Off'),
+				'std' 		=> '0'
+			),
+				
+			array(
 				'id' 		=> 'mfn-post-slider-header',
 				'type' 		=> 'switch',
 				'title' 	=> __('Slider | Show in Header', 'mfn-opts'),
@@ -319,9 +338,21 @@ function mfn_portfolio_meta_add() {
 			),
 				
 			array(
+				'id'		=> 'mfn-post-intro',
+				'type' 		=> 'checkbox',
+				'title' 	=> __('Intro | Options', 'mfn-opts'),
+				'desc' 		=> __('for <b>Template: Intro</b>', 'mfn-opts'),
+				'options' 	=> array(
+					'light'			=> __( 'Light | light image, dark text', 'mfn-opts' ),
+					'full-screen'	=> __( 'Full Screen', 'mfn-opts' ),
+					'parallax'		=> __( 'Parallax', 'mfn-opts' ),
+				),
+			),
+				
+			array(
 				'id' 		=> 'mfn-post-size',
 				'type' 		=> 'select',
-				'title' 	=> __('Item Size', 'mfn-opts'),
+				'title' 	=> __('Masonry Flat | Item Size', 'mfn-opts'),
 				'desc' 		=> __('for <b>Portfolio Layout: Masonry Flat</b>', 'mfn-opts'),
 				'options' 	=> array(
 					''			=> __('Default','mfn-opts'),

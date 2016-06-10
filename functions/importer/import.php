@@ -672,6 +672,7 @@ class mfnImport {
 								<option value="media">Media</option>
 								<option value="medic">Medic</option>
 								<option value="medic2">Medic 2</option>
+								<option value="minimal">Minimal</option>
 								<option value="mining">Mining</option>
 								<option value="model">Model</option>
 								<option value="movie">Movie</option>

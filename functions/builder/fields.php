@@ -256,6 +256,23 @@ if( ! function_exists( 'mfn_get_fields_wrap' ) )
 				'std' 		=> 'center top no-repeat',
 			),
 				
+			// options
+			array(
+				'id' 		=> 'info_options',
+				'type' 		=> 'info',
+				'title' 	=> '',
+				'desc' 		=> __('Options', 'mfn-opts'),
+				'class' 	=> 'mfn-info',
+			),
+			
+			array(
+				'id' 		=> 'move_up',
+				'type' 		=> 'text',
+				'title' 	=> __('Move Up', 'mfn-opts'),
+				'desc' 		=> __('px<br />Move this wrap to overflow on previous section. Do <b>not</b> work with <b>parallax</b>', 'mfn-opts'),
+				'class' 	=> 'small-text',
+			),
+				
 			array(
 				'id' 		=> 'padding',
 				'type' 		=> 'text',
@@ -264,6 +281,7 @@ if( ! function_exists( 'mfn_get_fields_wrap' ) )
 				'class' 	=> 'small-text',
 			),
 				
+			// items
 			array(
 				'id' 		=> 'info_items',
 				'type' 		=> 'info',
@@ -299,6 +317,7 @@ if( ! function_exists( 'mfn_get_fields_wrap' ) )
 				),
 			),
 	
+			// advanced
 			array(
 				'id' 		=> 'info_advanced',
 				'type' 		=> 'info',
@@ -770,6 +789,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'std' 		=> '5',
 						'class' 	=> 'small-text',
 					),
+						
+					// options		
+					array(
+						'id' 		=> 'info_options',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Options', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
 
 					array(
 						'id' 		=> 'category',
@@ -786,6 +814,25 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'sub_desc'	=> __('Categories Slugs', 'mfn-opts'),
 						'desc'		=> __('Slugs should be separated with <strong>coma</strong> (,).', 'mfn-opts'),
 					),
+						
+					// advanced
+					array(
+						'id' 		=> 'info_advanced',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Advanced', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
+					array(
+						'id' 		=> 'excerpt',
+						'type' 		=> 'select',
+						'title' 	=> __('Excerpt', 'mfn-opts'),
+						'options' 	=> array(
+							0 => __('Hide', 'mfn-opts'),
+							1 => __('Show', 'mfn-opts'),
+						),
+					),
 
 					array(
 						'id'		=> 'link',
@@ -800,6 +847,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'class'		=> 'small-text',
 					),
 
+					// custom
+					array(
+						'id' 		=> 'info_custom',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Custom', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+					
 					array(
 						'id' 		=> 'classes',
 						'type' 		=> 'text',
@@ -3874,13 +3930,14 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> 'Style',
 						'options' 	=> array(
-							'flat'			=> 'Flat',
-							'grid'			=> 'Grid',
-							'masonry'		=> 'Masonry Blog Style',
-							'masonry-hover'	=> 'Masonry Hover Description',
-							'masonry-flat'	=> 'Masonry Flat',
-							'list'			=> 'List',
-							'exposure'		=> 'Exposure',
+							'flat'				=> 'Flat',
+							'grid'				=> 'Grid',
+							'masonry'			=> 'Masonry Blog Style',
+							'masonry-hover'		=> 'Masonry Hover Description',
+							'masonry-minimal'	=> 'Masonry Minimal',
+							'masonry-flat'		=> 'Masonry Flat',
+							'list'				=> 'List',
+							'exposure'			=> 'Exposure',
 						),
 						'std' 		=> 'grid'
 					),
@@ -4446,7 +4503,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'textarea',
 						'title' 	=> __('Content', 'mfn-opts'),
 						'desc' 		=> __('Please use <strong>[bar title="Title" value="50" size="20"]</strong> shortcodes here.', 'mfn-opts'),
-						'std' 		=> '[bar title="Bar1" value="50"]'."\n".'[bar title="Bar2" value="60"]',
+						'std' 		=> '[bar title="Bar1" value="50"]'."\n".'[bar title="Bar2" value="60" size="20"]',
 					),
 						
 					array(
