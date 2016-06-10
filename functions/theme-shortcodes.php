@@ -917,6 +917,11 @@ if( ! function_exists( 'sc_blog' ) )
 			'post_status'			=> 'publish',
 			'ignore_sticky_posts'	=> 0,
 		);
+		
+		// private
+		if( is_user_logged_in() ){
+			$args['post_status'] = array('publish','private');
+		}
 
 		// categories
 		if( $category_multi ){
@@ -1056,6 +1061,11 @@ if( ! function_exists( 'sc_blog_slider' ) )
 			'ignore_sticky_posts'	=> 0,
 		);
 		
+		// private
+		if( is_user_logged_in() ){
+			$args['post_status'] = array('publish','private');
+		}
+		
 		// categories
 		if( $category_multi ){
 			$args['category_name'] = trim( $category_multi );
@@ -1144,6 +1154,11 @@ if( ! function_exists( 'sc_blog_news' ) )
 			'post_status'			=> 'publish',
 			'ignore_sticky_posts'	=> 0,
 		);
+		
+		// private
+		if( is_user_logged_in() ){
+			$args['post_status'] = array('publish','private');
+		}
 		
 		// categories
 		if( $category_multi ){

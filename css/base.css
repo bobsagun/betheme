@@ -289,6 +289,7 @@ table#edd_purchase_receipt,table#edd_purchase_receipt_products{margin-bottom:40p
 /* The Events Callendar -------------------------------------------------------------- */
 .tribe-events-page-template #Subheader .title{width:60%}
 .tribe-events-page-template #Subheader ul.breadcrumbs{width:40%}
+.tribe-events-list .tribe-events-event-image + div.tribe-events-content{padding-right:0!important;}
 #tribe-bar-views .tribe-bar-views-list{z-index:29}
 #tribe-bar-form input[type="text"]{font-weight:400}
 h2.tribe-events-page-title,#tribe-geo-results h2.tribe-events-page-title{font-weight:400}

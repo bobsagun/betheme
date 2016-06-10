@@ -144,9 +144,9 @@ if( ! function_exists( 'mfna_utc' ) )
 	 */
 	function mfna_utc(){
 		return array('-12'=>'-12','-11'=>'-11','-10'=>'-10','-9'=>'-9','-8'=>'-8',
-				'-7'=>'-7','-6'=>'-6','-5'=>'-5','-4'=>'-4','-3'=>'-3','-2'=>'-2','-1'=>'-1',
-				'0'=>'0','+1'=>'+1','+2'=>'+2','+3'=>'+3','+4'=>'+4','+5'=>'+5','+6'=>'+6',
-				'+7'=>'+7','+8'=>'+8','+9'=>'+9','+10'=>'+10','+11'=>'+11','+12'=>'+12');
+			'-7'=>'-7','-6'=>'-6','-5'=>'-5','-4'=>'-4','-3'=>'-3','-2'=>'-2','-1'=>'-1',
+			'0'=>'0','+1'=>'+1','+2'=>'+2','+3'=>'+3','+4'=>'+4','+5'=>'+5','+6'=>'+6',
+			'+7'=>'+7','+8'=>'+8','+9'=>'+9','+10'=>'+10','+11'=>'+11','+12'=>'+12');
 	}
 }
 
@@ -4221,9 +4221,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'font-weight',
 					'type' 		=> 'checkbox',
-					'title' 	=> __('Google Fonts Style & Weight', 'mfn-opts'),
+					'title' 	=> __('Google Fonts Weight & Style', 'mfn-opts'),
 					'sub_desc' 	=> __('Impact on page <b>load time</b>', 'mfn-opts'),
-					'desc' 		=> __('Some of the fonts in the Google Fonts Directory support multiple styles. For a complete list of available font subsets please see <a href="http://www.google.com/webfonts" target="_blank">Google Web Fonts</a>.', 'mfn-opts'),
+					'desc' 		=> __('Some of the fonts in the Google Fonts Directory support multiple styles. For a complete list of available font subsets please see <a href="http://www.google.com/webfonts" target="_blank">Google Web Fonts</a>', 'mfn-opts'),
 					'options' 	=> array(
 						'100'		=> '100 Thin',
 						'100italic'	=> '100 Thin Italic',
@@ -4252,7 +4252,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'text',
 					'title' 	=> __('Google Fonts Subset', 'mfn-opts'),				
 					'sub_desc' 	=> __('Specify which subsets should be downloaded. Multiple subsets should be separated with coma (,)', 'mfn-opts'),
-					'desc' 		=> __('Some of the fonts in the Google Fonts Directory support multiple scripts (like Latin and Cyrillic for example). For a complete list of available font subsets please see <a href="http://www.google.com/webfonts" target="_blank">Google Web Fonts</a>.', 'mfn-opts'),
+					'desc' 		=> __('Some of the fonts in the Google Fonts Directory support multiple scripts (like Latin and Cyrillic for example). For a complete list of available font subsets please see <a href="http://www.google.com/webfonts" target="_blank">Google Web Fonts</a>', 'mfn-opts'),
 					'class' 	=> 'small-text'
 				),
 					
@@ -4261,7 +4261,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 		
 		// Content Font Size --------------------------------------------
 		$sections['font-size'] = array(
-			'title' => __('Size', 'mfn-opts'),
+			'title' => __('Size & Style', 'mfn-opts'),
 			'fields' => array(
 	
 				array(
@@ -4274,28 +4274,43 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					
 				array(
 					'id' 		=> 'font-size-content',
-					'type' 		=> 'sliderbar',
+					'type' 		=> 'typography',
 					'title' 	=> __('Content', 'mfn-opts'),
-					'sub_desc' 	=> 'default: 13',
-					'desc' 		=> __('This font size will be used for all theme texts', 'mfn-opts'),
-					'std' 		=> '13',
+					'sub_desc' 	=> __('This font size will be used for all theme texts<br/>default: 13', 'mfn-opts'),
+					'desc' 		=> __('Some of Google Fonts support multiple weights & styles. Include them in <b>Theme Options > Fonts > Family > Google Fonts Weight & Style</b>', 'mfn-opts'),
+					'std' 		=> array(
+						'size' 				=> 13,
+						'line_height' 		=> 21,
+						'weight_style' 		=> '400',
+						'letter_spacing' 	=> 0,
+					),
 				),
 					
 				array(
 					'id' 		=> 'font-size-menu',
-					'type' 		=> 'sliderbar',
+					'type' 		=> 'typography',
 					'title' 	=> __('Main menu', 'mfn-opts'),
-					'sub_desc' 	=> 'default: 14',
-					'desc' 		=> __('This font size will be used for top level only', 'mfn-opts'),
-					'std' 		=> '14',
+					'sub_desc' 	=> 'This font size will be used for all theme texts<br/>default: 14',
+					'disable' 	=> 'line_height',
+					'std' 		=> array(
+						'size' 				=> 14,
+						'line_height' 		=> 0,
+						'weight_style' 		=> '400',
+						'letter_spacing' 	=> 0,
+					),
 				),
 					
 				array(
 					'id' 		=> 'font-size-title',
-					'type' 		=> 'sliderbar',
+					'type' 		=> 'typography',
 					'title' 	=> __('Page Title', 'mfn-opts'),
 					'sub_desc' 	=> 'default: 25',
-					'std' 		=> '25',
+					'std' 		=> array(
+						'size' 				=> 25,
+						'line_height' 		=> 25,
+						'weight_style' 		=> '400',
+						'letter_spacing' 	=> 0,
+					),	
 				),
 					
 				array(
@@ -4308,50 +4323,80 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				
 				array(
 					'id' 		=> 'font-size-h1',
-					'type' 		=> 'sliderbar',
+					'type' 		=> 'typography',
 					'title' 	=> __('H1', 'mfn-opts'),
 					'sub_desc' 	=> 'default: 25',
-					'std' 		=> '25',
+					'std' 		=> array(
+						'size' 				=> 25,
+						'line_height' 		=> 25,
+						'weight_style' 		=> '300',
+						'letter_spacing' 	=> 0,
+					),
 				),
 				
 				array(
 					'id' 		=> 'font-size-h2',
-					'type' 		=> 'sliderbar',
+					'type' 		=> 'typography',
 					'title' 	=> __('H2', 'mfn-opts'),
 					'sub_desc' 	=> 'default: 30',
-					'std' 		=> '30',
+					'std' 		=> array(
+						'size' 				=> 30,
+						'line_height' 		=> 30,
+						'weight_style' 		=> '300',
+						'letter_spacing' 	=> 0,
+					),
 				),
 				
 				array(
 					'id' 		=> 'font-size-h3',
-					'type' 		=> 'sliderbar',
+					'type' 		=> 'typography',
 					'title' 	=> __('H3', 'mfn-opts'),
 					'sub_desc' 	=> 'default: 25',
-					'std' 		=> '25',
+					'std' 		=> array(
+						'size' 				=> 25,
+						'line_height' 		=> 27,
+						'weight_style' 		=> '300',
+						'letter_spacing' 	=> 0,
+					),
 				),
 				
 				array(
 					'id' 		=> 'font-size-h4',
-					'type' 		=> 'sliderbar',
+					'type' 		=> 'typography',
 					'title' 	=> __('H4', 'mfn-opts'),
 					'sub_desc' 	=> 'default: 21',
-					'std' 		=> '21',
+					'std' 		=> array(
+						'size' 				=> 21,
+						'line_height' 		=> 25,
+						'weight_style' 		=> '300',
+						'letter_spacing' 	=> 0,
+					),
 				),
 				
 				array(
 					'id' 		=> 'font-size-h5',
-					'type' 		=> 'sliderbar',
+					'type' 		=> 'typography',
 					'title' 	=> __('H5', 'mfn-opts'),
 					'sub_desc' 	=> 'default: 15',
-					'std' 		=> '15',
+					'std' 		=> array(
+						'size' 				=> 15,
+						'line_height' 		=> 19,
+						'weight_style' 		=> '700',
+						'letter_spacing' 	=> 0,
+					),
 				),
 				
 				array(
 					'id' 		=> 'font-size-h6',
-					'type' 		=> 'sliderbar',
+					'type' 		=> 'typography',
 					'title' 	=> __('H6', 'mfn-opts'),
 					'sub_desc' 	=> 'default: 13',
-					'std' 		=> '13',
+					'std' 		=> array(
+						'size' 				=> 13,
+						'line_height' 		=> 19,
+						'weight_style' 		=> '400',
+						'letter_spacing' 	=> 0,
+					),
 				),
 		
 				array(
@@ -4364,10 +4409,15 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				
 				array(
 					'id' 		=> 'font-size-single-intro',
-					'type' 		=> 'sliderbar',
+					'type' 		=> 'typography',
 					'title' 	=> __('Single Post | Intro', 'mfn-opts'),
 					'sub_desc' 	=> 'default: 70',
-					'std' 		=> 70,
+					'std' 		=> array(
+						'size' 				=> 70,
+						'line_height' 		=> 70,
+						'weight_style' 		=> '400',
+						'letter_spacing' 	=> 0,
+					),
 				),
 					
 			),
