@@ -362,10 +362,10 @@ a.mfn-link-2 span,a:hover.mfn-link-2 span:before,a.hover.mfn-link-2 span:before,
 
 /* FAQ ------------------------------------------------------------------------------- */
 .faq .question{margin-bottom:5px;overflow:hidden;position:relative;background:rgba(0,0,0,.02)}
-.faq .question:before{content:"";width:60px;height:100%;border-width:0 1px 0 0;border-style:solid;border-color:rgba(0,0,0,.1);position:absolute;left:0;top:0;z-index:2}
+.faq .question:before{content:"";width:60px;height:100%;border-width:0 1px 0 0;border-style:solid;border-color:rgba(0,0,0,.1);position:absolute;left:0;top:0;z-index:1}
 .faq .question:after{content:"";width:60px;height:100%;background:rgba(0,0,0,.03);position:absolute;left:0;top:0;z-index:1}
 .faq .question:last-child{margin-bottom:0}
-.faq .question .title{padding:20px 40px 20px 80px;font-size:15px;position:relative;cursor:pointer}
+.faq .question .title{padding:20px 40px 20px 80px;font-size:15px;position:relative;cursor:pointer;z-index:2}
 .faq .question .title > .acc-icon-plus,.faq .question .title > .acc-icon-minus{font-size:17px;line-height:17px;display:block;position:absolute;right:15px;top:21px;width:20px;height:20px;text-align:center;color:rgba(0,0,0,.25)}
 .faq .question .title > .acc-icon-plus:before,.faq .question .title > .acc-icon-minus:before{margin:0!important}
 .faq .question .title > .acc-icon-plus{display:block}
@@ -380,6 +380,7 @@ a.mfn-link-2 span,a:hover.mfn-link-2 span:before,a.hover.mfn-link-2 span:before,
 .wpb_wrapper .faq .question .title.wpb_toggle{background-position:23px}
 .wpb_wrapper .faq .question .answer.wpb_toggle_content{margin:0}
 .wpb_wrapper .faq .question .last_toggle_el_margin{margin-bottom:0}
+.wpb_wrapper .faq .question .title > .acc-icon-plus,.wpb_wrapper .faq .question .title > .acc-icon-minus{left:20px;right:auto;color:rgba(0,0,0,.5)}
 
 /* Table ----------------------------------------------------------------------------- */
 table{width:100%;margin-bottom:15px;border-collapse:collapse;border-spacing:0;-webkit-border-radius:5px;border-radius:5px}

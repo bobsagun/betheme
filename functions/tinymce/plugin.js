@@ -220,6 +220,11 @@
 						editor.insertContent('[article_box image="" slogan="" title="" link="" target="_blank" animate=""]');
 					}
 				}, {
+					text : 'Before After',
+					onclick : function() {
+						editor.insertContent('[before_after image_before="" image_after=""]');
+					}
+				}, {
 					text : 'Blog',
 					onclick : function() {
 						editor.insertContent('[blog count="2" category="" style="modern" columns="" filters="0" greyscale="0" more="1" pagination="0"]');
@@ -227,7 +232,7 @@
 				}, {
 					text : 'Blog News',
 					onclick : function() {
-						editor.insertContent('[blog_news title="" count="5" category="" category_multi="" link="" link_title=""]');
+						editor.insertContent('[blog_news title="" count="5" category="" category_multi="" excerpt="0" link="" link_title=""]');
 					}
 				}, {
 					text : 'Blog Slider',
@@ -262,7 +267,7 @@
 				}, {
 					text : 'Countdown',
 					onclick : function() {
-						editor.insertContent('[countdown date="12/30/2014 12:00:00" timezone="0"]');
+						editor.insertContent('[countdown date="12/30/2016 12:00:00" timezone="0"]');
 					}
 				}, {
 					text : 'Counter',

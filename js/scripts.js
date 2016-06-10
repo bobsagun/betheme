@@ -1459,7 +1459,7 @@
 		 * Isotope
 		 * --------------------------------------------------------------------------- */
 		// Portfolio - Isotope
-		$('.portfolio_wrapper .isotope:not( .masonry-flat, .masonry-hover )').isotope({
+		$('.portfolio_wrapper .isotope:not( .masonry-flat, .masonry-hover, .masonry-minimal )').isotope({
 			itemSelector	: '.portfolio-item',
 			layoutMode		: 'fitRows',
 			isOriginLeft	: rtl ? false : true
@@ -1476,7 +1476,7 @@
 		});
 
 		// Blog & Portfolio - Masonry
-		$('.isotope.masonry, .isotope.masonry-hover').isotope({
+		$('.isotope.masonry, .isotope.masonry-hover, .isotope.masonry-minimal').isotope({
 			itemSelector	: '.isotope-item',
 			layoutMode		: 'masonry',
 			isOriginLeft	: rtl ? false : true

@@ -44,6 +44,7 @@ $mfn_post_meta_box = array(
 			'id' 		=> 'mfn-post-layout',
 			'type' 		=> 'radio_img',
 			'title' 	=> __('Layout', 'mfn-opts'), 
+			'desc' 		=> __('<b>Full width</b> sections works only <b>without</b> sidebars', 'mfn-opts'),
 			'options' 	=> array(
 				'no-sidebar' 	=> array('title' => 'Full width. No sidebar', 'img' => MFN_OPTIONS_URI.'img/1col.png'),
 				'left-sidebar' 	=> array('title' => 'Left Sidebar', 'img' => MFN_OPTIONS_URI.'img/2cl.png'),
