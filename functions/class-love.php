@@ -21,23 +21,24 @@ class mfnLove {
 	}
 	
 	function randomize( ){
-		
+	
 		$post_type = htmlspecialchars(stripslashes($_POST['post_type']));
-		
-		$aPosts = get_posts(array( 
+	
+		$aPosts = get_posts(array(
 			'posts_per_page' 	=> -1,
 			'post_type' 		=> $post_type ? $post_type : false,
+			'fields'        	=> 'ids',
 		));
-
+	
 		if( is_array( $aPosts ) ){
 			foreach( $aPosts as $post ){
 				$love_count = rand( 10, 100 );	// Random number of loves [min:10, max:100]
-				update_post_meta( $post->ID, 'mfn-post-love', $love_count );
+				update_post_meta( $post, 'mfn-post-love', $love_count );
 			}
-			
+				
 			_e( 'Love randomized',  'mfn-opts' );
 		}
-
+	
 		exit;
 	}
 

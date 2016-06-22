@@ -1692,12 +1692,13 @@ if( ! function_exists( 'sc_google_font' ) )
 	function sc_google_font( $attr, $content = null )
 	{
 		extract(shortcode_atts(array(
-			'font' 		=> '',
-			'size' 		=> '25',
-			'weight'	=> '400',
-			'italic'	=> '',
-			'color'		=> '',
-			'subset' 	=> '',
+			'font' 				=> '',
+			'size' 				=> '25',
+			'weight'			=> '400',
+			'italic'			=> '',
+			'letter_spacing' 	=> '',
+			'color'				=> '',
+			'subset' 			=> '',
 		), $attr));
 		
 		// style
@@ -1706,6 +1707,7 @@ if( ! function_exists( 'sc_google_font' ) )
 		$style[] 	= "font-size:". $size ."px;";
 		$style[] 	= "line-height:". $size ."px;";
 		$style[] 	= "font-weight:". $weight .";";
+		$style[] 	= "letter-spacing:". $letter_spacing ."px;";
 		if( $color ) $style[] = "color:". $color .";";
 
 		// italic
@@ -1714,14 +1716,14 @@ if( ! function_exists( 'sc_google_font' ) )
 			$weight = $weight .'italic';
 		}
 		
-		$style 		= implode( ' ', $style );
+		$style 		= implode( '', $style );
 		
 		// slug
-		$font_slug	= str_replace(' ', '+', $font);
+		$font_slug	= str_replace( ' ', '+', $font );
 		
 		// subset
 		if( $subset ){
-			$subset	= '&amp;subset='. str_replace(' ', '', $subset);
+			$subset	= '&amp;subset='. str_replace( ' ', '', $subset );
 		} else {
 			$subset = false;	
 		}	

@@ -575,7 +575,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'textarea',
 						'title' 	=> __('Content', 'mfn-opts'),
 						'sub_desc' 	=> __('Blockquote content.', 'mfn-opts'),
-						'desc' 		=> __('HTML tags allowed.', 'mfn-opts')
+						'desc' 		=> __('Some HTML tags allowed.', 'mfn-opts')
 					),
 						
 					array(
@@ -991,6 +991,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						),
 					),
 
+					// icon	
 					array(
 						'id' 		=> 'info_icon',
 						'type' 		=> 'info',
@@ -1016,6 +1017,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						),
 					),
 						
+					// color	
 					array(
 						'id' 		=> 'info_color',
 						'type' 		=> 'info',
@@ -1028,7 +1030,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'color',
 						'type' 		=> 'text',
 						'title' 	=> __('Background', 'mfn-opts'),
-						'desc' 		=> __('Use color name ( gray ) or hex ( #808080 )', 'mfn-opts'),
+						'desc' 		=> __('Use one of predefined colors, color name or hex. Example: <b>grey</b> or <b>#CCCCCC</b>', 'mfn-opts'),
 						'class' 	=> 'small-text',
 					),
 						
@@ -1036,10 +1038,11 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'font_color',
 						'type' 		=> 'text',
 						'title' 	=> __('Font', 'mfn-opts'),
-						'desc' 		=> __('Use color name ( black ) or hex ( #000000 )', 'mfn-opts'),
+						'desc' 		=> __('Use color name or hex. Example: <b>black</b> or <b>#000000</b>', 'mfn-opts'),
 						'class' 	=> 'small-text',
 					),
 		
+					// style
 					array(
 						'id' 		=> 'info_style',
 						'type' 		=> 'info',
@@ -1067,6 +1070,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 					),
 					
+					// advanced
 					array(
 						'id' 		=> 'info_advanced',
 						'type' 		=> 'info',
@@ -1505,6 +1509,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						),
 					),
 						
+					// background
 					array(
 						'id' 		=> 'info_background',
 						'type' 		=> 'info',
@@ -1517,7 +1522,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'column_bg',
 						'type' 		=> 'text',
 						'title' 	=> __('Color', 'mfn-opts'),
-						'desc' 		=> __('Use color name ( gray ) or hex ( #808080 )', 'mfn-opts'),
+						'desc' 		=> __('Use color name or hex, e.g.: <b>silver</b> or <b>#C0C0C0</b>', 'mfn-opts'),
 						'class' 	=> 'small-text',
 					),
 						
@@ -1536,6 +1541,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'std' 		=> 'center top no-repeat',
 					),
 						
+					// layout	
 					array(
 						'id' 		=> 'info_layout',
 						'type' 		=> 'info',
@@ -1568,6 +1574,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'class' 	=> 'small-text',
 					),
 						
+					// advanced	
 					array(
 						'id' 		=> 'info_advanced',
 						'type' 		=> 'info',
@@ -2277,7 +2284,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// link
-
 					array(
 						'id' 		=> 'info_link',
 						'type' 		=> 'info',
@@ -2304,7 +2310,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// advanced
-					
 					array(
 						'id' 		=> 'info_advanced',
 						'type' 		=> 'info',
@@ -2819,7 +2824,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 
 					// link
-					
 					array(
 						'id' 		=> 'info_link',
 						'type' 		=> 'info',
@@ -2853,7 +2857,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// advanced
-					
 					array(
 						'id' 		=> 'info_advanced',
 						'type' 		=> 'info',
@@ -2871,7 +2874,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// custom
-					
 					array(
 						'id' 		=> 'info_custom',
 						'type' 		=> 'info',
@@ -2924,8 +2926,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'class' 	=> 'small-text',
 					),
 						
-					// options	
-						
+					// options		
 					array(
 						'id' 		=> 'info_options',
 						'type' 		=> 'info',
@@ -2972,7 +2973,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 							
 					// link
-					
 					array(
 						'id' 		=> 'info_link',
 						'type' 		=> 'info',
@@ -3013,8 +3013,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						),
 					),
 						
-					// description
-						
+					// description	
 					array(
 						'id' 		=> 'info_description',
 						'type' 		=> 'info',
@@ -3036,7 +3035,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// advanced
-					
 					array(
 						'id' 		=> 'info_advanced',
 						'type' 		=> 'info',
@@ -3062,7 +3060,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// custom
-						
 					array(
 						'id' 		=> 'info_custom',
 						'type' 		=> 'info',
