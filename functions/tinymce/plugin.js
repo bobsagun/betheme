@@ -104,7 +104,7 @@
 				}, {
 					text : 'Button',
 					onclick : function() {
-						editor.insertContent('[button title="" icon="" icon_position="" link="" target="_blank" color="" font_color="" size="2" full_width="" class="" download="" onclick=""]');
+						editor.insertContent('[button title="" link="" target="_blank" align="" icon="" icon_position="" color="" font_color="" size="2" full_width="" class="" download="" onclick=""]');
 					}
 				}, {
 					text : 'Code',
@@ -232,7 +232,7 @@
 				}, {
 					text : 'Blog News',
 					onclick : function() {
-						editor.insertContent('[blog_news title="" count="5" category="" category_multi="" excerpt="0" link="" link_title=""]');
+						editor.insertContent('[blog_news title="" style="" count="5" category="" category_multi="" excerpt="0" link="" link_title=""]');
 					}
 				}, {
 					text : 'Blog Slider',

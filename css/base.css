@@ -365,7 +365,7 @@ body.admin-bar						{ position:relative;}
 .section_wrapper:after,
 .container:after					{ clear: both; content: " "; display: block; height: 0; visibility: hidden;}
 
-.mcb-wrap							{ float:left; -webkit-box-sizing:border-box; box-sizing:border-box;}
+.mcb-wrap							{ float:left; position:relative; z-index:1; -webkit-box-sizing:border-box; box-sizing:border-box;}
 .mcb-wrap.divider					{ width:100%;}
 
 .column, .columns					{ float: left; margin:0 1% 40px;}

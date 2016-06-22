@@ -782,6 +782,16 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					array(
+						'id' 		=> 'style',
+						'type' 		=> 'select',
+						'title' 	=> __('Style', 'mfn-opts'),
+						'options' 	=> array(
+							'' 			=> __('Default', 'mfn-opts'),
+							'featured'	=> __('Featured 1st', 'mfn-opts'),
+						),
+					),
+						
+					array(
 						'id' 		=> 'count',
 						'type' 		=> 'text',
 						'title' 	=> __('Count', 'mfn-opts'),
@@ -829,8 +839,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Excerpt', 'mfn-opts'),
 						'options' 	=> array(
-							0 => __('Hide', 'mfn-opts'),
-							1 => __('Show', 'mfn-opts'),
+							0 			=> __('Hide', 'mfn-opts'),
+							1 			=> __('Show', 'mfn-opts'),
+							'featured' 	=> __('Show for Featured only', 'mfn-opts'),
 						),
 					),
 

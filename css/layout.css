@@ -252,7 +252,7 @@ body:not(.template-slider) #Header{min-height:250px}
 	
 	.logo-overflow #Top_bar .logo{height:60px;position:relative;z-index:198}
 	.logo-overflow #Top_bar #logo{height:auto!important;z-index:199}
-	.logo-overflow #Top_bar #logo img{z-index:200}
+	.logo-overflow #Top_bar #logo img{max-height:none;z-index:200}
 	
 	.logo-overflow #Top_bar.is-sticky #logo{height:auto!important}
 	.logo-overflow #Top_bar.is-sticky #logo img:not(.svg){max-height:110px!important}
@@ -1444,6 +1444,7 @@ body:not(.template-slider) #Header{min-height:250px}
 
 /* Comments -------------------------------------------------------------------------- */
 .comments{margin-bottom:0}
+#comments .nocomments{margin-bottom:40px}
 #comments > :first-child{border-top-width:1px;border-style:solid;padding-top:20px}
 .page #comments > :first-child{margin-top:20px}
 #comments .commentlist{margin-left:0;list-style-type:none}

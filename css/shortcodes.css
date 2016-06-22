@@ -29,8 +29,8 @@ blockquote:after{content:"";width:55px;height:40px;background:url(../images/bloc
 	
 /* Button Item ----------------------------------------------------------------------- */
 .column_button .button{margin:0!important}
-.column_button .align_center{text-align:center}
-.column_button .align_right{text-align:right}
+.button_align.align_center{text-align:center}
+.button_align.align_right{text-align:right}
 	
 /* Alignments ------------------------------------------------------------------------ */
 .alignleft{float:left;margin:15px 15px 15px 0}
@@ -588,13 +588,14 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .offer_thumb.bottom .slider_pagination a:after{left:50%;right:auto;top:-5px;margin-left:-4px}
 
 /* Latest news ----------------------------------------------------------------------- */
-.Latest_news ul{margin:0;font-size:100%;line-height:normal}
-.Latest_news ul li{margin:0 0 15px;list-style:none;position:relative;overflow:hidden}
+.Latest_news ul{float:left;width:100%;margin:0}
+.Latest_news ul li{margin:0 0 20px;list-style:none;position:relative;overflow:hidden}
 .Latest_news ul li .photo{width:30%;border-right-width:3px;border-style:solid;float:left;line-height:0}
-.Latest_news ul li .desc{width:100%;padding:3px 12px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-.Latest_news ul li .desc h5{margin:0 0 9px}
-.Latest_news ul li.has-post-thumbnail .desc{margin-left:30%;width:70%}
-.Latest_news ul li .desc_footer{overflow:hidden;border-top-width:1px;border-style:solid;padding-top:8px;color:#a8a8a8}
+.Latest_news ul li .desc{width:100%;padding:3px 12px 3px 0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.Latest_news ul li.has-post-thumbnail .desc{margin-left:30%;width:70%;padding-left:12px;}
+.Latest_news ul li .desc h5{margin:0 0 7px}
+.Latest_news ul li .desc .post-excerpt{margin:10px 0 5px}
+.Latest_news ul li .desc_footer{overflow:hidden;border-top-width:1px;border-style:solid;padding-top:5px;color:#a8a8a8}
 .Latest_news ul li .desc_footer .date{float:left;margin-right:5px}
 .Latest_news ul li .desc_footer .button-love{float:left;margin-right:5px}
 .Latest_news ul li .desc_footer .button-love a.mfn-love{display:inline-block;position:relative;padding-left:24px;margin-left:5px}
@@ -602,6 +603,28 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .Latest_news ul li .desc_footer .button-love a.mfn-love:hover{text-decoration:none}
 .Latest_news ul li .desc_footer .button-love a.mfn-love i:last-child{opacity:0;filter:alpha(opacity=0);-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;-ms-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
 .Latest_news ul li .desc_footer .button-love a:hover.mfn-love i:last-child,.Latest_news ul li .desc_footer .button-love a.loved.mfn-love i:last-child{opacity:1;filter:alpha(opacity=100)}
+.Latest_news .button{float:left;clear:both;}
+	
+.Latest_news.featured ul{float:left;width:49%;}	
+.Latest_news.featured ul.ul-first{margin-right:1%;}	
+.Latest_news.featured ul.ul-second{margin-left:1%;}	
+.Latest_news.featured ul.ul-first li .photo{width:100%;float:left;margin-bottom:10px;border-right-width:0;border-bottom-width:3px;border-bottom-style:solid;}	
+.Latest_news.featured ul.ul-first li .desc{width:100%;margin:0;padding:0;float:left;}	
+.Latest_news.featured ul.ul-first li .desc h4{margin:0 0 7px;}
+
+.column.two-fifth .Latest_news.featured ul,
+.column.one-third .Latest_news.featured ul,
+.column.one-fourth .Latest_news.featured ul{width:100%}
+
+.wrap.three-fifth .column.one-second .Latest_news.featured ul,
+.wrap.one-second .column.one-second .Latest_news.featured ul,
+.wrap.one-second .column.three-fifth .Latest_news.featured ul,
+.wrap.two-fifth .column.three-fourth .Latest_news.featured ul,
+.wrap.two-fifth .column.one-second .Latest_news.featured ul,
+.wrap.two-fifth .column.three-fifth .Latest_news.featured ul,
+.wrap.one-fourth .Latest_news.featured ul,
+.wrap.one-fifth .Latest_news.featured ul,
+.wrap.one-sixth .Latest_news.featured ul{width:100%}
 	
 /* Helper ---------------------------------------------------------------------------- */
 .helper{overflow:hidden}
