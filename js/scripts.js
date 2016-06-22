@@ -556,11 +556,29 @@
 				
 
 				// active
-				if( $( '.menu > li.current-menu-item, .menu > li.current-menu-parent, .menu > li.current-menu-ancestor, .menu > li.current-page-ancestor, .menu > li.current_page_item, .menu > li.current_page_parent, .menu > li.current_page_ancestor', menu ).length ){
+				var activeSelector = '.menu > li.current-menu-item, .menu > li.current-menu-parent, .menu > li.current-menu-ancestor, .menu > li.current-page-ancestor, .menu > li.current_page_item, .menu > li.current_page_parent, .menu > li.current_page_ancestor';
+				
+				if( $( activeSelector, menu ).length ){
 					
 					// remove duplicated 
-					$( '.menu > li.current-menu-item, .menu > li.current-menu-parent, .menu > li.current-menu-ancestor, .menu > li.current-page-ancestor, .menu > li.current_page_item, .menu > li.current_page_parent, .menu > li.current_page_ancestor', menu )
+					$( activeSelector, menu )
 						.not(':first').removeClass( 'current-menu-item current-menu-parent current-menu-ancestor current-page-ancestor current_page_item current_page_parent current_page_ancestor' );
+					
+					// remove if 1st link to section & section is not visible
+					var hash = $( activeSelector, menu ).find('a[data-hash]').attr( 'data-hash' );
+					
+					if( hash ){
+						hash = '[data-id="'+ hash +'"]';
+						
+						if( $(hash).length && $( hash ).visible( true ) ){
+							// do nothing							
+						} else {
+							$( activeSelector, menu ).removeClass( 'current-menu-item current-menu-parent current-menu-ancestor current-page-ancestor current_page_item current_page_parent current_page_ancestor' )
+								.closest('.menu > li').removeClass( 'current-menu-item current-menu-parent current-menu-ancestor current-page-ancestor current_page_item current_page_parent current_page_ancestor' );
+						}
+					} else {
+						// do nothing
+					}
 					
 				} else {
 					

@@ -134,7 +134,7 @@
 				}, {
 					text : 'Google Font',
 					onclick : function() {
-						editor.insertContent('[google_font font="Open Sans" size="25" weight="400" italic="0" color="#626262" subset=""]Insert your content here[/google_font]');
+						editor.insertContent('[google_font font="Open Sans" size="25" weight="400" italic="0" letter_spacing="" color="#626262" subset=""]Insert your content here[/google_font]');
 					}
 				}, {
 					text : 'Highlight',
@@ -169,7 +169,7 @@
 				}, {
 					text : 'Image',
 					onclick : function() {
-						editor.insertContent('[image src="" width="" height="" align="" border="0" margin_top="" margin_bottom="" link="" link_image="" target="" alt="" caption="" greyscale="0" animate=""]');
+						editor.insertContent('[image src="" width="" height="" align="" border="0" margin_top="" margin_bottom="" link_image="" link="" target="" hover="" alt="" caption="" greyscale="" animate=""]');
 					}
 				}, {
 					text : 'Popup',
@@ -322,7 +322,7 @@
 				}, {
 					text : 'Icon Box',
 					onclick : function() {
-						editor.insertContent('[icon_box title="" icon="icon-lamp" image="" icon_position="" border="0" link="" target="_blank" animate="" class=""]Insert your content here[/icon_box]');
+						editor.insertContent('[icon_box title="" icon="icon-lamp" image="" icon_position="" border="0" link="" target="_blank" class="" animate=""]Insert your content here[/icon_box]');
 					}
 				}, {
 					text : 'Info Box',

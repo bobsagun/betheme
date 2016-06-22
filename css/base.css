@@ -282,7 +282,7 @@ table#edd_purchase_receipt,table#edd_purchase_receipt_products{margin-bottom:40p
 /* prettyPhoto ----------------------------------------------------------------------- */
 .pp_pic_holder{max-width:100%}
 .pp_content{max-width:99.6%;max-width:calc(100% - 8px)}
-.pp_content #fullResImage{max-width:100%}
+.pp_content #fullResImage{max-width:100%;height:auto !important;}
 .pp_content .pp_details{max-width:100%}
 .pp_content .pp_hoverContainer{max-width:98.3%}
 
