@@ -3500,14 +3500,14 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'color-menu-a',
 					'type' 		=> 'color',
-					'title' 	=> __('Menu | Link color', 'mfn-opts'),
+					'title' 	=> __('Link color', 'mfn-opts'),
 					'std' 		=> '#444444',
 				),
 					
 				array(
 					'id' 		=> 'color-menu-a-active',
 					'type' 		=> 'color',
-					'title' 	=> __('Menu | Active Link color', 'mfn-opts'),
+					'title' 	=> __('Active Link color', 'mfn-opts'),
 					'desc' 		=> __('This is also Active Link Border', 'mfn-opts'),
 					'std' 		=> '#2991d6',
 				),
@@ -3515,7 +3515,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'background-menu-a-active',
 					'type' 		=> 'color',
-					'title' 	=> __('Menu | Active Link background', 'mfn-opts'),
+					'title' 	=> __('Active Link background', 'mfn-opts'),
 					'desc' 		=> __('For: Highlight & Plain Menu style', 'mfn-opts'),
 					'std' 		=> '#F2F2F2',
 				),
@@ -3531,21 +3531,21 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'background-submenu',
 					'type' 		=> 'color',
-					'title' 	=> __('Submenu | background', 'mfn-opts'),
+					'title' 	=> __('Background', 'mfn-opts'),
 					'std' 		=> '#F2F2F2',
 				),
 					
 				array(
 					'id' 		=> 'color-submenu-a',
 					'type' 		=> 'color',
-					'title' 	=> __('Submenu | Link color', 'mfn-opts'),
+					'title' 	=> __('Link color', 'mfn-opts'),
 					'std' 		=> '#5f5f5f',
 				),
 					
 				array(
 					'id' 		=> 'color-submenu-a-hover',
 					'type' 		=> 'color',
-					'title' 	=> __('Submenu | Hover Link color', 'mfn-opts'),
+					'title' 	=> __('Hover Link color', 'mfn-opts'),
 					'std' 		=> '#2e2e2e',
 				),
 
@@ -3553,14 +3553,14 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'colors-info-menu-styles',
 					'type' 		=> 'info',
 					'title' 	=> '',
-					'desc' 		=> __('Menu Styles', 'mfn-opts'),
+					'desc' 		=> __('Styles<span>for specific header styles</span>', 'mfn-opts'),
 					'class' 	=> 'mfn-info',
 				),
 
 				array(
 					'id' 		=> 'color-overlay-menu-button',
 					'type' 		=> 'color',
-					'title' 	=> __('Overlay Menu | Button icon', 'mfn-opts'),
+					'title' 	=> __('Overlay Menu | Button color', 'mfn-opts'),
 					'desc' 		=> __('Header Overlay Menu only', 'mfn-opts'),
 					'std' 		=> '#2991d6',
 				),
@@ -3624,7 +3624,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'background-action-bar',
 					'type' 		=> 'color',
-					'title' 	=> __('Action Bar | background', 'mfn-opts'),
+					'title' 	=> __('Background', 'mfn-opts'),
 					'desc' 		=> __('For some Header Styles', 'mfn-opts'),
 					'std' 		=> '#2C2C2C',
 				),

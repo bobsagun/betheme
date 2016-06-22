@@ -1141,6 +1141,7 @@ if( ! function_exists( 'sc_blog_news' ) )
 		extract(shortcode_atts(array(
 			'title'				=> '',
 			'count'				=> 5,
+			'style'				=> '',
 			'category'			=> '',
 			'category_multi'	=> '',
 			'excerpt'			=> '',
@@ -1166,39 +1167,62 @@ if( ! function_exists( 'sc_blog_news' ) )
 		} elseif( $category ){
 			$args['category_name'] = $category;
 		}
+		
+		// featured first
+		if( $style == 'featured' ){
+			$first = true;
+		} else {
+			$first = false;
+		}
 
 		$query_blog = new WP_Query( $args );
 		
-		$output = '<div class="Latest_news">';
+		$output = '<div class="Latest_news '. esc_attr( $style ) .'">';
 			if( $title ) $output .= '<h3 class="title">'. $title .'</h3>';
 			
-			$output .= '<ul>';
-				while ( $query_blog->have_posts() ){
+			$output .= '<ul class="ul-first">';
+				
+				while( $query_blog->have_posts() ){
 					$query_blog->the_post();
 			
 					$output .= '<li class="'. implode( ' ', get_post_class() ).'">';
 					
 						$output .= '<div class="photo">';
-							$output .= get_the_post_thumbnail( get_the_ID(), 'blog-portfolio', array('class'=>'scale-with-grid' ) );
+							$output .= '<a href="'. get_permalink() .'">';
+								$output .= get_the_post_thumbnail( get_the_ID(), 'blog-portfolio', array('class'=>'scale-with-grid' ) );
+							$output .= '</a>';
 						$output .= '</div>';
 						
 						$output .= '<div class="desc">';
 						
-							$output .= '<h5><a href="'. get_permalink() .'">'. get_the_title() .'</a></h5>';
-							
-							if( $excerpt ) $output .= '<div class="post-excerpt">'. get_the_excerpt() .'</div>';
-
+							if( $first ){
+								$output .= '<h4><a href="'. get_permalink() .'">'. get_the_title() .'</a></h4>';
+							} else {
+								$output .= '<h5><a href="'. get_permalink() .'">'. get_the_title() .'</a></h5>';
+							}
+	
 							$output .= '<div class="desc_footer">';
 								$output .= '<span class="date"><i class="icon-clock"></i> '. get_the_date() .'</span>';
 								if( comments_open() ) $output .= '<i class="icon-comment-empty-fa"></i> <a href="'. get_comments_link() .'" class="post-comments">'. get_comments_number() .'</a>';
 								$output .= '<div class="button-love">'. mfn_love() .'</div>';
 							$output .= '</div>';
 							
+							if( $excerpt == '1' || ( $first && $excerpt == 'featured' ) ) $output .= '<div class="post-excerpt">'. get_the_excerpt() .'</div>';
+							
 						$output .= '</div>';
 						
 					$output .= '</li>';
+					
+					if( $first ){
+						
+						$output .= '</ul>';			
+						$output .= '<ul class="ul-second">';
+					
+						$first = false;
+					}
 			
 				}
+				
 				wp_reset_postdata();
 			$output .= '</ul>';
 			

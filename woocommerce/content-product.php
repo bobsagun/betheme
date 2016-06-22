@@ -4,43 +4,34 @@
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/content-product.php.
  *
- * HOWEVER, on occasion WooCommerce will need to update template files and you (the theme developer).
- * will need to copy the new files to your theme to maintain compatibility. We try to do this.
- * as little as possible, but it does happen. When this occurs the version of the template file will.
- * be bumped and the readme will list any important changes.
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
  *
- * @see     http://docs.woothemes.com/document/template-structure/
+ * @see     https://docs.woothemes.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 2.5.0
+ * @version 2.6.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $product, $woocommerce_loop;
-
-// Store loop count we're currently on
-if( empty( $woocommerce_loop['loop'] ) ){
-	$woocommerce_loop['loop'] = 0;
-}
+global $product;
 
 // Ensure visibility
-if( ! $product || ! $product->is_visible() ){
+if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 
-// Increase loop count
-$woocommerce_loop['loop']++;
-
-
-// Extra post classes
+// Extra post classes ----------
 $classes = array();
 $classes[] = 'isotope-item';
 
-
-// Product type - Buttons ---------------------------------
+// Product type - Buttons ----------
 if( ! $product->is_in_stock() || mfn_opts_get('shop-catalogue') || in_array( $product->product_type, array('external','grouped','variable') ) ){
 	
 	$add_to_cart = false;
@@ -56,7 +47,6 @@ if( ! $product->is_in_stock() || mfn_opts_get('shop-catalogue') || in_array( $pr
 
 	$image_frame = 'double';
 }
-
 
 ?>
 <li <?php post_class( $classes ); ?>>

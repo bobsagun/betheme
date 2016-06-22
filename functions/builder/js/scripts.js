@@ -206,7 +206,7 @@ function mfnBuilder(){
 	var shortcodes = {
 		'alert' 			: '[alert style="warning"]Insert your content here[/alert]',
 		'blockquote' 		: '[blockquote author="" link="" target="_blank"]Insert your content here[/blockquote]',
-		'button' 			: '[button title="" icon="" icon_position="" link="" target="_blank" color="" font_color="" size="2" full_width="" class="" download="" onclick=""]',
+		'button' 			: '[button title="" link="" target="_blank" align="" icon="" icon_position="" color="" font_color="" size="2" full_width="" class="" download="" onclick=""]',
 		'code' 				: '[code]Insert your content here[/code]',
 		'content_link'		: '[content_link title="" icon="icon-lamp" link="" target="_blank" class="" download=""]',
 		'dropcap'			: '[dropcap background="" color="" circle="0" size="1"]I[/dropcap]nsert your content here',
