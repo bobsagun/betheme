@@ -200,6 +200,7 @@ body:not(.header-simple) #Top_bar #menu { display:block !important; }
 	.header-rtl #Footer #back_to_top.sticky{right:125px}
 	.header-rtl #popup_contact{right:70px}
 	.header-rtl #Header_creative #Top_bar .menu li ul{left:auto;right:100%}
+	.header-rtl #Header_creative #Top_bar .search_wrapper{left:auto;right:100%;}
 	.header-rtl .fixed-nav.fixed-nav-prev{margin-left:0!important}
 	.header-rtl .fixed-nav.fixed-nav-next{margin-right:50px}
 	
