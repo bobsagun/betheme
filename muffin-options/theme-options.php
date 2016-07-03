@@ -1548,8 +1548,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'single-portfolio-layout',
 					'type' 		=> 'radio_img',
 					'title' 	=> __('Layout', 'mfn-opts'),
-					'sub_desc' 	=> __('Use this option to force layout for all projects', 'mfn-opts'),
-					'desc' 		=> __('This option can <strong>not</strong> be overriden and it is usefull for people who already have many projects and want to standardize their appearance.', 'mfn-opts'),
+					'sub_desc' 	=> __('Use this option to force layout for all portfolio projects', 'mfn-opts'),
+					'desc' 		=> __('This option can <strong>not</strong> be overriden and it is usefull for people who already have many portfolio projects and want to standardize their appearance.', 'mfn-opts'),
 					'options' 	=> array(
 						'' 				=> array('title' => 'Use Post Meta', 'img' => MFN_OPTIONS_URI.'img/question.png'),
 						'no-sidebar' 	=> array('title' => 'Full width without sidebar', 'img' => MFN_OPTIONS_URI.'img/1col.png'),
@@ -1563,7 +1563,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'single-portfolio-sidebar',
 					'type' 		=> 'text',
 					'title' 	=> __('Sidebar', 'mfn-opts'),
-					'sub_desc' 	=> __('Use this option to force sidebar for all projects', 'mfn-opts'),
+					'sub_desc' 	=> __('Use this option to force sidebar for all portfolio projects', 'mfn-opts'),
 					'desc' 		=> __('Paste the name of one of the sidebars that you added in the "Sidebars" section.', 'mfn-opts'),
 					'class' 	=> 'small-text',
 				),
@@ -1572,7 +1572,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'single-portfolio-sidebar2',
 					'type' 		=> 'text',
 					'title' 	=> __('Sidebar 2', 'mfn-opts'),
-					'sub_desc' 	=> __('Use this option to force sidebar for all projects', 'mfn-opts'),
+					'sub_desc' 	=> __('Use this option to force sidebar for all portfolio projects', 'mfn-opts'),
 					'desc' 		=> __('Paste the name of one of the sidebars that you added in the "Sidebars" section.', 'mfn-opts'),
 					'class' 	=> 'small-text',
 				),
@@ -1651,7 +1651,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'bps-info-single-bp',
 					'type' 		=> 'info',
 					'title' 	=> '',
-					'desc' 		=> __('Single Post, Single Project', 'mfn-opts'),
+					'desc' 		=> __('Single Post, Single Portfolio Project', 'mfn-opts'),
 					'class' 	=> 'mfn-info',
 				),
 					
@@ -1958,8 +1958,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 			'icon' 		=> MFN_OPTIONS_URI. 'img/icons/sub.png',
 			'fields'	=> array(
 	
-				// layout -----
-					
+				// layout -----	
 				array(
 					'id' 		=> 'portfolio-info-layout',
 					'type' 		=> 'info',
@@ -1971,7 +1970,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'portfolio-posts',
 					'type' 		=> 'text',
-					'title' 	=> __('Projects per page', 'mfn-opts'),
+					'title' 	=> __('Posts per page', 'mfn-opts'),
 					'class' 	=> 'small-text',
 					'std' 		=> '8',
 				),
@@ -2077,8 +2076,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'portfolio-hover-title',
 					'type' 		=> 'switch',
 					'title' 	=> __('Hover Title', 'mfn-opts'),
-					'sub_desc' 	=> __('Show Project Title instead of Hover Icons', 'mfn-opts'),
-					'desc' 		=> __('Only for short project titles', 'mfn-opts'),
+					'sub_desc' 	=> __('Show Post Title instead of Hover Icons', 'mfn-opts'),
+					'desc' 		=> __('Only for short post titles', 'mfn-opts'),
 					'options' 	=> array( '0' => 'Off', '1' => 'On' ),
 					'std' 		=> '0'
 				),
@@ -2113,13 +2112,12 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'std' 		=> '1'
 				),
 	
-				// single -----
-					
+				// single -----		
 				array(
 					'id' 		=> 'portfolio-info-single',
 					'type' 		=> 'info',
 					'title' 	=> '',
-					'desc' 		=> __('Single Project', 'mfn-opts'),
+					'desc' 		=> __('Single Portfolio Project', 'mfn-opts'),
 					'class' 	=> 'mfn-info',
 				),
 					
@@ -2449,13 +2447,12 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					),
 				),
 					
-				// single -----
-					
+				// single -----			
 				array(
 					'id' 		=> 'featured-info-single',
 					'type' 		=> 'info',
 					'title' 	=> '',
-					'desc' 		=> __('Single Post & Single Project <span>applies Blog Style: Photo</span>', 'mfn-opts'),
+					'desc' 		=> __('Single Post & Single Portfolio Project <span>applies Blog Style: Photo</span>', 'mfn-opts'),
 					'class' 	=> 'mfn-info',
 				),
 
@@ -4755,7 +4752,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'translate-related',
 					'type' 		=> 'text',
-					'title' 	=> __('Related projects', 'mfn-opts'),
+					'title' 	=> __('Related posts', 'mfn-opts'),
 					'desc' 		=> __('Blog, Portfolio', 'mfn-opts'),
 					'std' 		=> 'Related posts',
 					'class' 	=> 'small-text',

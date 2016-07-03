@@ -205,9 +205,15 @@ if( ! function_exists( 'mfn_ID' ) )
 				
 				// index.php
 				if( get_option( 'page_for_posts' ) ){
-					$postID = get_option( 'page_for_posts' );	// Setings / Reading
+					
+					// Setings / Reading
+					$postID = get_option( 'page_for_posts' );	
+					
 				} elseif( mfn_opts_get( 'blog-page' ) ){
-					$postID = mfn_opts_get( 'blog-page' );		// Theme Options / Getting Started / Blog
+					
+					// Theme Options / Getting Started / Blog
+					$postID = mfn_wpml_ID( mfn_opts_get( 'blog-page' ) );
+							
 				}
 				
 			} else {
@@ -1758,7 +1764,7 @@ if( ! function_exists( 'mfn_register_required_plugins' ) )
 				'slug'               	=> 'revslider', // The plugin slug (typically the folder name).
 				'source'             	=> THEME_DIR .'/plugins/revslider.zip', // The plugin source.
 				'required'           	=> true, // If false, the plugin is only 'recommended' instead of required.
-				'version'            	=> '5.2.5.4', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+				'version'            	=> '5.2.6', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
 // 				'force_activation'   	=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 // 				'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 // 				'external_url'       	=> '', // If set, overrides default API URL and points to an external URL.
@@ -1793,7 +1799,7 @@ if( ! function_exists( 'mfn_register_required_plugins' ) )
 				'slug'     				=> 'LayerSlider',
 				'source'   				=> THEME_DIR .'/plugins/layerslider.zip',
 				'required' 				=> false,
-				'version' 				=> '5.6.8',
+				'version' 				=> '5.6.9',
 			),
 	
 			array(
