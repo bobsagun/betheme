@@ -124,7 +124,7 @@
 				}, {
 					text : 'Dropcap',
 					onclick : function() {
-						editor.insertContent('[dropcap background="" color="" circle="0" size="1"]I[/dropcap]nsert your content here');
+						editor.insertContent('[dropcap font="" size="1" background="" color="" circle="0" transparent="0"]I[/dropcap]nsert your content here');
 					}
 				}, {
 					text : 'Fancy Link',

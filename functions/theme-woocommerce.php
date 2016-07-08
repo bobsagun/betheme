@@ -104,8 +104,17 @@ function mfn_woocommerce_output_content_wrapper_end()
 			<!-- .four-columns - sidebar -->
 			<?php 
 				$layout = get_post_meta( mfn_ID(), 'mfn-post-layout', true);
-			
-				if( is_active_sidebar( 'shop' ) && $layout != 'no-sidebar' ){
+				
+		 		// Page | Search
+				if( is_search() ){
+					
+					echo '<div class="sidebar four columns">';
+						echo '<div class="widget-area clearfix '. mfn_opts_get('sidebar-lines') .'">';
+							dynamic_sidebar( 'mfn-search' );
+						echo '</div>';
+					echo '</div>';	
+					
+				} elseif( is_active_sidebar( 'shop' ) && $layout != 'no-sidebar' ){
 					
 					if( is_product() && mfn_opts_get('shop-sidebar') ){
 						// product page without sidebar

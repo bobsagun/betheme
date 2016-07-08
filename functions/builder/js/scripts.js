@@ -209,7 +209,7 @@ function mfnBuilder(){
 		'button' 			: '[button title="" link="" target="_blank" align="" icon="" icon_position="" color="" font_color="" size="2" full_width="" class="" download="" onclick=""]',
 		'code' 				: '[code]Insert your content here[/code]',
 		'content_link'		: '[content_link title="" icon="icon-lamp" link="" target="_blank" class="" download=""]',
-		'dropcap'			: '[dropcap background="" color="" circle="0" size="1"]I[/dropcap]nsert your content here',
+		'dropcap'			: '[dropcap font="" size="1" background="" color="" circle="0" transparent="0"]I[/dropcap]nsert your content here',
 		'fancy_link'		: '[fancy_link title="" link="" target="" style="1" class="" download=""]',
 		'google_font'		: '[google_font font="Open Sans" size="25" weight="400" italic="0" letter_spacing="" color="#626262" subset=""]Insert your content here[/google_font]',
 		'highlight'			: '[highlight background="" color=""]Insert your content here[/highlight]',

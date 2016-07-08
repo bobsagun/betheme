@@ -891,16 +891,17 @@ if( ! function_exists( 'sc_blog' ) )
 	{
 		extract(shortcode_atts(array(
 			'count'				=> 2,
+			'style'				=> 'classic',
+			'columns'			=> 3,	
 			'category'			=> '',
 			'category_multi'	=> '',
 			'exclude_id'		=> '',
-			'style'				=> 'classic',
-			'columns'			=> 3,
-			'greyscale'			=> '',
 			'more'				=> '',
 			'filters'			=> '',
 			'pagination'		=> '',
 			'load_more'			=> '',
+			'greyscale'			=> '',
+			'margin'			=> '',	// for <b>Style: Masonry Tiles</b> only			
 		), $attr));
 		
 		$translate['filter'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-filter','Filter by') : __('Filter by','betheme');
@@ -941,8 +942,10 @@ if( ! function_exists( 'sc_blog' ) )
 		
 		// classes
 		$classes = $style;
-		if( $greyscale ) 			$classes .= ' greyscale';
-		if( ! $more ) 				$classes .= ' hide-more'; 
+		
+		if( $greyscale ) 	$classes .= ' greyscale';
+		if( $margin ) 		$classes .= ' margin'; 
+		if( ! $more ) 		$classes .= ' hide-more'; 
 		if( in_array( $style, array('masonry','masonry tiles') ) ){
 			$classes .= ' isotope';
 		}
@@ -1045,14 +1048,16 @@ if( ! function_exists( 'sc_blog_slider' ) )
 			'category_multi'	=> '',
 			'more'				=> '',
 			'style'				=> '',
+			'navigation'		=> '',
 		), $attr));
 
 		$translate['readmore'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-readmore','Read more') : __('Read more','betheme');
 		
 		// classes
 		$classes = '';
-		if( ! $more )	$classes .= ' hide-more';
-		if( $style )	$classes .= ' '. $style;
+		if( ! $more )		$classes .= ' hide-more';
+		if( $style )		$classes .= ' '. $style;
+		if( $navigation )	$classes .= ' '. $navigation;
 		
 		$args = array(
 			'posts_per_page'		=> intval($count),
@@ -1717,19 +1722,21 @@ if( ! function_exists( 'sc_google_font' ) )
 		}
 		
 		$style 		= implode( '', $style );
-		
-		// slug
-		$font_slug	= str_replace( ' ', '+', $font );
-		
+
 		// subset
 		if( $subset ){
 			$subset	= '&amp;subset='. str_replace( ' ', '', $subset );
 		} else {
 			$subset = false;	
 		}	
-	
-		$output = '<link type="text/css" rel="stylesheet" href="http'. mfn_ssl() .'://fonts.googleapis.com/css?family='. $font_slug .':'. $weight . $subset .'">'."\n";
-		$output .= '<div class="google_font" style="'. $style .'">'. do_shortcode($content) .'</div>'."\n";
+		
+		// slug
+		$font_slug	= str_replace( ' ', '+', $font );
+		wp_enqueue_style( $font_slug, 'http'. mfn_ssl() .'://fonts.googleapis.com/css?family='. $font_slug .':'. $weight . $subset );
+
+// 		$output = '<link type="text/css" rel="stylesheet" href="http'. mfn_ssl() .'://fonts.googleapis.com/css?family='. $font_slug .':'. $weight . $subset .'">'."\n";
+
+		$output = '<div class="google_font" style="'. $style .'">'. do_shortcode( $content ) .'</div>'."\n";
 		
 	    return $output;
 	}
@@ -2663,23 +2670,50 @@ if( ! function_exists( 'sc_dropcap' ) )
 	function sc_dropcap( $attr, $content = null )
 	{
 		extract(shortcode_atts(array(
+			'font' 			=> '',
+			'size' 			=> 1, // 1-3, or custom size in px
 			'background' 	=> '',
-			'color' 		=> '',
+			'color' 		=> '',			
 			'circle' 		=> '',
-			'size' 			=> 1, // 1-3
+			'transparent' 	=> '',
 		), $attr));
 
 		$class = '';
+		$style = '';
 		
+		// font family
+		if( $font ){
+			$style .= "font-family:'". $font ."',Arial,Tahoma,sans-serif;";
+			$font_slug = str_replace( ' ', '+', $font );
+			wp_enqueue_style( $font_slug, 'http'. mfn_ssl() .'://fonts.googleapis.com/css?family='. $font_slug );
+		}
+ 		
 		// circle
 		if( $circle ) $class = ' dropcap_circle';
 		
-		// size
-		$class .= ' size-'. $size;
+		// transparent
+		if( $transparent ) $class = ' transparent';
 
-		$style = '';
+		// background
 		if( $background ) $style .= 'background-color:'. $background .';';
+		
+		// color
 		if( $color ) $style .= ' color:'. $color .';';
+		
+		// size
+		$size = intval( $size );	
+		$sizeH = $size + 15;
+		
+		if( $size > 3 ){
+			if( $transparent ){
+				$style .= ' font-size:'. $size .'px;height:'. $size .'px;line-height:'. $size .'px;width:'. $size .'px;';
+			} else {
+				$style .= ' font-size:'. $size .'px;height:'. $sizeH .'px;line-height:'. $sizeH .'px;width:'. $sizeH .'px;';
+			}		
+		} else {
+			$class .= ' size-'. $size;
+		}
+		
 		if( $style ) $style = 'style="'. $style .'"';
 			
 		$output  = '<span class="dropcap'. $class .'" '. $style .'>';
