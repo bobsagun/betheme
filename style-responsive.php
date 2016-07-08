@@ -184,6 +184,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		
 		.menuo-no-borders #Top_bar .menu > li > a span:not(.description) { border-right-width: 0; }
 		.menuo-no-borders #Header_creative #Top_bar .menu > li > a span { border-bottom-width: 0; }
+		
+		/* Menu style | Right  */
+		
+		.menuo-right #Top_bar .menu_wrapper{float:right}
+		.menuo-right.header-stack:not(.header-center) #Top_bar .menu_wrapper{margin-right:150px}
 	
 	}
 	

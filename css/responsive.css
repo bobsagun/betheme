@@ -63,9 +63,7 @@ html,body{overflow-x:hidden}
 	#Header_creative .social li a:hover{color:#000}
 	#Header_creative .creative-social{position:absolute;bottom:10px;right:0;width:50px}
 	#Header_creative .creative-social li{display:block;float:none;width:100%;text-align:center;margin-bottom:5px}
-	
-	.menuo-right #Top_bar .menu_wrapper{float:right}
-	.menuo-right.header-stack:not(.header-center) #Top_bar .menu_wrapper{margin-right:150px}
+
 	.header-creative .fixed-nav.fixed-nav-prev{margin-left:50px}
 	.header-creative.header-open .fixed-nav.fixed-nav-prev{margin-left:250px}
 	.menuo-last #Header_creative #Top_bar .menu li.last ul{top:auto;bottom:0}
@@ -419,6 +417,10 @@ html,body{overflow-x:hidden}
 		.posts_group.masonry.tiles.col-4 .post-item,
 		.posts_group.masonry.tiles.col-5 .post-item,
 		.posts_group.masonry.tiles.col-6 .post-item { width: 49.9%;}
+		
+		.posts_group.masonry.margin.col-4 .post-item,
+		.posts_group.masonry.margin.col-5 .post-item,
+		.posts_group.masonry.margin.col-6 .post-item { width: 48.9%;}
 		
 	/* Latest News */	
 	.column.one-third .Latest_news ul .desc .date i{display:none;}	

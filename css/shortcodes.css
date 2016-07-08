@@ -1,6 +1,7 @@
 /* Dropcaps -------------------------------------------------------------------------- */
 .dropcap{display:inline-block;float:left;width:35px;height:35px;line-height:35px;font-size:20px;margin:0 10px 5px 0;text-align:center;-webkit-border-radius:5px;border-radius:5px;background-image:url(../images/stripes/stripes_10_w.png)}
 .dropcap_circle{-webkit-border-radius:100%;border-radius:100%}
+.dropcap.transparent{background:none!important}
 .dropcap.size-2{width:50px;height:50px;line-height:50px;font-size:35px}
 .dropcap.size-3{width:60px;height:60px;line-height:60px;font-size:40px}
 
@@ -1032,6 +1033,11 @@ ul.clients li .client_wrapper,ul.clients li .client_wrapper img{-webkit-transiti
 .blog_slider .blog_slider_ul li.format-quote .item_wrapper blockquote{margin-top:70px;margin-left:40px}
 .blog_slider .blog_slider_ul li.format-link .item_wrapper .image_frame{height:180px;background-color:rgba(255,255,255,.5);background-image:url(../images/link.png);background-position:center center;background-repeat:no-repeat}
 
+.blog_slider.hide-dots .slider_pagination{display:none!important}
+.blog_slider.hide-arrows .blog_slider_header a.button{display:none!important}
+.blog_slider.hide-nav .slider_pagination,
+.blog_slider.hide-nav .blog_slider_header a.button{display:none!important}
+
 /* Blog slider - flat */
 .blog_slider.flat .blog_slider_ul li .item_wrapper .image_frame{margin-left:0;border:0}
 .blog_slider.flat .blog_slider_ul li .item_wrapper .date_label{position:static;background-color:transparent!important;background-image:none;display:inline-block;padding:0}
@@ -1040,7 +1046,6 @@ ul.clients li .client_wrapper,ul.clients li .client_wrapper img{-webkit-transiti
 .blog_slider.flat .blog_slider_ul li .item_wrapper:hover .desc hr{width:100px}
 .blog_slider.flat .blog_slider_ul li .item_wrapper .image_wrapper img,.blog_slider.flat .blog_slider_ul li .item_wrapper .image_wrapper img{filter:alpha(opacity=90);opacity:.9}
 .blog_slider.flat .blog_slider_ul li .item_wrapper:hover .image_wrapper img,.blog_slider.flat .blog_slider_ul li .item_wrapper:hover .image_wrapper img{top:0;filter:alpha(opacity=100);opacity:1}
-.blog_slider.flat .slider_pagination{display:none!important}
 	
 /* Arrows */
 .blog_slider.flat{position:relative}

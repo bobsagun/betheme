@@ -743,7 +743,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id'		=> 'greyscale',
 						'type'		=> 'select',
-						'title'		=> 'Greyscale Images',
+						'title'		=> __('Greyscale Images', 'mfn-opts'),
+						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+					),
+						
+					array(
+						'id'		=> 'margin',
+						'type'		=> 'select',
+						'title'		=> __('Margin', 'mfn-opts'),
+						'desc'		=> __('for <b>Style: Masonry Tiles</b> only', 'mfn-opts'),
 						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 					),
 						
@@ -902,6 +910,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'std' 		=> '5',
 						'class' 	=> 'small-text',
 					),
+						
+					// options
+					array(
+						'id' 		=> 'info_options',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Options', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
 
 					array(
 						'id' 		=> 'category',
@@ -918,6 +935,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'sub_desc'	=> __('Categories Slugs', 'mfn-opts'),
 						'desc'		=> __('Slugs should be separated with <strong>coma</strong> (,).', 'mfn-opts'),
 					),
+
+					// advanced
+					array(
+						'id' 		=> 'info_advanced',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Advanced', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
 						
 					array(
 						'id' 		=> 'more',
@@ -932,9 +958,30 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Style', 'mfn-opts'),
 						'options'	=> array(
-							''			=> 'Default',
-							'flat'		=> 'Flat'
+							''			=> __('Default', 'mfn-opts'),
+							'flat'		=> __('Flat', 'mfn-opts'),
 						),
+					),
+						
+					array(
+						'id' 		=> 'navigation',
+						'type' 		=> 'select',
+						'title' 	=> __('Navigation', 'mfn-opts'),
+						'options'	=> array(
+							''				=> __('Default', 'mfn-opts'),
+							'hide-arrows'	=> __('Hide Arrows', 'mfn-opts'),
+							'hide-dots'		=> __('Hide Dots', 'mfn-opts'),
+							'hide-nav'		=> __('Hide Navigation', 'mfn-opts'),
+						),
+					),
+						
+					// custom
+					array(
+						'id' 		=> 'info_custom',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Custom', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
 					),
 
 					array(
