@@ -215,21 +215,14 @@ html,body{overflow-x:hidden}
 		
 	
 	/* Hover Effect */
+	.no-hover-tablet a.button:after,.no-hover-tablet a.tp-button:after,.no-hover-tablet button:after,.no-hover-tablet input:after{display:none}
 	
-	.no-hover-tablet a.button:after,
-	.no-hover-tablet a.tp-button:after,
-	.no-hover-tablet button:after,
-	.no-hover-tablet input:after { display:none;}
+	.no-hover-tablet .image_frame:not(.no_link) .image_wrapper img:not(.ls-l){margin-bottom:0!important}
+	.no-hover-tablet .image_frame .image_wrapper img{top:0!important}
+	.no-hover-tablet .image_frame .image_wrapper .mask,.no-hover-tablet .image_frame .image_wrapper .image_links{display:none!important}
 	
-	.no-hover-tablet .image_frame:not(.no_link) .image_wrapper img:not(.ls-l) { margin-bottom: 0 !important; }
-	.no-hover-tablet .image_frame .image_wrapper img { top: 0 !important; }
-	.no-hover-tablet .image_frame .image_wrapper .mask,
-	.no-hover-tablet .image_frame .image_wrapper .image_links { display:none !important;}
-	
-	.no-hover-tablet .Recent_posts ul li .desc:after { display:none;}
-	.no-hover-tablet .Recent_posts ul li a:hover h6,
-	.no-hover-tablet .Recent_posts ul li a:hover .desc .date { color: inherit !important; }	
-	
+	.no-hover-tablet .Recent_posts ul li .desc:after{display:none}
+	.no-hover-tablet .Recent_posts ul li a:hover h6,.no-hover-tablet .Recent_posts ul li a:hover .desc .date{color:inherit!important}
 	
 	/* Section Background Image */
 	.no-section-bg-tablet .section { background-image:none !important;}

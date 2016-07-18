@@ -1597,18 +1597,27 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				),
 					
 				array(
-					'id' 		=> 'prev-next-nav',
-					'type' 		=> 'select',
+					'id'		=> 'prev-next-nav',
+					'type' 		=> 'checkbox',
 					'title' 	=> __('Navigation Arrows', 'mfn-opts'),
-					'sub_desc' 	=> __('Show Prev/Next Navigation', 'mfn-opts'),
+					'sub_desc' 	=> __('Prev/Next Post Navigation', 'mfn-opts'),
 					'options' 	=> array(
-						'0'				=> __('Hide', 'mfn-opts'),
-						'1'				=> __('Show', 'mfn-opts'),
-						'same-category'	=> __('Show | Navigate in the same category (excluding Shop)', 'mfn-opts'),
+						'hide-header'	=> __('Hide Header arrows', 'mfn-opts'),
+						'hide-sticky'	=> __('Hide Sticky arrows', 'mfn-opts'),
+						'in-same-term'	=> __('Navigate in the same category <span>excluding Shop</span>', 'mfn-opts'),
 					),
-					'std' 		=> '1'
 				),
-				
+					
+				array(
+					'id'		=> 'prev-next-style',
+					'type' 		=> 'select',
+					'title' 	=> __('Navigation Arrows | Style', 'mfn-opts'),
+					'options' 	=> array(
+						''			=> __('Default', 'mfn-opts'),
+						'minimal'	=> __('Minimal', 'mfn-opts'),
+					),
+				),
+	
 				array(
 					'id' 		=> 'share',
 					'type' 		=> 'select',
@@ -1672,7 +1681,6 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'related-style',
 					'type' 		=> 'select',
 					'title' 	=> __('Related Style', 'mfn-opts'),
-					'sub_desc' 	=> __('Related Posts Style', 'mfn-opts'),
 					'options' 	=> array(
 						'' 			=> __('Default', 'mfn-opts'),
 						'simple' 	=> __('Simple', 'mfn-opts'),
@@ -1683,7 +1691,6 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'title-heading',
 					'type' 		=> 'select',
 					'title' 	=> __('Title Heading', 'mfn-opts'),
-					'sub_desc' 	=> __('Single Title Heading', 'mfn-opts'),
 					'options' 	=> array(
 						'1' => 'h1',
 						'2' => 'h2',
@@ -2221,8 +2228,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'class' 	=> 'mfn-info desc',
 				),
 					
-				// layout -----	
-					
+				// layout -----						
 				array(
 					'id' 		=> 'shop-info-layout',
 					'type' 		=> 'info',
@@ -2263,8 +2269,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'std' 		=> '0'
 				),
 	
-				// options -----
-					
+				// options -----					
 				array(
 					'id' 		=> 'shop-info-options',
 					'type' 		=> 'info',
@@ -2325,8 +2330,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					),
 				),
 	
-				// layout -----
-					
+				// single -----	
 				array(
 					'id' 		=> 'shop-info-single',
 					'type' 		=> 'info',
@@ -2349,11 +2353,13 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'shop-product-style',
 					'type' 		=> 'select',
 					'title' 	=> __('Style', 'mfn-opts'),
+					'desc' 		=> __('For <b>Modern style</b> recommended image width is <b>900px</b> (1200px without sidebar)<br />You can set image size in WooCommerce > Settings > Products > Display > Single Product Image', 'mfn-opts'),
 					'options' 	=> array(
-						'' 			=> __('Accordion next to image', 'mfn-opts'),
-						'wide' 		=> __('Accordion below image', 'mfn-opts'),
-						'tabs' 		=> __('Tabs next to image', 'mfn-opts'),
-						'wide tabs'	=> __('Tabs below image', 'mfn-opts'),
+						'' 			=> __('Accordion | Next to image', 'mfn-opts'),
+						'wide' 		=> __('Accordion | Below image', 'mfn-opts'),
+						'tabs' 		=> __('Tabs | Next to image', 'mfn-opts'),
+						'wide tabs'	=> __('Tabs | Below image', 'mfn-opts'),
+						'modern'	=> __('Modern', 'mfn-opts'),
 					),
 				),
 
@@ -2377,8 +2383,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'std'		=> 3,
 				),
 					
-				// layout -----
-					
+				// advanced -----			
 				array(
 					'id' 		=> 'shop-info-advanced',
 					'type' 		=> 'info',

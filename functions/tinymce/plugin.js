@@ -302,7 +302,7 @@
 				}, {
 					text : 'Flat Box',
 					onclick : function() {
-						editor.insertContent('[flat_box icon="icon-lamp" background="" image="" title="" link="" target="" animate=""]Insert your content here[/flat_box]');
+						editor.insertContent('[flat_box icon="icon-lamp" icon_image="" background="" image="" title="" link="" target="" animate=""]Insert your content here[/flat_box]');
 					}
 				}, {
 					text : 'Hover Box',
@@ -312,7 +312,7 @@
 				}, {
 					text : 'Hover Color',
 					onclick : function() {
-						editor.insertContent('[hover_color background="" background_hover="" border="" border_hover="" link="" padding="40px 30px" class="" target="" style=""]Insert your content here[/hover_color]');
+						editor.insertContent('[hover_color background="#2991D6" background_hover="#236A9C" border="" border_hover="" link="" padding="40px 30px" class="" target="" style=""]Insert your content here[/hover_color]');
 					}				
 				}, {
 					text : 'How It Works',

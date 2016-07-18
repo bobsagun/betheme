@@ -242,13 +242,18 @@ if( ! function_exists( 'mfn_builder_print' ) )
 						echo '</div>';
 					}
 						
-					// Separator ------------------------
+					// Decoration SVG  ------------------------
 					if( key_exists( 'divider', $section['attr'] ) && $divider = $section['attr']['divider'] ){
 						echo '<div class="section-divider '. $divider .'"></div>';
 					}
 						
+					// Decoration Image Top  ------------------------
+					if( key_exists( 'decor_top', $section['attr'] ) && $decor_top = $section['attr']['decor_top'] ){
+						echo '<div class="section-decoration top" style="background-image:url('. $decor_top .');height:'. mfn_get_attachment_data( $decor_top, 'height' ) .'px"></div>';
+					}
+						
 					// Navigation ------------------------
-					if( key_exists( 'navigation', $section['attr'] ) && $divider = $section['attr']['navigation'] ){
+					if( key_exists( 'navigation', $section['attr'] ) && $section['attr']['navigation'] ){
 						echo '<div class="section-nav prev"><i class="icon-up-open-big"></i></div>';
 						echo '<div class="section-nav next"><i class="icon-down-open-big"></i></div>';
 					}
@@ -414,6 +419,11 @@ if( ! function_exists( 'mfn_builder_print' ) )
 
 	
 					echo '</div>';
+					
+					// Decoration Image Bottom  ------------------------
+					if( key_exists( 'decor_bottom', $section['attr'] ) && $decor_bottom = $section['attr']['decor_bottom'] ){
+						echo '<div class="section-decoration bottom" style="background-image:url('. $decor_bottom .');height:'. mfn_get_attachment_data( $decor_bottom, 'height' ) .'px"></div>';
+					}
 					
 				echo '</div>';
 			}

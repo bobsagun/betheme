@@ -32,6 +32,7 @@ if( ! function_exists( 'mfn_get_fields_section' ) )
 				'desc' 		=> __('This field is used as an Section Label in admin panel only', 'mfn-opts'),
 			),
 				
+			// background	
 			array(
 				'id' 		=> 'info_background',
 				'type' 		=> 'info',
@@ -81,6 +82,7 @@ if( ! function_exists( 'mfn_get_fields_section' ) )
 				'class'		=> __('video', 'mfn-opts'),
 			),
 				
+			// layout
 			array(
 				'id' 		=> 'info_layout',
 				'type' 		=> 'info',
@@ -93,7 +95,6 @@ if( ! function_exists( 'mfn_get_fields_section' ) )
 				'id' 		=> 'padding_top',
 				'type'		=> 'text',
 				'title' 	=> __('Padding | Top', 'mfn-opts'),
-				'sub_desc'	=> __('Section Padding Top', 'mfn-opts'),
 				'desc' 		=> __('px', 'mfn-opts'),
 				'class' 	=> 'small-text',
 				'std' 		=> '0',
@@ -103,12 +104,12 @@ if( ! function_exists( 'mfn_get_fields_section' ) )
 				'id' 		=> 'padding_bottom',
 				'type'		=> 'text',
 				'title' 	=> __('Padding | Bottom', 'mfn-opts'),
-				'sub_desc'	=> __('Section Padding Bottom', 'mfn-opts'),
 				'desc' 		=> __('px', 'mfn-opts'),
 				'class' 	=> 'small-text',
 				'std' 		=> '0',
 			),
 				
+			// options	
 			array(
 				'id' 		=> 'info_options',
 				'type' 		=> 'info',
@@ -120,22 +121,35 @@ if( ! function_exists( 'mfn_get_fields_section' ) )
 			array(
 				'id' 		=> 'divider',
 				'type' 		=> 'select',
-				'title' 	=> __('Separator', 'mfn-opts'),
-				'sub_desc'	=> __('Section Separator', 'mfn-opts'),
+				'title' 	=> __('Decoration SVG', 'mfn-opts'),
 				'desc' 		=> __('Works only with <b>background color</b> selected above. Do <b>not</b> work with parallax and some section\'s styles', 'mfn-opts'),
 				'options' 	=> array(
 					'' 						=> 'None',
 					'circle up' 			=> 'Circle Up',
-					'circle down' 			=> 'Circle Down',
 					'square up' 			=> 'Square Up',
-					'square down' 			=> 'Square Down',
 					'triangle up' 			=> 'Triangle Up',
-					'triangle down' 		=> 'Triangle Down',
 					'triple-triangle up' 	=> 'Triple Triangle Up',
+					'circle down' 			=> 'Circle Down',
+					'square down' 			=> 'Square Down',					
+					'triangle down' 		=> 'Triangle Down',					
 					'triple-triangle down' 	=> 'Triple Triangle Down',
 				),
 			),
-	
+
+			array(
+				'id'		=> 'decor_top',
+				'type'		=> 'upload',
+				'title'		=> __('Decoration Image | Top', 'mfn-opts'),
+				'desc'		=> __('Please use only images <b>from Media Library</b>. Recommended width: 1920px', 'mfn-opts'),
+			),
+
+			array(
+				'id'		=> 'decor_bottom',
+				'type'		=> 'upload',
+				'title'		=> __('Decoration Image | Bottom', 'mfn-opts'),
+				'desc'		=> __('Please use only images <b>from Media Library</b>. Recommended width: 1920px', 'mfn-opts'),
+			),
+
 			array(
 				'id' 		=> 'navigation',
 				'type' 		=> 'select',
@@ -146,6 +160,7 @@ if( ! function_exists( 'mfn_get_fields_section' ) )
 				),
 			),
 				
+			// advanced	
 			array(
 				'id' 		=> 'info_advanced',
 				'type' 		=> 'info',
@@ -2294,22 +2309,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 				'fields' 	=> array(
 	
 					array(
-						'id' 		=> 'icon',
-						'type' 		=> 'icon',
-						'title' 	=> __('Icon', 'mfn-opts'),
-						'std' 		=> 'icon-lamp',
-						'class' 	=> 'small-text',
-					),
-
-					array(
-						'id' 		=> 'background',
-						'type' 		=> 'text',
-						'title' 	=> __('Icon background', 'mfn-opts'),
-						'desc' 		=> __('Use color name ( blue ) or hex ( #2991D6 ). Leave this field blank to use Theme Background', 'mfn-opts'),
-						'class' 	=> 'small-text',
-					),
-						
-					array(
 						'id' 		=> 'image',
 						'type' 		=> 'upload',
 						'title' 	=> __('Image', 'mfn-opts'),
@@ -2328,6 +2327,38 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'desc' 		=> __('Some Shortcodes and HTML tags allowed', 'mfn-opts'),
 						'class'		=> 'full-width sc',
 						'validate'	=> 'html',
+					),
+						
+					// icon
+					array(
+						'id' 		=> 'info_icon',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Icon', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
+					array(
+						'id' 		=> 'icon',
+						'type' 		=> 'icon',
+						'title' 	=> __('Icon', 'mfn-opts'),
+						'std' 		=> 'icon-lamp',
+						'class' 	=> 'small-text',
+					),
+					
+					array(
+						'id' 		=> 'icon_image',
+						'type' 		=> 'upload',
+						'title' 	=> __('Icon | Image', 'mfn-opts'),
+						'desc' 		=> __('You can use image icon instead of font icon', 'mfn-opts'),
+					),
+					
+					array(
+						'id' 		=> 'background',
+						'type' 		=> 'text',
+						'title' 	=> __('Background', 'mfn-opts'),
+						'desc' 		=> __('Use color name ( blue ) or hex ( #2991D6 )<br />Leave this field blank to use Theme Background', 'mfn-opts'),
+						'class' 	=> 'small-text',
 					),
 						
 					// link
@@ -2605,7 +2636,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title' 	=> __('Background color | Hover', 'mfn-opts'),
 						'desc' 		=> __('Use color name or hex. Example: <b>navy</b> or <b>#236A9C</b>', 'mfn-opts'),
 						'class' 	=> 'small-text',
-						'std' 		=> '#2991D6',
+						'std' 		=> '#236A9C',
 					),
 						
 					array(
