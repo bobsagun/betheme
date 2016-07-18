@@ -365,10 +365,11 @@ if( ! function_exists( 'sc_flat_box' ) )
 	function sc_flat_box( $attr, $content = null )
 	{
 		extract(shortcode_atts(array(
-			'icon' 			=> 'icon-lamp',
-			'background' 	=> '',
 			'image' 		=> '',
 			'title' 		=> '',
+			'icon' 			=> 'icon-lamp',
+			'icon_image' 	=> '',
+			'background' 	=> '',
 			'link' 			=> '',
 			'target' 		=> '',
 			'animate' 		=> '',
@@ -376,6 +377,7 @@ if( ! function_exists( 'sc_flat_box' ) )
 		
 		// image | visual composer fix
 		$image = mfn_vc_image( $image );
+		$icon_image = mfn_vc_image( $icon_image );
 		
 		// background
 		if( $background ) $background = 'style="background-color:'. $background .'"';
@@ -396,9 +398,13 @@ if( ! function_exists( 'sc_flat_box' ) )
 				
 					$output .= '<div class="photo_wrapper">';
 						$output .= '<div class="icon themebg" '. $background .'>';
-							$output .= '<i class="'. $icon .'"></i>';
+							if( $icon_image ){
+								$output .= '<img class="scale-with-grid" src="'. $icon_image .'" alt="'. mfn_get_attachment_data( $icon_image, 'alt' ) .'" width="'. mfn_get_attachment_data( $icon_image, 'width' ) .'" height="'. mfn_get_attachment_data( $icon_image, 'height' ) .'"/>';
+							} else {
+								$output .= '<i class="'. $icon .'"></i>';
+							}	
 						$output .= '</div>';
-						$output .= '<img class="scale-with-grid" src="'. $image .'" alt="'. mfn_get_attachment_data( $image, 'alt' ) .'" width="'. mfn_get_attachment_data( $image, 'width' ) .'" height="'. mfn_get_attachment_data( $image, 'height' ) .'"/>';
+						$output .= '<img class="photo scale-with-grid" src="'. $image .'" alt="'. mfn_get_attachment_data( $image, 'alt' ) .'" width="'. mfn_get_attachment_data( $image, 'width' ) .'" height="'. mfn_get_attachment_data( $image, 'height' ) .'"/>';
 					$output .= '</div>';
 					
 					$output .= '<div class="desc_wrapper">';

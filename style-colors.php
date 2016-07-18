@@ -57,8 +57,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /* Content font */
 	body, ul.timeline_items, .icon_box a .desc, .icon_box a:hover .desc, .feature_list ul li a, .list_item a, .list_item a:hover,
 	.widget_recent_entries ul li a, .flat_box a, .flat_box a:hover, .story_box .desc, .content_slider.carousel  ul li a .title,
-	.content_slider.flat.description ul li .desc, .content_slider.flat.description ul li a .desc {
+	.content_slider.flat.description ul li .desc, .content_slider.flat.description ul li a .desc, .post-nav.minimal a i {
 		color: <?php mfn_opts_show( 'color-text', '#626262' ) ?>;
+	}
+	.post-nav.minimal a svg {
+		fill: <?php mfn_opts_show( 'color-text', '#626262' ) ?>;
 	}
 	
 /* Theme color */

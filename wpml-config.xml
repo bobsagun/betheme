@@ -11,6 +11,13 @@
 	</taxonomies>
 	<admin-texts>
 		<key name="betheme">
+			<key name="logo-img" />
+			<key name="retina-logo-img" />
+			<key name="sticky-logo-img" />
+			<key name="sticky-retina-logo-img" />
+			<key name="logo-text" />
+			<key name="responsive-logo-img" />
+			<key name="responsive-retina-logo-img" />
 			<key name="meta-description" />
 			<key name="meta-keywords" />
 			<key name="single-sidebar" />

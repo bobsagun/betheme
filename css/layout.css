@@ -169,7 +169,7 @@ body.nice-scroll:not(.layout-boxed){padding-right:10px!important}
 
 /* Section | Highlight --------------------------------------------------------------- */
 .highlight-left,.highlight-right{position:relative}
-.highlight-left:after,.highlight-right:after{content:"";position:absolute;width:50%;height:100%;top:0}
+.highlight-left:after,.highlight-right:after{content:"";position:absolute;width:50%;height:100%;top:0;z-index:1}
 .highlight-left:after{left:0}
 .highlight-right:after{right:0}
 .highlight-left .section_wrapper,.highlight-right .section_wrapper{z-index:2}
@@ -938,8 +938,17 @@ body:not(.template-slider) #Header{min-height:250px}
 .post-nav{padding:10px 10px 4px 130px;margin-bottom:20px;background-image:url(../images/stripes/stripes_5_b.png);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;overflow:hidden}
 .post-nav .next-prev-nav{float:left}
 .post-nav .next-prev-nav li{float:left;margin-right:5px}
-.post-nav .next-prev-nav a.button{margin:0}
+.post-nav .next-prev-nav a.button{margin:0;padding:0!important}
 .post-nav .list-nav{float:right;line-height:49px}
+
+.post-nav.minimal.column{padding:0;background:none;position:relative;height:40px!important;}
+.post-nav.minimal a{position:absolute;top:0;opacity:.6;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;}
+.post-nav.minimal a:hover {opacity:1}
+.post-nav.minimal a.prev{left:0;}
+.post-nav.minimal a.next{right:0;}
+.post-nav.minimal a.home{left:50%;margin:3px 0 0 -13px;}
+.post-nav.minimal a i{font-size:25px;line-height:30px;color:#626262}
+.post-nav.minimal a svg{fill:#626262}
 
 .post-header{margin-bottom:20px}
 .post-header .button-love{width:99px;float:left;text-align:center}
@@ -970,7 +979,7 @@ body:not(.template-slider) #Header{min-height:250px}
 
 	/* Hide Love */
 	.hide-love .button-love{display:none}
-	.hide-love .post-header .title_wrapper{margin-left:0;border-left:none}
+	.hide-love .post-header .title_wrapper{margin-left:0;padding-left:10px;border-left:none}
 	.hide-love .post-nav{padding-left:10px}
 	.hide-love .portfolio_group .portfolio-item .desc .title_wrapper{padding-right:0}
 

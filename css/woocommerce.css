@@ -2,6 +2,7 @@
 .woocommerce table{display:table;visibility:visible}
 .woocommerce table th{font-size:100%}
 .woocommerce .alert .wc-forward{float:right}
+.woocommerce-demo-store{margin-top:45px}
 
 /* Buttons --------------------------------------------------------------------------- */
 .woocommerce a.button,
@@ -143,6 +144,8 @@
 .hover_box_product:hover .hover_box_wrapper .visible_photo, .hover_box_product.hover .hover_box_wrapper .visible_photo{opacity:1!important}
 
 /* Product Single -------------------------------------------------------------------- */
+.woocommerce .product .post-nav{float:none}
+
 .woocommerce .product .product_wrapper{padding-left:105px;position:relative}
 .woocommerce .product .product_wrapper .share_wrapper{position:absolute;left:0;top:0}
 
@@ -172,6 +175,50 @@
 .woocommerce .product .product_wrapper .product_image_wrapper .thumbnails .image_frame a{float:none;margin:0;width:auto}
 .woocommerce .product .product_wrapper .onsale{top:0!important;left:0!important;z-index:3}
 .woocommerce .no-share.product .product_wrapper{padding-left:0}
+
+/* Style: Modern */
+.woocommerce .product.modern .product_wrapper {padding-left:0;}
+.woocommerce .product.modern .product_wrapper .product_image_wrapper{width:98%;margin-bottom:20px}
+.woocommerce .product.modern .product_wrapper .product_image_wrapper .thumbnails .image_frame{width:19%;margin-right:1.25%}
+.woocommerce .product.modern .product_wrapper .product_image_wrapper .thumbnails .image_frame:nth-child(5n){margin-right:0}
+.woocommerce .product.modern .product_wrapper .summary{width:98%;}
+.woocommerce .product.modern .product_wrapper .summary .product_title{width:50%;margin-right:4%;float:left;}
+.woocommerce .product.modern .product_wrapper .summary .woocommerce-product-rating{width:50%;margin:0 4% 40px 0;float:left;}
+.woocommerce .product.modern .product_wrapper .summary .star-rating{font-size:1.5em;}
+.woocommerce .product.modern .product_wrapper .summary div[itemprop="offers"]{width:46%;float:right;}
+.woocommerce .product.modern .product_wrapper .summary .price{float:right;}
+.woocommerce .product.modern .product_wrapper .summary div[itemprop="description"]{width:50%;margin:0 4% 20px 0;float:left;}
+.woocommerce .product.modern .product_wrapper .summary p.stock {float:right;font-size:1em;max-width:46%;}
+.woocommerce .product.modern .product_wrapper .summary .cart{max-width:46%;float:right;}
+.woocommerce .product.modern .product_wrapper .summary .cart .button{float:right;}
+.woocommerce .product.modern .product_wrapper .summary .variations{background:none}
+.woocommerce .product.modern .product_wrapper .summary .variations tr td {background:none;text-align:right;}
+.woocommerce .product.modern .product_wrapper .summary .variations select {width:100%;margin:0;}
+.woocommerce .product.modern .product_wrapper .summary .variations_button {float:right;}
+.woocommerce .product.modern .product_wrapper .summary .single_variation {float:left;}
+.woocommerce .product.modern .product_wrapper .summary .product_meta{float:left;width:100%;text-align:right;margin-bottom:25px!important;}
+.woocommerce .product.modern .product_wrapper .summary .tabs_wrapper{float:left;width:100%}
+
+.woocommerce .product.modern .product_wrapper .share_wrapper{float:left;position:static;width:100%;padding:10px 10px 15px;box-sizing:border-box;background:none;border-width:1px 0 0;text-align:left;}
+.woocommerce .product.modern .product_wrapper .share_wrapper .stButton{margin:0 10px 0 0}
+
+@media only screen and (min-width: 768px) and (max-width: 959px){	
+	.woocommerce .product.modern .product_wrapper .summary .single_variation{float:right;}
+}
+
+@media only screen and (max-width: 767px){	
+	.woocommerce .product.modern .product_wrapper .product_image_wrapper .thumbnails .image_frame{width:32%;margin-right:2%}
+	.woocommerce .product.modern .product_wrapper .product_image_wrapper .thumbnails .image_frame:nth-child(5n){margin-right:2%}
+	.woocommerce .product.modern .product_wrapper .product_image_wrapper .thumbnails .image_frame:nth-child(3n){margin-right:0}
+	
+	.woocommerce .product.modern .product_wrapper .summary .product_title,
+	.woocommerce .product.modern .product_wrapper .summary .woocommerce-product-rating,
+	.woocommerce .product.modern .product_wrapper .summary div[itemprop="offers"],
+	.woocommerce .product.modern .product_wrapper .summary div[itemprop="description"]{width:100%;}
+	
+	.woocommerce .product.modern .product_wrapper .summary p.stock,
+	.woocommerce .product.modern .product_wrapper .summary .cart{max-width:300px;}
+}
 
 /* Variations */	
 .woocommerce .variations_form .variations{background:rgba(0,0,0,.01);padding:10px}

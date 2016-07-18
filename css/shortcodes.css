@@ -185,7 +185,7 @@ hr.no_line{height:0}
 .fancy-divider svg{display:block}
 .fancy-divider svg:not(:root){overflow:hidden}
 
-/* Divider | Section */
+/* Decoration SVG */
 .section .section-divider{display:block;width:50px;height:50px;position:absolute;left:50%;margin-left:-25px;background-color:inherit;z-index:1}
 .section-divider.triangle.up,.section-divider.triangle.down{-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg);-o-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
 .section-divider.triangle.up{top:-25px}
@@ -204,6 +204,11 @@ hr.no_line{height:0}
 .section-divider.circle.up,.section-divider.circle.down{width:70px;height:70px;margin-left:-35px;-webkit-border-radius:100%;border-radius:100%}
 .section-divider.circle.up{top:-25px}
 .section-divider.circle.down{bottom:-25px}
+
+/* Decoration Image | height:100px - fallback */
+.section .section-decoration{width:100%;height:100px;position:absolute;left:0;background-repeat:repeat-x;z-index:0;}
+.section .section-decoration.top{top:0;background-position:center top;}
+.section .section-decoration.bottom{bottom:0;background-position:center bottom;}
 
 /* Idea box -------------------------------------------------------------------------- */
 .idea_box{padding:25px 25px 25px 70px;position:relative;border-top-width:1px;border-style:solid;background:rgba(0,0,0,.02);clear:both}
@@ -810,9 +815,10 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .flat_box .photo_wrapper{margin-bottom:15px;position:relative;line-height:0;overflow:hidden}
 .flat_box .photo_wrapper .icon{position:absolute;left:0;top:0;height:100%;width:90px;text-align:center;color:#fff;z-index:2}
 .flat_box .photo_wrapper .icon i{display:block;width:100%;height:60px;line-height:60px;font-size:55px;vertical-align:middle;position:absolute;top:50%;margin-top:-30px}
+.flat_box .photo_wrapper .icon img{position:absolute;left:50%;top:50%;max-width:calc(100% - 16px)!important;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);}
 .flat_box:hover .photo_wrapper .icon,.flat_box a:hover .photo_wrapper .icon{-webkit-transform:translateX(-90px);transform:translateX(-90px)}
-.flat_box .photo_wrapper img{position:relative;display:block;z-index:1;-webkit-transform:translateX(15px);transform:translateX(15px)}
-.flat_box:hover .photo_wrapper img,.flat_box a:hover .photo_wrapper img{-webkit-transform:translateX(0px);transform:translateX(0px)}
+.flat_box .photo_wrapper img.photo{position:relative;display:block;z-index:1;-webkit-transform:translateX(15px);transform:translateX(15px)}
+.flat_box:hover .photo_wrapper img.photo,.flat_box a:hover .photo_wrapper img.photo{-webkit-transform:translateX(0px);transform:translateX(0px)}
 .flat_box .desc_wrapper{margin-left:90px}
 
 @media only screen and (min-width: 960px) {

@@ -10,10 +10,31 @@
 // prev & next post -------------------
 mfn_post_navigation_sort();
 
-$in_same_term = ( mfn_opts_get( 'prev-next-nav' ) == 'same-category' ) ? true : false;
-$post_prev = get_adjacent_post( $in_same_term, '', true, 'portfolio-types' );
-$post_next = get_adjacent_post( $in_same_term, '', false, 'portfolio-types' );
+$single_post_nav = array(
+		'hide-header'	=> false,
+		'hide-sticky'	=> false,
+		'in-same-term'	=> false,
+);
+
+$opts_single_post_nav = mfn_opts_get( 'prev-next-nav' );
+if( is_array( $opts_single_post_nav ) ){
+
+	if( isset( $opts_single_post_nav['hide-header'] ) ){
+		$single_post_nav['hide-header'] = true;
+	}
+	if( isset( $opts_single_post_nav['hide-sticky'] ) ){
+		$single_post_nav['hide-sticky'] = true;
+	}
+	if( isset( $opts_single_post_nav['in-same-term'] ) ){
+		$single_post_nav['in-same-term'] = true;
+	}
+
+}
+
+$post_prev = get_adjacent_post( $single_post_nav['in-same-term'], '', true, 'portfolio-types' );
+$post_next = get_adjacent_post( $single_post_nav['in-same-term'], '', false, 'portfolio-types' );
 $portfolio_page_id = mfn_opts_get( 'portfolio-page' );
+
 
 // categories -------------------------
 $categories 	= '';
@@ -27,6 +48,7 @@ if( is_array( $terms ) ){
 	}
 }
 
+
 // post classes -----------------------
 $classes = array();
 if( get_post_meta(get_the_ID(), 'mfn-post-slider-header', true) ) $classes[] = 'no-img';
@@ -36,6 +58,7 @@ if( mfn_opts_get( 'share' ) == 'hide-mobile' ){
 } elseif( ! mfn_opts_get( 'share' ) ) {
 	$classes[] = 'no-share';
 }
+
 
 $translate['published'] 	= mfn_opts_get('translate') ? mfn_opts_get('translate-published','Published by') : __('Published by','betheme');
 $translate['at'] 			= mfn_opts_get('translate') ? mfn_opts_get('translate-at','at') : __('at','betheme');
@@ -53,10 +76,10 @@ $translate['task'] 			= mfn_opts_get('translate') ? mfn_opts_get('translate-task
 <div id="portfolio-item-<?php the_ID(); ?>" <?php post_class( $classes ); ?>>
 
 	<?php 
-		// prev & next post navigation
-		if( mfn_opts_get('prev-next-nav') ){
-			echo mfn_post_navigation( $post_prev, 'prev', 'icon-left-open-big' ); 
-			echo mfn_post_navigation( $post_next, 'next', 'icon-right-open-big' );
+		// single post navigation | sticky
+		if( ! $single_post_nav['hide-sticky'] ){
+			echo mfn_post_navigation_sticky( $post_prev, 'prev', 'icon-left-open-big' ); 
+			echo mfn_post_navigation_sticky( $post_next, 'next', 'icon-right-open-big' );
 		} 
 	?>
 	
@@ -65,24 +88,12 @@ $translate['task'] 			= mfn_opts_get('translate') ? mfn_opts_get('translate-task
 		<div class="section section-portfolio-header">
 			<div class="section_wrapper clearfix">
 		
-				<?php if( mfn_opts_get('prev-next-nav') ): ?>
-				<div class="column one post-nav">
-					
-					<ul class="next-prev-nav">
-						<?php if( $post_prev ): ?>
-							<li class="prev"><a class="button button_js" href="<?php echo get_permalink( $post_prev ); ?>"><span class="button_icon"><i class="icon-left-open"></i></span></a></li>
-						<?php endif; ?>
-						<?php if( $post_next ): ?>
-							<li class="next"><a class="button button_js" href="<?php echo get_permalink( $post_next ); ?>"><span class="button_icon"><i class="icon-right-open"></i></span></a></li>
-						<?php endif; ?>
-					</ul>
-					
-					<?php if( $portfolio_page_id ): ?>
-						<a class="list-nav" href="<?php echo get_permalink( mfn_wpml_ID( $portfolio_page_id ) ); ?>"><i class="icon-layout"></i><?php echo $translate['all']; ?></a>
-					<?php endif; ?>
-					
-				</div>
-				<?php endif; ?>
+				<?php 
+					// single post navigation | header
+					if( ! $single_post_nav['hide-header'] ){
+						echo mfn_post_navigation_header( $post_prev, $post_next, mfn_wpml_ID( $portfolio_page_id ), $translate );
+					}
+				?>
 			
 				<div class="column one post-header">
 				

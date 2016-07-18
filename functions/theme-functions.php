@@ -531,7 +531,7 @@ if( ! function_exists( 'mfn_pagination' ) )
 
 
 /* ---------------------------------------------------------------------------
- * No sidebar message for themes with sidebar 
+ * No sidebar message for templates with sidebar 
  * --------------------------------------------------------------------------- */
 if( ! function_exists( 'mfn_nosidebar' ) )
 {
@@ -606,7 +606,7 @@ if( ! function_exists( 'curPageURL' ) )
 
 
 /* ---------------------------------------------------------------------------
- * Page Title
+ * Subheader | Page Title
  * --------------------------------------------------------------------------- */
 if( ! function_exists( 'mfn_page_title' ) )
 {
@@ -716,6 +716,24 @@ if( ! function_exists( 'mfn_breadcrumbs' ) )
 				$blogID = get_option( 'page_for_posts' );	// Setings / Reading
 			} elseif( mfn_opts_get( 'blog-page' ) ){
 				$blogID = mfn_opts_get( 'blog-page' );		// Theme Options / Getting Started / Blog
+			}
+			
+			// Blog Page has parent
+			$blog_post = get_post( $blogID );
+			
+			if( $blog_post->post_parent ){
+			
+				$parent_id  = $blog_post->post_parent;
+				$parents = array();
+			
+				while( $parent_id ) {
+					$page = get_page( $parent_id );
+					$parents[] = '<a href="' . get_permalink( $page->ID ) . '">' . get_the_title( $page->ID ) . '</a>';
+					$parent_id  = $page->post_parent;
+				}
+				$parents = array_reverse( $parents );
+				$breadcrumbs = array_merge_recursive($breadcrumbs, $parents);
+			
 			}
 	
 			if( $blogID ) $breadcrumbs[] = '<a href="'. get_permalink( $blogID ) .'">'. get_the_title( $blogID ) .'</a>';
@@ -1037,7 +1055,7 @@ if( ! function_exists( 'mfn_post_format' ) )
 
 
 /* ---------------------------------------------------------------------------
- * Attachment | ID by URL
+ * Attachment | GET attachment ID by URL
  * --------------------------------------------------------------------------- */
 if( ! function_exists( 'mfn_get_attachment_id_url' ) )
 {
@@ -1054,16 +1072,11 @@ if( ! function_exists( 'mfn_get_attachment_id_url' ) )
 }
 
 
+/* ---------------------------------------------------------------------------
+ * Attachment | GET attachment data
+ * --------------------------------------------------------------------------- */
 if( ! function_exists( 'mfn_get_attachment_data' ) )
 {
-	/**
-	 * GET Attachment DATA
-	 * 
-	 * @param int|string $image Image ID or URL
-	 * @param string $data
-	 * @param boolean $with_key
-	 * @return string
-	 */
 	function mfn_get_attachment_data( $image, $data, $with_key = false ){
 		$size = $return = false;
 		
@@ -1092,7 +1105,7 @@ if( ! function_exists( 'mfn_get_attachment_data' ) )
 
 
 /* ---------------------------------------------------------------------------
- * Post Thumbnail Type
+ * Post Thumbnail | GET post thumbnail type
  * --------------------------------------------------------------------------- */
 if( ! function_exists( 'mfn_post_thumbnail_type' ) )
 {
@@ -1117,7 +1130,7 @@ if( ! function_exists( 'mfn_post_thumbnail_type' ) )
 
 
 /* ---------------------------------------------------------------------------
- * Post Thumbnail
+ * Post Thumbnail | GET post thumbnail
  * --------------------------------------------------------------------------- */
 if( ! function_exists( 'mfn_post_thumbnail' ) )
 {
@@ -1344,7 +1357,7 @@ if( ! function_exists( 'mfn_post_thumbnail' ) )
 
 
 /* ---------------------------------------------------------------------------
- * Single | Post Navigation | Sort
+ * Single Post Navigation | SET query order
  * --------------------------------------------------------------------------- */
 
 // previous ----------
@@ -1445,11 +1458,50 @@ if( ! function_exists( 'mfn_post_navigation_sort' ) )
 
 
 /* ---------------------------------------------------------------------------
- * Single | Post Navigation | Sticky
+ * Single Post Navigation | GET header navigation
  * --------------------------------------------------------------------------- */
-if( ! function_exists( 'mfn_post_navigation' ) )
+if( ! function_exists( 'mfn_post_navigation_header' ) )
 {
-	function mfn_post_navigation( $post, $next_prev, $icon ){
+	function mfn_post_navigation_header( $post_prev, $post_next, $post_home, $translate = array() ){
+		
+		$style = mfn_opts_get( 'prev-next-style' );
+		
+		$output = '<div class="column one post-nav '. $style .'">';
+		
+			if( $style == 'minimal' ){
+				
+				// minimal -----
+							
+				if( $post_prev ) $output .= '<a class="prev" href="'. get_permalink( $post_prev ) .'"><i class="icon icon-left-open-big"></i></a></li>';
+				if( $post_next ) $output .= '<a class="next" href="'. get_permalink( $post_next ) .'"><i class="icon icon-right-open-big"></i></a></li>';		
+				if( $post_home ) $output .= '<a class="home" href="'. get_permalink( $post_home ) .'"><svg class="icon" width="22" height="22" xmlns="http://www.w3.org/2000/svg"><path d="M7,2v5H2V2H7 M9,0H0v9h9V0L9,0z"/><path d="M20,2v5h-5V2H20 M22,0h-9v9h9V0L22,0z"/><path d="M7,15v5H2v-5H7 M9,13H0v9h9V13L9,13z"/><path d="M20,15v5h-5v-5H20 M22,13h-9v9h9V13L22,13z"/></svg></a>';
+				
+			} else {
+				
+				// default -----
+
+				$output .= '<ul class="next-prev-nav">';
+					if( $post_prev ) $output .= '<li class="prev"><a class="button button_js" href="'. get_permalink( $post_prev ) .'"><span class="button_icon"><i class="icon-left-open"></i></span></a></li>';
+					if( $post_next ) $output .= '<li class="next"><a class="button button_js" href="'. get_permalink( $post_next ) .'"><span class="button_icon"><i class="icon-right-open"></i></span></a></li>';
+				$output .= '</ul>';
+					
+				if( $post_home ) $output .= '<a class="list-nav" href="'. get_permalink( $post_home ) .'"><i class="icon-layout"></i>'. $translate['all'] .'</a>';
+			
+			}
+	
+		$output .= '</div>';
+
+		return $output;
+	}
+}
+
+
+/* ---------------------------------------------------------------------------
+ * Single Post Navigation | GET sticky navigation
+ * --------------------------------------------------------------------------- */
+if( ! function_exists( 'mfn_post_navigation_sticky' ) )
+{
+	function mfn_post_navigation_sticky( $post, $next_prev, $icon ){
 		$output = '';
 	
 		if( is_object( $post ) ){
@@ -1476,7 +1528,7 @@ if( ! function_exists( 'mfn_post_navigation' ) )
 
 
 /* ---------------------------------------------------------------------------
- * Search | Modified Query with Custom Fields search
+ * Search | SET add custom fields to search query
  * --------------------------------------------------------------------------- */
 function mfn_search( $search_query ) {
 	global $wpdb;
