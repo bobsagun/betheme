@@ -1344,6 +1344,24 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 						'dropdown'	=> __('Dropdown submenu <span>use with scrollable</span>', 'mfn-opts'),
 					),
 				),
+					
+				array(
+					'id' 		=> 'menu-info-mega',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Mega Menu', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
+				),
+					
+				array(
+					'id'		=> 'menu-mega-style',
+					'type'		=> 'select',
+					'title'		=> __('Style', 'mfn-opts'),
+					'options'	=> array(
+						''			=> __('Default', 'mfn-opts'),
+						'vertical'	=> __('Vertical Lines', 'mfn-opts'),
+					),
+				),
 
 			),
 		);
@@ -2328,6 +2346,15 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 						'' 			=> __('Main Shop Page', 'mfn-opts'),
 						'all'		=> __('All (Shop, Categories, Products)', 'mfn-opts'),
 					),
+				),
+					
+				array(
+					'id' 		=> 'shop-soldout',
+					'type' 		=> 'text',
+					'title' 	=> __('Sold out', 'mfn-opts'),
+					'sub_desc' 	=> __('Sold out label', 'mfn-opts'),
+					'std' 		=> __('Sold out', 'mfn-opts'),
+					'class' 	=> 'small-text',
 				),
 	
 				// single -----	
@@ -4512,6 +4539,14 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 		$sections['translate-general'] = array(
 			'title' => __('General', 'mfn-opts'),
 			'fields' => array(
+					
+				array(
+					'id' 		=> 'translate-info',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('The fields must be filled out if you are using WPML String Translation<br /><span>If you are using the English language, you can also use this tab to change some texts</span>', 'mfn-opts'),
+					'class' 	=> 'mfn-info desc',
+				),
 		
 				array(
 					'id' 		=> 'translate',
@@ -4807,7 +4842,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'std' 		=> 'Task',
 					'class' 	=> 'small-text',
 				),
-	
+
 			),
 		);
 		

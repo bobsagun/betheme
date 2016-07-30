@@ -39,6 +39,7 @@
 .woocommerce a.checkout-button,
 .woocommerce .button.add_to_cart_button,
 .woocommerce .button.product_type_external,
+.woocommerce .button.add-request-quote-button,
 .woocommerce .outofstock .button,
 .woocommerce input[type="submit"], 
 .woocommerce input[type="reset"], 
@@ -139,6 +140,9 @@
 /* Onsale */
 .woocommerce span.onsale{height:0;min-height:0;width:0;min-width:0;font-size:18px;line-height:18px;text-align:center;position:absolute;left:0!important;right:auto;top:0!important;margin:0!important;border-style:solid;border-width:70px 70px 0 0;border-color:transparent;padding:0;text-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;-webkit-border-radius:0;border-radius:0;z-index:2;background:none}
 .woocommerce span.onsale i{position:absolute;left:8px;top:-60px;color:rgba(0,0,0,.5)}
+
+/* Sold out */
+.woocommerce span.soldout{left:50%;position:absolute;top:50%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);}
 
 /* Secondary image on hover  */
 .hover_box_product:hover .hover_box_wrapper .visible_photo, .hover_box_product.hover .hover_box_wrapper .visible_photo{opacity:1!important}

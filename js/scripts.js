@@ -445,7 +445,7 @@
 		// Muffin Menu -------------------------------
 		function mainMenu(){
 			
-			var mobileInit = ( window.mfn_mobile_init ) ? window.mfn_mobile_init : 1240;
+			var mobileInit = ( window.mfn.mobile_init ) ? window.mfn.mobile_init : 1240;
 			
 			if( $('body').hasClass('header-simple') || $('#Header_creative.dropdown').length ){
 				mobileInit = 1921;
@@ -454,11 +454,13 @@
 			$("#menu > ul.menu").mfnMenu({
 				addLast		: true,
 				arrows		: true,
-				mobileInit	: mobileInit
+				mobileInit	: mobileInit,
+				responsive	: window.mfn.responsive
 			});
 			
 			$("#secondary-menu > ul.secondary-menu").mfnMenu({
-				mobileInit	: mobileInit
+				mobileInit	: mobileInit,
+				responsive	: window.mfn.responsive
 			});
 			
 		}
@@ -760,7 +762,7 @@
         		cursorcolor			: '#222222',
         		cursorwidth			: 10,
         		horizrailenabled	: false,
-        		mousescrollstep		: ( window.mfn_nicescroll ) ? window.mfn_nicescroll : 40,
+        		mousescrollstep		: ( window.mfn.nicescroll ) ? window.mfn.nicescroll : 40,
         		scrollspeed			: 60
         	});
         	
@@ -944,7 +946,7 @@
 		
 		if( ! isMobileWebkit && $(window).width() >= 768 ){
 			
-			if( window.mfn_parallax == 'stellar' ){
+			if( window.mfn.parallax == 'stellar' ){
 				
 				// Stellar
 				$.stellar({

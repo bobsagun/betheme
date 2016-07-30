@@ -476,8 +476,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title' 	=> __('Title', 'mfn-opts'),
 					),
 						
-					// link
-						
+					// link	
 					array(
 						'id' 		=> 'info_link',
 						'type' 		=> 'info',
@@ -504,7 +503,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// advanced
-					
 					array(
 						'id' 		=> 'info_advanced',
 						'type' 		=> 'info',
@@ -522,7 +520,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// custom
-						
 					array(
 						'id' 		=> 'info_custom',
 						'type' 		=> 'info',
@@ -676,6 +673,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'std' 		=> 3,
 					),
 						
+					// options	
 					array(
 						'id' 		=> 'info_options',
 						'type' 		=> 'info',
@@ -699,7 +697,8 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'sub_desc'	=> __('Categories <b>slugs</b>', 'mfn-opts'),
 						'desc'		=> __('Slugs should be separated with <b>coma</b> ( , )', 'mfn-opts'),
 					),
-						
+
+					// advanced
 					array(
 						'id' 		=> 'info_advanced',
 						'type' 		=> 'info',
@@ -770,6 +769,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 					),
 						
+					// custom	
 					array(
 						'id' 		=> 'info_custom',
 						'type' 		=> 'info',
@@ -1205,8 +1205,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'class'		=> 'small-text',
 					),
 						
-					// link
-					
+					// link	
 					array(
 						'id' 		=> 'info_advanced',
 						'type' 		=> 'info',
@@ -1232,8 +1231,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						),
 					),
 						
-					// advanced
-						
+					// advanced	
 					array(
 						'id' 		=> 'info_advanced',
 						'type' 		=> 'info',
@@ -1258,7 +1256,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// custom
-						
 					array(
 						'id' 		=> 'info_custom',
 						'type' 		=> 'info',
@@ -1293,8 +1290,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title' 	=> __('Title', 'mfn-opts'),
 					),
 						
-					// chart	
-						
+					// chart		
 					array(
 						'id' 		=> 'info_chart',
 						'type' 		=> 'info',
@@ -1330,7 +1326,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// options
-					
 					array(
 						'id' 		=> 'info_options',
 						'type' 		=> 'info',
@@ -1349,7 +1344,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// custom
-					
 					array(
 						'id' 		=> 'info_custom',
 						'type' 		=> 'info',
@@ -2193,7 +2187,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 	
 					// link
-	
 					array(
 						'id' 		=> 'info_link',
 						'type' 		=> 'info',
@@ -2220,8 +2213,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						),
 					),
 	
-					// advanced
-						
+					// advanced					
 					array(
 						'id' 		=> 'info_advanced',
 						'type' 		=> 'info',
@@ -2666,7 +2658,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// link
-					
 					array(
 						'id' 		=> 'info_link',
 						'type' 		=> 'info',
@@ -2700,7 +2691,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// custom
-					
 					array(
 						'id' 		=> 'info_custom',
 						'type' 		=> 'info',
@@ -2775,8 +2765,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 					),
 
-					// link
-						
+					// link	
 					array(
 						'id' 		=> 'info_link',
 						'type' 		=> 'info',
@@ -2803,7 +2792,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// advanced
-						
 					array(
 						'id' 		=> 'info_advanced',
 						'type' 		=> 'info',
@@ -2820,8 +2808,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'options' 	=> mfn_get_animations(),
 					),
 
-					// custom
-						
+					// custom					
 					array(
 						'id' 		=> 'info_custom',
 						'type' 		=> 'info',
@@ -3608,7 +3595,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// description
-					
 					array(
 						'id' 		=> 'info_description',
 						'type' 		=> 'info',
@@ -3638,7 +3624,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// social
-					
 					array(
 						'id' 		=> 'info_social',
 						'type' 		=> 'info',
@@ -3672,7 +3657,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// other
-					
 					array(
 						'id' 		=> 'info_other',
 						'type' 		=> 'info',
@@ -3700,7 +3684,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// link
-					
 					array(
 						'id' 		=> 'info_link',
 						'type' 		=> 'info',
@@ -3727,7 +3710,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// advanced
-					
 					array(
 						'id' 		=> 'info_advanced',
 						'type' 		=> 'info',
@@ -3745,7 +3727,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// custom
-					
 					array(
 						'id' 		=> 'info_custom',
 						'type' 		=> 'info',
@@ -3793,7 +3774,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// description
-						
 					array(
 						'id' 		=> 'info_description',
 						'type' 		=> 'info',
@@ -3829,7 +3809,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// social
-						
 					array(
 						'id' 		=> 'info_social',
 						'type' 		=> 'info',
@@ -3863,7 +3842,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// link
-						
 					array(
 						'id' 		=> 'info_link',
 						'type' 		=> 'info',
@@ -3890,7 +3868,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 
 					// custom
-						
 					array(
 						'id' 		=> 'info_custom',
 						'type' 		=> 'info',
@@ -4042,7 +4019,8 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						),
 						'std' 		=> 3,
 					),
-						
+
+					// options
 					array(
 						'id' 		=> 'info_options',
 						'type' 		=> 'info',
@@ -4091,6 +4069,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'std'		=> 'DESC'
 					),
 						
+					// advanced	
 					array(
 						'id' 		=> 'info_advanced',
 						'type' 		=> 'info',
@@ -4146,7 +4125,8 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title'		=> 'Greyscale Images',
 						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 					),
-						
+
+					// custom	
 					array(
 						'id' 		=> 'info_custom',
 						'type' 		=> 'info',
@@ -4447,7 +4427,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 
 					// description
-					
 					array(
 						'id' 		=> 'info_description',
 						'type' 		=> 'info',
@@ -4471,7 +4450,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// button
-					
 					array(
 						'id' 		=> 'info_button',
 						'type' 		=> 'info',
@@ -4513,7 +4491,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 
 					// advanced
-					
 					array(
 						'id' 		=> 'info_advanced',
 						'type' 		=> 'info',
@@ -4548,8 +4525,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'options' 	=> mfn_get_animations(),
 					),
 
-					// custom
-					
+					// custom	
 					array(
 						'id' 		=> 'info_custom',
 						'type' 		=> 'info',
@@ -4633,7 +4609,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					// button
-						
 					array(
 						'id' 		=> 'info_button',
 						'type' 		=> 'info',
@@ -4667,7 +4642,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 
 					// advanced
-						
 					array(
 						'id' 		=> 'info_advanced',
 						'type' 		=> 'info',
@@ -4705,7 +4679,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 
 					// custom
-						
 					array(
 						'id' 		=> 'info_custom',
 						'type' 		=> 'info',
@@ -5537,9 +5510,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'bg_color',
 						'type' 		=> 'text',
 						'title' 	=> __('Overlay background', 'mfn-opts'),
-						'desc' 		=> __('Use color HEX (ie. "#000000").', 'mfn-opts'),
+						'desc' 		=> __('Use color name or hex, e.g.: <b>grey</b> or <b>#CCCCCC</b>', 'mfn-opts'),
 						'class' 	=> 'small-text',
-						'std' 		=> '#000000',
+						'std' 		=> '#CCCCCC',
 					),
 
 					array(

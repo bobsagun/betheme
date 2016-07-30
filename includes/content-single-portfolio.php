@@ -246,7 +246,7 @@ $translate['task'] 			= mfn_opts_get('translate') ? mfn_opts_get('translate-task
 												echo mfn_post_thumbnail( get_the_ID(), 'portfolio' );
 											echo '</div>';
 											
-											if( $caption = get_post( get_post_thumbnail_id() )->post_excerpt ){
+											if( has_post_thumbnail() && $caption = get_post( get_post_thumbnail_id() )->post_excerpt ){
 												echo '<p class="wp-caption-text '. mfn_opts_get( 'featured-image-caption' ) .'">'. $caption .'</p>';
 											}
 											

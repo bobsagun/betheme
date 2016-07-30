@@ -378,8 +378,8 @@ body:not(.template-slider) #Header{min-height:250px}
 
 /* 3rd level */
 #Top_bar .menu li ul li ul{position:absolute;left:190px;top:0;z-index:204}
-.menuo-last #Top_bar .menu > li.last ul{right:0;left:auto;-webkit-box-shadow:-2px 2px 2px 0 rgba(0,0,0,0.03);box-shadow:-2px 2px 2px 0 rgba(0,0,0,0.03)}
-.menuo-last #Top_bar .menu > li.last ul li ul{right:190px}
+.menuo-last #Top_bar .menu > li.last ul:not(.mfn-megamenu){right:0;left:auto;-webkit-box-shadow:-2px 2px 2px 0 rgba(0,0,0,0.03);box-shadow:-2px 2px 2px 0 rgba(0,0,0,0.03)}
+.menuo-last #Top_bar .menu > li.last ul:not(.mfn-megamenu) li ul{right:190px}
 
 	/* Animation */
 	#Top_bar .menu li ul li a{-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;-ms-transition:all .2s ease-in-out;transition:all .2s ease-in-out}
