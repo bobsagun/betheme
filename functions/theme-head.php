@@ -649,49 +649,59 @@ if( ! function_exists( 'mfn_scripts_config' ) )
 			echo '//<![CDATA['."\n";
 			
 				// ajax
-				echo 'window.mfn_ajax = "'. admin_url('admin-ajax.php') .'";'."\n";
+				if( mfn_opts_get( 'love' ) ){
+					echo 'window.mfn_ajax = "'. admin_url( 'admin-ajax.php' ) .'";'."\n";
+				}
 				
-				// mobile menu initial width
-				echo 'window.mfn_mobile_init = '. mfn_opts_get( 'mobile-menu-initial', 1240 ) .';'."\n";
+				// options
+				echo 'window.mfn = {';
 				
-				// nice scroll
-				echo 'window.mfn_nicescroll = '. mfn_opts_get('nice-scroll-speed',40) .';'."\n";
+					// mobile menu initial width
+					echo 'mobile_init:'. mfn_opts_get( 'mobile-menu-initial', 1240 ) .',';
 				
-				// parallax
-				echo 'window.mfn_parallax = "'. mfn_parallax_plugin() .'";'."\n";
+					// nice scroll
+					echo 'nicescroll:'. mfn_opts_get( 'nice-scroll-speed', 40 ) .',';
+				
+					// parallax
+					echo 'parallax:"'. mfn_parallax_plugin() .'",';
+					
+					// responsive
+					echo 'responsive:'. intval( mfn_opts_get( 'responsive', 0 ) ) .',';
+				
+					// retina disable
+					echo 'retina_disable:'. intval( mfn_opts_get( 'retina-js-disable', 0 ) ) .'';
+					
+				echo '};'."\n";
 				
 				// prettyphoto
 				$aPrettyOptions = mfn_opts_get('prettyphoto-options');
 				
 				echo 'window.mfn_prettyphoto = {';
 					if( is_array( $aPrettyOptions ) && isset( $aPrettyOptions['disable'] ) ){
-						echo 'disable:true, ';
+						echo 'disable:true,';
 					}
 					if( is_array( $aPrettyOptions ) && isset( $aPrettyOptions['disable-mobile'] ) ){
-						echo 'disableMobile:true, ';
+						echo 'disableMobile:true,';
 					}
 					if( is_array( $aPrettyOptions ) && isset( $aPrettyOptions['title'] ) ){
-						echo 'title:true, ';
+						echo 'title:true,';
 					}
-					echo 'style:"'. mfn_opts_get('prettyphoto','pp_default').'", ';
-					echo 'width:'. intval( mfn_opts_get('prettyphoto-width',0) ).', ';
+					echo 'style:"'. mfn_opts_get('prettyphoto','pp_default').'",';
+					echo 'width:'. intval( mfn_opts_get('prettyphoto-width',0) ).',';
 					echo 'height:'. intval( mfn_opts_get('prettyphoto-height',0) );
 				echo '};'."\n";
 				
 				// sliders
 				echo 'window.mfn_sliders = {';
-					echo 'blog:'. intval( mfn_opts_get('slider-blog-timeout',0) ) .', ';
-					echo 'clients:'. intval( mfn_opts_get('slider-clients-timeout',0) ) .', ';
-					echo 'offer:'. intval( mfn_opts_get('slider-offer-timeout',0) ) .', ';
-					echo 'portfolio:'. intval( mfn_opts_get('slider-portfolio-timeout',0) ) .', ';
-					echo 'shop:'. intval( mfn_opts_get('slider-shop-timeout',0) ) .', ';
-					echo 'slider:'. intval( mfn_opts_get('slider-slider-timeout',0) ) .', ';
+					echo 'blog:'. intval( mfn_opts_get('slider-blog-timeout',0) ) .',';
+					echo 'clients:'. intval( mfn_opts_get('slider-clients-timeout',0) ) .',';
+					echo 'offer:'. intval( mfn_opts_get('slider-offer-timeout',0) ) .',';
+					echo 'portfolio:'. intval( mfn_opts_get('slider-portfolio-timeout',0) ) .',';
+					echo 'shop:'. intval( mfn_opts_get('slider-shop-timeout',0) ) .',';
+					echo 'slider:'. intval( mfn_opts_get('slider-slider-timeout',0) ) .',';
 					echo 'testimonials:'. intval( mfn_opts_get('slider-testimonials-timeout',0) );
 				echo '};'."\n";
-				
-				// retina.js
-				echo 'window.mfn_retina_disable = '. intval( mfn_opts_get('retina-js-disable',0) ) .';'."\n";
-				
+
 			echo '//]]>'."\n";
 		echo '</script>'."\n";
 	}
@@ -1114,6 +1124,12 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		}
 		if( is_array( $menu_options ) && isset( $menu_options['align-right'] ) ){
 			$classes[] = 'menuo-right';
+		}
+		
+		
+		// Mega Menu | Style -----------------------------
+		if( mfn_opts_get( 'menu-mega-style' ) ) {
+			$classes[] = 'mm-'. mfn_opts_get( 'menu-mega-style' );
 		}
 		
 		

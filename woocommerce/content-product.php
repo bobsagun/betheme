@@ -87,11 +87,17 @@ if( ! $product->is_in_stock() || mfn_opts_get('shop-catalogue') || in_array( $pr
 				echo '<a href="'. apply_filters( 'the_permalink', get_permalink() ) .'">';
 					echo '<div class="hover_box_wrapper">';
 					
-						the_post_thumbnail( 'shop_catalog', array( 'class' => 'visible_photo scale-with-grid' ) );
+						if( has_post_thumbnail() ){
+							the_post_thumbnail( 'shop_catalog', array( 'class' => 'visible_photo scale-with-grid' ) );
+						} elseif ( wc_placeholder_img_src() ) {
+							echo wc_placeholder_img( 'shop_catalog' );
+						}
 						
-						if ( $attachment_ids = $product->get_gallery_attachment_ids() ) {
-							$secondary_image_id = $attachment_ids['0'];
-							echo wp_get_attachment_image( $secondary_image_id, 'shop_catalog', '', $attr = array( 'class' => 'hidden_photo scale-with-grid' ) );
+						if( $attachment_ids = $product->get_gallery_attachment_ids() ) {
+							if( isset( $attachment_ids['0'] ) ){
+								$secondary_image_id = $attachment_ids['0'];
+								echo wp_get_attachment_image( $secondary_image_id, 'shop_catalog', '', $attr = array( 'class' => 'hidden_photo scale-with-grid' ) );
+							}
 						}
 
 					echo '</div>';
@@ -108,7 +114,13 @@ if( ! $product->is_in_stock() || mfn_opts_get('shop-catalogue') || in_array( $pr
 					
 				echo '<a href="'. apply_filters( 'the_permalink', get_permalink() ) .'">';
 					echo '<div class="mask"></div>';
-					the_post_thumbnail( 'shop_catalog', array( 'class' => 'scale-with-grid' ) );
+					
+					if( has_post_thumbnail() ){
+						the_post_thumbnail( 'shop_catalog', array( 'class' => 'scale-with-grid' ) );					
+					} elseif ( wc_placeholder_img_src() ) {				
+						echo wc_placeholder_img( 'shop_catalog' );						
+					}
+										
 				echo '</a>';
 				
 				echo '<div class="image_links '. $image_frame .'">';
@@ -119,6 +131,11 @@ if( ! $product->is_in_stock() || mfn_opts_get('shop-catalogue') || in_array( $pr
 				echo '</div>';
 				
 				if( $product->is_on_sale() ) echo '<span class="onsale"><i class="icon-star"></i></span>';
+				
+				if ( ! $product->is_in_stock() && $soldout = mfn_opts_get( 'shop-soldout' ) ){
+					echo '<span class="soldout"><h4>'. $soldout .'</h4></span>';
+				}
+				
 				echo '<a href="'. apply_filters( 'the_permalink', get_permalink() ) .'"><span class="product-loading-icon added-cart"></span></a>';
 				
 			echo '</div>';

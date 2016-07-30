@@ -204,7 +204,7 @@
 				}, {
 					text : 'Video',
 					onclick : function() {
-						editor.insertContent('[video_embed video="62954028" parameters="" mp4="" ogv="" placeholder="" width="700" height="400"]');
+						editor.insertContent('[video_embed video="62954028" parameters="" mp4="" ogv="" placeholder="" html5_parameters="" width="700" height="400"]');
 					}
 				}, ]
 			}, {
@@ -227,7 +227,7 @@
 				}, {
 					text : 'Blog',
 					onclick : function() {
-						editor.insertContent('[blog count="2" category="" style="modern" columns="" filters="0" greyscale="0" more="1" pagination="0"]');
+						editor.insertContent('[blog count="2" style="modern" columns="2" category="" category_multi="" exclude_id="" more="1" filters="0" pagination="0" load_more="" greyscale="0" margin=""]');
 					}
 				}, {
 					text : 'Blog News',
@@ -237,7 +237,7 @@
 				}, {
 					text : 'Blog Slider',
 					onclick : function() {
-						editor.insertContent('[blog_slider title="" count="5" category="" category_multi="" more="0" style=""]');
+						editor.insertContent('[blog_slider title="" count="5" category="" category_multi="" more="0" style="" navigation=""]');
 					}
 				}, {
 					text : 'Call to Action',
@@ -257,7 +257,7 @@
 				}, {
 					text : 'Clients Slider',
 					onclick : function() {
-						editor.insertContent('[clients_slider title="" orderby="menu_order" order="ASC" category=""]');
+						editor.insertContent('[clients_slider title="" category="" orderby="menu_order" order="ASC"]');
 					}
 				}, {
 					text : 'Contact Box',
@@ -312,7 +312,7 @@
 				}, {
 					text : 'Hover Color',
 					onclick : function() {
-						editor.insertContent('[hover_color background="#2991D6" background_hover="#236A9C" border="" border_hover="" link="" padding="40px 30px" class="" target="" style=""]Insert your content here[/hover_color]');
+						editor.insertContent('[hover_color background="#2991D6" background_hover="#236A9C" border="" border_hover="" padding="40px 30px" link="" target="" class="" style=""]Insert your content here[/hover_color]');
 					}				
 				}, {
 					text : 'How It Works',
@@ -337,7 +337,7 @@
 				}, {
 					text : 'Map',
 					onclick : function() {
-						editor.insertContent('[map lat="" lng="" height="200" zoom="13" type="ROADMAP" controls="mapType" draggable="" icon="" title="" telephone="" email="" www="" latlng=""]Insert your content here[/map]');
+						editor.insertContent('[map lat="" lng="" zoom="13" height="200" type="ROADMAP" controls="mapType" draggable="" border="0" icon="" title="" telephone="" email="" www="" latlng=""]Insert your content here[/map]');
 					}
 				}, {
 					text : 'Opening Hours',
@@ -357,22 +357,22 @@
 				}, {
 					text : 'Photo Box',
 					onclick : function() {
-						editor.insertContent('[photo_box image="" title="" link="" target="_blank" greyscale="0" animate=""]Insert your content here[/photo_box]');
+						editor.insertContent('[photo_box title="" image="" align="" link="" target="_blank" greyscale="0" animate=""]Insert your content here[/photo_box]');
 					}
 				}, {
 					text : 'Portfolio',
 					onclick : function() {
-						editor.insertContent('[portfolio count="2" style="grid" columns="3" category="" orderby="date" order="DESC" related="0" filters="0" pagination="0" load_more="0" greyscale="0"]');
+						editor.insertContent('[portfolio count="2" style="grid" columns="3" category="" category_multi="" orderby="date" order="DESC" exclude_id="" related="0" filters="0" pagination="0" load_more="0" greyscale="0"]');
 					}
 				}, {
 					text : 'Portfolio Slider',
 					onclick : function() {
-						editor.insertContent('[portfolio_slider count="5" category="" category_multi="" orderby="date" order="DESC"]');
+						editor.insertContent('[portfolio_slider count="5" category="" category_multi="" orderby="date" order="DESC" arrows=""]');
 					}			
 				}, {
 					text : 'Pricing Item',
 					onclick : function() {
-						editor.insertContent('[pricing_item image="" title="" currency="" currency_pos="left" price="" period="" subtitle="" link_title="" link="" target="" icon="" featured="0" style="box" animate=""]<ul><li><strong>List</strong> item</li></ul>[/pricing_item]');
+						editor.insertContent('[pricing_item image="" title="" price="" currency="" currency_pos="left" period="" subtitle="" link_title="" icon="" link="" target="" featured="0" style="box" animate=""]<ul><li><strong>List</strong> item</li></ul>[/pricing_item]');
 					}
 				}, {
 					text : 'Progress Bars',
@@ -382,7 +382,7 @@
 				}, {
 					text : 'Promo Box',
 					onclick : function() {
-						editor.insertContent('[promo_box image="" title="" btn_text="" btn_link="" position="" border="0" target="_blank" animate=""]Insert your content here[/promo_box]');
+						editor.insertContent('[promo_box image="" title="" btn_text="" btn_link="" target="_blank" position="" border="0" animate=""]Insert your content here[/promo_box]');
 					}
 				}, {
 					text : 'Quick Fact',
@@ -397,7 +397,7 @@
 				}, {
 					text : 'Slider',
 					onclick : function() {
-						editor.insertContent('[slider category="" orderby="date" order="DESC"]');
+						editor.insertContent('[slider style="" category="" orderby="date" order="DESC"]');
 					}
 				}, {
 					text : 'Sliding Box',
@@ -422,7 +422,7 @@
 				}, {
 					text : 'Testimonials List',
 					onclick : function() {
-						editor.insertContent('[testimonials_list category="" orderby="menu_order" order="ASC"]');
+						editor.insertContent('[testimonials_list category="" orderby="menu_order" order="ASC" style=""]');
 					}
 				}, {
 					text : 'Trailer Box',

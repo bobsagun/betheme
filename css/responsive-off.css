@@ -1,36 +1,40 @@
-body:not(.header-simple) #Top_bar #menu { display:block !important; }
+body:not(.header-simple) #Top_bar #menu{display:block!important}
 
-
-/* MegaMenu -------------------------------------------------------------------------- */
-
-#Top_bar .menu > li > ul.mfn-megamenu { width:984px; }
-
-	#Top_bar .menu > li > ul.mfn-megamenu > li { float:left;}
-	#Top_bar .menu > li > ul.mfn-megamenu > li.mfn-megamenu-cols-1 { width:100%;}
-	#Top_bar .menu > li > ul.mfn-megamenu > li.mfn-megamenu-cols-2 { width:50%;}
-	#Top_bar .menu > li > ul.mfn-megamenu > li.mfn-megamenu-cols-3 { width:33.33%;}
-	#Top_bar .menu > li > ul.mfn-megamenu > li.mfn-megamenu-cols-4 { width:25%;}
-	#Top_bar .menu > li > ul.mfn-megamenu > li.mfn-megamenu-cols-5 { width:20%;}
-	#Top_bar .menu > li > ul.mfn-megamenu > li.mfn-megamenu-cols-6 { width:16.66%;}
-	#Top_bar .menu > li > ul.mfn-megamenu > li > ul { display:block !important; position:inherit; left:auto; top:auto; border-width: 0 1px 0 0; }
-	#Top_bar .menu > li > ul.mfn-megamenu > li:last-child > ul{ border: 0; }
-	#Top_bar .menu > li > ul.mfn-megamenu > li > ul li { width: auto; }
+/* Mega Menu */		
+#Top_bar .menu > li > ul.mfn-megamenu{width:984px}
+#Top_bar .menu > li > ul.mfn-megamenu > li{float:left}
+#Top_bar .menu > li > ul.mfn-megamenu > li.mfn-megamenu-cols-1{width:100%}
+#Top_bar .menu > li > ul.mfn-megamenu > li.mfn-megamenu-cols-2{width:50%}
+#Top_bar .menu > li > ul.mfn-megamenu > li.mfn-megamenu-cols-3{width:33.33%}
+#Top_bar .menu > li > ul.mfn-megamenu > li.mfn-megamenu-cols-4{width:25%}
+#Top_bar .menu > li > ul.mfn-megamenu > li.mfn-megamenu-cols-5{width:20%}
+#Top_bar .menu > li > ul.mfn-megamenu > li.mfn-megamenu-cols-6{width:16.66%}
+#Top_bar .menu > li > ul.mfn-megamenu > li > ul{display:block!important;position:inherit;left:auto;top:auto;border-width:0 1px 0 0}
+#Top_bar .menu > li > ul.mfn-megamenu > li:last-child > ul{border:0}
+#Top_bar .menu > li > ul.mfn-megamenu > li > ul li{width:auto}
+#Top_bar .menu > li > ul.mfn-megamenu a.mfn-megamenu-title{text-transform:uppercase;font-weight:400;background:none}
+#Top_bar .menu > li > ul.mfn-megamenu a .menu-arrow{display:none}
+.menuo-right #Top_bar .menu > li > ul.mfn-megamenu{left:auto;right:0}
+.menuo-right #Top_bar .menu > li > ul.mfn-megamenu-bg{box-sizing:border-box}
 	
-	#Top_bar .menu > li > ul.mfn-megamenu a.mfn-megamenu-title { text-transform: uppercase; font-weight:400;}
-	#Top_bar .menu > li > ul.mfn-megamenu a.mfn-megamenu-title:hover { background:none;}
-	
-	#Top_bar .menu > li > ul.mfn-megamenu a .menu-arrow { display: none; }
-	
-		/* MegaMenu with Background */
-		
-		#Top_bar .menu > li > ul.mfn-megamenu-bg { padding:20px 166px 20px 20px; background-repeat:no-repeat; background-position: bottom right; }
-		#Top_bar .menu > li > ul.mfn-megamenu-bg > li { background:none;}
-		#Top_bar .menu > li > ul.mfn-megamenu-bg > li a { border:none;}
-		#Top_bar .menu > li > ul.mfn-megamenu-bg > li > ul { background:none !important;
-			-webkit-box-shadow: 0 0 0 0;
-			-moz-box-shadow: 0 0 0 0;
-			box-shadow: 0 0 0 0;
-		}
+/* Mega Menu | Background Image */
+#Top_bar .menu > li > ul.mfn-megamenu-bg{padding:20px 166px 20px 20px;background-repeat:no-repeat;background-position:bottom right}
+#Top_bar .menu > li > ul.mfn-megamenu-bg > li{background:none}
+#Top_bar .menu > li > ul.mfn-megamenu-bg > li a{border:none}
+#Top_bar .menu > li > ul.mfn-megamenu-bg > li > ul{background:none!important;-webkit-box-shadow:0 0 0 0;-moz-box-shadow:0 0 0 0;box-shadow:0 0 0 0}
+
+/* Mega Menu | Style: Vertical Lines */
+.mm-vertical #Top_bar .container{position:relative;}
+.mm-vertical #Top_bar .top_bar_left{position:static;}
+.mm-vertical #Top_bar .menu > li ul{box-shadow:0 0 0 0 transparent!important;background-image:none;}
+.mm-vertical #Top_bar .menu > li > ul.mfn-megamenu{width:98%!important;margin:0 1%;padding:20px 0;}
+.mm-vertical.header-plain #Top_bar .menu > li > ul.mfn-megamenu{width:100%!important;margin:0;}
+.mm-vertical #Top_bar .menu > li > ul.mfn-megamenu > li{display:table-cell;float:none;width:10%;padding:0 15px;border-right:1px solid rgba(0, 0, 0, 0.05);}
+.mm-vertical #Top_bar .menu > li > ul.mfn-megamenu > li:last-child{border-right-width:0}
+.mm-vertical #Top_bar .menu > li > ul.mfn-megamenu > li a{border-bottom-width:0;padding:9px 15px;line-height:120%;}
+.mm-vertical #Top_bar .menu > li > ul.mfn-megamenu a.mfn-megamenu-title{font-weight:700;}
+
+#Header_creative #Top_bar .menu > li > ul.mfn-megamenu{width:980px!important;margin:0;}
 
 
 /* Sticky Header --------------------------------------------------------------------- */
