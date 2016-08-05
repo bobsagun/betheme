@@ -8,13 +8,11 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ?>
 
-<?php if( mfn_opts_get('responsive') ): ?>
-
 <?php 
 	$mobileMenuInitW = $stickyMenuInitW = mfn_opts_get( 'mobile-menu-initial', 1240 );
 	
 	if( mfn_header_style( true ) == 'header-creative' ){
-		$mobileMenuInitW = 1240;
+// 		$mobileMenuInitW = 1240;
 	}
 	
 	if( mfn_opts_get( 'responsive-sticky' ) ){
@@ -153,6 +151,127 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	/* Menu style | Right  */	
 	.menuo-right #Top_bar .menu_wrapper{float:right}
 	.menuo-right.header-stack:not(.header-center) #Top_bar .menu_wrapper{margin-right:150px}
+	
+	/* Header Creative ---------- */
+	body.header-creative{padding-left:50px}
+	body.header-creative.header-open{padding-left:250px}
+	body.error404,body.under-construction,body.template-blank{padding-left:0!important}
+	
+	.header-creative.footer-fixed #Footer,.header-creative.footer-sliding #Footer{left:25px}
+	.header-open.footer-fixed #Footer,.header-open.footer-sliding #Footer{left:125px}
+	
+	.header-rtl.header-creative.footer-fixed #Footer,.header-rtl.header-creative.footer-sliding #Footer{left:auto;right:5px}
+	.header-rtl.header-open.footer-fixed #Footer,.header-rtl.header-open.footer-sliding #Footer{left:auto;right:125px}
+
+	#Header_creative{background:#fff;position:fixed;width:250px;height:100%;left:-200px;top:0;z-index:9002;-webkit-box-shadow:2px 0 4px 2px rgba(0,0,0,.15);box-shadow:2px 0 4px 2px rgba(0,0,0,.15)}
+	#Header_creative .container{width:100%}
+	#Header_creative .creative-wrapper{display:none}
+	
+	#Header_creative a.creative-menu-toggle{display:block;width:35px;height:35px;line-height:35px;font-size:25px;text-align:center;position:absolute;top:10px;right:8px;-webkit-border-radius:3px;border-radius:3px}
+	.admin-bar #Header_creative a.creative-menu-toggle{top:42px}
+	
+	#Header_creative #Top_bar{position:static;width:100%}
+	#Header_creative #Top_bar .top_bar_left{width:100%!important;float:none}
+	#Header_creative #Top_bar .top_bar_right{width:100%!important;float:none;height:auto;margin-bottom:35px;text-align:center;padding:0 20px;top:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+	#Header_creative #Top_bar .top_bar_right:before{display:none}
+	#Header_creative #Top_bar .top_bar_right_wrapper{top:0}
+	
+	#Header_creative #Top_bar .logo{float:none;text-align:center;margin:15px 0}
+	
+	#Header_creative #Top_bar .menu_wrapper{float:none;margin:0 0 30px}
+	#Header_creative #Top_bar .menu > li{width:100%;float:none;position:relative}
+	#Header_creative #Top_bar .menu > li > a{padding:0;text-align:center}
+	#Header_creative #Top_bar .menu > li > a:after{display:none}
+	#Header_creative #Top_bar .menu > li > a span{border-right:0;border-bottom-width:1px;line-height:38px}
+	#Header_creative #Top_bar .menu li ul{left:100%;right:auto;top:0;box-shadow:2px 2px 2px 0 rgba(0,0,0,0.03);-webkit-box-shadow:2px 2px 2px 0 rgba(0,0,0,0.03)}
+	#Header_creative #Top_bar .menu > li > ul.mfn-megamenu{width:700px!important;}
+	#Header_creative #Top_bar .menu > li > ul.mfn-megamenu > li > ul{left:0}
+	#Header_creative #Top_bar .menu li ul li a{padding-top:9px;padding-bottom:8px}
+	#Header_creative #Top_bar .menu li ul li ul{top:0!important}
+	#Header_creative #Top_bar .menu > li > a span.description{display:block;font-size:13px;line-height:28px!important;clear:both}
+	
+	#Header_creative #Top_bar .search_wrapper{left:100%;top:auto;bottom:-90px}
+	#Header_creative #Top_bar a#header_cart{display:inline-block;float:none;top:3px}
+	#Header_creative #Top_bar a#search_button{display:inline-block;float:none;top:3px}
+	#Header_creative #Top_bar .wpml-languages{display:inline-block;float:none;top:0}
+	#Header_creative #Top_bar .wpml-languages.enabled:hover a.active{padding-bottom:9px}
+	#Header_creative #Top_bar a.button.action_button{display:inline-block;float:none;top:16px;margin:0}
+	#Header_creative #Top_bar .banner_wrapper{display:block;text-align:center}
+	#Header_creative #Top_bar .banner_wrapper img{max-width:100%;height:auto;display:inline-block}
+	
+	#Header_creative #Action_bar{position:absolute;bottom:0;top:auto;clear:both;padding:0 20px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+	#Header_creative #Action_bar .social{float:none;text-align:center;padding:5px 0 15px}
+	#Header_creative #Action_bar .social li{margin-bottom:2px}
+	
+	#Header_creative .social li a{color:rgba(0,0,0,.5)}
+	#Header_creative .social li a:hover{color:#000}
+	#Header_creative .creative-social{position:absolute;bottom:10px;right:0;width:50px}
+	#Header_creative .creative-social li{display:block;float:none;width:100%;text-align:center;margin-bottom:5px}
+
+	.header-creative .fixed-nav.fixed-nav-prev{margin-left:50px}
+	.header-creative.header-open .fixed-nav.fixed-nav-prev{margin-left:250px}
+	.menuo-last #Header_creative #Top_bar .menu li.last ul{top:auto;bottom:0}
+	
+	/* Header Creative | Always Open */		
+	.header-open #Header_creative{left:0}
+	.header-open #Header_creative .creative-wrapper{display:block}
+	.header-open #Header_creative .creative-menu-toggle,.header-open #Header_creative .creative-social{display:none}
+			
+	/* Header Creative | Right */	
+	body.header-rtl.header-creative{padding-left:0;padding-right:50px}
+	.header-rtl #Header_creative{left:auto;right:-200px}
+	.header-rtl.nice-scroll #Header_creative{margin-right:10px}
+	.header-rtl #Header_creative a.creative-menu-toggle{left:8px;right:auto}
+	.header-rtl #Header_creative .creative-social{left:0;right:auto}
+	.header-rtl #Footer #back_to_top.sticky{right:125px}
+	.header-rtl #popup_contact{right:70px}
+	.header-rtl #Header_creative #Top_bar .menu li ul{left:auto;right:100%}
+	.header-rtl #Header_creative #Top_bar .search_wrapper{left:auto;right:100%;}
+	.header-rtl .fixed-nav.fixed-nav-prev{margin-left:0!important}
+	.header-rtl .fixed-nav.fixed-nav-next{margin-right:50px}
+	
+	/* Header Creative | Right | Always Open */	
+	body.header-rtl.header-creative.header-open{padding-left:0;padding-right:250px!important}
+	.header-rtl.header-open #Header_creative{left:auto;right:0}
+	.header-rtl.header-open #Footer #back_to_top.sticky{right:325px}
+	.header-rtl.header-open #popup_contact{right:270px}
+	.header-rtl.header-open .fixed-nav.fixed-nav-next{margin-right:250px}
+			
+	/* Header Creative | Visual Composer */	
+	.header-creative .vc_row[data-vc-full-width]{padding-left:50px}
+	.header-creative.header-open .vc_row[data-vc-full-width]{padding-left:250px}
+			
+	/* Header Creative | Scroll */
+	#Header_creative.scroll{height:100%;overflow-y:auto}
+	#Header_creative.scroll:not(.dropdown) .menu li ul{display:none!important}
+	#Header_creative.scroll #Action_bar{position:static}
+	
+	/* Header Creative | Dropdown */
+	#Header_creative.dropdown{outline:none}
+	#Header_creative.dropdown #Top_bar .menu_wrapper{float:left}
+
+	/* Header Creative | Dropdown | Main Menu |  1st level */
+	#Header_creative.dropdown #Top_bar #menu ul li{position:relative;float:left}
+	#Header_creative.dropdown #Top_bar #menu ul li a:after{display:none}
+	#Header_creative.dropdown #Top_bar #menu ul li a span{line-height:38px;padding:0}
+	#Header_creative.dropdown #Top_bar #menu ul li.submenu .menu-toggle{display:block;position:absolute;right:0;top:0;width:38px;height:38px;line-height:38px;font-size:26px;text-align:center;color:#d6d6d6;border-left:1px solid #eee;cursor:pointer}
+	#Header_creative.dropdown #Top_bar #menu ul li.submenu .menu-toggle:after{content:"+"}
+	#Header_creative.dropdown #Top_bar #menu ul li.hover > .menu-toggle:after{content:"-"}
+	#Header_creative.dropdown #Top_bar #menu ul li.hover a{border-bottom:0}
+	#Header_creative.dropdown #Top_bar #menu ul.mfn-megamenu li .menu-toggle{display:none}
+	
+	/* Header Creative | Dropdown | Main Menu | 2nd level */
+	#Header_creative.dropdown #Top_bar #menu ul li ul{position:relative!important;left:0!important;top:0;padding:0;margin-left:0!important;width:auto!important;background-image:none}
+	#Header_creative.dropdown #Top_bar #menu ul li ul li{width:100%!important}
+	#Header_creative.dropdown #Top_bar #menu ul li ul li a{padding:0 10px;text-align:center}
+	#Header_creative.dropdown #Top_bar #menu ul li ul li a .menu-arrow{display:none}
+	#Header_creative.dropdown #Top_bar #menu ul li ul li a span{padding:0}
+	#Header_creative.dropdown #Top_bar #menu ul li ul li a span:after{display:none!important}
+	#Header_creative.dropdown #Top_bar .menu > li > ul.mfn-megamenu a.mfn-megamenu-title{text-transform:uppercase;font-weight:400}
+	#Header_creative.dropdown #Top_bar .menu > li > ul.mfn-megamenu > li > ul{display:block!important;position:inherit;left:auto;top:auto}
+		
+	/* Header Creative | Dropdown | Main Menu | 3rd level */
+	#Header_creative.dropdown #Top_bar #menu ul li ul li ul{border-left:0!important;padding:0;top:0}
 }
 
 
@@ -250,6 +369,32 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	.header-stack .menu_wrapper a.responsive-menu-toggle{position:static!important;margin:11px 0}
 	.header-stack .menu_wrapper #menu{left:0;right:auto}
 	.rtl.header-stack #Top_bar #menu{left:auto;right:0}
+	
+	/* Header Creative ---------- */
+	.admin-bar #Header_creative{top:32px}
+	.header-creative.layout-boxed{padding-top:85px}
+	.header-creative.layout-full-width #Wrapper{padding-top:60px}
+	
+	#Header_creative{position:fixed;width:100%;left:0!important;top:0;z-index:1001}
+	#Header_creative .creative-wrapper{display:block!important;opacity:1!important;filter:alpha(opacity=100)!important}
+	#Header_creative .creative-menu-toggle,#Header_creative .creative-social{display:none!important;opacity:1!important;filter:alpha(opacity=100)!important}
+	#Header_creative #Top_bar{position:static;margin:0 8%;width:84%}
+	#Header_creative #Top_bar #logo{height:50px;line-height:50px;padding:5px 0}
+	#Header_creative #Top_bar #logo img{max-height:40px}
+	
+	.logo-no-sticky-padding #Header_creative #Top_bar #logo{height:60px;line-height:60px;padding:0}
+	.logo-no-sticky-padding #Header_creative #Top_bar #logo img{max-height:60px}
+	
+	#Header_creative #Top_bar .responsive-menu-toggle{top:12px}
+	#Header_creative #Top_bar #header_cart{top:21px}
+	#Header_creative #Top_bar #search_button{top:20px}
+	#Header_creative #Top_bar .wpml-languages{top:11px}
+	#Header_creative #Top_bar .action_button{top:9px}
+	#Header_creative #Top_bar .top_bar_right{height:60px;top:0}
+	#Header_creative #Top_bar .top_bar_right:before{display:none}
+	#Header_creative #Top_bar .top_bar_right_wrapper{top:0}
+	#Header_creative #Action_bar{display:none}		
+		
+	/* Header Creative | Scroll */
+	#Header_creative.scroll{overflow:visible!important}
 }
-
-<?php endif; ?>

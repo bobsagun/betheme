@@ -85,7 +85,7 @@ $translate['task'] 			= mfn_opts_get('translate') ? mfn_opts_get('translate-task
 	
 	<?php if( get_post_meta( get_the_ID(), 'mfn-post-template', true ) != 'intro' ): ?>
 
-		<div class="section section-portfolio-header">
+		<div class="section section-post-header">
 			<div class="section_wrapper clearfix">
 		
 				<?php 
