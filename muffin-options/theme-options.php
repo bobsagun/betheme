@@ -85,6 +85,13 @@ if( ! function_exists( 'mfna_bg_position' ) )
 			// Column
 			// do NOT change: backward compatibility
 			
+		} elseif( $el == 'header' ){
+			
+			// Header
+			
+			$array['fixed']					= __('Center No-Repeat Fixed', 'mfn-opts');
+			$array['parallax']				= __('Parallax', 'mfn-opts');
+			
 		} elseif( $el ){
 			
 			// Site Body | <html> tag
@@ -978,13 +985,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'img-subheader-attachment',
 					'type' 		=> 'select',
-					'title' 	=> __('Attachment', 'mfn-opts'),
-					'options'	=> array(
-						''			=> __('Default', 'mfn-opts'),
-						'fixed'		=> __('Fixed', 'mfn-opts'),
-						'parallax'	=> __('Parallax', 'mfn-opts'),
-					),
-				),
+					'title' 	=> __('Position', 'mfn-opts'),
+					'options'	=> mfna_bg_position( 'header' ),
+				),			
 					
 				array(
 					'id' 		=> 'header-info-sticky',
@@ -2574,8 +2577,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'error404-page',
 					'type' 		=> 'pages_select',
 					'title' 	=> __('Custom Page', 'mfn-opts'),
-					'sub_desc' 	=> __('Page Options are disabled', 'mfn-opts'),
-					'desc' 		=> __('Leave this field <b>blank</b> if you want to use <b>default</b> 404 page', 'mfn-opts'),
+					'sub_desc' 	=> __('Page Options, header & footer are disabled', 'mfn-opts'),
+					'desc' 		=> __('Leave this field <b>blank</b> if you want to use <b>default</b> 404 page<br /><b>Notice: </b>Plugins like Visual Composer & Gravity Forms <b>do not work</b> on this page', 'mfn-opts'),
 					'args' 		=> array()
 				),
 
@@ -2638,8 +2641,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'construction-page',
 					'type' 		=> 'pages_select',
 					'title' 	=> __('Custom Page', 'mfn-opts'),
-					'sub_desc' 	=> __('Page Options are disabled', 'mfn-opts'),
-					'desc' 		=> __('Leave this field <b>blank</b> if you want to use <b>default</b> Under Construction page<br /><br /><b>Notice: </b>Plugins like Visual Composer & Gravity Forms <b>do not work</b> on this page', 'mfn-opts'),
+					'sub_desc' 	=> __('Page Options, header & footer are disabled', 'mfn-opts'),
+					'desc' 		=> __('Leave this field <b>blank</b> if you want to use <b>default</b> Under Construction page<br /><b>Notice: </b>Plugins like Visual Composer & Gravity Forms <b>do not work</b> on this page', 'mfn-opts'),
 					'args' 		=> array(),
 				),
 						
@@ -2847,7 +2850,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'sliderbar',
 					'title' 	=> __('Responsive Menu Initial width', 'mfn-opts'),
 					'sub_desc' 	=> __('default: 1240px', 'mfn-opts'),
-					'desc' 		=> __('Values <b>less than 1240</b> are for menu with small amount of items<br />This option does <b>not</b> affect Creative Header', 'mfn-opts'),
+					'desc' 		=> __('Values <b>less than 1240</b> are for menu with small amount of items<br />Values <b>less than 950</b> are not suitable for Header Creative with Mega Menu', 'mfn-opts'),
 					'param'	 	=> array(
 						'min' 		=> 768,
 						'max' 		=> 1240,

@@ -744,7 +744,7 @@ body:not(.template-slider) #Header{min-height:250px}
 .post-photo-wrapper iframe{width:100%}
 .post-desc-wrapper{width:63%;float:left}
 .post-desc{padding:15px 0 0 20px}
-.format-standard.no-img .post-photo-wrapper{display:none}
+.format-standard.no-img .section-post-header .post-photo-wrapper{display:none}
 .format-standard.no-img .post-desc-wrapper{width:100%}
 .search-results .no-img .post-desc{padding-left:0}
 .search-results .no-img .post-desc-wrapper{width:100%}
@@ -1036,7 +1036,7 @@ body:not(.template-slider) #Header{min-height:250px}
 	/* NO img */
 	.portfolio.no-img .single-photo-wrapper .share_wrapper,.format-image.no-img .single-photo-wrapper .share_wrapper,.format-standard.no-img .single-photo-wrapper .share_wrapper{float:none;width:auto;padding:10px 15px 15px}
 	.portfolio.no-img .single-photo-wrapper .share_wrapper .stButton,.format-image.no-img .single-photo-wrapper .share_wrapper .stButton,.format-standard.no-img .single-photo-wrapper .share_wrapper .stButton{margin:0 10px 0 0}
-	.portfolio.no-img .single-photo-wrapper .image_frame,.format-image.no-img .single-photo-wrapper .image_frame,.format-standard.no-img .single-photo-wrapper .image_frame{display:none!important}
+	.portfolio.no-img .section-post-header .single-photo-wrapper .image_frame,.format-image.no-img .section-post-header .single-photo-wrapper .image_frame,.format-standard.no-img .section-post-header .single-photo-wrapper .image_frame{display:none!important}
 	
 	/* Project decription */
 	.project-description li{width:99.9%;clear:both;padding:7px 10px;background:rgba(0,0,0,.01);border-style:solid;border-color:rgba(0,0,0,.03);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}

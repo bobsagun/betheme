@@ -212,7 +212,7 @@ if( ! function_exists( 'mfn_builder_print' ) )
 				
 					// parallax | translate3d -------
 					if( ! mfn_is_mobile() && $parallax && mfn_parallax_plugin() == 'translate3d' ){
-						echo '<img class="mfn-parallax" src="'. $section['attr']['bg_image'] .'" alt="'. __('parallax background','betheme') .'"/>';
+						echo '<img class="mfn-parallax" src="'. $section['attr']['bg_image'] .'" alt=""/>';
 					}
 					
 
@@ -231,8 +231,8 @@ if( ! function_exists( 'mfn_builder_print' ) )
 									echo '<source type="video/ogg" src="'. $ogv .'" />';
 								}
 			
-								echo '<object width="1900" height="1060" type="application/x-shockwave-flash" data="'. THEME_URI .'/js/flashmediaelement.swf">';
-								echo '<param name="movie" value="'. THEME_URI .'/js/flashmediaelement.swf" />';
+								echo '<object width="1900" height="1060" type="application/x-shockwave-flash" data="'. THEME_URI .'/assets/jplayer/flashmediaelement.swf">';
+								echo '<param name="movie" value="'. THEME_URI .'/assets/jplayer/flashmediaelement.swf" />';
 								echo '<param name="flashvars" value="controls=true&file='. $mp4 .'" />';
 								echo '<img src="'. $poster .'" title="No video playback capabilities" />';
 								echo '</object>';
@@ -370,7 +370,7 @@ if( ! function_exists( 'mfn_builder_print' ) )
 								
 									// parallax | translate3d -------
 									if( ! mfn_is_mobile() && $parallax && mfn_parallax_plugin() == 'translate3d' ){
-										echo '<img class="mfn-parallax" src="'. $wrap['attr']['bg_image'] .'" alt="'. __('parallax background','betheme') .'"/>';
+										echo '<img class="mfn-parallax" src="'. $wrap['attr']['bg_image'] .'" alt=""/>';
 									}
 									
 									

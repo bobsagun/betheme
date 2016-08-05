@@ -20,10 +20,6 @@ html {
 	background-color: <?php mfn_opts_show( 'background-body', '#FCFCFC' ) ?>;
 }
 
-<?php if( mfn_opts_get( 'img-subheader-bg' ) ): ?>
-	body:not(.template-slider) #Header_wrapper { background-image: url("<?php mfn_opts_show( 'img-subheader-bg' ) ?>"); }
-<?php endif; ?>
-
 
 /* ==============================================================================================================================
 /*	Font | Family																									Font | Family

@@ -531,7 +531,7 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .offer .offer_li{display:block;float:left}
 .offer .offer_li .image_wrapper{float:left;width:50%;line-height:0}
 .offer .offer_li .image_wrapper img{float:right}
-.offer .offer_li .desc_wrapper{float:left;width:570px;margin:30px 12px 30px 30px}
+.offer .offer_li .desc_wrapper{float:left;width:570px;width:calc(50% - 42px);margin:30px 12px 30px 30px}
 .offer .offer_li .desc_wrapper .title{margin-bottom:30px;position:relative;min-height:43px;padding-right:160px}
 .offer .offer_li .desc_wrapper .title h3{margin:0;font-size:35px;line-height:35px;padding-top:3px}
 .offer .offer_li .desc_wrapper .title h3 em{color:rgba(0,0,0,.1);font-style:normal}

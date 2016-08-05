@@ -4796,7 +4796,7 @@ if( ! function_exists( 'sc_video' ) )
 						if( $ogv ) $output .= '<source type="video/ogg" src="'. $ogv .'" />';
 								
 						$output .= '<object width="1900" height="1060" type="application/x-shockwave-flash" data="'. THEME_URI .'/assets/jplayer/flashmediaelement.swf">';
-							$output .= '<param name="movie" value="'. THEME_URI .'/js/flashmediaelement.swf" />';
+							$output .= '<param name="movie" value="'. THEME_URI .'/assets/jplayer/flashmediaelement.swf" />';
 							$output .= '<param name="flashvars" value="controls=true&file='. $mp4 .'" />';
 							$output .= '<img src="'. $poster .'" title="No video playback capabilities" class="scale-with-grid" alt="'. mfn_get_attachment_data( $poster, 'alt' ) .'"/>';
 						$output .= '</object>';

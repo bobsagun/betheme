@@ -871,13 +871,13 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id'		=> 'link',
 						'type' 		=> 'text',
-						'title' 	=> __('Button Link', 'mfn-opts'),
+						'title' 	=> __('Button | Link', 'mfn-opts'),
 					),
 						
 					array(
 						'id'		=> 'link_title',
 						'type' 		=> 'text',
-						'title' 	=> __('Button Title', 'mfn-opts'),
+						'title' 	=> __('Button | Title', 'mfn-opts'),
 						'class'		=> 'small-text',
 					),
 
@@ -4565,7 +4565,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'textarea',
 						'title' 	=> __('Content', 'mfn-opts'),
 						'desc' 		=> __('Please use <strong>[bar title="Title" value="50" size="20"]</strong> shortcodes here.', 'mfn-opts'),
-						'std' 		=> '[bar title="Bar1" value="50"]'."\n".'[bar title="Bar2" value="60" size="20"]',
+						'std' 		=> '[bar title="Bar1" value="50" size="20"]'."\n".'[bar title="Bar2" value="60" size="20"]',
 					),
 						
 					array(

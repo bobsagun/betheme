@@ -275,6 +275,60 @@ if( ! function_exists( 'mfn_styles_background' ) )
 		}
 		
 		
+		// Header wrapper -----------------------
+		
+		$headerB = false;
+		
+		if( mfn_opts_get( 'img-subheader-bg' ) ){
+			$headerB = mfn_opts_get( 'img-subheader-bg' );
+		}
+
+		if( mfn_ID() && ! is_search() ){
+		
+			if( ( ( mfn_ID() == get_option( 'page_for_posts' ) ) || ( get_post_type( mfn_ID() ) == 'page' ) ) && has_post_thumbnail( mfn_ID() ) ){
+		
+				// Pages & Blog Page ---
+				$headerB = wp_get_attachment_image_src( get_post_thumbnail_id( mfn_ID() ), 'full' );
+				$headerB = $headerB[0];
+		
+			} elseif( get_post_meta( mfn_ID(), 'mfn-post-header-bg', true ) ){
+		
+				// Single Post ---
+				$headerB = get_post_meta( mfn_ID(), 'mfn-post-header-bg', true );
+		
+			}
+		}	
+		
+		$headerP = mfn_opts_get('img-subheader-attachment');
+		
+		if( $headerB ){
+		
+			$aBg 	= array();
+			$aBg[] 	= 'background-image:url('. $headerB .')';
+		
+			if( $headerP == "fixed" ){
+				
+				$aBg[] = 'background-attachment:fixed';
+				
+			} elseif( $headerP == "parallax" ) {	
+				
+				// do nothing
+				
+			} elseif( $headerP ) {
+				$background_attr = explode( ';', $headerP );
+				if( $background_attr[0] ) $aBg[] = 'background-repeat:'. $background_attr[0];
+				if( $background_attr[1] ) $aBg[] = 'background-position:'. $background_attr[1];
+				if( $background_attr[2] ) $aBg[] = 'background-attachment:'. $background_attr[2];
+				if( $background_attr[3] ) $aBg[] = '-webkit-background-size:'. $background_attr[3];
+				if( $background_attr[3] ) $aBg[] = 'background-size:'. $background_attr[3];
+			}
+		
+			$background = implode( ';', $aBg );
+		
+			$output .= 'body:not(.template-slider) #Header_wrapper{'. $background. '}'."\n";
+		}
+		
+		
 		// Subheader -----------------------
 		
 		if( get_post_meta( mfn_ID(), 'mfn-post-subheader-image', true ) ){
@@ -282,6 +336,7 @@ if( ! function_exists( 'mfn_styles_background' ) )
 		} else {
 			$subheaderB = mfn_opts_get( 'subheader-image' );
 		}
+		
 		$subheaderP = mfn_opts_get( 'subheader-position' );
 
 		if( $subheaderB ){
@@ -302,6 +357,7 @@ if( ! function_exists( 'mfn_styles_background' ) )
 
 			$output .= '#Subheader{'. $background. '}'."\n";
 		}
+		
 		
 		// Footer --------------------------
 		
@@ -377,8 +433,9 @@ if( ! function_exists( 'mfn_styles_dynamic' ) )
 				// Dynamic | style.php & ( style-responsive.php || style-colors.php || style-one.php || css/skins/.. )
 
 				// Responsive
-				
-				include_once THEME_DIR . '/style-responsive.php';
+				if( mfn_opts_get('responsive') ){
+					include_once THEME_DIR . '/style-responsive.php';
+				}
 					
 				// Colors
 				

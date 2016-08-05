@@ -759,6 +759,7 @@ class mfnImport {
 								<option value="vision">Vision</option>
 								<option value="voyager">Voyager</option>
 								<option value="vpn">VPN</option>
+								<option value="watch">Watch</option>
 								<option value="webdesign">Web Design</option>
 								<option value="webmaster">Webmaster</option>
 								<option value="wedding">Wedding</option>

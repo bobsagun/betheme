@@ -106,10 +106,13 @@
 					</div>
 				<?php endif; ?>
 				
-				<?php if( $terms = get_the_terms( false, 'portfolio-types' ) ): ?>
+				<?php 
+					$terms = get_the_terms( false, 'portfolio-types' );
+					if( is_array( $terms ) ): 
+				?>
 					<div class="categories">
 						<i class="icon-docs"></i>
-						<?php 
+						<?php
 							$string_term = '';
 							foreach( $terms as $term ){
 								$string_term .= '<a href="'. get_term_link( $term, 'post_tag' ) .'">'. $term->name .'</a>, ';
