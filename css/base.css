@@ -276,7 +276,7 @@ table#edd_purchase_receipt,table#edd_purchase_receipt_products{margin-bottom:40p
 .gform_confirmation_wrapper .gform_confirmation_message{border-radius:5px;margin-bottom:30px;padding:20px;background:#80B736;color:#fff}
 
 /* Mailchimp ------------------------------------------------------------------------- */
-#mc_embed_signup .clear{visibility:visible}
+#mc_embed_signup .clear{height:auto;overflow:visible;visibility:visible}
 .mc4wp-form p > input{float:left;margin:0 3px}
 
 /* prettyPhoto ----------------------------------------------------------------------- */

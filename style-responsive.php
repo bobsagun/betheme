@@ -90,8 +90,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		.header-simple #Top_bar #menu ul.mfn-megamenu li .menu-toggle{display:none}
 	
 		/* Header Simple | Main Menu | 2nd level */
-		.header-simple #Top_bar #menu ul li ul{position:relative!important;left:0!important;top:0;padding:0;margin-left:0!important;width:auto!important;background-image:none}
-		.header-simple #Top_bar #menu ul li ul li{width:100%!important}
+		.header-simple #Top_bar #menu ul li ul{position:relative!important;left:0!important;top:0;padding:0;margin:0!important;width:auto!important;background-image:none}
+		.header-simple #Top_bar #menu ul li ul li{width:100%!important;display:block;padding:0;}
 		.header-simple #Top_bar #menu ul li ul li a{padding:0 20px 0 30px}
 		.header-simple #Top_bar #menu ul li ul li a .menu-arrow{display:none}
 		.header-simple #Top_bar #menu ul li ul li a span{padding:0}
@@ -288,7 +288,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	.layout-boxed.header-boxed.nice-scroll #Top_bar.is-sticky{margin-left:-5px}
 	
 	#Top_bar.is-sticky .top_bar_left,#Top_bar.is-sticky .top_bar_right,#Top_bar.is-sticky .top_bar_right:before{background:none}
-	#Top_bar.is-sticky .top_bar_right{top:-4px}
+	#Top_bar.is-sticky .top_bar_right{top:-4px;height:auto;}
+	#Top_bar.is-sticky .top_bar_right_wrapper{top:15px}
+	.header-plain #Top_bar.is-sticky .top_bar_right_wrapper{top:0}
 	#Top_bar.is-sticky .logo{width:auto;margin:0 30px 0 20px;padding:0}
 	#Top_bar.is-sticky #logo{padding:5px 0!important;height:50px!important;line-height:50px!important}
 	#Top_bar.is-sticky #logo img:not(.svg){max-height:35px;width:auto!important}
@@ -300,15 +302,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	#Top_bar.is-sticky .menu > li > a:after{top:auto;bottom:-4px}
 	#Top_bar.is-sticky .menu > li > a span.description{display:none}
 	#Top_bar.is-sticky a.responsive-menu-toggle{top:14px}
-	#Top_bar.is-sticky .top_bar_right_wrapper{top:15px}
-	.header-plain #Top_bar.is-sticky .top_bar_right_wrapper{top:0}
 	#Top_bar.is-sticky .secondary_menu_wrapper,#Top_bar.is-sticky .banner_wrapper{display:none}
 	.header-simple #Top_bar.is-sticky .responsive-menu-toggle{top:12px}
 	.header-overlay #Top_bar.is-sticky{display:none}
 	
 		/* Sticky | Dark */
 		.sticky-dark #Top_bar.is-sticky{background:rgba(0,0,0,.8)}
-		.sticky-dark #Top_bar.is-sticky #menu{background:none}
+		.sticky-dark #Top_bar.is-sticky #menu{background:rgba(0,0,0,.8)}
 		.sticky-dark #Top_bar.is-sticky .menu > li > a{color:#fff}
 		.sticky-dark #Top_bar.is-sticky .top_bar_right a{color:rgba(255,255,255,.5)}
 		.sticky-dark #Top_bar.is-sticky .wpml-languages a.active,.sticky-dark #Top_bar.is-sticky .wpml-languages ul.wpml-lang-dropdown{background:rgba(0,0,0,0.3);border-color:rgba(0,0,0,0.1)}

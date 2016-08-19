@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	?>
 	background-color: <?php hex2rgba( $subheaderB, $subheaderA, true ); ?>;
 }
-.header-classic #Action_bar, .header-plain #Action_bar, .header-stack #Action_bar {
+.header-classic #Action_bar, .header-plain #Action_bar, .header-split #Action_bar, .header-stack #Action_bar {
     background-color: <?php mfn_opts_show( 'background-action-bar', '#2C2C2C' ) ?>;
 }
 

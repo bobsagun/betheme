@@ -736,12 +736,18 @@ if( ! function_exists( 'mfn_scripts_config' ) )
 				echo 'window.mfn_prettyphoto = {';
 					if( is_array( $aPrettyOptions ) && isset( $aPrettyOptions['disable'] ) ){
 						echo 'disable:true,';
+					} else {
+						echo 'disable:false,';
 					}
 					if( is_array( $aPrettyOptions ) && isset( $aPrettyOptions['disable-mobile'] ) ){
 						echo 'disableMobile:true,';
+					} else {
+						echo 'disableMobile:false,';
 					}
 					if( is_array( $aPrettyOptions ) && isset( $aPrettyOptions['title'] ) ){
 						echo 'title:true,';
+					} else {
+						echo 'title:false,';
 					}
 					echo 'style:"'. mfn_opts_get('prettyphoto','pp_default').'",';
 					echo 'width:'. intval( mfn_opts_get('prettyphoto-width',0) ).',';

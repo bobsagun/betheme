@@ -51,7 +51,12 @@
 			<key name="social-dribbble" />
 			<key name="social-instagram" />
 			<key name="social-behance" />
+			<key name="social-tumblr" />
 			<key name="social-vkontakte" />
+			<key name="social-viadeo" />
+			<key name="social-xing" />
+			<key name="social-custom-icon" />
+			<key name="social-custom-link" />
 			<key name="translate-search-placeholder" />
 			<key name="translate-search-results" />
 			<key name="translate-home" />

@@ -33,12 +33,6 @@ blockquote:after{content:"";width:55px;height:40px;background:url(../images/bloc
 .button_align.align_center{text-align:center}
 .button_align.align_right{text-align:right}
 	
-/* Alignments ------------------------------------------------------------------------ */
-.alignleft{float:left;margin:15px 15px 15px 0}
-.alignright{float:right;margin:15px 0 15px 15px}
-.aligncenter{text-align:center;margin:0 auto;display:block}
-.aligncenter img{display:inline}
-	
 /* Image frames ---------------------------------------------------------------------- */
 .column_image{line-height:0}
 
@@ -76,6 +70,12 @@ blockquote:after{content:"";width:55px;height:40px;background:url(../images/bloc
 .image_frame .image_wrapper .image_links.triple a:last-child{-webkit-box-shadow:0 0 0;box-shadow:0 0 0;width:34%}
 .image_frame .image_wrapper .image_links.hover-title a{font-size:15px;text-decoration:none}
 .image_frame.no_border{border-width:0}
+
+/* Alignments ------------------------------------------------------------------------ */
+.alignleft{float:left;margin:15px 15px 15px 0}
+.alignright{float:right;margin:15px 0 15px 15px}
+.aligncenter{text-align:center;margin:0 auto;display:block}
+.aligncenter img{display:inline}
 		
 /* Animation */
 .image_frame .image_wrapper img,.image_frame .image_wrapper .mask:after,.image_frame .image_wrapper .image_links{-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
@@ -533,9 +533,19 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .offer .offer_li .image_wrapper img{float:right}
 .offer .offer_li .desc_wrapper{float:left;width:570px;width:calc(50% - 42px);margin:30px 12px 30px 30px}
 .offer .offer_li .desc_wrapper .title{margin-bottom:30px;position:relative;min-height:43px;padding-right:160px}
+.offer .offer_li .desc_wrapper.no-link .title{padding:0}
 .offer .offer_li .desc_wrapper .title h3{margin:0;font-size:35px;line-height:35px;padding-top:3px}
 .offer .offer_li .desc_wrapper .title h3 em{color:rgba(0,0,0,.1);font-style:normal}
 .offer .offer_li .desc_wrapper .title a.button{margin:0;position:absolute;right:0;top:0}
+
+.offer .offer_li .desc_wrapper.align_left{text-align:left}
+.offer .offer_li .desc_wrapper.align_right{text-align:right}
+.offer .offer_li .desc_wrapper.align_center{text-align:center}
+.offer .offer_li .desc_wrapper.align_justify{text-align:justify}
+
+.offer .offer_li .desc_wrapper.align_right.has-link .title{padding-left:160px;padding-right:0}
+.offer .offer_li .desc_wrapper.align_right .title a.button{left:0;right:auto;}
+.offer .offer_li .desc_wrapper.align_center.has-link .title{text-align:left}
 
 .offer_li ul{list-style:disc inside none;margin-bottom:10px}
 .offer_li ol{list-style:decimal inside none;margin-bottom:10px}
@@ -560,9 +570,19 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .offer_thumb_ul li.offer_thumb_li{float:left;display:block;padding-left:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 .offer_thumb_ul li.offer_thumb_li .image_wrapper{float:right;width:57%}
 .offer_thumb_ul li.offer_thumb_li .desc_wrapper{float:left;width:39%;margin-right:4%;padding-top:20px}
-.offer_thumb_ul li.offer_thumb_li .desc_wrapper .title{margin-bottom:30px;position:relative;min-height:43px;padding-right:160px}
+.offer_thumb_ul li.offer_thumb_li .desc_wrapper .title{margin-bottom:15px;position:relative;min-height:43px;padding-right:160px}
+.offer_thumb_ul li.offer_thumb_li .desc_wrapper.no-link .title{padding:0}
 .offer_thumb_ul li.offer_thumb_li .desc_wrapper .title h3{margin:0;font-size:35px;line-height:35px;padding-top:3px}
 .offer_thumb_ul li.offer_thumb_li .desc_wrapper .title a.button{margin:0;position:absolute;right:0;top:0}
+
+.offer_thumb_ul li.offer_thumb_li .desc_wrapper.align_left{text-align:left}
+.offer_thumb_ul li.offer_thumb_li .desc_wrapper.align_right{text-align:right}
+.offer_thumb_ul li.offer_thumb_li .desc_wrapper.align_center{text-align:center}
+.offer_thumb_ul li.offer_thumb_li .desc_wrapper.align_justify{text-align:justify}
+
+.offer_thumb_ul li.offer_thumb_li .desc_wrapper.align_right.has-link .title{padding-left:160px;padding-right:0}
+.offer_thumb_ul li.offer_thumb_li .desc_wrapper.align_right .title a.button{left:0;right:auto;}
+.offer_thumb_ul li.offer_thumb_li .desc_wrapper.align_center.has-link .title{text-align:left}
 	
 /* Animation */
 .offer_thumb .slider_pagination a img{-webkit-transition:all .4s ease-in-out;-moz-transition:all .4s ease-in-out;-o-transition:all .4s ease-in-out;transition:all .4s ease-in-out}

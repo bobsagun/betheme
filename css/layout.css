@@ -1048,6 +1048,9 @@ body:not(.template-slider) #Header{min-height:250px}
 	.share_item{float:none;width:auto;padding:10px 15px 15px}
 	.share_item .stButton{margin:0 10px 0 0}
 
+/* Templates | Preview --------------------------------------------------------------- */
+.single-template .section-post-header,.single-template .section-post-about,.single-template .section-post-related,.single-template .section-post-comments{display:none;}
+
 /* Widget Area ----------------------------------------------------------------------- */
 .widget-area{border-style:solid;padding:30px 20px 20px;position:relative}
 .widget-area:before{content:"";display:block;position:absolute;top:0;width:1500px;height:100%;background:rgba(0,0,0,.01);visibility:visible}
@@ -1547,9 +1550,9 @@ ul.testimonials-slider{max-height:260px}
 /* Section Navigation ---------------------------------------------------------------- */
 .section.has-navi .section-nav{position:absolute;left:50%;z-index:20;cursor:pointer;font-size:38px;width:50px;height:50px;line-height:50px;margin:0 0 0 -25px;text-align:center;color:rgba(0,0,0,.2)}
 .section.has-navi .section-nav:hover{color:rgba(0,0,0,.8)}
-.section.has-navi .section-nav.prev{top:75px}
-.section.has-navi .section-nav.next{bottom:75px}
-.section.has-navi:first-child .section-nav.prev,.section.has-navi:nth-last-child(2) .section-nav.next{display:none}
+.section.has-navi .section-nav.prev{top:25px}
+.section.has-navi .section-nav.next{bottom:25px}
+.section.has-navi:first-child .section-nav.prev,.section.has-navi:nth-last-child(3) .section-nav.next{display:none}
 .section.has-navi .section-nav{color:rgba(0,0,0,.2)}
 .section.has-navi .section-nav:hover{color:rgba(0,0,0,.8)}
 .section.has-navi.dark .section-nav{color:rgba(255,255,255,.2)}

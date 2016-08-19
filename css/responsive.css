@@ -405,6 +405,8 @@ html,body{overflow-x:hidden}
 	.highlight-left .section_wrapper .wrap,.highlight-right .section_wrapper .wrap{padding:0 33px}
 	.equal-height-wrap .mcb-wrap{height:auto!important}
 	.equal-height-wrap .mcb-wrap .mcb-wrap-inner{top:0!important;-webkit-transform:none!important;-moz-transform:none!important;-ms-transform:none!important;-o-transform:none!important;transform:none!important}
+	.section.has-navi .section-nav.prev{top:10px}
+	.section.has-navi .section-nav.next{bottom:10px}
 		
 	/* Header */
 	#Top_bar,#Action_bar{background:#fff!important;position:static}
@@ -467,8 +469,8 @@ html,body{overflow-x:hidden}
 	.header-creative.layout-full-width #Wrapper{padding-top:0}
 	#Header_creative #Top_bar .responsive-menu-toggle{top:20px}
 	#Header_creative #Top_bar .responsive-menu-toggle.is-sticky{position:fixed!important;top:10px!important;left:10px!important;z-index:30}
-	#Header_creative #Top_bar .top_bar_left{margin-top:0;padding-top:10px;overflow:hidden}
-	#Header_creative #Top_bar .logo #logo{padding:0;margin:5px 42px 15px}
+	#Header_creative #Top_bar .top_bar_left{margin-top:0;overflow:hidden}
+	#Header_creative #Top_bar .logo #logo{padding:0;margin-bottom:5px}
 	#Header_creative #Top_bar .logo #logo img{max-height:50px}
 	#Header_creative #Top_bar #menu{position:static;width:100%}
 

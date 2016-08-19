@@ -382,7 +382,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'info',
 						'type' 		=> 'info',
+						'title' 	=> '',
 						'desc' 		=> __('This is Muffin Builder Placeholder.', 'nhp-opts'),
+						'class' 	=> 'mfn-info info',
 					),
 							
 				),
@@ -1757,11 +1759,13 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 				'size' 		=> '1/4',
 				'cat' 		=> 'typography',
 				'fields'	 => array(
-							
+						
 					array(
 						'id' 		=> 'info',
 						'type' 		=> 'info',
+						'title' 	=> '',
 						'desc' 		=> __('Adding this Item will show Content from WordPress Editor above Page Options. You can use it only once per page. Please also remember to turn on "Hide The Content" option.', 'nhp-opts'),
+						'class' 	=> 'mfn-info info',
 					),
 
 					array(
@@ -1977,7 +1981,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'info',
 						'type' 		=> 'info',
+						'title' 	=> '',
 						'desc' 		=> __('This item can only be used on pages <strong>Without Sidebar</strong>', 'nhp-opts'),
+						'class' 	=> 'mfn-info info',
 					),
 
 					array(
@@ -3447,7 +3453,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'info',
 						'type' 		=> 'info',
+						'title' 	=> '',
 						'desc' 		=> __('This item can only be used on pages <strong>Without Sidebar</strong>.<br />Please also set Section Style to <strong>Full Width</strong> and use one Item in one Section.', 'nhp-opts'),
+						'class' 	=> 'mfn-info info',		
 					),
 						
 					array(
@@ -3455,9 +3463,30 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Category', 'mfn-opts'),
 						'options'	=> mfn_get_categories( 'offer-types' ),
-						'sub_desc'	=> __('Select the offer post category.', 'mfn-opts'),
 					),
+						
+					array(
+						'id'		=> 'align',
+						'type'		=> 'select',
+						'title'		=> __('Text Align', 'mfn-opts'),
+						'desc'		=> __('Text align center does not affect title if button is active', 'mfn-opts'),
+						'options' 	=> array(
+							'left'		=> 'Left',
+							'right'		=> 'Right',
+							'center'	=> 'Center',
+							'justify'	=> 'Justify',
+						),
+					),						
 
+					// custom
+					array(
+						'id' 		=> 'info_custom',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Custom', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id' 		=> 'classes',
 						'type' 		=> 'text',
@@ -3481,7 +3510,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'info',
 						'type' 		=> 'info',
+						'title' 	=> '',
 						'desc' 		=> __('This item can only be used <strong>once per page</strong>.', 'nhp-opts'),
+						'class' 	=> 'mfn-info info',
 					),
 						
 					array(
@@ -3489,19 +3520,40 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Category', 'mfn-opts'),
 						'options'	=> mfn_get_categories( 'offer-types' ),
-						'sub_desc'	=> __('Select the offer post category.', 'mfn-opts'),
 					),
 
 					array(
 						'id' 		=> 'style',
 						'type' 		=> 'select',
-						'options'	=> array(
-							''			=> 'Thumbnails on the left',
-							'bottom'	=> 'Thumbnails at the bottom',
-						),
 						'title' 	=> __('Style', 'mfn-opts'),
+						'options'	=> array(
+							'bottom'	=> 'Thumbnails at the bottom',
+							''			=> 'Thumbnails on the left',
+						),
+					),
+						
+					array(
+						'id'		=> 'align',
+						'type'		=> 'select',
+						'title'		=> __('Text Align', 'mfn-opts'),
+						'desc'		=> __('Text align center does not affect title if button is active', 'mfn-opts'),
+						'options' 	=> array(
+							'left'		=> 'Left',
+							'right'		=> 'Right',
+							'center'	=> 'Center',
+							'justify'	=> 'Justify',
+						),
 					),
 
+					// custom
+					array(
+						'id' 		=> 'info_custom',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Custom', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id' 		=> 'classes',
 						'type' 		=> 'text',
@@ -3919,11 +3971,11 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id'		=> 'align',
 						'type'		=> 'select',
-						'title'		=> 'Text Align',
+						'title'		=> __('Text Align', 'mfn-opts'),
 						'options' 	=> array(
-							''		=> 'Center',
-							'left'	=> 'Left',
-							'right'	=> 'Right',
+							''			=> __('Center', 'mfn-opts'),
+							'left'		=> __('Left', 'mfn-opts'),
+							'right'		=> __('Right', 'mfn-opts'),
 						),
 					),
 						
