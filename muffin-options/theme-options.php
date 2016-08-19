@@ -3082,113 +3082,125 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'social-skype',
 					'type' 		=> 'text',
 					'title' 	=> __('Skype', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your Skype login here', 'mfn-opts'),
-					'desc' 		=> __('You can use <strong>callto:</strong> or <strong>skype:</strong> prefix' , 'mfn-opts'),
+					'desc' 		=> __('Skype login. You can use <strong>callto:</strong> or <strong>skype:</strong> prefix' , 'mfn-opts'),
 				),
 					
 				array(
 					'id' 		=> 'social-facebook',
 					'type' 		=> 'text',
 					'title' 	=> __('Facebook', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your Facebook link here', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
 				),
 
 				array(
 					'id' 		=> 'social-googleplus',
 					'type' 		=> 'text',
 					'title' 	=> __('Google +', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your Google + link here', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
 				),
 
 				array(
 					'id' 		=> 'social-twitter',
 					'type' 		=> 'text',
 					'title' 	=> __('Twitter', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your Twitter link here', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
 				),
 
 				array(
 					'id' 		=> 'social-vimeo',
 					'type' 		=> 'text',
 					'title' 	=> __('Vimeo', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your Vimeo link here', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
 				),
 
 				array(
 					'id' 		=> 'social-youtube',
 					'type' 		=> 'text',
 					'title' 	=> __('YouTube', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your YouTube link here', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
 				),
 
 				array(
 					'id' 		=> 'social-flickr',
 					'type' 		=> 'text',
 					'title' 	=> __('Flickr', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your Flickr link here', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
 				),
 
 				array(
 					'id' 		=> 'social-linkedin',
 					'type' 		=> 'text',
 					'title' 	=> __('LinkedIn', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your LinkedIn link here', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
 				),
 
 				array(
 					'id' 		=> 'social-pinterest',
 					'type'		=> 'text',
 					'title' 	=> __('Pinterest', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your Pinterest link here', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
 				),
 
 				array(
 					'id' 		=> 'social-dribbble',
 					'type' 		=> 'text',
 					'title' 	=> __('Dribbble', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your Dribbble link here', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
 				),
 
 				array(
 					'id' 		=> 'social-instagram',
 					'type' 		=> 'text',
 					'title' 	=> __('Instagram', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your Instagram link here', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
 				),
 
 				array(
 					'id' 		=> 'social-behance',
 					'type' 		=> 'text',
 					'title' 	=> __('Behance', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your Behance link here', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
 				),
 					
 				array(
 					'id' 		=> 'social-tumblr',
 					'type' 		=> 'text',
 					'title' 	=> __('Tumblr', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your Tumblr link here', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
 				),
 
 				array(
 					'id' 		=> 'social-vkontakte',
 					'type' 		=> 'text',
 					'title' 	=> __('VKontakte', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your VKontakte link here', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
 				),
 
 				array(
 					'id' 		=> 'social-viadeo',
 					'type' 		=> 'text',
 					'title' 	=> __('Viadeo', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your Viadeo link here', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
 				),
 
 				array(
 					'id' 		=> 'social-xing',
 					'type' 		=> 'text',
 					'title' 	=> __('Xing', 'mfn-opts'),
-					'sub_desc' 	=> __('Type your Xing link here', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
+				),
+					
+				array(
+					'id'		=> 'social-custom-icon',
+					'type'		=> 'icon',
+					'title'		=> __('Custom | Icon', 'mfn-opts'),
+				),
+					
+				array(
+					'id' 		=> 'social-custom-link',
+					'type' 		=> 'text',
+					'title' 	=> __('Custom | Link', 'mfn-opts'),
+					'desc' 		=> __('To show Custom Social Icon select Icon and enter Link to the profile page', 'mfn-opts'),
 				),
 
 				array(

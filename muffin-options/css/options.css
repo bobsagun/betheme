@@ -180,10 +180,14 @@
 
 
 /* Field | Info ---------------------------------------- */
-#mfn-wrapper .form-table tr.mfn-info { background: #dce7f7; border-bottom-color: transparent !important; position:relative; top:-1px;}
-#mfn-wrapper .form-table tr.mfn-info.desc { background: #fff; top:-2px;}
+#mfn-wrapper .form-table tr.mfn-info { background: #dce7f7; border-bottom-color:transparent !important; position:relative; top:-1px;}
 #mfn-wrapper .form-table tr.mfn-info td { box-shadow: -3px 0 0 0 #b9cbe4; color: #516676; font-size: 13px; font-weight: 400; padding: 15px 20px; letter-spacing: 2px; text-transform: uppercase; position:relative; left:-207px;}
 #mfn-wrapper .form-table tr.mfn-info td span { font-size: 10px; margin-left: 10px; opacity: 0.9;}
+
+#mfn-wrapper .form-table tr.mfn-info.desc { background: #fff; top:-2px;}
+
+#mfn-wrapper .form-table tr.mfn-info.info { background: none; top:0; border-bottom-color:#ebecec !important;}
+#mfn-wrapper .form-table tr.mfn-info.info td { box-shadow: -3px 0 0 0 #e5e5e5; color:#555; letter-spacing:0.5px; text-transform:none;}
 
 #mfn-wrapper .form-table tr.deprecated th,
 #mfn-wrapper .form-table tr.deprecated input,

@@ -3829,6 +3829,7 @@ if( ! function_exists( 'sc_offer' ) )
 	{
 		extract(shortcode_atts(array(
 			'category' 	=> '',
+			'align' 	=> 'left',
 		), $attr));
 		
 		$args = array(
@@ -3853,8 +3854,15 @@ if( ! function_exists( 'sc_offer' ) )
 					{
 						$offer_query->the_post();
 						$output .= '<li class="offer_li">';
-						
-							$link = get_post_meta( get_the_ID(), 'mfn-post-link', true);
+
+							// link
+							if( $link = get_post_meta( get_the_ID(), 'mfn-post-link', true) ){
+								$class = 'has-link';
+							} else {
+								$class = 'no-link';
+							}
+								
+							// target
 							if( get_post_meta( get_the_ID(), 'mfn-post-target', true) ){
 								$target = 'target="_blank"';
 							} else {
@@ -3865,7 +3873,7 @@ if( ! function_exists( 'sc_offer' ) )
 								$output .= get_the_post_thumbnail( get_the_ID(), 'full', array('class'=>'scale-with-grid' ) );
 							$output .= '</div>';
 							
-							$output .= '<div class="desc_wrapper">';
+							$output .= '<div class="desc_wrapper align_'. $align .' '. $class .'">';
 							
 								$output .= '<div class="title">';
 									$output .= '<h3>'. get_the_title() .'</h3>';
@@ -3907,6 +3915,7 @@ if( ! function_exists( 'sc_offer_thumb' ) )
 		extract(shortcode_atts(array(
 			'category' 	=> '',
 			'style' 	=> '',
+			'align' 	=> 'left',
 		), $attr));
 		
 		$args = array(
@@ -3920,7 +3929,7 @@ if( ! function_exists( 'sc_offer_thumb' ) )
 
 		$offer_query = new WP_Query();
 		$offer_query->query( $args );
-		
+
 		$output = '';
 		if ($offer_query->have_posts())
 		{
@@ -3933,7 +3942,14 @@ if( ! function_exists( 'sc_offer_thumb' ) )
 						$offer_query->the_post();
 						$output .= '<li class="offer_thumb_li id_'. $i .'">';
 						
-							$link = get_post_meta( get_the_ID(), 'mfn-post-link', true);
+							// link
+							if( $link = get_post_meta( get_the_ID(), 'mfn-post-link', true) ){
+								$class = 'has-link';
+							} else {
+								$class = 'no-link';
+							}
+							
+							// target
 							if( get_post_meta( get_the_ID(), 'mfn-post-target', true) ){
 								$target = 'target="_blank"';
 							} else {
@@ -3944,7 +3960,7 @@ if( ! function_exists( 'sc_offer_thumb' ) )
 								$output .= get_the_post_thumbnail( get_the_ID(), 'full', array('class'=>'scale-with-grid' ) );
 							$output .= '</div>';
 							
-							$output .= '<div class="desc_wrapper">';
+							$output .= '<div class="desc_wrapper align_'. $align .' '. $class .'">';
 							
 								if( trim(get_the_title()) || $link ){
 									$output .= '<div class="title">';

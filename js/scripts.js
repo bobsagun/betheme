@@ -222,7 +222,11 @@
 			section
 				.css( 'padding', 0 )
 				.css( 'min-height', windowH + offset );
+			
 			var padding = ( windowH + offset - wrapper.height() ) / 2;
+			
+			if( padding < 50 ) padding = 50;
+			
 			wrapper
 				.css( 'padding-top', padding + 10 )			// 20 = column margin-bottom / 2
 				.css( 'padding-bottom', padding - 10 );
@@ -407,7 +411,7 @@
 			e.preventDefault();
 			var el = $(this)
 			var menu = $('#Top_bar #menu');
-			var menuWrap = menu.closest('.menu_wrapper');
+			var menuWrap = menu.closest('.top_bar_left');
 			el.toggleClass('active');
 			
 			if( el.hasClass('is-sticky') && el.hasClass('active') && ( $(window).width() < 768 ) ){

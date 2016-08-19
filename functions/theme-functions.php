@@ -235,24 +235,39 @@ if( ! function_exists( 'mfn_ID' ) )
 if( ! function_exists( 'mfn_layout_ID' ) )
 {
 	function mfn_layout_ID(){
-		
-		if( mfn_ID() && is_single() && get_post_type() == 'post' ){
-			
-			// Theme Options | Single Posts
-			$layoutID = mfn_opts_get( 'blog-single-layout' );
-			
-		} elseif( mfn_ID() && is_single() && get_post_type() == 'portfolio' ) {
 
-			// Theme Options | Single Project
-			$layoutID = mfn_opts_get( 'portfolio-single-layout' );
+		$layoutID = false;
+		
+		if( mfn_ID() ){
 			
-		} else {
-			
-			// Page Options | Page, Portfolio
-			$layoutID = get_post_meta( mfn_ID(), 'mfn-post-custom-layout', true );
-			
-		}	
+			if( is_single() && get_post_type() == 'post' ){
+				
+				// Theme Options | Single Post
+				$layoutID = mfn_opts_get( 'blog-single-layout' );
+				
+			} elseif( is_single() && get_post_type() == 'portfolio' ) {
 	
+				if( get_post_meta( mfn_ID(), 'mfn-post-custom-layout', true ) ){
+					
+					// Page Options | Single Portfolio
+					$layoutID = get_post_meta( mfn_ID(), 'mfn-post-custom-layout', true );
+					
+				} else {
+					
+					// Theme Options | Single Portfolio
+					$layoutID = mfn_opts_get( 'portfolio-single-layout' );
+					
+				}
+				
+			} else {
+				
+				// Page Options | Page
+				$layoutID = get_post_meta( mfn_ID(), 'mfn-post-custom-layout', true );
+				
+			}
+			
+		}
+
 		return $layoutID;
 	}
 }
