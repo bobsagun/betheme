@@ -266,7 +266,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 			// Responsive --------------------------------------------
 			'responsive' => array(
 				'title' 	=> __('Responsive', 'mfn-opts'),
-				'sections' 	=> array( 'responsive' ),
+				'sections' 	=> array( 'responsive', 'responsive-header' ),
 			),
 				
 			// SEO --------------------------------------------
@@ -1051,6 +1051,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Hide', 'mfn-opts'),
 					'options' 	=> array(
 						'hide-breadcrumbs'	=> __('Breadcrumbs', 'mfn-opts'),
+// 						'hide-title'		=> __('Page Title', 'mfn-opts'),
 						'hide-subheader'	=> __('<b>Subheader</b>', 'mfn-opts'),
 					),
 				),
@@ -1310,6 +1311,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 						'line-below'		=> __('Line below Menu', 'mfn-opts'),
 						'line-below-80'		=> __('Line below Link (80% width)', 'mfn-opts'),
 						'line-below-80-1'	=> __('Line below Link (80% width, 1px height)', 'mfn-opts'),
+						'link-color'		=> __('Link color only', 'mfn-opts'),
 						'arrow-top'			=> __('Arrow Top', 'mfn-opts'),
 						'arrow-bottom'		=> __('Arrow Bottom', 'mfn-opts'),
 						'highlight'			=> __('Highlight', 'mfn-opts'),
@@ -2429,7 +2431,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'sub_desc' 	=> __('Header Cart Icon', 'mfn-opts'),
 					'desc' 		=> __('Leave this field blank to hide cart icon', 'mfn-opts'),
 					'class' 	=> 'small-text',
-					'std' 		=> 'icon-basket',
+					'std' 		=> 'icon-bag-fine',
 				),
 						
 			),
@@ -2736,7 +2738,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					
 				array(
 					'id'		=> 'footer-call-to-action',
-					'type'		=> 'text',
+					'type'		=> 'textarea',
 					'title'		=> __('Call To Action', 'mfn-opts'),
 				),
 
@@ -2797,19 +2799,11 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 		
 		// Responsive =================================================================================
 		
-		// Responsive --------------------------------------------
+		// General --------------------------------------------
 		$sections['responsive'] = array(
 			'title'		=> __('General', 'mfn-opts'),
 			'fields' 	=> array(
-	
-				array(
-					'id' 		=> 'responsive-info-layout',
-					'type' 		=> 'info',
-					'title' 	=> '',
-					'desc' 		=> __('Layout', 'mfn-opts'),
-					'class' 	=> 'mfn-info',
-				),
-					
+
 				array(
 					'id' 		=> 'responsive',
 					'type' 		=> 'switch',
@@ -2817,6 +2811,15 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'desc' 		=> __('<b>Notice:</b> Responsive menu is working only with WordPress custom menu, please add one in Appearance > Menus and select it for Theme Locations section<br /><a href="https://codex.wordpress.org/WordPress_Menu_User_Guide" target="_blank">https://codex.wordpress.org/WordPress_Menu_User_Guide</a>', 'mfn-opts'),
 					'options' 	=> array('1' => 'On','0' => 'Off'),
 					'std' 		=> '1'
+				),
+					
+				// layout
+				array(
+					'id' 		=> 'responsive-info-layout',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Layout', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
 				),
 	
 				array(
@@ -2836,75 +2839,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'options' 	=> array( '0' => 'Off', '1' => 'On' ),
 					'std' 		=> '0'
 				),
-	
-				array(
-					'id' 		=> 'responsive-info-header',
-					'type' 		=> 'info',
-					'title' 	=> '',
-					'desc' 		=> __('Header', 'mfn-opts'),
-					'class' 	=> 'mfn-info',
-				),
-					
-				array(
-					'id' 		=> 'mobile-menu-initial',
-					'type' 		=> 'sliderbar',
-					'title' 	=> __('Responsive Menu Initial width', 'mfn-opts'),
-					'sub_desc' 	=> __('default: 1240px', 'mfn-opts'),
-					'desc' 		=> __('Values <b>less than 1240</b> are for menu with small amount of items<br />Values <b>less than 950</b> are not suitable for Header Creative with Mega Menu', 'mfn-opts'),
-					'param'	 	=> array(
-						'min' 		=> 768,
-						'max' 		=> 1240,
-					),
-					'std' 		=> 1240,
-				),
-					
-				array(
-					'id'		=> 'responsive-sticky',
-					'type'		=> 'switch',
-					'title'		=> __('Sticky on Tablet', 'mfn-opts'),
-					'desc'		=> __('Sticky Header <b>on tablet</b> > 768px', 'mfn-opts'),
-					'options'	=> array( '0' => 'Off', '1' => 'On' ),
-					'std'		=> '0',
-				),
-					
-				array(
-					'id'		=> 'responsive-tr-header',
-					'type'		=> 'switch',
-					'title'		=> __('Transparent', 'mfn-opts'),
-					'desc'		=> __('Transparent Header <b>on mobile</b> < 768px', 'mfn-opts'),
-					'options'	=> array( '0' => 'Off', '1' => 'On' ),
-					'std'		=> '0',
-				),
 
-				array(
-					'id'		=> 'header-menu-mobile-sticky',
-					'type'		=> 'switch',
-					'title'		=> __('Menu Button | Sticky', 'mfn-opts'),
-					'desc'		=> __('Sticky Menu Button <b>on mobile</b> < 768px', 'mfn-opts'),
-					'options'	=> array( '0' => 'Off', '1' => 'On' ),
-					'std'		=> '0',
-				),
-	
-				array(
-					'id'		=> 'header-menu-text',
-					'type'		=> 'text',
-					'title'		=> __('Menu Button | Text', 'mfn-opts'),
-					'desc'		=> __('This text will be used instead of the menu icon', 'mfn-opts'),
-					'class'		=> 'small-text',
-				),
-					
-				array(
-					'id' 		=> 'responsive-top-bar',
-					'type' 		=> 'select',
-					'title' 	=> __('Top Bar Icons', 'mfn-opts'),
-					'options' 	=> array(
-						'left' 		=> __('Left', 'mfn-opts'),
-						'center'	=> __('Center', 'mfn-opts'),
-						'right'		=> __('Right', 'mfn-opts'),
-						'hide'		=> __('Hide Icons & Action Button', 'mfn-opts'),
-					),
-				),
-
+				// options
 				array(
 					'id' 		=> 'responsive-info-options',
 					'type' 		=> 'info',
@@ -2917,7 +2853,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id'		=> 'responsive-boxed2fw',
 					'type'		=> 'switch',
 					'title'		=> __('Boxed to Full Width', 'mfn-opts'),
-					'desc'		=> __('Change layout from Boxed to Full Witdh <b>on mobile</b> < 768px', 'mfn-opts'),
+					'sub_desc'	=> __('<b>< 768px</b>', 'mfn-opts'),
+					'desc'		=> __('Change layout from Boxed to Full Witdh on mobile', 'mfn-opts'),
 					'options'	=> array( '0' => 'Off', '1' => 'On' ),
 					'std'		=> '0',
 				),
@@ -2953,11 +2890,12 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					),
 				),
 	
+				// logo
 				array(
 					'id' 		=> 'responsive-info-logo',
 					'type' 		=> 'info',
 					'title' 	=> '',
-					'desc' 		=> __('Logo <span>optional</span>', 'mfn-opts'),
+					'desc' 		=> __('Logo <span><b>mobile</b> < 768px</span>', 'mfn-opts'),
 					'class' 	=> 'mfn-info',
 				),
 					
@@ -2965,14 +2903,144 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id'		=> 'responsive-logo-img',
 					'type'		=> 'upload',
 					'title'		=> __('Logo', 'mfn-opts'),
-					'desc'		=> __('Use if you want different logo <b>on mobile</b> < 768px', 'mfn-opts'),
+					'sub_desc'	=> __('<b>< 768px</b><br />optional', 'mfn-opts'),
+					'desc'		=> __('Use if you want different logo on mobile', 'mfn-opts'),
 				),
 				
 				array(
 					'id'		=> 'responsive-retina-logo-img',
 					'type'		=> 'upload',
 					'title'		=> __('Retina Logo', 'mfn-opts'),
+					'sub_desc'	=> __('optional', 'mfn-opts'),
 					'desc'		=> __('Retina Logo should be 2x larger than Logo', 'mfn-opts'),
+				),
+		
+			),
+		);
+		
+		// Responsive | Header --------------------------------------------
+		$sections['responsive-header'] = array(
+			'title'		=> __('Header', 'mfn-opts'),
+			'fields' 	=> array(
+	
+				// header
+				array(
+					'id' 		=> 'responsive-info-header',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Header', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
+				),
+
+				array(
+					'id'		=> 'responsive-header-tablet',
+					'type' 		=> 'checkbox',
+					'title' 	=> __('Tablet options', 'mfn-opts'),
+					'sub_desc' 	=> __('<b>> 768px</b>', 'mfn-opts'),
+					'options' 	=> array(
+						'sticky'		=> __('Sticky', 'mfn-opts'),
+					),
+				),
+					
+				array(
+					'id'		=> 'responsive-header-mobile',
+					'type' 		=> 'checkbox',
+					'title' 	=> __('Mobile options', 'mfn-opts'),
+					'sub_desc' 	=> __('<b>< 768px</b>', 'mfn-opts'),
+					'options' 	=> array(
+						'minimal'		=> __('Minimal', 'mfn-opts'),
+// 						'sticky'		=> __('Sticky<span>use with: Minimal & Menu: Side Slide</span>', 'mfn-opts'),
+						'transparent'	=> __('Transparent', 'mfn-opts'),
+					),
+				),
+
+				// header | minimal
+				array(
+					'id' 		=> 'responsive-info-header-minimal',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Header Minimal<span>for Mobile Header: Minimal</span>', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
+				),
+					
+				array(
+					'id'		=> 'responsive-header-minimal',
+					'type' 		=> 'radio_img',
+					'title' 	=> __('Style', 'mfn-opts'),
+					'sub_desc' 	=> __('<b>< 768px</b>', 'mfn-opts'),
+					'desc' 		=> __('Do not use centered logo with more than 2 Icons in Top Bar', 'mfn-opts'),
+					'options' 	=> array(
+						'mr-ll' 	=> array('title' => 'Menu right | Logo left', 'img' => MFN_OPTIONS_URI.'img/select/mobile-minimal/1.png'),
+						'mr-lc' 	=> array('title' => 'Menu right | Logo center', 'img' => MFN_OPTIONS_URI.'img/select/mobile-minimal/2.png'),
+						'mr-lr' 	=> array('title' => 'Menu right | Logo right', 'img' => MFN_OPTIONS_URI.'img/select/mobile-minimal/3.png'),
+						'ml-ll' 	=> array('title' => 'Menu left | Logo left', 'img' => MFN_OPTIONS_URI.'img/select/mobile-minimal/4.png'),
+						'ml-lc' 	=> array('title' => 'Menu left | Logo center', 'img' => MFN_OPTIONS_URI.'img/select/mobile-minimal/5.png'),
+						'ml-lr' 	=> array('title' => 'Menu left | Logo right', 'img' => MFN_OPTIONS_URI.'img/select/mobile-minimal/6.png'),
+					),
+					'class'		=> 'wide short',
+					'std' 		=> 'mr-ll',
+				),
+					
+				// top bar
+				array(
+					'id' 		=> 'responsive-info-top-bar',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Top Bar', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
+				),
+					
+				array(
+					'id' 		=> 'responsive-top-bar',
+					'type' 		=> 'select',
+					'title' 	=> __('Icons', 'mfn-opts'),
+					'sub_desc' 	=> __('<b>< 768px</b>', 'mfn-opts'),
+					'desc' 		=> __('<b>Align</b> works only for <b>Default Header</b> for Minimal Header please use Style select above', 'mfn-opts'),
+					'options' 	=> array(
+						'left' 		=> __('Align Left', 'mfn-opts'),
+						'center'	=> __('Align Center', 'mfn-opts'),
+						'right'		=> __('Align Right', 'mfn-opts'),
+						'hide'		=> __('HIDE Icons & Action Button', 'mfn-opts'),
+					),
+				),
+					
+				// menu
+				array(
+					'id' 		=> 'responsive-info-menu',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Menu', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
+				),
+					
+				array(
+					'id' 		=> 'mobile-menu-initial',
+					'type' 		=> 'sliderbar',
+					'title' 	=> __('Initial width', 'mfn-opts'),
+					'sub_desc' 	=> __('Responsive Menu Initial width', 'mfn-opts'),
+					'desc' 		=> __('Default: 1240px<br />Values <b>less than 1240</b> are for menu with small amount of items<br />Values <b>less than 950</b> are not suitable for Header Creative with Mega Menu', 'mfn-opts'),
+					'param'	 	=> array(
+						'min' 		=> 768,
+						'max' 		=> 1240,
+					),
+					'std' 		=> 1240,
+				),
+					
+				array(
+					'id'		=> 'header-menu-mobile-sticky',
+					'type'		=> 'switch',
+					'title'		=> __('Button | Sticky', 'mfn-opts'),
+					'desc'		=> __('Sticky Menu Button <b>on mobile</b> < 768px', 'mfn-opts'),
+					'options'	=> array( '0' => 'Off', '1' => 'On' ),
+					'std'		=> '0',
+				),
+	
+				array(
+					'id'		=> 'header-menu-text',
+					'type'		=> 'text',
+					'title'		=> __('Button | Text', 'mfn-opts'),
+					'desc'		=> __('This text will be used instead of the menu icon', 'mfn-opts'),
+					'class'		=> 'small-text',
 				),
 		
 			),
@@ -3473,6 +3541,15 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Header background', 'mfn-opts'),
 					'std' 		=> '#000119',
 				),
+
+				// top bar
+				array(
+					'id' 		=> 'colors-info-top-bar',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Top Bar', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
+				),
 					
 				array(
 					'id' 		=> 'background-top-left',
@@ -3500,7 +3577,16 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'color-top-right-a',
 					'type' 		=> 'color',
 					'title' 	=> __('Top Bar Right | Icon color', 'mfn-opts'),
-					'std' 		=> '#444444',
+					'std' 		=> '#333333',
+				),
+					
+				// search
+				array(
+					'id' 		=> 'colors-info-search',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Search', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
 				),
 					
 				array(
@@ -3510,6 +3596,15 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'std' 		=> '#2991D6',
 				),
 				
+				// subheader
+				array(
+					'id' 		=> 'colors-info-subheader',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Subheader', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
+				),
+					
 				array(
 					'id' 		=> 'background-subheader',
 					'type' 		=> 'color',
@@ -3532,7 +3627,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 			'title' => __('Menu & Action Bar', 'mfn-opts'),
 			'icon' => MFN_OPTIONS_URI. 'img/icons/sub.png',
 			'fields' => array(
-					
+
+				// menu
 				array(
 					'id' 		=> 'colors-info-menu',
 					'type' 		=> 'info',
@@ -3563,7 +3659,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'desc' 		=> __('For: Highlight & Plain Menu style', 'mfn-opts'),
 					'std' 		=> '#F2F2F2',
 				),
-					
+
+				// submenu
 				array(
 					'id' 		=> 'colors-info-submenu',
 					'type' 		=> 'info',
@@ -3593,6 +3690,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'std' 		=> '#2e2e2e',
 				),
 
+				// styles
 				array(
 					'id' 		=> 'colors-info-menu-styles',
 					'type' 		=> 'info',
@@ -3654,9 +3752,11 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'color-menu-responsive-icon',
 					'type' 		=> 'color',
 					'title' 	=> __('Responsive Menu | Button color', 'mfn-opts'),
+					'desc' 		=> __('This is also Header Creative, Simple & Empty menu button color', 'mfn-opts'),
 					'std' 		=> '#2991d6',
 				),
 
+				// action bar
 				array(
 					'id' 		=> 'colors-info-action-bar',
 					'type' 		=> 'info',
@@ -4554,6 +4654,15 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 		$sections['translate-general'] = array(
 			'title' => __('General', 'mfn-opts'),
 			'fields' => array(
+
+				array(
+					'id' 		=> 'translate',
+					'type' 		=> 'switch',
+					'title' 	=> __('Enable Translate', 'mfn-opts'), 
+					'desc' 		=> __('Turn it <b>off</b> if you want to use <b>.mo .po files</b> for more complex translation', 'mfn-opts'),
+					'options' 	=> array('1' => 'On','0' => 'Off'),
+					'std' 		=> '1'
+				),
 					
 				array(
 					'id' 		=> 'translate-info',
@@ -4561,15 +4670,6 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> '',
 					'desc' 		=> __('The fields must be filled out if you are using WPML String Translation<br /><span>If you are using the English language, you can also use this tab to change some texts</span>', 'mfn-opts'),
 					'class' 	=> 'mfn-info desc',
-				),
-		
-				array(
-					'id' 		=> 'translate',
-					'type' 		=> 'switch',
-					'title' 	=> __('Enable Translate', 'mfn-opts'), 
-					'desc' 		=> __('Turn it off if you want to use .mo .po files for more complex translation.', 'mfn-opts'),
-					'options' 	=> array('1' => 'On','0' => 'Off'),
-					'std' 		=> '1'
 				),
 				
 				array(

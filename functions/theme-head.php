@@ -949,15 +949,15 @@ if( ! function_exists( 'mfn_body_classes' ) )
 {
 	function mfn_body_classes( $classes )
 	{
-		
-		// Layout | Custom ------------------------------------
+		// Layout | Custom
 		$layoutID = mfn_layout_ID();
-		if( $layoutID ) $classes[] = 'lay-id-'. $layoutID;
 		
+		
+		// Global =============================================
 		
 		// Slider ---------------------------------------------
 		if( mfn_slider_isset() ){
-			if( function_exists('is_woocommerce') && is_woocommerce() ){			
+			if( function_exists( 'is_woocommerce' ) && is_woocommerce() ){			
 				// do nothing
 			} else {
 				$classes[] = 'template-slider';
@@ -995,12 +995,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		} else {
 			$classes[] = 'layout-'. mfn_opts_get('layout','full-width');
 		}
-		
-		// Layout | Boxed to Full Width on mobile -------------
-		if( mfn_opts_get( 'responsive-boxed2fw' ) ){
-			$classes[] = 'boxed2fw';
-		}
-		
+
 		
 		// One Page -------------------------------------------
 		if( get_post_meta( mfn_ID(), 'mfn-post-one-page', true ) ){
@@ -1009,25 +1004,14 @@ if( ! function_exists( 'mfn_body_classes' ) )
 	
 		
 		// Nice Scroll ----------------------------------------
-		if( mfn_opts_get('nice-scroll') == '1' ) $classes[] = 'nice-scroll-on';
+		if( mfn_opts_get( 'nice-scroll' ) == '1' ) $classes[] = 'nice-scroll-on';
 		
-		
-		// Responsive -----------------------------------------
-		if( mfn_opts_get('no-hover') ) $classes[] = 'no-hover-'. mfn_opts_get('no-hover');
-		if( mfn_opts_get('no-section-bg') ) $classes[] = 'no-section-bg-'. mfn_opts_get('no-section-bg');
-		if( mfn_opts_get('responsive-top-bar') ) $classes[] = 'mobile-tb-'. mfn_opts_get('responsive-top-bar');
-		
-		$responsive_options = mfn_opts_get( 'responsive-options' );
-		if( is_array( $responsive_options ) && isset( $responsive_options['mobile-wide'] ) ){
-			$classes[] = 'mobile-wide';
-		}
-		
-		
+
 		// Button | Style -------------------------------------
 		if( $_GET && key_exists('mfn-btn', $_GET) ){
 			$classes[] = 'button-'. $_GET['mfn-btn']; // demo
 		} elseif( mfn_opts_get('button-style') ){
-			$classes[] = 'button-'. mfn_opts_get('button-style');
+			$classes[] = 'button-'. mfn_opts_get( 'button-style' );
 		}
 		
 		
@@ -1044,9 +1028,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		}
 		
 		// Image Frame | Caption -------------------------------
-		if( mfn_opts_get('image-frame-caption') ){
-			$classes[] = 'if-caption-on';
-		}
+		if( mfn_opts_get('image-frame-caption') ) $classes[] = 'if-caption-on';
 		
 		
 		// Content Padding ------------------------------------
@@ -1061,11 +1043,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		if( get_post_meta( mfn_ID(), 'mfn-post-template', true ) ){
 			$classes[] = 'single-template-'. get_post_meta( mfn_ID(), 'mfn-post-template', true );
 		}
-		
-		
-		// RTL | demo only ------------------------------------
-		if( $_GET && key_exists('mfn-rtl', $_GET) ) $classes[] = 'rtl';
-		
+
 		
 		// Love -----------------------------------------------
 		if( ! mfn_opts_get('love') ) $classes[] = 'hide-love';
@@ -1077,7 +1055,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		
 		// Header =============================================
 		
-		$header_options = mfn_opts_get('header-fw') ? mfn_opts_get('header-fw') : false;
+		$header_options = mfn_opts_get( 'header-fw' ) ? mfn_opts_get( 'header-fw' ) : false;
 		
 		
 		// Header | Layout --------------------------
@@ -1132,7 +1110,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		} elseif( $layoutID ){
 			$classes[] = 'sticky-'. get_post_meta( $layoutID, 'mfn-post-sticky-header-style', true );
 		} else {
-			$classes[] = 'sticky-'. mfn_opts_get('sticky-header-style','white');
+			$classes[] = 'sticky-'. mfn_opts_get( 'sticky-header-style', 'white' );
 		}
 		
 		
@@ -1159,7 +1137,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		if( $_GET && key_exists('mfn-sh', $_GET) ){
 			$classes[] = 'subheader-'. $_GET['mfn-sh']; // demo
 		} else {
-			$classes[] = 'subheader-'. mfn_opts_get('subheader-style','title-left');
+			$classes[] = 'subheader-'. mfn_opts_get( 'subheader-style', 'title-left' );
 		}
 	
 		
@@ -1169,8 +1147,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		} elseif( mfn_opts_get('menu-style') ) {
 			$classes[] = 'menu-'. mfn_opts_get('menu-style');
 		}
-		
-		
+				
 		// Menu | Options ---------------------------
 		$menu_options = mfn_opts_get( 'menu-options' );
 		if( is_array( $menu_options ) && isset( $menu_options['submenu-active'] ) ){
@@ -1188,8 +1165,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		if( is_array( $menu_options ) && isset( $menu_options['align-right'] ) ){
 			$classes[] = 'menuo-right';
 		}
-		
-		
+			
 		// Mega Menu | Style -----------------------------
 		if( mfn_opts_get( 'menu-mega-style' ) ) {
 			$classes[] = 'mm-'. mfn_opts_get( 'menu-mega-style' );
@@ -1215,20 +1191,41 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		
 		// Footer ===================================================
 		
-		// Footer | Style ---------------------------
+		// footer | Style ---------------------------
 		if( $_GET && key_exists('mfn-ftr', $_GET) ){
 			$classes[] = 'footer-'. $_GET['mfn-ftr']; // demo
 		} elseif( mfn_opts_get('footer-style') ) {
 			$classes[] = 'footer-'. mfn_opts_get('footer-style');
 		}
 		
-		
-		// Footer | Copy & Social -------------------
+		// footer | Copy & Social -------------------
 		if( mfn_opts_get( 'footer-hide' ) == 'center' ) {
 			$classes[] = 'footer-copy-center';
 		}
 		
 		
+		// Responsive ===============================================
+		
+		if( mfn_opts_get( 'responsive-boxed2fw' ) ) $classes[] = 'boxed2fw';
+		if( mfn_opts_get( 'no-hover' ) ) $classes[] = 'no-hover-'. mfn_opts_get( 'no-hover' );
+		if( mfn_opts_get( 'no-section-bg' ) ) $classes[] = 'no-section-bg-'. mfn_opts_get( 'no-section-bg' );
+		if( mfn_opts_get( 'responsive-top-bar' ) ) $classes[] = 'mobile-tb-'. mfn_opts_get( 'responsive-top-bar' );
+		
+		$classes[] = 'mobile-mini-'. mfn_opts_get( 'responsive-header-minimal', 'mr-ll' );
+
+		// responsive | mobile | options
+		$responsive_header_mob = mfn_opts_get( 'responsive-header-mobile' );
+		if( is_array( $responsive_header_mob ) ){
+			
+			if( isset( $responsive_header_mob['transparent'] ) ){
+				$classes[] = 'mobile-tr-header';
+			}
+			if( isset( $responsive_header_mob['minimal'] ) ){
+				$classes[] = 'mobile-header-mini';
+			}
+			
+		}
+
 		
 		// Transparent ==============================================
 		
@@ -1250,11 +1247,11 @@ if( ! function_exists( 'mfn_body_classes' ) )
 			
 		}
 		
-		if( mfn_opts_get( 'responsive-tr-header' ) ){
-			$classes[] = 'mobile-tr-header';
-		}
 		
-		
+		// demo / debug =============================================
+		if( $_GET && key_exists( 'mfn-rtl' , $_GET ) ) $classes[] = 'rtl';
+		if( $layoutID ) $classes[] = 'dbg-lay-id-'. $layoutID;
+
 		
 		return $classes;
 	}

@@ -387,7 +387,7 @@
 				}, {
 					text : 'Quick Fact',
 					onclick : function() {
-						editor.insertContent('[quick_fact heading="" number="" prefix="" label="%" title="" animate=""]Insert your content here[/quick_fact]');
+						editor.insertContent('[quick_fact heading="" title="" number="" prefix="" label="%" align="center"  animate=""]Insert your content here[/quick_fact]');
 					}
 				}, {
 					text : 'Shop Slider',

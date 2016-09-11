@@ -2426,16 +2426,17 @@ if( ! function_exists( 'sc_quick_fact' ) )
 	{
 		extract(shortcode_atts(array(
 			'heading' 	=> '',
+			'title' 	=> '',
 			'number' 	=> '',
 			'prefix' 	=> '',
 			'label' 	=> '',
-			'title' 	=> '',
-			'animate' 	=> '',
+			'align' 	=> '',		
+			'animate' 	=> 'center',
 		), $attr));
 		
 		$animate_math = mfn_opts_get('math-animations-disable') ? false : 'animate-math';
 
-		$output = '<div class="quick_fact '. $animate_math .'">';
+		$output = '<div class="quick_fact align_'. $align .' '. $animate_math .'">';
 			if( $animate ) $output .= '<div class="animate" data-anim-type="'. $animate .'">';
 			
 				if( $heading ) $output .= '<h4 class="title">'. $heading .'</h4>';
@@ -3393,11 +3394,16 @@ if( ! function_exists( 'sc_portfolio' ) )
 		);
 		
 		// categories
-		if( $category_multi ){			
-			$args['portfolio-types'] = trim( $category_multi );			
-		} elseif( $category ){			
+		if( $category_multi = trim( $category_multi ) ){	
+			
+			$category_multi = mfn_wpml_term_slug( $category_multi, 'portfolio-types', 1 );
+			$args['portfolio-types'] = $category_multi;	
+					
+		} elseif( $category ){
+						
 			$category = mfn_wpml_term_slug( $category, 'portfolio-types' );	
-			$args['portfolio-types'] = $category;			
+			$args['portfolio-types'] = $category;	
+					
 		}
 	
 		// exclude posts
@@ -3485,11 +3491,16 @@ if( ! function_exists( 'sc_portfolio_grid' ) )
 		);
 		
 		// categories
-		if( $category_multi ){
-			$args['portfolio-types'] = trim( $category_multi );
+		if( $category_multi = trim( $category_multi ) ){
+				
+			$category_multi = mfn_wpml_term_slug( $category_multi, 'portfolio-types', 1 );
+			$args['portfolio-types'] = $category_multi;
+				
 		} elseif( $category ){
-			$category = mfn_wpml_term_slug( $category, 'portfolio-types' );	
+		
+			$category = mfn_wpml_term_slug( $category, 'portfolio-types' );
 			$args['portfolio-types'] = $category;
+				
 		}
 
 		$query = new WP_Query();
@@ -3555,11 +3566,16 @@ if( ! function_exists( 'sc_portfolio_photo' ) )
 		);
 		
 		// categories
-		if( $category_multi ){
-			$args['portfolio-types'] = trim( $category_multi );
+		if( $category_multi = trim( $category_multi ) ){	
+			
+			$category_multi = mfn_wpml_term_slug( $category_multi, 'portfolio-types', 1 );
+			$args['portfolio-types'] = $category_multi;	
+					
 		} elseif( $category ){
+						
 			$category = mfn_wpml_term_slug( $category, 'portfolio-types' );	
-			$args['portfolio-types'] = $category;
+			$args['portfolio-types'] = $category;	
+					
 		}
 		
 		// target
@@ -3659,11 +3675,16 @@ if( ! function_exists( 'sc_portfolio_slider' ) )
 		);
 		
 		// categories
-		if( $category_multi ){
-			$args['portfolio-types'] = trim( $category_multi );
+		if( $category_multi = trim( $category_multi ) ){	
+			
+			$category_multi = mfn_wpml_term_slug( $category_multi, 'portfolio-types', 1 );
+			$args['portfolio-types'] = $category_multi;	
+					
 		} elseif( $category ){
+						
 			$category = mfn_wpml_term_slug( $category, 'portfolio-types' );	
-			$args['portfolio-types'] = $category;
+			$args['portfolio-types'] = $category;	
+					
 		}
 
 		$query = new WP_Query();

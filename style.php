@@ -593,7 +593,7 @@ blockquote {
 	
 	$aLogo['menu_padding'] = ( $aLogo['top_bar_right_H'] / 2 ) - 30;
 	$aLogo['menu_margin'] = ( $aLogo['top_bar_right_H'] / 2 ) - 25;
-	$aLogo['responsive_menu_T'] = ( $aLogo['top_bar_right_H'] / 2 ) - 17;
+	$aLogo['responsive_menu_T'] = ( $aLogo['height'] / 2 ) + 10; /* mobile logo | margin: 10px */
 	
 	$aLogo['header_fixed_LH'] = ( $aLogo['top_bar_right_H'] - 30 ) / 2 ;
 ?>
@@ -618,7 +618,6 @@ blockquote {
 .header-plain:not(.menu-highlight) #Top_bar .menu > li > a span:not(.description) {
     line-height: <?php echo $aLogo['top_bar_right_H']; ?>px;
 }
-
 .header-fixed #Top_bar .menu > li > a {
     padding: <?php echo $aLogo['header_fixed_LH']; ?>px 0;
 }
@@ -636,11 +635,26 @@ blockquote {
 .header-plain #Top_bar a.button.action_button {
 	line-height: <?php echo $aLogo['top_bar_right_H']; ?>px;
 }
+.header-plain #Top_bar .wpml-languages,
+.header-plain #Top_bar a.button.action_button {
+	height: <?php echo $aLogo['top_bar_right_H']; ?>px;
+}
 
-#Top_bar a.responsive-menu-toggle,
-.header-plain #Top_bar a.responsive-menu-toggle,
-.header-transparent #Top_bar a.responsive-menu-toggle { 
-	top: <?php echo $aLogo['responsive_menu_T']; ?>px;
+<?php if( ! $aLogo['vertical_padding'] ): ?>
+.logo-overflow #Top_bar.is-sticky #logo{padding:0!important;}
+<?php endif; ?>
+
+@media only screen and (max-width: 767px){
+	#Top_bar a.responsive-menu-toggle { 
+		top: <?php echo $aLogo['responsive_menu_T']; ?>px;
+	}
+	<?php if( $aLogo['vertical_padding'] ): ?>
+	.mobile-header-mini #Top_bar #logo{
+		height:50px!important;
+		line-height:50px!important;
+		margin:5px 0;
+	}
+	<?php endif; ?>
 }
 
 

@@ -5,7 +5,7 @@ Description: Adds support for languages written in a Right To Left (RTL) directi
 
 body{direction:rtl;unicode-bidi:embed}
 .mcb-wrap,.column,.columns{float:right}
-.the_content_wrapper{float:right}
+.the_content_wrapper{float:right;width:98%;}
 
 /* Action Bar ------------------------------------------------------------------------ */
 #Action_bar .contact_details{float:right}
@@ -42,7 +42,7 @@ body{direction:rtl;unicode-bidi:embed}
 #Top_bar .search_wrapper input[type="text"]{padding-left:0;padding-right:35px}
 #Top_bar .search_wrapper .icon_close{right:auto;left:18px}
 #Top_bar .search_wrapper .icon_search{left:auto;right:18px}
-	
+    
 /* Header Stack ---------------------------------------------------------------------- */
 .header-stack #Top_bar .top_bar_right{left:0;right:auto}
 .header-stack #Top_bar .menu_wrapper{margin-right:0}
@@ -322,14 +322,14 @@ ul.clients li {
     margin-right: 10px;
 }
 .breadcrumbs .icon-right-open:before {
-    content: '\e875';
+    content: '\e8b7';
 }
 #Top_bar .menu li ul li a .menu-arrow {
     left: 7px;
     right: auto;
 }
 .sub-menu .icon-right-open:before {
-    content: '\e876';
+    content: '\e8b7';
 }
 .list_item .list_left {
     float: right;
@@ -396,7 +396,7 @@ ul.portfolio_grid li {
     margin-right: 0;
 }
 .article_box .icon-right-open:before {
-    content: '\e875';
+    content: '\e8b7';
 }
 .article_box .desc_wrapper i.icon-right-open {
     right: -5px;
@@ -547,7 +547,7 @@ ul.portfolio_grid li {
 }
 .woocommerce td.product-name dl.variation dt,
 .woocommerce td.product-name dl.variation dd{
-	float:right;	
+    float:right;    
 }
 .woocommerce .cart-collaterals .shipping_calculator,
 .woocommerce-page .cart-collaterals .shipping_calculator {
@@ -679,10 +679,10 @@ ul.portfolio_grid li {
     right: auto;
 }
 .pager .next_page .icon-right-open:before {
-    content: '\e875';
+    content: '\e8b7';
 }
 .pager .prev_page .icon-left-open:before {
-    content: '\e876';
+    content: '\e915';
 }
 div.pp_pic_holder {
     direction: ltr;

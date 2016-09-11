@@ -73,8 +73,8 @@
 		
 		// Button ----------
 		echo '<a class="overlay-menu-toggle" href="#">';
-			echo '<i class="open icon-menu"></i>';
-			echo '<i class="close icon-cancel"></i>';
+			echo '<i class="open icon-menu-fine"></i>';
+			echo '<i class="close icon-cancel-fine"></i>';
 		echo '</a>';
 		
 	}
@@ -185,7 +185,7 @@
 								if( $menu_text = mfn_opts_get( 'header-menu-text' ) ){
 									echo '<span>'. $menu_text .'</span>';
 								} else {
-									echo '<i class="icon-menu"></i>';
+									echo '<i class="icon-menu-fine"></i>';
 								}  
 							echo '</a>';
 							

@@ -242,9 +242,11 @@ if( $_GET && key_exists( 'mfn-o', $_GET ) && $_GET['mfn-o'] ){
 /*
 /* ============================================================================================================================ */
 
-	#Header .top_bar_left, .header-classic #Top_bar, .header-stack #Top_bar, .header-fixed #Top_bar, .header-below #Top_bar, #Header_creative, #Top_bar #menu {
+	#Header .top_bar_left, .header-classic #Top_bar, .header-plain #Top_bar, .header-stack #Top_bar, .header-split #Top_bar,
+	.header-fixed #Top_bar, .header-below #Top_bar, #Header_creative, #Top_bar #menu, .sticky-tb-color #Top_bar.is-sticky {
 		background-color: #ffffff;
 	}
+	
 	#Top_bar .top_bar_right:before {
 		background-color: #e3e3e3;
 	}

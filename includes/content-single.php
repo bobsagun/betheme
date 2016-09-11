@@ -209,6 +209,27 @@ $translate['readmore'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-r
 			</div>
 		</div>
 		
+		<?php if( get_post_meta( get_the_ID(), 'mfn-post-template', true ) == 'intro' ): ?>
+			<div class="section section-post-intro-share">
+				<div class="section_wrapper clearfix">
+					<div class="column one">
+					
+						<?php if( mfn_opts_get( 'share' ) ): ?>
+							<div class="share_wrapper clearfix">
+								<span class='st_facebook_vcount' displayText='Facebook'></span>
+								<span class='st_twitter_vcount' displayText='Tweet'></span>
+								<span class='st_pinterest_vcount' displayText='Pinterest'></span>						
+								
+								<script src="http<?php mfn_ssl(1); ?>://w<?php mfn_ssl(1); ?>.sharethis.com/button/buttons.js"></script>
+								<script>stLight.options({publisher: "1390eb48-c3c3-409a-903a-ca202d50de91", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+							</div>
+						<?php endif; ?>
+					
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
+		
 		<div class="section section-post-about">
 			<div class="section_wrapper clearfix">
 			

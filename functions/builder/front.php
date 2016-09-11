@@ -231,11 +231,11 @@ if( ! function_exists( 'mfn_builder_print' ) )
 									echo '<source type="video/ogg" src="'. $ogv .'" />';
 								}
 			
-								echo '<object width="1900" height="1060" type="application/x-shockwave-flash" data="'. THEME_URI .'/assets/jplayer/flashmediaelement.swf">';
-								echo '<param name="movie" value="'. THEME_URI .'/assets/jplayer/flashmediaelement.swf" />';
-								echo '<param name="flashvars" value="controls=true&file='. $mp4 .'" />';
-								echo '<img src="'. $poster .'" title="No video playback capabilities" />';
-								echo '</object>';
+// 								echo '<object width="1900" height="1060" type="application/x-shockwave-flash" data="'. THEME_URI .'/assets/jplayer/flashmediaelement.swf">';
+// 								echo '<param name="movie" value="'. THEME_URI .'/assets/jplayer/flashmediaelement.swf" />';
+// 								echo '<param name="flashvars" value="controls=true&file='. $mp4 .'" />';
+// 								echo '<img src="'. $poster .'" title="No video playback capabilities" />';
+// 								echo '</object>';
 		
 							echo '</video>';
 							

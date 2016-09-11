@@ -17,7 +17,7 @@
 ?>
 
 <div id="Header_creative" class="<?php echo $creative_classes; ?>">	
-	<a href="#" class="creative-menu-toggle"><i class="icon-menu"></i></a>
+	<a href="#" class="creative-menu-toggle"><i class="icon-menu-fine"></i></a>
 
 	<?php 
 		$target = mfn_opts_get('social-target') ? 'target="_blank"' : false;
@@ -135,7 +135,7 @@
 								if( $menu_text = mfn_opts_get( 'header-menu-text' ) ){
 									echo '<span>'. $menu_text .'</span>';
 								} else {
-									echo '<i class="icon-menu"></i>';
+									echo '<i class="icon-menu-fine"></i>';
 								}  
 							echo '</a>';
 						?>					
@@ -148,8 +148,8 @@
 							<?php if( mfn_opts_get('header-search') == 'shop' ): ?>
 								<input type="hidden" name="post_type" value="product" />
 							<?php endif;?>
-							<i class="icon_search icon-search"></i>
-							<a href="#" class="icon_close"><i class="icon-cancel"></i></a>
+							<i class="icon_search icon-search-fine"></i>
+							<a href="#" class="icon_close"><i class="icon-cancel-fine"></i></a>
 							<input type="text" class="field" name="s" id="s" placeholder="<?php echo $translate['search-placeholder']; ?>" />			
 							<input type="submit" class="submit" value="" style="display:none;" />
 						</form>
