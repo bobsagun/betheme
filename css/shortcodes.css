@@ -20,7 +20,7 @@
 .wpml-languages:not(.disabled) .tooltip:hover:after,.wpml-languages:not(.disabled) .tooltip.hover:after{display:none!important}
 
 /* Blockquote ------------------------------------------------------------------------ */
-blockquote{font-size:17px;line-height:31px;font-family:Patua One;display:block;height:auto;margin:0 0 35px 25px;top:15px;position:relative;background:url(../images/stripes/textline.png) repeat-y}
+blockquote{font-size:17px;line-height:31px;display:block;height:auto;margin:0 0 35px 25px;top:15px;position:relative;background:url(../images/stripes/textline.png) repeat-y}
 blockquote:before{content:""}
 blockquote:after{content:"";width:55px;height:40px;background:url(../images/blockquote.png);position:absolute;left:-25px;top:-15px}
 .blockquote{margin-bottom:20px}
@@ -206,7 +206,7 @@ hr.no_line{height:0}
 .section-divider.circle.down{bottom:-25px}
 
 /* Decoration Image | height:100px - fallback */
-.section .section-decoration{width:100%;height:100px;position:absolute;left:0;background-repeat:repeat-x;z-index:0;}
+.section .section-decoration{width:100%;height:100px;position:absolute;left:0;background-repeat:repeat-x;z-index:1;}
 .section .section-decoration.top{top:0;background-position:center top;}
 .section .section-decoration.bottom{bottom:0;background-position:center bottom;}
 
@@ -453,7 +453,7 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .pricing-box .plan-header{text-align:center;padding:20px 15px 0}
 .pricing-box .plan-header .image{text-align:center;margin-bottom:15px}
 .pricing-box .plan-header h2{margin:0 0 20px;font-size:30px;line-height:30px}
-.pricing-box .plan-header .price{margin:0 0 20px;font-family:Patua One}
+.pricing-box .plan-header .price{margin:0 0 20px}
 .pricing-box .plan-header .price > span{font-size:45px;line-height:45px;margin:0 5px}
 .pricing-box .plan-header .price sup.currency{font-size:20px;line-height:20px;top:-10px;position:relative}
 .pricing-box.cp-right .plan-header .price sup.currency{margin-right:5px}
@@ -756,7 +756,7 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .counter .icon_wrapper{margin-bottom:15px;line-height:0;width:100%}
 .counter .icon_wrapper i:before{margin:0}
 .counter .icon_wrapper i{display:inline-block;width:50px;height:50px;line-height:50px;font-size:50px}
-.counter .desc_wrapper .number-wrapper{font-size:50px;line-height:50px;font-family:Patua One;margin-bottom:5px}
+.counter .desc_wrapper .number-wrapper{font-size:50px;line-height:50px;margin-bottom:5px}
 .counter .desc_wrapper .number-wrapper .label{font-size:70%;line-height:100%}
 .counter .desc_wrapper .title{font-size:15px;line-height:20px;margin:0}
 .counter.counter_horizontal{text-align:left;min-height:75px}
@@ -772,7 +772,7 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .chart_box .chart .icon{font-size:45px}
 .chart_box .chart .icon i:before{margin:0}
 .chart_box .chart .image img{vertical-align:middle}
-.chart_box .chart .num{position:absolute;left:0;top:45px;z-index:3;width:100%;font-family:Patua One;font-size:50px;line-height:50px}
+.chart_box .chart .num{position:absolute;left:0;top:45px;z-index:3;width:100%;font-size:50px;line-height:50px}
 .chart_box p{margin-bottom:0}
 
 /* Progress bars --------------------------------------------------------------------- */
@@ -818,7 +818,9 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 
 /* Quick facts ----------------------------------------------------------------------- */
 .quick_fact{text-align:center}
-.quick_fact .number-wrapper{font-size:90px;line-height:90px;font-family:Patua One}
+.quick_fact.align_left{text-align:left}
+.quick_fact.align_right{text-align:right}
+.quick_fact .number-wrapper{font-size:90px;line-height:90px}
 .quick_fact .number-wrapper .label{font-size:70%;line-height:100%}
 .quick_fact hr{width:40%}
 	
@@ -962,7 +964,7 @@ a.icon_bar_dribbble span.b{background:#ec4a89;color:#fff}
 .how_it_works.has_border:after{content:"";display:block;width:12%;height:4px;background:rgba(0,0,0,.03);-webkit-border-radius:2px;border-radius:2px;position:absolute;right:-10.5%;top:100px}
 .how_it_works .image{width:200px;height:200px;line-height:200px;text-align:center;position:relative;margin:0 auto 15px;background:#fff;border-width:2px;border-style:solid;-webkit-border-radius:100%;border-radius:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 .how_it_works .image img{max-width:116px!important;max-height:116px!important;vertical-align:middle}
-.how_it_works .image .number{position:absolute;right:10px;bottom:10px;width:35px;height:35px;line-height:35px;font-size:15px;font-family:Patua One;text-align:center;-webkit-border-radius:100%;border-radius:100%;-webkit-box-shadow:inset 0 0 0 2px rgba(0,0,0,.1);box-shadow:inset 0 0 0 2px rgba(0,0,0,.1)}
+.how_it_works .image .number{position:absolute;right:10px;bottom:10px;width:35px;height:35px;line-height:35px;font-size:15px;text-align:center;-webkit-border-radius:100%;border-radius:100%;-webkit-box-shadow:inset 0 0 0 2px rgba(0,0,0,.1);box-shadow:inset 0 0 0 2px rgba(0,0,0,.1)}
 .with_aside .how_it_works .image{width:150px;height:150px;line-height:150px}
 .with_aside .how_it_works .image .number{bottom:4px;right:4px}
 .with_aside .how_it_works.has_border:after{top:75px}
@@ -1238,6 +1240,13 @@ ul.portfolio_grid li .image_frame{border:0;margin:0}
 .date_label,.timeline_items li h3 span{font-size:12px;line-height:18px;display:inline-block;padding:2px 5px;-webkit-border-radius:4px;border-radius:4px;background-image:url(../images/stripes/stripes_3_b.png)}
 .date_label:after,.timeline_items li h3 span:after{content:"";display:block;position:absolute;right:-5px;top:6px;width:0;height:0;border-style:solid;border-width:5.5px 0 5.5px 5px;border-color:transparent}
 	
+.date_label,.timeline_items li h3 span{background-color:#f8f8f8;color:#a8a8a8}
+.date_label:after,.timeline_items li h3 span:after{border-left-color:#f8f8f8}
+
+@media only screen and (min-width: 768px){
+	.timeline_items li:nth-child(2n) h3 span::after{border-right-color:#f8f8f8;border-width:5.5px 5.5px 5.5px 0;left:-5px;right:auto}
+}
+
 /* Item | Sidebar Widget */
 .column_sidebar_widget .widget:after{display:none}
 .column_sidebar_widget .widget{margin-bottom:20px;padding-bottom:20px}
@@ -1268,11 +1277,7 @@ input[type="date"]:focus,input[type="email"]:focus,input[type="number"]:focus,in
 	
 /* Dividers */
 hr{background-color:rgba(0,0,0,.08);color:rgba(0,0,0,.08)}	
-	
-/* Date */
-.date_label,.timeline_items li h3 span{background-color:#f8f8f8;color:#a8a8a8}
-.date_label:after,.timeline_items li h3 span:after{border-left-color:#f8f8f8}
-	
+
 /* Header */
 #Top_bar .menu > li > a span{border-color:rgba(0,0,0,.05)}
 #Top_bar .search_wrapper input[type="text"]{border-color:#fff;color:#fff}	

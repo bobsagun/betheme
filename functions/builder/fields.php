@@ -4764,6 +4764,30 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'text',
 						'title' 	=> __('Heading', 'mfn-opts'),
 					),
+						
+					array(
+						'id' 		=> 'title',
+						'type' 		=> 'text',
+						'title' 	=> __('Title', 'mfn-opts'),
+				),
+				
+				array(
+						'id' 		=> 'content',
+						'type' 		=> 'textarea',
+						'title' 	=> __('Content', 'mfn-opts'),
+						'desc' 		=> __('Some Shortcodes and HTML tags allowed', 'mfn-opts'),
+						'class'		=> 'full-width sc',
+						'validate' 	=> 'html',
+					),
+						
+					// quick fact
+					array(
+						'id' 		=> 'info_quick',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Quick Fact', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
 
 					array(
 						'id' 		=> 'number',
@@ -4786,19 +4810,33 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'class' 	=> 'small-text',
 					),
 
+					// options
 					array(
-						'id' 		=> 'title',
-						'type' 		=> 'text',
-						'title' 	=> __('Title', 'mfn-opts'),
+						'id' 		=> 'info_options',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Options', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
 					),
-
+						
 					array(
-						'id' 		=> 'content',
-						'type' 		=> 'textarea',
-						'title' 	=> __('Content', 'mfn-opts'),
-						'desc' 		=> __('Some Shortcodes and HTML tags allowed', 'mfn-opts'),
-						'class'		=> 'full-width sc',
-						'validate' 	=> 'html',
+						'id' 		=> 'align',
+						'type' 		=> 'select',
+						'title' 	=> __('Align', 'mfn-opts'),
+						'options' 	=> array(
+							''			=> 'Center',
+							'left'		=> 'Left',
+							'right'		=> 'Right',
+						),
+					),
+						
+					// advanced
+					array(
+						'id' 		=> 'info_advanced',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Advanced', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
 					),
 						
 					array(

@@ -246,6 +246,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	.header-fixed #Top_bar, .header-below #Top_bar, #Header_creative, #Top_bar #menu, .sticky-tb-color #Top_bar.is-sticky {
 		background-color: <?php mfn_opts_show( 'background-top-left', '#ffffff' ) ?>;
 	}
+	#Top_bar .wpml-languages a.active, #Top_bar .wpml-languages ul.wpml-lang-dropdown {
+		background-color: <?php mfn_opts_show( 'background-top-left', '#ffffff' ) ?>;
+	}
 	
 	#Top_bar .top_bar_right:before {
 		background-color: <?php mfn_opts_show( 'background-top-middle', '#e3e3e3' ) ?>;
@@ -257,7 +260,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		color: <?php mfn_opts_show( 'color-top-right-a', '#444444' ) ?>;
 	}
 	
-	#Top_bar .menu > li > a { 
+	#Top_bar .menu > li > a,
+	#Top_bar #menu ul li.submenu .menu-toggle { 
 		color: <?php mfn_opts_show( 'color-menu-a', '#444444' ) ?>;
 	}
 	#Top_bar .menu > li.current-menu-item > a,
@@ -365,7 +369,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		color: <?php mfn_opts_show( 'background-overlay-menu-a-active', '#B1DCFB' ) ?>; 
 	}
 	
-	#Top_bar .responsive-menu-toggle {
+	#Top_bar .responsive-menu-toggle,
+	#Header_creative .responsive-menu-toggle {
 		color: <?php mfn_opts_show( 'color-menu-responsive-icon', '#2991D6' ) ?>; 
 	}
 	

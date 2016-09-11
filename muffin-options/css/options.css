@@ -288,7 +288,7 @@
 
 .wide .mfn-radio-item { width:160px; height:180px;}
 .wide .mfn-radio-item .mfn-radio-img { width:auto; height:auto; line-height:normal !important; border-width:5px; background:none;}
-.wide.short .mfn-radio-item { height:110px;}
+.wide.short .mfn-radio-item { height:auto;margin-bottom:20px;}
 
 
 /* -------------- .mfn-icon-field --------------- */

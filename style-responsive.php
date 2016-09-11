@@ -10,13 +10,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 <?php 
 	$mobileMenuInitW = $stickyMenuInitW = mfn_opts_get( 'mobile-menu-initial', 1240 );
-	
-	if( mfn_header_style( true ) == 'header-creative' ){
-// 		$mobileMenuInitW = 1240;
+
+	$responsive_header_tab = mfn_opts_get( 'responsive-header-tablet' );
+	if( is_array( $responsive_header_tab ) && isset( $responsive_header_tab['sticky'] ) ){
+		$stickyMenuInitW = 768;
 	}
 	
-	if( mfn_opts_get( 'responsive-sticky' ) ){
-		$stickyMenuInitW = 768;
+	if( mfn_header_style(1) == 'header-fixed' ){
+		$stickyMenuInitW = 9999;	// disable sticky header
 	}
 ?>
 
@@ -74,8 +75,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			
 	/* Header Simple | .header-simple */	
 	.header-simple #Top_bar #menu{display:none;height:auto;width:300px;bottom:auto;top:100%;right:1px;position:absolute;margin:0}
-	.header-simple #Header a.responsive-menu-toggle{display:block;line-height:35px;font-size:25px;position:absolute;right:10px}
-	.header-simple #Header a:hover.responsive-menu-toggle{text-decoration:none}
+	.header-simple #Header a.responsive-menu-toggle{display:block;right:10px}
 	
 		/* Header Simple | Main Menu |  1st level */
 		.header-simple #Top_bar #menu > ul{width:100%;float:left}
@@ -83,7 +83,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		.header-simple #Top_bar #menu ul li a{padding:0 20px;margin:0;display:block;height:auto;line-height:normal;border:none}
 		.header-simple #Top_bar #menu ul li a:after{display:none}
 		.header-simple #Top_bar #menu ul li a span{border:none;line-height:48px;display:inline;padding:0}
-		.header-simple #Top_bar #menu ul li.submenu .menu-toggle{display:block;position:absolute;right:0;top:0;width:48px;height:48px;line-height:48px;font-size:30px;text-align:center;color:#d6d6d6;border-left:1px solid #eee;cursor:pointer}
+		.header-simple #Top_bar #menu ul li.submenu .menu-toggle{display:block;position:absolute;right:0;top:0;width:48px;height:48px;line-height:48px;font-size:30px;font-weight:300;text-align:center;cursor:pointer;color:#444;opacity:0.33;}
 		.header-simple #Top_bar #menu ul li.submenu .menu-toggle:after{content:"+"}
 		.header-simple #Top_bar #menu ul li.hover > .menu-toggle:after{content:"-"}
 		.header-simple #Top_bar #menu ul li.hover a{border-bottom:0}
@@ -106,7 +106,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		/* Header Simple | RTL */
 		.rtl.header-simple #Top_bar #menu{left:1px;right:auto}
 		.rtl.header-simple #Top_bar a.responsive-menu-toggle{left:10px;right:auto}
-		.rtl.header-simple #Top_bar #menu ul li.submenu .menu-toggle{left:0;right:auto;border-left:none;border-right:1px solid #eee}
+		.rtl.header-simple #Top_bar #menu ul li.submenu .menu-toggle{left:0;right:auto}
 		.rtl.header-simple #Top_bar #menu ul li ul{left:auto!important;right:0!important}
 		.rtl.header-simple #Top_bar #menu ul li ul li a{padding:0 30px 0 20px}
 		.rtl.header-simple #Top_bar #menu ul li ul li ul li a{padding:0 40px 0 20px}
@@ -133,6 +133,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	.menu-line-below #Top_bar.is-sticky .menu > li > a:after{top:auto;bottom:-4px}
 	.menu-line-below-80 #Top_bar:not(.is-sticky) .menu > li > a:after{height:4px;left:10%;top:50%;margin-top:20px;width:80%}
 	.menu-line-below-80-1 #Top_bar:not(.is-sticky) .menu > li > a:after{height:1px;left:10%;top:50%;margin-top:20px;width:80%}
+	
+	/* Menu style | Link color only  */
+	.menu-link-color #Top_bar .menu > li > a:after{display:none!important}
 	
 	/* Menu style | Arrow Top  */
 	.menu-arrow-top #Top_bar .menu > li > a:after{background:none repeat scroll 0 0 rgba(0,0,0,0)!important;border-color:#ccc transparent transparent;border-style:solid;border-width:7px 7px 0;display:block;height:0;left:50%;margin-left:-7px;top:0!important;width:0}
@@ -167,7 +170,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	#Header_creative .container{width:100%}
 	#Header_creative .creative-wrapper{display:none}
 	
-	#Header_creative a.creative-menu-toggle{display:block;width:35px;height:35px;line-height:35px;font-size:25px;text-align:center;position:absolute;top:10px;right:8px;-webkit-border-radius:3px;border-radius:3px}
+	#Header_creative a.creative-menu-toggle{display:block;width:34px;height:34px;line-height:34px;font-size:22px;text-align:center;position:absolute;top:10px;right:8px;border-radius:3px}
 	.admin-bar #Header_creative a.creative-menu-toggle{top:42px}
 	
 	#Header_creative #Top_bar{position:static;width:100%}
@@ -254,7 +257,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	#Header_creative.dropdown #Top_bar #menu ul li{position:relative;float:left}
 	#Header_creative.dropdown #Top_bar #menu ul li a:after{display:none}
 	#Header_creative.dropdown #Top_bar #menu ul li a span{line-height:38px;padding:0}
-	#Header_creative.dropdown #Top_bar #menu ul li.submenu .menu-toggle{display:block;position:absolute;right:0;top:0;width:38px;height:38px;line-height:38px;font-size:26px;text-align:center;color:#d6d6d6;border-left:1px solid #eee;cursor:pointer}
+	#Header_creative.dropdown #Top_bar #menu ul li.submenu .menu-toggle{display:block;position:absolute;right:0;top:0;width:38px;height:38px;line-height:38px;font-size:26px;font-weight:300;text-align:center;cursor:pointer;color:#444;opacity:0.33;}
 	#Header_creative.dropdown #Top_bar #menu ul li.submenu .menu-toggle:after{content:"+"}
 	#Header_creative.dropdown #Top_bar #menu ul li.hover > .menu-toggle:after{content:"-"}
 	#Header_creative.dropdown #Top_bar #menu ul li.hover a{border-bottom:0}
@@ -301,9 +304,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	#Top_bar.is-sticky .menu > li > a,#Top_bar.is-sticky .menu > li > a span{line-height:30px}
 	#Top_bar.is-sticky .menu > li > a:after{top:auto;bottom:-4px}
 	#Top_bar.is-sticky .menu > li > a span.description{display:none}
-	#Top_bar.is-sticky a.responsive-menu-toggle{top:14px}
 	#Top_bar.is-sticky .secondary_menu_wrapper,#Top_bar.is-sticky .banner_wrapper{display:none}
-	.header-simple #Top_bar.is-sticky .responsive-menu-toggle{top:12px}
 	.header-overlay #Top_bar.is-sticky{display:none}
 	
 		/* Sticky | Dark */
@@ -325,10 +326,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 	/* Header */		
 	#Top_bar #menu{display:none;height:auto;width:300px;bottom:auto;top:100%;right:1px;position:absolute;margin:0}
-	#Top_bar a.responsive-menu-toggle{display:block;width:35px;height:35px;text-align:center;position:absolute;top:28px;right:10px;-webkit-border-radius:3px;border-radius:3px}
-	#Top_bar a:hover.responsive-menu-toggle{text-decoration:none}
-	#Top_bar a.responsive-menu-toggle i{font-size:25px;line-height:35px}
-	#Top_bar a.responsive-menu-toggle span{float:right;padding:10px 5px;line-height:14px}
+	#Top_bar a.responsive-menu-toggle{display:block}
 
 	/* Main Menu | 1st level */
 	#Top_bar #menu > ul{width:100%;float:left}
@@ -337,7 +335,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	#Top_bar #menu ul li a:after{display:none}
 	#Top_bar #menu ul li a span{border:none;line-height:48px;display:inline;padding:0}
 	#Top_bar #menu ul li a span.description{margin:0 0 0 5px}
-	#Top_bar #menu ul li.submenu .menu-toggle{display:block;position:absolute;right:0;top:0;width:48px;height:48px;line-height:48px;font-size:30px;text-align:center;color:#d6d6d6;border-left:1px solid #eee;cursor:pointer}
+	#Top_bar #menu ul li.submenu .menu-toggle{display:block;position:absolute;right:0;top:0;width:48px;height:48px;line-height:48px;font-size:30px;font-weight:300;text-align:center;cursor:pointer;color:#444;opacity:0.33;}
 	#Top_bar #menu ul li.submenu .menu-toggle:after{content:"+"}
 	#Top_bar #menu ul li.hover > .menu-toggle:after{content:"-"}
 	#Top_bar #menu ul li.hover a{border-bottom:0}
@@ -359,14 +357,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	
 	/* Main Menu | RTL */
 	.rtl #Top_bar #menu{left:1px;right:auto}
-	.rtl #Top_bar a.responsive-menu-toggle{left:10px;right:auto}
+	.rtl #Top_bar a.responsive-menu-toggle{left:20px;right:auto}
 	.rtl #Top_bar #menu ul li.submenu .menu-toggle{left:0;right:auto;border-left:none;border-right:1px solid #eee}
 	.rtl #Top_bar #menu ul li ul{left:auto!important;right:0!important}
 	.rtl #Top_bar #menu ul li ul li a{padding:0 30px 0 20px}
 	.rtl #Top_bar #menu ul li ul li ul li a{padding:0 40px 0 20px}
 
 	/* Header | Stack */
-	.header-stack .menu_wrapper a.responsive-menu-toggle{position:static!important;margin:11px 0}
+	.header-stack .menu_wrapper a.responsive-menu-toggle{position:static!important;margin:11px 0!important}
 	.header-stack .menu_wrapper #menu{left:0;right:auto}
 	.rtl.header-stack #Top_bar #menu{left:auto;right:0}
 	
@@ -385,7 +383,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	.logo-no-sticky-padding #Header_creative #Top_bar #logo{height:60px;line-height:60px;padding:0}
 	.logo-no-sticky-padding #Header_creative #Top_bar #logo img{max-height:60px}
 	
-	#Header_creative #Top_bar .responsive-menu-toggle{top:12px}
 	#Header_creative #Top_bar #header_cart{top:21px}
 	#Header_creative #Top_bar #search_button{top:20px}
 	#Header_creative #Top_bar .wpml-languages{top:11px}

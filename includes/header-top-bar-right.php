@@ -39,7 +39,7 @@ if( $has_cart || $header_search || $header_action_link || $wpml_icon ){
 				echo '<a id="search_button" class="has-input">';
 					echo '<form method="get" id="searchform" action="'. esc_url( home_url( '/' ) ) .'">';
 					
-						echo '<i class="icon-search"></i>';
+						echo '<i class="icon-search-fine"></i>';
 						echo '<input type="text" class="field" name="s" id="s" placeholder="'. $translate['search-placeholder'] .'" />';
 						echo '<input type="submit" class="submit" value="" style="display:none;" />';	
 										
@@ -48,7 +48,7 @@ if( $has_cart || $header_search || $header_action_link || $wpml_icon ){
 				
 			} elseif( $header_search ){
 				
-				echo '<a id="search_button" href="#"><i class="icon-search"></i></a>';
+				echo '<a id="search_button" href="#"><i class="icon-search-fine"></i></a>';
 				
 			}
 			

@@ -164,7 +164,7 @@
 .woocommerce .product div.entry-summary .accordion #reviews .comment-form-rating{display:block;clear:both}
 .woocommerce .product div.entry-summary .accordion p.stars a{margin-right:10px}
 .woocommerce .product div.entry-summary .woocommerce-product-rating{float:right;margin-bottom:20px;margin-top:4px}
-.woocommerce .product div.entry-summary .price{float:left;font-size:30px;line-height:30px}
+.woocommerce .product div.entry-summary .price{float:none;font-size:30px;line-height:30px}
 .woocommerce .product div.entry-summary .price > ins{text-decoration:none}
 .woocommerce .product div.entry-summary .price > del{float:right;margin-left:7px;font-size:.5em}
 

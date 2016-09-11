@@ -99,6 +99,18 @@ add_filter( 'excerpt_length', 'mfn_excerpt_length', 999 );
 
 
 /* ---------------------------------------------------------------------------
+ * Excerpt | Wrap [...] into <span>
+ * --------------------------------------------------------------------------- */
+if( ! function_exists( 'mfn_trim_excerpt' ) )
+{
+	function mfn_trim_excerpt( $text ) {
+		return '<span class="excerpt-hellip"> […]</span>';
+	}
+}
+add_filter( 'excerpt_more', 'mfn_trim_excerpt' );
+
+
+/* ---------------------------------------------------------------------------
  * Slug | Generate
  * --------------------------------------------------------------------------- */
 if( ! function_exists( 'mfn_slug' ) )
@@ -1101,7 +1113,7 @@ if( ! function_exists( 'mfn_get_attachment_data' ) )
 		}
 
 		$meta = wp_prepare_attachment_for_js( $image );
-		if( is_array( $meta ) ){
+		if( is_array( $meta ) && isset( $meta[ $data ] ) ){
 			$return = $meta[ $data ];
 			
 			// if looking for alt and it isn't specified use image title
@@ -1545,48 +1557,51 @@ if( ! function_exists( 'mfn_post_navigation_sticky' ) )
 /* ---------------------------------------------------------------------------
  * Search | SET add custom fields to search query
  * --------------------------------------------------------------------------- */
-function mfn_search( $search_query ) {
-	global $wpdb;
-
-	if( is_search() && $search_query->is_main_query() && $search_query->is_search() ){
-
-		$keyword = get_search_query();
-		if( ! $keyword ) return false;
-		
-		// WooCommerce uses default search Query
-		if( function_exists('is_woocommerce') && is_woocommerce() ){
-			return false;
+if( ! function_exists( 'mfn_search' ) )
+{
+	function mfn_search( $search_query ) {
+		global $wpdb;
+	
+		if( is_search() && $search_query->is_main_query() && $search_query->is_search() ){
+	
+			$keyword = get_search_query();
+			if( ! $keyword ) return false;
+			
+			// WooCommerce uses default search Query
+			if( function_exists('is_woocommerce') && is_woocommerce() ){
+				return false;
+			}
+	
+			$keyword = '%' . $wpdb->esc_like( $keyword ) . '%';
+	
+			// Post Title & Post Content
+			$post_ids_title = $wpdb->get_col( $wpdb->prepare( "
+				SELECT DISTINCT ID FROM {$wpdb->posts}
+				WHERE post_title LIKE '%s'
+			", $keyword, $keyword ) );
+			
+			// Post Title & Post Content
+			$post_ids_content = $wpdb->get_col( $wpdb->prepare( "
+				SELECT DISTINCT ID FROM {$wpdb->posts}
+				WHERE post_content LIKE '%s'
+			", $keyword, $keyword ) );
+			
+			// Custom Fields
+			$post_ids_meta = $wpdb->get_col( $wpdb->prepare( "
+				SELECT DISTINCT post_id FROM {$wpdb->postmeta}
+				WHERE meta_key = 'mfn-page-items-seo'
+				AND meta_value LIKE '%s'
+			", $keyword ) );
+	
+			$post_ids = array_merge( $post_ids_title, $post_ids_content, $post_ids_meta );
+	
+			if( ! count( $post_ids ) ) return false;
+	
+			$search_query->set( 's', false );
+			$search_query->set( 'post__in', $post_ids );
+			$search_query->set( 'orderby', 'post__in' );
+	
 		}
-
-		$keyword = '%' . $wpdb->esc_like( $keyword ) . '%';
-
-		// Post Title & Post Content
-		$post_ids_title = $wpdb->get_col( $wpdb->prepare( "
-			SELECT DISTINCT ID FROM {$wpdb->posts}
-			WHERE post_title LIKE '%s'
-		", $keyword, $keyword ) );
-		
-		// Post Title & Post Content
-		$post_ids_content = $wpdb->get_col( $wpdb->prepare( "
-			SELECT DISTINCT ID FROM {$wpdb->posts}
-			WHERE post_content LIKE '%s'
-		", $keyword, $keyword ) );
-		
-		// Custom Fields
-		$post_ids_meta = $wpdb->get_col( $wpdb->prepare( "
-			SELECT DISTINCT post_id FROM {$wpdb->postmeta}
-			WHERE meta_key = 'mfn-page-items-seo'
-			AND meta_value LIKE '%s'
-		", $keyword ) );
-
-		$post_ids = array_merge( $post_ids_title, $post_ids_content, $post_ids_meta );
-
-		if( ! count( $post_ids ) ) return false;
-
-		$search_query->set( 's', false );
-		$search_query->set( 'post__in', $post_ids );
-		$search_query->set( 'orderby', 'post__in' );
-
 	}
 }
 add_action( 'pre_get_posts', 'mfn_search' );
@@ -1760,14 +1775,41 @@ if( ! function_exists( 'mfn_wpml_ID' ) )
  * --------------------------------------------------------------------------- */
 if( ! function_exists( 'mfn_wpml_term_slug' ) )
 {
-	function mfn_wpml_term_slug( $slug, $type ){
+	function mfn_wpml_term_slug( $slug, $type, $multi = false ){
 		
 		if( function_exists( 'icl_object_id' ) ){
 			
-			$term = get_term_by( 'slug', $slug, $type );
-			$term = apply_filters( 'wpml_object_id', $term->term_id, $type, true );
-			$slug = get_term_by( 'term_id', $term, $type )->slug;
-			
+			if( $multi ){
+				
+				// multiple categories
+				
+				$slugs = explode( ',', $slug );
+				
+				if( is_array( $slugs ) ){
+					foreach( $slugs as $slug_k => $slug ){
+						
+						$slug = trim( $slug );
+						
+						$term = get_term_by( 'slug', $slug, $type );
+						$term = apply_filters( 'wpml_object_id', $term->term_id, $type, true );
+						$slug = get_term_by( 'term_id', $term, $type )->slug;
+						
+						$slugs[$slug_k] = $slug;
+					}
+				}
+				
+				$slug = implode( ',', $slugs );
+				
+			} else {
+				
+				// single category
+				
+				$term = get_term_by( 'slug', $slug, $type );
+				$term = apply_filters( 'wpml_object_id', $term->term_id, $type, true );
+				$slug = get_term_by( 'term_id', $term, $type )->slug;
+				
+			}
+
 		}
 						
 		return $slug;
@@ -1874,7 +1916,7 @@ if( ! function_exists( 'mfn_register_required_plugins' ) )
 				'slug'     				=> 'js_composer',
 				'source'   				=> THEME_DIR .'/plugins/js_composer.zip',
 				'required' 				=> false,
-				'version' 				=> '4.12',
+				'version' 				=> '4.12.1',
 			),
 	
 		);
