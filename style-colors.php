@@ -370,10 +370,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	}
 	
 	#Top_bar .responsive-menu-toggle,
+	#Header_creative .creative-menu-toggle,
 	#Header_creative .responsive-menu-toggle {
 		color: <?php mfn_opts_show( 'color-menu-responsive-icon', '#2991D6' ) ?>; 
+		background: <?php mfn_opts_show( 'background-menu-responsive-icon', 'transparent' ) ?>;
 	}
-	
 	
 	#Subheader .title  {
 		color: <?php mfn_opts_show( 'color-subheader', '#888888' ) ?>;

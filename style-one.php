@@ -342,6 +342,11 @@ if( $_GET && key_exists( 'mfn-o', $_GET ) && $_GET['mfn-o'] ){
 		color: rgba(255, 255, 255, 0.7); 
 	}	
 	
+	#Top_bar .responsive-menu-toggle,
+	#Header_creative .creative-menu-toggle,
+	#Header_creative .responsive-menu-toggle {
+		color: <?php echo $color_one; ?>;
+	}
 	
 	
 /* ==============================================================================================================================

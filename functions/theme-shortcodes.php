@@ -2430,8 +2430,8 @@ if( ! function_exists( 'sc_quick_fact' ) )
 			'number' 	=> '',
 			'prefix' 	=> '',
 			'label' 	=> '',
-			'align' 	=> '',		
-			'animate' 	=> 'center',
+			'align' 	=> 'center',		
+			'animate' 	=> '',
 		), $attr));
 		
 		$animate_math = mfn_opts_get('math-animations-disable') ? false : 'animate-math';

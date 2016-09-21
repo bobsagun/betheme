@@ -2949,7 +2949,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'sub_desc' 	=> __('<b>< 768px</b>', 'mfn-opts'),
 					'options' 	=> array(
 						'minimal'		=> __('Minimal', 'mfn-opts'),
-// 						'sticky'		=> __('Sticky<span>use with: Minimal & Menu: Side Slide</span>', 'mfn-opts'),
+						'sticky'		=> __('Sticky<span>works only with Sticky Header: ON</span>', 'mfn-opts'),
 						'transparent'	=> __('Transparent', 'mfn-opts'),
 					),
 				),
@@ -3755,6 +3755,15 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'desc' 		=> __('This is also Header Creative, Simple & Empty menu button color', 'mfn-opts'),
 					'std' 		=> '#2991d6',
 				),
+					
+				array(
+					'id' 		=> 'background-menu-responsive-icon',
+					'type' 		=> 'color',
+					'title' 	=> __('Responsive Menu | Button background', 'mfn-opts'),
+					'sub_desc' 	=> __('optional', 'mfn-opts'),
+					'desc' 		=> __('This is also Header Creative, Simple & Empty menu button background', 'mfn-opts'),
+					'std' 		=> '',
+				),
 
 				// action bar
 				array(
@@ -3799,17 +3808,26 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'std' 		=> '#626262'
 				),
 					
+				// link
+				array(
+					'id' 		=> 'colors-info-link',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Link', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
+				),
+					
 				array(
 					'id' 		=> 'color-a',
 					'type' 		=> 'color',
-					'title' 	=> __('Link color', 'mfn-opts'), 
+					'title' 	=> __('Link | color', 'mfn-opts'), 
 					'std' 		=> '#2991d6'
 				),
 					
 				array(
 					'id' 		=> 'color-a-hover',
 					'type' 		=> 'color',
-					'title' 	=> __('Link Hover color', 'mfn-opts'), 
+					'title' 	=> __('Link | hover color', 'mfn-opts'), 
 					'std' 		=> '#2275ac'
 				),
 				
@@ -3832,7 +3850,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'color-fancy-link-hover',
 					'type' 		=> 'color',
-					'title' 	=> __('Fancy Link | Hover color', 'mfn-opts'),
+					'title' 	=> __('Fancy Link | hover color', 'mfn-opts'),
 					'desc' 		=> __('For some link styles only', 'mfn-opts'),
 					'std' 		=> '#2991d6'
 				),
@@ -3840,11 +3858,66 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'background-fancy-link-hover',
 					'type' 		=> 'color',
-					'title' 	=> __('Fancy Link | Hover background', 'mfn-opts'),
+					'title' 	=> __('Fancy Link | hover background', 'mfn-opts'),
 					'desc' 		=> __('For some link styles only', 'mfn-opts'),
 					'std' 		=> '#2275ac'
 				),
+					
+				// button
+				array(
+					'id' 		=> 'colors-info-button',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Button', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
+				),
+				
+				array(
+					'id' 		=> 'background-button',
+					'type' 		=> 'color',
+					'title' 	=> __('Button | background', 'mfn-opts'),
+					'std' 		=> '#f7f7f7'
+				),
+				
+				array(
+					'id' 		=> 'color-button',
+					'type' 		=> 'color',
+					'title' 	=> __('Button | color', 'mfn-opts'),
+					'std' 		=> '#747474'
+				),
+					
+				// inline shortcodes
+				array(
+					'id' 		=> 'colors-info-inline-shortcodes',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Inline Shortcodes', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
+				),
 	
+				array(
+					'id' 		=> 'background-highlight',
+					'type' 		=> 'color',
+					'title' 	=> __('Dropcap & Highlight background', 'mfn-opts'),
+					'std' 		=> '#2991d6'
+				),
+				
+				array(
+					'id' 		=> 'color-hr',
+					'type' 		=> 'color',
+					'title' 	=> __('Hr color', 'mfn-opts'),
+					'desc' 		=> __('Dots, ZigZag & Theme Color', 'mfn-opts'),
+					'std' 		=> '#2991d6'
+				),
+				
+				array(
+					'id' 		=> 'color-list',
+					'type' 		=> 'color',
+					'title' 	=> __('List color', 'mfn-opts'),
+					'desc' 		=> __('Ordered, Unordered & Bullets List', 'mfn-opts'),
+					'std' 		=> '#737E86'
+				),
+					
 				array(
 					'id' 		=> 'color-note',
 					'type' 		=> 'color',
@@ -3852,51 +3925,23 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'desc' 		=> __('eg. Blog meta, Filters, Widgets meta', 'mfn-opts'), 
 					'std' 		=> '#a8a8a8'
 				),
-				
+
+				// section
 				array(
-					'id' 		=> 'color-list',
-					'type' 		=> 'color',
-					'title' 	=> __('List color', 'mfn-opts'), 
-					'desc' 		=> __('Ordered, Unordered & Bullets List', 'mfn-opts'), 
-					'std' 		=> '#737E86'
+					'id' 		=> 'colors-info-section',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Section', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
 				),
-				
-				array(
-					'id' 		=> 'background-highlight',
-					'type' 		=> 'color',
-					'title' 	=> __('Dropcap & Highlight background', 'mfn-opts'), 
-					'std' 		=> '#2991d6'
-				),
-				
+					
 				array(
 					'id' 		=> 'background-highlight-section',
 					'type' 		=> 'color',
-					'title' 	=> __('Highlight Section background', 'mfn-opts'), 
-					'std' 		=> '#2991d6'
-				),
-				
-				array(
-					'id' 		=> 'color-hr',
-					'type' 		=> 'color',
-					'title' 	=> __('Hr color', 'mfn-opts'), 
-					'desc' 		=> __('Dots, ZigZag & Theme Color', 'mfn-opts'), 
+					'title' 	=> __('Highlight Section background', 'mfn-opts'),
 					'std' 		=> '#2991d6'
 				),
 
-				array(
-					'id' 		=> 'background-button',
-					'type' 		=> 'color',
-					'title' 	=> __('Button | background', 'mfn-opts'), 
-					'std' 		=> '#f7f7f7'
-				),
-				
-				array(
-					'id' 		=> 'color-button',
-					'type' 		=> 'color',
-					'title' 	=> __('Button | color', 'mfn-opts'), 
-					'std' 		=> '#747474'
-				),
-				
 			),
 		);
 		
@@ -4096,7 +4141,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'color-contentlink',
 					'type' 		=> 'color',
-					'title'		=> __('Content Link Icon color', 'mfn-opts'),
+					'title'		=> __('Content Link | Icon color', 'mfn-opts'),
 					'desc'		=> __('This is also Content Link Hover Border', 'mfn-opts'),
 					'std' 		=> '#2991d6',
 				),
@@ -4104,7 +4149,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'color-counter',
 					'type' 		=> 'color',
-					'title'		=> __('Counter Icon color', 'mfn-opts'),
+					'title'		=> __('Counter Icon | color', 'mfn-opts'),
 					'desc'		=> __('This is also Chart Progress color', 'mfn-opts'),
 					'std' 		=> '#2991d6',
 				),
@@ -4134,7 +4179,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'background-imageframe-link',
 					'type' 		=> 'color',
-					'title'		=> __('Image Frame Link background', 'mfn-opts'),
+					'title'		=> __('Image Frame | Link background', 'mfn-opts'),
 					'desc'		=> __('This is also Image Frame Hover Link color', 'mfn-opts'),
 					'std' 		=> '#2991d6',
 				),
@@ -4142,7 +4187,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'color-imageframe-link',
 					'type' 		=> 'color',
-					'title'		=> __('Image Frame Link color', 'mfn-opts'),
+					'title'		=> __('Image Frame | Link color', 'mfn-opts'),
 					'desc'		=> __('This is also Image Frame Hover Link background', 'mfn-opts'),
 					'std' 		=> '#ffffff',
 				),
@@ -4157,14 +4202,14 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id' 		=> 'color-pricing-price',
 					'type' 		=> 'color',
-					'title'		=> __('Pricing Box Price color', 'mfn-opts'),
+					'title'		=> __('Pricing Box | Price color', 'mfn-opts'),
 					'std' 		=> '#2991d6',
 				),
 				
 				array(
 					'id' 		=> 'background-pricing-featured',
 					'type' 		=> 'color',
-					'title'		=> __('Pricing Box Featured background', 'mfn-opts'),
+					'title'		=> __('Pricing Box | Featured background', 'mfn-opts'),
 					'std' 		=> '#2991d6',
 				),
 				

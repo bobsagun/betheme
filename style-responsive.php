@@ -82,8 +82,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		.header-simple #Top_bar #menu ul li{width:100%;padding-bottom:0;border-right:0;position:relative}
 		.header-simple #Top_bar #menu ul li a{padding:0 20px;margin:0;display:block;height:auto;line-height:normal;border:none}
 		.header-simple #Top_bar #menu ul li a:after{display:none}
-		.header-simple #Top_bar #menu ul li a span{border:none;line-height:48px;display:inline;padding:0}
-		.header-simple #Top_bar #menu ul li.submenu .menu-toggle{display:block;position:absolute;right:0;top:0;width:48px;height:48px;line-height:48px;font-size:30px;font-weight:300;text-align:center;cursor:pointer;color:#444;opacity:0.33;}
+		.header-simple #Top_bar #menu ul li a span{border:none;line-height:44px;display:inline;padding:0}
+		.header-simple #Top_bar #menu ul li.submenu .menu-toggle{display:block;position:absolute;right:0;top:0;width:44px;height:44px;line-height:44px;font-size:30px;font-weight:300;text-align:center;cursor:pointer;color:#444;opacity:0.33;}
 		.header-simple #Top_bar #menu ul li.submenu .menu-toggle:after{content:"+"}
 		.header-simple #Top_bar #menu ul li.hover > .menu-toggle:after{content:"-"}
 		.header-simple #Top_bar #menu ul li.hover a{border-bottom:0}
@@ -331,11 +331,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	/* Main Menu | 1st level */
 	#Top_bar #menu > ul{width:100%;float:left}
 	#Top_bar #menu ul li{width:100%;padding-bottom:0;border-right:0;position:relative}
-	#Top_bar #menu ul li a{padding:0 20px;margin:0;display:block;height:auto;line-height:normal;border:none}
+	#Top_bar #menu ul li a{padding:0 25px;margin:0;display:block;height:auto;line-height:normal;border:none}
 	#Top_bar #menu ul li a:after{display:none}
-	#Top_bar #menu ul li a span{border:none;line-height:48px;display:inline;padding:0}
+	#Top_bar #menu ul li a span{border:none;line-height:44px;display:inline;padding:0}
 	#Top_bar #menu ul li a span.description{margin:0 0 0 5px}
-	#Top_bar #menu ul li.submenu .menu-toggle{display:block;position:absolute;right:0;top:0;width:48px;height:48px;line-height:48px;font-size:30px;font-weight:300;text-align:center;cursor:pointer;color:#444;opacity:0.33;}
+	#Top_bar #menu ul li.submenu .menu-toggle{display:block;position:absolute;right:15px;top:0;width:44px;height:44px;line-height:44px;font-size:30px;font-weight:300;text-align:center;cursor:pointer;color:#444;opacity:0.33;}
 	#Top_bar #menu ul li.submenu .menu-toggle:after{content:"+"}
 	#Top_bar #menu ul li.hover > .menu-toggle:after{content:"-"}
 	#Top_bar #menu ul li.hover a{border-bottom:0}
@@ -345,7 +345,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	/* Main Menu | 2nd level */	
 	#Top_bar #menu ul li ul{position:relative!important;left:0!important;top:0;padding:0;margin-left:0!important;width:auto!important;background-image:none!important;box-shadow:0 0 0 0 transparent!important;-webkit-box-shadow:0 0 0 0 transparent!important}
 	#Top_bar #menu ul li ul li{width:100%!important}
-	#Top_bar #menu ul li ul li a{padding:0 20px 0 30px}
+	#Top_bar #menu ul li ul li a{padding:0 20px 0 35px}
 	#Top_bar #menu ul li ul li a .menu-arrow{display:none}
 	#Top_bar #menu ul li ul li a span{padding:0}
 	#Top_bar #menu ul li ul li a span:after{display:none!important}
@@ -353,12 +353,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	#Top_bar .menu > li > ul.mfn-megamenu > li > ul{display:block!important;position:inherit;left:auto;top:auto}
 	
 	/* Main Menu | 3rd level */
-	#Top_bar #menu ul li ul li ul{border-left:0!important;padding:0;top:0}#Top_bar #menu ul li ul li ul li a{padding:0 20px 0 40px}
+	#Top_bar #menu ul li ul li ul{border-left:0!important;padding:0;top:0}#Top_bar #menu ul li ul li ul li a{padding:0 20px 0 45px}
 	
 	/* Main Menu | RTL */
 	.rtl #Top_bar #menu{left:1px;right:auto}
 	.rtl #Top_bar a.responsive-menu-toggle{left:20px;right:auto}
-	.rtl #Top_bar #menu ul li.submenu .menu-toggle{left:0;right:auto;border-left:none;border-right:1px solid #eee}
+	.rtl #Top_bar #menu ul li.submenu .menu-toggle{left:15px;right:auto;border-left:none;border-right:1px solid #eee}
 	.rtl #Top_bar #menu ul li ul{left:auto!important;right:0!important}
 	.rtl #Top_bar #menu ul li ul li a{padding:0 30px 0 20px}
 	.rtl #Top_bar #menu ul li ul li ul li a{padding:0 40px 0 20px}
@@ -376,7 +376,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	#Header_creative{position:fixed;width:100%;left:0!important;top:0;z-index:1001}
 	#Header_creative .creative-wrapper{display:block!important;opacity:1!important;filter:alpha(opacity=100)!important}
 	#Header_creative .creative-menu-toggle,#Header_creative .creative-social{display:none!important;opacity:1!important;filter:alpha(opacity=100)!important}
-	#Header_creative #Top_bar{position:static;margin:0 8%;width:84%}
+	#Header_creative #Top_bar{position:static;width:100%}
 	#Header_creative #Top_bar #logo{height:50px;line-height:50px;padding:5px 0}
 	#Header_creative #Top_bar #logo img{max-height:40px}
 	

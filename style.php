@@ -649,10 +649,16 @@ blockquote {
 		top: <?php echo $aLogo['responsive_menu_T']; ?>px;
 	}
 	<?php if( $aLogo['vertical_padding'] ): ?>
+	
 	.mobile-header-mini #Top_bar #logo{
 		height:50px!important;
 		line-height:50px!important;
-		margin:5px 0;
+		margin:5px 0!important;
+	}
+	.mobile-sticky #Top_bar.is-sticky #logo{
+		height:50px!important;
+		line-height:50px!important;
+		margin:5px 50px;
 	}
 	<?php endif; ?>
 }

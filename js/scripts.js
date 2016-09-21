@@ -17,7 +17,7 @@
     // header height
     function mfn_stickyH(){
 
-    	if( $('body').hasClass('header-below') ){
+    	if( $('body').hasClass( 'header-below' ) ){
 	    	// header below slider
 	    	mfn_header_height = $('.mfn-main-slider').innerHeight() + $('#Header').innerHeight();
 	    } else {
@@ -29,55 +29,82 @@
     
     // init
 	function mfn_sticky(){
-		if( $('body').hasClass('sticky-header') ){	
-			var start_y = mfn_header_height;
-			var window_y = $(window).scrollTop();
-	
-			if( window_y > start_y ){
-				
-				if( ! ($('#Top_bar').hasClass('is-sticky'))){
+		if( $('body').hasClass( 'sticky-header' ) ){	
+			if( ! ( $('body').hasClass( 'header-creative' ) && ( $(window).width() >= 768 ) ) ){
+			
+				var start_y = mfn_header_height;
+				var window_y = $(window).scrollTop();
+		
+				if( window_y > start_y ){
 					
-					var adminBarH = ( $('body').hasClass('admin-bar') ) ? '32px' : 0;
+					if( ! ( $('#Top_bar').hasClass('is-sticky') ) ){
+						
+						var adminBarH = ( $('body').hasClass('admin-bar') ) ? $('#wpadminbar').height() : 0;
+						
+						$('.header-below   		.header_placeholder').css('height', $('#Top_bar').innerHeight());
+						$('.header-classic 		.header_placeholder').css('height', $('#Top_bar').innerHeight());
+						$('.header-plain 		.header_placeholder').css('height', $('#Top_bar').innerHeight());
+						$('.header-stack   		.header_placeholder').css('height', $('#Top_bar').innerHeight());
+						
+						$('.header-split:not(.header-semi) .header_placeholder').css('height', $('#Top_bar').innerHeight());
+						
+						$('.minimalist-header 	.header_placeholder').css('height', $('#Top_bar').innerHeight());
+						$('.minimalist-header-no .header_placeholder').css('height', $('#Top_bar').innerHeight());
+						
+						$('#Top_bar')
+							.addClass('is-sticky')
+							.css('top',-60)
+							.animate({
+								'top': adminBarH + 'px'
+							},300);
+						
+						// Header width
+						mfn_header();
+					}
 					
-					$('.header-below   		.header_placeholder').css('height', $('#Top_bar').innerHeight());
-					$('.header-classic 		.header_placeholder').css('height', $('#Top_bar').innerHeight());
-					$('.header-plain 		.header_placeholder').css('height', $('#Top_bar').innerHeight());
-					$('.header-stack   		.header_placeholder').css('height', $('#Top_bar').innerHeight());
+				} else {
 					
-					$('.header-split:not(.header-semi) .header_placeholder').css('height', $('#Top_bar').innerHeight());
+					if($('#Top_bar').hasClass('is-sticky')) {
+						
+						$('.header_placeholder').css('height',0);
+						$('#Top_bar')
+							.removeClass('is-sticky')
+							.css('top', topBarTop);
+						
+						// Header width
+						mfn_header();
+						
+					}
 					
-					$('.minimalist-header 	.header_placeholder').css('height', $('#Top_bar').innerHeight());
-					$('.minimalist-header-no .header_placeholder').css('height', $('#Top_bar').innerHeight());
-					
-					$('#Top_bar')
-						.addClass('is-sticky')
-						.css('top',-60)
-						.animate({
-							'top': adminBarH
-						},300);
-					
-					// Header width
-					mfn_header();
 				}
 				
-			} else {
-				
-				if($('#Top_bar').hasClass('is-sticky')) {
-					
-					$('.header_placeholder').css('height',0);
-					$('#Top_bar')
-						.removeClass('is-sticky')
-						.css('top', topBarTop);
-					
-					// Header width
-					mfn_header();
-					
-				}
-				
+				mfn_mobile_sticky();
+			
 			}
 		}
 	}
-	
+
+	// mobile
+	function mfn_mobile_sticky(){
+		if( $('body').hasClass('mobile-sticky') && ( $(window).width() < 768 ) ){
+
+			var windowH = $(window).height();
+			var offset = $('#wpadminbar').height() + $('#Top_bar .logo').height();
+
+			if( ( ! $('#Top_bar').hasClass('is-sticky') ) && $('#Action_bar').is(":visible") ){
+				offset += $('#Action_bar').height();
+			}					
+
+			var menuH = windowH - offset;
+			if( menuH < 176 ){
+				menuH = 176
+			}
+			
+			$('#menu').css( 'max-height', menuH + 'px' );
+			
+		}
+	}
+
 	
 	/* ---------------------------------------------------------------------------
 	 * Back To Top | Sticky - show on scroll
@@ -473,6 +500,7 @@
 		
 		mfn_stickyH()
 		mfn_sticky();
+		mfn_mobile_sticky();
 
 		
 		/* ---------------------------------------------------------------------------
@@ -1672,7 +1700,6 @@
 					maxH = $(this).innerHeight();
 				}
 			});
-//			console.log(maxH);
 			el.closest('.caroufredsel_wrapper').height( maxH );
 		});
 		
