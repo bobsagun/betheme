@@ -403,6 +403,7 @@ html,body{overflow-x:hidden}
 	.section{background-attachment:scroll!important;height:auto!important}
 	.highlight-left .section_wrapper,.highlight-right .section_wrapper{max-width:100%!important}
 	.highlight-left .section_wrapper .wrap,.highlight-right .section_wrapper .wrap{padding:0 33px}
+	.highlight-left.full-screen > .section_wrapper,.highlight-right.full-screen > .section_wrapper{padding:0!important}
 	.equal-height-wrap .mcb-wrap{height:auto!important}
 	.equal-height-wrap .mcb-wrap .mcb-wrap-inner{top:0!important;-webkit-transform:none!important;-moz-transform:none!important;-ms-transform:none!important;-o-transform:none!important;transform:none!important}
 	.section.has-navi .section-nav.prev{top:10px}
@@ -416,16 +417,17 @@ html,body{overflow-x:hidden}
 	/* Header --------------- */
 	
 	#Top_bar,#Action_bar{background:#fff!important;position:static}
+	#Top_bar .container{max-width:100%!important;}
 	#Top_bar .top_bar_left{float:none;width:100%!important;background:none!important}
 
-	#Top_bar a.responsive-menu-toggle{right:0}
+	#Top_bar a.responsive-menu-toggle{right:20px;}
 	#Top_bar a.responsive-menu-toggle.is-sticky{position:fixed;top:10px;left:10px;margin-top:0;}
 	.admin-bar #Top_bar a.responsive-menu-toggle.is-sticky{top:56px}
 
 	#Top_bar .menu_wrapper{float:left!important;width:100%;margin:0!important}
 	#Top_bar #menu{float:left;position:static!important;width:100%!important;padding-bottom:20px}
-	#Top_bar .logo{position:static;float:none;width:100%;text-align:center;margin:0}
-	#Top_bar .logo #logo{padding:0!important;margin:10px 40px}
+	#Top_bar .logo{position:static;float:left;width:100%;text-align:center;margin:0}
+	#Top_bar .logo #logo{padding:0!important;margin:10px 50px}
 	#Top_bar .logo #logo img{height:auto!important}
 	#Top_bar #logo img.logo-main{display:none}
 	#Top_bar #logo img.logo-mobile{display:inline-block}
@@ -452,7 +454,7 @@ html,body{overflow-x:hidden}
 		body.header-below:not(.template-slider) #Header{padding-top:0}
 		
 		/* Header | Creative */
-		#Header_creative{position:static}
+		.header-creative #Header_creative{position:absolute}
 		.header-creative.layout-boxed{padding-top:0}
 		.header-creative.layout-boxed #Wrapper{margin-top:25px}
 		.header-creative.layout-full-width #Wrapper{padding-top:0}
@@ -479,18 +481,22 @@ html,body{overflow-x:hidden}
 		.minimalist-header-no #Subheader{padding:80px 0!important}
 		
 		/* Header | Overlay */
-		.header-overlay .overlay-menu-toggle{right:10px;top:20px}
+		.header-overlay .overlay-menu-toggle{top:10px;right:5px}
 		#overlay-menu ul li a{font-size:22px;line-height:36px}
 		
 		/* Header | Plain */
 		.header-plain #Top_bar .logo{text-align:left}
 		.header-plain #Top_bar .logo #logo{padding:5px 42px 15px 15px}
 		.header-plain #Top_bar .top_bar_right .top_bar_right_wrapper{line-height:0}
-		.header-plain #Top_bar .top_bar_right{height:50px}
+		.header-plain #Top_bar .top_bar_right{height:50px!important}
 		.header-plain #Top_bar a#header_cart,.header-plain #Top_bar a#search_button{padding:0 10px;line-height:50px!important}
-		.header-plain #Top_bar .wpml-languages{padding:0 10px;line-height:50px!important}
-		.header-plain #Top_bar a.button.action_button{line-height:50px!important}
+		.header-plain #Top_bar .wpml-languages{padding:0 10px;height:50px!important}
+		.header-plain #Top_bar .wpml-languages a.active{line-height:50px}
+		.header-plain #Top_bar a.button.action_button{height:50px!important;line-height:50px!important}
 		.header-plain #Top_bar a.button.action_button .button_label{padding:0 12px}
+		.header-plain #Top_bar .top_bar_right_wrapper > *:last-child {
+   			border-right-width: 1px;
+		}
 		
 		/* Header | Simple */
 		.header-simple #Top_bar .top_bar_left{top:0!important}
@@ -507,7 +513,7 @@ html,body{overflow-x:hidden}
 		
 		/* Header mobile | minimal */
 		.mobile-header-mini #Action_bar{display:none}
-		.mobile-header-mini #Top_bar{top:0!important}
+		.mobile-header-mini #Top_bar{top:0}
 		.mobile-header-mini #Top_bar .container{max-width:100%!important;}
 		.mobile-header-mini #Top_bar .top_bar_left{float:left;position:static;}
 		.mobile-header-mini #Top_bar .logo{width:auto;float:left;margin-left:15px;border:none;}
@@ -552,9 +558,9 @@ html,body{overflow-x:hidden}
 		
 				/* Header mobile | minimal | headers compatibility */	
 				.mobile-header-mini.header-plain #Top_bar .top_bar_right{margin-right:5px;}
-				.mobile-header-mini.header-plain #Top_bar a#header_cart{line-height:60px!important;border:none;padding:0 0 0 5px;}
+				.mobile-header-mini.header-plain #Top_bar a#header_cart{line-height:60px!important;border:none;padding:0 5px;}
 				.mobile-header-mini.header-plain #Top_bar a#search_button{line-height:60px!important;border:none;padding:0 3px;}
-				.mobile-header-mini.header-plain #Top_bar .wpml-languages{height:60px;border:none;padding:0 5px 0 10px;top:0;}
+				.mobile-header-mini.header-plain #Top_bar .wpml-languages{height:60px!important;border:none;padding:0 5px 0 10px;top:0;}
 				.mobile-header-mini.header-plain #Top_bar .wpml-languages a.active{line-height:60px!important}
 				.mobile-header-mini.header-plain #Top_bar .wpml-languages:hover a.active{background:none;}
 				
@@ -564,7 +570,17 @@ html,body{overflow-x:hidden}
 				.mobile-header-mini #Header_creative #Top_bar .wpml-languages{top:13px;}
 				
 				.mobile-header-mini .overlay-menu-toggle{font-size:22px;top:8px;margin:0!important;}
-
+				
+		/* Header mobile | sticky */
+		.mobile-sticky #Top_bar.is-sticky{position:fixed !important;}
+		.mobile-sticky #Top_bar.is-sticky #logo{margin:0 50px;height:60px!important;line-height:60px!important;}
+		.mobile-sticky #Top_bar.is-sticky a.responsive-menu-toggle{top:30px!important;}
+		.mobile-sticky #Top_bar.is-sticky a.responsive-menu-toggle.is-sticky{top:10px!important;}
+		.mobile-sticky #Top_bar.is-sticky .top_bar_right{display:none;}
+		.mobile-sticky #Top_bar #menu{overflow:auto;-webkit-box-sizing:border-box;box-sizing:border-box;}
+		
+		.mobile-header-mini.mobile-sticky #Top_bar .top_bar_right{display:block}
+		
 		/* Header mobile | transparent */
 		.mobile-tr-header #Action_bar,.mobile-tr-header #Top_bar,.mobile-tr-header #Top_bar .top_bar_right{background:none!important}
 		.mobile-tr-header #Top_bar{position:absolute;top:50px}
@@ -573,6 +589,7 @@ html,body{overflow-x:hidden}
 		.mobile-tr-header #Action_bar .contact_details li,.mobile-tr-header #Action_bar .social li a,.mobile-tr-header #Top_bar .top_bar_right a{color:rgba(255,255,255,0.3)}
 		.mobile-tr-header #Action_bar .social li a:hover,.mobile-tr-header #Top_bar .top_bar_right a:hover{color:#fff!important}
 		.mobile-tr-header #Top_bar .wpml-languages a.active,.mobile-tr-header #Top_bar .wpml-languages ul.wpml-lang-dropdown{background:none;border-color:rgba(255,255,255,0.3)}
+		.mobile-tr-header.header-creative.layout-full-width #Wrapper{padding-top:0}
 		
 		/* Header mobile | transparent | plain */
 		.mobile-tr-header.header-plain #Top_bar,.mobile-tr-header.header-plain #Top_bar .top_bar_right_wrapper > *{border:none!important;background:none!important}

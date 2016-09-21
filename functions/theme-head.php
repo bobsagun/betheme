@@ -1093,15 +1093,13 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		
 		
 		// Header | Sticky --------------------------
-		if( ( mfn_header_style( true ) != 'header-creative' ) ){
-			if( $layoutID ){
-				if( get_post_meta( $layoutID, 'mfn-post-sticky-header', true ) ){
-					$classes[] = 'sticky-header';
-				}
-			} elseif( mfn_opts_get('sticky-header') ){
+		if( $layoutID ){
+			if( get_post_meta( $layoutID, 'mfn-post-sticky-header', true ) ){
 				$classes[] = 'sticky-header';
-			}	
-		}
+			}
+		} elseif( mfn_opts_get('sticky-header') ){
+			$classes[] = 'sticky-header';
+		}	
 		
 		
 		// Header Sticky Style ----------------------
@@ -1215,13 +1213,16 @@ if( ! function_exists( 'mfn_body_classes' ) )
 
 		// responsive | mobile | options
 		$responsive_header_mob = mfn_opts_get( 'responsive-header-mobile' );
-		if( is_array( $responsive_header_mob ) ){
+		if( is_array( $responsive_header_mob ) ){		
 			
-			if( isset( $responsive_header_mob['transparent'] ) ){
-				$classes[] = 'mobile-tr-header';
-			}
 			if( isset( $responsive_header_mob['minimal'] ) ){
 				$classes[] = 'mobile-header-mini';
+			}
+			if( isset( $responsive_header_mob['sticky'] ) ){
+				$classes[] = 'mobile-sticky';
+			}
+			if( isset( $responsive_header_mob['transparent'] ) ){
+				$classes[] = 'mobile-tr-header';
 			}
 			
 		}

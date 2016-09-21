@@ -42,7 +42,7 @@ body{direction:rtl;unicode-bidi:embed}
 #Top_bar .search_wrapper input[type="text"]{padding-left:0;padding-right:35px}
 #Top_bar .search_wrapper .icon_close{right:auto;left:18px}
 #Top_bar .search_wrapper .icon_search{left:auto;right:18px}
-    
+	
 /* Header Stack ---------------------------------------------------------------------- */
 .header-stack #Top_bar .top_bar_right{left:0;right:auto}
 .header-stack #Top_bar .menu_wrapper{margin-right:0}
@@ -547,7 +547,7 @@ ul.portfolio_grid li {
 }
 .woocommerce td.product-name dl.variation dt,
 .woocommerce td.product-name dl.variation dd{
-    float:right;    
+	float:right;	
 }
 .woocommerce .cart-collaterals .shipping_calculator,
 .woocommerce-page .cart-collaterals .shipping_calculator {

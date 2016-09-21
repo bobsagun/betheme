@@ -507,6 +507,7 @@ body:not(.template-slider) #Header{min-height:250px}
 		/* Header plain - Options */
 		.header-plain #Top_bar a#header_cart,
 		.header-plain #Top_bar a#search_button { margin-right: 0; top: 0px; border-left-width: 1px; border-style: solid; }
+		.header-plain #Top_bar a#header_cart span{margin-right:-9px}
 		
 		.header-plain #Top_bar .wpml-languages { top: 0; margin: 0; border-left-width: 1px; border-style: solid; }
 		.header-plain #Top_bar .wpml-languages a.active { border: 0; padding: 0; }
