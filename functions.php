@@ -12,7 +12,7 @@ define( 'THEME_DIR', get_template_directory() );
 define( 'THEME_URI', get_template_directory_uri() );
 
 define( 'THEME_NAME', 'betheme' );
-define( 'THEME_VERSION', '14.7' );
+define( 'THEME_VERSION', '14.8' );
 
 define( 'LIBS_DIR', THEME_DIR. '/functions' );
 define( 'LIBS_URI', THEME_URI. '/functions' );

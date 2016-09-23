@@ -457,7 +457,7 @@ html,body{overflow-x:hidden}
 		.header-creative #Header_creative{position:absolute}
 		.header-creative.layout-boxed{padding-top:0}
 		.header-creative.layout-boxed #Wrapper{margin-top:25px}
-		.header-creative.layout-full-width #Wrapper{padding-top:0}
+		body.header-creative.layout-full-width #Wrapper{padding-top:70px}
 		#Header_creative #Top_bar .responsive-menu-toggle{top:35px}
 		#Header_creative #Top_bar .responsive-menu-toggle.is-sticky{position:fixed;top:10px;left:10px;margin-top:0;}
 		.admin-bar #Header_creative #Top_bar .responsive-menu-toggle.is-sticky{top:56px}
@@ -1022,7 +1022,8 @@ html,body{overflow-x:hidden}
 
 
 /* Retina | iPad ----------------------------------------------------------------------------------------------- Retina | iPad */
-@supports( -webkit-text-size-adjust:none ) and ( not (-ms-accelerator:true) ){
-	html,.section.bg-cover{background-attachment:scroll!important}
+@media only screen and (max-device-width: 1024px){
+	@supports( -webkit-text-size-adjust:none ) and ( not (-ms-accelerator:true) ){
+		html,.section.bg-cover{background-attachment:scroll!important}
+	}
 }
-

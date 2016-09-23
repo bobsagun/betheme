@@ -95,7 +95,9 @@ if( ! function_exists('mfn_content_post') ){
 							// photo | Style != Masonry Tiles
 							
 							$output .= '<div class="post-photo-wrapper scale-with-grid">';				
-								$output .= get_the_post_thumbnail( get_the_ID(), 'full', array( 'class'=>'scale-with-grid', 'itemprop'=>'image' ) );
+								$output .= '<div class="image_wrapper_tiles">';				
+									$output .= get_the_post_thumbnail( get_the_ID(), 'full', array( 'class'=>'scale-with-grid', 'itemprop'=>'image' ) );
+								$output .= '</div>';
 							$output .= '</div>';
 	
 						} else {

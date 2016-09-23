@@ -87,7 +87,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	.tparrows.default, .tp-bullets.tp-thumbs .bullet.selected:after, .offer_thumb .slider_pagination a:before, .offer_thumb .slider_pagination a.selected:after,
 	.style-simple .accordion .question:after, .style-simple .faq .question:after, .style-simple .icon_box .desc_wrapper h4:before,
 	.style-simple #Filters .filters_wrapper ul li a:after, .style-simple .article_box .desc_wrapper p:after, .style-simple .sliding_box .desc_wrapper:after,
-	.style-simple .trailer_box:hover .desc, .portfolio_group.exposure .portfolio-item .desc-inner .line, .style-simple .zoom_box .desc .desc_txt,
+	.style-simple .trailer_box:hover .desc, .portfolio_group.exposure .portfolio-item .desc-inner .line,
 	.woocommerce-account table.my_account_orders .order-number a, .woocommerce-MyAccount-navigation ul li.is-active a {
 		background-color: <?php mfn_opts_show( 'color-theme', '#2991d6' ) ?>;
 	}
@@ -510,6 +510,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		background: <?php mfn_opts_show( 'color-imageframe-link', '#ffffff' ) ?>;
 		color: <?php mfn_opts_show( 'background-imageframe-link', '#2991d6' ) ?>;
 	}	
+	.image_frame {
+    	border-color: <?php mfn_opts_show( 'border-imageframe', '#f8f8f8' ) ?>;
+	}
+	.image_frame .image_wrapper .mask::after {
+    	background: <?php hex2rgba( mfn_opts_get( 'color-imageframe-mask', '#ffffff' ), 0.4, true ) ?>;
+	}
 	
 /* Sliding box */
 	.sliding_box .desc_wrapper {

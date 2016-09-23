@@ -2068,6 +2068,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'portfolio-orderby',
 					'type' 		=> 'select',
 					'title' 	=> __('Order by', 'mfn-opts'),
+					'desc' 		=> __('Do not use random order with pagination or load more', 'mfn-opts'),
 					'options' 	=> array(
 						'date'			=> __('Date', 'mfn-opts'),
 						'menu_order' 	=> __('Menu order', 'mfn-opts'),
@@ -3886,6 +3887,46 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'std' 		=> '#747474'
 				),
 					
+				// image frame
+				array(
+					'id' 		=> 'colors-info-imageframe',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Image Frame', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
+				),
+					
+				array(
+					'id' 		=> 'border-imageframe',
+					'type' 		=> 'color',
+					'title'		=> __('Image Frame | Border color', 'mfn-opts'),
+					'std' 		=> '#f8f8f8',
+				),
+					
+				array(
+					'id' 		=> 'background-imageframe-link',
+					'type' 		=> 'color',
+					'title'		=> __('Image Frame | Link background', 'mfn-opts'),
+					'desc'		=> __('This is also Image Frame Hover Link color', 'mfn-opts'),
+					'std' 		=> '#2991d6',
+				),
+					
+				array(
+					'id' 		=> 'color-imageframe-link',
+					'type' 		=> 'color',
+					'title'		=> __('Image Frame | Link color', 'mfn-opts'),
+					'desc'		=> __('This is also Image Frame Hover Link background', 'mfn-opts'),
+					'std' 		=> '#ffffff',
+				),
+					
+				array(
+					'id' 		=> 'color-imageframe-mask',
+					'type' 		=> 'color',
+					'title'		=> __('Image Frame | Mask color', 'mfn-opts'),
+					'desc'		=> __('Mask has predefined opacity 0.4', 'mfn-opts'),
+					'std' 		=> '#ffffff',
+				),
+					
 				// inline shortcodes
 				array(
 					'id' 		=> 'colors-info-inline-shortcodes',
@@ -4174,22 +4215,6 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'color',
 					'title'		=> __('Icon Box Icon color', 'mfn-opts'),
 					'std' 		=> '#2991d6',
-				),
-					
-				array(
-					'id' 		=> 'background-imageframe-link',
-					'type' 		=> 'color',
-					'title'		=> __('Image Frame | Link background', 'mfn-opts'),
-					'desc'		=> __('This is also Image Frame Hover Link color', 'mfn-opts'),
-					'std' 		=> '#2991d6',
-				),
-					
-				array(
-					'id' 		=> 'color-imageframe-link',
-					'type' 		=> 'color',
-					'title'		=> __('Image Frame | Link color', 'mfn-opts'),
-					'desc'		=> __('This is also Image Frame Hover Link background', 'mfn-opts'),
-					'std' 		=> '#ffffff',
 				),
 					
 				array(

@@ -390,7 +390,7 @@
 	 * Zoom Box | Vertical Align
 	 * --------------------------------------------------------------------------- */
 	function zoomBoxVerticalAlign(){
-		$('body:not(.style-simple) .zoom_box').each(function(){
+		$('.zoom_box').each(function(){
 			
             var el = $(this);
             var elH = el.height(); 
@@ -893,7 +893,7 @@
 		 * Black & White
 		 * --------------------------------------------------------------------------- */
 		function mfn_greyscale(){
-	        $('.greyscale .image_wrapper > a, .greyscale .client_wrapper .gs-wrapper, .greyscale.portfolio-photo a').has('img').BlackAndWhite({
+	        $('.greyscale .image_wrapper > a, .greyscale .image_wrapper_tiles, .greyscale.portfolio-photo a, .greyscale .client_wrapper .gs-wrapper').has('img').BlackAndWhite({
 	    		hoverEffect		: false,
 	    		intensity		: 1			// opacity: 0, 0.1, ... 1
 	    	});
