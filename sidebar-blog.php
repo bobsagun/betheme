@@ -20,15 +20,18 @@ $sidebars = mfn_opts_get( 'sidebars' );
 
 
 // Category -----------------------------------------------
-if( is_category() ){
-
-	$category = get_query_var( 'cat' );
-	$category = get_category( $category );
+$theme_disable = mfn_opts_get( 'theme-disable' );
+if( ! isset( $theme_disable['categories-sidebars'] ) ){
+	if( is_category() ){
 	
-	$cat_sidebar = 'blog-cat-'. $category->slug;
-	
-	if( is_active_sidebar( $cat_sidebar ) ){
-		$sidebar = $cat_sidebar;
+		$category = get_query_var( 'cat' );
+		$category = get_category( $category );
+		
+		$cat_sidebar = 'blog-cat-'. $category->slug;
+		
+		if( is_active_sidebar( $cat_sidebar ) ){
+			$sidebar = $cat_sidebar;
+		}
 	}
 }
 

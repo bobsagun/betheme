@@ -243,6 +243,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	/* Header Creative | Visual Composer */	
 	.header-creative .vc_row[data-vc-full-width]{padding-left:50px}
 	.header-creative.header-open .vc_row[data-vc-full-width]{padding-left:250px}
+	.header-open .vc_parallax .vc_parallax-inner { left:auto; width: calc(100% - 250px); }
+	.header-open.header-rtl .vc_parallax .vc_parallax-inner { left:0; right:auto; }
 			
 	/* Header Creative | Scroll */
 	#Header_creative.scroll{height:100%;overflow-y:auto}
