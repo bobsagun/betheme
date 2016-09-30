@@ -29,7 +29,7 @@ blockquote:after{content:"";width:55px;height:40px;background:url(../images/bloc
 .blockquote p.author i{margin-right:5px}
 	
 /* Button Item ----------------------------------------------------------------------- */
-.column_button .button{margin:0!important}
+.column_button .button{margin:0!important;vertical-align:middle}
 .button_align.align_center{text-align:center}
 .button_align.align_right{text-align:right}
 	

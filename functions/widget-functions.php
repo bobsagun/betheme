@@ -194,4 +194,7 @@ if( ! function_exists( 'mfn_register_sidebars_cat' ) )
 	
 	}
 }
-add_action( 'init', 'mfn_register_sidebars_cat' );	// get_categories can be call only on init 
+$theme_disable = mfn_opts_get( 'theme-disable' );
+if( ! isset( $theme_disable['categories-sidebars'] ) ){
+	add_action( 'init', 'mfn_register_sidebars_cat' );	// get_categories can be call only on init
+}

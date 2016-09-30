@@ -1454,13 +1454,9 @@ body:not(.template-slider) #Header{min-height:250px}
 	#Footer .widget_mfn_recent_comments ul li .date_label:after{border-left-color:rgba(0,0,0,.07)}
 	
 	/* Styles */
-	.footer-fixed #Content{position:relative;z-index:2}
-	.footer-fixed #Footer{position:fixed;width:100%;bottom:0;left:0;z-index:3}
-
-	.footer-sliding #Header_wrapper{position:static}
-	.footer-sliding #Footer{z-index:1}
-	.footer-sliding #Footer{position:fixed;width:100%;bottom:0;left:0}
-	
+	.footer-fixed #Footer{position:fixed;width:100%;bottom:0;left:0;z-index:1}
+	.footer-sliding #Wrapper,.footer-sliding #Content{position:relative;z-index:0}
+	.footer-sliding #Footer{position:fixed;width:100%;bottom:0;left:0;z-index:-1}	
 	.footer-stick #Footer.is-sticky{position:fixed;width:100%;bottom:0;left:0}
 
 /* Comments -------------------------------------------------------------------------- */
@@ -1558,6 +1554,14 @@ ul.testimonials-slider{max-height:260px}
 .section.has-navi.dark .section-nav{color:rgba(255,255,255,.2)}
 .section.has-navi.dark .section-nav:hover{color:rgba(255,255,255,.8)}
 .section.has-navi .section-nav{-webkit-transition:all .5s ease-in-out;-moz-transition:all .5s ease-in-out;-o-transition:all .5s ease-in-out;transition:all .5s ease-in-out}
+
+/* Ultra Wide ------------------------------------------------------------------------ */
+/* 
+@media only screen and (min-width: 1921px)
+{
+	.ultra-wide .mcb-section,.ultra-wide .mcb-wrap{background-size:cover}	
+}
+*/
 
 /* Dark ------------------------------------------------------------------------------ */
 .dark,.dark ul.timeline_items,.dark .icon_box a .desc,.dark .icon_box a:hover .desc,.dark .feature_list ul li a,.dark .list_item a,.dark .list_item a:hover,.dark .widget_recent_entries ul li a{color:#fff!important}

@@ -34,17 +34,17 @@ if( ! function_exists( 'mfn_seo' ) )
 {
 	function mfn_seo() 
 	{
-		if( mfn_opts_get('mfn-seo') && mfn_ID() ){
+		if( mfn_opts_get('mfn-seo') ){
 	
 			// description
-			if( get_post_meta( mfn_ID(), 'mfn-meta-seo-description', true ) ){
+			if( mfn_ID() && get_post_meta( mfn_ID(), 'mfn-meta-seo-description', true ) ){
 				echo '<meta name="description" content="'. stripslashes( get_post_meta( mfn_ID(), 'mfn-meta-seo-description', true ) ) .'" />'."\n";
 			} elseif( mfn_opts_get('meta-description') ){
 				echo '<meta name="description" content="'. stripslashes( mfn_opts_get('meta-description') ) .'" />'."\n";
 			}
 			
 			// keywords
-			if( get_post_meta( mfn_ID(), 'mfn-meta-seo-keywords', true ) ){
+			if( mfn_ID() &&  get_post_meta( mfn_ID(), 'mfn-meta-seo-keywords', true ) ){
 				echo '<meta name="keywords" content="'. stripslashes( get_post_meta( mfn_ID(), 'mfn-meta-seo-keywords', true ) ) .'" />'."\n";
 			} elseif( mfn_opts_get('meta-keywords') ){
 				echo '<meta name="keywords" content="'. stripslashes( mfn_opts_get('meta-keywords') ) .'" />'."\n";
@@ -1047,7 +1047,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		
 		// Love -----------------------------------------------
 		if( ! mfn_opts_get('love') ) $classes[] = 'hide-love';
-		
+	
 		
 		// Table Hover ----------------------------------------
 		if( mfn_opts_get('table-hover') ) $classes[] = 'table-hover';

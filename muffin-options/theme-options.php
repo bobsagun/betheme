@@ -820,6 +820,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'desc' 		=> __('If you do not want to use any of these functions or use external plugins to do the same, you can disable it', 'mfn-opts'),
 					'options' 	=> array(
 						'demo-data'				=> __('BeTheme Demo Data', 'mfn-opts'),
+						'categories-sidebars'	=> __('Categories Sidebars<span>This option affects existing sidebars. Please use before adding widgets</span>', 'mfn-opts'),
 						'entrance-animations'	=> __('Entrance Animations', 'mfn-opts'),
 						'mega-menu'				=> __('Mega Menu', 'mfn-opts'),
 					),
