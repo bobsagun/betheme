@@ -960,8 +960,9 @@ body:not(.template-slider) #Header{min-height:250px}
 .no-share .single-photo-wrapper .image_frame{margin-left:0}
 .single-photo-wrapper.image{text-align:center}
 .single-photo-wrapper.image .image_frame{margin-left:0;display:inline-block}
-.no-share .single-photo-wrapper.image .image_frame{max-width:100%}
+
 .section-post-header .single-photo-wrapper.image .image_frame{max-width:80%;max-width:calc(100% - 130px)}
+.no-share .section-post-header .single-photo-wrapper.image .image_frame{max-width:100%}
 
 .share_wrapper{background:#fff;border-width:1px;border-style:solid;width:98px;text-align:center;padding:10px 0 5px}
 .share_wrapper .stButton{margin-bottom:10px}
@@ -1078,7 +1079,8 @@ body:not(.template-slider) #Header{min-height:250px}
 .with_aside.aside_both .sidebar-2 .widget-area .widget:after{left:0}
 	
 	/* Recent posts */
-	.Recent_posts ul li{margin-bottom:10px}
+	.Recent_posts ul{margin:0!important}
+	.Recent_posts ul li{margin-bottom:10px;list-style:none!important}
 	.Recent_posts ul li:last-child{margin-bottom:0}
 	.Recent_posts ul li a{text-decoration:none}
 	.Recent_posts ul li .desc{margin-right:80px;padding:5px 15px;background:#fff;position:relative;min-height:70px}
@@ -1130,7 +1132,8 @@ body:not(.template-slider) #Header{min-height:250px}
 	.widget_meta ul li a,.widget_pages ul li a,.widget_rss ul li a{display:block;padding:4px 0 7px 4px}
 	
 	/* Recent comments */
-	.widget_mfn_recent_comments ul li{padding-bottom:15px;background:url(../images/recent_comments.png) no-repeat 4px top;padding-left:40px;position:relative}
+	.widget_mfn_recent_comments ul{margin:0!important}
+	.widget_mfn_recent_comments ul li{padding-bottom:15px;margin-bottom:0!important;background:url(../images/recent_comments.png) no-repeat 4px top;padding-left:40px;position:relative;list-style:none!important}
 	.widget_mfn_recent_comments ul li:last-child{padding-bottom:5px}
 	.widget_mfn_recent_comments ul li .date_label{background-color:rgba(0,0,0,.03);margin-top:7px;margin-bottom:5px;position:relative}
 	.widget_mfn_recent_comments ul li .date_label:after{border-left-color:rgba(0,0,0,.03)}

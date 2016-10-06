@@ -89,8 +89,9 @@ if( ! function_exists( 'mfna_bg_position' ) )
 			
 			// Header
 			
-			$array['fixed']					= __('Center No-Repeat Fixed', 'mfn-opts');
-			$array['parallax']				= __('Parallax', 'mfn-opts');
+			$array['fixed']									= __('Center No-Repeat Fixed', 'mfn-opts');
+			$array['no-repeat;center;fixed;cover;still']	= __('Center No-Repeat Fixed Cover', 'mfn-opts');
+			$array['parallax']								= __('Parallax', 'mfn-opts');
 			
 		} elseif( $el ){
 			
@@ -103,13 +104,31 @@ if( ! function_exists( 'mfna_bg_position' ) )
 			
 			// Section / Wrap
 			
-			$array['no-repeat;center top;fixed;;still']		= __('Center No-Repeat Fixed', 'mfn-opts');			// Old Style Still Parallax
-			$array['no-repeat;center;fixed;cover;still']	= __('Center No-Repeat Fixed Cover', 'mfn-opts');	// Old Style Still Parallax Cover
+			$array['no-repeat;center top;fixed;;still']		= __('Center No-Repeat Fixed', 'mfn-opts');
+			$array['no-repeat;center;fixed;cover;still']	= __('Center No-Repeat Fixed Cover', 'mfn-opts');
 			$array['no-repeat;center top;fixed;cover']		= __('Parallax', 'mfn-opts');
 			
 		}
 	
 		return $array;
+	}
+}
+
+
+if( ! function_exists( 'mfna_bg_size' ) )
+{
+	/**
+	 * Skin
+	 * 
+	 * @return array
+	 */
+	function mfna_bg_size(){
+		return array(
+			'auto'				=> __('Auto', 'mfn-opts'),
+			'contain'			=> __('Contain', 'mfn-opts'),
+			'cover'				=> __('Cover', 'mfn-opts'),
+// 			'cover-ultrawide'	=> __('Cover, on ultrawide screens only > 1920px', 'mfn-opts'),
+		);
 	}
 }
 
@@ -436,9 +455,16 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'position-page-bg',
 					'type' 		=> 'select',
 					'title' 	=> __('Position', 'mfn-opts'),
-					'desc' 		=> __('This option can be used only with your custom image selected above', 'mfn-opts'),
 					'options' 	=> mfna_bg_position(1),
 					'std' 		=> 'center top no-repeat',
+				),
+					
+				array(
+					'id' 		=> 'size-page-bg',
+					'type' 		=> 'select',
+					'title' 	=> __('Size', 'mfn-opts'),
+					'desc' 		=> __('Do <b>not</b> work with fixed position. Works only in modern browsers', 'mfn-opts'),
+					'options' 	=> mfna_bg_size(),
 				),
 
 				array(
@@ -988,7 +1014,15 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Position', 'mfn-opts'),
 					'options'	=> mfna_bg_position( 'header' ),
-				),			
+				),
+
+				array(
+					'id' 		=> 'size-subheader-bg',
+					'type' 		=> 'select',
+					'title' 	=> __('Size', 'mfn-opts'),
+					'desc' 		=> __('Do <b>not</b> work with fixed position & parallax. Works only in modern browsers', 'mfn-opts'),
+					'options' 	=> mfna_bg_size(),
+				),
 					
 				array(
 					'id' 		=> 'header-info-sticky',
@@ -1101,6 +1135,14 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Position', 'mfn-opts'),
 					'options' 	=> mfna_bg_position(1),
 					'std' 		=> 'center top no-repeat',
+				),
+					
+				array(
+					'id' 		=> 'subheader-size',
+					'type' 		=> 'select',
+					'title' 	=> __('Size', 'mfn-opts'),
+					'desc' 		=> __('Do <b>not</b> work with fixed position. Works only in modern browsers', 'mfn-opts'),
+					'options' 	=> mfna_bg_size(),
 				),
 					
 				array(
@@ -1825,8 +1867,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'text',
 					'title' 	=> __('Exclude Category', 'mfn-opts'),
 					'sub_desc' 	=> __('Exclude category from Blog page', 'mfn-opts'),
-					'desc' 		=> __('Category <b>slug</b>', 'mfn-opts'),
-					'class' 	=> 'small-text',
+					'desc' 		=> __('Category <b>slug</b>. Multiple slugs should be separated with <b>coma</b> ( , )', 'mfn-opts'),
 				),
 					
 				array(
@@ -2728,6 +2769,14 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Position', 'mfn-opts'),
 					'options' 	=> mfna_bg_position(1),
 					'std' 		=> 'center top no-repeat',
+				),
+					
+				array(
+					'id' 		=> 'footer-bg-img-size',
+					'type' 		=> 'select',
+					'title' 	=> __('Size', 'mfn-opts'),
+					'desc' 		=> __('Do <b>not</b> work with fixed position. Works only in modern browsers', 'mfn-opts'),
+					'options' 	=> mfna_bg_size(),
 				),
 					
 				array(

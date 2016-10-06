@@ -131,11 +131,11 @@ body.header-creative{padding-left:50px}
 body.header-creative.header-open{padding-left:250px}
 body.error404,body.under-construction,body.template-blank{padding-left:0!important}
 
-.header-creative.footer-fixed #Footer,.header-creative.footer-sliding #Footer{left:25px}
-.header-open.footer-fixed #Footer,.header-open.footer-sliding #Footer{left:125px}
+.header-creative.footer-fixed #Footer,.header-creative.footer-sliding #Footer,.header-creative.footer-stick #Footer.is-sticky{box-sizing:border-box;padding-left:50px;}
+.header-open.footer-fixed #Footer,.header-open.footer-sliding #Footer,.header-creative.footer-stick #Footer.is-sticky{padding-left:250px;}
 
-.header-rtl.header-creative.footer-fixed #Footer,.header-rtl.header-creative.footer-sliding #Footer{left:auto;right:5px}
-.header-rtl.header-open.footer-fixed #Footer,.header-rtl.header-open.footer-sliding #Footer{left:auto;right:125px}
+.header-rtl.header-creative.footer-fixed #Footer,.header-rtl.header-creative.footer-sliding #Footer,.header-rtl.header-creative.footer-stick #Footer.is-sticky{padding-left:0;padding-right:50px;}
+.header-rtl.header-open.footer-fixed #Footer,.header-rtl.header-open.footer-sliding #Footer,.header-rtl.header-creative.footer-stick #Footer.is-sticky{padding-right:250px;}
 
 #Header_creative{background:#fff;position:fixed;width:250px;height:100%;left:-200px;top:0;z-index:9002;-webkit-box-shadow:2px 0 4px 2px rgba(0,0,0,.15);box-shadow:2px 0 4px 2px rgba(0,0,0,.15)}
 #Header_creative .container{width:100%}
