@@ -1154,6 +1154,8 @@ ul.portfolio_grid li .image_frame{border:0;margin:0}
 .portfolio-photo .portfolio-item a .mask,.portfolio-photo .portfolio-item .portfolio-details .details,.portfolio-photo .portfolio-item .portfolio-details .more{-webkit-transition:all .5s ease-in-out;-moz-transition:all .5s ease-in-out;-o-transition:all .5s ease-in-out;transition:all .5s ease-in-out}
 .portfolio-photo .portfolio-item .portfolio-details .image_links a{-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
 
+.portfolio-photo.margin .portfolio-item{margin-bottom:25px}
+
 /* Portfolio Items | Filters --------------------------------------------------------- */
 .column_portfolio #Filters .filters_wrapper,.column_portfolio #Filters .filters_wrapper ul{display:block}
 .wpb_wrapper #Filters .filters_wrapper,.wpb_wrapper #Filters .filters_wrapper ul{display:block}
@@ -1242,6 +1244,16 @@ ul.portfolio_grid li .image_frame{border:0;margin:0}
 .twentytwenty-right-arrow{border-left:6px solid #fff;right:50%;margin-right:-17px}
 .twentytwenty-up-arrow{border-bottom:6px solid #fff;top:50%;margin-top:-17px}
 .twentytwenty-down-arrow{border-top:6px solid #fff;bottom:50%;margin-bottom:-17px}
+
+/* Ultrawide ------------------------------------------------------------------------- */
+.image_frame.stretch .image_wrapper img{width:100%}
+.mcb-section.bg-cover,.mcb-wrap.bg-cover,.column_attr.bg-cover{background-size:cover}
+.mcb-section.bg-contain,.mcb-wrap.bg-contain,.column_attr.bg-contain{background-size:contain}
+
+@media only screen and (min-width: 1921px){	
+	.image_frame.stretch-ultrawide .image_wrapper img{width:100%}
+	.mcb-section.bg-cover-ultrawide,.mcb-wrap.bg-cover-ultrawide,.column_attr.bg-cover-ultrawide{background-size:cover}
+}
 		
 /* Others ---------------------------------------------------------------------------- */
 

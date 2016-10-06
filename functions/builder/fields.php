@@ -60,9 +60,16 @@ if( ! function_exists( 'mfn_get_fields_section' ) )
 				'id' 		=> 'bg_position',
 				'type' 		=> 'select',
 				'title' 	=> __('Background | Position', 'mfn-opts'),
-				'desc' 		=> __('This option can be used only with your custom image selected above', 'mfn-opts'),
 				'options' 	=> mfna_bg_position(),
 				'std' 		=> 'center top no-repeat',
+			),
+				
+			array(
+				'id' 		=> 'bg_size',
+				'type' 		=> 'select',
+				'title' 	=> __('Background | Size', 'mfn-opts'),
+				'desc' 		=> __('Do <b>not</b> work with fixed position & parallax. Works only in modern browsers', 'mfn-opts'),
+				'options' 	=> mfna_bg_size(),
 			),
 	
 			array(
@@ -266,9 +273,16 @@ if( ! function_exists( 'mfn_get_fields_wrap' ) )
 				'id' 		=> 'bg_position',
 				'type' 		=> 'select',
 				'title' 	=> __('Background | Position', 'mfn-opts'),
-				'desc' 		=> __('This option can be used only with your custom image selected above', 'mfn-opts'),
 				'options' 	=> mfna_bg_position(),
 				'std' 		=> 'center top no-repeat',
+			),
+				
+			array(
+				'id' 		=> 'bg_size',
+				'type' 		=> 'select',
+				'title' 	=> __('Background | Size', 'mfn-opts'),
+				'desc' 		=> __('Do <b>not</b> work with fixed position & parallax. Works only in modern browsers', 'mfn-opts'),
+				'options' 	=> mfna_bg_size(),
 			),
 				
 			// options
@@ -1597,6 +1611,14 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'desc' 		=> __('This option can be used only with your custom image selected above', 'mfn-opts'),
 						'options' 	=> mfna_bg_position( 'column' ),
 						'std' 		=> 'center top no-repeat',
+					),
+						
+					array(
+						'id' 		=> 'bg_size',
+						'type' 		=> 'select',
+						'title' 	=> __('Size', 'mfn-opts'),
+						'desc' 		=> __('Works only in modern browsers', 'mfn-opts'),
+						'options' 	=> mfna_bg_size(),
 					),
 						
 					// layout	
@@ -3020,6 +3042,19 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					array(
+						'id' 		=> 'stretch',
+						'type' 		=> 'select',
+						'title' 	=> __('Stretch', 'mfn-opts'),
+						'sub_desc' 	=> __('Stretch image to column width', 'mfn-opts'),
+						'desc' 		=> __('The height of the image will be changed proportionally', 'mfn-opts'),
+						'options' 	=> array(
+							'0'			=> 'No',
+							'1' 		=> 'Yes',
+							'ultrawide' => 'Yes, on ultrawide screens only > 1920px',
+						),
+					),
+						
+					array(
 						'id' 		=> 'border',
 						'type' 		=> 'select',
 						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
@@ -4214,13 +4249,21 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'std'		=> '4',
 						'class'		=> 'small-text',
 					),
+					
+					// options
+					array(
+						'id' 		=> 'info_options',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Options', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
 						
 					array(
 						'id'		=> 'category',
 						'type'		=> 'select',
 						'title'		=> __('Category', 'mfn-opts'),
 						'options'	=> mfn_get_categories( 'portfolio-types' ),
-						'sub_desc'	=> __('Select the portfolio post category.', 'mfn-opts'),
 						'wpml'		=> 'portfolio-types',
 					),
 						
@@ -4229,7 +4272,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'text',
 						'title'		=> __('Multiple Categories', 'mfn-opts'),
 						'sub_desc'	=> __('Categories Slugs', 'mfn-opts'),
-						'desc'		=> __('Slugs should be separated with <strong>coma</strong> (,).', 'mfn-opts'),
+						'desc'		=> __('Slugs should be separated with <b>coma</b> ( , )', 'mfn-opts'),
 					),
 						
 					array(
@@ -4255,12 +4298,30 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						),
 						'std'		=> 'DESC'
 					),
+
+					// advanced
+					array(
+						'id' 		=> 'info_advanced',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Advanced', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
 						
 					array(
 						'id'		=> 'greyscale',
 						'type'		=> 'select',
 						'title'		=> 'Greyscale Images',
 						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+					),
+						
+					// custom
+					array(
+						'id' 		=> 'info_custom',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Custom', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
 					),
 
 					array(
@@ -4291,37 +4352,62 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'class'		=> 'small-text',
 					),
 
+					// options
+					array(
+						'id' 		=> 'info_options',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Options', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id'		=> 'category',
 						'type'		=> 'select',
 						'title'		=> __('Category', 'mfn-opts'),
 						'options'	=> mfn_get_categories( 'portfolio-types' ),
-						'sub_desc'	=> __('Select the portfolio post category.', 'mfn-opts'),
 						'wpml'		=> 'portfolio-types',
 					),
-
+					
 					array(
 						'id'		=> 'category_multi',
 						'type'		=> 'text',
 						'title'		=> __('Multiple Categories', 'mfn-opts'),
-						'sub_desc'	=> __('Categories Slugs', 'mfn-opts'),
-						'desc'		=> __('Slugs should be separated with <strong>coma</strong> (,).', 'mfn-opts'),
+						'sub_desc'	=> __('Categories <b>slugs</b>', 'mfn-opts'),
+						'desc'		=> __('Slugs should be separated with <b>coma</b> ( , )', 'mfn-opts'),
 					),
-
+					
 					array(
 						'id'		=> 'orderby',
 						'type'		=> 'select',
 						'title'		=> __('Order by', 'mfn-opts'),
-						'options'	=> array('date'=>'Date', 'menu_order' => 'Menu order', 'title'=>'Title'),
+						'options' 	=> array(
+							'date'			=> 'Date',
+							'menu_order' 	=> 'Menu order',
+							'title'			=> 'Title',
+							'rand'			=> 'Random',
+						),
 						'std'		=> 'date'
 					),
-
+					
 					array(
 						'id'		=> 'order',
 						'type'		=> 'select',
 						'title'		=> __('Order', 'mfn-opts'),
-						'options'	=> array('ASC' => 'Ascending', 'DESC' => 'Descending'),
+						'options'	=> array(
+							'ASC' 	=> 'Ascending',
+							'DESC' 	=> 'Descending',
+						),
 						'std'		=> 'DESC'
+					),
+						
+					// advanced
+					array(
+						'id' 		=> 'info_advanced',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Advanced', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
 					),
 
 					array(
@@ -4338,7 +4424,23 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title'		=> 'Greyscale Images',
 						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 					),
+						
+					array(
+						'id'		=> 'margin',
+						'type'		=> 'select',
+						'title'		=> __('Margin', 'mfn-opts'),
+						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+					),
 
+					// custom
+					array(
+						'id' 		=> 'info_custom',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Custom', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id' 		=> 'classes',
 						'type' 		=> 'text',

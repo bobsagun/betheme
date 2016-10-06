@@ -266,8 +266,11 @@ if( ! function_exists( 'mfn_styles_background' ) )
 				if( $background_attr[0] ) $aBg[] = 'background-repeat:'. $background_attr[0];
 				if( $background_attr[1] ) $aBg[] = 'background-position:'. $background_attr[1];
 				if( $background_attr[2] ) $aBg[] = 'background-attachment:'. $background_attr[2];
-				if( $background_attr[3] ) $aBg[] = '-webkit-background-size:'. $background_attr[3];
-				if( $background_attr[3] ) $aBg[] = 'background-size:'. $background_attr[3];
+				if( $background_attr[3] ){
+					$aBg[] = 'background-size:'. $background_attr[3];
+				} elseif( mfn_opts_get( 'size-page-bg' ) && mfn_opts_get( 'size-page-bg' ) != 'auto' ){
+					$aBg[] = 'background-size:'. mfn_opts_get( 'size-page-bg' );
+				}
 			}
 			$background = implode( ';', $aBg );
 		
@@ -319,8 +322,11 @@ if( ! function_exists( 'mfn_styles_background' ) )
 				if( $background_attr[0] ) $aBg[] = 'background-repeat:'. $background_attr[0];
 				if( $background_attr[1] ) $aBg[] = 'background-position:'. $background_attr[1];
 				if( $background_attr[2] ) $aBg[] = 'background-attachment:'. $background_attr[2];
-				if( $background_attr[3] ) $aBg[] = '-webkit-background-size:'. $background_attr[3];
-				if( $background_attr[3] ) $aBg[] = 'background-size:'. $background_attr[3];
+				if( $background_attr[3] ){
+					$aBg[] = 'background-size:'. $background_attr[3];
+				} elseif( mfn_opts_get( 'size-subheader-bg' ) && mfn_opts_get( 'size-subheader-bg' ) != 'auto' ){
+					$aBg[] = 'background-size:'. mfn_opts_get( 'size-subheader-bg' );
+				}
 			}
 		
 			$background = implode( ';', $aBg );
@@ -349,8 +355,12 @@ if( ! function_exists( 'mfn_styles_background' ) )
 				if( $background_attr[0] ) $aBg[] = 'background-repeat:'. $background_attr[0];
 				if( $background_attr[1] ) $aBg[] = 'background-position:'. $background_attr[1];
 				if( $background_attr[2] ) $aBg[] = 'background-attachment:'. $background_attr[2];
-				if( $background_attr[3] ) $aBg[] = '-webkit-background-size:'. $background_attr[3];
-				if( $background_attr[3] ) $aBg[] = 'background-size:'. $background_attr[3];
+				if( $background_attr[3] ){
+					$aBg[] = 'background-size:'. $background_attr[3];
+				} elseif( mfn_opts_get( 'subheader-size' ) && mfn_opts_get( 'subheader-size' ) != 'auto' ){
+					$aBg[] = 'background-size:'. mfn_opts_get( 'subheader-size' );
+				}
+				
 			}
 		
 			$background = implode( ';', $aBg );
@@ -374,8 +384,11 @@ if( ! function_exists( 'mfn_styles_background' ) )
 				if( $background_attr[0] ) $aBg[] = 'background-repeat:'. $background_attr[0];
 				if( $background_attr[1] ) $aBg[] = 'background-position:'. $background_attr[1];
 				if( $background_attr[2] ) $aBg[] = 'background-attachment:'. $background_attr[2];
-				if( $background_attr[3] ) $aBg[] = '-webkit-background-size:'. $background_attr[3];
-				if( $background_attr[3] ) $aBg[] = 'background-size:'. $background_attr[3];
+				if( $background_attr[3] ){
+					$aBg[] = 'background-size:'. $background_attr[3];
+				} elseif( mfn_opts_get( 'footer-bg-img-size' ) && mfn_opts_get( 'footer-bg-img-size' ) != 'auto' ){
+					$aBg[] = 'background-size:'. mfn_opts_get( 'footer-bg-img-size' );
+				}
 			}
 		
 			$background = implode( ';', $aBg );

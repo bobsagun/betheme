@@ -734,6 +734,7 @@ class mfnImport {
 								<option value="ski">Ski</option>
 								<option value="smart">Smart</option>
 								<option value="smarthome">Smart Home</option>
+								<option value="snapshot">Snapshot</option>
 								<option value="software">Software</option>
 								<option value="spa">Spa</option>
 								<option value="space">Space</option>

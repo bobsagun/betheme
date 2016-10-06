@@ -119,13 +119,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	.menu-highlight #Top_bar .menu > li > a span.description{display:none}
 	.menu-highlight.header-stack #Top_bar .menu > li > a{margin:10px 0!important}
 	.menu-highlight.header-stack #Top_bar .menu > li > a span:not(.description){line-height:40px}
-	.menu-highlight.header-fixed #Top_bar .menu > li > a{margin:10px 0!important;padding:5px 0}
-	.menu-highlight.header-fixed #Top_bar .menu > li > a span{line-height:30px}
 	.menu-highlight.header-transparent #Top_bar .menu > li > a{margin:5px 0}
 	.menu-highlight.header-simple #Top_bar #menu ul li,.menu-highlight.header-creative #Top_bar #menu ul li{margin:0}
 	.menu-highlight.header-simple #Top_bar #menu ul li > a,.menu-highlight.header-creative #Top_bar #menu ul li > a{-webkit-border-radius:0;border-radius:0}
-	.menu-highlight:not(.header-simple) #Top_bar.is-sticky .menu > li > a{margin:10px 0!important;padding:5px 0!important}
-	.menu-highlight:not(.header-simple) #Top_bar.is-sticky .menu > li > a span{line-height:30px!important}
+	.menu-highlight:not(.header-fixed):not(.header-simple) #Top_bar.is-sticky .menu > li > a{margin:10px 0!important;padding:5px 0!important}
+	.menu-highlight:not(.header-fixed):not(.header-simple) #Top_bar.is-sticky .menu > li > a span{line-height:30px!important}
 	.header-modern.menu-highlight.menuo-right .menu_wrapper{margin-right:20px}
 			
 	/* Menu style | Line Below  */
@@ -160,11 +158,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	body.header-creative.header-open{padding-left:250px}
 	body.error404,body.under-construction,body.template-blank{padding-left:0!important}
 	
-	.header-creative.footer-fixed #Footer,.header-creative.footer-sliding #Footer{left:25px}
-	.header-open.footer-fixed #Footer,.header-open.footer-sliding #Footer{left:125px}
+	.header-creative.footer-fixed #Footer,.header-creative.footer-sliding #Footer,.header-creative.footer-stick #Footer.is-sticky{box-sizing:border-box;padding-left:50px;}
+	.header-open.footer-fixed #Footer,.header-open.footer-sliding #Footer,.header-creative.footer-stick #Footer.is-sticky{padding-left:250px;}
 	
-	.header-rtl.header-creative.footer-fixed #Footer,.header-rtl.header-creative.footer-sliding #Footer{left:auto;right:5px}
-	.header-rtl.header-open.footer-fixed #Footer,.header-rtl.header-open.footer-sliding #Footer{left:auto;right:125px}
+	.header-rtl.header-creative.footer-fixed #Footer,.header-rtl.header-creative.footer-sliding #Footer,.header-rtl.header-creative.footer-stick #Footer.is-sticky{padding-left:0;padding-right:50px;}
+	.header-rtl.header-open.footer-fixed #Footer,.header-rtl.header-open.footer-sliding #Footer,.header-rtl.header-creative.footer-stick #Footer.is-sticky{padding-right:250px;}
 
 	#Header_creative{background:#fff;position:fixed;width:250px;height:100%;left:-200px;top:0;z-index:9002;-webkit-box-shadow:2px 0 4px 2px rgba(0,0,0,.15);box-shadow:2px 0 4px 2px rgba(0,0,0,.15)}
 	#Header_creative .container{width:100%}

@@ -138,6 +138,10 @@ if( ! function_exists( 'mfn_builder_print' ) )
 				if( key_exists( 'navigation', $section['attr'] ) && $section['attr']['navigation'] ){
 					$section_class[] = 'has-navi';
 				}
+				
+				if( isset( $section['attr']['bg_size'] ) && ( $section['attr']['bg_size'] != 'auto' ) ){
+					$section_class[] = 'bg-'. $section['attr']['bg_size'];
+				}
 
 				$section_class		= implode(' ', $section_class);
 					
@@ -230,12 +234,6 @@ if( ! function_exists( 'mfn_builder_print' ) )
 								if( key_exists( 'bg_video_ogv', $section['attr'] ) && $ogv = $section['attr']['bg_video_ogv'] ){
 									echo '<source type="video/ogg" src="'. $ogv .'" />';
 								}
-			
-// 								echo '<object width="1900" height="1060" type="application/x-shockwave-flash" data="'. THEME_URI .'/assets/jplayer/flashmediaelement.swf">';
-// 								echo '<param name="movie" value="'. THEME_URI .'/assets/jplayer/flashmediaelement.swf" />';
-// 								echo '<param name="flashvars" value="controls=true&file='. $mp4 .'" />';
-// 								echo '<img src="'. $poster .'" title="No video playback capabilities" />';
-// 								echo '</object>';
 		
 							echo '</video>';
 							
@@ -302,6 +300,11 @@ if( ! function_exists( 'mfn_builder_print' ) )
 									// Wrap Items | vertical align
 									if( isset( $wrap['attr']['vertical_align'] ) ){
 										$wrap_class[] = 'valign-'. $wrap['attr']['vertical_align'];
+									}
+									
+									// Wrap | Background size
+									if( isset( $wrap['attr']['bg_size'] ) && ( $wrap['attr']['bg_size'] != 'auto' ) ){
+										$wrap_class[] = 'bg-'. $wrap['attr']['bg_size'];
 									}
 
 								}
@@ -604,8 +607,11 @@ if( ! function_exists( 'mfn_print_column' ) )
 			$style .= ' background-color:'. $item['fields']['column_bg'] .';';
 		}
 		if( key_exists('bg_image', $item['fields']) && $item['fields']['bg_image'] ){
+			
+			// background image
 			$style .= ' background-image:url(\''. $item['fields']['bg_image'] .'\');';
 			
+			// background position
 			if( key_exists('bg_position', $item['fields']) && $item['fields']['bg_position'] ){
 					
 				$bg_pos = $item['fields']['bg_position'];
@@ -614,14 +620,16 @@ if( ! function_exists( 'mfn_print_column' ) )
 					$background_attr = explode( ';', $bg_pos );
 					$aBg[] 	= 'background-repeat:'. $background_attr[0];
 					$aBg[] 	= 'background-position:'. $background_attr[1];
-					$aBg[] 	= 'background-attachment:'. $background_attr[2];
-					$aBg[] 	= '-webkit-background-size:'. $background_attr[3];
-					$aBg[] 	= 'background-size:'. $background_attr[3];
 				}
 				$background = implode('; ', $aBg );
 			
 				$style .= ' '. implode('; ', $aBg ) .';';
 					
+			}
+			
+			// background size
+			if( isset( $item['fields']['bg_size'] ) && ( $item['fields']['bg_size'] != 'auto' ) ){
+				$column_class .= ' bg-'. $item['fields']['bg_size'];
 			}
 		}
 		

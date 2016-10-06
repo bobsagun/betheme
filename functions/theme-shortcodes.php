@@ -2197,6 +2197,7 @@ if( ! function_exists( 'sc_image' ) )
 			'margin_top'	=> '',	// alias for: margin
 			'margin_bottom'	=> '',
 			'align'			=> 'none',
+			'stretch'		=> '',
 			'link'			=> '',
 			'link_image'	=> '',
 			'target'		=> '',
@@ -2239,6 +2240,13 @@ if( ! function_exists( 'sc_image' ) )
 		
 		// align
 		if( $align ) $class_div .= ' align'. $align;
+		
+		// stretch
+		if( $stretch == 'ultrawide' ){
+			$class_div .= ' stretch-ultrawide';
+		} elseif( $stretch ){
+			$class_div .= ' stretch';
+		}
 		
 		// border
 		if( $border ){
@@ -3548,11 +3556,13 @@ if( ! function_exists( 'sc_portfolio_photo' ) )
 			'order' 			=> 'DESC',
 			'target' 			=> '',
 			'greyscale' 		=> '',
+			'margin' 			=> '',
 		), $attr));
 		
 		// class
 		$class = '';
 		if( $greyscale )	$class .= ' greyscale';
+		if( $margin ) 		$class .= ' margin';
 		
 		$translate['readmore'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-readmore','Read more') : __('Read more','betheme');
 

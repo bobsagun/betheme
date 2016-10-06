@@ -128,13 +128,24 @@ if( ! function_exists( 'mfn_exclude_category' ) )
 {
 	function mfn_exclude_category($query) {
 		
-		if( $slug = trim( mfn_opts_get( 'exclude-category' ) ) ){
+		if( $exclude = trim( mfn_opts_get( 'exclude-category' ) ) ){
 			if( $query->is_home() ){
+
+				$exclude = str_replace( ' ', '', $exclude );
+				$exclude = explode( ',', $exclude );
 				
-				$category = get_category_by_slug( $slug );
-				$exclude = $category->term_id * -1;
+				$exclude_ids = array();
 				
-				$query->set( 'cat', $exclude );
+				if( is_array( $exclude ) ){
+					foreach( $exclude as $slug ){
+						$category = get_category_by_slug( $slug );
+						$exclude_ids[] = $category->term_id * -1;
+					}
+				}
+
+				$exclude_ids = implode( ',', $exclude_ids );
+				
+				$query->set( 'cat', $exclude_ids );
 			}
 		}
 		
