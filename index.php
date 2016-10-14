@@ -84,7 +84,7 @@ $translate['item-all'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-i
 				?>
 			</div>
 			
-			<?php if( ( $filters = mfn_opts_get( 'blog-filters' ) ) && ! is_singular() && ( get_post_type() == 'post' ) && get_option( 'page_for_posts' ) ): ?>
+			<?php if( ( $filters = mfn_opts_get( 'blog-filters' ) ) && in_array( get_post_type(), array( 'post', 'tribe_events' ) ) && ! is_singular() && get_option( 'page_for_posts' ) ): ?>
 				<div class="section section-filters">
 					<div class="section_wrapper clearfix">
 					

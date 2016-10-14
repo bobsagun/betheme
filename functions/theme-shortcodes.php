@@ -3738,10 +3738,12 @@ if( ! function_exists( 'sc_slider' ) )
 	function sc_slider( $attr, $content = null )
 	{
 		extract(shortcode_atts(array(
-			'style' 	=> '',		// [default], img-text, flat, carousel
-			'category' 	=> '',
-			'orderby' 	=> 'date',
-			'order' 	=> 'DESC',
+			
+			'category' 		=> '',
+			'orderby' 		=> 'date',
+			'order' 		=> 'DESC',
+			'style' 		=> '',		// [default], img-text, flat, carousel
+			'navigation'	=> '',
 		), $attr));
 
 		$args = array(
@@ -3761,6 +3763,7 @@ if( ! function_exists( 'sc_slider' ) )
 		// class
 		$class = $style;
 		if( $class == 'description' ) $class .= ' flat';
+		if( $navigation )	$class .= ' '. $navigation;
 
 		$output = '';
 		if ($query->have_posts())
@@ -4215,10 +4218,11 @@ if( ! function_exists( 'sc_tabs' ) )
 		global $tabs_array, $tabs_count;
 		
 		extract(shortcode_atts(array(
-			'title'	=> '',
-			'uid'	=> 'tab-'. uniqid(),
-			'tabs'	=> '',
-			'type'	=> '',
+			'title'		=> '',
+			'tabs'		=> '',
+			'type'		=> '',
+			'padding'	=> '',
+			'uid'		=> '',
 		), $attr));	
 		
 		do_shortcode( $content );
@@ -4226,6 +4230,16 @@ if( ! function_exists( 'sc_tabs' ) )
 		// content builder
 		if( $tabs ){
 			$tabs_array = $tabs;
+		}
+		
+		// uid
+		if( ! $uid ){
+			$uid = 'tab-'. uniqid();
+		}
+		
+		// padding
+		if( $padding || $padding === '0' ){
+			$padding = 'style="padding:'. esc_attr( $padding ) .'"';
 		}
 		
 		$output = '';
@@ -4241,7 +4255,7 @@ if( ! function_exists( 'sc_tabs' ) )
 					foreach( $tabs_array as $tab )
 					{
 						$output .= '<li><a href="#'. $uid .'-'. $i .'">'. $tab['title'] .'</a></li>';
-						$output_tabs .= '<div id="'. $uid .'-'. $i .'">'. do_shortcode( $tab['content'] ) .'</div>';
+						$output_tabs .= '<div id="'. $uid .'-'. $i .'" '. $padding .'>'. do_shortcode( $tab['content'] ) .'</div>';
 						$i++;
 					}
 				$output .= '</ul>';
@@ -4590,8 +4604,8 @@ if( ! function_exists( 'sc_testimonials' ) )
 		{
 			$output .= '<div class="testimonials_slider '. $style .'">';
 			
-				// photos | pagination (style == default)
-				if( ! $style && ! $hide_photos ){
+				// photos | pagination (style !== single-photo)
+				if( ! $hide_photos && $style != 'single-photo'){
 					$output .= '<ul class="slider_pager slider_images">';
 						while ($query_tm->have_posts())
 						{

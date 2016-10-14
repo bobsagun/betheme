@@ -20,6 +20,10 @@
 .tr-footer #Wrapper{background:none}
 .tr-footer #Footer{background:none!important}
 
+/* No Shadow ------------------------------------------------------------------------- */
+.no-shadows #Wrapper,.no-shadows #Top_bar.is-sticky,.no-shadows #Header_creative{box-shadow:0 0 0 transparent;-webkit-box-shadow:0 0 0 transparent}
+.no-shadows #Subheader:after{display:none}
+
 /* Blank & Under Construction -------------------------------------------------------- */
 .page.hide-title-area #Content,.no-content-padding #Content,.template-blank #Content,.under-construction #Content{padding:0!important}
 .with_aside.page.hide-title-area .sections_group,.with_aside.no-content-padding .sections_group{padding:0!important}
@@ -344,13 +348,13 @@ body:not(.template-slider) #Header{min-height:250px}
 .menuo-arrows #Top_bar .menu > li.submenu > a > span:not(.description){padding-right:30px}
 .menuo-arrows #Top_bar .menu > li.submenu > a > span:not(.description):after{content:"";display:block;width:0;height:0;position:absolute;top:50%;right:10px;margin-top:-2px;border-top:5px solid #ccc;border-left:5px solid transparent;border-right:5px solid transparent;opacity:.6}
 
-	.menu-highlight #Top_bar .menu > li.current-menu-item > a,
+/* 	.menu-highlight #Top_bar .menu > li.current-menu-item > a,
 	.menu-highlight #Top_bar .menu > li.current_page_item > a,
 	.menu-highlight #Top_bar .menu > li.current-menu-parent > a,
 	.menu-highlight #Top_bar .menu > li.current-page-parent > a,
 	.menu-highlight #Top_bar .menu > li.current-menu-ancestor > a,
 	.menu-highlight #Top_bar .menu > li.current_page_ancestor > a,
-	.menu-highlight #Top_bar .menu > li.hover > a { color: #fff;}
+	.menu-highlight #Top_bar .menu > li.hover > a { color: #fff;} */
 	
 	/* Animation */
 	#Top_bar .menu > li > a,#Top_bar .menu > li > a:after,.menuo-arrows #Top_bar .menu > li.submenu > a > span:not(.description)::after{-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;-ms-transition:all .3s ease-in-out;transition:all .3s ease-in-out}

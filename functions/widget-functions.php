@@ -52,7 +52,7 @@ if( ! function_exists( 'mfn_register_sidebars' ) )
 		}
 		
 		// footer areas ----------------------------------------------------------
-		for ($i = 1; $i <= 4; $i++)
+		for ($i = 1; $i <= 5; $i++)
 		{
 			register_sidebar(array(
 				'name' 			=> __('Footer','mfn-opts') .' | #'.$i,

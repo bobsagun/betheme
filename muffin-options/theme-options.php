@@ -127,7 +127,7 @@ if( ! function_exists( 'mfna_bg_size' ) )
 			'auto'				=> __('Auto', 'mfn-opts'),
 			'contain'			=> __('Contain', 'mfn-opts'),
 			'cover'				=> __('Cover', 'mfn-opts'),
-// 			'cover-ultrawide'	=> __('Cover, on ultrawide screens only > 1920px', 'mfn-opts'),
+			'cover-ultrawide'	=> __('Cover, on ultrawide screens only > 1920px', 'mfn-opts'),
 		);
 	}
 }
@@ -777,7 +777,6 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				),
 					
 				// options	
-					
 				array(
 					'id' 		=> 'advanced-info-options',
 					'type' 		=> 'info',
@@ -813,8 +812,16 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'std' 		=> '0'
 				),
 					
+				array(
+					'id' 		=> 'layout-options',
+					'type' 		=> 'checkbox',
+					'title' 	=> __('Other', 'mfn-opts'),
+					'options' 	=> array(
+						'no-shadows'	=> __('Remove shadows<span>Boxed Layout, Creative Header, Sticky Header, Subheader, etc.</span>', 'mfn-opts'),
+					),
+				),
+					
 				// theme functions
-
 				array(
 					'id' 		=> 'advanced-info-functions',
 					'type' 		=> 'info',
@@ -852,8 +859,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					),
 				),
 					
-				// advanced
-					
+				// advanced	
 				array(
 					'id' 		=> 'advanced-info-advanced',
 					'type' 		=> 'info',
@@ -861,8 +867,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'desc' 		=> __('Advanced', 'mfn-opts'),
 					'class' 	=> 'mfn-info',
 				),
-					
-
+				
 				array(
 					'id' 		=> 'builder-storage',
 					'type' 		=> 'select',
@@ -2150,7 +2155,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'switch',
 					'title' 	=> __('Hover Title', 'mfn-opts'),
 					'sub_desc' 	=> __('Show Post Title instead of Hover Icons', 'mfn-opts'),
-					'desc' 		=> __('Only for short post titles', 'mfn-opts'),
+					'desc' 		=> __('Only for short post titles. Do <b>not</b> work with Image Frame style: Zoom', 'mfn-opts'),
 					'options' 	=> array( '0' => 'Off', '1' => 'On' ),
 					'std' 		=> '0'
 				),
@@ -2714,16 +2719,17 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type'		=> 'select',
 					'title'		=> __('Layout', 'mfn-opts'),
 					'options'	=> array(
-						''												=> __('Default', 'mfn-opts'),
-						'4;one-fourth;one-fourth;one-fourth;one-fourth'	=> '1/4 1/4 1/4 1/4',
-						'3;one-fourth;one-fourth;one-second;'			=> '1/4 1/4 1/2',
-						'3;one-fourth;one-second;one-fourth;'			=> '1/4 1/2 1/4',
-						'3;one-second;one-fourth;one-fourth;'			=> '1/2 1/4 1/4',
-						'3;one-third;one-third;one-third;'				=> '1/3 1/3 1/3',
-						'2;one-third;two-third;;'						=> '1/3 2/3',
-						'2;two-third;one-third;;'						=> '2/3 1/3',
-						'2;one-second;one-second;;'						=> '1/2 1/2',
-						'1;one;;;'										=> '1/1',
+						''														=> __('Default', 'mfn-opts'),
+						'5;one-fifth;one-fifth;one-fifth;one-fifth;one-fifth;'	=> '1/5 1/5 1/5 1/5 1/5 (for narrow widgets only)',
+						'4;one-fourth;one-fourth;one-fourth;one-fourth'			=> '1/4 1/4 1/4 1/4',
+						'3;one-fourth;one-fourth;one-second;'					=> '1/4 1/4 1/2',
+						'3;one-fourth;one-second;one-fourth;'					=> '1/4 1/2 1/4',
+						'3;one-second;one-fourth;one-fourth;'					=> '1/2 1/4 1/4',
+						'3;one-third;one-third;one-third;'						=> '1/3 1/3 1/3',
+						'2;one-third;two-third;;'								=> '1/3 2/3',
+						'2;two-third;one-third;;'								=> '2/3 1/3',
+						'2;one-second;one-second;;'								=> '1/2 1/2',
+						'1;one;;;'												=> '1/1',
 					),
 				),
 					
@@ -2835,6 +2841,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id'		=> 'popup-contact-form',
 					'type'		=> 'text',
 					'title'		=> __('Popup Contact Form | Shortcode', 'mfn-opts'),
+					'sub_desc'	=> __('<b>> 768px</b>', 'mfn-opts'),
 					'desc'		=> __('	eg. [contact-form-7 id="000" title="Popup Contact Form"]', 'mfn-opts'),
 				),
 					

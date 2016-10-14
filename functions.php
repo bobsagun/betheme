@@ -12,13 +12,16 @@ define( 'THEME_DIR', get_template_directory() );
 define( 'THEME_URI', get_template_directory_uri() );
 
 define( 'THEME_NAME', 'betheme' );
-define( 'THEME_VERSION', '15' );
+define( 'THEME_VERSION', '15.1' );
 
 define( 'LIBS_DIR', THEME_DIR. '/functions' );
 define( 'LIBS_URI', THEME_URI. '/functions' );
 define( 'LANG_DIR', THEME_DIR. '/languages' );
 
 add_filter( 'widget_text', 'do_shortcode' );
+
+add_filter( 'the_excerpt', 'shortcode_unautop');
+add_filter( 'the_excerpt', 'do_shortcode');
 
 
 /* ---------------------------------------------------------------------------
