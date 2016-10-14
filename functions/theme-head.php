@@ -244,6 +244,7 @@ if( ! function_exists( 'mfn_styles_background' ) )
 	function mfn_styles_background()
 	{
 		$output = '';
+		$output_ultrawide = '';
 		
 		
 		// HTML ----------------------------
@@ -268,8 +269,12 @@ if( ! function_exists( 'mfn_styles_background' ) )
 				if( $background_attr[2] ) $aBg[] = 'background-attachment:'. $background_attr[2];
 				if( $background_attr[3] ){
 					$aBg[] = 'background-size:'. $background_attr[3];
-				} elseif( mfn_opts_get( 'size-page-bg' ) && mfn_opts_get( 'size-page-bg' ) != 'auto' ){
-					$aBg[] = 'background-size:'. mfn_opts_get( 'size-page-bg' );
+				} elseif( mfn_opts_get( 'size-page-bg' ) ){
+					if( in_array( mfn_opts_get( 'size-page-bg' ), array( 'cover', 'contain' ) ) ){
+						$aBg[] = 'background-size:'. mfn_opts_get( 'size-page-bg' );
+					} elseif( mfn_opts_get( 'size-page-bg' ) == 'cover-ultrawide' ) {
+						$output_ultrawide .= 'html{background-size:cover}';
+					}
 				}
 			}
 			$background = implode( ';', $aBg );
@@ -302,7 +307,7 @@ if( ! function_exists( 'mfn_styles_background' ) )
 			}
 		}	
 		
-		$headerP = mfn_opts_get('img-subheader-attachment');
+		$headerP = mfn_opts_get( 'img-subheader-attachment' );
 		
 		if( $headerB ){
 		
@@ -324,9 +329,14 @@ if( ! function_exists( 'mfn_styles_background' ) )
 				if( $background_attr[2] ) $aBg[] = 'background-attachment:'. $background_attr[2];
 				if( $background_attr[3] ){
 					$aBg[] = 'background-size:'. $background_attr[3];
-				} elseif( mfn_opts_get( 'size-subheader-bg' ) && mfn_opts_get( 'size-subheader-bg' ) != 'auto' ){
-					$aBg[] = 'background-size:'. mfn_opts_get( 'size-subheader-bg' );
+				} elseif( mfn_opts_get( 'size-subheader-bg' ) ){
+					if( in_array( mfn_opts_get( 'size-subheader-bg' ), array( 'cover', 'contain' ) ) ){
+						$aBg[] = 'background-size:'. mfn_opts_get( 'size-subheader-bg' );
+					} elseif( mfn_opts_get( 'size-subheader-bg' ) == 'cover-ultrawide' ) {
+						$output_ultrawide .= 'body:not(.template-slider) #Header_wrapper{background-size:cover}';
+					}
 				}
+				
 			}
 		
 			$background = implode( ';', $aBg );
@@ -357,8 +367,12 @@ if( ! function_exists( 'mfn_styles_background' ) )
 				if( $background_attr[2] ) $aBg[] = 'background-attachment:'. $background_attr[2];
 				if( $background_attr[3] ){
 					$aBg[] = 'background-size:'. $background_attr[3];
-				} elseif( mfn_opts_get( 'subheader-size' ) && mfn_opts_get( 'subheader-size' ) != 'auto' ){
-					$aBg[] = 'background-size:'. mfn_opts_get( 'subheader-size' );
+				} elseif( mfn_opts_get( 'subheader-size' ) ){
+					if( in_array( mfn_opts_get( 'subheader-size' ), array( 'cover', 'contain' ) ) ){
+						$aBg[] = 'background-size:'. mfn_opts_get( 'subheader-size' );
+					} elseif( mfn_opts_get( 'subheader-size' ) == 'cover-ultrawide' ) {
+						$output_ultrawide .= '#Subheader{background-size:cover}';
+					}
 				}
 				
 			}
@@ -386,8 +400,12 @@ if( ! function_exists( 'mfn_styles_background' ) )
 				if( $background_attr[2] ) $aBg[] = 'background-attachment:'. $background_attr[2];
 				if( $background_attr[3] ){
 					$aBg[] = 'background-size:'. $background_attr[3];
-				} elseif( mfn_opts_get( 'footer-bg-img-size' ) && mfn_opts_get( 'footer-bg-img-size' ) != 'auto' ){
-					$aBg[] = 'background-size:'. mfn_opts_get( 'footer-bg-img-size' );
+				} elseif( mfn_opts_get( 'footer-bg-img-size' ) ){
+					if( in_array( mfn_opts_get( 'footer-bg-img-size' ), array( 'cover', 'contain' ) ) ){
+						$aBg[] = 'background-size:'. mfn_opts_get( 'footer-bg-img-size' );
+					} elseif( mfn_opts_get( 'footer-bg-img-size' ) == 'cover-ultrawide' ) {
+						$output_ultrawide .= '#Footer{background-size:cover}';
+					}
 				}
 			}
 		
@@ -402,7 +420,13 @@ if( ! function_exists( 'mfn_styles_background' ) )
 		if( $output ){
 			echo '<!-- style | background -->'."\n";
 			echo '<style id="mfn-dnmc-bg-css">'."\n";
+			
 				echo $output;
+				
+				if( $output_ultrawide ){
+					echo '@media only screen and (min-width: 1921px){'. $output_ultrawide. '}'."\n";
+				}
+					
 			echo '</style>'."\n";
 		}
 		
@@ -1064,6 +1088,18 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		
 		// Table Hover ----------------------------------------
 		if( mfn_opts_get('table-hover') ) $classes[] = 'table-hover';
+		
+		
+		// Advanced | Other
+		$layout_options = mfn_opts_get( 'layout-options' );
+		if( is_array( $layout_options ) ){
+				
+			if( isset( $layout_options['no-shadows'] ) ){
+				$classes[] = 'no-shadows';
+			}
+				
+		}
+		
 		
 		
 		// Header =============================================

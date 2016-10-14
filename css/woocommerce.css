@@ -74,7 +74,7 @@
 /* Shop filters ---------------------------------------------------------------------- */
 .shop-filters{margin-bottom:20px;padding:15px;background-image:url(../images/stripes/stripes_5_b.png);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;overflow:hidden}
 .shop-filters .woocommerce-result-count{margin:12px 0 0}
-.shop-filters .woocommerce-ordering{margin-bottom:0}
+.shop-filters .woocommerce-ordering{margin-bottom:0;z-index:1!important}
 .shop-filters .woocommerce-ordering select{margin-bottom:0}
 
 /* Product Archives ------------------------------------------------------------------ */

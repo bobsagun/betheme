@@ -182,7 +182,7 @@
 							if( mfn_opts_get('header-menu-mobile-sticky') ) $mb_class .= ' is-sticky';
 
 							echo '<a class="responsive-menu-toggle '. $mb_class .'" href="#">';
-								if( $menu_text = mfn_opts_get( 'header-menu-text' ) ){
+								if( $menu_text = trim( mfn_opts_get( 'header-menu-text' ) ) ){
 									echo '<span>'. $menu_text .'</span>';
 								} else {
 									echo '<i class="icon-menu-fine"></i>';

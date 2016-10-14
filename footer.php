@@ -39,7 +39,7 @@ if( $back_to_top_class == 'hide' ){
 	
 	<?php 
 		$sidebars_count = 0;
-		for( $i = 1; $i <= 4; $i++ ){
+		for( $i = 1; $i <= 5; $i++ ){
 			if ( is_active_sidebar( 'footer-area-'. $i ) ) $sidebars_count++;
 		}
 		
@@ -76,10 +76,11 @@ if( $back_to_top_class == 'hide' ){
 							case 2: $sidebar_class = 'one-second'; break;
 							case 3: $sidebar_class = 'one-third'; break;
 							case 4: $sidebar_class = 'one-fourth'; break;
+							case 5: $sidebar_class = 'one-fifth'; break;
 							default: $sidebar_class = 'one';
 						}
 						
-						for( $i = 1; $i <= 4; $i++ ){
+						for( $i = 1; $i <= 5; $i++ ){
 							if ( is_active_sidebar( 'footer-area-'. $i ) ){
 								echo '<div class="column '. $sidebar_class .'">';
 									dynamic_sidebar( 'footer-area-'. $i );

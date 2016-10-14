@@ -5072,19 +5072,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 				'size' 		=> '1/1',
 				'cat' 		=> 'blocks',
 				'fields' 	=> array(
-							
-					array(
-						'id' 		=> 'style',
-						'type' 		=> 'select',
-						'options' 	=> array(
-							''				=> 'Default',
-							'description'	=> 'Description',
-							'flat' 			=> 'Flat',
-							'carousel' 		=> 'Carousel',
-						),
-						'title' 	=> __('Style', 'mfn-opts'),
-					),
-
+						
 					array(
 						'id' 		=> 'category',
 						'type' 		=> 'select',
@@ -5108,7 +5096,48 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'options' 	=> array('ASC' => 'Ascending', 'DESC' => 'Descending'),
 						'std' 		=> 'DESC'
 					),
-
+						
+					// advanced
+					array(
+						'id' 		=> 'info_advanced',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Advanced', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
+					array(
+						'id' 		=> 'style',
+						'type' 		=> 'select',
+						'options' 	=> array(
+							''				=> 'Default',
+							'description'	=> 'Description',
+							'flat' 			=> 'Flat',
+							'carousel' 		=> 'Carousel',
+						),
+						'title' 	=> __('Style', 'mfn-opts'),
+					),
+					
+					array(
+						'id' 		=> 'navigation',
+						'type' 		=> 'select',
+						'title' 	=> __('Navigation', 'mfn-opts'),
+						'options'	=> array(
+							''				=> __('Default', 'mfn-opts'),
+							'hide-arrows'	=> __('Hide Arrows', 'mfn-opts'),
+							'hide-dots'		=> __('Hide Dots', 'mfn-opts'),
+						),
+					),
+						
+					// custom
+					array(
+						'id' 		=> 'info_custom',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Custom', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id' 		=> 'classes',
 						'type' 		=> 'text',
@@ -5304,12 +5333,30 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title' 	=> __('Title', 'mfn-opts'),
 					),
 
+					// tabs
+					array(
+						'id' 		=> 'info_tabs',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Tabs', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id' 		=> 'tabs',
 						'type' 		=> 'tabs',
-						'title' 	=> __('Tabs', 'mfn-opts'),
+						'title' 	=> __('', 'mfn-opts'),
 						'sub_desc' 	=> __('To add an <strong>icon</strong> in Title field, please use the following code:<br/><br/>&lt;i class=" icon-lamp"&gt;&lt;/i&gt; Tab Title', 'mfn-opts'),
 						'desc' 		=> __('<b>JavaScript</b> content like Google Maps and some plugins shortcodes do <b>not work</b> in tabs. You can use Drag & Drop to set the order', 'mfn-opts'),
+					),
+						
+					// options
+					array(
+						'id' 		=> 'info_options',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Options', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
 					),
 						
 					array(
@@ -5324,6 +5371,24 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'desc' 		=> __('Vertical tabs works only for column widths: 1/2, 3/4 & 1/1', 'mfn-opts'),
 					),
 						
+					array(
+						'id' 		=> 'padding',
+						'type' 		=> 'text',
+						'title' 	=> __('Content Padding', 'mfn-opts'),
+						'sub_desc' 	=> __('Leave empty to use defult padding', 'mfn-opts'),
+						'desc' 		=> __('Use value with <b>px</b> or <b>%</b>. Example: <b>20px</b> or <b>15px 20px 20px</b> or <b>20px 1%</b>', 'mfn-opts'),
+						'class' 	=> 'small-text',
+					),
+
+					// custom
+					array(
+						'id' 		=> 'info_custom',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Custom', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+					
 					array(
 						'id'		=> 'uid',
 						'type'		=> 'text',
@@ -5376,12 +5441,22 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'std' 		=> 'DESC'
 					),
 						
+					// advanced
+					array(
+						'id' 		=> 'info_advanced',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Advanced', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id' 		=> 'style',
 						'type' 		=> 'select',
 						'title'		=> __('Style', 'mfn-opts'),
 						'options' 	=> array(
 							'' 				=> __('Default','mfn-opts'),
+// 							'hide-bar' 		=> __('Hide bar beneath images','mfn-opts'),
 							'single-photo' 	=> __('Single Photo','mfn-opts'),
 						),
 					),
@@ -5393,6 +5468,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title'		=> __('Hide Photos', 'mfn-opts'),
 					),
 
+					// custom
+					array(
+						'id' 		=> 'info_custom',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Custom', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id' 		=> 'classes',
 						'type' 		=> 'text',

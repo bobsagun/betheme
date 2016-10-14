@@ -129,7 +129,7 @@ if( ! function_exists( 'mfn_exclude_category' ) )
 	function mfn_exclude_category($query) {
 		
 		if( $exclude = trim( mfn_opts_get( 'exclude-category' ) ) ){
-			if( $query->is_home() ){
+			if( is_home() ){
 
 				$exclude = str_replace( ' ', '', $exclude );
 				$exclude = explode( ',', $exclude );
@@ -210,7 +210,7 @@ if( ! function_exists( 'mfn_ID' ) )
 	
 		if( ! is_404() ){
 			
-			if( function_exists('is_woocommerce') && is_woocommerce() ){
+			if( function_exists( 'is_woocommerce' ) && is_woocommerce() ){
 				
 				// WooCommerce
 				$postID = woocommerce_get_page_id( 'shop' );
@@ -224,7 +224,7 @@ if( ! function_exists( 'mfn_ID' ) )
 				// taxonomy-portfolio-types.php
 				$postID = mfn_opts_get( 'portfolio-page' );
 				
-			} elseif( get_post_type()=='post' && ! is_singular() ){
+			} elseif( in_array( get_post_type(), array( 'post', 'tribe_events' ) ) && ! is_singular() ){
 				
 				// index.php
 				if( get_option( 'page_for_posts' ) ){
@@ -650,14 +650,14 @@ if( ! function_exists( 'mfn_page_title' ) )
 {
 	function mfn_page_title( $echo = false ){
 		
-		
-		if( function_exists('tribe_is_month') && ( tribe_is_event_query() || tribe_is_month() || tribe_is_event() || tribe_is_day() || tribe_is_venue() ) ){
-			
-			$title = tribe_get_events_title();
-			
-		} elseif( is_home() ){
+		if( is_home() ){
 			
 			// Blog ---------------------------------------
+			$title = get_the_title( mfn_ID() );
+			
+		} elseif( function_exists( 'tribe_is_month' ) && ( tribe_is_event_query() || tribe_is_month() || tribe_is_event() || tribe_is_day() || tribe_is_venue() ) ){
+			
+			// The Events Calendar ------------------------
 			$title = get_the_title( mfn_ID() );
 			
 		} elseif( is_tag() ){
@@ -776,17 +776,17 @@ if( ! function_exists( 'mfn_breadcrumbs' ) )
 	
 			if( $blogID ) $breadcrumbs[] = '<a href="'. get_permalink( $blogID ) .'">'. get_the_title( $blogID ) .'</a>';
 		}
-		
-		// Plugin | Events Calendar -------------------------------------------
-		if( function_exists('tribe_is_month') && ( tribe_is_event_query() || tribe_is_month() || tribe_is_event() || tribe_is_day() || tribe_is_venue() ) ) {
-	
-			if( function_exists('tribe_get_events_link') ){
-				$breadcrumbs[] = '<a href="'. tribe_get_events_link() .'">'. tribe_get_events_title() .'</a>';
-			}
-						
-		} elseif( is_front_page() || is_home() ){
+					
+		if( is_front_page() || is_home() ){
 			
 			// do nothing
+
+		// Plugin | Events Calendar -------------------------------------------
+		} elseif( function_exists( 'tribe_is_month' ) && ( tribe_is_event_query() || tribe_is_month() || tribe_is_event() || tribe_is_day() || tribe_is_venue() ) ) {
+	
+			if( function_exists( 'tribe_get_events_link' ) ){
+				$breadcrumbs[] = '<a href="'. tribe_get_events_link() .'">'. tribe_get_events_title() .'</a>';
+			}
 			
 		// Blog | Tag -------------------------------------
 		} elseif( is_tag() ){

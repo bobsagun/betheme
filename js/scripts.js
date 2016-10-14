@@ -1171,25 +1171,26 @@
 			
 			if($(this).parent().hasClass("active")) {
 				
-				$(this).parent().removeClass("active").children(".answer").slideToggle(200);
+				$(this).parent().removeClass("active").children(".answer").slideToggle(100);
 				
 			} else {
 				
 				if( ! $(this).closest('.mfn-acc').hasClass('toggle') ){
 					$(this).parents(".mfn-acc").children().each(function() {
 						if($(this).hasClass("active")) {
-							$(this).removeClass("active").children(".answer").slideToggle(200);
+							$(this).removeClass("active").children(".answer").slideToggle(100);
 						}
 					});
 				}
 				$(this).parent().addClass("active");
-				$(this).next(".answer").slideToggle(200);
+				$(this).next(".answer").slideToggle(100);
 				
 			}
 			
 			setTimeout(function(){
-				mfn_sidebar();
-			},200)
+//				mfn_sidebar();
+				$(window).trigger('resize');
+			},50);
 			
 		});
 		

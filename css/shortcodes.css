@@ -486,7 +486,7 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .pricing-box-table.pricing-box-featured{background:rgba(0,0,0,.02);padding-left:10px;padding-right:10px}
 
 /* Content slider ----------------------------------------------------------------------------- */
-.content_slider{padding:0 140px 42px;position:relative}
+.content_slider{padding:0 140px 40px;position:relative}
 .content_slider .caroufredsel_wrapper{border-width:8px;border-style:solid;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 .content_slider ul{line-height:0;margin:0}
 .content_slider ul li{display:block;float:left}
@@ -496,7 +496,6 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .content_slider .slider_pagination{position:absolute;left:0;bottom:0;width:100%}
 
 /* Flat */
-.content_slider.flat{padding:0 140px}
 .content_slider.flat .caroufredsel_wrapper{border-width:0}
 .content_slider.flat a.button{background:none!important;box-shadow:none;border:none}
 .content_slider.flat a.button:after{display:none}
@@ -505,7 +504,6 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .content_slider.flat a:hover.button .button_icon{opacity:1}
 .content_slider.flat a.slider_prev{left:50px}
 .content_slider.flat a.slider_next{right:50px}
-.content_slider.flat .slider_pagination{display:none!important}
 
 /* Flat description */
 .content_slider.flat.description{padding:0 140px 50px}
@@ -520,7 +518,7 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .content_slider.carousel .caroufredsel_wrapper{border-width:0}
 .content_slider.carousel ul li{text-align:center;padding:0 20px;padding-top:5px}
 .content_slider.carousel ul li img{margin-bottom:20px;opacity:.8;position:relative;top:0}
-.content_slider.carousel ul li .title{opacity:.3;font-size:115%}
+.content_slider.carousel ul li .title{opacity:.3;font-size:115%;line-height:initial;}
 .content_slider.carousel a.button{background-color:transparent;background-image:none;box-shadow:none;top:33%;margin-top:-11px;border:none}
 .content_slider.carousel a.button:after{display:none!important}
 .content_slider.carousel a.button .button_icon{background:none;padding:0;font-size:30px;opacity:.5}
@@ -531,6 +529,15 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .content_slider.carousel ul li a:hover{text-decoration:none}
 .content_slider.carousel ul li a:hover img,.content_slider.carousel ul li:hover img{opacity:1;top:-5px}
 .content_slider.carousel ul li a:hover .title,.content_slider.carousel ul li:hover .title{opacity:1}
+
+/* Navigation visibility */
+.content_slider.hide-arrows{padding-left:0;padding-right:0}
+.content_slider.flat.hide-arrows{padding-left:0;padding-right:0}
+.content_slider.hide-arrows a.slider_prev,.content_slider.hide-arrows a.slider_next{display:none!important}
+.content_slider.hide-dots{padding-bottom:0}
+.content_slider.hide-dots .slider_pagination{display:none!important}
+
+.section.full-width .column.one .content_slider.hide-arrows{padding:0 140px 42px;}
 
 /* Animation */
 .content_slider.carousel ul li img,.content_slider.carousel ul li .title,.content_slider.flat a.button .button_icon{-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
@@ -998,7 +1005,7 @@ a.icon_bar_dribbble span.b{background:#ec4a89;color:#fff}
 .team .desc_wrapper blockquote{margin-top:20px}
 .team.team_circle{text-align:center}
 .team.team_circle .desc_wrapper hr{margin-left:auto}
-.team.team_circle .image_frame{width:120px;height:120px;margin:0 auto 15px;-webkit-border-radius:100%;border-radius:100%;overflow:hidden;position:relative;z-index:1}
+.team.team_circle > .image_frame{width:120px;height:120px;margin:0 auto 15px;-webkit-border-radius:100%;border-radius:100%;overflow:hidden;position:relative;z-index:1}
 
 /* Team list ------------------------------------------------------------------------- */
 .team_list .column{margin-bottom:0}
@@ -1194,6 +1201,10 @@ ul.portfolio_grid li .image_frame{border:0;margin:0}
 .testimonials_slider.single-photo .testimonials_slider_ul li{text-align:center}
 .testimonials_slider.single-photo .testimonials_slider_ul li .single-photo-img{margin:0 auto 20px;height:85px;width:85px;line-height:0;overflow:hidden;-webkit-border-radius:50%;border-radius:50%}
 .testimonials_slider.single-photo .slider_pager{margin-top:30px}
+
+/* Testimonials slider - Hide bar beneath images */
+.testimonials_slider.hide-bar .slider_images:before {display:none!important}
+.testimonials_slider.hide-bar .slider_images {background-color:transparent!important}
 		
 /* Testimonials list ----------------------------------------------------------------- */		
 .testimonials_list .item{overflow:hidden;clear:both}
