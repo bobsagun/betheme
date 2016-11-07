@@ -62,6 +62,7 @@ $mfn_layout_meta_box = array(
 	'priority'	=> 'high',
 	'fields' 	=> array(
 			
+		// layout	
 		array(
 			'id' 		=> 'mfn-post-info-layout',
 			'type' 		=> 'info',
@@ -105,6 +106,7 @@ $mfn_layout_meta_box = array(
 			'std' 		=> 'center top no-repeat',
 		),
 			
+		// logo	
 		array(
 			'id' 		=> 'mfn-post-info-logo',
 			'type' 		=> 'info',
@@ -147,16 +149,35 @@ $mfn_layout_meta_box = array(
 			'id'		=> 'mfn-post-responsive-logo-img',
 			'type'		=> 'upload',
 			'title'		=> __('Mobile', 'mfn-opts'),
-			'desc'		=> __('Use if you want different logo for Mobile ( < 768px )', 'mfn-opts'),
+			'sub_desc'	=> __('<b>< 768px</b><br />optional', 'mfn-opts'),
+			'desc'		=> __('Use if you want different logo for Mobile', 'mfn-opts'),
 		),
 		
 		array(
 			'id'		=> 'mfn-post-responsive-retina-logo-img',
 			'type'		=> 'upload',
 			'title'		=> __('Mobile Retina', 'mfn-opts'),
+			'sub_desc'	=> __('optional', 'mfn-opts'),
 			'desc'		=> __('Retina Logo should be 2x larger than Mobile Logo', 'mfn-opts'),
 		),
 			
+		array(
+			'id'		=> 'mfn-post-responsive-sticky-logo-img',
+			'type'		=> 'upload',
+			'title'		=> __('Mobile Sticky Header', 'mfn-opts'),
+			'sub_desc'	=> __('<b>< 768px</b><br />optional', 'mfn-opts'),
+			'desc'		=> __('Use if you want different logo for Mobile Sticky Header', 'mfn-opts'),
+		),
+		
+		array(
+			'id'		=> 'mfn-post-responsive-sticky-retina-logo-img',
+			'type'		=> 'upload',
+			'title'		=> __('Mobile Sticky Header Retina', 'mfn-opts'),
+			'sub_desc'	=> __('optional', 'mfn-opts'),
+			'desc'		=> __('Retina Logo should be 2x larger than Mobile Sticky Header Logo', 'mfn-opts'),
+		),
+			
+		// header
 		array(
 			'id' 		=> 'mfn-post-info-header',
 			'type' 		=> 'info',
@@ -204,6 +225,7 @@ $mfn_layout_meta_box = array(
 			),
 		),
 			
+		// colors
 		array(
 			'id' 		=> 'mfn-post-info-colors',
 			'type' 		=> 'info',

@@ -33,7 +33,7 @@ $translate['404-btn'] = mfn_opts_get('translate') ? mfn_opts_get('translate-404-
 </head>
 
 <?php 
-	$customID = mfn_opts_get('error404-page');
+	$customID = mfn_opts_get( 'error404-page' );
 	$body_class = '';
 	if( $customID ) $body_class .= 'custom-404';
 ?>

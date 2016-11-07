@@ -376,6 +376,7 @@ class MFN_Options_icon extends MFN_Options{
 		'icon-traffic-cone',
 		'icon-trash',
 		'icon-trash-line',
+		'icon-tripadvisor',
 		'icon-trophy',
 		'icon-truck-line',
 		'icon-tumblr',

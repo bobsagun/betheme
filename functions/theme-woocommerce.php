@@ -192,11 +192,17 @@ if( ! function_exists( 'woocommerce_header_add_to_cart_fragment' ) )
 		global $woocommerce;
 		
 		$cart_icon = mfn_opts_get('shop-cart');
-		if( $cart_icon == 1 ) $cart_icon = 'icon-basket'; // Be < 4.9 compatibility
+		if( $cart_icon == 1 ) $cart_icon = 'icon-bag-fine'; // Be < 4.9 compatibility
 	
+		// header
 		ob_start();
 		echo '<a id="header_cart" href="'. $woocommerce->cart->get_cart_url() .'"><i class="'. $cart_icon .'"></i><span>'. $woocommerce->cart->cart_contents_count .'</span></a>';
 		$fragments['a#header_cart'] = ob_get_clean();
+		
+		// side slide
+		ob_start();
+		echo '<a class="icon cart" id="slide-cart" href="'. $woocommerce->cart->get_cart_url() .'"><i class="'. $cart_icon .'"></i><span>'. $woocommerce->cart->cart_contents_count .'</span></a>';
+		$fragments['a#slide-cart'] = ob_get_clean();
 		
 		return $fragments;
 	}

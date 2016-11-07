@@ -227,7 +227,7 @@
 				}, {
 					text : 'Blog',
 					onclick : function() {
-						editor.insertContent('[blog count="2" style="modern" columns="2" category="" category_multi="" exclude_id="" more="1" filters="0" pagination="0" load_more="" greyscale="0" margin=""]');
+						editor.insertContent('[blog count="2" style="modern" columns="2" category="" category_multi="" exclude_id="" filters="0" more="1" pagination="0" load_more="" greyscale="0" margin="" events="0"]');
 					}
 				}, {
 					text : 'Blog News',
@@ -337,7 +337,7 @@
 				}, {
 					text : 'Map',
 					onclick : function() {
-						editor.insertContent('[map lat="" lng="" zoom="13" height="200" type="ROADMAP" controls="mapType" draggable="" border="0" icon="" title="" telephone="" email="" www="" latlng=""]Insert your content here[/map]');
+						editor.insertContent('[map lat="" lng="" zoom="13" height="200" type="ROADMAP" controls="mapType" draggable="" border="0" icon="" latlng="" title="" telephone="" email="" www="" style="box"]Insert your content here[/map]');
 					}
 				}, {
 					text : 'Opening Hours',

@@ -670,15 +670,17 @@ if( ! function_exists( 'mfn_retina_logo' ) )
 		// logo - source -------------------------
 		if( $layoutID = mfn_layout_ID() ){
 				
-			$logo_src 		= get_post_meta( $layoutID, 'mfn-post-retina-logo-img', true );
-			$logo_sticky 	= get_post_meta( $layoutID, 'mfn-post-sticky-retina-logo-img', true ) ? get_post_meta( $layoutID, 'mfn-post-sticky-retina-logo-img', true ) : $logo_src;
-			$logo_mobile 	= get_post_meta( $layoutID, 'mfn-post-responsive-retina-logo-img', true ) ? get_post_meta( $layoutID, 'mfn-post-responsive-retina-logo-img', true ) : $logo_src;
+			$logo_src 			= get_post_meta( $layoutID, 'mfn-post-retina-logo-img', true );
+			$logo_sticky 		= get_post_meta( $layoutID, 'mfn-post-sticky-retina-logo-img', true ) ? get_post_meta( $layoutID, 'mfn-post-sticky-retina-logo-img', true ) : $logo_src;
+			$logo_mobile 		= get_post_meta( $layoutID, 'mfn-post-responsive-retina-logo-img', true ) ? get_post_meta( $layoutID, 'mfn-post-responsive-retina-logo-img', true ) : $logo_src;
+			$logo_mobile_sticky	= get_post_meta( $layoutID, 'mfn-post-responsive-sticky-retina-logo-img', true ) ? get_post_meta( $layoutID, 'mfn-post-responsive-sticky-retina-logo-img', true ) : $logo_src;
 				
 		} else {
 				
-			$logo_src 		= mfn_opts_get( 'retina-logo-img' );
-			$logo_sticky 	= mfn_opts_get( 'sticky-retina-logo-img' ) ? mfn_opts_get( 'sticky-retina-logo-img' ) : $logo_src;
-			$logo_mobile 	= mfn_opts_get( 'responsive-retina-logo-img' ) ? mfn_opts_get( 'responsive-retina-logo-img' ) : $logo_src;
+			$logo_src 			= mfn_opts_get( 'retina-logo-img' );
+			$logo_sticky 		= mfn_opts_get( 'sticky-retina-logo-img' ) ? mfn_opts_get( 'sticky-retina-logo-img' ) : $logo_src;
+			$logo_mobile 		= mfn_opts_get( 'responsive-retina-logo-img' ) ? mfn_opts_get( 'responsive-retina-logo-img' ) : $logo_src;
+			$logo_mobile_sticky = mfn_opts_get( 'responsive-sticky-retina-logo-img' ) ? mfn_opts_get( 'responsive-sticky-retina-logo-img' ) : $logo_src;
 				
 		}
 		
@@ -718,6 +720,16 @@ if( ! function_exists( 'mfn_retina_logo' ) )
 									echo '.attr( "src", "'. $logo_mobile .'" )';
 									echo '.width( mobileLogoW )';
 									echo '.height( mobileLogoH );';
+							}
+							
+							if( $logo_mobile_sticky ){
+								echo 'var mobileStickyEl = jQuery("#logo img.logo-mobile-sticky");';
+								echo 'var mobileStickyLogoW = mobileStickyEl.width();';
+								echo 'var mobileStickyLogoH = mobileStickyEl.height();';
+								echo 'mobileStickyEl';
+									echo '.attr( "src", "'. $logo_mobile_sticky .'" )';
+									echo '.width( mobileStickyLogoW )';
+									echo '.height( mobileStickyLogoH );';
 							}
 								
 						echo '}';
@@ -1257,6 +1269,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		if( mfn_opts_get( 'no-hover' ) ) $classes[] = 'no-hover-'. mfn_opts_get( 'no-hover' );
 		if( mfn_opts_get( 'no-section-bg' ) ) $classes[] = 'no-section-bg-'. mfn_opts_get( 'no-section-bg' );
 		if( mfn_opts_get( 'responsive-top-bar' ) ) $classes[] = 'mobile-tb-'. mfn_opts_get( 'responsive-top-bar' );
+		if( mfn_opts_get( 'responsive-mobile-menu' ) ) $classes[] = 'mobile-'. mfn_opts_get( 'responsive-mobile-menu' );
 		
 		$classes[] = 'mobile-mini-'. mfn_opts_get( 'responsive-header-minimal', 'mr-ll' );
 

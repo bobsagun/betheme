@@ -45,7 +45,7 @@ blockquote:after{content:"";width:55px;height:40px;background:url(../images/bloc
 .wp-caption-text.hide{display:none}
 
 .if-caption-on .image_frame{position:relative}
-.if-caption-on .wp-caption-text{background:rgba(0,0,0,.5);border-radius:3px;bottom:17px;color:rgba(255,255,255,.7);left:17px;padding:5px 10px!important;position:absolute}
+.if-caption-on .wp-caption-text{position:absolute;bottom:15px;left:15px;padding:5px 10px!important;width:calc(100% - 30px);box-sizing:border-box;background:rgba(0,0,0,.5);color:rgba(255,255,255,.7);border-radius:3px;}
 
 .image_frame.no_border .wp-caption-text,.if-zoom .image_frame:not(.has_border) .wp-caption-text{padding:10px 0;}
 .the_content_wrapper .image_frame,.the_content_wrapper .wp-caption{margin-bottom:20px}
@@ -253,10 +253,10 @@ select,textarea{padding:10px;outline:none;margin:0;width:230px;max-width:100%;di
 ul{list-style:none outside}
 ol{list-style:decimal}
 
-.column_column ul,.column_column ol,.column_helper ul,.column_helper ol,.column_visual ul,.column_visual ol,.mfn-acc ul,.mfn-acc ol,.ui-tabs-panel ul,.ui-tabs-panel ol,.the_content_wrapper ul,.the_content_wrapper ol{margin:0 0 15px 30px}
-.column_column ul li,.column_helper ul li,.column_visual ul li,.mfn-acc ul li,.ui-tabs-panel ul li,.the_content_wrapper ul li{list-style:disc outside}
-.column_column ul li,.column_column ol li,.column_helper ul li,.column_helper ol li,.column_visual ul li,.column_visual ol li,.mfn-acc ul li,.mfn-acc ol li,.ui-tabs-panel ul li,.ui-tabs-panel ol li,.the_content_wrapper ul li,.the_content_wrapper ol li{margin-bottom:10px}
-.column_column ul li ul,.column_column ol li ol,.column_helper ul li ul,.column_helper ol li ol,.column_visual ul li ul,.column_visual ol li ol,.mfn-acc ul li ul,.mfn-acc ol li ol,.ui-tabs-panel ul li ul,.ui-tabs-panel ol li ol,.the_content_wrapper ul li ul,.the_content_wrapper ol li ol{margin-top:10px;margin-bottom:0}
+.column_column ul,.column_column ol,.column_helper ul,.column_helper ol,.column_visual ul,.column_visual ol,.mfn-acc ul,.mfn-acc ol,.ui-tabs-panel ul,.ui-tabs-panel ol,.the_content_wrapper ul,.the_content_wrapper ol,.post-excerpt ul,.post-excerpt ol{margin:0 0 15px 30px}
+.column_column ul li,.column_helper ul li,.column_visual ul li,.mfn-acc ul li,.ui-tabs-panel ul li,.the_content_wrapper ul li,.post-excerpt ul li{list-style:disc outside}
+.column_column ul li,.column_column ol li,.column_helper ul li,.column_helper ol li,.column_visual ul li,.column_visual ol li,.mfn-acc ul li,.mfn-acc ol li,.ui-tabs-panel ul li,.ui-tabs-panel ol li,.the_content_wrapper ul li,.the_content_wrapper ol li,.post-excerpt ul li,.post-excerpt ol li{margin-bottom:10px}
+.column_column ul li ul,.column_column ol li ol,.column_helper ul li ul,.column_helper ol li ol,.column_visual ul li ul,.column_visual ol li ol,.mfn-acc ul li ul,.mfn-acc ol li ol,.ui-tabs-panel ul li ul,.ui-tabs-panel ol li ol,.the_content_wrapper ul li ul,.the_content_wrapper ol li ol,.post-excerpt ul li ul,.post-excerpt ol li ol{margin-top:10px;margin-bottom:0}
 
 ul.list_mixed,ul.list_check,ul.list_star,ul.list_idea{margin-left:0}
 ul.list_mixed li,ul.list_check li,ul.list_star li,ul.list_idea li{margin-bottom:20px;position:relative;list-style:none;padding-left:50px;margin-left:0}
@@ -986,12 +986,19 @@ a.icon_bar_dribbble span.b{background:#ec4a89;color:#fff}
 .with_aside .how_it_works.has_border:after{top:75px}
 
 /* Google maps ----------------------------------------------------------------------- */
+.google-map-wrapper{position:relative}
+
 .google-map{border-width:8px;border-style:solid;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 .google-map-wrapper.no_border .google-map,.section.full-width .one .google-map{border-width:0}
-.column_map .google-map-wrapper{position:relative}
-.column_map .google-map-contact-wrapper{width:1176px;height:1px;margin-left:-588px;z-index:10;position:absolute;left:50%;top:60px}
-.column_map .google-map-contact-wrapper .get_in_touch{width:210px;padding:25px;float:right;position:relative}
-.column_map .google-map-contact-wrapper .get_in_touch:after{content:"";display:block;position:absolute;left:0;bottom:-30px;width:0;height:0;border-style:solid;border-width:30px 30px 0 0;border-color:transparent}
+
+.google-map-contact-wrapper{position:absolute;z-index:10;right:50px;top:50px;}
+.section.full-width .wrap.one .column_map.one .google-map-contact-wrapper{left:50%;margin-left:300px;right:auto;}
+.google-map-contact-wrapper .get_in_touch{width:210px;padding:25px;position:relative}
+.google-map-contact-wrapper .get_in_touch:after{content:"";display:block;position:absolute;left:0;bottom:-30px;width:0;height:0;border-style:solid;border-width:30px 30px 0 0;border-color:transparent}
+
+.google-map-contact-wrapper.style-bar{position:static;margin-left:0!important;}
+.google-map-contact-wrapper.style-bar .get_in_touch{float:none;width:100%;-webkit-box-sizing:border-box;box-sizing:border-box}
+.google-map-contact-wrapper.style-bar .get_in_touch:after{display:none;}
 
 /* Team ------------------------------------------------------------------------------ */
 .team .image_frame{margin-bottom:15px}
@@ -1005,7 +1012,7 @@ a.icon_bar_dribbble span.b{background:#ec4a89;color:#fff}
 .team .desc_wrapper blockquote{margin-top:20px}
 .team.team_circle{text-align:center}
 .team.team_circle .desc_wrapper hr{margin-left:auto}
-.team.team_circle > .image_frame{width:120px;height:120px;margin:0 auto 15px;-webkit-border-radius:100%;border-radius:100%;overflow:hidden;position:relative;z-index:1}
+.team.team_circle .image_frame.photo{width:120px;height:120px;margin:0 auto 15px;-webkit-border-radius:100%;border-radius:100%;overflow:hidden;position:relative;z-index:1}
 
 /* Team list ------------------------------------------------------------------------- */
 .team_list .column{margin-bottom:0}
@@ -1166,7 +1173,7 @@ ul.portfolio_grid li .image_frame{border:0;margin:0}
 /* Portfolio Items | Filters --------------------------------------------------------- */
 .column_portfolio #Filters .filters_wrapper,.column_portfolio #Filters .filters_wrapper ul{display:block}
 .wpb_wrapper #Filters .filters_wrapper,.wpb_wrapper #Filters .filters_wrapper ul{display:block}
-.the_content_wrapper .filters4portfolio .filters_wrapper,.the_content_wrapper .filters4portfolio .filters_wrapper ul{display:block}
+.the_content_wrapper #Filters.filters4portfolio .filters_wrapper,.the_content_wrapper #Filters.filters4portfolio .filters_wrapper ul{display:block}
 
 /* Testimonials slider --------------------------------------------------------------- */
 .testimonials_slider{position:relative}
@@ -1426,12 +1433,12 @@ a.icon_bar{color:#444!important}
 .style-simple .icon_box .icon_wrapper:before{display:none}
 .style-simple .icon_box .icon_wrapper i{position:relative;top:0}
 .style-simple .icon_box .image_wrapper img{position:relative;top:0}
-.style-simple .icon_box .desc_wrapper h4{margin-bottom:20px}
-.style-simple .icon_box .desc_wrapper h4:before{content:"";display:block;width:0;margin:0 auto;height:2px;top:-15px;position:relative;background-color:#ccc}
+.style-simple .icon_box .desc_wrapper .title{margin-bottom:20px}
+.style-simple .icon_box .desc_wrapper .title:before{content:"";display:block;width:0;margin:0 auto;height:2px;top:-15px;position:relative;background-color:#ccc}
 .style-simple .icon_box:hover .icon_wrapper i{top:-5px}
 .style-simple .icon_box:hover .image_wrapper img{top:-5px}
-.style-simple .icon_box:hover .desc_wrapper h4:before{width:100px}
-.style-simple .icon_box .icon_wrapper i,.style-simple .icon_box .image_wrapper img,.style-simple .icon_box .desc_wrapper h4:before{-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
+.style-simple .icon_box:hover .desc_wrapper .title:before{width:100px}
+.style-simple .icon_box .icon_wrapper i,.style-simple .icon_box .image_wrapper img,.style-simple .icon_box .desc_wrapper .title:before{-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
 
 /* Filters */
 .style-simple #Filters{text-align:center}

@@ -228,7 +228,7 @@ if( ! function_exists( 'mfn_builder_print' ) )
 								
 							$poster = $section['attr']['bg_image'];
 								
-							echo '<video poster="'. $poster .'" controls="controls" muted="muted" preload="auto" loop="true" autoplay="true">';
+							echo '<video poster="'. $poster .'" autoplay="true" loop="true" muted="muted">';
 		
 								echo '<source type="video/mp4" src="'. $mp4 .'" />';
 								if( key_exists( 'bg_video_ogv', $section['attr'] ) && $ogv = $section['attr']['bg_video_ogv'] ){
