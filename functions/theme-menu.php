@@ -43,25 +43,17 @@ if( ! function_exists( 'mfn_wp_nav_menu' ) )
 		
 		// Custom Menu
 		if( mfn_ID() && is_single() && get_post_type() == 'post' && $custom_menu = mfn_opts_get( 'blog-single-menu' ) ){
-			
 			// Theme Options | Single Posts
 			$args['menu']			= $custom_menu;
-			
 		} elseif( mfn_ID() && is_single() && get_post_type() == 'portfolio' && $custom_menu = mfn_opts_get( 'portfolio-single-menu' ) ){
-			
 			// Theme Options | Single Portfolio
 			$args['menu']			= $custom_menu;
-			
 		} elseif( $custom_menu = get_post_meta( mfn_ID(), 'mfn-post-menu', true ) ){
-			
 			// Page Options | Page
 			$args['menu']			= $custom_menu;
-			
 		} else {
-			
 			// Default
 			$args['theme_location'] = 'main-menu';
-			
 		}
 	
 		wp_nav_menu( $args ); 
@@ -156,6 +148,22 @@ if( ! function_exists( 'mfn_wp_overlay_menu' ) )
 			'theme_location' 	=> 'main-menu',
 			'depth'				=> 1,
 		);
+		
+		// Custom Menu
+		if( mfn_ID() && is_single() && get_post_type() == 'post' && $custom_menu = mfn_opts_get( 'blog-single-menu' ) ){
+			// Theme Options | Single Posts
+			$args['menu']			= $custom_menu;
+		} elseif( mfn_ID() && is_single() && get_post_type() == 'portfolio' && $custom_menu = mfn_opts_get( 'portfolio-single-menu' ) ){
+			// Theme Options | Single Portfolio
+			$args['menu']			= $custom_menu;
+		} elseif( $custom_menu = get_post_meta( mfn_ID(), 'mfn-post-menu', true ) ){
+			// Page Options | Page
+			$args['menu']			= $custom_menu;
+		} else {
+			// Default
+			$args['theme_location'] = 'main-menu';
+		}
+		
 		wp_nav_menu( $args );
 	}
 }

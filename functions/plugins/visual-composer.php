@@ -800,9 +800,9 @@ if( ! function_exists( 'mfn_vc_integrateWithVC' ) )
 					'param_name' 	=> 'date',
 					'type' 			=> 'textfield',
 					'heading' 		=> __('Lunch Date', 'mfn-opts'),
-					'desc' 			=> __('Format: 12/30/2014 12:00:00 month/day/year hour:minute:second', 'mfn-opts'),
+					'description'	=> __('Format: 12/30/2017 12:00:00 month/day/year hour:minute:second', 'mfn-opts'),
 					'admin_label'	=> true,
-					'value'			=> '12/30/2014 12:00:00',
+					'value'			=> '12/30/2017 12:00:00',
 				),
 				
 				array (
@@ -1553,18 +1553,16 @@ if( ! function_exists( 'mfn_vc_integrateWithVC' ) )
 					'param_name' 	=> 'lat',
 					'type' 			=> 'textfield',
 					'heading' 		=> __('Google Maps Lat', 'mfn-opts'),
-					'description' 	=> __('The map will appear only if this field is filled correctly.', 'mfn-opts'),
+					'description' 	=> __('The map will appear only if this field is filled correctly. Example: -33.87', 'mfn-opts'),
 					'admin_label'	=> true,
-					'value'			=> '-33.87',
 				),
 				
 				array (
 					'param_name' 	=> 'lng',
 					'type' 			=> 'textfield',
 					'heading' 		=> __('Google Maps Lng', 'mfn-opts'),
-					'description' 	=> __('The map will appear only if this field is filled correctly.', 'mfn-opts'),
+					'description' 	=> __('The map will appear only if this field is filled correctly. Example: 151.20', 'mfn-opts'),
 					'admin_label'	=> true,
-					'value'			=> '151.20',
 				),
 				
 				array (
@@ -1583,6 +1581,8 @@ if( ! function_exists( 'mfn_vc_integrateWithVC' ) )
 					'value'			=> 200,
 				),
 
+				// options
+				
 				array(
 					'param_name' 	=> 'type',
 					'type' 			=> 'dropdown',
@@ -1635,6 +1635,8 @@ if( ! function_exists( 'mfn_vc_integrateWithVC' ) )
 						1 	=> __('Yes', 'mfn-opts'),
 					)),
 				),
+				
+				// advanced
 	
 				array(
 					'param_name' 	=> 'icon',
@@ -1649,6 +1651,55 @@ if( ! function_exists( 'mfn_vc_integrateWithVC' ) )
 					'heading' 		=> __('Additional Markers | Lat,Lng,IconURL', 'mfn-opts'),
 					'description' 	=> __('Separate Lat,Lang,IconURL[optional] with <b>coma</b> [ , ]<br />Separate multiple Markers with <b>semicolon</b> [ ; ]<br />Example: <b>-33.88,151.21,ICON_URL;-33.89,151.22</b>', 'mfn-opts'),
 					'admin_label'	=> false,
+				),
+				
+				// contact box
+				
+				array (
+					'param_name' 	=> 'title',
+					'type' 			=> 'textfield',
+					'heading' 		=> __('Title', 'mfn-opts'),
+					'admin_label'	=> true,
+				),
+				
+				array (
+					'param_name' 	=> 'content',
+					'type' 			=> 'textarea',
+					'heading' 		=> __('Content', 'mfn-opts'),
+					'admin_label'	=> false,
+					'value' 		=> __('Insert your content here', 'mfn-opts'),
+				),
+				
+				array (
+					'param_name' 	=> 'telephone',
+					'type' 			=> 'textfield',
+					'heading' 		=> __('Telephone', 'mfn-opts'),
+					'admin_label'	=> false,
+				),
+				
+				array (
+					'param_name' 	=> 'email',
+					'type' 			=> 'textfield',
+					'heading' 		=> __('Email', 'mfn-opts'),
+					'admin_label'	=> false,
+				),
+				
+				array (
+					'param_name' 	=> 'www',
+					'type' 			=> 'textfield',
+					'heading' 		=> __('WWW', 'mfn-opts'),
+					'admin_label'	=> false,
+				),
+				
+				array(
+					'param_name' 	=> 'style',
+					'type' 			=> 'dropdown',
+					'heading' 		=> __('Style', 'mfn-opts'),
+					'admin_label'	=> true,
+					'value' 		=> array_flip(array(
+						'box'	=> __('Contact Box on the map (for full width column/wrap)', 'mfn-opts'),
+						'bar'	=> __('Bar at the top', 'mfn-opts'),
+					)),
 				),
 
 			)

@@ -140,8 +140,7 @@ if( ! function_exists( 'mfn_portfolio_meta_add' ) )
 			'priority' 	=> 'high',
 			'fields' 	=> array(
 					
-				// layout -----
-					
+				// layout -----	
 				array(
 					'id' 		=> 'mfn-meta-info-layout',
 					'type' 		=> 'info',
@@ -201,8 +200,7 @@ if( ! function_exists( 'mfn_portfolio_meta_add' ) )
 					),
 				),
 					
-				// media -----
-					
+				// media -----					
 				array(
 					'id' 		=> 'mfn-meta-info-media',
 					'type' 		=> 'info',
@@ -251,8 +249,7 @@ if( ! function_exists( 'mfn_portfolio_meta_add' ) )
 					'title' 	=> __('Header Image', 'mfn-opts'),
 				),	
 	
-				// description -----
-					
+				// description -----					
 				array(
 					'id' 		=> 'mfn-meta-info-desc',
 					'type' 		=> 'info',
@@ -279,8 +276,7 @@ if( ! function_exists( 'mfn_portfolio_meta_add' ) )
 					'title' 	=> __('Task', 'mfn-opts'),
 				),
 					
-				// options -----
-					
+				// options -----					
 				array(
 					'id' 		=> 'mfn-meta-info-options',
 					'type' 		=> 'info',
@@ -324,8 +320,7 @@ if( ! function_exists( 'mfn_portfolio_meta_add' ) )
 				),
 					
 	
-				// advanced -----
-				
+				// advanced -----				
 				array(
 					'id' 		=> 'mfn-meta-info-advanced',
 					'type' 		=> 'info',
@@ -357,6 +352,7 @@ if( ! function_exists( 'mfn_portfolio_meta_add' ) )
 						'light'			=> __( 'Light | light image, dark text', 'mfn-opts' ),
 						'full-screen'	=> __( 'Full Screen', 'mfn-opts' ),
 						'parallax'		=> __( 'Parallax', 'mfn-opts' ),
+						'cover'			=> __( 'Background size: Cover<span>enabled by default in parallax</span>', 'mfn-opts' ),
 					),
 				),
 					
@@ -373,8 +369,7 @@ if( ! function_exists( 'mfn_portfolio_meta_add' ) )
 					),
 				),
 		
-				// seo -----
-					
+				// seo -----			
 				array(
 					'id' 		=> 'mfn-meta-info-seo',
 					'type' 		=> 'info',

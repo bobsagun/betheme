@@ -509,6 +509,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 			'title' 	=> __('Logo', 'mfn-opts'),
 			'fields' 	=> array(
 	
+				// logo
 				array(
 					'id' 		=> 'logo-info',
 					'type' 		=> 'info',
@@ -531,6 +532,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'desc'		=> __('Retina Logo should be 2x larger than Custom Logo', 'mfn-opts'),
 				),
 					
+				// sticky
 				array(
 					'id' 		=> 'logo-info-sticky',
 					'type' 		=> 'info',
@@ -554,7 +556,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'sub_desc'	=> __('optional', 'mfn-opts'),
 					'desc'		=> __('Retina Logo should be 2x larger than Sticky Header Logo', 'mfn-opts'),
 				),
-					
+
+				// options
 				array(
 					'id' 		=> 'logo-info-options',
 					'type' 		=> 'info',
@@ -592,6 +595,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'class'		=> 'small-text',
 				),
 					
+				// advanced
 				array(
 					'id' 		=> 'logo-info-advanced',
 					'type' 		=> 'info',
@@ -2972,6 +2976,31 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'sub_desc'	=> __('optional', 'mfn-opts'),
 					'desc'		=> __('Retina Logo should be 2x larger than Logo', 'mfn-opts'),
 				),
+					
+				// logo sticky
+				array(
+					'id' 		=> 'responsive-sticky-info-logo',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Sticky Header Logo <span><b>mobile</b> < 768px</span>', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
+				),
+					
+				array(
+					'id'		=> 'responsive-sticky-logo-img',
+					'type'		=> 'upload',
+					'title'		=> __('Logo', 'mfn-opts'),
+					'sub_desc'	=> __('<b>< 768px</b><br />optional', 'mfn-opts'),
+					'desc'		=> __('Use if you want different logo for Sticky Header on mobile', 'mfn-opts'),
+				),
+				
+				array(
+					'id'		=> 'responsive-sticky-retina-logo-img',
+					'type'		=> 'upload',
+					'title'		=> __('Retina Logo', 'mfn-opts'),
+					'sub_desc'	=> __('optional', 'mfn-opts'),
+					'desc'		=> __('Retina Logo should be 2x larger than Sticky Header Logo', 'mfn-opts'),
+				),
 		
 			),
 		);
@@ -3100,7 +3129,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'desc'		=> __('This text will be used instead of the menu icon', 'mfn-opts'),
 					'class'		=> 'small-text',
 				),
-		
+
 			),
 		);
 		
@@ -3292,6 +3321,13 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'social-tumblr',
 					'type' 		=> 'text',
 					'title' 	=> __('Tumblr', 'mfn-opts'),
+					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
+				),
+					
+				array(
+					'id' 		=> 'social-tripadvisor',
+					'type' 		=> 'text',
+					'title' 	=> __('TripAdvisor', 'mfn-opts'),
 					'desc' 		=> __('Link to the profile page', 'mfn-opts'),
 				),
 

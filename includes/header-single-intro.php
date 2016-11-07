@@ -1,7 +1,8 @@
 <?php 
 	// class
-	$intro_class = '';
+	$intro_class = "";
 	$parallax = false;
+	$intro_style = "";
 	
 	$intro_options = get_post_meta( get_the_ID(), 'mfn-post-intro', true );
 	if( is_array( $intro_options ) ){
@@ -16,12 +17,13 @@
 			$intro_class .= ' parallax';
 			$parallax = true;
 		}
+		if( isset( $intro_options['cover'] ) ){
+			$intro_style .= 'background-size:cover;';
+		}
 			
 	}
 	
 	// style
-	$intro_style = "";
-	
 	if( $bg_color = get_post_meta( get_the_ID(), 'mfn-post-bg', true ) ){
 		$intro_style .= 'background-color:'. esc_attr( $bg_color ) .';';
 	}
@@ -47,7 +49,7 @@
 				$intro_style = false;
 			}
 		} else {
-			$intro_style .= 'background-repeat:no-repeat;background-position:center top;background-attachment:fixed;background-size:cover;-webkit-background-size:cover;';
+			$intro_style .= 'background-repeat:no-repeat;background-attachment:fixed;background-size:cover;-webkit-background-size:cover;';
 		}
 	}
 	

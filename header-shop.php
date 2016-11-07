@@ -12,7 +12,7 @@
 		echo '<html class="no-js" lang="ar" dir="rtl">';
 	else:
 ?>
-<html class="no-js" <?php language_attributes(); ?>>
+<html class="no-js" <?php language_attributes(); ?><?php mfn_tag_schema(); ?>>
 <?php endif; ?>
 
 <!-- head -->

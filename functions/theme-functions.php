@@ -658,7 +658,7 @@ if( ! function_exists( 'mfn_page_title' ) )
 		} elseif( function_exists( 'tribe_is_month' ) && ( tribe_is_event_query() || tribe_is_month() || tribe_is_event() || tribe_is_day() || tribe_is_venue() ) ){
 			
 			// The Events Calendar ------------------------
-			$title = get_the_title( mfn_ID() );
+			$title = tribe_get_events_title();
 			
 		} elseif( is_tag() ){
 			
@@ -1836,7 +1836,12 @@ if( ! function_exists( 'mfn_tag_schema' ) )
 	function mfn_tag_schema(){
 		$schema = 'http'. mfn_ssl() .'://schema.org/';
 	
-		if( is_single() ) {
+		// Is Woocommerce product
+		if( function_exists( 'is_product' ) && is_product() ){
+			
+			$type = 'Product';
+			
+		} elseif( is_single() ) {
 			
 			// Single post
 			$type = "Article";

@@ -58,8 +58,7 @@ if( ! function_exists( 'mfn_page_meta_add' ) )
 			'priority' 	=> 'default',
 			'fields'	=> array(
 		
-				// layout -----
-					
+				// layout -----	
 				array(
 					'id' 		=> 'mfn-meta-info-layout',
 					'type' 		=> 'info',
@@ -109,7 +108,6 @@ if( ! function_exists( 'mfn_page_meta_add' ) )
 				),		
 					
 				// media -----
-					
 				array(
 					'id' 		=> 'mfn-meta-info-media',
 					'type' 		=> 'info',
@@ -148,7 +146,6 @@ if( ! function_exists( 'mfn_page_meta_add' ) )
 				),
 	
 				// options -----
-					
 				array(
 					'id' 		=> 'mfn-meta-info-options',
 					'type' 		=> 'info',
@@ -194,11 +191,11 @@ if( ! function_exists( 'mfn_page_meta_add' ) )
 					'id' 		=> 'mfn-post-menu',
 					'type' 		=> 'select',
 					'title' 	=> __('Custom | Menu', 'mfn-opts'),
+					'desc' 		=> __('Do <b>not</b> work with Split Menu', 'mfn-opts'),
 					'options' 	=> $aMenus,
 				),
 		
 				// seo -----
-					
 				array(
 					'id' 		=> 'mfn-meta-info-seo',
 					'type' 		=> 'info',
@@ -228,8 +225,7 @@ if( ! function_exists( 'mfn_page_meta_add' ) )
 					'desc' 		=> __('These settings overriddes theme options settings', 'mfn-opts'),
 				),
 					
-				// custom -----
-					
+				// custom -----	
 				array(
 					'id' 		=> 'mfn-meta-info-custom',
 					'type' 		=> 'info',

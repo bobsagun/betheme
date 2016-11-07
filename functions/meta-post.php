@@ -20,8 +20,7 @@ $mfn_post_meta_box = array(
 	'priority' 	=> 'high',
 	'fields' 	=> array(
 		
-		// layout -----
-			
+		// layout -----		
 		array(
 			'id' 		=> 'mfn-meta-info-layout',
 			'type' 		=> 'info',
@@ -80,8 +79,7 @@ $mfn_post_meta_box = array(
 			),
 		),
 
-		// media -----
-			
+		// media -----		
 		array(
 			'id' 		=> 'mfn-meta-info-media',
 			'type' 		=> 'info',
@@ -130,8 +128,7 @@ $mfn_post_meta_box = array(
 			'title' 	=> __('Header Image', 'mfn-opts'),
 		),
 			
-		// options -----
-			
+		// options -----		
 		array(
 			'id' 		=> 'mfn-meta-info-options',
 			'type' 		=> 'info',
@@ -165,8 +162,7 @@ $mfn_post_meta_box = array(
 			'options'	=> array( '0' => 'Off', '1' => 'On' ),
 		),
 			
-		// advanced -----
-			
+		// advanced -----			
 		array(
 			'id' 		=> 'mfn-meta-info-advanced',
 			'type' 		=> 'info',
@@ -198,11 +194,11 @@ $mfn_post_meta_box = array(
 				'light'			=> __( 'Light | light image, dark text', 'mfn-opts' ),
 				'full-screen'	=> __( 'Full Screen', 'mfn-opts' ),
 				'parallax'		=> __( 'Parallax', 'mfn-opts' ),
+				'cover'			=> __( 'Background size: Cover<span>enabled by default in parallax</span>', 'mfn-opts' ),
 			),
 		),
 			
-		// seo -----
-			
+		// seo -----		
 		array(
 			'id' 		=> 'mfn-meta-info-seo',
 			'type' 		=> 'info',

@@ -604,6 +604,7 @@ class mfnImport {
 								<option value="constructor">Constructor</option>
 								<option value="copywriter">Copywriter</option>
 								<option value="cosmetics">Cosmetics</option>
+								<option value="couturier">Couturier</option>
 								<option value="creative">Creative</option>
 								<option value="decor">Decor</option>
 								<option value="dentist">Dentist</option>
@@ -745,6 +746,7 @@ class mfnImport {
 								<option value="store">Store</option>
 								<option value="story">Story</option>
 								<option value="surfing">Surfing</option>
+								<option value="surveyor">Surveyor</option>
 								<option value="sushi">Sushi</option>
 								<option value="tailor">Tailor</option>
 								<option value="tattoo">Tattoo</option>
@@ -768,6 +770,7 @@ class mfnImport {
 								<option value="vision">Vision</option>
 								<option value="voyager">Voyager</option>
 								<option value="vpn">VPN</option>
+								<option value="wallet">Wallet</option>
 								<option value="watch">Watch</option>
 								<option value="webdesign">Web Design</option>
 								<option value="webmaster">Webmaster</option>

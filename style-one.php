@@ -87,7 +87,7 @@ if( $_GET && key_exists( 'mfn-o', $_GET ) && $_GET['mfn-o'] ){
 	.testimonials_slider .slider_images, .testimonials_slider .slider_images a:after, .testimonials_slider .slider_images:before,
 	.slider_pagination a.selected, .slider_pagination a.selected:after, .tp-bullets.simplebullets.round .bullet.selected, .tp-bullets.simplebullets.round .bullet.selected:after,
 	.tparrows.default, .tp-bullets.tp-thumbs .bullet.selected:after, .offer_thumb .slider_pagination a:before, .offer_thumb .slider_pagination a.selected:after,
-	.style-simple .accordion .question:after, .style-simple .faq .question:after, .style-simple .icon_box .desc_wrapper h4:before,
+	.style-simple .accordion .question:after, .style-simple .faq .question:after, .style-simple .icon_box .desc_wrapper .title:before,
 	.style-simple #Filters .filters_wrapper ul li a:after, .style-simple .article_box .desc_wrapper p:after, .style-simple .sliding_box .desc_wrapper:after,
 	.style-simple .trailer_box:hover .desc, .portfolio_group.exposure .portfolio-item .desc-inner .line,
 	.woocommerce-account table.my_account_orders .order-number a, .woocommerce-MyAccount-navigation ul li.is-active a {
@@ -519,7 +519,7 @@ if( $_GET && key_exists( 'mfn-o', $_GET ) && $_GET['mfn-o'] ){
 	.get_in_touch, .infobox {
 		background-color: <?php echo $color_one; ?>;
 	}
-	.column_map .google-map-contact-wrapper .get_in_touch:after {
+	.google-map-contact-wrapper .get_in_touch:after {
 		border-top-color: <?php echo $color_one; ?>;
 	}
 	

@@ -27,20 +27,33 @@ if( get_post_meta( get_the_ID(), 'mfn-post-template', true ) == 'builder' ) $cla
 					// Template | Builder -----------------------------------------------
 
 					// prev & next post navigation
-					if( mfn_opts_get( 'prev-next-nav' ) ){
-						
-						mfn_post_navigation_sort();
-						
-						$in_same_term = ( mfn_opts_get( 'prev-next-nav' ) == 'same-category' ) ? true : false;
-						$post_prev = get_adjacent_post( $in_same_term, '', true, 'portfolio-types' );
-						$post_next = get_adjacent_post( $in_same_term, '', false, 'portfolio-types' );
-						
+					mfn_post_navigation_sort();
+					
+					$single_post_nav = array(
+						'hide-sticky'	=> false,
+						'in-same-term'	=> false,
+					);
+					
+					$opts_single_post_nav = mfn_opts_get( 'prev-next-nav' );
+					if( isset( $opts_single_post_nav['hide-sticky'] ) ){
+						$single_post_nav['hide-sticky'] = true;
+					}
+					
+					// single post navigation | sticky
+					if( ! $single_post_nav['hide-sticky'] ){
+						if( isset( $opts_single_post_nav['in-same-term'] ) ){
+							$single_post_nav['in-same-term'] = true;
+						}
+					
+						$post_prev = get_adjacent_post( $single_post_nav['in-same-term'], '', true, 'portfolio-types' );
+						$post_next = get_adjacent_post( $single_post_nav['in-same-term'], '', false, 'portfolio-types' );
+					
 						echo mfn_post_navigation_sticky( $post_prev, 'prev', 'icon-left-open-big' );
 						echo mfn_post_navigation_sticky( $post_next, 'next', 'icon-right-open-big' );
 					}
 					
-					
-					while ( have_posts() ){
+
+					while( have_posts() ){
 						the_post();							// Post Loop
 						mfn_builder_print( get_the_ID() );	// Content Builder & WordPress Editor Content
 					}
@@ -49,7 +62,7 @@ if( get_post_meta( get_the_ID(), 'mfn-post-template', true ) == 'builder' ) $cla
 					
 					// Template | Default -----------------------------------------------
 					
-					while ( have_posts() ){
+					while( have_posts() ){
 						the_post();
 						get_template_part( 'includes/content', 'single-portfolio' );
 					}

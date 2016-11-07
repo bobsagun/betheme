@@ -39,6 +39,10 @@
 			<key name="header-phone-2" />
 			<key name="header-email" />
 			<key name="popup-contact-form" />
+			<key name="hook-top" />
+			<key name="hook-content-before" />
+			<key name="hook-content-after" />
+			<key name="hook-bottom" />
 			<key name="social-skype" />
 			<key name="social-facebook" />
 			<key name="social-googleplus" />

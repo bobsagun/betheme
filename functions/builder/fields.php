@@ -730,14 +730,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'sub_desc'	=> __('Posts <b>IDs</b>', 'mfn-opts'),
 						'desc'		=> __('IDs should be separated with <b>coma</b> ( , )', 'mfn-opts'),
 					),
-	
-					array(
-						'id' 		=> 'more',
-						'type' 		=> 'select',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
-						'title' 	=> __('Read More link', 'mfn-opts'),
-						'std'		=> 1,
-					),
 						
 					array(
 						'id' 		=> 'filters',
@@ -752,6 +744,23 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 							'only-authors' 		=> 'Show only Authors',
 						),
 						'std' 		=> '0'
+					),
+	
+					array(
+						'id' 		=> 'more',
+						'type' 		=> 'select',
+						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'title' 	=> __('Read More link', 'mfn-opts'),
+						'std'		=> 1,
+					),
+
+					// pagination
+					array(
+						'id' 		=> 'info_pagination',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Pagination', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
 					),
 
 					array(
@@ -769,6 +778,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'desc' 		=> __('This will replace all sliders on list with featured images. Please also <b>show Pagination</b>', 'mfn-opts'),
 						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 					),
+
+					// Style
+					array(
+						'id' 		=> 'info_style',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Style', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
 						
 					array(
 						'id'		=> 'greyscale',
@@ -782,6 +800,24 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Margin', 'mfn-opts'),
 						'desc'		=> __('for <b>Style: Masonry Tiles</b> only', 'mfn-opts'),
+						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+					),
+						
+					// Plugins
+					array(
+						'id' 		=> 'info_plugins',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Plugins', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
+					array(
+						'id'		=> 'events',
+						'type'		=> 'select',
+						'title'		=> __('Include events', 'mfn-opts'),
+						'sub_desc'	=> __('The Events Calendar', 'mfn-opts'),
+						'desc'		=> __('This option works in <b>Category: All</b> and requires free <b>The Events Calendar</b> plugin', 'mfn-opts'),
 						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 					),
 						
@@ -1814,8 +1850,8 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'date',
 						'type' 		=> 'text',
 						'title' 	=> __('Lunch Date', 'mfn-opts'),
-						'desc' 		=> __('Format: 12/30/2014 12:00:00 month/day/year hour:minute:second', 'mfn-opts'),
-						'std' 		=> '12/30/2016 12:00:00',
+						'desc' 		=> __('Format: 12/30/2017 12:00:00 month/day/year hour:minute:second', 'mfn-opts'),
+						'std' 		=> '12/30/2017 12:00:00',
 						'class' 	=> 'small-text',
 					),
 						
@@ -2870,6 +2906,21 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'text',
 						'title' 	=> __('Title', 'mfn-opts'),
 					),
+						
+					array(
+						'id' 		=> 'title_tag',
+						'type' 		=> 'select',
+						'title' 	=> __('Title | Tag', 'mfn-opts'),
+						'options' 	=> array(
+							'h1' => 'H1',
+							'h2' => 'H2',
+							'h3' => 'H3',
+							'h4' => 'H4',
+							'h5' => 'H5',
+							'h6' => 'H6',
+						),
+						'std'		=> 'h4'
+					),
 
 					array(
 						'id' 		=> 'content',
@@ -2877,6 +2928,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title' 	=> __('Content', 'mfn-opts'),
 						'desc' 		=> __('Some Shortcodes and HTML tags allowed', 'mfn-opts'),
 						'class'		=> 'full-width sc',
+					),
+						
+					// icon
+					array(
+						'id' 		=> 'info_icon',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Icon', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
 					),
 						
 					array(
@@ -3355,6 +3415,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'std' 		=> 200,
 					),
 						
+					// options
+					array(
+						'id' 		=> 'info_options',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Options', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id' 		=> 'type',
 						'type' 		=> 'select',
@@ -3405,6 +3474,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						),
 					),
 						
+					// advanced
+					array(
+						'id' 		=> 'info_advanced',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Advanced', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id' 		=> 'icon',
 						'type' 		=> 'upload',
@@ -3427,42 +3505,64 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'desc' 		=> __('Separate Lat,Lang,IconURL[optional] with <b>coma</b> [ , ]<br />Separate multiple Markers with <b>semicolon</b> [ ; ]<br />Example: <b>-33.88,151.21,ICON_URL;-33.89,151.22</b>', 'mfn-opts'),
 					),
 						
+					// contact
 					array(
-						'id' 		=> 'info',
+						'id' 		=> 'info_contact',
 						'type' 		=> 'info',
-						'desc' 		=> __('<strong>Contact Box</strong> | Works only in Full Width', 'nhp-opts'),
+						'title' 	=> '',
+						'desc' 		=> __('Contact Box', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
 					),
 
 					array(
 						'id' 		=> 'title',
 						'type' 		=> 'text',
-						'title' 	=> __('Box | Title', 'mfn-opts'),
+						'title' 	=> __('Title', 'mfn-opts'),
 						'class' 	=> 'small-text',
 					),
 						
 					array(
 						'id' 		=> 'content',
 						'type' 		=> 'textarea',
-						'title' 	=> __('Box | Address', 'mfn-opts'),
+						'title' 	=> __('Address', 'mfn-opts'),
 						'desc' 		=> __('HTML tags allowed.', 'mfn-opts'),
 					),
 						
 					array(
 						'id' 		=> 'telephone',
 						'type' 		=> 'text',
-						'title' 	=> __('Box | Telephone', 'mfn-opts'),
+						'title' 	=> __('Telephone', 'mfn-opts'),
 					),
 						
 					array(
 						'id' 		=> 'email',
 						'type' 		=> 'text',
-						'title' 	=> __('Box | Email', 'mfn-opts'),
+						'title' 	=> __('Email', 'mfn-opts'),
 					),
 						
 					array(
 						'id' 		=> 'www',
 						'type' 		=> 'text',
-						'title' 	=> __('Box | WWW', 'mfn-opts'),
+						'title' 	=> __('WWW', 'mfn-opts'),
+					),
+						
+					array(
+						'id'		=> 'style',
+						'type'		=> 'select',
+						'title'		=> __('Style', 'mfn-opts'),
+						'options' 	=> array(
+							'box'		=> __('Contact Box on the map (for full width column/wrap)', 'mfn-opts'),
+							'bar'		=> __('Bar at the top', 'mfn-opts'),
+						),
+					),
+						
+					// custom
+					array(
+						'id' 		=> 'info_custom',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Custom', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
 					),
 						
 					array(

@@ -46,7 +46,7 @@
 <body <?php body_class(); ?>>
 	
 	<?php do_action( 'mfn_hook_top' ); ?>
-	
+
 	<?php get_template_part( 'includes/header', 'sliding-area' ); ?>
 	
 	<?php if( mfn_header_style( true ) == 'header-creative' ) get_template_part( 'includes/header', 'creative' ); ?>

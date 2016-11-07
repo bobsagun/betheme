@@ -898,16 +898,22 @@ if( ! function_exists( 'sc_blog' ) )
 		extract(shortcode_atts(array(
 			'count'				=> 2,
 			'style'				=> 'classic',
-			'columns'			=> 3,	
+			'columns'			=> 3,
+			
 			'category'			=> '',
 			'category_multi'	=> '',
+			
 			'exclude_id'		=> '',
-			'more'				=> '',
 			'filters'			=> '',
+			'more'				=> '',
+			
 			'pagination'		=> '',
 			'load_more'			=> '',
+			
 			'greyscale'			=> '',
-			'margin'			=> '',	// for <b>Style: Masonry Tiles</b> only			
+			'margin'			=> '',
+					
+			'events'			=> '',			
 		), $attr));
 		
 		$translate['filter'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-filter','Filter by') : __('Filter by','betheme');
@@ -927,7 +933,12 @@ if( ! function_exists( 'sc_blog' ) )
 		
 		// private
 		if( is_user_logged_in() ){
-			$args['post_status'] = array('publish','private');
+			$args['post_status'] = array( 'publish', 'private' );
+		}
+		
+		// Include events | The events calendar
+		if( $events ){
+			$args['post_type'] = array( 'post', 'tribe_events' );
 		}
 
 		// categories
@@ -942,7 +953,7 @@ if( ! function_exists( 'sc_blog' ) )
 			$exclude_id = str_replace( ' ', '', $exclude_id );
 			$args['post__not_in'] = explode( ',', $exclude_id );
 		}
-		
+
 		$query_blog = new WP_Query( $args );
 		
 		
@@ -3068,7 +3079,7 @@ if( ! function_exists( 'sc_clients_slider' ) )
 /* ---------------------------------------------------------------------------
  * Fancy Heading [fancy_heading] [/fancy_heading]
 * --------------------------------------------------------------------------- */
-if( ! function_exists( 'fancy_heading' ) )
+if( ! function_exists( 'sc_fancy_heading' ) )
 {
 	function sc_fancy_heading( $attr, $content = null )
 	{
@@ -3113,14 +3124,18 @@ if( ! function_exists( 'sc_icon_box' ) )
 	{
 		extract(shortcode_atts(array(
 			'title'			=> '',
+			'title_tag' 	=> 'h4',
+			
 			'icon'			=> '',
 			'image'			=> '',
 			'icon_position'	=> 'top',
 			'border'		=> '',
+			
 			'link'			=> '',
 			'target'		=> '',
-			'animate'		=> '',
 			'class'			=> '',
+			
+			'animate'		=> '',
 		), $attr));
 	
 		// image | visual composer fix
@@ -3156,20 +3171,28 @@ if( ! function_exists( 'sc_icon_box' ) )
 				if( $link ) $output .= '<a class="'. $class .'" href="'. $link .'" '. $target .' '. $rel .'>';
 				
 					if( $image ){
+						
 						$output .= '<div class="image_wrapper">';
 							$output .= '<img src="'. $image .'" class="scale-with-grid" alt="'. mfn_get_attachment_data( $image, 'alt' ) .'" width="'. mfn_get_attachment_data( $image, 'width' ) .'" height="'. mfn_get_attachment_data( $image, 'height' ) .'"/>';
 						$output .= '</div>';
+						
 					} else {
+						
 						$output .= '<div class="icon_wrapper">';
 							$output .= '<div class="icon">';
 								$output .= '<i class="'. $icon .'"></i>';
 							$output .= '</div>';
 						$output .= '</div>';
+						
 					}		
 					
 					$output .= '<div class="desc_wrapper">';
-						if( $title ) $output .= '<h4>'. $title .'</h4>';
+					
+						if( $title ){
+							$output .= '<'. $title_tag .' class="title">'. $title .'</'. $title_tag .'>';
+						}
 						if( $content )$output .= '<div class="desc">'. do_shortcode($content) .'</div>';
+						
 					$output .= '</div>';
 					
 				if( $link ) $output .= '</a>';
@@ -3193,16 +3216,21 @@ if( ! function_exists( 'sc_our_team' ) )
 			'image' 		=> '',	
 			'title' 		=> '',
 			'subtitle'		=> '',
-			'email' 		=> '',
+			
 			'phone' 		=> '',
+			'email' 		=> '',
+
 			'facebook' 		=> '',
 			'twitter'		=> '',
 			'linkedin'		=> '',
 			'vcard'			=> '',
+			
 			'blockquote' 	=> '',
 			'style' 		=> 'vertical',
+			
 			'link' 			=> '',
 			'target' 		=> '',
+			
 			'animate' 		=> '',
 		), $attr));
 		
@@ -3223,7 +3251,7 @@ if( ! function_exists( 'sc_our_team' ) )
 		
 				if( $heading ) $output .= '<h4 class="title">'. $heading .'</h4>';
 			
-				$output  .= '<div class="image_frame no_link scale-with-grid">';
+				$output  .= '<div class="image_frame photo no_link scale-with-grid">';
 					$output .= '<div class="image_wrapper">';
 						
 						if( $link ) $output .= '<a href="'. $link .'" '. $target .'>';
@@ -4048,17 +4076,22 @@ if( ! function_exists( 'sc_map' ) )
 			'lng' 		=> '',
 			'zoom' 		=> 13,
 			'height' 	=> 200,
+			
 			'type' 		=> 'ROADMAP',
 			'controls' 	=> '',
 			'draggable' => '',
 			'border' 	=> '',
+			
 			'icon' 		=> '',
 			'styles'	=> '',
+			'latlng' 	=> '',
+			
 			'title'		=> '',
 			'telephone'	=> '',
 			'email' 	=> '',
 			'www' 		=> '',
-			'latlng' 	=> '',
+			'style' 	=> 'box',
+			
 			'uid' 		=> uniqid(),
 		), $attr));
 		
@@ -4163,7 +4196,7 @@ if( ! function_exists( 'sc_map' ) )
 		$output .= '<div class="google-map-wrapper '. $class .'">';	
 			
 			if( $title || $content ){
-				$output .= '<div class="google-map-contact-wrapper">';	
+				$output .= '<div class="google-map-contact-wrapper style-'. esc_attr( $style ) .'">';	
 					$output .= '<div class="get_in_touch">';
 						if( $title ) $output .= '<h3>'. $title .'</h3>';
 						$output .= '<div class="get_in_touch_wrapper">';
@@ -4851,16 +4884,10 @@ if( ! function_exists( 'sc_video' ) )
 					$output .= '<div class="mask"></div>';
 					$poster = ( $placeholder ) ? $placeholder : false;
 					
-					$output .= '<video poster="'. $poster .'" preload="auto" '. $html5_default .' style="max-width:100%;">';
+					$output .= '<video poster="'. $poster .'" '. $html5_default .' style="max-width:100%;">';
 						
 						$output .= '<source type="video/mp4" src="'. $mp4 .'" />';	
 						if( $ogv ) $output .= '<source type="video/ogg" src="'. $ogv .'" />';
-								
-						$output .= '<object width="1900" height="1060" type="application/x-shockwave-flash" data="'. THEME_URI .'/assets/jplayer/flashmediaelement.swf">';
-							$output .= '<param name="movie" value="'. THEME_URI .'/assets/jplayer/flashmediaelement.swf" />';
-							$output .= '<param name="flashvars" value="controls=true&file='. $mp4 .'" />';
-							$output .= '<img src="'. $poster .'" title="No video playback capabilities" class="scale-with-grid" alt="'. mfn_get_attachment_data( $poster, 'alt' ) .'"/>';
-						$output .= '</object>';
 						
 					$output .= '</video>';
 					
