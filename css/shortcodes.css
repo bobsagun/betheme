@@ -667,6 +667,43 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .wrap.one-fourth .Latest_news.featured ul,
 .wrap.one-fifth .Latest_news.featured ul,
 .wrap.one-sixth .Latest_news.featured ul{width:100%}
+
+/* Blog Teaser ----------------------------------------------------------------------- */
+.blog-teaser .teaser-wrapper{float:left;width:100%;margin:0;}
+
+.blog-teaser li{display:block;position:relative;overflow:hidden}
+.the_content_wrapper .blog-teaser li{margin-bottom:0;}
+.blog-teaser li:first-child{float:left;width:66%;}
+.blog-teaser li:not(:first-child){float:right;width:33%;}
+.blog-teaser li:last-child{margin-top:1%;}
+.blog-teaser li:last-child .photo-wrapper{margin-bottom:-3.2%;}
+
+.blog-teaser.margin-no li:first-child{width:66.6666%;}
+.blog-teaser.margin-no li:not(:first-child){float:right;width:33.3333%;}
+.blog-teaser.margin-no li:last-child{margin-top:0;}
+.blog-teaser.margin-no li:last-child .photo-wrapper{margin-bottom:0;}
+
+.blog-teaser li .photo-wrapper {position:relative;line-height:0;}
+.blog-teaser li .photo-wrapper:after{content:"";position:absolute;z-index:2;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.2);opacity:0;transition:all 0.6s ease-out;}
+.blog-teaser li:hover .photo-wrapper:after{opacity:1;}
+
+.blog-teaser li .desc-wrapper{position:absolute;left:0;bottom:-20px;width:100%;z-index:4;transition:all 0.4s ease-out;}
+.blog-teaser li:hover .desc-wrapper{transform:translateY(-20px);}
+.blog-teaser li .desc-wrapper .desc{background:url(../images/blog_masonry_tile_gradient.png) top left repeat-x;padding:70px 25px 30px;}
+
+.blog-teaser li .desc-wrapper .desc .post-meta .author .label{display:none;}
+.blog-teaser li .desc-wrapper .desc .post-meta .comments{margin-left:5px;}
+.blog-teaser li .desc-wrapper .desc .post-title a {color:#fff;}
+.blog-teaser li .desc-wrapper .desc .post-title:after{content:"";display:block;height:3px;margin-top:20px;width:0;transition:all 0.4s ease-out;background-color:#fff;}
+.blog-teaser li:hover .desc-wrapper .desc .post-title:after{width:40%}
+.blog-teaser li:first-child:hover .desc-wrapper .desc .post-title:after{width:20%}
+
+.blog-teaser li .desc-wrapper .desc .post-meta,
+.blog-teaser li .desc-wrapper .desc .post-meta a{color:rgba(255,255,255,.7);}
+
+.blog-teaser li:not(.has-post-thumbnail) .photo-wrapper{padding-top:75%;padding-bottom:3.2%;}
+.blog-teaser li:not(.has-post-thumbnail) .desc-wrapper .desc{background:none;}
+.blog-teaser li:not(.has-post-thumbnail) .desc-wrapper .desc .post-title:after{background:#fff;}
 	
 /* Helper ---------------------------------------------------------------------------- */
 .helper{overflow:hidden}

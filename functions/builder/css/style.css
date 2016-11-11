@@ -227,6 +227,10 @@ body.mfn-popup-open { overflow:hidden;}
 .mfn-item-blog_news .mfn-item-icon,
 .vc_element-icon.mfn-vc-icon-blog_news { background-image:url(../images/items/latest_posts.png);}
 
+/* Blog | Teaset */
+.mfn-item-blog_teaser .mfn-item-icon,
+.vc_element-icon.mfn-vc-icon-blog_teaser { background-image:url(../images/items/blog_teaser.png);}
+
 /* Clients */
 .mfn-item-clients .mfn-item-icon,
 .vc_element-icon.mfn-vc-icon-clients { background-image:url(../images/items/clients.png);}

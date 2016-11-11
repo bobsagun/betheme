@@ -1258,6 +1258,129 @@ if( ! function_exists( 'sc_blog_news' ) )
 
 
 /* ---------------------------------------------------------------------------
+ * Blog Teaser [blog_teaser]
+ * --------------------------------------------------------------------------- */
+if( ! function_exists( 'sc_blog_teaser' ) )
+{
+	function sc_blog_teaser( $attr, $content = null )
+	{
+		extract(shortcode_atts(array(
+			'title'				=> '',		
+			'title_tag'			=> 'h3',
+
+			'category'			=> '',
+			'category_multi'	=> '',
+			
+// 			'link'				=> '',
+// 			'link_title'		=> '',
+			'margin'			=> '',
+		), $attr));
+		
+		$args = array(
+			'posts_per_page'		=> 3,
+			'no_found_rows'			=> 1,
+			'post_status'			=> 'publish',
+			'ignore_sticky_posts'	=> 0,
+		);
+		
+		$translate['published'] = mfn_opts_get('translate') ? mfn_opts_get('translate-published','Published by') : __('Published by','betheme');
+		$translate['at'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-at','at') : __('at','betheme');
+		
+		// title tag
+		$title_tag = intval( str_replace( 'h', '', trim( $title_tag ) ) );
+		
+		// class
+		$class = '';
+		if( ! $margin ){
+			$class .= 'margin-no';
+		}
+		
+		// private
+		if( is_user_logged_in() ){
+			$args['post_status'] = array('publish','private');
+		}
+		
+		// categories
+		if( $category_multi ){
+			$args['category_name'] = trim( $category_multi );
+		} elseif( $category ){
+			$args['category_name'] = $category;
+		}
+
+		$query_blog = new WP_Query( $args );
+		
+		$output = '<div class="blog-teaser '. esc_attr( $class ) .'">';
+		
+			if( $title ) $output .= '<h3 class="title">'. $title .'</h3>';
+		
+			$output .= '<ul class="teaser-wrapper">';
+
+				$first = true;
+				
+				while( $query_blog->have_posts() ){
+					$query_blog->the_post();
+					
+					$output .= '<li class="'. implode( ' ', get_post_class() ).'">';
+						
+						$output .= '<div class="photo-wrapper scale-with-grid">';
+							$output .= get_the_post_thumbnail( get_the_ID(), 'blog-portfolio', array( 'class' => 'scale-with-grid' ) );
+						$output .= '</div>';
+
+						$output .= '<div class="desc-wrapper">';
+							$output .= '<div class="desc">';
+								
+								if( mfn_opts_get( 'blog-meta' ) ){
+									$output .= '<div class="post-meta clearfix">';
+											
+										$output .= '<span class="author">';
+											$output .= '<span class="label">'. $translate['published'] .' </span>';
+											$output .= '<i class="icon-user"></i> ';
+											$output .= '<a href="'. get_author_posts_url( get_the_author_meta( 'ID' ) ) .'">'. get_the_author_meta( 'display_name' ) .'</a>';
+										$output .= '</span> ';
+											
+										$output .= '<span class="date">';
+											$output .= '<span class="label">'. $translate['at'] .' </span>';
+											$output .= '<i class="icon-clock"></i> ';
+											$output .= '<span class="post-date">'. get_the_date() .'</span>';
+										$output .= '</span>';
+		
+										// .post-comments | Style == Masonry Tiles
+										if( comments_open() && mfn_opts_get( 'blog-comments' ) ){
+											$output .= '<span class="comments">';
+												$output .= '<i class="icon-comment-empty-fa"></i> <a href="'. get_comments_link() .'" class="post-comments">'. get_comments_number() .'</a>';
+											$output .= '</span>';
+										}
+										
+									$output .= '</div>';
+								}
+
+								$output .= '<div class="post-title">';
+									$output .= '<h'. $title_tag .'><a href="'. get_permalink() .'">'. get_the_title() .'</a></h'. $title_tag .'>';
+								$output .= '</div>';
+						
+							$output .= '</div>';
+						$output .= '</div>';
+
+					$output .= '</li>';
+					
+					if( $first ){
+						$title_tag++;
+						$first = false;
+					}
+					
+				}
+				wp_reset_postdata();
+			
+			$output .= '</ul>';
+
+		$output .= '</div>'."\n";
+
+		return $output;
+	}
+}
+
+
+/* ---------------------------------------------------------------------------
  * Shop Slider [shop_slider]
  * --------------------------------------------------------------------------- */
 if( ! function_exists( 'sc_shop_slider' ) )
@@ -5256,6 +5379,7 @@ add_shortcode( 'before_after', 'sc_before_after' );
 add_shortcode( 'blog', 'sc_blog' );
 add_shortcode( 'blog_news', 'sc_blog_news' );
 add_shortcode( 'blog_slider', 'sc_blog_slider' );
+add_shortcode( 'blog_teaser', 'sc_blog_teaser' );
 add_shortcode( 'call_to_action', 'sc_call_to_action' );
 add_shortcode( 'chart', 'sc_chart' );
 add_shortcode( 'clients', 'sc_clients' );

@@ -384,7 +384,44 @@ if( ! function_exists( 'mfn_slider' ) )
 
 
 /* ---------------------------------------------------------------------------
- * User Agent
+ * WP Mobile Detect | Quick FIX: parallax on mobile
+ * --------------------------------------------------------------------------- */
+if( ! function_exists( 'mfn_is_mobile' ) )
+{
+	function mfn_is_mobile(){
+
+		$mobile = wp_is_mobile();
+
+		if( mfn_opts_get( 'responsive-parallax' ) ){
+			$mobile = false;
+		}
+
+		return $mobile;
+	}
+}
+
+
+/* ---------------------------------------------------------------------------
+ * User OS
+ * --------------------------------------------------------------------------- */
+if( ! function_exists( 'mfn_user_os' ) )
+{
+	function mfn_user_os(){
+		
+		$os = false;
+		$user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+		if( strpos( $user_agent, 'iPad;' ) || strpos( $user_agent, 'iPhone;' ) ){
+			$os = ' ios';
+		}
+
+		return $os;
+	}
+}
+
+
+/* ---------------------------------------------------------------------------
+ * User Agent | For: Prallax - Safari detect & future use
  * --------------------------------------------------------------------------- */
 if( ! function_exists( 'mfn_user_agent' ) )
 {
@@ -412,24 +449,6 @@ if( ! function_exists( 'mfn_user_agent' ) )
 		}
 
 		return $user_agent;
-	}
-}
-
-
-/* ---------------------------------------------------------------------------
- * WP Mobile Detect
- * --------------------------------------------------------------------------- */
-if( ! function_exists( 'mfn_is_mobile' ) )
-{
-	function mfn_is_mobile(){
-
-		$mobile = wp_is_mobile();
-		
-		if( mfn_opts_get( 'responsive-parallax' ) ){
-			$mobile = false;
-		}
-
-		return $mobile;
 	}
 }
 
@@ -1839,7 +1858,7 @@ if( ! function_exists( 'mfn_tag_schema' ) )
 		// Is Woocommerce product
 		if( function_exists( 'is_product' ) && is_product() ){
 			
-			$type = 'Product';
+			$type = false;
 			
 		} elseif( is_single() ) {
 			
@@ -1863,7 +1882,7 @@ if( ! function_exists( 'mfn_tag_schema' ) )
 			
 		}
 
-		if( mfn_opts_get('mfn-seo-schema-type') ){
+		if( mfn_opts_get( 'mfn-seo-schema-type' ) && $type ){
 			echo ' itemscope="itemscope" itemtype="' . $schema . $type . '"';
 		}
 		

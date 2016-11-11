@@ -499,7 +499,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		background: <?php hex2rgba( mfn_opts_get( 'background-imageframe-link', '#2991d6' ), 0.8, true ) ?>;
 	}
 	
-	.masonry.tiles .post-item .post-desc-wrapper .post-desc .post-title:after, .masonry.tiles .post-item.no-img, .masonry.tiles .post-item.format-quote {
+	.masonry.tiles .post-item .post-desc-wrapper .post-desc .post-title:after,.masonry.tiles .post-item.no-img,.masonry.tiles .post-item.format-quote,.blog-teaser li .desc-wrapper .desc .post-title:after,.blog-teaser li.no-img,.blog-teaser li.format-quote {
 		background: <?php mfn_opts_show( 'background-imageframe-link', '#2991d6' ) ?>;
 	}
        

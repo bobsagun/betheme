@@ -653,8 +653,10 @@ body.header-stack:not(.template-slider) #Header{min-height:315px}
 .post-photo-wrapper iframe{width:100%}
 .post-desc-wrapper{width:63%;float:left}
 .post-desc{padding:15px 0 0 20px}
-.format-standard.no-img .section-post-header .post-photo-wrapper{display:none}
-.format-standard.no-img .post-desc-wrapper{width:100%}
+
+.post.no-img .post-photo-wrapper{display:none}
+.post.no-img .post-desc-wrapper{width:100%}
+
 .search-results .no-img .post-desc{padding-left:0}
 .search-results .no-img .post-desc-wrapper{width:100%}
 
@@ -775,21 +777,21 @@ body.header-stack:not(.template-slider) #Header{min-height:315px}
 			.posts_group.masonry.margin.col-5 .post-item { width: 18.99%; margin:0 0.5% 12px !important;}
 			.posts_group.masonry.margin.col-6 .post-item { width: 15.66%; margin:0 0.5% 12px !important;}
 
-		/* Colors */
-		.masonry.tiles .post-item.format-quote blockquote,
-		.masonry.tiles .post-item.format-quote blockquote a,
-		.masonry.tiles .post-item.format-link .post-title .icon-link,
-		.masonry.tiles .post-item.format-link .post-title .link-wrapper h4,
-		.masonry.tiles .post-item.format-link .post-title .link-wrapper a,
-		.masonry.tiles .post-item .post-desc-wrapper .post-desc .post-title .entry-title a { color: #fff; }
-		
-		.masonry.tiles .post-item.no-img .post-desc-wrapper .post-desc .post-title:after,
-		.masonry.tiles .post-item.format-quote .post-desc-wrapper .post-desc .post-title:after,
-		.masonry.tiles .post-item.format-link .post-desc-wrapper .post-desc .post-title:after { background-color: #fff; }
-		
-		.masonry.tiles .post-item .post-desc-wrapper .post-desc .post-head .post-meta,
-		.masonry.tiles .post-item .post-desc-wrapper .post-desc .post-head .post-meta a,
-		.masonry.tiles .post-item .post-desc-wrapper .post-desc .post-excerpt { color: rgba(255,255,255,.7); }
+			/* Colors */
+			.masonry.tiles .post-item.format-quote blockquote,
+			.masonry.tiles .post-item.format-quote blockquote a,
+			.masonry.tiles .post-item.format-link .post-title .icon-link,
+			.masonry.tiles .post-item.format-link .post-title .link-wrapper h4,
+			.masonry.tiles .post-item.format-link .post-title .link-wrapper a,
+			.masonry.tiles .post-item .post-desc-wrapper .post-desc .post-title .entry-title a { color: #fff; }
+			
+			.masonry.tiles .post-item.no-img .post-desc-wrapper .post-desc .post-title:after,
+			.masonry.tiles .post-item.format-quote .post-desc-wrapper .post-desc .post-title:after,
+			.masonry.tiles .post-item.format-link .post-desc-wrapper .post-desc .post-title:after { background-color: #fff; }
+			
+			.masonry.tiles .post-item .post-desc-wrapper .post-desc .post-head .post-meta,
+			.masonry.tiles .post-item .post-desc-wrapper .post-desc .post-head .post-meta a,
+			.masonry.tiles .post-item .post-desc-wrapper .post-desc .post-excerpt { color: rgba(255,255,255,.7); }
 
 		/* Timeline */
 		.timeline .post-item { float:none; width:auto; padding-left: 200px; margin-bottom: 0; padding-bottom: 40px; background: url(../images/timeline_right.png) no-repeat 90px top; }
@@ -935,18 +937,17 @@ body.header-stack:not(.template-slider) #Header{min-height:315px}
 		.section-post-related .simple .post-related.format-quote .date_label{margin-bottom:10px;}
 		.section-post-related .simple .format-quote blockquote{margin-top:0px;}
 		
-
 	/* Format | Link */
 	.single-format-link .single-photo-wrapper .share_wrapper{float:none;width:auto;padding:10px 15px 15px}
 	.single-format-link .single-photo-wrapper .share_wrapper .stButton{margin:0 10px 0 0}
-	.single-format-link .single-photo-wrapper .image_frame{display:none}
+	.single-format-link .section-post-header .single-photo-wrapper .image_frame{display:none}
 	
 	/* Format | Quote */
 	.single-format-quote #Subheader .title{width:100%}
 	.single-format-quote #Subheader ul.breadcrumbs{display:none}
 	.single-format-quote .single-photo-wrapper .share_wrapper{float:none;width:auto;padding:10px 15px 15px}
 	.single-format-quote .single-photo-wrapper .share_wrapper .stButton{margin:0 10px 0 0}
-	.single-format-quote .single-photo-wrapper .image_frame{display:none}
+	.single-format-quote .section-post-header .single-photo-wrapper .image_frame{display:none}
 	
 	/* NO img */
 	.portfolio.no-img .single-photo-wrapper .share_wrapper,.format-image.no-img .single-photo-wrapper .share_wrapper,.format-standard.no-img .single-photo-wrapper .share_wrapper{float:none;width:auto;padding:10px 15px 15px}

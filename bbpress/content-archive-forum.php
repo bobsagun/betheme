@@ -20,6 +20,9 @@
 		</div>
 
 	<?php endif; ?>
+	
+	<?php bbp_forum_subscription_link(); ?>
+	
 	<?php do_action( 'bbp_template_before_forums_index' ); ?>
 
 	<?php if ( bbp_has_forums() ) : ?>

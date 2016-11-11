@@ -193,6 +193,7 @@ a:hover.tp-button.lightgrey{background-color:#fff;color:#545454!important}
 .bbpress #Subheader ul.breadcrumbs{width:40%}
 .bbpress #Subheader ul.breadcrumbs .bbp-breadcrumb-current{margin:0}
 .bbpress #bbpress-forums div.bbp-search-form{float:none;width:100%;margin-bottom:20px}
+.bbpress #bbpress-forums #subscription-toggle{color:#ffffff}
 .bbpress #bbpress-forums #bbp-search-form #bbp_search{width:100%;margin:0}
 .bbpress #bbpress-forums div.bbp-topic-tags{clear:both;margin-bottom:20px}
 .bbpress #bbpress-forums div.bbp-topic-tags p{margin:0}

@@ -60,6 +60,7 @@ if( ! function_exists( 'mfn_get_fields_section' ) )
 				'id' 		=> 'bg_position',
 				'type' 		=> 'select',
 				'title' 	=> __('Background | Position', 'mfn-opts'),
+				'desc' 		=> __('iOS do not support background-position: fixed', 'mfn-opts'),
 				'options' 	=> mfna_bg_position(),
 				'std' 		=> 'center top no-repeat',
 			),
@@ -273,6 +274,7 @@ if( ! function_exists( 'mfn_get_fields_wrap' ) )
 				'id' 		=> 'bg_position',
 				'type' 		=> 'select',
 				'title' 	=> __('Background | Position', 'mfn-opts'),
+				'desc' 		=> __('iOS do not support background-position: fixed', 'mfn-opts'),
 				'options' 	=> mfna_bg_position(),
 				'std' 		=> 'center top no-repeat',
 			),
@@ -1059,6 +1061,122 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'desc'		=> __('Multiple classes should be separated with SPACE', 'mfn-opts'),
 					),
 							
+				),
+			),
+				
+			// Blog Teaser ------------------------------------------------------
+			
+			'blog_teaser' => array(
+				'type' 		=> 'blog_teaser',
+				'title' 	=> __('Blog Teaser', 'mfn-opts'),
+				'size' 		=> '1/1',
+				'cat' 		=> 'loops',
+				'fields'	=> array(
+			
+					array(
+						'id' 		=> 'info',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Recommended wrap width: 1/1, minimum wrap width: 2/3', 'nhp-opts'),
+						'class' 	=> 'mfn-info info',		
+					),
+						
+					array(
+						'id' 		=> 'title',
+						'type' 		=> 'text',
+						'title' 	=> __('Title', 'mfn-opts'),
+					),
+						
+					array(
+						'id' 		=> 'title_tag',
+						'type' 		=> 'select',
+						'title' 	=> __('Title | Tag', 'mfn-opts'),
+						'desc' 		=> __('Title tag for 1st item, others use a smaller one', 'mfn-opts'),
+						'options' 	=> array(
+								'h1' => 'H1',
+								'h2' => 'H2',
+								'h3' => 'H3',
+								'h4' => 'H4',
+								'h5' => 'H5',
+								'h6' => 'H6',
+						),
+						'std'		=> 'h3'
+					),
+	
+					// options
+					array(
+						'id' 		=> 'info_options',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Options', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+	
+					array(
+						'id' 		=> 'category',
+						'type' 		=> 'select',
+						'title' 	=> __('Category', 'mfn-opts'),
+						'options' 	=> mfn_get_categories( 'category' ),
+						'sub_desc' 	=> __('Select posts category', 'mfn-opts'),
+					),
+	
+					array(
+						'id'		=> 'category_multi',
+						'type'		=> 'text',
+						'title'		=> __('Multiple Categories', 'mfn-opts'),
+						'sub_desc'	=> __('Categories Slugs', 'mfn-opts'),
+						'desc'		=> __('Slugs should be separated with <strong>coma</strong> (,).', 'mfn-opts'),
+					),
+	
+					// advanced
+					array(
+						'id' 		=> 'info_advanced',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Advanced', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
+					array(
+						'id' 		=> 'margin',
+						'type' 		=> 'select',
+						'title' 	=> __('Margin', 'mfn-opts'),
+						'options' 	=> array(
+							'1' 		=> __('Default', 'mfn-opts'),
+							'0'			=> __('No margins', 'mfn-opts'),
+						),
+					),
+	
+// 					array(
+// 						'id'		=> 'link',
+// 						'type' 		=> 'text',
+// 						'title' 	=> __('Button | Link', 'mfn-opts'),
+// 					),
+	
+// 					array(
+// 						'id'		=> 'link_title',
+// 						'type' 		=> 'text',
+// 						'title' 	=> __('Button | Title', 'mfn-opts'),
+// 						'class'		=> 'small-text',
+// 					),
+	
+					// custom
+					array(
+						'id' 		=> 'info_custom',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Custom', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
+					array(
+						'id' 		=> 'classes',
+						'type' 		=> 'text',
+						'title' 	=> __('Custom | Classes', 'mfn-opts'),
+						'sub_desc'	=> __('Custom CSS Item Classes Names', 'mfn-opts'),
+						'desc'		=> __('Multiple classes should be separated with SPACE', 'mfn-opts'),
+					),
+								
 				),
 			),
 				
