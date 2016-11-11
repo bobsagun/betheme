@@ -464,7 +464,7 @@ if( $_GET && key_exists( 'mfn-o', $_GET ) && $_GET['mfn-o'] ){
 		background: <?php hex2rgba( $color_one, 0.8, true ) ?>;
 	}
 	
-	.masonry.tiles .post-item .post-desc-wrapper .post-desc .post-title:after, .masonry.tiles .post-item.no-img, .masonry.tiles .post-item.format-quote {
+	.masonry.tiles .post-item .post-desc-wrapper .post-desc .post-title:after,.masonry.tiles .post-item.no-img,.masonry.tiles .post-item.format-quote,.blog-teaser li .desc-wrapper .desc .post-title:after,.blog-teaser li.no-img,.blog-teaser li.format-quote {
 		background: <?php echo $color_one; ?>;
 	}
 	

@@ -235,6 +235,11 @@
 						editor.insertContent('[blog_news title="" style="" count="5" category="" category_multi="" excerpt="0" link="" link_title=""]');
 					}
 				}, {
+					text : 'Blog Teaser',
+					onclick : function() {
+						editor.insertContent('[blog_teaser title="" title_tag="h3" category="" category_multi="" margin="1"]');
+					}
+				}, {
 					text : 'Blog Slider',
 					onclick : function() {
 						editor.insertContent('[blog_slider title="" count="5" category="" category_multi="" more="0" style="" navigation=""]');

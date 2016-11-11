@@ -20,6 +20,8 @@
 		</div>
 
 	<?php endif; ?>
+	
+	<?php bbp_forum_subscription_link(); ?>
 
 	<?php do_action( 'bbp_template_before_single_forum' ); ?>
 

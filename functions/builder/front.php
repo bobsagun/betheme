@@ -517,6 +517,16 @@ if( ! function_exists( 'mfn_print_blog_slider' ) )
 	}
 }
 
+if( ! function_exists( 'mfn_print_blog_teaser' ) )
+{
+	/**
+	 * [blog_teaser]
+	 */
+	function mfn_print_blog_teaser( $item ) {
+		echo sc_blog_teaser( $item['fields'] );
+	}
+}
+
 if( ! function_exists( 'mfn_print_button' ) )
 {
 	/**
