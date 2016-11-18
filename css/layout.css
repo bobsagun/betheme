@@ -2,7 +2,8 @@
 .rev_slider iframe{max-width:1220px}
 .rev_slider ul{margin:0!important}
 .tp-static-layers{z-index:200}
-.ls-yourlogo{z-index:28}		
+#mfn-layer-slider{position:relative;z-index:28}
+#mfn-layer-slider .ls-yourlogo{z-index:29}		
 
 /* Section --------------------------------------------------------------------------- */
 .section[data-parallax="3d"]{overflow:hidden}
@@ -297,20 +298,20 @@ body:not(.template-slider) #Header{min-height:250px}
 	#Top_bar .top_bar_right_wrapper{position:relative;top:25px}
 	
 		/* Cart */
-		#Top_bar a#header_cart{position:relative;top:9px;display:block;float:left;font-size:22px;line-height:22px;margin-right:-5px}
+		#Top_bar a#header_cart{position:relative;top:9px;display:block;float:left;font-size:22px;line-height:22px;margin-right:5px}
 		#Top_bar a#header_cart span{position:relative;right:9px;top:-10px;display:inline-block;width:17px;height:17px;line-height:17px;text-align:center;font-size:11px;color:#fff;-webkit-border-radius:3px;border-radius:3px}
 		
 		/* Search */
-		#Top_bar a#search_button{position:relative;top:9px;display:block;float:left;font-size:23px;line-height:22px;margin-right:5px}
+		#Top_bar a#search_button{position:relative;top:9px;display:block;float:left;font-size:23px;line-height:22px;margin-right:5px;margin-left:-10px;}
 		#Top_bar a#search_button.has-input input{display:inline-block;margin:-5px 0 0;padding:8px;position:relative;top:-2px;width:130px}
 		
 		/* Action Button */
-		#Top_bar a.button.action_button{top:-2px;margin:0 10px 0 0}
+		#Top_bar a.button.action_button{top:-2px;margin:0 10px 0 0;line-height:21px;}
 		body.button-stroke #Top_bar a.button.action_button{top:-4px}
 		body:not(.button-stroke) #Top_bar a.button.action_button{color:#fff}
 		
 		/* WPML */
-		#Top_bar .wpml-languages{display:block;float:left;position:relative;z-index:210;margin-right:10px}
+		#Top_bar .wpml-languages{display:block;float:left;position:relative;z-index:210;margin-right:10px;font-size:13px;line-height:21px;}
 		#Top_bar .wpml-languages a.active{display:block;padding:10px 6px 10px 10px;height:17px;border:1px solid rgba(0,0,0,.1);-webkit-border-radius:5px;border-radius:5px}
 		#Top_bar .wpml-languages.disabled a.active{padding-right:10px;}
 		#Top_bar .wpml-languages a.active i{font-size:14px;line-height:14px;margin:0 0 0 5px}
@@ -483,7 +484,7 @@ body.header-below:not(.template-slider) #Header{min-height:90px;padding-top:160p
 	.header-plain #Top_bar .wpml-languages ul.wpml-lang-dropdown{border:0;border-radius:0}
 	.header-plain #Top_bar a.button.action_button{margin:0;top:0;border-radius:0;border-left-width:1px;border-style:solid}
 	.header-plain #Top_bar .menu > li > a span:not(.description){line-height:80px;padding:0 30px}
-	.header-plain #Top_bar a#header_cart,.header-plain #Top_bar a#search_button{padding:0 25px;line-height:80px}
+	.header-plain #Top_bar a#header_cart,.header-plain #Top_bar a#search_button{padding:0 25px;line-height:80px;margin-left:0;}
 	.header-plain #Top_bar .wpml-languages{padding:0 25px;line-height:80px}
 	.header-plain #Top_bar a.button.action_button{line-height:80px}
 	.header-plain #Top_bar a.button.action_button .button_label{padding:0 30px}

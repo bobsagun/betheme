@@ -374,27 +374,21 @@ class mfnImport {
 							// Single Demo Data ---------------------------------
 							
 							$_POST['demo'] 		= htmlspecialchars( stripslashes( $_POST['demo'] ) );
-
 							
 							$file = 'be/'. $_POST['demo'] .'/content.xml.gz';
 							$this->import_content( $file );
-
 							
 							// Muffin Builder | replace exported URL with destination URL
 							$this->migrate_cb( $this->get_demo_url( $_POST['demo'] ) );
 							
-							
 							$file = 'be/'. $_POST['demo'] .'/menu.txt';
 							$this->import_menu_location( $file );
-
-							
+	
 							$file = 'be/'. $_POST['demo'] .'/options.txt';
-							$this->import_options( $file, $this->get_demo_url( $_POST['demo'] ) );
-							
+							$this->import_options( $file, $this->get_demo_url( $_POST['demo'] ) );							
 							
 							$file = 'be/'. $_POST['demo'] .'/widget_data.json';
-							$this->import_widget( $file );
-							
+							$this->import_widget( $file );							
 							
 							// set home & blog page
 							$home = get_page_by_title( 'Home' );
@@ -628,6 +622,7 @@ class mfnImport {
 								<option value="fashion">Fashion</option>
 								<option value="factory">Factory</option>
 								<option value="finance">Finance</option>
+								<option value="fireplace">Fireplace</option>
 								<option value="firm">Firm</option>
 								<option value="fit">Fit</option>
 								<option value="fitness">Fitness</option>

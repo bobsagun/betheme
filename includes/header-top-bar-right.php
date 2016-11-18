@@ -59,13 +59,13 @@ if( $has_cart || $header_search || $action_link || $wpml_icon ){
 			
 				$action_options = mfn_opts_get( 'header-action-target' );
 				
-				if( isset( $header_action_options['target'] ) ){
+				if( isset( $action_options['target'] ) ){
 					$action_target = 'target="_blank"';
 				} else {
 					$action_target = false;
 				}
 				
-				if( isset( $header_action_options['scroll'] ) ){
+				if( isset( $action_options['scroll'] ) ){
 					$action_class = 'scroll';
 				} else {
 					$action_class = false;

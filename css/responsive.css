@@ -435,7 +435,7 @@ html,body{overflow-x:hidden}
 	#Top_bar .top_bar_left{float:none;width:100%!important;background:none!important}
 
 	#Top_bar a.responsive-menu-toggle{right:20px;}
-	#Top_bar a.responsive-menu-toggle.is-sticky{position:fixed;top:10px;left:10px;margin-top:0;}
+	#Top_bar a.responsive-menu-toggle.is-sticky{position:fixed;top:30px;left:10px;}
 	.admin-bar #Top_bar a.responsive-menu-toggle.is-sticky{top:56px}
 
 	#Top_bar .menu_wrapper{float:left!important;width:100%;margin:0!important}
@@ -544,7 +544,7 @@ html,body{overflow-x:hidden}
 		.mobile-header-mini #Top_bar a.button.action_button{display:none;}
 
 		.mobile-header-mini #Top_bar #header_cart{margin-right:-1px;}
-		.mobile-header-mini #Top_bar #search_button{margin-right:0;}
+		.mobile-header-mini #Top_bar #search_button{margin-left:0;margin-right:0;}
 		.mobile-header-mini #Top_bar .wpml-languages{top:13px;margin-right:0;}
 		.mobile-header-mini #Top_bar .wpml-languages a.active,
 		.mobile-header-mini #Top_bar .wpml-languages ul.wpml-lang-dropdown{border:none;}
@@ -595,7 +595,6 @@ html,body{overflow-x:hidden}
 		.mobile-sticky #Top_bar.is-sticky{position:fixed !important;}
 		.mobile-sticky #Top_bar.is-sticky #logo{margin:0 50px;height:60px!important;line-height:60px!important;}
 		.mobile-sticky #Top_bar.is-sticky a.responsive-menu-toggle{top:30px!important;}
-		.mobile-sticky #Top_bar.is-sticky a.responsive-menu-toggle.is-sticky{top:10px!important;}
 		.mobile-sticky #Top_bar.is-sticky .top_bar_right{display:none;}
 		.mobile-sticky #Top_bar #menu{overflow:auto;-webkit-box-sizing:border-box;box-sizing:border-box;}
 		
