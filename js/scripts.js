@@ -1906,7 +1906,7 @@
 	
 	// --- Offer Thumb -----------------------------------------------------------------
 	function mfnSliderOfferThumb_Pager(nr) {
-		var thumb = $('.offer_thumb').find('.offer_thumb_li.id_'+ nr +' .thumbnail img').attr('src');			
+		var thumb = $(this).closest('.offer_thumb').find('.offer_thumb_li.id_'+ nr +' .thumbnail img').attr('src');			
 	    return '<a href="#'+ nr +'"><img src="'+ thumb +'" alt="'+ nr +'" /></a>';
 	}
 	

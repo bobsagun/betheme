@@ -490,7 +490,7 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .content_slider .caroufredsel_wrapper{border-width:8px;border-style:solid;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 .content_slider ul{line-height:0;margin:0}
 .content_slider ul li{display:block;float:left}
-.content_slider a.slider_prev,.content_slider a.slider_next{position:absolute;top:50%;margin:-43px 0 0}
+.content_slider a.slider_prev,.content_slider a.slider_next{position:absolute;top:50%;margin:-43px 0 0;font-size:13px;line-height:21px}
 .content_slider a.slider_prev{left:50px}
 .content_slider a.slider_next{right:50px}
 .content_slider .slider_pagination{position:absolute;left:0;bottom:0;width:100%}
@@ -543,6 +543,7 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .content_slider.carousel ul li img,.content_slider.carousel ul li .title,.content_slider.flat a.button .button_icon{-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
 
 /* Offer slider ---------------------------------------------------------------------- */
+.offer{position:relative}
 .offer .offer_ul{margin:0!important}
 .offer .offer_li{display:block;float:left}
 .offer .offer_li .image_wrapper{float:left;width:50%;line-height:0}
@@ -569,7 +570,7 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 
 .offer a.slider_prev,.offer a.slider_next{background:#262626;margin:0;position:absolute}
 .offer a.slider_prev:after,.offer a.slider_next:after{background:rgba(0,0,0,.2)}
-.offer a.slider_prev .button_icon,.offer a.slider_next .button_icon{padding:0;width:46px;height:46px;line-height:46px;text-align:center}
+.offer a.slider_prev .button_icon,.offer a.slider_next .button_icon{padding:0;width:46px;height:46px;line-height:46px;font-size:13px;text-align:center}
 .offer a.slider_prev .button_icon i,.offer a.slider_next .button_icon i{color:#fff}
 .offer a.slider_prev{left:50px;top:50%;z-index:2;margin-top:-69px;border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0;-webkit-border-radius:5px 5px 0 0}
 .offer a.slider_next{left:50px;top:50%;z-index:2;margin-top:23px;border-radius:0 0 5px 5px;-moz-border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px}
@@ -1101,14 +1102,18 @@ ul.clients li .client_wrapper,ul.clients li .client_wrapper img{-webkit-transiti
 /* Clients slider -------------------------------------------------------------------- */
 .clients_slider .clients_slider_header{position:relative;height:43px;margin-bottom:15px;overflow:hidden;padding-right:110px}
 .clients_slider .clients_slider_header .title{margin:9px 0 0}
-.clients_slider .clients_slider_header a.slider_prev{position:absolute;top:0;right:50px;margin:0}
-.clients_slider .clients_slider_header a.slider_next{position:absolute;top:0;right:0;margin:0}
+.clients_slider .clients_slider_header a.slider_prev,
+.clients_slider .clients_slider_header a.slider_next{position:absolute;top:0;margin:0;font-size:13px;line-height:21px}
+.clients_slider .clients_slider_header a.slider_prev{right:50px}
+.clients_slider .clients_slider_header a.slider_next{right:0}
 
 /* Blog slider ----------------------------------------------------------------------- */
 .blog_slider .blog_slider_header{position:relative;height:43px;margin-bottom:15px;overflow:hidden;padding-right:110px}
 .blog_slider .blog_slider_header .title{margin:9px 0 0}
-.blog_slider .blog_slider_header a.slider_prev{position:absolute;top:0;right:50px;margin:0}
-.blog_slider .blog_slider_header a.slider_next{position:absolute;top:0;right:0;margin:0}
+.blog_slider .blog_slider_header a.slider_prev,
+.blog_slider .blog_slider_header a.slider_next{position:absolute;top:0;margin:0;font-size:13px;line-height:21px}
+.blog_slider .blog_slider_header a.slider_prev{right:50px}
+.blog_slider .blog_slider_header a.slider_next{right:0}
 .blog_slider .slider_pagination{margin-top:15px}
 .blog_slider .blog_slider_ul{margin:0}
 .blog_slider .blog_slider_ul li{float:left;width:25%;list-style:none}
@@ -1154,8 +1159,10 @@ ul.clients li .client_wrapper,ul.clients li .client_wrapper img{-webkit-transiti
 /* Shop slider ----------------------------------------------------------------------- */
 .shop_slider .blog_slider_header{position:relative;height:43px;margin-bottom:15px;overflow:hidden;padding-right:110px}
 .shop_slider .blog_slider_header .title{margin:9px 0 0}
-.shop_slider .blog_slider_header a.slider_prev{position:absolute;top:0;right:50px;margin:0}
-.shop_slider .blog_slider_header a.slider_next{position:absolute;top:0;right:0;margin:0}
+.shop_slider .blog_slider_header a.slider_prev,
+.shop_slider .blog_slider_header a.slider_next{position:absolute;top:0;margin:0;font-size:13px;line-height:21px}
+.shop_slider .blog_slider_header a.slider_prev{right:50px}
+.shop_slider .blog_slider_header a.slider_next{right:0}
 .shop_slider .slider_pagination{margin-top:15px}
 .shop_slider .shop_slider_ul{margin:0}
 .shop_slider .shop_slider_ul li{float:left;width:25%;list-style:none}
@@ -1193,7 +1200,7 @@ ul.portfolio_grid li .image_frame{border:0;margin:0}
 .portfolio-photo .portfolio-item a.portfolio-item-bg .mask{position:absolute;z-index:1;left:0;top:0;background:#000;opacity:.3;width:100%;height:100%}
 .portfolio-photo .portfolio-item:hover a.portfolio-item-bg .mask{opacity:0}
 .portfolio-photo .portfolio-item .portfolio-details{display:block}
-.portfolio-photo .portfolio-item .portfolio-details .details{position:absolute;z-index:2;left:50%;top:50%;margin:-105px 0 0 -150px;width:240px;padding:55px 30px;text-align:center}
+.portfolio-photo .portfolio-item .portfolio-details .details{position:absolute;z-index:2;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:240px;padding:55px 30px;text-align:center}
 .portfolio-photo .portfolio-item .portfolio-details .details .title{font-size:23px;line-height:27px;border-bottom:1px solid rgba(0,0,0,.1);padding-bottom:15px;margin-bottom:10px}
 .portfolio-photo .portfolio-item .portfolio-details:hover .details{opacity:0}
 .portfolio-photo .portfolio-item .portfolio-details .more{display:block;opacity:0;text-transform:uppercase;width:70px;height:40px;padding:20px 5px;letter-spacing:1px;text-align:center;position:absolute;left:50%;top:50%;z-index:2;margin:-40px 0 0 -40px;-webkit-border-radius:100%;border-radius:100%}
@@ -1227,7 +1234,7 @@ ul.portfolio_grid li .image_frame{border:0;margin:0}
 .testimonials_slider .slider_images a.selected:after{display:block}
 .testimonials_slider .caroufredsel_wrapper{margin:0!important}
 .testimonials_slider .testimonials_slider_ul li{float:left;width:100%;padding:0 80px;list-style:none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-.testimonials_slider .testimonials_slider_ul li .bq_wrapper{background:rgba(0,0,0,0.02);padding:30px 40px 10px;overflow:hidden;margin-bottom:20px}
+.testimonials_slider .testimonials_slider_ul li .bq_wrapper{background:rgba(0,0,0,0.02);padding:30px 40px 10px;margin-bottom:20px}
 .testimonials_slider .testimonials_slider_ul li .hr_dots{margin-bottom:15px}
 .testimonials_slider .testimonials_slider_ul li .author{text-align:center}
 .testimonials_slider .testimonials_slider_ul li .author h5{margin-bottom:2px}
@@ -1509,7 +1516,8 @@ a.icon_bar{color:#444!important}
 .style-simple blockquote:after{display:none}
 
 /* Testimonials slider */
-.style-simple .testimonials_slider .testimonials_slider_ul li .bq_wrapper{padding-top:0;padding-bottom:0;background:none;text-align:center}
+.style-simple .testimonials_slider .testimonials_slider_ul li .bq_wrapper{padding-top:0;padding-bottom:1px;background:none;text-align:center}
+.style-simple .testimonials_slider .testimonials_slider_ul li .bq_wrapper blockquote{margin-left:0;margin-right:0;}
 .style-simple .testimonials_slider .slider_images{background-color:transparent}
 .style-simple .testimonials_slider .slider_images:before{display:none}
 

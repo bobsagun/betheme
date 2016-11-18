@@ -3759,14 +3759,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 				'size' 		=> '1/1',
 				'cat' 		=> 'loops',
 				'fields' 	=> array(
-
-					array(
-						'id' 		=> 'info',
-						'type' 		=> 'info',
-						'title' 	=> '',
-						'desc' 		=> __('This item can only be used <strong>once per page</strong>.', 'nhp-opts'),
-						'class' 	=> 'mfn-info info',
-					),
 						
 					array(
 						'id'		=> 'category',
