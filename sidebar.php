@@ -34,7 +34,9 @@ if( get_post_type() == 'page' && mfn_opts_get('single-page-sidebar') ){
 	
 }
 
-if( $_GET && key_exists('mfn-s', $_GET) ) $sidebar = $_GET['mfn-s']; // demo
+if( $_GET && key_exists('mfn-s', $_GET) ){
+	$sidebar = esc_html( $_GET['mfn-s'] ); // demo
+}
 
 
 // sidebar 2 --------------------------------------------------------
@@ -61,7 +63,9 @@ if( get_post_type() == 'page' && mfn_opts_get('single-page-sidebar2') ){
 
 }
 
-if( $_GET && key_exists('mfn-s2', $_GET) ) $sidebar2 = $_GET['mfn-s2']; // demo
+if( $_GET && key_exists('mfn-s2', $_GET) ){
+	$sidebar2 = esc_html( $_GET['mfn-s2'] ); // demo
+}
 
 
 // echo -------------------------------------------------------------

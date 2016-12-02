@@ -1138,9 +1138,23 @@ if( ! function_exists( 'mfn_get_attachment_data' ) )
 		$size = $return = false;
 		
 		// image link used instead of image id
+// 		if( ! is_numeric( $image ) ){
+// 			$image = mfn_get_attachment_id_url( $image );
+// 		}
+		
 		if( ! is_numeric( $image ) ){
-			$image = mfn_get_attachment_id_url( $image );
+		
+			// QUICK FIX https
+			$image_ID = mfn_get_attachment_id_url( $image );
+		
+			if( ! $image_ID ){
+				$image = str_replace( 'https://', 'http://', $image );
+				$image_ID = mfn_get_attachment_id_url( $image );
+			}
+		
+			$image = $image_ID;
 		}
+		
 
 		$meta = wp_prepare_attachment_for_js( $image );
 		if( is_array( $meta ) && isset( $meta[ $data ] ) ){
@@ -1951,7 +1965,7 @@ if( ! function_exists( 'mfn_register_required_plugins' ) )
 				'slug'     				=> 'js_composer',
 				'source'   				=> THEME_DIR .'/plugins/js_composer.zip',
 				'required' 				=> false,
-				'version' 				=> '5.0',
+				'version' 				=> '5.0.1',
 			),
 	
 		);

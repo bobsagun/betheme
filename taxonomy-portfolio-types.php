@@ -14,7 +14,7 @@ $section_class 		= array();
 
 // Class | Layout
 if( $_GET && key_exists('mfn-p', $_GET) ){
-	$portfolio_classes .= $_GET['mfn-p']; // demo
+	$portfolio_classes .= esc_html( $_GET['mfn-p'] ); // demo
 } else {
 	$portfolio_classes .= mfn_opts_get( 'portfolio-layout', 'grid' );
 }
@@ -24,7 +24,7 @@ if( $portfolio_classes == 'list' ) $section_class[] = 'full-width';
 
 // Class | Columns
 if( $_GET && key_exists('mfn-pc', $_GET) ){
-	$portfolio_classes .= ' col-'. $_GET['mfn-pc']; // demo
+	$portfolio_classes .= ' col-'. esc_html( $_GET['mfn-pc'] ); // demo
 } else {
 	$portfolio_classes .= ' col-'. mfn_opts_get( 'portfolio-columns', 3 );
 }

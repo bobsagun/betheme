@@ -12,7 +12,7 @@ define( 'THEME_DIR', get_template_directory() );
 define( 'THEME_URI', get_template_directory_uri() );
 
 define( 'THEME_NAME', 'betheme' );
-define( 'THEME_VERSION', '15.6' );
+define( 'THEME_VERSION', '15.8' );
 
 define( 'LIBS_DIR', THEME_DIR. '/functions' );
 define( 'LIBS_URI', THEME_URI. '/functions' );
@@ -143,6 +143,11 @@ require_once( LIBS_DIR .'/plugins/visual-composer.php' );
 // WooCommerce specified functions
 if( function_exists( 'is_woocommerce' ) ){
 	require_once( LIBS_DIR .'/theme-woocommerce.php' );
+}
+
+// Disable responsive images in WP 4.4+ if Retina.js enabled
+if( mfn_opts_get( 'retina-js' ) ){
+	add_filter( 'wp_calculate_image_srcset', '__return_false' );
 }
 
 // Hide activation and update specific parts ------------------------------------

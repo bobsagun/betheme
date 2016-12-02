@@ -124,7 +124,7 @@ if( ! function_exists( 'mfn_styles' ) )
 		wp_enqueue_style( 'mfn-jplayer',		THEME_URI .'/assets/jplayer/css/jplayer.blue.monday.css', false, THEME_VERSION, 'all' );	
 		
 		// rtl | demo -----
-		if( $_GET && key_exists('mfn-rtl',$_GET) ) wp_enqueue_style( 'mfn-rtl', THEME_URI .'/rtl.css', false, THEME_VERSION, 'all' );
+		if( $_GET && key_exists( 'mfn-rtl', $_GET ) ) wp_enqueue_style( 'mfn-rtl', THEME_URI .'/rtl.css', false, THEME_VERSION, 'all' );
 		
 		// Responsive -------------------------------------------------------------
 		if( mfn_opts_get('responsive') ){
@@ -134,7 +134,7 @@ if( ! function_exists( 'mfn_styles' ) )
 		}
 	
 		// Custom Theme Options styles --------------------------------------------
-		if( mfn_opts_get( 'static-css' ) && ( ! ( $_GET && key_exists('mfn-c',$_GET) ) ) ){	
+		if( mfn_opts_get( 'static-css' ) && ( ! ( $_GET && key_exists( 'mfn-c', $_GET ) ) ) ){	
 			
 			// Static | style-static.css
 			if( defined( 'STATIC_IN_CHILD' ) && STATIC_IN_CHILD ){
@@ -146,8 +146,8 @@ if( ! function_exists( 'mfn_styles' ) )
 		} else {
 			
 			// Predefined Skins		
-			if( $_GET && key_exists('mfn-c',$_GET) ){
-				$skin = $_GET['mfn-c']; // demo
+			if( $_GET && key_exists( 'mfn-c', $_GET ) ){
+				$skin = esc_html( $_GET['mfn-c'] ); // demo
 			} elseif( $layoutID = mfn_layout_ID() ) {
 				$skin = get_post_meta( $layoutID, 'mfn-post-skin', true );
 			} else {
@@ -476,8 +476,8 @@ if( ! function_exists( 'mfn_styles_dynamic' ) )
 					
 				// Colors
 				
-				if( $_GET && key_exists('mfn-c',$_GET) ){
-					$skin = $_GET['mfn-c']; // demo
+				if( $_GET && key_exists( 'mfn-c', $_GET ) ){
+					$skin = esc_html( $_GET['mfn-c'] ); // demo
 				} elseif( $layoutID = mfn_layout_ID() ) {
 					$skin = get_post_meta( $layoutID, 'mfn-post-skin', true );
 				} else {
@@ -561,10 +561,10 @@ if( ! function_exists( 'mfn_styles_custom' ) )
 		}
 		
 		// Demo - Custom Google Fonts for Homepages
-		if( $_GET && key_exists('mfn-f', $_GET) ){
+		if( $_GET && key_exists( 'mfn-f', $_GET ) ){
 			
-			$font_slug = str_replace('+', ' ', $_GET['mfn-f']);
-			$font_family = str_replace('+', ' ', $font_slug);
+			$font_slug = str_replace( '+', ' ', esc_html( $_GET['mfn-f'] ) );
+			$font_family = str_replace( '+', ' ', $font_slug );
 			
 			wp_enqueue_style( $font_slug, 'http'. mfn_ssl() .'://fonts.googleapis.com/css?family='. $font_slug .':300,400' );
 			
@@ -775,7 +775,7 @@ if( ! function_exists( 'mfn_scripts_config' ) )
 					echo 'responsive:'. intval( mfn_opts_get( 'responsive', 0 ) ) .',';
 				
 					// retina disable
-					echo 'retina_disable:'. intval( mfn_opts_get( 'retina-js-disable', 0 ) ) .'';
+					echo 'retina_js:'. intval( mfn_opts_get( 'retina-js' ) ) .'';
 					
 				echo '};'."\n";
 				
@@ -830,8 +830,8 @@ if( ! function_exists( 'mfn_header_style' ) )
 	function mfn_header_style( $firstPartOnly = false ){
 		$header_layout = false;
 	
-		if( $_GET && key_exists('mfn-h', $_GET) ){
-			$header_layout = $_GET['mfn-h']; // demo
+		if( $_GET && key_exists( 'mfn-h', $_GET ) ){
+			$header_layout = esc_html( $_GET['mfn-h'] ); // demo
 		} elseif( $layoutID = mfn_layout_ID() ){
 			$header_layout = get_post_meta( $layoutID, 'mfn-post-header-style', true );
 		} elseif( mfn_opts_get('header-style') ){
@@ -911,7 +911,7 @@ if( ! function_exists( 'mfn_sidebar_classes' ) )
 			}
 			
 			// demo
-			if( $_GET && key_exists('mfn-s', $_GET) ){
+			if( $_GET && key_exists( 'mfn-s', $_GET ) ){
 				if( $_GET['mfn-s'] ){
 					$classes = ' with_aside aside_right';
 				} else {
@@ -1019,8 +1019,8 @@ if( ! function_exists( 'mfn_body_classes' ) )
 	
 		
 		// Skin -----------------------------------------------
-		if( $_GET && key_exists('mfn-c', $_GET) ){
-			$classes[] = 'color-'. $_GET['mfn-c']; // demo
+		if( $_GET && key_exists( 'mfn-c', $_GET ) ){
+			$classes[] = 'color-'. esc_html( $_GET['mfn-c'] ); // demo
 		} elseif( $layoutID ){
 			$classes[] = 'color-'. get_post_meta( $layoutID, 'mfn-post-skin', true );
 		} else {
@@ -1029,15 +1029,15 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		
 		
 		// Style | Default & Simple ---------------------------
-		if( $_GET && key_exists('mfn-style', $_GET) ){
-			$classes[] = 'style-'. $_GET['mfn-style']; // demo
+		if( $_GET && key_exists( 'mfn-style', $_GET ) ){
+			$classes[] = 'style-'. esc_html( $_GET['mfn-style'] ); // demo
 		} else {
 			$classes[] = 'style-'. mfn_opts_get( 'style', 'default' );
 		}
 		
 		
 		// Layout | Full Width & Boxed ------------------------
-		if( $_GET && key_exists('mfn-box', $_GET) ){
+		if( $_GET && key_exists( 'mfn-box', $_GET ) ){
 			$classes[] = 'layout-boxed'; // demo
 		} elseif( $layoutID ){
 			$classes[] = 'layout-'. get_post_meta( $layoutID, 'mfn-post-layout', true );
@@ -1057,16 +1057,16 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		
 
 		// Button | Style -------------------------------------
-		if( $_GET && key_exists('mfn-btn', $_GET) ){
-			$classes[] = 'button-'. $_GET['mfn-btn']; // demo
+		if( $_GET && key_exists( 'mfn-btn', $_GET ) ){
+			$classes[] = 'button-'. esc_html( $_GET['mfn-btn'] ); // demo
 		} elseif( mfn_opts_get('button-style') ){
 			$classes[] = 'button-'. mfn_opts_get( 'button-style' );
 		}
 		
 		
 		// Image Frame | Style --------------------------------
-		if( $_GET && key_exists('mfn-if', $_GET) ){
-			$classes[] = 'if-'. $_GET['mfn-if']; // demo
+		if( $_GET && key_exists( 'mfn-if', $_GET ) ){
+			$classes[] = 'if-'. esc_html( $_GET['mfn-if'] ); // demo
 		} elseif( mfn_opts_get('image-frame-style') ){
 			$classes[] = 'if-'. mfn_opts_get('image-frame-style');
 		}
@@ -1099,7 +1099,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 	
 		
 		// Table Hover ----------------------------------------
-		if( mfn_opts_get('table-hover') ) $classes[] = 'table-hover';
+		if( mfn_opts_get('table-hover') ) $classes[] = 'table-'. mfn_opts_get('table-hover');
 		
 		
 		// Advanced | Other
@@ -1124,7 +1124,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		
 		
 		// Header | Full Width ----------------------
-		if( $_GET && key_exists('mfn-hfw', $_GET) ){
+		if( $_GET && key_exists( 'mfn-hfw', $_GET ) ){
 			$classes[] = 'header-fw'; // demo
 		} elseif( isset( $header_options['full-width'] )  ){
 			$classes[] = 'header-fw';
@@ -1138,7 +1138,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		
 		
 		// Header | Minimalist ----------------------
-		if( $_GET && key_exists('mfn-min', $_GET) ){
+		if( $_GET && key_exists( 'mfn-min', $_GET ) ){
 			$classes[] = 'minimalist-header'; // demo
 		} elseif( $layoutID ){
 			if( get_post_meta( $layoutID, 'mfn-post-minimalist-header', true ) == 'no' ){
@@ -1164,8 +1164,8 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		
 		
 		// Header Sticky Style ----------------------
-		if( $_GET && key_exists('mfn-ss', $_GET) ){
-			$classes[] = 'sticky-'. $_GET['mfn-ss']; // demo
+		if( $_GET && key_exists( 'mfn-ss', $_GET ) ){
+			$classes[] = 'sticky-'. esc_html( $_GET['mfn-ss'] ); // demo
 		} elseif( $layoutID ){
 			$classes[] = 'sticky-'. get_post_meta( $layoutID, 'mfn-post-sticky-header-style', true );
 		} else {
@@ -1183,7 +1183,7 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		
 		// Subheader | Transparent ------------------
 		$skin = mfn_opts_get( 'skin', 'custom' );
-		if( $_GET && key_exists('mfn-subtr', $_GET) ){
+		if( $_GET && key_exists( 'mfn-subtr', $_GET ) ){
 			$classes[] = 'subheader-transparent'; // demo
 		} elseif( ! in_array( $skin, array('custom','one') ) ){
 			if( mfn_opts_get( 'subheader-transparent' ) != 100 ){
@@ -1193,16 +1193,16 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		
 		
 		// Subheader | Style ------------------------
-		if( $_GET && key_exists('mfn-sh', $_GET) ){
-			$classes[] = 'subheader-'. $_GET['mfn-sh']; // demo
+		if( $_GET && key_exists( 'mfn-sh', $_GET ) ){
+			$classes[] = 'subheader-'. esc_html( $_GET['mfn-sh'] ); // demo
 		} else {
 			$classes[] = 'subheader-'. mfn_opts_get( 'subheader-style', 'title-left' );
 		}
 	
 		
 		// Menu | Style -----------------------------
-		if( $_GET && key_exists('mfn-m', $_GET) ){
-			$classes[] = 'menu-'. $_GET['mfn-m']; // demo
+		if( $_GET && key_exists( 'mfn-m', $_GET ) ){
+			$classes[] = 'menu-'. esc_html( $_GET['mfn-m'] ); // demo
 		} elseif( mfn_opts_get('menu-style') ) {
 			$classes[] = 'menu-'. mfn_opts_get('menu-style');
 		}
@@ -1251,8 +1251,8 @@ if( ! function_exists( 'mfn_body_classes' ) )
 		// Footer ===================================================
 		
 		// footer | Style ---------------------------
-		if( $_GET && key_exists('mfn-ftr', $_GET) ){
-			$classes[] = 'footer-'. $_GET['mfn-ftr']; // demo
+		if( $_GET && key_exists( 'mfn-ftr', $_GET ) ){
+			$classes[] = 'footer-'. esc_html( $_GET['mfn-ftr'] ); // demo
 		} elseif( mfn_opts_get('footer-style') ) {
 			$classes[] = 'footer-'. mfn_opts_get('footer-style');
 		}

@@ -15,8 +15,8 @@ $section_class 	= array();
 
 
 // Class | Layout
-if( $_GET && key_exists('mfn-b', $_GET) ){
-	$blog_layout = $_GET['mfn-b']; // demo
+if( $_GET && key_exists( 'mfn-b', $_GET ) ){
+	$blog_layout = esc_html( $_GET['mfn-b'] ); // demo
 } else {
 	$blog_layout = mfn_opts_get( 'blog-layout', 'classic' );
 }
@@ -29,15 +29,19 @@ if( $blog_layout == 'masonry tiles' ){
 
 
 // Class | Columns
-if( $_GET && key_exists('mfn-bc', $_GET) ){
-	$blog_classes[] = 'col-'. $_GET['mfn-bc']; // demo
+if( $_GET && key_exists( 'mfn-bc', $_GET ) ){
+	$blog_classes[] = 'col-'. esc_html( $_GET['mfn-bc'] ); // demo
 } else {
 	$blog_classes[] = 'col-'. mfn_opts_get( 'blog-columns', 3 );
 }
 
 
-if( $_GET && key_exists('mfn-bfw', $_GET) )	$section_class[] = 'full-width'; // demo
-if( mfn_opts_get('blog-full-width') && ( $blog_layout == 'masonry' ) )	$section_class[] = 'full-width';
+if( $_GET && key_exists( 'mfn-bfw', $_GET ) ){
+	$section_class[] = 'full-width'; // demo
+}
+if( mfn_opts_get( 'blog-full-width' ) && ( $blog_layout == 'masonry' ) ){
+	$section_class[] = 'full-width';
+}
 $section_class = implode( ' ', $section_class );
 
 

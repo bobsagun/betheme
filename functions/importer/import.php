@@ -605,6 +605,7 @@ class mfnImport {
 								<option value="design">Design</option>
 								<option value="design2">Design 2</option>
 								<option value="developer">Developer</option>
+								<option value="developer2">Developer 2</option>
 								<option value="dietitian">Dietitian</option>								
 								<option value="digital">Digital</option>
 								<option value="disco">Disco</option>
@@ -775,6 +776,7 @@ class mfnImport {
 								<option value="wine">Wine</option>
 								<option value="writer">Writer</option>
 								<option value="xmas">Xmas</option>
+								<option value="xmas2">Xmas 2</option>
 								<option value="yoga">Yoga</option>
 								<option value="zoo">Zoo</option>
 							</select>

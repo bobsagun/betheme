@@ -44,14 +44,18 @@ if( ! $sidebar ){
 	
 }
 
-if( $_GET && key_exists('mfn-s', $_GET) ) $sidebar = $_GET['mfn-s']; // demo
+if( $_GET && key_exists('mfn-s', $_GET) ){
+	$sidebar = esc_html( $_GET['mfn-s'] ); // demo
+}
 
 
 // sidebar 2 --------------------------------------------------------
 $sidebar2 = get_post_meta( $posts_page_id, 'mfn-post-sidebar2', true);
 if( $sidebar2 || $sidebar2 === '0' ) $sidebar2 = $sidebars[$sidebar2];
 
-if( $_GET && key_exists('mfn-s2', $_GET) ) $sidebar2 = $_GET['mfn-s2']; // demo
+if( $_GET && key_exists('mfn-s2', $_GET) ){
+	$sidebar2 = esc_html( $_GET['mfn-s2'] ); // demo
+}
 
 
 // echo -------------------------------------------------------------

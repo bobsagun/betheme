@@ -21,7 +21,7 @@ if( ! function_exists('mfn_content_post') ){
 		if( ! $query ) $query = $wp_query;
 		if( ! $style ){
 			if( $_GET && key_exists('mfn-b', $_GET) ){
-				$style = $_GET['mfn-b']; // demo
+				$style = esc_html( $_GET['mfn-b'] ); // demo
 			} else {
 				$style = mfn_opts_get( 'blog-layout', 'classic' );
 			}

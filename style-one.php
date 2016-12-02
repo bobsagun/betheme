@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 
 if( $_GET && key_exists( 'mfn-o', $_GET ) && $_GET['mfn-o'] ){
-	$color_one = '#'.$_GET['mfn-o']; // demo
+	$color_one = '#'. esc_html( $_GET['mfn-o'] ); // demo
 } else {
 	$color_one = mfn_opts_get( 'color-one', '#2991D6' );
 }

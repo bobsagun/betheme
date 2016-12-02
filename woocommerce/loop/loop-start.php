@@ -16,7 +16,7 @@ if( is_woocommerce() ){
 		
 		// layout
 		if( $_GET && key_exists('mfn-shop', $_GET) ){
-			$shop_layout = $_GET['mfn-shop']; // demo
+			$shop_layout = esc_html( $_GET['mfn-shop'] ); // demo
 		} else {
 			$shop_layout = mfn_opts_get( 'shop-layout', 'grid' );
 		}

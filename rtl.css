@@ -6,6 +6,7 @@ Description: Adds support for languages written in a Right To Left (RTL) directi
 body{direction:rtl;unicode-bidi:embed}
 .mcb-wrap,.column,.columns{float:right}
 .the_content_wrapper{float:right;width:98%;}
+.vc_row[data-vc-full-width="true"]{float: left;}
 
 /* Action Bar ------------------------------------------------------------------------ */
 #Action_bar .contact_details{float:right}

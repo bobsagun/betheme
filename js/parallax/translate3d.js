@@ -6,10 +6,9 @@
  * 1.0 | Muffin Group
  */
 
-mfnSetup = {
+var mfnSetup = {
     translate: null
 };
-
 
 (function( $ ){
     "use strict";
@@ -51,12 +50,12 @@ mfnSetup = {
         document.body.removeChild(el);
 
         return( has3d !== undefined && has3d !== null && has3d.length > 0 && has3d !== "none" );
-    }
+    };
 
     
     // browserPrefix ------------------------------------------------
     
-    var browserPrefix = function () {
+    var browserPrefix = function(){
     	
         var el = document.createElement('div'),
         	vendor = ["ms", "O", "Webkit", "Moz"],
@@ -74,17 +73,17 @@ mfnSetup = {
 
     // __construct ------------------------------------------------
     
-    var __construct = function () {
+    var __construct = function(){
 
         if( has3d() ){
         	
-        	mfnSetup.translate = function (el, x, y) {
+        	mfnSetup.translate = function( el, x, y ){
                 el.css( '-' + browserPrefix() + '-transform', 'translate3d(' + x + ', ' + y + ', 0)' );
             };
             
         } else {
         	
-            mfnSetup.translate = function (el, x, y) {
+            mfnSetup.translate = function( el, x, y ){
                 el.css({ "left": x, "top": y });
             };
             
@@ -105,12 +104,12 @@ mfnSetup = {
      *
      * --------------------------------------------------------------------- */
  
-    $.fn.mfnParallax = function () {
+    $.fn.mfnParallax = function(){
     	
         var el = $(this),
         	parent = el.parent(),
         	speed = 500,
-        	element, parentPos, windowH, translate;
+        	element, parentPos, windowH;
 
         
         // imageSize ------------------------------------------------
@@ -125,7 +124,7 @@ mfnSetup = {
         	var parentW = img.parent().outerWidth();
         	var parentH = img.parent().outerHeight();
         	
-        	var windowH = $(window).height()
+        	var windowH = $(window).height();
         	
         	// fix for small sections
         	if( windowH > parentH ){
@@ -157,7 +156,7 @@ mfnSetup = {
             t = ( parentH - h ) / 2;
             
             return [w, h, l, t];    	
-        }
+        };
         
         
         // parallax ------------------------------------------------
@@ -190,7 +189,7 @@ mfnSetup = {
         	windowH = $(window).height();
         	
 
-            var initElement = function () {
+            var initElement = function(){
 
                 var size = imageSize( el );
                 
@@ -212,7 +211,7 @@ mfnSetup = {
             element = initElement();
             
             
-            var initParent = function () {
+            var initParent = function(){
             	
                 var min = parent.offset().top - $(window).height();
                 var max = parent.offset().top + $(parent).outerHeight();
@@ -230,9 +229,9 @@ mfnSetup = {
         
         // reload ------------------------------------------------
         
-        var reload = function () {
+        var reload = function(){
         	
-            setTimeout(function () {
+            setTimeout( function(){
                 init();
                 parallax();
             }, 200);
@@ -242,8 +241,8 @@ mfnSetup = {
         
         // .bind() ------------------------------------------------
         
-        $(window).bind('load resize', reload);
-        $(window).bind('scroll', parallax);
+        $(window).bind( 'load resize', reload );
+        $(window).bind( 'scroll', parallax );
 
     };   
     
@@ -254,7 +253,7 @@ mfnSetup = {
      *
      * --------------------------------------------------------------------- */
     
-    $(document).ready(function() {
+    $( document ).ready( function(){
 		
 		if( $(".mfn-parallax").length ) {
         	

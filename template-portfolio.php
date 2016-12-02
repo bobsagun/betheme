@@ -16,7 +16,7 @@ $section_class 		= array();
 
 // Class | Layout
 if( $_GET && key_exists('mfn-p', $_GET) ){
-	$portfolio_classes .= $_GET['mfn-p']; // demo
+	$portfolio_classes .= esc_html( $_GET['mfn-p'] ); // demo
 } else {
 	$portfolio_classes .= mfn_opts_get( 'portfolio-layout', 'grid' );
 }
@@ -26,7 +26,7 @@ if( $portfolio_classes == 'list' ) $section_class[] = 'full-width';
 
 // Class | Columns
 if( $_GET && key_exists('mfn-pc', $_GET) ){
-	$portfolio_classes .= ' col-'. $_GET['mfn-pc']; // demo
+	$portfolio_classes .= ' col-'. esc_html( $_GET['mfn-pc'] ); // demo
 } else {
 	$portfolio_classes .= ' col-'. mfn_opts_get( 'portfolio-columns', 3 );
 }
@@ -94,7 +94,7 @@ $translate['item-all'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-i
 							<?php 
 								// Category | Current ----
 								if( $_GET && key_exists('cat',$_GET) ){
-									$current_cat = $_GET['cat'];
+									$current_cat = esc_html( $_GET['cat'] );
 								} else {
 									$current_cat = false;
 								}
@@ -142,7 +142,7 @@ $translate['item-all'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-i
 								// demo
 								if( $_GET && key_exists('mfn-iso', $_GET) ) 						$portfolio_args['posts_per_page'] = -1;
 								if( $_GET && key_exists('mfn-p', $_GET) && $_GET['mfn-p']=='list' ) $portfolio_args['posts_per_page'] = 5;
-								if( $_GET && key_exists('mfn-pp', $_GET) ) 							$portfolio_args['posts_per_page'] = $_GET['mfn-pp'];
+								if( $_GET && key_exists('mfn-pp', $_GET) ) 							$portfolio_args['posts_per_page'] = esc_html( $_GET['mfn-pp'] );
 								
 								$portfolio_query = new WP_Query( $portfolio_args );
 				
