@@ -21,7 +21,7 @@ if( ! function_exists('mfn_content_portfolio') ){
 		if( ! $query ) $query = $wp_query;
 		if( ! $style ){
 			if( $_GET && key_exists('mfn-p', $_GET) ){
-				$style = $_GET['mfn-p']; // demo
+				$style = esc_html( $_GET['mfn-p'] ); // demo
 			} else {
 				$style = mfn_opts_get( 'portfolio-layout', 'grid' );
 			}

@@ -286,9 +286,9 @@ html,body{overflow-x:hidden}
 	.icon_box.icon_position_left .image_wrapper{position:static;left:0;margin-bottom:15px;width:auto;height:auto}
 	
 	/* List item */
-	.list_item:not(.lists_3) .list_left{font-size:25px;height:40px;line-height:40px;width:40px}
+/* 	.list_item:not(.lists_3) .list_left{font-size:25px;height:40px;line-height:40px;width:40px}
 	.list_item .circle{height:40px;line-height:40px;width:40px}
-	.list_item:not(.lists_3) .list_right{margin-left:50px;padding-top:5px}
+	.list_item:not(.lists_3) .list_right{margin-left:50px;padding-top:5px} */
 	
 	/* Flat box */	
 	.flat_box .photo_wrapper .icon{width:50px}
@@ -593,7 +593,7 @@ html,body{overflow-x:hidden}
 				
 		/* Header mobile | sticky */
 		.mobile-sticky #Top_bar.is-sticky{position:fixed !important;}
-		.mobile-sticky #Top_bar.is-sticky #logo{margin:0 50px;height:60px!important;line-height:60px!important;}
+		.mobile-sticky #Top_bar.is-sticky #logo{margin-top:0;margin-bottom:0;height:60px!important;line-height:60px!important;}
 		.mobile-sticky #Top_bar.is-sticky a.responsive-menu-toggle{top:30px!important;}
 		.mobile-sticky #Top_bar.is-sticky .top_bar_right{display:none;}
 		.mobile-sticky #Top_bar #menu{overflow:auto;-webkit-box-sizing:border-box;box-sizing:border-box;}
@@ -834,8 +834,8 @@ html,body{overflow-x:hidden}
 	.story_box .desc_wrapper{margin-right:0!important}
 	
 	/* Table */
-	table{overflow-x:auto;display:block}
-	table a.kill_the_icon .button_icon{display:none}
+	.table-responsive table{overflow-x:auto;display:block}
+	.table-responsive table a.kill_the_icon .button_icon{display:none}
 	
 	/* Tabs */
 	.ui-tabs .ui-tabs-nav{background:none}

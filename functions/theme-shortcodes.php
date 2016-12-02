@@ -2111,7 +2111,7 @@ if( ! function_exists( 'sc_chart' ) )
 		$image = mfn_vc_image( $image );
 		
 		// color
-		if( $_GET && key_exists('mfn-c', $_GET) ){
+		if( $_GET && key_exists( 'mfn-c', $_GET ) ){
 			$color = '#D69942';
 		} else {
 			$color =  mfn_opts_get( 'color-counter', '#2991D6' );
@@ -3866,8 +3866,6 @@ if( ! function_exists( 'sc_portfolio_slider' ) )
 		if ($query->have_posts())
 		{
 			$output  = '<div class="portfolio_slider '. $class .'">';
-				$output .= '<a class="slider_nav slider_prev themebg" href="#"><i class="icon-left-open-big"></i></a>';
-				$output .= '<a class="slider_nav slider_next themebg" href="#"><i class="icon-right-open-big"></i></a>';
 				$output .= '<ul class="portfolio_slider_ul">';
 				while ($query->have_posts())
 				{

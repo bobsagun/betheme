@@ -5,8 +5,8 @@
  * 
  * 3.0 | Muffin Group
  */
-    
-;(function($){
+
+(function( $ ){
 	"use strict";
 	
 	$.fn.mfnMenu = function( options ){
@@ -111,6 +111,6 @@
 		
 		__constructor();
 
-	}
+	};
 
 })(jQuery);

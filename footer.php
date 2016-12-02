@@ -146,6 +146,13 @@ if( $back_to_top_class == 'hide' ){
 </div><!-- #Wrapper -->
 
 <?php 
+	// Responsive | Side Slide
+	if( mfn_opts_get( 'responsive-mobile-menu' ) ){
+		get_template_part( 'includes/header', 'side-slide' );
+	}
+?>
+
+<?php
 	if( $back_to_top_position == 'body' ){
 		echo '<a id="back_to_top" class="button button_left button_js '. $back_to_top_class .'" href=""><span class="button_icon"><i class="icon-up-open-big"></i></span></a>';
 	}

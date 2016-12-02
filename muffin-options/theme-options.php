@@ -62,6 +62,7 @@ if( ! function_exists( 'mfna_bg_position' ) )
 			'no-repeat;center top;;' 		=> __('Center Top No-Repeat', 'mfn-opts'),
 			'repeat;center top;;' 			=> __('Center Top Repeat', 'mfn-opts'),
 			'repeat-x;center top;;' 		=> __('Center Top Repeat-x', 'mfn-opts'),
+			'repeat-y;center top;;' 		=> __('Center Top Repeat-y', 'mfn-opts'),
 			'no-repeat;center bottom;;' 	=> __('Center Bottom No-Repeat', 'mfn-opts'),
 			'repeat;center bottom;;' 		=> __('Center Bottom Repeat', 'mfn-opts'),
 			'repeat-x;center bottom;;' 		=> __('Center Bottom Repeat-x', 'mfn-opts'),
@@ -803,8 +804,9 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('HTML Table', 'mfn-opts'),
 					'options' 	=> array(
-						'' 			=> __('Default', 'mfn-opts'),
-						'hover' 	=> __('Rows Hover', 'mfn-opts'),
+						'' 				=> __('Default', 'mfn-opts'),
+						'hover' 		=> __('Rows Hover', 'mfn-opts'),
+						'responsive' 	=> __('Auto Responsive', 'mfn-opts'),
 					),
 				),
 
@@ -3057,7 +3059,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				array(
 					'id'		=> 'responsive-header-minimal',
 					'type' 		=> 'radio_img',
-					'title' 	=> __('Style', 'mfn-opts'),
+					'title' 	=> __('Layout', 'mfn-opts'),
 					'sub_desc' 	=> __('<b>< 768px</b>', 'mfn-opts'),
 					'desc' 		=> __('Do not use centered logo with more than 2 Icons in Top Bar', 'mfn-opts'),
 					'options' 	=> array(
@@ -3118,6 +3120,26 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				),
 					
 				array(
+					'id' 		=> 'responsive-mobile-menu',
+					'type' 		=> 'select',
+					'title' 	=> __('Style', 'mfn-opts'),
+					'sub_desc' 	=> __('Responsive Menu Style', 'mfn-opts'),
+					'desc' 		=> __('This option also <b>affects</b> Header Simple & Empty on desktop', 'mfn-opts'),
+					'options' 	=> array(
+						'' 				=> __('Default', 'mfn-opts'),
+						'side-slide'	=> __('Side Slide', 'mfn-opts'),
+					),
+				),
+
+				array(
+					'id'		=> 'header-menu-text',
+					'type'		=> 'text',
+					'title'		=> __('Button | Text', 'mfn-opts'),
+					'desc'		=> __('This text will be used instead of the menu icon', 'mfn-opts'),
+					'class'		=> 'small-text',
+				),
+					
+				array(
 					'id'		=> 'header-menu-mobile-sticky',
 					'type'		=> 'switch',
 					'title'		=> __('Button | Sticky', 'mfn-opts'),
@@ -3126,14 +3148,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'std'		=> '0',
 				),
 	
-				array(
-					'id'		=> 'header-menu-text',
-					'type'		=> 'text',
-					'title'		=> __('Button | Text', 'mfn-opts'),
-					'desc'		=> __('This text will be used instead of the menu icon', 'mfn-opts'),
-					'class'		=> 'small-text',
-				),
-
+				
+					
 			),
 		);
 		
@@ -3508,12 +3524,14 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 				),
 					
 				array(
-					'id' 		=> 'retina-js-disable',
-					'type' 		=> 'switch',
-					'title' 	=> __('Retina.js | Disable', 'mfn-opts'),
-					'sub_desc' 	=> __('Disable Retina.js', 'mfn-opts'),
-					'desc' 		=> __('Does <b>not affect Retina Logo</b>. If you use Retina.js please prepare @2x images<br />More info: <a target="_blank" href="http://imulus.github.io/retinajs/">http://imulus.github.io/retinajs/</a>', 'mfn-opts'),
-					'options' 	=> array( '0' => 'Off', '1' => 'On' ),
+					'id' 		=> 'retina-js',
+					'type' 		=> 'select',
+					'title' 	=> __('Retina.js', 'mfn-opts'),
+					'desc' 		=> __('More info: <a target="_blank" href="http://imulus.github.io/retinajs/">http://imulus.github.io/retinajs/</a><br />Retina.js disables responsive images in WP 4.4+<br />', 'mfn-opts'),
+					'options' 	=> array(
+						'' 	=> __('Default: only Retina Logo', 'mfn-opts'), 
+						'1' => __('Enable Retina.js | please prepare @2x images', 'mfn-opts'),
+					),
 					'std' 		=> '0'
 				),
 
@@ -3754,7 +3772,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'background-menu-a-active',
 					'type' 		=> 'color',
 					'title' 	=> __('Active Link background', 'mfn-opts'),
-					'desc' 		=> __('For: Highlight & Plain Menu style', 'mfn-opts'),
+					'desc' 		=> __('Header Plain & Menu Highlight', 'mfn-opts'),
 					'std' 		=> '#F2F2F2',
 				),
 
@@ -3787,6 +3805,30 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Hover Link color', 'mfn-opts'),
 					'std' 		=> '#2e2e2e',
 				),
+					
+				// responsive
+				array(
+					'id' 		=> 'colors-info-menu-responsive',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Menu Button <span>Responsive, Header Creative, Simple & Empty</span>', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
+				),
+				
+				array(
+					'id' 		=> 'color-menu-responsive-icon',
+					'type' 		=> 'color',
+					'title' 	=> __('Button color', 'mfn-opts'),
+					'std' 		=> '#2991d6',
+				),
+					
+				array(
+					'id' 		=> 'background-menu-responsive-icon',
+					'type' 		=> 'color',
+					'title' 	=> __('Button background', 'mfn-opts'),
+					'sub_desc' 	=> __('optional', 'mfn-opts'),
+					'std' 		=> '',
+				),
 
 				// styles
 				array(
@@ -3797,70 +3839,80 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'class' 	=> 'mfn-info',
 				),
 
-				array(
-					'id' 		=> 'color-overlay-menu-button',
-					'type' 		=> 'color',
-					'title' 	=> __('Overlay Menu | Button color', 'mfn-opts'),
-					'desc' 		=> __('Header Overlay Menu only', 'mfn-opts'),
-					'std' 		=> '#2991d6',
-				),
+// 				array(
+// 					'id' 		=> 'color-overlay-menu-button',
+// 					'type' 		=> 'color',
+// 					'title' 	=> __('Overlay Menu | Button color', 'mfn-opts'),
+// 					'desc' 		=> __('Header Overlay Menu only', 'mfn-opts'),
+// 					'std' 		=> '#2991d6',
+// 				),
 
-				array(
-					'id' 		=> 'background-overlay-menu-button',
-					'type' 		=> 'color',
-					'title' 	=> __('Overlay Menu | Button background', 'mfn-opts'),
-					'sub_desc' 	=> __('optional', 'mfn-opts'),
-					'desc' 		=> __('Header Overlay Menu only', 'mfn-opts'),
-					'std' 		=> '',
-				),
+// 				array(
+// 					'id' 		=> 'background-overlay-menu-button',
+// 					'type' 		=> 'color',
+// 					'title' 	=> __('Overlay Menu | Button background', 'mfn-opts'),
+// 					'sub_desc' 	=> __('optional', 'mfn-opts'),
+// 					'desc' 		=> __('Header Overlay Menu only', 'mfn-opts'),
+// 					'std' 		=> '',
+// 				),
 					
 				array(
 					'id' 		=> 'background-overlay-menu',
 					'type' 		=> 'color',
-					'title' 	=> __('Overlay Menu | Menu background', 'mfn-opts'),
-					'desc' 		=> __('Header Overlay Menu only', 'mfn-opts'),
+					'title' 	=> __('Overlay Menu<br />Menu background', 'mfn-opts'),
 					'std' 		=> '#2991d6',
 				),
 	
 				array(
 					'id' 		=> 'background-overlay-menu-a',
 					'type' 		=> 'color',
-					'title' 	=> __('Overlay Menu | Link color', 'mfn-opts'),
-					'desc' 		=> __('Header Overlay Menu only', 'mfn-opts'),
+					'title' 	=> __('Overlay Menu<br />Link color', 'mfn-opts'),
 					'std' 		=> '#FFFFFF',
 				),
 					
 				array(
 					'id' 		=> 'background-overlay-menu-a-active',
 					'type' 		=> 'color',
-					'title' 	=> __('Overlay Menu | Active Link color', 'mfn-opts'),
-					'desc' 		=> __('Header Overlay Menu only', 'mfn-opts'),
+					'title' 	=> __('Overlay Menu<br />Active Link color', 'mfn-opts'),
 					'std' 		=> '#B1DCFB',
 				),
 	
 				array(
 					'id' 		=> 'border-menu-plain',
 					'type' 		=> 'color',
-					'title' 	=> __('Plain Menu | Border color', 'mfn-opts'),
-					'desc' 		=> __('Header Plain only', 'mfn-opts'),
+					'title' 	=> __('Plain<br />Border color', 'mfn-opts'),
 					'std' 		=> '#F2F2F2',
 				),
 					
+				// side slide
 				array(
-					'id' 		=> 'color-menu-responsive-icon',
-					'type' 		=> 'color',
-					'title' 	=> __('Responsive Menu | Button color', 'mfn-opts'),
-					'desc' 		=> __('This is also Header Creative, Simple & Empty menu button color', 'mfn-opts'),
-					'std' 		=> '#2991d6',
+					'id' 		=> 'colors-info-side-slide',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Side Slide<span>responsive menu style</span>', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
 				),
 					
 				array(
-					'id' 		=> 'background-menu-responsive-icon',
+					'id' 		=> 'background-side-menu',
 					'type' 		=> 'color',
-					'title' 	=> __('Responsive Menu | Button background', 'mfn-opts'),
-					'sub_desc' 	=> __('optional', 'mfn-opts'),
-					'desc' 		=> __('This is also Header Creative, Simple & Empty menu button background', 'mfn-opts'),
-					'std' 		=> '',
+					'title' 	=> __('Background', 'mfn-opts'),
+					'std' 		=> '#191919',
+				),
+	
+				array(
+					'id' 		=> 'color-side-menu-a',
+					'type' 		=> 'color',
+					'title' 	=> __('Link color', 'mfn-opts'),
+					'sub_desc' 	=> __('Text, Link & Icon color', 'mfn-opts'),
+					'std' 		=> '#A6A6A6',
+				),
+					
+				array(
+					'id' 		=> 'color-side-menu-a-hover',
+					'type' 		=> 'color',
+					'title' 	=> __('Active Link color', 'mfn-opts'),
+					'std' 		=> '#FFFFFF',
 				),
 
 				// action bar

@@ -191,7 +191,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	#Header_creative #Top_bar .menu li ul li ul{top:0!important}
 	#Header_creative #Top_bar .menu > li > a span.description{display:block;font-size:13px;line-height:28px!important;clear:both}
 	
-	#Header_creative #Top_bar .search_wrapper{left:100%;top:auto;bottom:-90px}
+	#Header_creative #Top_bar .search_wrapper{left:100%;top:auto;bottom:0}
 	#Header_creative #Top_bar a#header_cart{display:inline-block;float:none;top:3px}
 	#Header_creative #Top_bar a#search_button{display:inline-block;float:none;top:3px}
 	#Header_creative #Top_bar .wpml-languages{display:inline-block;float:none;top:0}
