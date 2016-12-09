@@ -3965,9 +3965,7 @@ if( ! function_exists( 'sc_slider' ) )
 					}
 				$output .= '</ul>';
 				
-				$output .= '<a class="button button_js slider_prev" href="#"><span class="button_icon"><i class="icon-left-open-big"></i></span></a>';
-				$output .= '<a class="button button_js slider_next" href="#"><span class="button_icon"><i class="icon-right-open-big"></i></span></a>';
-				$output .= '<div class="slider_pagination"></div>';
+				$output .= '<div class="slider_pager slider_pagination"></div>';
 				
 			$output .= '</div>'."\n";
 		}
@@ -4756,34 +4754,28 @@ if( ! function_exists( 'sc_testimonials' ) )
 			'posts_per_page' 		=> -1,
 			'orderby' 				=> $orderby,
 			'order' 				=> $order,
-			'ignore_sticky_posts' 	=>1,
+			'ignore_sticky_posts' 	=> 1,
 		);
 		if( $category ) $args['testimonial-types'] = $category;
 		
 		$query_tm = new WP_Query();
 		$query_tm->query( $args );
 		
+		// class
+		$class = $style;
+		
+		if( $hide_photos ){
+			$class .= ' hide-photos';
+		}
+		
 		$output = '';
 		if ($query_tm->have_posts())
 		{
-			$output .= '<div class="testimonials_slider '. $style .'">';
+			$output .= '<div class="testimonials_slider '. $class .'">';
 			
 				// photos | pagination (style !== single-photo)
-				if( ! $hide_photos && $style != 'single-photo'){
-					$output .= '<ul class="slider_pager slider_images">';
-						while ($query_tm->have_posts())
-						{
-							$query_tm->the_post();
-							$output .= '<a href="#">';
-								if( has_post_thumbnail() ){
-									$output .= get_the_post_thumbnail( null, 'testimonials', array('class'=>'scale-with-grid' ) );
-								} else {
-									$output .= '<img class="scale-with-grid" src="'. THEME_URI .'/images/testimonials-placeholder.png" alt="'. get_post_meta(get_the_ID(), 'mfn-post-author', true) .'" />';
-								}
-							$output .= '</a>';
-						}
-						wp_reset_query();
-					$output .= '</ul>';
+				if( $style != 'single-photo' && ! $hide_photos ){
+					$output .= '<div class="slider_pager slider_images"></div>';
 				}
 		
 				// testimonials | contant
@@ -4792,17 +4784,15 @@ if( ! function_exists( 'sc_testimonials' ) )
 					{
 						$query_tm->the_post();
 						$output .= '<li>';
-						
-							if( $style == 'single-photo' && ! $hide_photos ){
-								$output .= '<div class="single-photo-img">';
-									if( has_post_thumbnail() ){
-										$output .= get_the_post_thumbnail( null, 'testimonials', array('class'=>'scale-with-grid' ) );
-									} else {
-										$output .= '<img class="scale-with-grid" src="'. THEME_URI .'/images/testimonials-placeholder.png" alt="'. get_post_meta(get_the_ID(), 'mfn-post-author', true) .'" />';
-									}
-								$output .= '</div>';
-							}
-							
+													
+							$output .= '<div class="single-photo-img">';
+								if( has_post_thumbnail() ){
+									$output .= get_the_post_thumbnail( null, 'testimonials', array('class'=>'scale-with-grid' ) );
+								} else {
+									$output .= '<img class="scale-with-grid" src="'. THEME_URI .'/images/testimonials-placeholder.png" alt="'. get_post_meta(get_the_ID(), 'mfn-post-author', true) .'" />';
+								}
+							$output .= '</div>';
+
 							$output .= '<div class="bq_wrapper">';	
 								$output .= '<blockquote>'. get_the_content() .'</blockquote>';	
 							$output .= '</div>';
@@ -4825,19 +4815,8 @@ if( ! function_exists( 'sc_testimonials' ) )
 				
 				// photos | pagination (style == single-photo)
 				if( $style == 'single-photo' ){
-					$output .= '<ul class="slider_pager slider_pagination">';
-					while ($query_tm->have_posts())
-					{
-						$query_tm->the_post();
-						$output .= '<a href="#">1</a>';
-					}
-					wp_reset_query();
-					$output .= '</ul>';
+					$output .= '<div class="slider_pager slider_pagination"></div>';
 				}
-	
-				// navigation
-				$output .= '<a class="button button_js slider_prev" href="#"><span class="button_icon"><i class="icon-left-open-big"></i></span></a>';
-				$output .= '<a class="button button_js slider_next" href="#"><span class="button_icon"><i class="icon-right-open-big"></i></span></a>';
 				
 			$output .= '</div>'."\n";
 		}

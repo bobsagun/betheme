@@ -11,9 +11,9 @@
 mfn_post_navigation_sort();
 
 $single_post_nav = array(
-		'hide-header'	=> false,
-		'hide-sticky'	=> false,
-		'in-same-term'	=> false,
+	'hide-header'	=> false,
+	'hide-sticky'	=> false,
+	'in-same-term'	=> false,
 );
 
 $opts_single_post_nav = mfn_opts_get( 'prev-next-nav' );

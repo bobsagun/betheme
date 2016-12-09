@@ -4709,21 +4709,23 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id'		=> 'order',
 						'type'		=> 'select',
 						'title'		=> __('Order', 'mfn-opts'),
-						'options'	=> array('ASC' => 'Ascending', 'DESC' => 'Descending'),
+						'options'	=> array(
+							'ASC' 		=> __('Ascending', 'mfn-opts'),
+							'DESC' 		=> __('Descending', 'mfn-opts'),
+						),
 						'std'		=> 'DESC'
 					),
 
 					array(
 						'id'		=> 'arrows',
 						'type'		=> 'select',
-						'title'		=> __('Navigation Arrows', 'mfn-opts'),
-						'sub_desc'	=> __('Show Navigation Arrows', 'mfn-opts'),
+						'title'		=> __('Navigation', 'mfn-opts'),
+						'sub_desc'	=> __('Navigation arrows', 'mfn-opts'),
 						'options'	=> array(
-							''			=> 'None',
-							'hover' 	=> 'Show on hover',
-							'always' 	=> 'Always show',
+							''			=> __('None', 'mfn-opts'),
+							'hover' 	=> __('Show on Hover', 'mfn-opts'),
+							'always' 	=> __('Always Show', 'mfn-opts'),
 						),
-						'std'		=> 'DESC'
 					),
 
 					array(

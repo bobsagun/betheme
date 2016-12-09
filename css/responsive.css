@@ -6,6 +6,7 @@ html,body{overflow-x:hidden}
 {	
 	.layout-boxed{padding:25px}
 	.layout-boxed.nice-scroll{padding:25px 25px 25px 15px}
+	.layout-boxed.boxed-no-margin{padding:0;}
 	#Top_bar.loading{display:none}	
 }
 
@@ -756,12 +757,16 @@ html,body{overflow-x:hidden}
 	ul.clients:not(.clients_slider_ul) li{width:50%!important}
 	
 	/* Content slider */
-	.content_slider{padding:0 0 50px!important;margin:10px 0}
-	.content_slider a.slider_prev{top:auto!important;bottom:0;left:0!important}
-	.content_slider a.slider_next{top:auto!important;bottom:0;right:0!important}
+	.content_slider{padding:0!important;margin:10px 0}
+	.content_slider .slider_pagination{padding:0 20%;box-sizing:border-box;}
+	
+	.content_slider a.button{top:auto!important;bottom:-60px;}
+	.content_slider a.slider_prev{left:0!important}
+	.content_slider a.slider_next{right:0!important}
 	.content_slider a.button .button_icon{padding:7px 9px}
-	.content_slider .slider_pagination{bottom:11px;width:74%;margin-left:13%}
-	.content_slider.flat a.button .button_icon{font-size:36px}
+	
+	.content_slider.flat a.button,.content_slider.carousel a.button{bottom:-50px}
+	.content_slider.flat a.button .button_icon{font-size:30px}
 	
 	/* Divider */
 	.hr_full hr,.aside_left .hr_full hr,.aside_right .hr_full hr{position:absolute;left:-1000px;top:0;width:3000px}

@@ -75,6 +75,7 @@ $mfn_post_meta_box = array(
 			'title' 	=> __('Template', 'mfn-opts'),
 			'options' 	=> array(
 				'' 			=> __( 'Default Template', 'mfn-opts' ),
+				'builder' 	=> __( 'Builder', 'mfn-opts' ),
 				'intro' 	=> __( 'Intro Header', 'mfn-opts' ),
 			),
 		),

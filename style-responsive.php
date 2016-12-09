@@ -48,7 +48,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	.menuo-right #Top_bar .menu > li > ul.mfn-megamenu-bg{box-sizing:border-box}
 		
 	/* Mega Menu | Background Image */
-	#Top_bar .menu > li > ul.mfn-megamenu-bg{padding:20px 166px 20px 20px;background-repeat:no-repeat;background-position:bottom right}
+	#Top_bar .menu > li > ul.mfn-megamenu-bg{padding:20px 166px 20px 20px;background-repeat:no-repeat;background-position:right bottom}
+	.rtl #Top_bar .menu > li > ul.mfn-megamenu-bg{padding-left:166px;padding-right:20px;background-position:left bottom}
 	#Top_bar .menu > li > ul.mfn-megamenu-bg > li{background:none}
 	#Top_bar .menu > li > ul.mfn-megamenu-bg > li a{border:none}
 	#Top_bar .menu > li > ul.mfn-megamenu-bg > li > ul{background:none!important;-webkit-box-shadow:0 0 0 0;-moz-box-shadow:0 0 0 0;box-shadow:0 0 0 0}
@@ -59,11 +60,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	.mm-vertical #Top_bar .menu > li ul{box-shadow:0 0 0 0 transparent!important;background-image:none;}
 	.mm-vertical #Top_bar .menu > li > ul.mfn-megamenu{width:98%!important;margin:0 1%;padding:20px 0;}
 	.mm-vertical.header-plain #Top_bar .menu > li > ul.mfn-megamenu{width:100%!important;margin:0;}
-	.mm-vertical #Top_bar .menu > li > ul.mfn-megamenu > li{display:table-cell;float:none;width:10%;padding:0 15px;border-right:1px solid rgba(0, 0, 0, 0.05);}
+	.mm-vertical #Top_bar .menu > li > ul.mfn-megamenu > li{display:table-cell;float:none!important;width:10%;padding:0 15px;border-right:1px solid rgba(0, 0, 0, 0.05);}
 	.mm-vertical #Top_bar .menu > li > ul.mfn-megamenu > li:last-child{border-right-width:0}
 	.mm-vertical #Top_bar .menu > li > ul.mfn-megamenu > li.hide-border{border-right-width:0}
 	.mm-vertical #Top_bar .menu > li > ul.mfn-megamenu > li a{border-bottom-width:0;padding:9px 15px;line-height:120%;}
 	.mm-vertical #Top_bar .menu > li > ul.mfn-megamenu a.mfn-megamenu-title{font-weight:700;}
+	
+	.rtl .mm-vertical #Top_bar .menu > li > ul.mfn-megamenu > li:first-child{border-right-width:0}
+	.rtl .mm-vertical #Top_bar .menu > li > ul.mfn-megamenu > li:last-child{border-right-width:1px}
 	
 	#Header_creative #Top_bar .menu > li > ul.mfn-megamenu{width:980px!important;margin:0;}
 

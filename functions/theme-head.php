@@ -1109,6 +1109,9 @@ if( ! function_exists( 'mfn_body_classes' ) )
 			if( isset( $layout_options['no-shadows'] ) ){
 				$classes[] = 'no-shadows';
 			}
+			if( isset( $layout_options['boxed-no-margin'] ) ){
+				$classes[] = 'boxed-no-margin';
+			}
 				
 		}
 		
