@@ -689,6 +689,7 @@ class mfnImport {
 								<option value="moving2">Moving 2</option>
 								<option value="museum">Museum</option>
 								<option value="music">Music</option>
+								<option value="musician">Musician</option>
 								<option value="ngo">NGO</option>
 								<option value="notebook">Notebook</option>
 								<option value="onepage">One Page</option>

@@ -15,7 +15,21 @@
     var top_bar_top 	= '61px';
     var header_H 		= 0;
     var mobile_init_W 	= ( window.mfn.mobile_init ) ? window.mfn.mobile_init : 1240;
- 
+
+    var pretty 			= false;
+    
+    if( ! window.mfn_prettyphoto.disable ){
+    	if( ! ( window.mfn_prettyphoto.disableMobile && ( $(window).width() < 768 ) ) ){
+    		pretty = {
+				default_width	: window.mfn_prettyphoto.width  ? window.mfn_prettyphoto.width  : 500,
+				default_height	: window.mfn_prettyphoto.height ? window.mfn_prettyphoto.height : 344,
+				show_title		: window.mfn_prettyphoto.title  ? window.mfn_prettyphoto.title  : false,
+				theme			: window.mfn_prettyphoto.style  ? window.mfn_prettyphoto.style  : 'pp_default',
+				deeplinking		: false,
+				social_tools	: false
+    		};
+    	}
+    } 
     
     /* ---------------------------------------------------------------------------
 	 * Header | Sticky
@@ -1144,19 +1158,8 @@
 		});
 
 		function mfn_pretty(){
-			var pretty = true;
-			if( window.mfn_prettyphoto.disable ) pretty = false;
-			if( window.mfn_prettyphoto.disableMobile && ( $(window).width() < 768 ) ) pretty = false;
-				
 			if( pretty ){
-				$('a[rel^="prettyphoto"], .prettyphoto').prettyPhoto({
-					default_width	: window.mfn_prettyphoto.width  ? window.mfn_prettyphoto.width  : 500,
-					default_height	: window.mfn_prettyphoto.height ? window.mfn_prettyphoto.height : 344,
-					show_title		: window.mfn_prettyphoto.title  ? window.mfn_prettyphoto.title  : false,
-					theme			: window.mfn_prettyphoto.style  ? window.mfn_prettyphoto.style  : 'pp_default',
-					deeplinking		: false,
-					social_tools	: false
-				});
+				$(' a[rel^="prettyphoto"], .prettyphoto ').prettyPhoto( pretty );
 			}
 		}
 		mfn_pretty();
@@ -2051,139 +2054,6 @@
 	}
 	
 	
-	// --- Slider ----------------------------------------------------------------
-	
-	function mfnSliderContent(){	
-		$('.content_slider_ul').each(function(){
-
-			var style = 1;
-			
-			if( $(this).closest('.content_slider').hasClass('carousel') ){
-				style = { min:1, max:6};
-			}
-
-			// Init carouFredSel
-			$( this ).carouFredSel({
-				circular	: true,
-				responsive	: true,
-				items		: {
-					width	: 380,
-					visible	: style
-				},
-				scroll		: {
-					duration	: 500,
-					easing		: 'swing'
-				},
-				prev        : {
-					button		: function(){
-						return $(this).closest('.content_slider').find('.slider_prev');
-					}
-				},
-				next        : {
-					button		: function(){
-						return $(this).closest('.content_slider').find('.slider_next');
-					}
-				},
-				pagination	: {
-					container	: function(){
-						return $(this).closest('.content_slider').find('.slider_pagination');
-					}
-				},
-				auto		: {
-					play			: window.mfn_sliders.slider ? true : false,
-					timeoutDuration	: window.mfn_sliders.slider ? window.mfn_sliders.slider : 2500,
-				},
-				swipe		: {
-					onTouch		: true,
-					onMouse		: true,
-					onBefore	: function(){
-						$(this).find('a').addClass('disable');
-						$(this).find('li').trigger('mouseleave');
-					},
-					onAfter		: function(){
-						$(this).find('a').removeClass('disable');
-					}
-				}
-			});
-			
-			// Disable accidental clicks while swiping
-			$(this).on('click', 'a.disable', function() {
-				return false; 
-			});
-		});
-	}
-	
-	
-	// --- Testimonials ----------------------------------------------------------------
-	
-	function mfnSliderTestimonials(){	
-		$('.testimonials_slider_ul').each(function(){
-			
-			// Init carouFredSel
-			$(this).carouFredSel({
-				circular	: true,
-				responsive	: true,
-				items		: {
-					visible	: 1,
-					width	: 100
-				},
-				scroll		: {
-					duration	: 500,
-					easing		: 'swing'
-				},
-				prev        : {
-					button		: function(){
-						return $(this).closest('.testimonials_slider').find('.slider_prev');
-					}
-				},
-				next        : {
-					button		: function(){
-						return $(this).closest('.testimonials_slider').find('.slider_next');
-					}
-				},
-				pagination	: {
-					container	: function(){
-						return $(this).closest('.testimonials_slider').find('.slider_pager');
-					},
-					anchorBuilder : false
-				},
-				auto		: {
-					play			: window.mfn_sliders.testimonials ? true : false,
-					timeoutDuration	: window.mfn_sliders.testimonials ? window.mfn_sliders.testimonials : 2500,
-				},
-				swipe		: {
-					onTouch		: true,
-					onMouse		: true,
-					onBefore	: function(){
-						$(this).find('a').addClass('disable');
-						$(this).find('li').trigger('mouseleave');
-					},
-					onAfter		: function(){
-						$(this).find('a').removeClass('disable');
-					}
-				},
-				onCreate	: function(){
-					
-					var el = $(this);
-					var firstH = $(this).find('li').first().innerHeight();
-
-					setTimeout(function(){
-
-						el.closest('.caroufredsel_wrapper').height(firstH);
-
-					},1500);	// 639
-					
-				}
-			});
-			
-			// Disable accidental clicks while swiping
-			$(this).on('click', 'a.disable', function() {
-				return false; 
-			});
-		});
-	}
-	
-	
 	// --- Offer -----------------------------------------------------------------
 	
 	function mfnSliderOffer(){	
@@ -2358,6 +2228,66 @@
 			});
 		});
 	}
+
+	
+	// --- Shop ------------------------------------------------------------------
+	
+	function mfnSliderShop(){	
+		$('.shop_slider_ul').each(function(){
+			
+			// Init carouFredSel
+			$(this).carouFredSel({
+				circular	: true,
+				responsive	: true,
+				items		: {
+					width : 380,
+					visible	: {
+						min		: 1,
+						max		: 4
+					}
+				},
+				scroll		: {
+					duration	: 500,
+					easing		: 'swing'
+				},
+				prev        : {
+					button		: function(){
+						return $(this).closest('.shop_slider').find('.slider_prev');
+					}
+				},
+				next        : {
+					button		: function(){
+						return $(this).closest('.shop_slider').find('.slider_next');
+					}
+				},
+				pagination	: {
+					container	: function(){
+						return $(this).closest('.shop_slider').find('.slider_pagination');
+					}
+				},
+				auto		: {
+					play			: window.mfn_sliders.shop ? true : false,
+					timeoutDuration	: window.mfn_sliders.shop ? window.mfn_sliders.shop : 2500,
+				},
+				swipe		: {
+					onTouch		: true,
+					onMouse		: true,
+					onBefore	: function(){
+						$(this).find('a').addClass('disable');
+						$(this).find('li').trigger('mouseleave');
+					},
+					onAfter		: function(){
+						$(this).find('a').removeClass('disable');
+					}
+				}
+			});
+			
+			// Disable accidental clicks while swiping
+			$(this).on('click', 'a.disable', function() {
+//				return false; 
+			});
+		});
+	}
 	
 	
 	// --- Clients ------------------------------------------------------------------
@@ -2420,66 +2350,6 @@
 	}
 	
 	
-	// --- Shop ------------------------------------------------------------------
-	
-	function mfnSliderShop(){	
-		$('.shop_slider_ul').each(function(){
-			
-			// Init carouFredSel
-			$(this).carouFredSel({
-				circular	: true,
-				responsive	: true,
-				items		: {
-					width : 380,
-					visible	: {
-						min		: 1,
-						max		: 4
-					}
-				},
-				scroll		: {
-					duration	: 500,
-					easing		: 'swing'
-				},
-				prev        : {
-					button		: function(){
-						return $(this).closest('.shop_slider').find('.slider_prev');
-					}
-				},
-				next        : {
-					button		: function(){
-						return $(this).closest('.shop_slider').find('.slider_next');
-					}
-				},
-				pagination	: {
-					container	: function(){
-						return $(this).closest('.shop_slider').find('.slider_pagination');
-					}
-				},
-				auto		: {
-					play			: window.mfn_sliders.shop ? true : false,
-					timeoutDuration	: window.mfn_sliders.shop ? window.mfn_sliders.shop : 2500,
-				},
-				swipe		: {
-					onTouch		: true,
-					onMouse		: true,
-					onBefore	: function(){
-						$(this).find('a').addClass('disable');
-						$(this).find('li').trigger('mouseleave');
-					},
-					onAfter		: function(){
-						$(this).find('a').removeClass('disable');
-					}
-				}
-			});
-			
-			// Disable accidental clicks while swiping
-			$(this).on('click', 'a.disable', function() {
-//				return false; 
-			});
-		});
-	}
-	
-	
 	// --- Portfolio -------------------------------------------------------------
 	
 	function slickAutoResponsive( slider ){
@@ -2499,7 +2369,7 @@
 			var slider = $(this);
 
 			slider.slick({
-				cssEase			: 'linear',
+				cssEase			: 'ease-out',
 				dots			: false,
 				infinite		: true,			
 				touchThreshold	: 10,
@@ -2516,11 +2386,113 @@
 				slidesToScroll	: slickAutoResponsive( slider )
 			});
 
+			// Bind | debouncedresize
 			$(window).bind( 'debouncedresize', function(){
-				slider.slick("slickSetOption", "slidesToShow", slickAutoResponsive( slider ), false);
-				slider.slick("slickSetOption", "slidesToScroll", slickAutoResponsive( slider ), true);
+				slider.slick( 'slickSetOption', 'slidesToShow', slickAutoResponsive( slider ), false );
+				slider.slick( 'slickSetOption', 'slidesToScroll', slickAutoResponsive( slider ), true );
 			});
-     
+			
+			// prettyPhoto | disable on dragstart
+			slider.on( 'dragstart', '.slick-slide a[rel="prettyphoto"]', function( event ){
+				if( pretty ){	
+					$(this).addClass( 'unbind-pretty' ).unbind( 'click.prettyphoto' );
+				}
+			});
+
+			// prettyPhoto | enable after change
+			slider.on( 'afterChange', function( event, slick, currentSlide, nextSlide ){
+				if( pretty ){						
+					$( 'a.unbind-pretty[rel="prettyphoto"]', slider ).prettyPhoto( pretty ).removeClass( 'unbind-pretty' );			
+				}
+			});
+	
+		});
+	}
+	
+	
+	// --- Slider ----------------------------------------------------------------
+	
+	function mfnSliderContent(){
+		
+		var pager = function( el, i ){
+	        return '<a>'+ i +'</a>';
+	    };
+	    
+		$('.content_slider_ul').each(function(){
+
+			var slider = $(this);	
+			var count = 1;
+			
+			if( slider.closest( '.content_slider' ).hasClass( 'carousel' ) ){
+				count = slickAutoResponsive( slider );
+				
+				$(window).bind( 'debouncedresize', function(){
+					slider.slick("slickSetOption", "slidesToShow", slickAutoResponsive( slider ), false);
+					slider.slick("slickSetOption", "slidesToScroll", slickAutoResponsive( slider ), true);
+				});
+			}
+
+			slider.slick({
+				cssEase			: 'ease-out',
+				dots			: true,
+				infinite		: true,			
+				touchThreshold	: 10,
+				speed			: 300,
+				
+				prevArrow		: '<a class="button button_js slider_prev" href="#"><span class="button_icon"><i class="icon-left-open-big"></i></span></a>',
+				nextArrow		: '<a class="button button_js slider_next" href="#"><span class="button_icon"><i class="icon-right-open-big"></i></span></a>',
+
+				adaptiveHeight	: true,	
+				appendDots		: slider.siblings( '.slider_pager' ),
+				customPaging 	: pager,
+				
+				rtl				: rtl ? true : false,
+				autoplay		: window.mfn_sliders.slider ? true : false,
+				autoplaySpeed	: window.mfn_sliders.slider ? window.mfn_sliders.slider : 5000,
+						
+				slidesToShow	: count,
+				slidesToScroll	: count
+			});
+			
+		});
+	}
+	
+	
+	// --- Testimonials ----------------------------------------------------------------
+	
+	function mfnSliderTestimonials(){	
+		
+		var pager = function( el, i ){
+	        var img = $( el.$slides[i] ).find('.single-photo-img').html();
+	        return '<a>'+ img +'</a>';
+	    };
+		
+		$('.testimonials_slider_ul').each(function(){
+			
+			var slider = $(this);
+			
+			slider.slick({
+				cssEase			: 'ease-out',
+				dots			: true,
+				infinite		: true,			
+				touchThreshold	: 10,
+				speed			: 300,
+				
+				prevArrow		: '<a class="button button_js slider_prev" href="#"><span class="button_icon"><i class="icon-left-open-big"></i></span></a>',
+				nextArrow		: '<a class="button button_js slider_next" href="#"><span class="button_icon"><i class="icon-right-open-big"></i></span></a>',
+				
+				adaptiveHeight	: true,				
+				appendDots		: slider.siblings( '.slider_pager' ),
+				customPaging 	: pager,
+
+				rtl				: rtl ? true : false,
+				autoplay		: window.mfn_sliders.testimonials ? true : false,
+				autoplaySpeed	: window.mfn_sliders.testimonials ? window.mfn_sliders.testimonials : 5000,
+
+				slidesToShow	: 1,
+				slidesToScroll	: 1
+			});
+			
 		});
 	}
 	

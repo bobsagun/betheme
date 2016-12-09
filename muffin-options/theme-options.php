@@ -824,7 +824,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'checkbox',
 					'title' 	=> __('Other', 'mfn-opts'),
 					'options' 	=> array(
-						'no-shadows'	=> __('Remove shadows<span>Boxed Layout, Creative Header, Sticky Header, Subheader, etc.</span>', 'mfn-opts'),
+						'no-shadows'		=> __('Remove shadows<span>Boxed Layout, Creative Header, Sticky Header, Subheader, etc.</span>', 'mfn-opts'),
+						'boxed-no-margin'	=> __('Boxed Layout: Remove margin<span>Remove top and bottom margin for Layout: Boxed</span>', 'mfn-opts'),
 					),
 				),
 					
