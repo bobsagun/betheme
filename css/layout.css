@@ -3,7 +3,7 @@
 .rev_slider ul{margin:0!important}
 .tp-static-layers{z-index:200}
 #mfn-layer-slider{position:relative;z-index:28}
-#mfn-layer-slider .ls-yourlogo{z-index:29}		
+#mfn-layer-slider .ls-yourlogo{z-index:29}
 
 /* Section --------------------------------------------------------------------------- */
 .section[data-parallax="3d"]{overflow:hidden}

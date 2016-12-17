@@ -915,6 +915,10 @@ if( ! function_exists( 'mfn_builder_save' ) )
 					
 				// parent wrap
 				$parent_wrap_ID = $_POST['mfn-item-parent'][$type_k];
+				
+				if( ! isset( $mfn_wraps[ $parent_wrap_ID ]['items'] ) || ! is_array( $mfn_wraps[ $parent_wrap_ID ]['items'] ) ){
+					$mfn_wraps[ $parent_wrap_ID ]['items'] = array();
+				}
 				$mfn_wraps[ $parent_wrap_ID ]['items'][] = $item;
 			}
 		}
@@ -927,6 +931,9 @@ if( ! function_exists( 'mfn_builder_save' ) )
 			$section_ID 	= $wrap_parents[ $wrap_key ];
 			$section_key 	= $row_IDs_key[ $section_ID ];
 		
+			if( ! isset( $mfn_items[ $section_key ]['wraps']) || ! is_array( $mfn_items[ $section_key ]['wraps'] ) ){
+				$mfn_items[ $section_key ]['wraps'] = array();
+			}
 			$mfn_items[ $section_key ]['wraps'][] = $wrap;
 		}
 

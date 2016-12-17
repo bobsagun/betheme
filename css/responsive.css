@@ -974,6 +974,11 @@ html,body{overflow-x:hidden}
 
 /* #Mobile (Portrait) < 480 ------------------------------------------------------------------------- #Mobile (Portrait) < 480 */
 
+@media only screen and (min-width: 448px) and (max-width: 500px)
+{
+	.blog_slider a.kill_the_icon .button_icon{display:none;}
+}	
+
 @media only screen and (max-width: 479px)
 {
 	#Top_bar a.button.action_button{margin-right:0}

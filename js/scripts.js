@@ -1547,17 +1547,19 @@
 		 * --------------------------------------------------------------------------- */
 		
 		$('.mfn-love').click(function() {
-			var el = $(this);
-			if( el.hasClass('loved') ) return false;
+			var el = $( this );
+			if( el.hasClass( 'loved' ) ){
+				return false;
+			}
+			el.addClass( 'loved' );
 			
 			var post = {
 				action: 'mfn_love',
-				post_id: el.attr('data-id')
+				post_id: el.attr( 'data-id' )
 			};
 			
-			$.post(window.mfn_ajax, post, function(data){
-				el.find('.label').html(data);
-				el.addClass('loved');
+			$.post( window.mfn_ajax, post, function( data ){
+				el.find( '.label' ).html( data );
 			});
 
 			return false;
@@ -2168,201 +2170,148 @@
 			});
 		});
 	}
-	
-	
-	// --- Blog ------------------------------------------------------------------
-	
-	function mfnSliderBlog(){	
-		$('.blog_slider_ul').each(function(){
-			
-			// Init carouFredSel
-			$(this).carouFredSel({
-				circular	: true,
-				responsive	: true,
-				items		: {
-					width : 380,
-					visible	: {
-						min		: 1,
-						max		: 4
-					}
-				},
-				scroll		: {
-					duration	: 500,
-					easing		: 'swing'
-				},
-				prev        : {
-					button		: function(){
-						return $(this).closest('.blog_slider').find('.slider_prev');
-					}
-				},
-				next        : {
-					button		: function(){
-						return $(this).closest('.blog_slider').find('.slider_next');
-					}
-				},
-				pagination	: {
-					container	: function(){
-						return $(this).closest('.blog_slider').find('.slider_pagination');
-					}
-				},
-				auto		: {
-					play			: window.mfn_sliders.blog ? true : false,
-					timeoutDuration	: window.mfn_sliders.blog ? window.mfn_sliders.blog : 2500,
-				},
-				swipe		: {
-					onTouch		: true,
-					onMouse		: true,
-					onBefore	: function(){
-						$(this).find('a').addClass('disable');
-						$(this).find('li').trigger('mouseleave');
-					},
-					onAfter		: function(){
-						$(this).find('a').removeClass('disable');
-					}
-				}
-			});
-			
-			// Disable accidental clicks while swiping
-			$(this).on('click', 'a.disable', function() {
-				return false; 
-			});
-		});
-	}
 
 	
 	// --- Shop ------------------------------------------------------------------
 	
+	function slickAutoResponsive( slider, max, size ){
+		
+		if( ! max ) max = 5;
+		if( ! size ) size = 380;
+
+		var width = slider.width();
+		var count = Math.ceil( width / size );
+		
+		if( count < 1 ) count = 1;
+		if( count > max ) count = max;
+
+		return count;
+	}
+	
 	function mfnSliderShop(){	
+		
+		var pager = function( el, i ){
+	        return '<a>'+ i +'</a>';
+	    };
+	    
 		$('.shop_slider_ul').each(function(){
 			
-			// Init carouFredSel
-			$(this).carouFredSel({
-				circular	: true,
-				responsive	: true,
-				items		: {
-					width : 380,
-					visible	: {
-						min		: 1,
-						max		: 4
-					}
-				},
-				scroll		: {
-					duration	: 500,
-					easing		: 'swing'
-				},
-				prev        : {
-					button		: function(){
-						return $(this).closest('.shop_slider').find('.slider_prev');
-					}
-				},
-				next        : {
-					button		: function(){
-						return $(this).closest('.shop_slider').find('.slider_next');
-					}
-				},
-				pagination	: {
-					container	: function(){
-						return $(this).closest('.shop_slider').find('.slider_pagination');
-					}
-				},
-				auto		: {
-					play			: window.mfn_sliders.shop ? true : false,
-					timeoutDuration	: window.mfn_sliders.shop ? window.mfn_sliders.shop : 2500,
-				},
-				swipe		: {
-					onTouch		: true,
-					onMouse		: true,
-					onBefore	: function(){
-						$(this).find('a').addClass('disable');
-						$(this).find('li').trigger('mouseleave');
-					},
-					onAfter		: function(){
-						$(this).find('a').removeClass('disable');
-					}
-				}
+			var slider = $(this);
+
+			slider.slick({
+				cssEase			: 'ease-out',
+				dots			: true,
+				infinite		: true,			
+				touchThreshold	: 10,
+				speed			: 300,
+				
+				prevArrow		: '<a class="button button_js slider_prev" href="#"><span class="button_icon"><i class="icon-left-open-big"></i></span></a>',
+				nextArrow		: '<a class="button button_js slider_next" href="#"><span class="button_icon"><i class="icon-right-open-big"></i></span></a>',
+				appendArrows	: slider.siblings( '.blog_slider_header' ),
+				
+				appendDots		: slider.siblings( '.slider_pager' ),
+				customPaging 	: pager,
+
+				rtl				: rtl ? true : false,
+				autoplay		: window.mfn_sliders.shop ? true : false,
+				autoplaySpeed	: window.mfn_sliders.shop ? window.mfn_sliders.shop : 5000,
+
+				slidesToShow	: slickAutoResponsive( slider, 4 ),
+				slidesToScroll	: slickAutoResponsive( slider, 4 )
 			});
+
+			// Bind | debouncedresize
+			$(window).bind( 'debouncedresize', function(){
+				slider.slick( 'slickSetOption', 'slidesToShow', slickAutoResponsive( slider, 4 ), false );
+				slider.slick( 'slickSetOption', 'slidesToScroll', slickAutoResponsive( slider, 4 ), true );
+			});
+
+		});
+	}
+	
+	
+	// --- Blog ------------------------------------------------------------------
+
+	function mfnSliderBlog(){
+		
+		var pager = function( el, i ){
+	        return '<a>'+ i +'</a>';
+	    };
+	    
+		$('.blog_slider_ul').each(function(){
 			
-			// Disable accidental clicks while swiping
-			$(this).on('click', 'a.disable', function() {
-//				return false; 
+			var slider = $(this);
+
+			slider.slick({
+				cssEase			: 'ease-out',
+				dots			: true,
+				infinite		: true,			
+				touchThreshold	: 10,
+				speed			: 300,
+				
+				prevArrow		: '<a class="button button_js slider_prev" href="#"><span class="button_icon"><i class="icon-left-open-big"></i></span></a>',
+				nextArrow		: '<a class="button button_js slider_next" href="#"><span class="button_icon"><i class="icon-right-open-big"></i></span></a>',
+				appendArrows	: slider.siblings( '.blog_slider_header' ),
+				
+				appendDots		: slider.siblings( '.slider_pager' ),
+				customPaging 	: pager,
+
+				rtl				: rtl ? true : false,
+				autoplay		: window.mfn_sliders.blog ? true : false,
+				autoplaySpeed	: window.mfn_sliders.blog ? window.mfn_sliders.blog : 5000,
+
+				slidesToShow	: slickAutoResponsive( slider, 4 ),
+				slidesToScroll	: slickAutoResponsive( slider, 4 )
 			});
+
+			// Bind | debouncedresize
+			$(window).bind( 'debouncedresize', function(){
+				slider.slick( 'slickSetOption', 'slidesToShow', slickAutoResponsive( slider, 4 ), false );
+				slider.slick( 'slickSetOption', 'slidesToScroll', slickAutoResponsive( slider, 4 ), true );
+			});
+
 		});
 	}
 	
 	
 	// --- Clients ------------------------------------------------------------------
-	
+
 	function mfnSliderClients(){	
 		$('.clients_slider_ul').each(function(){
 			
-			// Init carouFredSel
-			$(this).carouFredSel({
-				circular	: true,
-				responsive	: true,
-				items		: {
-					width : 380,
-					visible	: {
-						min		: 1,
-						max		: 4
-					}
-				},
-				scroll		: {
-					duration	: 500,
-					easing		: 'swing'
-				},
-				prev        : {
-					button		: function(){
-						return $(this).closest('.clients_slider').find('.slider_prev');
-					}
-				},
-				next        : {
-					button		: function(){
-						return $(this).closest('.clients_slider').find('.slider_next');
-					}
-				},
-				pagination	: {
-					container	: function(){
-						return $(this).closest('.clients_slider').find('.slider_pagination');
-					}
-				},
-				auto		: {
-					play			: window.mfn_sliders.clients ? true : false,
-					timeoutDuration	: window.mfn_sliders.clients ? window.mfn_sliders.clients : 2500,
-				},
-				swipe		: {
-					onTouch		: true,
-					onMouse		: true,
-					onBefore	: function(){
-						$(this).find('a').addClass('disable');
-						$(this).find('li').trigger('mouseleave');
-					},
-					onAfter		: function(){
-						$(this).find('a').removeClass('disable');
-					}
-				}
+			var slider = $(this);
+
+			slider.slick({
+				cssEase			: 'ease-out',
+				dots			: false,
+				infinite		: true,			
+				touchThreshold	: 10,
+				speed			: 300,
+				
+				prevArrow		: '<a class="button button_js slider_prev" href="#"><span class="button_icon"><i class="icon-left-open-big"></i></span></a>',
+				nextArrow		: '<a class="button button_js slider_next" href="#"><span class="button_icon"><i class="icon-right-open-big"></i></span></a>',
+				appendArrows	: slider.siblings( '.clients_slider_header' ),
+
+				rtl				: rtl ? true : false,
+				autoplay		: window.mfn_sliders.clients ? true : false,
+				autoplaySpeed	: window.mfn_sliders.clients ? window.mfn_sliders.clients : 5000,
+
+				slidesToShow	: slickAutoResponsive( slider, 4 ),
+				slidesToScroll	: slickAutoResponsive( slider, 4 )
 			});
-			
-			// Disable accidental clicks while swiping
-			$(this).on('click', 'a.disable', function() {
-				return false; 
+
+			// Bind | debouncedresize
+			$(window).bind( 'debouncedresize', function(){
+				slider.slick( 'slickSetOption', 'slidesToShow', slickAutoResponsive( slider, 4 ), false );
+				slider.slick( 'slickSetOption', 'slidesToScroll', slickAutoResponsive( slider, 4 ), true );
 			});
+
 		});
 	}
 	
 	
 	// --- Portfolio -------------------------------------------------------------
-	
-	function slickAutoResponsive( slider ){
 
-		var width = slider.width();
-		var count = Math.ceil( width / 380 );
-		
-		if( count < 1 ) count = 1;
-		if( count > 5 ) count = 5;
-
-		return count;
-	}
-	
 	function sliderPortfolio(){	
 		$('.portfolio_slider_ul').each(function(){
 			
@@ -2427,8 +2376,8 @@
 				count = slickAutoResponsive( slider );
 				
 				$(window).bind( 'debouncedresize', function(){
-					slider.slick("slickSetOption", "slidesToShow", slickAutoResponsive( slider ), false);
-					slider.slick("slickSetOption", "slidesToScroll", slickAutoResponsive( slider ), true);
+					slider.slick( 'slickSetOption', 'slidesToShow', slickAutoResponsive( slider ), false );
+					slider.slick( 'slickSetOption', 'slidesToScroll', slickAutoResponsive( slider ), true );
 				});
 			}
 
