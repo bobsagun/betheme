@@ -36,6 +36,7 @@ function mfn_fonts( $type = false )
 	$fonts['all'] = array(
 		'ABeeZee',
 		'Abel',
+		'Abhaya Libre',
 		'Abril Fatface',
 		'Aclonica',
 		'Acme',
@@ -568,6 +569,7 @@ function mfn_fonts( $type = false )
 		'Nova Square',
 		'Numans',
 		'Nunito',
+		'Nunito Sans',
 		'Odor Mean Chey',
 		'Offside',
 		'Old Standard TT',

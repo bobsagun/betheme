@@ -1099,15 +1099,8 @@ if( ! function_exists( 'sc_blog_slider' ) )
 
 		$output = '<div class="blog_slider clearfix '. $classes .'">';
 		
-			$output .= '<div class="blog_slider_header">';
-			
-				if( $title ) $output .= '<h4 class="title">'. $title .'</h4>';
-				
-				$output .= '<div class="blog_slider_nav">';
-					$output .= '<a class="button button_js slider_prev" href="#"><span class="button_icon"><i class="icon-left-open-big"></i></span></a>';
-					$output .= '<a class="button button_js slider_next" href="#"><span class="button_icon"><i class="icon-right-open-big"></i></span></a>';
-				$output .= '</div>';
-				
+			$output .= '<div class="blog_slider_header">';		
+				if( $title ) $output .= '<h4 class="title">'. $title .'</h4>';	
 			$output .= '</div>';
 			
 			$output .= '<ul class="blog_slider_ul">';				
@@ -1147,7 +1140,7 @@ if( ! function_exists( 'sc_blog_slider' ) )
 				wp_reset_postdata();					
 			$output .= '</ul>';
 			
-			$output .= '<div class="slider_pagination"></div>';
+			$output .= '<div class="slider_pager slider_pagination"></div>';
 
 		$output .= '</div>'."\n";
 		
@@ -1449,11 +1442,6 @@ if( ! function_exists( 'sc_shop_slider' ) )
 			
 				if( $title ) $output .= '<h4 class="title">'. $title .'</h4>';
 				
-				$output .= '<div class="blog_slider_nav">';
-					$output .= '<a class="button button_js slider_prev" href="#"><span class="button_icon"><i class="icon-left-open-big"></i></span></a>';
-					$output .= '<a class="button button_js slider_next" href="#"><span class="button_icon"><i class="icon-right-open-big"></i></span></a>';
-				$output .= '</div>';
-				
 			$output .= '</div>';
 				
 			$output .= '<ul class="shop_slider_ul">';				
@@ -1513,7 +1501,7 @@ if( ! function_exists( 'sc_shop_slider' ) )
 				wp_reset_postdata();					
 			$output .= '</ul>';
 			
-			$output .= '<div class="slider_pagination"></div>';
+			$output .= '<div class="slider_pager slider_pagination"></div>';
 
 		$output .= '</div>'."\n";
 		
@@ -3179,8 +3167,6 @@ if( ! function_exists( 'sc_clients_slider' ) )
 				
 				$output .= '<div class="clients_slider_header">';
 					if( $title ) $output .= '<h4 class="title">'. $title .'</h4>';
-					$output .= '<a class="button button_js slider_prev" href="#"><span class="button_icon"><i class="icon-left-open-big"></i></span></a>';
-					$output .= '<a class="button button_js slider_next" href="#"><span class="button_icon"><i class="icon-right-open-big"></i></span></a>';
 				$output .= '</div>';
 			
 				$output .= '<ul class="clients clients_slider_ul">';

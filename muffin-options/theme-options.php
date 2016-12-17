@@ -186,7 +186,7 @@ if( ! function_exists( 'mfna_layout' ) )
 	 * @return array
 	 */
 	function mfna_layout(){
-		$layouts = array( 0 => '-- Theme Options --' );
+		$layouts = array( 0 => __( '-- Theme Options --', 'mfn-opts' ) );
 		$args = array(
 			'post_type' => 'layout',
 			'posts_per_page'=> -1,
@@ -212,7 +212,7 @@ if( ! function_exists( 'mfna_menu' ) )
 	 * @return array
 	 */
 	function mfna_menu(){
-		$aMenus = array( 0 => '-- Default --' );
+		$aMenus = array( 0 => __( '-- Default --', 'mfn-opts' ) );
 		$oMenus = get_terms( 'nav_menu', array( 'hide_empty' => false ) );
 		
 		if( is_array($oMenus) ){
@@ -423,8 +423,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Border', 'mfn-opts'),
 					'desc' 		=> __('Border for <b>Image Item</b> can be set in Item Options', 'mfn-opts'),
 					'options' 	=> array(
-						'' 			=> 'Show',
-						'hide' 		=> 'Hide',
+						'' 			=> __( 'Show', 'mfn-opts' ),
+						'hide' 		=> __( 'Hide', 'mfn-opts' ),
 					),
 				),
 					
@@ -433,8 +433,8 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'select',
 					'title' 	=> __('Caption', 'mfn-opts'),
 					'options' 	=> array(
-						'' 			=> 'Below the Image',
-						'on' 		=> 'On the Image',
+						'' 			=> __( 'Below the Image', 'mfn-opts' ),
+						'on' 		=> __( 'On the Image', 'mfn-opts' ),
 					),
 				),
 	
@@ -1806,6 +1806,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'id' 		=> 'blog-posts',
 					'type' 		=> 'text',
 					'title' 	=> __('Posts per page', 'mfn-opts'),
+					'desc' 		=> __('This is also number of posts on search page', 'mfn-opts'),
 					'class' 	=> 'small-text',
 					'std' 		=> '4',
 				),
@@ -4589,24 +4590,24 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'sub_desc' 	=> __('Impact on page <b>load time</b>', 'mfn-opts'),
 					'desc' 		=> __('Some of the fonts in the Google Fonts Directory support multiple styles. For a complete list of available font subsets please see <a href="http://www.google.com/webfonts" target="_blank">Google Web Fonts</a>', 'mfn-opts'),
 					'options' 	=> array(
-						'100'		=> '100 Thin',
-						'100italic'	=> '100 Thin Italic',
-						'200'		=> '200 Extra-Light',
-						'200italic'	=> '200 Extra-Light Italic',
-						'300'		=> '300 Light',
-						'300italic'	=> '300 Light Italic',
-						'400'		=> '400 Regular',
-						'400italic'	=> '400 Regular Italic',
-						'500'		=> '500 Medium',
-						'500italic'	=> '500 Medium Italic',
-						'600'		=> '600 Semi-Bold',
-						'600italic'	=> '600 Semi-Bold Italic',
-						'700'		=> '700 Bold',
-						'700italic'	=> '700 Bold Italic',
-						'800'		=> '800 Extra-Bold',
-						'800italic'	=> '800 Extra-Bold Italic',
-						'900'		=> '900 Black',
-						'900italic'	=> '900 Black Italic',
+						'100'		=> __( '100 Thin', 'mfn-opts' ),
+						'100italic'	=> __( '100 Thin Italic', 'mfn-opts' ),
+						'200'		=> __( '200 Extra-Light', 'mfn-opts' ),
+						'200italic'	=> __( '200 Extra-Light Italic', 'mfn-opts' ),
+						'300'		=> __( '300 Light', 'mfn-opts' ),
+						'300italic'	=> __( '300 Light Italic', 'mfn-opts' ),
+						'400'		=> __( '400 Regular', 'mfn-opts' ),
+						'400italic'	=> __( '400 Regular Italic', 'mfn-opts' ),
+						'500'		=> __( '500 Medium', 'mfn-opts' ),
+						'500italic'	=> __( '500 Medium Italic', 'mfn-opts' ),
+						'600'		=> __( '600 Semi-Bold', 'mfn-opts' ),
+						'600italic'	=> __( '600 Semi-Bold Italic', 'mfn-opts' ),
+						'700'		=> __( '700 Bold', 'mfn-opts' ),
+						'700italic'	=> __( '700 Bold Italic', 'mfn-opts' ),
+						'800'		=> __( '800 Extra-Bold', 'mfn-opts' ),
+						'800italic'	=> __( '800 Extra-Bold Italic', 'mfn-opts' ),
+						'900'		=> __( '900 Black', 'mfn-opts' ),
+						'900italic'	=> __( '900 Black Italic', 'mfn-opts' ),
 					),
 					'class'		=> 'float-left',
 				),	

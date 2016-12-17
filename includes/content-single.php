@@ -107,16 +107,35 @@ $translate['readmore'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-r
 							<div class="post-meta clearfix">
 							
 								<div class="author-date">
-									<span class="vcard author post-author">
+								
+									<span class="vcard author post-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
 										<span class="label"><?php echo $translate['published']; ?></span>
 										<i class="icon-user"></i>
-										<span class="fn"><a href="<?php echo get_author_posts_url( get_the_author_meta('ID') ); ?>"><?php the_author_meta( 'display_name' ); ?></a></span>
+										<span class="fn" itemprop="name"><a href="<?php echo get_author_posts_url( get_the_author_meta('ID') ); ?>"><?php the_author_meta( 'display_name' ); ?></a></span>
 									</span> 
+									
 									<span class="date">
 										<span class="label"><?php echo $translate['at']; ?></span>
 										<i class="icon-clock"></i>
-										<time class="entry-date" datetime="<?php the_date('c'); ?>" itemprop="datePublished" pubdate><?php echo get_the_date(); ?></time>
+										<time class="entry-date updated" datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished" ><?php echo get_the_date(); ?></time>
+										<meta itemprop="dateModified" content="<?php echo get_the_date('c'); ?>"/>
 									</span>	
+									
+									<?php if( mfn_opts_get( 'mfn-seo-schema-type' ) ): ?>
+									
+										<meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://google.com/article"/>
+										
+										<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display:none;">
+				    						<meta itemprop="name" content="<?php bloginfo( 'name' ); ?>">
+				    						
+											<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+												<img src="<?php mfn_opts_show( 'logo-img' ) ?>" itemprop="url" content="<?php mfn_opts_show( 'logo-img' ) ?>"/>
+											</div>
+											
+				  						</div>
+				  						
+				  					<?php endif; ?>
+									
 								</div>
 								
 								<div class="category meta-categories">

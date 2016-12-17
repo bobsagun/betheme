@@ -132,15 +132,15 @@ if( ! function_exists( 'mfn_get_fields_section' ) )
 				'title' 	=> __('Decoration SVG', 'mfn-opts'),
 				'desc' 		=> __('Works only with <b>background color</b> selected above. Do <b>not</b> work with parallax and some section\'s styles', 'mfn-opts'),
 				'options' 	=> array(
-					'' 						=> 'None',
-					'circle up' 			=> 'Circle Up',
-					'square up' 			=> 'Square Up',
-					'triangle up' 			=> 'Triangle Up',
-					'triple-triangle up' 	=> 'Triple Triangle Up',
-					'circle down' 			=> 'Circle Down',
-					'square down' 			=> 'Square Down',					
-					'triangle down' 		=> 'Triangle Down',					
-					'triple-triangle down' 	=> 'Triple Triangle Down',
+					'' 						=> __( 'None', 'mfn-opts' ),
+					'circle up' 			=> __( 'Circle Up', 'mfn-opts' ),
+					'square up' 			=> __( 'Square Up', 'mfn-opts' ),
+					'triangle up' 			=> __( 'Triangle Up', 'mfn-opts' ),
+					'triple-triangle up' 	=> __( 'Triple Triangle Up', 'mfn-opts' ),
+					'circle down' 			=> __( 'Circle Down', 'mfn-opts' ),
+					'square down' 			=> __( 'Square Down', 'mfn-opts' ),					
+					'triangle down' 		=> __( 'Triangle Down', 'mfn-opts' ),				
+					'triple-triangle down' 	=> __( 'Triple Triangle Down', 'mfn-opts' ),
 				),
 			),
 
@@ -163,8 +163,8 @@ if( ! function_exists( 'mfn_get_fields_section' ) )
 				'type' 		=> 'select',
 				'title' 	=> __('Navigation', 'mfn-opts'),
 				'options' 	=> array(
-					'' 				=> 'None',
-					'arrows' 		=> 'Arrows',
+					'' 			=> __( 'None', 'mfn-opts' ),
+					'arrows' 	=> __( 'Arrows', 'mfn-opts' ),
 				),
 			),
 				
@@ -184,19 +184,19 @@ if( ! function_exists( 'mfn_get_fields_section' ) )
 				'sub_desc'	=> __('Predefined styles for section', 'mfn-opts'),
 				'desc' 		=> __('For more advanced styles please use Custom CSS field below', 'mfn-opts'),
 				'options' 	=> array(
-					'' 										=> '-- Default --',
-					'no-margin-h'							=> 'Columns without Horizontal margins | no-margin-h',
-					'no-margin'	 							=> 'Columns without Vertical margin | no-margin-v',
-					'no-margin-h no-margin-v'				=> 'Columns without Any margins | no-margin-h no-margin-v',
-					'dark' 									=> 'Dark | dark',
-					'equal-height'							=> 'Equal Height of Items in wrap | equal-height',
-					'equal-height-wrap'						=> 'Equal Height of Wraps | equal-height-wrap',
-					'full-screen'	 						=> 'Full Screen | full-screen',
-					'full-width'	 						=> 'Full Width | full-width',
-					'full-width no-margin-h no-margin-v'	=> 'Full Width without margins | full-width no-margin-h no-margin-v',
-					'full-width-ex-mobile'					=> 'Full Width except mobile | full-width-ex-mobile',
-					'highlight-left' 						=> 'Highlight Left (use two 1/2 wraps) | highlight-left',
-					'highlight-right' 						=> 'Highlight Right (use two 1/2 wraps) | highlight-right',
+					'' 										=> __( '-- Default --', 'mfn-opts' ),
+					'no-margin-h'							=> __( 'Columns without Horizontal margins | no-margin-h', 'mfn-opts' ),
+					'no-margin'	 							=> __( 'Columns without Vertical margin | no-margin-v', 'mfn-opts' ),
+					'no-margin-h no-margin-v'				=> __( 'Columns without Any margins | no-margin-h no-margin-v', 'mfn-opts' ),
+					'dark' 									=> __( 'Dark | dark', 'mfn-opts' ),
+					'equal-height'							=> __( 'Equal Height of Items in wrap | equal-height', 'mfn-opts' ),
+					'equal-height-wrap'						=> __( 'Equal Height of Wraps | equal-height-wrap', 'mfn-opts' ),
+					'full-screen'	 						=> __( 'Full Screen | full-screen', 'mfn-opts' ),
+					'full-width'	 						=> __( 'Full Width | full-width', 'mfn-opts' ),
+					'full-width no-margin-h no-margin-v'	=> __( 'Full Width without margins | full-width no-margin-h no-margin-v', 'mfn-opts' ),
+					'full-width-ex-mobile'					=> __( 'Full Width except mobile | full-width-ex-mobile', 'mfn-opts' ),
+					'highlight-left' 						=> __( 'Highlight Left (use two 1/2 wraps) | highlight-left', 'mfn-opts' ),
+					'highlight-right' 						=> __( 'Highlight Right (use two 1/2 wraps) | highlight-right', 'mfn-opts' ),
 				),
 			),
 				
@@ -220,13 +220,13 @@ if( ! function_exists( 'mfn_get_fields_section' ) )
 				'type' 		=> 'select',
 				'title' 	=> __('Responsive Visibility', 'mfn-opts'),
 				'options' 	=> array(
-					'' 							=> '-- Default --',
-					'hide-desktop' 				=> 'Hide on Desktop | 960px +',			// 960 +
-					'hide-tablet' 				=> 'Hide on Tablet | 768px - 959px',	// 768 - 959
-					'hide-mobile' 				=> 'Hide on Mobile | - 768px',			// - 768
-					'hide-desktop hide-tablet' 	=> 'Hide on Desktop & Tablet',
-					'hide-desktop hide-mobile' 	=> 'Hide on Desktop & Mobile',
-					'hide-tablet hide-mobile'	=> 'Hide on Tablet & Mobile',
+					'' 							=> __( '-- Default --', 'mfn-opts' ),
+					'hide-desktop' 				=> __( 'Hide on Desktop | 960px +', 'mfn-opts' ),			// 960 +
+					'hide-tablet' 				=> __( 'Hide on Tablet | 768px - 959px', 'mfn-opts' ),		// 768 - 959
+					'hide-mobile' 				=> __( 'Hide on Mobile | - 768px', 'mfn-opts' ),			// - 768
+					'hide-desktop hide-tablet' 	=> __( 'Hide on Desktop & Tablet', 'mfn-opts' ),
+					'hide-desktop hide-mobile' 	=> __( 'Hide on Desktop & Mobile', 'mfn-opts' ),
+					'hide-tablet hide-mobile'	=> __( 'Hide on Tablet & Mobile', 'mfn-opts' ),
 				),
 			),
 				
@@ -326,7 +326,7 @@ if( ! function_exists( 'mfn_get_fields_wrap' ) )
 				'type' 		=> 'select',
 				'title' 	=> __('Margin Bottom', 'mfn-opts'),
 				'options' 	=> array(
-					''			=> '-- Default --',
+					''			=> __( '-- Default --', 'mfn-opts' ),
 					'0px'		=> '0px',
 					'10px'		=> '10px',
 					'20px'		=> '20px',
@@ -342,9 +342,9 @@ if( ! function_exists( 'mfn_get_fields_wrap' ) )
 				'title' 	=> __('Vertical Align', 'mfn-opts'),
 				'desc' 		=> __('Use with Section Style: <b>Equal Height of Wraps</b>', 'mfn-opts'),
 				'options' 	=> array(
-					'top' 		=> 'Top',
-					'middle'	=> 'Middle',
-					'bottom'	=> 'Bottom',
+					'top' 		=> __( 'Top', 'mfn-opts' ),
+					'middle'	=> __( 'Middle', 'mfn-opts' ),
+					'bottom'	=> __( 'Bottom', 'mfn-opts' ),
 				),
 			),
 	
@@ -434,7 +434,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Open First', 'mfn-opts'),
 						'desc' 		=> __('Open first tab at start.', 'mfn-opts'),
-						'options'	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options'	=> array(
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 
 					array(
@@ -450,8 +453,8 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Style', 'mfn-opts'),
 						'options'	=> array(
-							'accordion'	=> 'Accordion',
-							'toggle'	=> 'Toggle'
+							'accordion'	=> __( 'Accordion', 'mfn-opts' ),
+							'toggle'	=> __( 'Toggle', 'mfn-opts' ),
 						),
 					),
 
@@ -514,9 +517,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 						
@@ -626,9 +629,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 
@@ -664,14 +667,14 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id'		=> 'style',
 						'type'		=> 'select',
-						'title'		=> 'Style',
+						'title'		=> __( 'Style', 'mfn-opts' ),
 						'options'	=> array(
-							'classic'		=> 'Classic',
-							'grid'			=> 'Grid',
-							'masonry'		=> 'Masonry Blog Style',
-							'masonry tiles'	=> 'Masonry Tiles',
-							'photo'			=> 'Photo (Horizontal Images)',
-							'timeline'		=> 'Timeline',
+							'classic'		=> __( 'Classic', 'mfn-opts' ),
+							'grid'			=> __( 'Grid', 'mfn-opts' ),
+							'masonry'		=> __( 'Masonry Blog Style', 'mfn-opts' ),
+							'masonry tiles'	=> __( 'Masonry Tiles', 'mfn-opts' ),
+							'photo'			=> __( 'Photo (Horizontal Images)', 'mfn-opts' ),
+							'timeline'		=> __( 'Timeline', 'mfn-opts' ),
 						),
 						'std'		=> 'classic',
 					),
@@ -739,11 +742,11 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title' 	=> __('Filters', 'mfn-opts'),
 						'desc' 		=> __('This option works in <b>Category: All</b> and <b>Style: Masonry</b>', 'mfn-opts'),
 						'options' 	=> array(
-							'0' 				=> 'Hide',
-							'1' 				=> 'Show',
-							'only-categories' 	=> 'Show only Categories',
-							'only-tags' 		=> 'Show only Tags',
-							'only-authors' 		=> 'Show only Authors',
+							'0' 				=> __( 'Hide', 'mfn-opts' ),
+							'1' 				=> __( 'Show', 'mfn-opts' ),
+							'only-categories' 	=> __( 'Show only Categories', 'mfn-opts' ),
+							'only-tags' 		=> __( 'Show only Tags', 'mfn-opts' ),
+							'only-authors' 		=> __( 'Show only Authors', 'mfn-opts' ),
 						),
 						'std' 		=> '0'
 					),
@@ -778,7 +781,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Load More button', 'mfn-opts'),
 						'desc' 		=> __('This will replace all sliders on list with featured images. Please also <b>show Pagination</b>', 'mfn-opts'),
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 
 					// Style
@@ -802,7 +808,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Margin', 'mfn-opts'),
 						'desc'		=> __('for <b>Style: Masonry Tiles</b> only', 'mfn-opts'),
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 						
 					// Plugins
@@ -820,7 +829,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title'		=> __('Include events', 'mfn-opts'),
 						'sub_desc'	=> __('The Events Calendar', 'mfn-opts'),
 						'desc'		=> __('This option works in <b>Category: All</b> and requires free <b>The Events Calendar</b> plugin', 'mfn-opts'),
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 						
 					// custom	
@@ -960,7 +972,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 			'blog_slider' => array(
 				'type'		=> 'blog_slider',
 				'title' 	=> __('Blog Slider', 'mfn-opts'),
-				'size' 		=> '1/4',
+				'size' 		=> '1/1',
 				'cat' 		=> 'loops',
 				'fields'	=> array(
 
@@ -1017,8 +1029,11 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'more',
 						'type' 		=> 'select',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 						'title' 	=> __('Show Read More button', 'mfn-opts'),
+						'options' 	=> array(
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 						'std'		=> 1,
 					),
 
@@ -1093,12 +1108,12 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title' 	=> __('Title | Tag', 'mfn-opts'),
 						'desc' 		=> __('Title tag for 1st item, others use a smaller one', 'mfn-opts'),
 						'options' 	=> array(
-								'h1' => 'H1',
-								'h2' => 'H2',
-								'h3' => 'H3',
-								'h4' => 'H4',
-								'h5' => 'H5',
-								'h6' => 'H6',
+							'h1' => 'H1',
+							'h2' => 'H2',
+							'h3' => 'H3',
+							'h4' => 'H4',
+							'h5' => 'H5',
+							'h6' => 'H6',
 						),
 						'std'		=> 'h3'
 					),
@@ -1206,9 +1221,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 						
@@ -1217,9 +1232,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Align', 'mfn-opts'),
 						'options' 	=> array(
-							''			=> 'Left',
-							'center'	=> 'Center',
-							'right'		=> 'Right',
+							''			=> __( 'Left', 'mfn-opts' ),
+							'center'	=> __( 'Center', 'mfn-opts' ),
+							'right'		=> __( 'Right', 'mfn-opts' ),
 						),
 					),
 
@@ -1244,8 +1259,8 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Position', 'mfn-opts'),
 						'options'	=> array(
-							'left'		=> 'Left',
-							'right'		=> 'Right',
+							'left'		=> __( 'Left', 'mfn-opts' ),
+							'right'		=> __( 'Right', 'mfn-opts' ),
 						),
 					),
 						
@@ -1288,10 +1303,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Size', 'mfn-opts'),
 						'options'	=> array(
-							1 => 'Small',
-							2 => 'Default',
-							3 => 'Large',
-							4 => 'Very Large',
+							1 => __( 'Small', 'mfn-opts' ),
+							2 => __( 'Default', 'mfn-opts' ),
+							3 => __( 'Large', 'mfn-opts' ),
+							4 => __( 'Very Large', 'mfn-opts' ),
 						),
 					),
 						
@@ -1299,7 +1314,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'full_width',
 						'type' 		=> 'select',
 						'title' 	=> __('Full Width', 'mfn-opts'),
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 					
 					// advanced
@@ -1395,9 +1413,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 						
@@ -1565,10 +1583,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Order by', 'mfn-opts'),
 						'options' 	=> array(
-							'date'			=> 'Date',
-							'menu_order' 	=> 'Menu order',
-							'title'			=> 'Title',
-							'rand'			=> 'Random',
+							'date'			=> __( 'Date', 'mfn-opts' ),
+							'menu_order' 	=> __( 'Menu order', 'mfn-opts' ),
+							'title'			=> __( 'Title', 'mfn-opts' ),
+							'rand'			=> __( 'Random', 'mfn-opts' ),
 						),
 						'std'		=> 'menu_order'
 					),
@@ -1578,8 +1596,8 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Order', 'mfn-opts'),
 						'options'	=> array(
-							'ASC' 	=> 'Ascending',
-							'DESC' 	=> 'Descending',
+							'ASC' 	=> __( 'Ascending', 'mfn-opts' ),
+							'DESC' 	=> __( 'Descending', 'mfn-opts' ),
 						),
 						'std'		=> 'ASC'
 					),
@@ -1589,8 +1607,8 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Style', 'mfn-opts'),
 						'options' 	=> array(
-							''			=> 'Default',
-							'tiles' 	=> 'Tiles',
+							''			=> __( 'Default', 'mfn-opts' ),
+							'tiles' 	=> __( 'Tiles', 'mfn-opts' ),
 						),
 					),
 						
@@ -1598,7 +1616,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id'		=> 'greyscale',
 						'type'		=> 'select',
 						'title'		=> 'Greyscale Images',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 
 					array(
@@ -1640,10 +1661,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Order by', 'mfn-opts'),
 						'options' 	=> array(
-							'date'			=> 'Date',
-							'menu_order' 	=> 'Menu order',
-							'title'			=> 'Title',
-							'rand'			=> 'Random',
+							'date'			=> __( 'Date', 'mfn-opts' ),
+							'menu_order' 	=> __( 'Menu order', 'mfn-opts' ),
+							'title'			=> __( 'Title', 'mfn-opts' ),
+							'rand'			=> __( 'Random', 'mfn-opts' ),
 						),
 						'std'		=> 'menu_order'
 					),
@@ -1653,8 +1674,8 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Order', 'mfn-opts'),
 						'options'	=> array(
-							'ASC' 	=> 'Ascending',
-							'DESC' 	=> 'Descending',
+							'ASC' 	=> __( 'Ascending', 'mfn-opts' ),
+							'DESC' 	=> __( 'Descending', 'mfn-opts' ),
 						),
 						'std'		=> 'ASC'
 					),
@@ -1727,11 +1748,11 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Text Align', 'mfn-opts'),
 						'options' 	=> array(
-							''			=> 'None',
-							'left'		=> 'Left',
-							'right'		=> 'Right',
-							'center'	=> 'Center',
-							'justify'	=> 'Justify',
+							''			=> __( 'None', 'mfn-opts' ),
+							'left'		=> __( 'Left', 'mfn-opts' ),
+							'right'		=> __( 'Right', 'mfn-opts' ),
+							'center'	=> __( 'Center', 'mfn-opts' ),
+							'justify'	=> __( 'Justify', 'mfn-opts' ),
 						),
 					),
 						
@@ -1790,7 +1811,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title' 	=> __('Margin | Bottom', 'mfn-opts'),
 						'desc'		=> __('<b>Overrides</b> section settings', 'mfn-opts'),
 						'options' 	=> array(
-							''			=> '-- Default --',
+							''			=> __( '-- Default --', 'mfn-opts' ),
 							'0px'		=> '0px',
 							'10px'		=> '10px',
 							'20px'		=> '20px',
@@ -2054,12 +2075,12 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'type',
 						'type' 		=> 'select',
+						'title' 	=> __( 'Style', 'mfn-opts' ),
+						'desc' 		=> __( 'Vertical style works only for column widths: 1/4, 1/3 & 1/2', 'mfn-opts' ),
 						'options' 	=> array(
-							'horizontal'	=> 'Horizontal',
-							'vertical' 		=> 'Vertical',
+							'horizontal'	=> __( 'Horizontal', 'mfn-opts' ),
+							'vertical' 		=> __( 'Vertical', 'mfn-opts' ),
 						),
-						'title' 	=> __('Style', 'mfn-opts'),
-						'desc' 		=> __('Vertical style works only for column widths: 1/4, 1/3 & 1/2', 'mfn-opts'),
 						'std'		=> 'vertical',
 					),
 						
@@ -2102,36 +2123,36 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'style',
 						'type' 		=> 'select',
-						'options' 	=> array(
-							'default'	=> 'Default',
-							'dots'		=> 'Dots',
-							'zigzag'	=> 'ZigZag',
-						),
 						'title' 	=> __('Style', 'mfn-opts'),
+						'options' 	=> array(
+							'default'	=> __( 'Default', 'mfn-opts' ),
+							'dots'		=> __( 'Dots', 'mfn-opts' ),
+							'zigzag'	=> __( 'ZigZag', 'mfn-opts' ),
+						),
 					),
 						
 					array(
 						'id' 		=> 'line',
 						'type' 		=> 'select',
-						'options' 	=> array(
-							'default'	=> 'Default',
-							'narrow'	=> 'Narrow',
-							'wide'		=> 'Wide',
-							''			=> 'No Line',
-						),
 						'title' 	=> __('Line', 'mfn-opts'),
-						'desc' 		=> __('This option can be used <strong>only</strong> with Style: Default.', 'mfn-opts'),
+						'desc' 		=> __('This option can be used <strong>only</strong> with Style: Default.', 'mfn-opts'),	
+						'options' 	=> array(
+							'default'	=> __( 'Default', 'mfn-opts' ),
+							'narrow'	=> __( 'Narrow', 'mfn-opts' ),
+							'wide'		=> __( 'Wide', 'mfn-opts' ),
+							''			=> __( 'No Line', 'mfn-opts' ),
+						),
 					),
 						
 					array(
 						'id' 		=> 'themecolor',
 						'type' 		=> 'select',
-						'options' 	=> array(
-							0			=> 'No',
-							1			=> 'Yes',
-						),
 						'title' 	=> __('Theme Color', 'mfn-opts'),
 						'desc' 		=> __('This option can be used <strong>only</strong> with Style: Default.', 'mfn-opts'),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 
 					array(
@@ -2165,16 +2186,16 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'style',
 						'type' 		=> 'select',
-						'options' 	=> array(
-							'circle up'		=> 'Circle Up',
-							'circle down'	=> 'Circle Down',
-							'curve up'		=> 'Curve Up',
-							'curve down'	=> 'Curve Down',
-							'stamp'			=> 'Stamp',
-							'triangle up'	=> 'Triangle Up',
-							'triangle down'	=> 'Triangle Down',
-						),
 						'title' 	=> __('Style', 'mfn-opts'),
+						'options' 	=> array(
+							'circle up'		=> __( 'Circle Up', 'mfn-opts' ),
+							'circle down'	=> __( 'Circle Down', 'mfn-opts' ),
+							'curve up'		=> __( 'Curve Up', 'mfn-opts' ),
+							'curve down'	=> __( 'Curve Down', 'mfn-opts' ),
+							'stamp'			=> __( 'Stamp', 'mfn-opts' ),
+							'triangle up'	=> __( 'Triangle Up', 'mfn-opts' ),
+							'triangle down'	=> __( 'Triangle Down', 'mfn-opts' ),
+						),
 					),
 						
 					array(
@@ -2222,9 +2243,12 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'h1',
 						'type' 		=> 'select',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 						'title' 	=> __('Use H1 tag', 'mfn-opts'),
 						'desc' 		=> __('Wrap title into H1 instead of H2', 'mfn-opts'),
+						'options' 	=> array(
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 						
 					array(
@@ -2254,13 +2278,13 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'style',
 						'type' 		=> 'select',
-						'options' 	=> array(
-							'icon'		=> 'Icon',
-							'line'		=> 'Line',
-							'arrows' 	=> 'Arrows',
-						),
 						'title' 	=> __('Style', 'mfn-opts'),
 						'desc' 		=> __('Some fields above work on selected styles.', 'mfn-opts'),
+						'options' 	=> array(
+							'icon'		=> __( 'Icon', 'mfn-opts' ),
+							'line'		=> __( 'Line', 'mfn-opts' ),
+							'arrows' 	=> __( 'Arrows', 'mfn-opts' ),
+						),
 					),
 						
 					array(
@@ -2308,17 +2332,23 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'open1st',
 						'type' 		=> 'select',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 						'title' 	=> __('Open First', 'mfn-opts'),
 						'desc' 		=> __('Open first tab at start', 'mfn-opts'),
+						'options' 	=> array(
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 
 					array(
 						'id' 		=> 'openAll',
 						'type' 		=> 'select',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 						'title' 	=> __('Open All', 'mfn-opts'),
 						'desc' 		=> __('Open all tabs at start', 'mfn-opts'),
+						'options' 	=> array(
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 
 					array(
@@ -2389,9 +2419,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 	
@@ -2555,9 +2585,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 						
@@ -2697,9 +2727,12 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'target2',
 						'type' 		=> 'select',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 						'title' 	=> __('Link | Open in new window', 'mfn-opts'),
 						'desc' 		=> __('Adds a target="_blank" attribute to the link', 'mfn-opts'),
+						'options' 	=> array(
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 
 					array(
@@ -2760,10 +2793,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'target',
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
-						'options'	=> array( 
-							0 			=> 'Default | _self', 
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)', 
+						'options'	=> array(
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 
@@ -2859,9 +2892,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 						
@@ -2944,7 +2977,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Line', 'mfn-opts'),
 						'sub_desc' 	=> __('Show right connecting line', 'mfn-opts'),
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 
 					// link	
@@ -2967,9 +3003,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 						
@@ -3074,12 +3110,12 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'icon_position',
 						'type' 		=> 'select',
-						'options'	=> array(
-							'left'	=> 'Left',
-							'top'	=> 'Top',
-						),
 						'title' 	=> __('Icon Position', 'mfn-opts'),
 						'desc' 		=> __('Left position works only for column widths: 1/4, 1/3 & 1/2', 'mfn-opts'),
+						'options'	=> array(
+							'left'	=> __( 'Left', 'mfn-opts' ),
+							'top'	=> __( 'Top', 'mfn-opts' ),
+						),
 						'std'		=> 'top',
 					),
 						
@@ -3088,9 +3124,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Border', 'mfn-opts'),
 						'sub_desc' 	=> __('Show right border', 'mfn-opts'),
-						'options' 	=> array(
-							0 	=> 'No',
-							1 	=> 'Yes'
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
 						),
 					),
 
@@ -3114,9 +3150,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 
@@ -3212,10 +3248,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title' 	=> __('Align', 'mfn-opts'),
 						'desc' 		=> __('If you want image to be <b>resized</b> to column width use <b>align none</b>', 'mfn-opts'),
 						'options' 	=> array(
-							'' 			=> 'None',
-							'left' 		=> 'Left',
-							'right' 	=> 'Right',
-							'center' 	=> 'Center',
+							'' 			=> __( 'None', 'mfn-opts' ),
+							'left' 		=> __( 'Left', 'mfn-opts' ),
+							'right' 	=> __( 'Right', 'mfn-opts' ),
+							'center' 	=> __( 'Center', 'mfn-opts' ),
 						),
 					),
 						
@@ -3226,18 +3262,21 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'sub_desc' 	=> __('Stretch image to column width', 'mfn-opts'),
 						'desc' 		=> __('The height of the image will be changed proportionally', 'mfn-opts'),
 						'options' 	=> array(
-							'0'			=> 'No',
-							'1' 		=> 'Yes',
-							'ultrawide' => 'Yes, on ultrawide screens only > 1920px',
+							'0'			=> __( 'No', 'mfn-opts' ),
+							'1' 		=> __( 'Yes', 'mfn-opts' ),
+							'ultrawide' => __( 'Yes, on ultrawide screens only > 1920px', 'mfn-opts' ),
 						),
 					),
 						
 					array(
 						'id' 		=> 'border',
 						'type' 		=> 'select',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 						'title' 	=> __('Border', 'mfn-opts'),
 						'sub_desc' 	=> __('Show Image Border', 'mfn-opts'),
+						'options' 	=> array(
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 
 					array(
@@ -3284,7 +3323,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Open in new window', 'mfn-opts'),
 						'desc' 		=> __('Adds a target="_blank" attribute to the link.', 'mfn-opts'),
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 						
 					array(
@@ -3332,7 +3374,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> 'Greyscale Images',
 						'desc'		=> 'Works only for images with link',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 						
 					array(
@@ -3457,7 +3502,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Open in new window', 'mfn-opts'),
 						'desc' 		=> __('Adds a target="_blank" attribute to the link.', 'mfn-opts'),
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 						
 					array(
@@ -3466,10 +3514,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title' 	=> __('Style', 'mfn-opts'),
 						'desc' 		=> __('Only <strong>Vertical Style</strong> works for column widths 1/5 & 1/6', 'mfn-opts'),
 						'options' 	=> array(
-							1 => 'With background',
-							2 => 'Transparent',
-							3 => 'Vertical',
-							4 => 'Ordered list',
+							1 => __( 'With background', 'mfn-opts' ),
+							2 => __( 'Transparent', 'mfn-opts' ),
+							3 => __( 'Vertical', 'mfn-opts' ),
+							4 => __( 'Ordered list', 'mfn-opts' ),
 						),
 					),
 						
@@ -3505,16 +3553,16 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'lat',
 						'type' 		=> 'text',
 						'title' 	=> __('Google Maps Lat', 'mfn-opts'),
-						'class' 	=> 'small-text',
 						'desc' 		=> __('The map will appear only if this field is filled correctly.<br />Example: <b>-33.87</b>', 'mfn-opts'),
+						'class' 	=> 'small-text',
 					),
 						
 					array(
 						'id' 		=> 'lng',
 						'type' 		=> 'text',
 						'title' 	=> __('Google Maps Lng', 'mfn-opts'),
-						'class' 	=> 'small-text',
 						'desc' 		=> __('The map will appear only if this field is filled correctly.<br />Example: <b>151.21</b>', 'mfn-opts'),
+						'class' 	=> 'small-text',
 					),
 
 					array(
@@ -3573,11 +3621,11 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'draggable',
 						'type' 		=> 'select',
-						'title' 	=> __('Draggable', 'mfn-opts'),
+						'title' 	=> __( 'Draggable', 'mfn-opts' ),
 						'options' 	=> array(
-							'' 					=> __('Enable', 'mfn-opts'),
-							'disable' 			=> __('Disable', 'mfn-opts'),
-							'disable-mobile'	=> __('Disable on Mobile', 'mfn-opts'),
+							'' 					=> __( 'Enable', 'mfn-opts' ),
+							'disable' 			=> __( 'Disable', 'mfn-opts' ),
+							'disable-mobile'	=> __( 'Disable on Mobile', 'mfn-opts' ),
 						),
 					),
 
@@ -3586,9 +3634,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Border', 'mfn-opts'),
 						'sub_desc' 	=> __('Show map border', 'mfn-opts'),
-						'options' 	=> array(
-							0 => __('No', 'mfn-opts'),
-							1 => __('Yes', 'mfn-opts'),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
 						),
 					),
 						
@@ -3721,13 +3769,13 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id'		=> 'align',
 						'type'		=> 'select',
-						'title'		=> __('Text Align', 'mfn-opts'),
-						'desc'		=> __('Text align center does not affect title if button is active', 'mfn-opts'),
+						'title'		=> __( 'Text Align', 'mfn-opts' ),
+						'desc'		=> __( 'Text align center does not affect title if button is active', 'mfn-opts' ),
 						'options' 	=> array(
-							'left'		=> 'Left',
-							'right'		=> 'Right',
-							'center'	=> 'Center',
-							'justify'	=> 'Justify',
+							'left'		=> __( 'Left', 'mfn-opts' ),
+							'right'		=> __( 'Right', 'mfn-opts' ),
+							'center'	=> __( 'Center', 'mfn-opts' ),
+							'justify'	=> __( 'Justify', 'mfn-opts' ),
 						),
 					),						
 
@@ -3763,30 +3811,30 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id'		=> 'category',
 						'type'		=> 'select',
-						'title'		=> __('Category', 'mfn-opts'),
+						'title'		=> __( 'Category', 'mfn-opts' ),
 						'options'	=> mfn_get_categories( 'offer-types' ),
 					),
 
 					array(
 						'id' 		=> 'style',
 						'type' 		=> 'select',
-						'title' 	=> __('Style', 'mfn-opts'),
+						'title' 	=> __( 'Style', 'mfn-opts' ),
 						'options'	=> array(
-							'bottom'	=> 'Thumbnails at the bottom',
-							''			=> 'Thumbnails on the left',
+							'bottom'	=> __( 'Thumbnails at the bottom', 'mfn-opts' ),
+							''			=> __( 'Thumbnails on the left', 'mfn-opts' ),
 						),
 					),
 						
 					array(
 						'id'		=> 'align',
 						'type'		=> 'select',
-						'title'		=> __('Text Align', 'mfn-opts'),
-						'desc'		=> __('Text align center does not affect title if button is active', 'mfn-opts'),
+						'title'		=> __( 'Text Align', 'mfn-opts' ),
+						'desc'		=> __( 'Text align center does not affect title if button is active', 'mfn-opts' ),
 						'options' 	=> array(
-							'left'		=> 'Left',
-							'right'		=> 'Right',
-							'center'	=> 'Center',
-							'justify'	=> 'Justify',
+							'left'		=> __( 'Left', 'mfn-opts' ),
+							'right'		=> __( 'Right', 'mfn-opts' ),
+							'center'	=> __( 'Center', 'mfn-opts' ),
+							'justify'	=> __( 'Justify', 'mfn-opts' ),
 						),
 					),
 
@@ -3971,12 +4019,12 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'style',
 						'type' 		=> 'select',
+						'title' 	=> __( 'Style', 'mfn-opts' ),
 						'options'	=> array(
-							'circle'		=> 'Circle',
-							'vertical'		=> 'Vertical',
-							'horizontal'	=> 'Horizontal 	[only: 1/2]',
+							'circle'		=> __( 'Circle', 'mfn-opts' ),
+							'vertical'		=> __( 'Vertical', 'mfn-opts' ),
+							'horizontal'	=> __( 'Horizontal [only: 1/2]', 'mfn-opts' ),
 						),
-						'title' 	=> __('Style', 'mfn-opts'),
 						'std'		=> 'vertical',
 					),
 						
@@ -4000,9 +4048,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 						
@@ -4158,9 +4206,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 
@@ -4218,9 +4266,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Text Align', 'mfn-opts'),
 						'options' 	=> array(
-							''			=> __('Center', 'mfn-opts'),
-							'left'		=> __('Left', 'mfn-opts'),
-							'right'		=> __('Right', 'mfn-opts'),
+							''			=> __( 'Center', 'mfn-opts' ),
+							'left'		=> __( 'Left', 'mfn-opts' ),
+							'right'		=> __( 'Right', 'mfn-opts' ),
 						),
 					),
 						
@@ -4235,9 +4283,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 						
@@ -4246,7 +4294,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> 'Greyscale Images',
 						'desc'		=> 'Works only for images with link',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 						
 					array(
@@ -4288,16 +4339,16 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id'		=> 'style',
 						'type'		=> 'select',
-						'title'		=> 'Style',
+						'title'		=> __( 'Style', 'mfn-opts' ),
 						'options' 	=> array(
-							'flat'				=> 'Flat',
-							'grid'				=> 'Grid',
-							'masonry'			=> 'Masonry Blog Style',
-							'masonry-hover'		=> 'Masonry Hover Description',
-							'masonry-minimal'	=> 'Masonry Minimal',
-							'masonry-flat'		=> 'Masonry Flat',
-							'list'				=> 'List',
-							'exposure'			=> 'Exposure',
+							'flat'				=> __( 'Flat', 'mfn-opts' ),
+							'grid'				=> __( 'Grid', 'mfn-opts' ),
+							'masonry'			=> __( 'Masonry Blog Style', 'mfn-opts' ),
+							'masonry-hover'		=> __( 'Masonry Hover Description', 'mfn-opts' ),
+							'masonry-minimal'	=> __( 'Masonry Minimal', 'mfn-opts' ),
+							'masonry-flat'		=> __( 'Masonry Flat', 'mfn-opts' ),
+							'list'				=> __( 'List', 'mfn-opts' ),
+							'exposure'			=> __( 'Exposure', 'mfn-opts' ),
 						),
 						'std' 		=> 'grid'
 					),
@@ -4347,10 +4398,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Order by', 'mfn-opts'),
 						'options' 	=> array(
-							'date'			=> 'Date',
-							'menu_order' 	=> 'Menu order',
-							'title'			=> 'Title',
-							'rand'			=> 'Random',
+							'date'			=> __( 'Date', 'mfn-opts' ),
+							'menu_order' 	=> __( 'Menu order', 'mfn-opts' ),
+							'title'			=> __( 'Title', 'mfn-opts' ),
+							'rand'			=> __( 'Random', 'mfn-opts' ),
 						),
 						'std'		=> 'date'
 					),
@@ -4360,8 +4411,8 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Order', 'mfn-opts'),
 						'options'	=> array(
-							'ASC' 	=> 'Ascending',
-							'DESC' 	=> 'Descending',
+							'ASC' 	=> __( 'Ascending', 'mfn-opts' ),
+							'DESC' 	=> __( 'Descending', 'mfn-opts' ),
 						),
 						'std'		=> 'DESC'
 					),
@@ -4386,26 +4437,35 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'related',
 						'type' 		=> 'select',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 						'title' 	=> __('Use as Related Projects', 'mfn-opts'),
 						'sub_desc' 	=> __('use on Single Project page', 'mfn-opts'),
 						'desc' 		=> __('Exclude current Project. This option will override Exclude Posts option above', 'mfn-opts'),
+						'options' 	=> array(
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 
 					array(
 						'id' 		=> 'filters',
 						'type' 		=> 'select',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 						'title' 	=> __('Filters', 'mfn-opts'),
 						'desc' 		=> __('Works only with <b>Category: All</b>', 'mfn-opts'),
+						'options' 	=> array(
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 						
 					array(
 						'id' 		=> 'pagination',
 						'type' 		=> 'select',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 						'title' 	=> __('Pagination', 'mfn-opts'),
 						'desc'		=> __('<strong>Notice:</strong> Pagination will <strong>not</strong> work if you put item on Homepage of WordPress Multilangual Site', 'mfn-opts'),
+						'options' 	=> array(
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 	
 					array(
@@ -4413,14 +4473,20 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Load More button', 'mfn-opts'),
 						'desc' 		=> __('This will replace all sliders on list with featured images. Please also <b>show Pagination</b>', 'mfn-opts'),
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 						
 					array(
 						'id'		=> 'greyscale',
 						'type'		=> 'select',
 						'title'		=> 'Greyscale Images',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 
 					// custom	
@@ -4490,10 +4556,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Order by', 'mfn-opts'),
 						'options' 	=> array(
-							'date'			=> 'Date',
-							'menu_order' 	=> 'Menu order',
-							'title'			=> 'Title',
-							'rand'			=> 'Random',
+							'date'			=> __( 'Date', 'mfn-opts' ),
+							'menu_order' 	=> __( 'Menu order', 'mfn-opts' ),
+							'title'			=> __( 'Title', 'mfn-opts' ),
+							'rand'			=> __( 'Random', 'mfn-opts' ),
 						),
 						'std'		=> 'date'
 					),
@@ -4503,8 +4569,8 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Order', 'mfn-opts'),
 						'options'	=> array(
-							'ASC' 	=> 'Ascending',
-							'DESC' 	=> 'Descending',
+							'ASC' 	=> __( 'Ascending', 'mfn-opts' ),
+							'DESC' 	=> __( 'Descending', 'mfn-opts' ),
 						),
 						'std'		=> 'DESC'
 					),
@@ -4522,7 +4588,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id'		=> 'greyscale',
 						'type'		=> 'select',
 						'title'		=> 'Greyscale Images',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 						
 					// custom
@@ -4592,10 +4661,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Order by', 'mfn-opts'),
 						'options' 	=> array(
-							'date'			=> 'Date',
-							'menu_order' 	=> 'Menu order',
-							'title'			=> 'Title',
-							'rand'			=> 'Random',
+							'date'			=> __( 'Date', 'mfn-opts' ),
+							'menu_order' 	=> __( 'Menu order', 'mfn-opts' ),
+							'title'			=> __( 'Title', 'mfn-opts' ),
+							'rand'			=> __( 'Random', 'mfn-opts' ),
 						),
 						'std'		=> 'date'
 					),
@@ -4605,8 +4674,8 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Order', 'mfn-opts'),
 						'options'	=> array(
-							'ASC' 	=> 'Ascending',
-							'DESC' 	=> 'Descending',
+							'ASC' 	=> __( 'Ascending', 'mfn-opts' ),
+							'DESC' 	=> __( 'Descending', 'mfn-opts' ),
 						),
 						'std'		=> 'DESC'
 					),
@@ -4625,21 +4694,30 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Open in new window', 'mfn-opts'),
 						'desc' 		=> __('Adds a target="_blank" attribute to the link.', 'mfn-opts'),
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 						
 					array(
 						'id'		=> 'greyscale',
 						'type'		=> 'select',
 						'title'		=> 'Greyscale Images',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 						
 					array(
 						'id'		=> 'margin',
 						'type'		=> 'select',
 						'title'		=> __('Margin', 'mfn-opts'),
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 
 					// custom
@@ -4701,7 +4779,12 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id'		=> 'orderby',
 						'type'		=> 'select',
 						'title'		=> __('Order by', 'mfn-opts'),
-						'options'	=> array('date'=>'Date', 'menu_order' => 'Menu order', 'title'=>'Title'),
+						'options' 	=> array(
+							'date'			=> __( 'Date', 'mfn-opts' ),
+							'menu_order' 	=> __( 'Menu order', 'mfn-opts' ),
+							'title'			=> __( 'Title', 'mfn-opts' ),
+							'rand'			=> __( 'Random', 'mfn-opts' ),
+						),
 						'std'		=> 'date'
 					),
 
@@ -4710,8 +4793,8 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('Order', 'mfn-opts'),
 						'options'	=> array(
-							'ASC' 		=> __('Ascending', 'mfn-opts'),
-							'DESC' 		=> __('Descending', 'mfn-opts'),
+							'ASC' 	=> __( 'Ascending', 'mfn-opts' ),
+							'DESC' 	=> __( 'Descending', 'mfn-opts' ),
 						),
 						'std'		=> 'DESC'
 					),
@@ -4722,9 +4805,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title'		=> __('Navigation', 'mfn-opts'),
 						'sub_desc'	=> __('Navigation arrows', 'mfn-opts'),
 						'options'	=> array(
-							''			=> __('None', 'mfn-opts'),
-							'hover' 	=> __('Show on Hover', 'mfn-opts'),
-							'always' 	=> __('Always Show', 'mfn-opts'),
+							''			=> __( 'None', 'mfn-opts' ),
+							'hover' 	=> __( 'Show on Hover', 'mfn-opts' ),
+							'always' 	=> __( 'Always Show', 'mfn-opts' ),
 						),
 					),
 
@@ -4780,8 +4863,8 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title' 	=> __('Currency | Position', 'mfn-opts'),
 						'options' 	=> array(
-							'' 			=> 'Left',
-							'right'		=> 'Right'
+							'' 			=> __( 'Left', 'mfn-opts' ),
+							'right'		=> __( 'Right', 'mfn-opts' ),
 						),
 					),
 
@@ -4850,9 +4933,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Button | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 
@@ -4869,17 +4952,20 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'featured',
 						'type' 		=> 'select',
 						'title' 	=> __('Featured', 'mfn-opts'),
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 						
 					array(
 						'id' 		=> 'style',
 						'type' 		=> 'select',
-						'title' 	=> __('Style', 'mfn-opts'),
+						'title' 	=> __( 'Style', 'mfn-opts' ),
 						'options' 	=> array(
-							'box'	=> 'Box',
-							'label'	=> 'Table Label',
-							'table'	=> 'Table',
+							'box'	=> __( 'Box', 'mfn-opts' ),
+							'label'	=> __( 'Table Label', 'mfn-opts' ),
+							'table'	=> __( 'Table', 'mfn-opts' ),
 						),
 					),
 						
@@ -5001,9 +5087,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Button | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 
@@ -5021,8 +5107,8 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Image position', 'mfn-opts'),
 						'options' 	=> array(
-							'left' 	=> 'Left',
-							'right' => 'Right'
+							'left' 	=> __( 'Left', 'mfn-opts' ),
+							'right' => __( 'Right', 'mfn-opts' ),
 						),
 						'std'		=> 'left',
 					),
@@ -5032,8 +5118,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Border', 'mfn-opts'),
 						'sub_desc' 	=> __('Show right border', 'mfn-opts'),
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
-						'std'		=> 'no_border',
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 
 					array(
@@ -5138,9 +5226,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Align', 'mfn-opts'),
 						'options' 	=> array(
-							''			=> 'Center',
-							'left'		=> 'Left',
-							'right'		=> 'Right',
+							''			=> __( 'Center', 'mfn-opts' ),
+							'left'		=> __( 'Left', 'mfn-opts' ),
+							'right'		=> __( 'Right', 'mfn-opts' ),
 						),
 					),
 						
@@ -5177,7 +5265,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 			'shop_slider' => array(
 				'type' 		=> 'shop_slider',
 				'title' 	=> __('Shop Slider', 'mfn-opts'),
-				'size' 		=> '1/4',
+				'size' 		=> '1/1',
 				'cat' 		=> 'loops',
 				'fields' 	=> array(
 
@@ -5202,10 +5290,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title'		=> __('Show', 'mfn-opts'),
 						'options'	=> array(
-							''				=> 'All (or category selected below)',
-							'featured'		=> 'Featured',
-							'onsale'		=> 'Onsale',
-							'best-selling'	=> 'Best Selling (Order by: Sales)',
+							''				=> __( 'All (or category selected below)', 'mfn-opts' ),
+							'featured'		=> __( 'Featured', 'mfn-opts' ),
+							'onsale'		=> __( 'Onsale', 'mfn-opts' ),
+							'best-selling'	=> __( 'Best Selling (order by: Sales)', 'mfn-opts' ),
 						),
 					),
 
@@ -5222,9 +5310,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Order by', 'mfn-opts'),
 						'options' 	=> array(
-							'date'			=> 'Date',
-							'menu_order' 	=> 'Menu order',
-							'title'			=> 'Title',
+							'date'			=> __( 'Date', 'mfn-opts' ),
+							'menu_order' 	=> __( 'Menu order', 'mfn-opts' ),
+							'title'			=> __( 'Title', 'mfn-opts' ),
 						),
 						'std' 		=> 'date'
 					),
@@ -5233,7 +5321,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'order',
 						'type' 		=> 'select',
 						'title' 	=> __('Order', 'mfn-opts'),
-						'options' 	=> array('ASC' => 'Ascending', 'DESC' => 'Descending'),
+						'options'	=> array(
+							'ASC' 	=> __( 'Ascending', 'mfn-opts' ),
+							'DESC' 	=> __( 'Descending', 'mfn-opts' ),
+						),
 						'std' 		=> 'DESC'
 					),
 
@@ -5297,7 +5388,11 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'orderby',
 						'type' 		=> 'select',
 						'title' 	=> __('Order by', 'mfn-opts'),
-						'options' 	=> array('date'=>'Date', 'menu_order' => 'Menu order', 'title'=>'Title'),
+						'options' 	=> array(
+							'date'			=> __( 'Date', 'mfn-opts' ),
+							'menu_order' 	=> __( 'Menu order', 'mfn-opts' ),
+							'title'			=> __( 'Title', 'mfn-opts' ),
+						),
 						'std' 		=> 'date'
 					),
 
@@ -5305,7 +5400,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'order',
 						'type' 		=> 'select',
 						'title' 	=> __('Order', 'mfn-opts'),
-						'options' 	=> array('ASC' => 'Ascending', 'DESC' => 'Descending'),
+						'options'	=> array(
+							'ASC' 	=> __( 'Ascending', 'mfn-opts' ),
+							'DESC' 	=> __( 'Descending', 'mfn-opts' ),
+						),
 						'std' 		=> 'DESC'
 					),
 						
@@ -5322,10 +5420,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'style',
 						'type' 		=> 'select',
 						'options' 	=> array(
-							''				=> 'Default',
-							'description'	=> 'Description',
-							'flat' 			=> 'Flat',
-							'carousel' 		=> 'Carousel',
+							''				=> __( 'Default', 'mfn-opts' ),
+							'description'	=> __( 'Description', 'mfn-opts' ),
+							'flat' 			=> __( 'Flat', 'mfn-opts' ),
+							'carousel' 		=> __( 'Carousel', 'mfn-opts' ),
 						),
 						'title' 	=> __('Style', 'mfn-opts'),
 					),
@@ -5335,9 +5433,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Navigation', 'mfn-opts'),
 						'options'	=> array(
-							''				=> __('Default', 'mfn-opts'),
-							'hide-arrows'	=> __('Hide Arrows', 'mfn-opts'),
-							'hide-dots'		=> __('Hide Dots', 'mfn-opts'),
+							''				=> __( 'Default', 'mfn-opts' ),
+							'hide-arrows'	=> __( 'Hide Arrows', 'mfn-opts' ),
+							'hide-dots'		=> __( 'Hide Dots', 'mfn-opts' ),
 						),
 					),
 						
@@ -5366,7 +5464,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 			'slider_plugin' => array(
 				'type' 		=> 'slider_plugin',
 				'title' 	=> __('Slider Plugin', 'mfn-opts'),
-				'size' 		=> '1/4',
+				'size' 		=> '1/1',
 				'cat' 		=> 'other',
 				'fields' 	=> array(
 							
@@ -5429,9 +5527,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 						
@@ -5472,11 +5570,11 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'style',
 						'type' 		=> 'select',
-						'options' 	=> array(
-							''			=> 'Horizontal Image',
-							'vertical' 	=> 'Vertical Image',
-						),
 						'title' 	=> __('Style', 'mfn-opts'),
+						'options' 	=> array(
+							''			=> __( 'Horizontal Image', 'mfn-opts' ),
+							'vertical' 	=> __( 'Vertical Image', 'mfn-opts' ),
+						),	
 					),
 
 					array(
@@ -5505,9 +5603,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 						
@@ -5557,7 +5655,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'tabs',
 						'type' 		=> 'tabs',
-						'title' 	=> __('', 'mfn-opts'),
+						'title' 	=> '',
 						'sub_desc' 	=> __('To add an <strong>icon</strong> in Title field, please use the following code:<br/><br/>&lt;i class=" icon-lamp"&gt;&lt;/i&gt; Tab Title', 'mfn-opts'),
 						'desc' 		=> __('<b>JavaScript</b> content like Google Maps and some plugins shortcodes do <b>not work</b> in tabs. You can use Drag & Drop to set the order', 'mfn-opts'),
 					),
@@ -5574,13 +5672,13 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'type',
 						'type' 		=> 'select',
-						'options' 	=> array(
-							'horizontal'	=> 'Horizontal',
-							'centered'		=> 'Horizontal (centered tab)',
-							'vertical' 		=> 'Vertical', 
-						),
 						'title' 	=> __('Style', 'mfn-opts'),
 						'desc' 		=> __('Vertical tabs works only for column widths: 1/2, 3/4 & 1/1', 'mfn-opts'),
+						'options' 	=> array(
+							'horizontal'	=> __( 'Horizontal', 'mfn-opts' ),
+							'centered'		=> __( 'Horizontal (centered tab)', 'mfn-opts' ),
+							'vertical' 		=> __( 'Vertical', 'mfn-opts' ), 
+						),
 					),
 						
 					array(
@@ -5641,7 +5739,11 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'orderby',
 						'type' 		=> 'select',
 						'title' 	=> __('Order by', 'mfn-opts'),
-						'options' 	=> array('date'=>'Date', 'menu_order' => 'Menu order', 'title'=>'Title'),
+						'options' 	=> array(
+							'date'			=> __( 'Date', 'mfn-opts' ),
+							'menu_order' 	=> __( 'Menu order', 'mfn-opts' ),
+							'title'			=> __( 'Title', 'mfn-opts' ),
+						),
 						'std' 		=> 'date'
 					),
 						
@@ -5649,7 +5751,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'order',
 						'type' 		=> 'select',
 						'title' 	=> __('Order', 'mfn-opts'),
-						'options' 	=> array('ASC' => 'Ascending', 'DESC' => 'Descending'),
+						'options'	=> array(
+							'ASC' 	=> __( 'Ascending', 'mfn-opts' ),
+							'DESC' 	=> __( 'Descending', 'mfn-opts' ),
+						),
 						'std' 		=> 'DESC'
 					),
 						
@@ -5676,8 +5781,11 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					array(
 						'id' 		=> 'hide_photos',
 						'type' 		=> 'select',
-						'options' 	=> array( 0 => 'No', 1 => 'Yes' ),
 						'title'		=> __('Hide Photos', 'mfn-opts'),
+						'options' 	=> array( 
+							0 => __( 'No', 'mfn-opts' ),
+							1 => __( 'Yes', 'mfn-opts' ),
+						),
 					),
 
 					// custom
@@ -5721,7 +5829,11 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'orderby',
 						'type' 		=> 'select',
 						'title' 	=> __('Order by', 'mfn-opts'),
-						'options' 	=> array('date'=>'Date', 'menu_order' => 'Menu order', 'title'=>'Title'),
+						'options' 	=> array(
+							'date'			=> __( 'Date', 'mfn-opts' ),
+							'menu_order' 	=> __( 'Menu order', 'mfn-opts' ),
+							'title'			=> __( 'Title', 'mfn-opts' ),
+						),
 						'std' 		=> 'date'
 					),
 						
@@ -5729,7 +5841,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'order',
 						'type' 		=> 'select',
 						'title' 	=> __('Order', 'mfn-opts'),
-						'options' 	=> array('ASC' => 'Ascending', 'DESC' => 'Descending'),
+						'options'	=> array(
+							'ASC' 	=> __( 'Ascending', 'mfn-opts' ),
+							'DESC' 	=> __( 'Descending', 'mfn-opts' ),
+						),
 						'std' 		=> 'DESC'
 					),
 						
@@ -5820,9 +5935,9 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
 						'options'	=> array(
-							0 			=> 'Default | _self',
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)',
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 
@@ -5900,18 +6015,18 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type'		=> 'select',
 						'title'		=> __('HTML5 | Parameters', 'mfn-opts'),
 						'options' 	=> array(
-							''			=> 'autoplay controls loop muted',
-							'a;c;l;'	=> 'autoplay controls loop',
-							'a;c;;m'	=> 'autoplay controls muted',
-							'a;;l;m'	=> 'autoplay loop muted',
-							'a;c;;'		=> 'autoplay controls',
-							'a;;l;'		=> 'autoplay loop',
-							'a;;;m'		=> 'autoplay muted',
-							'a;;;'		=> 'autoplay',
-							';c;l;m'	=> 'controls loop muted',
-							';c;l;'		=> 'controls loop',
-							';c;;m'		=> 'controls muted',
-							';c;;'		=> 'controls',
+							''			=> __( 'autoplay controls loop muted', 'mfn-opts' ),
+							'a;c;l;'	=> __( 'autoplay controls loop', 'mfn-opts' ),
+							'a;c;;m'	=> __( 'autoplay controls muted', 'mfn-opts' ),
+							'a;;l;m'	=> __( 'autoplay loop muted', 'mfn-opts' ),
+							'a;c;;'		=> __( 'autoplay controls', 'mfn-opts' ),
+							'a;;l;'		=> __( 'autoplay loop', 'mfn-opts' ),
+							'a;;;m'		=> __( 'autoplay muted', 'mfn-opts' ),
+							'a;;;'		=> __( 'autoplay', 'mfn-opts' ),
+							';c;l;m'	=> __( 'controls loop muted', 'mfn-opts' ),
+							';c;l;'		=> __( 'controls loop', 'mfn-opts' ),
+							';c;;m'		=> __( 'controls muted', 'mfn-opts' ),
+							';c;;'		=> __( 'controls', 'mfn-opts' ),
 						),
 					),
 					
@@ -6027,10 +6142,10 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'target',
 						'type' 		=> 'select',
 						'title' 	=> __('Link | Target', 'mfn-opts'),
-						'options'	=> array( 
-							0 			=> 'Default | _self', 
-							1 			=> 'New Tab or Window | _blank' ,
-							'lightbox' 	=> 'Lightbox (image or embed video)', 
+						'options'	=> array(
+							0 			=> __( 'Default | _self', 'mfn-opts' ),
+							1 			=> __( 'New Tab or Window | _blank', 'mfn-opts' ),
+							'lightbox' 	=> __( 'Lightbox (image or embed video)', 'mfn-opts' ),
 						),
 					),
 

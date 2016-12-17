@@ -23,9 +23,9 @@
 <?php 
 	if( mfn_opts_get('responsive') ){
 		if( mfn_opts_get('responsive-zoom') ){
-			echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
+			echo '<meta name="viewport" content="width=device-width, initial-scale=1" />';
 		} else {
-			echo '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">';
+			echo '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />';
 		}
 		 
 	}
