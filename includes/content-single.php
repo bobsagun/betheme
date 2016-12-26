@@ -123,10 +123,10 @@ $translate['readmore'] 		= mfn_opts_get('translate') ? mfn_opts_get('translate-r
 									
 									<?php if( mfn_opts_get( 'mfn-seo-schema-type' ) ): ?>
 									
-										<meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://google.com/article"/>
+										<meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage"/>
 										
 										<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display:none;">
-				    						<meta itemprop="name" content="<?php bloginfo( 'name' ); ?>">
+				    						<meta itemprop="name" content="<?php bloginfo( 'name' ); ?>"/>
 				    						
 											<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
 												<img src="<?php mfn_opts_show( 'logo-img' ) ?>" itemprop="url" content="<?php mfn_opts_show( 'logo-img' ) ?>"/>

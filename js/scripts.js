@@ -2241,7 +2241,16 @@
 		$('.blog_slider_ul').each(function(){
 			
 			var slider = $(this);
-
+			var slidesToShow = 4;
+			
+			var count = slider.closest( '.blog_slider' ).data( 'count' );	
+			if( slidesToShow > count ){
+				slidesToShow = count;
+				if( slidesToShow < 2 ){
+					slidesToShow = 2;
+				}
+			}
+			
 			slider.slick({
 				cssEase			: 'ease-out',
 				dots			: true,
@@ -2260,14 +2269,14 @@
 				autoplay		: window.mfn_sliders.blog ? true : false,
 				autoplaySpeed	: window.mfn_sliders.blog ? window.mfn_sliders.blog : 5000,
 
-				slidesToShow	: slickAutoResponsive( slider, 4 ),
-				slidesToScroll	: slickAutoResponsive( slider, 4 )
+				slidesToShow	: slickAutoResponsive( slider, slidesToShow ),
+				slidesToScroll	: slickAutoResponsive( slider, slidesToShow )
 			});
 
 			// Bind | debouncedresize
 			$(window).bind( 'debouncedresize', function(){
-				slider.slick( 'slickSetOption', 'slidesToShow', slickAutoResponsive( slider, 4 ), false );
-				slider.slick( 'slickSetOption', 'slidesToScroll', slickAutoResponsive( slider, 4 ), true );
+				slider.slick( 'slickSetOption', 'slidesToShow', slickAutoResponsive( slider, slidesToShow ), false );
+				slider.slick( 'slickSetOption', 'slidesToScroll', slickAutoResponsive( slider, slidesToShow ), true );
 			});
 
 		});
@@ -2312,10 +2321,21 @@
 	
 	// --- Portfolio -------------------------------------------------------------
 
-	function sliderPortfolio(){	
+	function sliderPortfolio(){
+		
 		$('.portfolio_slider_ul').each(function(){
 			
 			var slider = $(this);
+			var size = 380;
+			var scroll = 5;
+			
+			if( slider.closest( '.portfolio_slider' ).data( 'size' ) ){
+				size = slider.closest( '.portfolio_slider' ).data( 'size' );
+			}
+			
+			if( slider.closest( '.portfolio_slider' ).data( 'size' ) ){
+				scroll = slider.closest( '.portfolio_slider' ).data( 'scroll' );
+			}
 
 			slider.slick({
 				cssEase			: 'ease-out',
@@ -2331,14 +2351,14 @@
 				autoplay		: window.mfn_sliders.portfolio ? true : false,
 				autoplaySpeed	: window.mfn_sliders.portfolio ? window.mfn_sliders.portfolio : 5000,
 
-				slidesToShow	: slickAutoResponsive( slider ),
-				slidesToScroll	: slickAutoResponsive( slider )
+				slidesToShow	: slickAutoResponsive( slider, 5, size ),
+				slidesToScroll	: slickAutoResponsive( slider, scroll, size )
 			});
 
 			// Bind | debouncedresize
 			$(window).bind( 'debouncedresize', function(){
-				slider.slick( 'slickSetOption', 'slidesToShow', slickAutoResponsive( slider ), false );
-				slider.slick( 'slickSetOption', 'slidesToScroll', slickAutoResponsive( slider ), true );
+				slider.slick( 'slickSetOption', 'slidesToShow', slickAutoResponsive( slider, 5, size ), false );
+				slider.slick( 'slickSetOption', 'slidesToScroll', slickAutoResponsive( slider, scroll, size ), true );
 			});
 			
 			// prettyPhoto | disable on dragstart

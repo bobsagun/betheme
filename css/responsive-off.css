@@ -320,4 +320,7 @@ body.header-rtl.header-creative.header-open{padding-left:0;padding-right:250px!i
 	/* Header | Semitransparent */
 	.header-semi #Top_bar:not(.is-sticky) { position: absolute; background-color: rgba(255, 255, 255, 0.8);}	
 	.header-semi.ab-show #Top_bar:not(.is-sticky) { top: 45px !important; }	
-	.header-semi.ab-hide #Top_bar:not(.is-sticky) { top: 0 !important; }	
+	.header-semi.ab-hide #Top_bar:not(.is-sticky) { top: 0 !important; }
+	
+/* Shortcodes ----------- */
+.hover_color:hover .hover_color_bg,.hover_color.hover .hover_color_bg{background-color:inherit!important;border-color:inherit!important}	

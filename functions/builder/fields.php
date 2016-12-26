@@ -4758,6 +4758,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'class'		=> 'small-text',
 					),
 						
+					// options
+					array(
+						'id' 		=> 'info_options',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Options', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id'		=> 'category',
 						'type'		=> 'select',
@@ -4798,6 +4807,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						),
 						'std'		=> 'DESC'
 					),
+						
+					// advanced
+					array(
+						'id' 		=> 'info_advanced',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Advanced', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
 
 					array(
 						'id'		=> 'arrows',
@@ -4809,6 +4827,37 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 							'hover' 	=> __( 'Show on Hover', 'mfn-opts' ),
 							'always' 	=> __( 'Always Show', 'mfn-opts' ),
 						),
+					),
+						
+					array(
+						'id'		=> 'size',
+						'type'		=> 'select',
+						'title'		=> __('Size', 'mfn-opts'),
+						'sub_desc'	=> __('Image size', 'mfn-opts'),
+						'options'	=> array(
+							'small'		=> __( 'Small', 'mfn-opts' ),
+							'medium' 	=> __( 'Medium', 'mfn-opts' ),
+							'large' 	=> __( 'Large', 'mfn-opts' ),
+						),
+					),
+						
+					array(
+						'id'		=> 'scroll',
+						'type'		=> 'select',
+						'title'		=> __('Slides to scroll', 'mfn-opts'),
+						'options'	=> array(
+							'page'		=> __( 'One Page', 'mfn-opts' ),
+							'slide' 	=> __( 'Single Slide', 'mfn-opts' ),
+						),
+					),
+
+					// custom
+					array(
+						'id' 		=> 'info_custom',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Custom', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
 					),
 
 					array(
