@@ -372,7 +372,7 @@
 				}, {
 					text : 'Portfolio Slider',
 					onclick : function() {
-						editor.insertContent('[portfolio_slider count="5" category="" category_multi="" orderby="date" order="DESC" arrows=""]');
+						editor.insertContent('[portfolio_slider count="5" category="" category_multi="" orderby="date" order="DESC" arrows="" size="small"]');
 					}			
 				}, {
 					text : 'Pricing Item',

@@ -27,7 +27,7 @@
 #mfn-wrapper ul.mfn-menu > li.active > a,
 #mfn-wrapper ul.mfn-menu > li > a:hover { background: #2f4052;}
 
-#mfn-wrapper ul.mfn-menu > li > a > .icon { display:block; width:20px; height:20px; margin:12px 14px 12px 18px; float:left; background:url(../img/ico-nav.png); }
+#mfn-wrapper ul.mfn-menu > li > a > .icon { display:block; width:20px; height:20px; margin:12px 14px 12px 18px; float:left; clear:left; background:url(../img/ico-nav.png); }
 
 #mfn-wrapper ul.mfn-menu > li.mfn-menu-li-global > a > .icon { background-position: 0 0; }
 #mfn-wrapper ul.mfn-menu > li.mfn-menu-li-global > a:hover > .icon,

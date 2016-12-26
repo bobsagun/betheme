@@ -927,7 +927,7 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .hover_box .hover_box_wrapper .visible_photo,.hover_box .hover_box_wrapper .hidden_photo{-webkit-transition:all .4s ease-in-out;-moz-transition:all .4s ease-in-out;-o-transition:all .4s ease-in-out;transition:all .4s ease-in-out}
 
 /* Hover color ----------------------------------------------------------------------- */
-.hover_color:hover .hover_color_bg,.hover_color.hover .hover_color_bg{background-color:inherit!important;border-color:inherit!important}
+/* .hover_color:hover .hover_color_bg,.hover_color.hover .hover_color_bg{background-color:inherit!important;border-color:inherit!important} */
 .hover_color {border-color:transparent}
 .hover_color a{display:block}
 .hover_color a:hover{text-decoration:none}

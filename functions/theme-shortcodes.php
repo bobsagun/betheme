@@ -1097,7 +1097,7 @@ if( ! function_exists( 'sc_blog_slider' ) )
 
 		$query_blog = new WP_Query( $args );
 
-		$output = '<div class="blog_slider clearfix '. $classes .'">';
+		$output = '<div class="blog_slider clearfix '. $classes .'" data-count="'. $query_blog->post_count .'">';
 		
 			$output .= '<div class="blog_slider_header">';		
 				if( $title ) $output .= '<h4 class="title">'. $title .'</h4>';	
@@ -1396,7 +1396,7 @@ if( ! function_exists( 'sc_shop_slider' ) )
 
 		$args = array(
 			'post_type' 			=> 'product',
-			'posts_per_page' 		=> intval($count),
+			'posts_per_page' 		=> intval( $count ),
 			'paged' 				=> -1,
 			'orderby' 				=> $orderby,
 			'order' 				=> $order,
@@ -1413,6 +1413,7 @@ if( ! function_exists( 'sc_shop_slider' ) )
 		} elseif( $show == 'onsale' ){
 
 			// onsale --------------------------------
+			/*
 			$args['meta_query'] = array(
 				array(
 					'key'           => '_sale_price',
@@ -1421,6 +1422,9 @@ if( ! function_exists( 'sc_shop_slider' ) )
 					'type'          => 'numeric'
 				),
 			);
+			*/
+			
+			$args['post__in'] =  array_merge( array( 0 ), wc_get_product_ids_on_sale() );
 			
 		} elseif( $show == 'best-selling' ){
 			
@@ -3812,12 +3816,27 @@ if( ! function_exists( 'sc_portfolio_slider' ) )
 	{
 		extract(shortcode_atts(array(
 			'count' 			=> '5',
+			
 			'category' 			=> '',
 			'category_multi' 	=> '',
 			'orderby' 			=> 'date',
 			'order' 			=> 'DESC',
-			'arrows'			=> '',		// '', hover, always
+			
+			'arrows'			=> '',			// [default], hover, always
+			'size'				=> 'small',		// small, medium, large
+			'scroll'			=> 'page',		// page, slide
 		), $attr));
+		
+		$sizes = array(
+			'small'		=> 380,	
+			'medium'	=> 480,	
+			'large'		=> 638,	
+		);
+		
+		$scrolls = array(
+			'page'		=> 5,
+			'slide'		=> 1,	
+		);
 		
 		$class = '';
 		if( $arrows )	$class .= ' arrows arrows_' .$arrows;
@@ -3851,9 +3870,9 @@ if( ! function_exists( 'sc_portfolio_slider' ) )
 
 		if ($query->have_posts())
 		{
-			$output  = '<div class="portfolio_slider '. $class .'">';
+			$output  = '<div class="portfolio_slider'. esc_attr( $class ) .'" data-size="'. esc_attr( $sizes[ $size ] ) .'" data-scroll="'. esc_attr( $scrolls[ $scroll ] ) .'">';
 				$output .= '<ul class="portfolio_slider_ul">';
-				while ($query->have_posts())
+				while( $query->have_posts() )
 				{
 					$query->the_post();
 	
@@ -3864,6 +3883,7 @@ if( ! function_exists( 'sc_portfolio_slider' ) )
 							$output .= '</div>';
 						$output .= '</div>';
 					$output .= '</li>';
+					
 				}
 				$output .= '</ul>';
 			$output .= '</div>'."\n";

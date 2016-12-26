@@ -71,6 +71,9 @@
 
 .woocommerce .button.add_to_cart_button:before,.woocommerce .button.add_to_cart_button:after{content:none!important}
 
+.button-flat .woocommerce .shop_table .product-remove a.remove{border-radius:0}
+.button-flat .woocommerce a.remove:hover{color:inherit!important;background:none}
+
 /* Shop filters ---------------------------------------------------------------------- */
 .shop-filters{margin-bottom:20px;padding:15px;background-image:url(../images/stripes/stripes_5_b.png);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;overflow:hidden}
 .shop-filters .woocommerce-result-count{margin:12px 0 0}
@@ -163,10 +166,10 @@
 .woocommerce .product div.entry-summary .accordion #reviews #comments h2{font-size:21px;line-height:25px}
 .woocommerce .product div.entry-summary .accordion #reviews .comment-form-rating{display:block;clear:both}
 .woocommerce .product div.entry-summary .accordion p.stars a{margin-right:10px}
-.woocommerce .product div.entry-summary .woocommerce-product-rating{float:right;margin-bottom:20px;margin-top:4px}
+.woocommerce .product div.entry-summary .woocommerce-product-rating{float:right;margin:1px 0 15px 10px}
 .woocommerce .product div.entry-summary .price{float:none;font-size:30px;line-height:30px}
 .woocommerce .product div.entry-summary .price > ins{text-decoration:none}
-.woocommerce .product div.entry-summary .price > del{float:right;margin-left:7px;font-size:.5em}
+.woocommerce .product div.entry-summary .price > del{float:right;font-size:.5em;margin-left:10px;}
 
 .woocommerce .product .product_wrapper .product_image_wrapper{position:relative}
 .woocommerce .product .product_wrapper .product_image_wrapper .images{width:100%;margin:0}

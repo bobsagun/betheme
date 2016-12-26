@@ -1209,7 +1209,9 @@ if( ! function_exists( 'mfn_post_thumbnail' ) )
 		$output = '';
 	
 		
+		
 		// Image Size ---------------------------------------------------------
+		
 		
 		if( $type == 'portfolio' ){
 			
@@ -1264,11 +1266,14 @@ if( ! function_exists( 'mfn_post_thumbnail' ) )
 		}
 	
 		
+		
 		// Link Wrap ----------------------------------------------------------
+		
 		
 		$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), 'large' );
 		
 		if( is_single( $postID ) ){
+			
 			// Single -----------------------------------------
 			
 			$link_before = '<a href="'. $large_image_url[0] .'" rel="prettyphoto">';
@@ -1279,14 +1284,38 @@ if( ! function_exists( 'mfn_post_thumbnail' ) )
 				$link_after .= '<a href="'. $large_image_url[0] .'" class="zoom" rel="prettyphoto"><i class="icon-search"></i></a>';
 			$link_after .= '</div>';
 			
-			// Blog | Single - Disable Image Zoom 
+			// Single | Post
+			
 			if( get_post_type() == 'post' ){
-				if( ! mfn_opts_get('blog-single-zoom') ){
-					$link_before = $link_after = false;
+				
+				// Blog | Single - Disable Image Zoom
+				
+				if( ! mfn_opts_get( 'blog-single-zoom' ) ){
+					$link_before = '';
+					$link_after = '';
 				}
+				
+				// Blog | Single | Structured data
+				
+				if( mfn_opts_get( 'mfn-seo-schema-type' ) ){
+					
+					$link_before .= '<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">';
+					
+						$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), 'full' );
+							
+						$link_after_schema = '<meta itemprop="url" content="'. $image_url[0] .'"/>';
+						$link_after_schema .= '<meta itemprop="width" content="'. mfn_get_attachment_data( $image_url[0], 'width' ) .'"/>';
+						$link_after_schema .= '<meta itemprop="height" content="'. mfn_get_attachment_data( $image_url[0], 'height' ) .'"/>';
+						
+					$link_after_schema .= '</div>';
+					
+					$link_after = $link_after_schema . $link_after;
+				}
+				
 			}
 			
-		} elseif( $type == 'portfolio' ) {
+		} elseif( $type == 'portfolio' ){
+			
 			// Portfolio --------------------------------------
 			
 			$external = mfn_opts_get('portfolio-external');
@@ -1350,6 +1379,7 @@ if( ! function_exists( 'mfn_post_thumbnail' ) )
 			}
 			
 		} else {
+			
 			// Blog -------------------------------------------
 			
 			$link_before = '<a href="'. get_permalink() .'">';
@@ -1363,26 +1393,36 @@ if( ! function_exists( 'mfn_post_thumbnail' ) )
 			
 		}
 		
-		// post format -------------------------------------------------	
+		
+		
+		// Post Format --------------------------------------------------------	
+		
+		
 		switch( mfn_post_format( $postID ) ){
 			
 			case 'quote':
 			case 'link':
+				
 				// quote - Quote - without image
+				
 				return false;
 				break;
 				
 			case 'image': 
+				
 				// image - Vertical Image
+				
 				if( has_post_thumbnail() ){
 					$output .= $link_before;
-						$output .= get_the_post_thumbnail( $postID, $sizeV, array( 'class'=>'scale-with-grid', 'itemprop'=>'image' ) );
+						$output .= get_the_post_thumbnail( $postID, $sizeV, array( 'class'=>'scale-with-grid' ) );
 					$output .= $link_after;
 				}
 				break;
 				
 			case 'video':
+				
 				// video - Video
+				
 				if( $video = get_post_meta( $postID, 'mfn-post-video', true ) ){
 					if( is_numeric($video) ){
 						// Vimeo
@@ -1397,7 +1437,9 @@ if( ! function_exists( 'mfn_post_thumbnail' ) )
 				break;
 				
 			default:
+				
 				// standard - Text, Horizontal Image, Slider
+				
 				$rev_slider = get_post_meta( $postID, 'mfn-post-slider', true );
 				$lay_slider = get_post_meta( $postID, 'mfn-post-slider-layer', true );
 				
@@ -1416,7 +1458,7 @@ if( ! function_exists( 'mfn_post_thumbnail' ) )
 					
 					// Image
 					$output .= $link_before;
-						$output .= get_the_post_thumbnail( $postID, $sizeH, array( 'class'=>'scale-with-grid', 'itemprop'=>'image' ) );
+						$output .= get_the_post_thumbnail( $postID, $sizeH, array( 'class'=>'scale-with-grid' ) );
 					$output .= $link_after;
 					
 				}
