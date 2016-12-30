@@ -40,7 +40,8 @@ class MFN_Options_textarea extends MFN_Options{
 		// echo -----------------------------------------------------
 		echo '<div class="textarea-wrapper '. $class .'">';
 		
-			if( strpos($class, 'sc') !== false ){
+			if( strpos( $class, 'sc' ) !== false ){
+				
 				echo '<div class="mfn-textarea-header">';
 					echo '<div class="mfn-sc-add">';
 						echo '<a class="mfn-sc-add-btn" href="javascript:void(0);">Add Content Shortcode</a>';
@@ -89,12 +90,16 @@ class MFN_Options_textarea extends MFN_Options{
 				echo '</div>';
 			}
 
-			echo '<textarea '. $name .' class="'. $param .'" rows="8">'.esc_attr($this->value).'</textarea>';
+			echo '<textarea '. $name .' class="'. $param .'" rows="8">' .esc_attr( $this->value ). '</textarea>';
 			
-			if( isset($this->field['desc']) && !empty($this->field['desc']) ){
+			if( isset( $this->field['desc'] ) && ! empty( $this->field['desc']) ){
 				echo '<span class="description '.$class.'">'. $this->field['desc'] .'</span>';
 			}
 			
+			if( $param == 'editor' ){
+				echo '<div class="mfn-message info small" style="display:none;">'. __( 'If you have experienced editor scroll issues please <b>uncheck</b> <i>Full-height editor and distraction-free functionality</i> in Screen Options in the right top corner of page and <b>click Publish/Update button</b>', 'mfn-opts' ) .'</div>';
+			}
+				
 		echo '</div>';
 	}
 }

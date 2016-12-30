@@ -2021,7 +2021,22 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 				'size' 		=> '1/4',
 				'cat' 		=> 'boxes',
 				'fields' 	=> array(
-							
+
+					array(
+						'id' 		=> 'title',
+						'type' 		=> 'text',
+						'title' 	=> __('Title', 'mfn-opts'),
+					),
+						
+					// counter
+					array(
+						'id' 		=> 'info_counter',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Counter', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+						
 					array(
 						'id' 		=> 'icon',
 						'type' 		=> 'icon',
@@ -2046,13 +2061,6 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					array(
-						'id' 		=> 'number',
-						'type' 		=> 'text',
-						'title' 	=> __('Number', 'mfn-opts'),
-						'class' 	=> 'small-text',
-					),
-						
-					array(
 						'id' 		=> 'prefix',
 						'type' 		=> 'text',
 						'title' 	=> __('Prefix', 'mfn-opts'),
@@ -2060,16 +2068,26 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					array(
+						'id' 		=> 'number',
+						'type' 		=> 'text',
+						'title' 	=> __('Number', 'mfn-opts'),
+						'class' 	=> 'small-text',
+					),
+	
+					array(
 						'id' 		=> 'label',
 						'type' 		=> 'text',
 						'title' 	=> __('Postfix', 'mfn-opts'),
 						'class' 	=> 'small-text',
 					),
 						
+					// options
 					array(
-						'id' 		=> 'title',
-						'type' 		=> 'text',
-						'title' 	=> __('Title', 'mfn-opts'),
+						'id' 		=> 'info_options',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Options', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
 					),
 
 					array(
@@ -2083,6 +2101,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						),
 						'std'		=> 'vertical',
 					),
+
+					// advanced
+					array(
+						'id' 		=> 'info_advanced',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Advanced', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
 						
 					array(
 						'id' 		=> 'animate',
@@ -2090,6 +2117,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'title' 	=> __('Animation', 'mfn-opts'),
 						'sub_desc' 	=> __('Entrance animation', 'mfn-opts'),
 						'options' 	=> mfn_get_animations(),
+					),
+						
+					// custom
+					array(
+						'id' 		=> 'info_custom',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Custom', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
 					),
 						
 					array(

@@ -24,7 +24,7 @@ wc_print_notices();
 
 ?>
 
-<div class="cart-empty alert alert alert_warning">
+<div class="cart-empty alert alert_warning">
 	<div class="alert_icon"><i class="icon-lamp"></i></div>
 	<div class="alert_wrapper"><?php _e( 'Your cart is currently empty.', 'woocommerce' ) ?></div>
 	<a class="close" href="#"><i class="icon-cancel"></i></a>
@@ -34,7 +34,7 @@ wc_print_notices();
 
 <?php if ( wc_get_page_id( 'shop' ) > 0 ) : ?>
 	<p class="return-to-shop">
-		<a href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>" class="button button_theme button_js">
+		<a class="button button_theme button_js" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>">
 			<span class="button_icon"><i class="icon-basket"></i></span>
 			<span class="button_label"><?php _e( 'Return To Shop', 'woocommerce' ) ?></span>
 		</a>

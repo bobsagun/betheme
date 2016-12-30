@@ -548,7 +548,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type'		=> 'upload',
 					'title'		=> __('Logo', 'mfn-opts'),
 					'sub_desc'	=> __('optional', 'mfn-opts'),
-					'desc'		=> __('Use if you want different logo for Sticky Header', 'mfn-opts'),
+					'desc'		=> __('Use if you want different logo for Sticky Header.<br />This is Tablet Logo for Creative Header', 'mfn-opts'),
 				),	
 
 				array(

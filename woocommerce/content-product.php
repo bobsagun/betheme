@@ -10,7 +10,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://docs.woothemes.com/document/template-structure/
+ * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
  * @version 2.6.1
@@ -68,7 +68,7 @@ if( ! $product->is_in_stock() || mfn_opts_get('shop-catalogue') || in_array( $pr
 			echo '<a href="'. apply_filters( 'the_permalink', get_permalink() ) .'">';
 			
 				/**
-				 * woocommerce_before_shop_loop_item_title hook
+				 * woocommerce_before_shop_loop_item_title hook.
 				 *
 				 * @hooked woocommerce_show_product_loop_sale_flash - 10
 				 * @hooked woocommerce_template_loop_product_thumbnail - 10
@@ -149,7 +149,7 @@ if( ! $product->is_in_stock() || mfn_opts_get('shop-catalogue') || in_array( $pr
 		
 		<?php
 			/**
-			 * woocommerce_after_shop_loop_item_title hook
+			 * woocommerce_after_shop_loop_item_title hook.
 			 *
 			 * @hooked woocommerce_template_loop_rating - 5
 			 * @hooked woocommerce_template_loop_price - 10
@@ -176,7 +176,7 @@ if( ! $product->is_in_stock() || mfn_opts_get('shop-catalogue') || in_array( $pr
 	<?php
 
 		/**
-		 * woocommerce_after_shop_loop_item hook
+		 * woocommerce_after_shop_loop_item hook.
 		 *
 		 * @hooked woocommerce_template_loop_product_link_close - 5
 		 * @hooked woocommerce_template_loop_add_to_cart - 10

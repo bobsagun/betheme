@@ -510,12 +510,14 @@ li.mfn-item-content .mfn-item-icon,
 
 /*  Messages ------------------------------------------------------------------------- */
 
-#mfn-wrapper .mfn-message { border-left: 3px solid transparent; margin: 20px 0; padding: 20px; font-size: 15px; line-height:21px; font-weight: 300;}
+#mfn-wrapper .mfn-message { border-left:3px solid transparent; margin:20px 0; padding:20px; font-size:15px; line-height:21px; font-weight:300;}
 #mfn-wrapper .mfn-message a { box-shadow:0 0 0 0 transparent;}
 
-#mfn-wrapper .mfn-message.info { background: #dce7f7; border-left-color: #b9cbe4; }
-#mfn-wrapper .mfn-message.error { background: #fce6e6; border-left-color: #fb5455;}
-#mfn-wrapper .mfn-message.error a { color: #fb5455;}
+#mfn-wrapper .mfn-message.info { background:#dce7f7; border-left-color:#b9cbe4; }
+#mfn-wrapper .mfn-message.error { background:#fce6e6; border-left-color:#fb5455;}
+#mfn-wrapper .mfn-message.error a { color:#fb5455;}
+
+#mfn-wrapper .mfn-message.small { padding:15px; font-size:13px; line-height:17px;}
 
 
 

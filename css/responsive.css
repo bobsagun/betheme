@@ -452,10 +452,13 @@ html,body{overflow-x:hidden}
 	#Top_bar #logo img.logo-main{display:none}
 	#Top_bar #logo img.logo-mobile{display:inline-block}
 	#Top_bar #logo img.logo-mobile-sticky{display:none}
-
-	.mobile-sticky #Top_bar.is-sticky #logo img.logo-mobile{display:none}
-	.mobile-sticky #Top_bar.is-sticky #logo img.logo-mobile-sticky{display:inline-block}
 	
+	#Header_creative #Top_bar #logo img.logo-sticky{display:none}
+
+	.mobile-sticky #Top_bar.is-sticky #logo img:not(.svg){width:auto!important}
+	.mobile-sticky #Top_bar.is-sticky #logo img.logo-mobile{display:none}
+	.mobile-sticky #Top_bar.is-sticky #logo img.logo-mobile-sticky{display:inline-block;width:auto!important}
+
 	.logo-overflow #Top_bar .logo{height:auto!important}
 	#Top_bar .search_wrapper{top:auto;bottom:-129px}
 	
@@ -762,7 +765,7 @@ html,body{overflow-x:hidden}
 	ul.clients:not(.clients_slider_ul) li{width:50%!important}
 	
 	/* Content slider */
-	.content_slider{padding:0!important;margin:10px 0}
+	.content_slider{padding:0!important;margin:0 0 50px}
 	.content_slider .slider_pagination{padding:0 20%;box-sizing:border-box;}
 	
 	.content_slider a.button{top:auto!important;bottom:-60px;}
