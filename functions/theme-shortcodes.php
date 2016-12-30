@@ -4042,12 +4042,12 @@ if( ! function_exists( 'sc_offer' ) )
 		$offer_query->query( $args );
 		
 		$output = '';
-		if ($offer_query->have_posts())
+		if( $offer_query->have_posts() )
 		{
 			$output .= '<div class="offer">';
 				$output .= '<ul class="offer_ul">';
 
-					while ($offer_query->have_posts())
+					while( $offer_query->have_posts() )
 					{
 						$offer_query->the_post();
 						$output .= '<li class="offer_li">';
@@ -4089,9 +4089,7 @@ if( ! function_exists( 'sc_offer' ) )
 				$output .= '</ul>';
 				
 				// pagination
-				$output .= '<a class="button button_large button_js slider_prev" href="#"><span class="button_icon"><i class="icon-up-open-big"></i></span></a>';
-				$output .= '<div class="slider_pagination"><span class="current">1</span> / <span class="count">1</span></div>';
-				$output .= '<a class="button button_large button_js slider_next" href="#"><span class="button_icon"><i class="icon-down-open-big"></i></span></a>';	
+				$output .= '<div class="slider_pagination"><span class="current">1</span> / <span class="count">'. $offer_query->post_count .'</span></div>';
 				
 			$output .= '</div>'."\n";
 		}
@@ -4154,7 +4152,7 @@ if( ! function_exists( 'sc_offer_thumb' ) )
 							}
 						
 							$output .= '<div class="image_wrapper">';
-								$output .= get_the_post_thumbnail( get_the_ID(), 'full', array('class'=>'scale-with-grid' ) );
+								$output .= get_the_post_thumbnail( get_the_ID(), 'full', array( 'class' => 'scale-with-grid' ) );
 							$output .= '</div>';
 							
 							$output .= '<div class="desc_wrapper align_'. $align .' '. $class .'">';
@@ -4174,9 +4172,9 @@ if( ! function_exists( 'sc_offer_thumb' ) )
 							
 							$output .= '<div class="thumbnail" style="display:none">';
 								if( $thumbnail = get_post_meta( get_the_ID(), 'mfn-post-thumbnail', true) ){
-									$output .= '<img src="'. $thumbnail .'" class="scale-with-grid" alt="'. get_the_title() .'" />';
+									$output .= '<img src="'. $thumbnail .'" class="scale-with-grid" alt="" />';
 								} elseif( has_post_thumbnail() ){
-									$output .= get_the_post_thumbnail( get_the_ID(), 'testimonials', array('class'=>'scale-with-grid' ) );
+									$output .= get_the_post_thumbnail( get_the_ID(), 'testimonials', array( 'class' => 'scale-with-grid' ) );
 								}
 							$output .= '</div>';
 		

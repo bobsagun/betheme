@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		$stickyMenuInitW = 768;
 	}
 	
-	if( mfn_header_style(1) == 'header-fixed' ){
+	if( mfn_header_style( true ) == 'header-fixed' ){
 		$stickyMenuInitW = 9999;	// disable sticky header
 	}
 ?>
@@ -383,6 +383,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	#Header_creative #Top_bar{position:static;width:100%}
 	#Header_creative #Top_bar #logo{height:50px;line-height:50px;padding:5px 0}
 	#Header_creative #Top_bar #logo img{max-height:40px}
+	
+	
+	#Header_creative #logo img.logo-main{display:none}
+	#Header_creative #logo img.logo-sticky{display:inline-block}
+	
+	
 	
 	.logo-no-sticky-padding #Header_creative #Top_bar #logo{height:60px;line-height:60px;padding:0}
 	.logo-no-sticky-padding #Header_creative #Top_bar #logo img{max-height:60px}

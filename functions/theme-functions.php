@@ -111,12 +111,24 @@ add_filter( 'excerpt_more', 'mfn_trim_excerpt' );
 
 
 /* ---------------------------------------------------------------------------
+ * Excerpt | for Pages
+ * --------------------------------------------------------------------------- */
+if( ! function_exists( 'mfn_add_excerpts_to_pages' ) )
+{
+	function mfn_add_excerpts_to_pages() {
+		add_post_type_support( 'page', 'excerpt' );
+	}
+}
+add_action( 'init', 'mfn_add_excerpts_to_pages' );
+
+
+/* ---------------------------------------------------------------------------
  * Slug | Generate
  * --------------------------------------------------------------------------- */
 if( ! function_exists( 'mfn_slug' ) )
 {
 	function mfn_slug( $string = false ){
-    	return strtolower( trim (preg_replace( '/[^A-Za-z0-9-]+/', '-', $string ) ) );
+    	return strtolower( trim ( preg_replace( '/[^A-Za-z0-9-]+/', '-', $string ) ) );
 	}
 }
 

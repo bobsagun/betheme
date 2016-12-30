@@ -546,6 +546,7 @@ class mfnImport {
 						<td>
 							<select name="demo">
 								<option value="accountant">Accountant</option>
+								<option value="active">Active</option>
 								<option value="adagency">Ad Agency</option>
 								<option value="agency">Agency</option>
 								<option value="agency2">Agency 2</option>

@@ -666,13 +666,20 @@ function mfnBuilder(){
 		// Tiny MCE Editor ---------------------------------------
 		
 		if( jQuery( '.mfn-item-type', el ).val() == 'visual' ){
+
+			if( jQuery( '#editor-expand-toggle' ).is( ':checked' ) ){
+				jQuery( '.mfn-message', popup ).show();
+			}
 		
-			jQuery('.mfn-popup textarea.editor').attr( 'id', 'mfn-editor' );            
+			jQuery( '.mfn-popup textarea.editor' ).attr( 'id', 'mfn-editor' );            
 	
 			try {
+				
 				jQuery('.wp-switch-editor.switch-html').click();
 				jQuery('.wp-switch-editor.switch-tmce').click();
+				
 				tinymce.execCommand('mceAddEditor', true, 'mfn-editor');
+				
 			} catch (err) {
 //				console.log(err);
 			}
@@ -698,13 +705,17 @@ function mfnBuilder(){
 		// Tiny MCE Editor ---------------------------------------
 		
 		try {
-			if( tinymce.get('mfn-editor') ){
-				var tinyHTML = tinymce.get('mfn-editor').getContent();		// Fix | HTML Tags 1/2
-				tinymce.execCommand('mceRemoveEditor', false, 'mfn-editor');
-				jQuery('#mfn-editor').val( tinyHTML );						// Fix | HTML Tags 2/2
-			} else {
-				jQuery('#mfn-editor').html( jQuery('#mfn-editor').val() );
-			}
+			
+			if( ! tinymce.get( 'mfn-editor' ) ){	
+				tinymce.execCommand( 'mceAddEditor', false, 'mfn-editor' );				
+			} 
+			
+			var tinyHTML = tinymce.get( 'mfn-editor' ).getContent();		// Fix | HTML Tags 1/2
+			
+			tinymce.execCommand( 'mceRemoveEditor', false, 'mfn-editor' );
+			
+			jQuery( '#mfn-editor' ).val( tinyHTML );						// Fix | HTML Tags 2/2
+			
 	    } catch (err) {
 //		    console.log(err);
 	    }
@@ -754,7 +765,8 @@ function mfnBuilder(){
 
 
 	// Popup | Click Outside Popup ----------------------------------
-	jQuery('body').on('click', '.mfn-popup', function(e){
+	
+	jQuery( 'body' ).on( 'click', '.mfn-popup', function(e){
 		var target = jQuery( e.target );
 
 		if( target.hasClass('mfn-popup') ){
@@ -764,15 +776,22 @@ function mfnBuilder(){
 
 	
 	// Popup | Visual Editor - Switch Editor  -----------------------
-	jQuery('body').on('click', '.mfn-switch-editor', function(e) {
+	
+	jQuery( 'body' ).on( 'click', '.mfn-switch-editor', function(e){	
 		e.preventDefault();
-		if( tinymce.get('mfn-editor') ) {
-			var tinyHTML = tinymce.get('mfn-editor').getContent();		// Fix | HTML Tags 1/2
-			tinymce.execCommand('mceRemoveEditor', false, 'mfn-editor');
-			jQuery('#mfn-editor').val( tinyHTML );						// Fix | HTML Tags 2/2
+		
+		if( tinymce.get( 'mfn-editor' ) ){
+			
+//			var tinyHTML = tinymce.get( 'mfn-editor' ).getContent();		// Fix | HTML Tags 1/2
+			tinymce.execCommand( 'mceRemoveEditor', false, 'mfn-editor' );
+//			jQuery( '#mfn-editor' ).val( tinyHTML );						// Fix | HTML Tags 2/2
+			
 		} else {
-        	tinymce.execCommand('mceAddEditor', false, 'mfn-editor');
+			
+        	tinymce.execCommand( 'mceAddEditor', false, 'mfn-editor' );
+        	
         }
+		
 	});
 	
 

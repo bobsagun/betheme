@@ -370,6 +370,8 @@ body:not(.template-slider) #Header{min-height:250px}
 #Top_bar .menu.page-menu > li:last-child > a {border-right:none;}	
 #Top_bar .menu.page-menu > li > a:after {display:none;}
 
+#Top_bar.is-sticky .menu_wrapper .menu.page-menu > li > a {margin:0;padding-left:20px;padding-right:20px;}
+
 /* 2nd level */
 #Top_bar .menu li ul{position:absolute;left:0;top:100%;z-index:205;margin:0;display:none;background-image:url(../images/box_shadow.png);background-repeat:repeat-x;background-position:left top}
 #Top_bar .menu li > ul{box-shadow:2px 2px 2px 0 rgba(0,0,0,0.03);-webkit-box-shadow:2px 2px 2px 0 rgba(0,0,0,0.03)}

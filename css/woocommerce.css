@@ -1,7 +1,6 @@
 /* Global ---------------------------------------------------------------------------- */
 .woocommerce table{display:table;visibility:visible}
 .woocommerce table th{font-size:100%}
-.woocommerce .alert .wc-forward{float:right}
 .woocommerce-demo-store{margin-top:45px}
 
 /* Buttons --------------------------------------------------------------------------- */
@@ -171,6 +170,9 @@
 .woocommerce .product div.entry-summary .price > ins{text-decoration:none}
 .woocommerce .product div.entry-summary .price > del{float:right;font-size:.5em;margin-left:10px;}
 
+.woocommerce .product div.entry-summary div[itemprop="offers"]{margin-bottom:35px}
+.woocommerce .product div.entry-summary > p.price{margin-bottom:35px}
+
 .woocommerce .product .product_wrapper .product_image_wrapper{position:relative}
 .woocommerce .product .product_wrapper .product_image_wrapper .images{width:100%;margin:0}
 .woocommerce .product .product_wrapper .product_image_wrapper .images .woocommerce-main-image{margin-bottom:1em}
@@ -246,7 +248,7 @@
 .woocommerce div.product div.images img,.woocommerce-page div.product div.images img,.woocommerce #content div.product div.images img,.woocommerce-page #content div.product div.images img{-webkit-box-shadow:0 0 0;box-shadow:0 0 0}	
 
 /* Cart ------------------------------------------------------------------------------ */
-.woocommerce .shop_table th,.woocommerce .shop_table td{padding:10px!important}
+.woocommerce .shop_table th,.woocommerce .shop_table td{padding:10px!important;border:none}
 .woocommerce .shop_table .product-thumbnail{width:140px}
 .woocommerce .shop_table .product-thumbnail a{display:block;line-height:0}
 .woocommerce .shop_table .product-thumbnail a img{width:100px}
@@ -256,11 +258,10 @@
 .woocommerce .shop_table .product-name .variation > dt,.woocommerce .shop_table .product-name .variation > dd{border-width:0;padding:2px 0;margin:0}
 .woocommerce .shop_table .product-name .variation > dt{width:auto;font-weight:400;clear:none;margin-right:5px}
 .woocommerce .shop_table .product-name .variation > dd{margin-right:7px}
-.woocommerce .shop_table .product-quantity{width:150px}
 .woocommerce .shop_table .product-remove a.remove{margin:5px 0 0;width:auto;height:auto;display:inline-block;font-size:inherit;line-height:inherit;-webkit-border-radius:5px;border-radius:5px}
 .woocommerce .shop_table .product-remove a.remove .button_icon{padding:11px 18px}
 .woocommerce .shop_table td.actions{padding:15px!important;background:#fff}
-.woocommerce .shop_table td.actions .coupon .input-text{padding:10px!important;width:100px;line-height:21px!important}
+.woocommerce .shop_table td.actions .coupon .input-text{padding:10px!important;width:130px;line-height:21px!important}
 .woocommerce .shop_table td.actions input{margin-bottom:0!important}
 .woocommerce .shop_table tr:first-child:hover td{background:url(../images/box_shadow.png) repeat-x left top}
 .woocommerce .shop_table td.actions input{line-height:21px!important}
@@ -284,7 +285,12 @@
 .woocommerce .related ul.products li.product,.woocommerce .related ul li.product,.woocommerce .upsells.products ul.products li.product,.woocommerce .upsells.products ul li.product,.woocommerce-page .related ul.products li.product,.woocommerce-page .related ul li.product,.woocommerce-page .upsells.products ul.products li.product,.woocommerce-page .upsells.products ul li.product{width:30%;margin-right:3%}
 
 /* Message */
+.woocommerce .alert .wc-forward{float:right}
 .woocommerce-message a.button{margin-bottom:0!important}
+
+.woocommerce-error.alert,
+.woocommerce-info.alert,
+.woocommerce-message.alert{border:none;margin-bottom:30px!important;padding:20px 55px 20px 90px!important}
 
 /* Cart totals */
 .woocommerce .cart-collaterals .cart_totals tr td,.woocommerce .cart-collaterals .cart_totals tr th,.woocommerce-page .cart-collaterals .cart_totals tr td,.woocommerce-page .cart-collaterals .cart_totals tr th{border-top:1px solid rgba(0,0,0,0.12)!important}
@@ -513,8 +519,8 @@ h3#ship-to-different-address label{font-weight:400}
 	/* You may also like & Related products */
 	.woocommerce .related ul.products li.product,.woocommerce .related ul li.product,.woocommerce .upsells.products ul.products li.product,.woocommerce .upsells.products ul li.product{width:100%!important;margin:0 0 20px!important}
 	
-	/* Cart - delete + photo */
-	.woocommerce table.cart .product-price,.woocommerce table.cart .product-thumbnail{display:none}
+	/* Cart */
+	.shop_table_responsive tr:first-child td{background-image:none}
 	
 	/* Columns */
 	.woocommerce .col2-set .col-1,.woocommerce-page .col2-set .col-1{width:100%;float:none;margin-bottom:20px}
