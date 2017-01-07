@@ -698,6 +698,7 @@ function mfnBuilder(){
 	
 	
 	// Element | Close -----------------------------------------
+	
 	jQuery('body').on('click', '.mfn-popup-item-edit .mfn-ph-close', function(e){
 		e.preventDefault();
 
@@ -727,37 +728,68 @@ function mfnBuilder(){
 	    
 	    
 	    // Tabs | destroy sortable
+	    
 		jQuery('.tabs-ul.ui-sortable').sortable('destroy');
 
 	    
 		// Background Scrolling & Dragging | enable
+		
 		jQuery('body').removeClass('mfn-popup-open');
 		jQuery('#mfn-content').find('.ui-sortable').sortable('enable');
 		jQuery(this).closest('.mfn-row').removeClass('editing');
 		
-
-		var popup = jQuery(this).closest('.mfn-popup');
-		popup.fadeOut(300);
 		
-		if( jQuery( popup.hasClass('mfn-popup-item-edit') ) ){
+		// Fade Out
+		
+		var popup = jQuery( this ).closest( '.mfn-popup' );
+		popup.fadeOut( 300 );
+		
+		
+		// Save data
+		
+		if( jQuery( popup.hasClass( 'mfn-popup-item-edit' ) ) ){
+			
 			
 			// Label | update
-			var label = popup.find('input.mfn-item-title').first().val();
-			popup.closest('.mfn-element').find('.mfn-item-label').first().html( label );
+			
+			var label = popup.find( 'input.mfn-item-title' ).first().val();
+			popup.closest( '.mfn-element' ).find( '.mfn-item-label' ).first().html( label );
 			
 			
-			setTimeout(function(){
+			// Excerpt | update
+			
+			var excerpt = popup.find( 'textarea.mfn-item-excerpt' ).first().val();
+			if( excerpt ){
+
+				// strip_tags
+				var tmp = document.createElement( 'DIV' );
+				tmp.innerHTML = excerpt;
+				excerpt = tmp.textContent || tmp.innerText || "";
 				
-				var meta = popup.find('.mfn-element-meta');
+				// strip_shortcodes
+				excerpt = excerpt.replace(/\[.*?\]/g, '' );	// do not put space before regex	
 				
-				popup.find('.mfn-popup-header').remove();
-				popup.find('.mfn-popup-close').remove();
+				// 16 words
+				excerpt = excerpt.split(" ").splice( 0, 16 ).join(" ");
+	
+				popup.closest( '.mfn-element' ).find( '.mfn-item-excerpt' ).first().html( excerpt );
+			}
+			
+				
+			// Save data
+			
+			setTimeout( function(){
+				
+				var meta = popup.find( '.mfn-element-meta' );
+				
+				popup.find( '.mfn-popup-header' ).remove();
+				popup.find( '.mfn-popup-close' ).remove();
 				
 				meta.unwrap().unwrap().unwrap();
 				
 				meta.hide();
 				
-			}, 300);
+			}, 300 );
 			
 		}
 		

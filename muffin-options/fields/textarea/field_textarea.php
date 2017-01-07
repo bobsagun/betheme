@@ -16,8 +16,13 @@ class MFN_Options_textarea extends MFN_Options{
 	function render( $meta = false ){
 		
 		// class ----------------------------------------------------
-		$class 	= isset( $this->field['class'] ) ? $this->field['class'] : '';
-		$param 	= isset( $this->field['param'] ) ? $this->field['param'] : '';
+		$class = isset( $this->field['class'] ) ? $this->field['class'] : '';
+		$param = $class_field = isset( $this->field['param'] ) ? $this->field['param'] : '';
+
+		// title
+		if( strpos( $this->field['id'] , 'content' ) ){
+			$class_field .= ' mfn-item-excerpt';
+		}
 
 		// name -----------------------------------------------------
 		if( $meta == 'new' ){
@@ -90,10 +95,10 @@ class MFN_Options_textarea extends MFN_Options{
 				echo '</div>';
 			}
 
-			echo '<textarea '. $name .' class="'. $param .'" rows="8">' .esc_attr( $this->value ). '</textarea>';
+			echo '<textarea '. $name .' class="'. $class_field .'" rows="8">' .esc_attr( $this->value ). '</textarea>';
 			
 			if( isset( $this->field['desc'] ) && ! empty( $this->field['desc']) ){
-				echo '<span class="description '.$class.'">'. $this->field['desc'] .'</span>';
+				echo '<span class="description '. $class .'">'. $this->field['desc'] .'</span>';
 			}
 			
 			if( $param == 'editor' ){

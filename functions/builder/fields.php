@@ -4486,7 +4486,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'id' 		=> 'filters',
 						'type' 		=> 'select',
 						'title' 	=> __('Filters', 'mfn-opts'),
-						'desc' 		=> __('Works only with <b>Category: All</b>', 'mfn-opts'),
+						'desc' 		=> __('Works only with <b>Category: All</b> or Multiple Categories (only selected categories show in filters)', 'mfn-opts'),
 						'options' 	=> array(
 							0 => __( 'No', 'mfn-opts' ),
 							1 => __( 'Yes', 'mfn-opts' ),
