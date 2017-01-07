@@ -3557,6 +3557,8 @@ if( ! function_exists( 'sc_portfolio' ) )
 			
 			$category_multi = mfn_wpml_term_slug( $category_multi, 'portfolio-types', 1 );
 			$args['portfolio-types'] = $category_multi;	
+			
+			$category_multi_array = explode( ',', str_replace( ' ', '', $category_multi ) );
 					
 		} elseif( $category ){
 						
@@ -3581,15 +3583,24 @@ if( ! function_exists( 'sc_portfolio' ) )
 		$output = '<div class="column_filters">';
 		
 			// Echo | Filters
-			if( $filters && ! $category && ! $category_multi ){
+			if( $filters && ! $category ){
 				$output .= '<div id="Filters" class="isotope-filters filters4portfolio" data-parent="column_filters">';
 					$output .= '<div class="filters_wrapper">';
 						$output .= '<ul class="categories">';
 						
 							$output .= '<li class="reset current-cat"><a class="all" data-rel="*" href="#">'. $translate['all'] .'</a></li>';
-							if( $portfolio_categories = get_terms('portfolio-types') ){
+							if( $portfolio_categories = get_terms( 'portfolio-types' ) ){
+								
 								foreach( $portfolio_categories as $category ){
-									$output .= '<li class="'. $category->slug .'"><a data-rel=".category-'. $category->slug .'" href="'. get_term_link($category) .'">'. $category->name .'</a></li>';
+									
+									if( $category_multi ){
+										if( in_array( $category->slug, $category_multi_array ) ){
+											$output .= '<li class="'. $category->slug .'"><a data-rel=".category-'. $category->slug .'" href="'. get_term_link( $category ) .'">'. $category->name .'</a></li>';
+										}
+									} else {
+										$output .= '<li class="'. $category->slug .'"><a data-rel=".category-'. $category->slug .'" href="'. get_term_link( $category ) .'">'. $category->name .'</a></li>';
+									}
+		
 								}
 							}
 						

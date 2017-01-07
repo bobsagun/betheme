@@ -410,12 +410,24 @@ if( ! function_exists( 'mfn_builder_item' ) )
 							
 							echo '<span class="mfn-item-title">'. $item_std['title'] .'</span>';
 							
-							$item_label = ( $item && key_exists('fields', $item) && key_exists('title', $item['fields']) ) ? $item['fields']['title'] : '';
+							$item_label = ( $item && key_exists( 'fields', $item ) && key_exists( 'title', $item['fields'] ) ) ? $item['fields']['title'] : '';
 							echo '<span class="mfn-item-label">'. $item_label .'</span>';
-							
+
 						echo '</div>';
 					
 					echo '</div>';
+					
+					if( $item && key_exists( 'fields', $item ) && key_exists( 'content', $item['fields'] ) ){
+						
+						$item_excerpt = strip_shortcodes( strip_tags( $item['fields']['content'] ) );
+						
+						$item_excerpt = preg_split( '/\b/', $item_excerpt, 16 * 2 + 1 );
+						$item_excerpt_waste = array_pop( $item_excerpt );
+						$item_excerpt = implode( $item_excerpt );
+							
+						echo '<p class="mfn-item-excerpt">'. esc_html( $item_excerpt ) .'</p>';
+					}
+					
 				echo '</div>';
 		
 			echo '</div>';

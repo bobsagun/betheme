@@ -41,8 +41,8 @@ if( ! function_exists( 'mfn_register_sidebars' ) )
 			{	
 				register_sidebar( array (
 					'name' 			=> $sidebar,
-					'id' 			=> 'sidebar-'. str_replace("+", "-", urlencode(strtolower($sidebar))),
-					'description'	=> __('Custom sidebar created in Theme Options.','betheme'),
+					'id' 			=> 'sidebar-'. str_replace( '+', '-', urlencode( strtolower( trim( $sidebar ) ) ) ),
+					'description'	=> __( 'Custom sidebar created in Theme Options.', 'betheme' ),
 					'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 					'after_widget' 	=> '</aside>',
 					'before_title' 	=> '<h3>',
@@ -162,9 +162,9 @@ if( ! function_exists( 'mfn_register_sidebars_cat' ) )
 		if( is_array( $categories ) ){
 			foreach ( $categories as $category ){
 				register_sidebar(array(
-					'name' 			=> __('Blog','mfn-opts') .' | '. $category->cat_name,
-					'id' 			=> 'blog-cat-'. $category->slug,
-					'description'	=> __('Sidebar for Blog Category. Appears only when you select sidebar for Blog.','betheme'),
+					'name' 			=> __( 'Blog', 'mfn-opts' ) .' | '. $category->cat_name,
+					'id' 			=> 'blog-cat-'. trim( $category->slug ),
+					'description'	=> __( 'Sidebar for Blog Category. Appears only when you select sidebar for Blog.', 'betheme' ),
 					'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 					'after_widget' 	=> '</aside>',
 					'before_title' 	=> '<h4>',
@@ -180,9 +180,9 @@ if( ! function_exists( 'mfn_register_sidebars_cat' ) )
 			if( is_array( $categories ) ){
 				foreach ( $categories as $category ){
 					register_sidebar(array(
-						'name' 			=> __('Portfolio','mfn-opts') .' | '. $category->cat_name,
-						'id' 			=> 'portfolio-cat-'. $category->slug,
-						'description'	=> __('Appears on Portfolio Category Page.','betheme'),
+						'name' 			=> __( 'Portfolio', 'mfn-opts' ) .' | '. $category->cat_name,
+						'id' 			=> 'portfolio-cat-'. trim( $category->slug ),
+						'description'	=> __( 'Appears on Portfolio Category Page.', 'betheme' ),
 						'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 						'after_widget' 	=> '</aside>',
 						'before_title' 	=> '<h4>',

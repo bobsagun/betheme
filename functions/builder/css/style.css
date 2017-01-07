@@ -193,8 +193,9 @@ body.mfn-popup-open { overflow:hidden;}
 .mfn-item .mfn-item-content .mfn-item-inside { display:inline-block; padding:10px 0 5px; line-height:16px;}
 .mfn-item .mfn-item-content .mfn-item-icon { float:left; margin-left:10px;}
 .mfn-item .mfn-item-content .mfn-item-inside-desc { float:left; margin-left:10px; text-align:left}
-.mfn-item .mfn-item-content .mfn-item-inside-desc .mfn-item-title { display:block; font-weight:bold;}
-.mfn-item .mfn-item-content .mfn-item-inside-desc .mfn-item-label { display:block; color:#888;}
+.mfn-item .mfn-item-content .mfn-item-inside-desc .mfn-item-title{display:block;font-size:14px;font-weight:600;}
+.mfn-item .mfn-item-content .mfn-item-inside-desc .mfn-item-label{display:block;color:#666}
+.mfn-item .mfn-item-content .mfn-item-excerpt{font-size:12px;line-height:15px;color:#666;margin:0 5px 10px}
 
 
 .mfn-item-divider { }

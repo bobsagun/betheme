@@ -643,6 +643,7 @@ class mfnImport {
 								<option value="herbal">Herbal</option>
 								<option value="hifi">HiFi</option>
 								<option value="holding">Holding</option>
+								<option value="home">Home</option>
 								<option value="horse">Horse Riding</option>
 								<option value="hosting">Hosting</option>
 								<option value="hotel">Hotel</option>
