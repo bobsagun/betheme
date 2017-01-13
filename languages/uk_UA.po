@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Betheme\n"
 "POT-Creation-Date: 2016-12-15 11:01+0100\n"
-"PO-Revision-Date: 2016-12-15 11:01+0100\n"
+"PO-Revision-Date: 2017-01-11 15:29+0200\n"
 "Last-Translator: \n"
 "Language-Team: Muffin Group <muffingroup.com>\n"
 "Language: uk_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -33,7 +33,7 @@ msgstr "Будь ласка, перевірте зазначену адресу 
 #: /Applications/XAMPP/xamppfiles/htdocs/betheme/404.php:13
 #: /Applications/XAMPP/xamppfiles/htdocs/betheme/muffin-options/theme-options.php:5226
 msgid "go to homepage"
-msgstr "повергіться на Головну сторінку"
+msgstr "повернутися на Головну сторінку"
 
 #: /Applications/XAMPP/xamppfiles/htdocs/betheme/bbpress/content-single-topic-lead.php:18
 #: /Applications/XAMPP/xamppfiles/htdocs/betheme/bbpress/content-single-topic-lead.php:90

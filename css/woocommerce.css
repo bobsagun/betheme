@@ -2,6 +2,7 @@
 .woocommerce table{display:table;visibility:visible}
 .woocommerce table th{font-size:100%}
 .woocommerce-demo-store{margin-top:45px}
+.woocommerce-demo-store p.demo_store{height:19px}
 
 /* Buttons --------------------------------------------------------------------------- */
 .woocommerce a.button,
@@ -469,6 +470,11 @@ h3#ship-to-different-address label{font-weight:400}
 	.widget_shopping_cart ul.product_list_widget li a .desc{margin-left:60px}
 }
 
+/* Responsive | < 782 - wp default value for admin bar ------------------------------- */
+
+@media screen and ( max-width: 782px ) {
+	.admin-bar p.demo_store{top:46px}
+}
 
 /* Responsive | < 768 ---------------------------------------------------------------- */
 
