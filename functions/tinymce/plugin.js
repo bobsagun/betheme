@@ -137,6 +137,11 @@
 						editor.insertContent('[google_font font="Open Sans" size="25" weight="400" italic="0" letter_spacing="" color="#626262" subset=""]Insert your content here[/google_font]');
 					}
 				}, {
+					text : 'Heading',
+					onclick : function() {
+						editor.insertContent('[heading tag="h2" align="center" color="#000" style="lines" color2="#000"]Insert your content here[/heading]');
+					}
+				}, {
 					text : 'Highlight',
 					onclick : function() {
 						editor.insertContent('[highlight background="" color=""]Insert your content here[/highlight]');

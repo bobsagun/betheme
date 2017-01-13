@@ -59,6 +59,7 @@ class MFN_Options_textarea extends MFN_Options{
 							echo '<li><a href="javascript:void(0);" data-rel="dropcap">Dropcap</a></li>';
 							echo '<li><a href="javascript:void(0);" data-rel="fancy_link">Fancy Link</a></li>';
 							echo '<li><a href="javascript:void(0);" data-rel="google_font">Google Font</a></li>';
+							echo '<li><a href="javascript:void(0);" data-rel="heading">Heading</a></li>';
 							echo '<li><a href="javascript:void(0);" data-rel="highlight">Highlight</a></li>';
 							echo '<li><a href="javascript:void(0);" data-rel="hr">Hr</a></li>';
 							echo '<li><a href="javascript:void(0);" data-rel="icon">Icon</a></li>';

@@ -213,6 +213,7 @@ function mfnBuilder(){
 		'dropcap'			: '[dropcap font="" size="1" background="" color="" circle="0" transparent="0"]I[/dropcap]nsert your content here',
 		'fancy_link'		: '[fancy_link title="" link="" target="" style="1" class="" download=""]',
 		'google_font'		: '[google_font font="Open Sans" size="25" weight="400" italic="0" letter_spacing="" color="#626262" subset=""]Insert your content here[/google_font]',
+		'heading'			: '[heading tag="h2" align="center" color="#000" style="lines" color2="#000"]Insert your content here[/heading]',
 		'highlight'			: '[highlight background="" color=""]Insert your content here[/highlight]',
 		'hr'				: '[hr height="30" style="default" line="default" themecolor="1"]',
 		'icon'				: '[icon type="icon-lamp"]',

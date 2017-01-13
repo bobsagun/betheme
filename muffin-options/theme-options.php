@@ -310,7 +310,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 			// Colors --------------------------------------------
 			'colors' => array(
 				'title' 	=> __('Colors', 'mfn-opts'),
-				'sections' 	=> array( 'colors-general', 'colors-header', 'colors-menu', 'content', 'colors-footer', 'colors-sliding-top', 'headings', 'colors-shortcodes', 'colors-forms' ),
+				'sections' 	=> array( 'colors-general', 'colors-header', 'colors-menu', 'colors-action', 'content', 'colors-footer', 'colors-sliding-top', 'headings', 'colors-shortcodes', 'colors-forms' ),
 			),
 			
 			// Fonts --------------------------------------------
@@ -414,6 +414,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 						'' 			=> __('Slide Bottom', 'mfn-opts'),
 						'overlay' 	=> __('Overlay', 'mfn-opts'),
 						'zoom' 		=> __('Zoom | without icons', 'mfn-opts'),
+						'disable' 	=> __('Disable hover effect', 'mfn-opts'),
 					),
 				),	
 					
@@ -3742,7 +3743,7 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 		
 		// Menu --------------------------------------------
 		$sections['colors-menu'] = array(
-			'title' => __('Menu & Action Bar', 'mfn-opts'),
+			'title' => __('Menu', 'mfn-opts'),
 			'icon' => MFN_OPTIONS_URI. 'img/icons/sub.png',
 			'fields' => array(
 
@@ -3840,23 +3841,6 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'desc' 		=> __('Styles<span>for specific header styles</span>', 'mfn-opts'),
 					'class' 	=> 'mfn-info',
 				),
-
-// 				array(
-// 					'id' 		=> 'color-overlay-menu-button',
-// 					'type' 		=> 'color',
-// 					'title' 	=> __('Overlay Menu | Button color', 'mfn-opts'),
-// 					'desc' 		=> __('Header Overlay Menu only', 'mfn-opts'),
-// 					'std' 		=> '#2991d6',
-// 				),
-
-// 				array(
-// 					'id' 		=> 'background-overlay-menu-button',
-// 					'type' 		=> 'color',
-// 					'title' 	=> __('Overlay Menu | Button background', 'mfn-opts'),
-// 					'sub_desc' 	=> __('optional', 'mfn-opts'),
-// 					'desc' 		=> __('Header Overlay Menu only', 'mfn-opts'),
-// 					'std' 		=> '',
-// 				),
 					
 				array(
 					'id' 		=> 'background-overlay-menu',
@@ -3916,13 +3900,22 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'title' 	=> __('Active Link color', 'mfn-opts'),
 					'std' 		=> '#FFFFFF',
 				),
+				
+			),
+		);
+		
+		// Colors | Action Bar --------------------------------------------
+		$sections['colors-action'] = array(
+			'title' => __('Action Bar', 'mfn-opts'),
+			'icon' => MFN_OPTIONS_URI. 'img/icons/sub.png',
+			'fields' => array(
 
-				// action bar
+				// desktop & tablet
 				array(
 					'id' 		=> 'colors-info-action-bar',
 					'type' 		=> 'info',
 					'title' 	=> '',
-					'desc' 		=> __('Action Bar', 'mfn-opts'),
+					'desc' 		=> __('Desktop & Tablet<span>> 768px</span>', 'mfn-opts'),
 					'class' 	=> 'mfn-info',
 				),
 				
@@ -3931,7 +3924,97 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 					'type' 		=> 'color',
 					'title' 	=> __('Background', 'mfn-opts'),
 					'desc' 		=> __('For some Header Styles', 'mfn-opts'),
-					'std' 		=> '#2C2C2C',
+					'std' 		=> '#2c2c2c',
+				),
+					
+				array(
+					'id' 		=> 'color-action-bar',
+					'type' 		=> 'color',
+					'title' 	=> __('Text color', 'mfn-opts'),
+					'std' 		=> '#bbbbbb',
+				),
+					
+				array(
+					'id' 		=> 'color-action-bar-a',
+					'type' 		=> 'color',
+					'title' 	=> __('Link | Color', 'mfn-opts'),
+					'std' 		=> '#2991d6',
+				),
+					
+				array(
+					'id' 		=> 'color-action-bar-a-hover',
+					'type' 		=> 'color',
+					'title' 	=> __('Link | Hover color', 'mfn-opts'),
+					'std' 		=> '#2275ac',
+				),
+					
+				array(
+					'id' 		=> 'color-action-bar-social',
+					'type' 		=> 'color',
+					'title' 	=> __('Social Icon | Color', 'mfn-opts'),
+					'desc' 		=> __('This is also Social Menu Link color', 'mfn-opts'),
+					'std' 		=> '#bbbbbb',
+				),
+					
+				array(
+					'id' 		=> 'color-action-bar-social-hover',
+					'type' 		=> 'color',
+					'title' 	=> __('Social Icon | Hover color', 'mfn-opts'),
+					'desc' 		=> __('This is also Social Menu Link hover color', 'mfn-opts'),	
+					'std' 		=> '#FFFFFF',
+				),
+					
+				// mobile
+				array(
+					'id' 		=> 'colors-info-action-bar-mobile',
+					'type' 		=> 'info',
+					'title' 	=> '',
+					'desc' 		=> __('Mobile<span>< 768px</span>', 'mfn-opts'),
+					'class' 	=> 'mfn-info',
+				),
+				
+				array(
+					'id' 		=> 'mobile-background-action-bar',
+					'type' 		=> 'color',
+					'title' 	=> __('Background', 'mfn-opts'),
+					'std' 		=> '#FFFFFF',
+				),
+					
+				array(
+					'id' 		=> 'mobile-color-action-bar',
+					'type' 		=> 'color',
+					'title' 	=> __('Text color', 'mfn-opts'),
+					'std' 		=> '#222222',
+				),
+					
+				array(
+					'id' 		=> 'mobile-color-action-bar-a',
+					'type' 		=> 'color',
+					'title' 	=> __('Link | Color', 'mfn-opts'),
+					'std' 		=> '#2991d6',
+				),
+					
+				array(
+					'id' 		=> 'mobile-color-action-bar-a-hover',
+					'type' 		=> 'color',
+					'title' 	=> __('Link | Hover color', 'mfn-opts'),
+					'std' 		=> '#2275ac',
+				),
+					
+				array(
+					'id' 		=> 'mobile-color-action-bar-social',
+					'type' 		=> 'color',
+					'title' 	=> __('Social Icon | Color', 'mfn-opts'),
+					'desc' 		=> __('This is also Social Menu Link color', 'mfn-opts'),
+					'std' 		=> '#bbbbbb',
+				),
+					
+				array(
+					'id' 		=> 'mobile-color-action-bar-social-hover',
+					'type' 		=> 'color',
+					'title' 	=> __('Social Icon | Hover color', 'mfn-opts'),
+					'desc' 		=> __('This is also Social Menu Link hover color', 'mfn-opts'),	
+					'std' 		=> '#777777',
 				),
 				
 			),

@@ -190,7 +190,7 @@ if( ! function_exists( 'mfn_ssl_attachments' ) )
 {
 	function mfn_ssl_attachments( $url ){
 		if( is_ssl() ){
-			return str_replace('http://', 'https://', $url);
+			return str_replace( 'http://', 'https://', $url );
 		}
 		return $url;
 	}
@@ -1062,7 +1062,7 @@ if( ! function_exists( 'mfn_jplayer_html' ) )
 						$output .= '<div class="jp-title"><ul><li>jPlayer Video Title</li></ul></div>';
 					$output .= '</div>';
 				$output .= '</div>';
-				$output .= '<div class="jp-no-solution"><span>Update Required</span>To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a></div>';
+				$output .= '<div class="jp-no-solution"><span>Update Required</span>To play the media you will need to either update your browser to a recent version or update your <a href="https://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a></div>';
 			$output .= '</div>';
 		$output .= '</div>'."\n";
 		
@@ -1599,7 +1599,7 @@ if( ! function_exists( 'mfn_post_navigation_header' ) )
 							
 				if( $post_prev ) $output .= '<a class="prev" href="'. get_permalink( $post_prev ) .'"><i class="icon icon-left-open-big"></i></a></li>';
 				if( $post_next ) $output .= '<a class="next" href="'. get_permalink( $post_next ) .'"><i class="icon icon-right-open-big"></i></a></li>';		
-				if( $post_home ) $output .= '<a class="home" href="'. get_permalink( $post_home ) .'"><svg class="icon" width="22" height="22" xmlns="http://www.w3.org/2000/svg"><path d="M7,2v5H2V2H7 M9,0H0v9h9V0L9,0z"/><path d="M20,2v5h-5V2H20 M22,0h-9v9h9V0L22,0z"/><path d="M7,15v5H2v-5H7 M9,13H0v9h9V13L9,13z"/><path d="M20,15v5h-5v-5H20 M22,13h-9v9h9V13L22,13z"/></svg></a>';
+				if( $post_home ) $output .= '<a class="home" href="'. get_permalink( $post_home ) .'"><svg class="icon" width="22" height="22" xmlns="https://www.w3.org/2000/svg"><path d="M7,2v5H2V2H7 M9,0H0v9h9V0L9,0z"/><path d="M20,2v5h-5V2H20 M22,0h-9v9h9V0L22,0z"/><path d="M7,15v5H2v-5H7 M9,13H0v9h9V13L9,13z"/><path d="M20,15v5h-5v-5H20 M22,13h-9v9h9V13L22,13z"/></svg></a>';
 				
 			} else {
 				
@@ -1987,7 +1987,7 @@ if( ! function_exists( 'mfn_register_required_plugins' ) )
 				'name'     				=> 'Contact Form 7',
 				'slug'     				=> 'contact-form-7',	
 				'required' 				=> true,
-				'external_url'			=> 'http://wordpress.org/plugins/contact-form-7/',
+				'external_url'			=> 'https://wordpress.org/plugins/contact-form-7/',
 			),
 				
 			// recommended -----------------------------

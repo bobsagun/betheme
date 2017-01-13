@@ -1782,43 +1782,43 @@ if( ! function_exists( 'sc_fancy_divider' ) )
 		    switch( $style ){
 		    	
 		    	case 'circle up':
-		    		$output .= '<svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" style="background: '. $color_top .';">';
+		    		$output .= '<svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1" xmlns="https://www.w3.org/2000/svg" style="background: '. $color_top .';">';
 		    			$output .= '<path d="M0 100 C50 0 50 0 100 100 Z" style="fill: '. $color_bottom .'; stroke: '. $color_bottom .';">';
 		    		$output .= '</svg>';
 		    		break;
 		    	
 		    	case 'circle down':
-		    		$output .= '<svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" style="background: '. $color_bottom .';">';
+		    		$output .= '<svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1" xmlns="https://www.w3.org/2000/svg" style="background: '. $color_bottom .';">';
 		    			$output .= '<path d="M0 0 C50 100 50 100 100 0 Z" style="fill: '. $color_top .'; stroke: '. $color_top .';">';
 		    		$output .= '</svg>';
 		    		break;
 		    		
 		    	case 'curve up':
-		    		$output .= '<svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" style="background: '. $color_top .';">';
+		    		$output .= '<svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1" xmlns="https://www.w3.org/2000/svg" style="background: '. $color_top .';">';
 		    			$output .= '<path d="M0 100 C 20 0 50 0 100 100 Z" style="fill: '. $color_bottom .'; stroke: '. $color_bottom .';">';
 		    		$output .= '</svg>';
 		    		break;
 		    	
 		    	case 'curve down':
-		    		$output .= '<svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" style="background: '. $color_bottom .';">';
+		    		$output .= '<svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1" xmlns="https://www.w3.org/2000/svg" style="background: '. $color_bottom .';">';
 		    			$output .= '<path d="M0 0 C 50 100 80 100 100 0 Z" style="fill: '. $color_top .'; stroke: '. $color_top .';">';
 		    		$output .= '</svg>';
 		    		break;
 		    	
 		    	case 'triangle up':
-		    		$output .= '<svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" style="background: '. $color_top .';">';
+		    		$output .= '<svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1" xmlns="https://www.w3.org/2000/svg" style="background: '. $color_top .';">';
 		    			$output .= '<path d="M0 100 L50 2 L100 100 Z" style="fill: '. $color_bottom .'; stroke: '. $color_bottom .';">';
 		    		$output .= '</svg>';
 		    		break;
 		    		
 		    	case 'triangle down':
-		    		$output .= '<svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" style="background: '. $color_bottom .';">';
+		    		$output .= '<svg preserveAspectRatio="none" viewBox="0 0 100 100" height="100" width="100%" version="1.1" xmlns="https://www.w3.org/2000/svg" style="background: '. $color_bottom .';">';
 		    			$output .= '<path d="M0 0 L50 100 L100 0 Z" style="fill: '. $color_top .'; stroke: '. $color_top .';">';
 		    		$output .= '</svg>';
 		    		break;
 		    		
 		    	default:
-		    		$output .= '<svg preserveAspectRatio="none" viewBox="0 0 100 102" height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" style="background: '. $color_bottom .';">';
+		    		$output .= '<svg preserveAspectRatio="none" viewBox="0 0 100 102" height="100" width="100%" version="1.1" xmlns="https://www.w3.org/2000/svg" style="background: '. $color_bottom .';">';
 		    			$output .= '<path d="M0 0 Q 2.5 40 5 0 Q 7.5 40 10 0Q 12.5 40 15 0Q 17.5 40 20 0Q 22.5 40 25 0Q 27.5 40 30 0Q 32.5 40 35 0Q 37.5 40 40 0Q 42.5 40 45 0Q 47.5 40 50 0 Q 52.5 40 55 0Q 57.5 40 60 0Q 62.5 40 65 0Q 67.5 40 70 0Q 72.5 40 75 0Q 77.5 40 80 0Q 82.5 40 85 0Q 87.5 40 90 0Q 92.5 40 95 0Q 97.5 40 100 0 Z" style="fill: '. $color_top .'; stroke: '. $color_top .';">';
 		    		$output .= '</svg>';
 		    		
@@ -3218,9 +3218,12 @@ if( ! function_exists( 'sc_fancy_heading' ) )
 		$output = '<div class="fancy_heading fancy_heading_'. $style.'">';	
 			if( $animate ) $output .= '<div class="animate" data-anim-type="'. $animate .'">';
 				
-				if( $icon && $style == 'icon' ) $output .= '<span class="icon_top"><i class="'. $icon .'"></i></span>';
-				if( $slogan && $style == 'line' ) $output .= '<span class="slogan">'. $slogan .'</span>';
+				if( $style == 'icon' && $icon  ) $output .= '<span class="icon_top"><i class="'. $icon .'"></i></span>';
+				
+				if( $style == 'line' && $slogan ) $output .= '<span class="slogan">'. $slogan .'</span>';
+				
 				if( $style =='arrows' ) $title = '<i class="icon-right-dir"></i>'. $title .'<i class="icon-left-dir"></i>';
+				
 				if( $title ){
 					if( $h1 ){
 						$output .= '<h1 class="title">'. $title .'</h1>';
@@ -3231,6 +3234,72 @@ if( ! function_exists( 'sc_fancy_heading' ) )
 				if( $content ) $output .= '<div class="inside">'. do_shortcode( $content ) .'</div>';
 			
 			if( $animate ) $output .= '</div>';
+		$output .= '</div>'."\n";
+	
+		return $output;
+	}
+}
+
+
+/* ---------------------------------------------------------------------------
+ * Heading [heading] [/heading]
+ * --------------------------------------------------------------------------- */
+if( ! function_exists( 'sc_heading' ) )
+{
+	function sc_heading( $attr, $content = null )
+	{
+		extract(shortcode_atts(array(
+			'tag'		=> 'h2',
+			'align'		=> 'left',
+			'color' 	=> '',
+			'style' 	=> '', // [none], lines
+			'color2' 	=> '',
+		), $attr));
+
+		$before = $after = '';
+
+		// inline_css	
+		$inline_css = '';	
+		if( $color ){
+			$inline_css .= 'color:'. esc_attr( $color ) .';';
+		}		
+		if( $inline_css ){
+			$inline_css = 'style="'. $inline_css .'"';
+		}
+		
+		// inline_css2	
+		$inline_css2 = '';	
+		if( $color2 ){
+			$inline_css2 .= 'background:'. esc_attr( $color2 ) .';';
+		}		
+		if( $inline_css2 ){
+			$inline_css2 = 'style="'. $inline_css2 .'"';
+		}
+		
+		// style
+		if( $style == 'lines' ){
+			$before	= '<span class="line line_l" '. $inline_css2 .'></span>';
+			$after	= '<span class="line line_r" '. $inline_css2 .'></span>';
+		}
+
+		if( $style ){
+			$style = 'heading_'. $style;
+		}
+		
+			
+		// output
+		$output = '<div class="mfn_heading '. esc_attr( $style ) .' align_'. esc_attr( $align ).'">';	
+
+			$output .= '<'. esc_attr( $tag ) .' class="title" '. $inline_css .'>';
+
+				$output .= $before;
+				
+					$output .= do_shortcode( $content );
+				
+				$output .= $after;
+			
+			$output .= '</'. esc_attr( $tag ) .'>';
+			
 		$output .= '</div>'."\n";
 	
 		return $output;
@@ -5359,6 +5428,7 @@ add_shortcode( 'divider', 'sc_divider' );
 add_shortcode( 'dropcap', 'sc_dropcap' );
 add_shortcode( 'fancy_link', 'sc_fancy_link' );
 add_shortcode( 'google_font', 'sc_google_font' );
+add_shortcode( 'heading', 'sc_heading' );
 add_shortcode( 'highlight', 'sc_highlight' );
 add_shortcode( 'hr', 'sc_divider' );				// do not change, alias for [divider] shortcode
 add_shortcode( 'icon', 'sc_icon' );
