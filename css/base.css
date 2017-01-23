@@ -51,7 +51,7 @@ a.button.button_left .button_icon,a.tp-button.button_left .button_icon{float:lef
 a.button.button_right .button_icon,a.tp-button.button_right .button_icon{float:right}
 
 a.button .button_label{padding:11px 20px}
-a.button .button_icon{padding:11px 13px}
+a.button .button_icon{padding:11px 12px}
 a.button_large .button_label{padding:15px 30px}
 a.button_large .button_icon{padding:15px 13px}
 

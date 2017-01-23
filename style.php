@@ -673,3 +673,9 @@ blockquote {
 
 .twentytwenty-before-label::before { content: "<?php echo $translate['before']; ?>";}
 .twentytwenty-after-label::before { content: "<?php echo $translate['after']; ?>";}
+
+
+/* Other */
+
+/* Blog teaser | Android phones 1pt line fix - do NOT move it somewhere else */
+.blog-teaser li .desc-wrapper .desc{background-position-y:-1px;}
