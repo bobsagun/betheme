@@ -260,10 +260,10 @@ ul{list-style:none outside}
 ol{list-style:decimal}
 ol > li {list-style:decimal!important}
 
-.column_column ul,.column_column ol,.column_helper ul,.column_helper ol,.column_visual ul,.column_visual ol,.mfn-acc ul,.mfn-acc ol,.ui-tabs-panel ul,.ui-tabs-panel ol,.the_content_wrapper ul,.the_content_wrapper ol,.post-excerpt ul,.post-excerpt ol{margin:0 0 15px 30px}
-.column_column ul li,.column_helper ul li,.column_visual ul li,.mfn-acc ul li,.ui-tabs-panel ul li,.the_content_wrapper ul li,.post-excerpt ul li{list-style:disc outside}
-.column_column ul li,.column_column ol li,.column_helper ul li,.column_helper ol li,.column_visual ul li,.column_visual ol li,.mfn-acc ul li,.mfn-acc ol li,.ui-tabs-panel ul li,.ui-tabs-panel ol li,.the_content_wrapper ul li,.the_content_wrapper ol li,.post-excerpt ul li,.post-excerpt ol li{margin-bottom:10px}
-.column_column ul li ul,.column_column ol li ol,.column_helper ul li ul,.column_helper ol li ol,.column_visual ul li ul,.column_visual ol li ol,.mfn-acc ul li ul,.mfn-acc ol li ol,.ui-tabs-panel ul li ul,.ui-tabs-panel ol li ol,.the_content_wrapper ul li ul,.the_content_wrapper ol li ol,.post-excerpt ul li ul,.post-excerpt ol li ol{margin-top:10px;margin-bottom:0}
+.column_column ul,.column_column ol,.column_helper ul,.column_helper ol,.column_visual ul,.column_visual ol,.icon_box ul,.icon_box ol,.mfn-acc ul,.mfn-acc ol,.ui-tabs-panel ul,.ui-tabs-panel ol,.post-excerpt ul,.post-excerpt ol,.the_content_wrapper ul,.the_content_wrapper ol{margin:0 0 15px 30px}
+.column_column ul li,.column_helper ul li,.column_visual ul li,.icon_box ul li,.mfn-acc ul li,.ui-tabs-panel ul li,.post-excerpt ul li,.the_content_wrapper ul li{list-style:disc outside;margin-bottom:10px}
+.column_column ol li,.column_helper ol li,.column_visual ol li,.icon_box ol li,.mfn-acc ol li,.ui-tabs-panel ol li,.post-excerpt ol li,.the_content_wrapper ol li{margin-bottom:10px}
+.column_column ul li ul,.column_column ol li ol,.column_helper ul li ul,.column_helper ol li ol,.column_visual ul li ul,.column_visual ol li ol,.icon_box ul li ul,.icon_box ol li ol,.mfn-acc ul li ul,.mfn-acc ol li ol,.ui-tabs-panel ul li ul,.ui-tabs-panel ol li ol,.post-excerpt ul li ul,.post-excerpt ol li ol,.the_content_wrapper ul li ul,.the_content_wrapper ol li ol{margin-top:10px;margin-bottom:0}
 
 ul.list_mixed,ul.list_check,ul.list_star,ul.list_idea{margin-left:0}
 ul.list_mixed li,ul.list_check li,ul.list_star li,ul.list_idea li{margin-bottom:20px;position:relative;list-style:none;padding-left:50px;margin-left:0}

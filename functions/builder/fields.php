@@ -2925,6 +2925,16 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 					),
 						
 					array(
+						'id' 		=> 'border_width',
+						'type' 		=> 'text',
+						'title' 	=> __('Border width', 'mfn-opts'),
+						'sub_desc' 	=> __('default: 2px', 'mfn-opts'),
+						'desc' 		=> __('Use value with <b>px</b>. Example: <b>1px</b> or <b>2px 5px 2px 5px</b>', 'mfn-opts'),
+						'class' 	=> 'small-text',
+						'std' 		=> '2px',
+					),
+						
+					array(
 						'id' 		=> 'padding',
 						'type' 		=> 'text',
 						'title' 	=> __('Padding', 'mfn-opts'),
@@ -2933,7 +2943,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'class' 	=> 'small-text',
 						'std' 		=> '40px 30px',
 					),
-						
+	
 					// link
 					array(
 						'id' 		=> 'info_link',
@@ -2989,7 +2999,7 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'type' 		=> 'text',
 						'title' 	=> __('Custom | Styles', 'mfn-opts'),
 						'sub_desc'	=> __('Custom inline CSS Styles', 'mfn-opts'),
-						'desc'		=> __('Example: <b>border: 1px solid #999;</b>', 'mfn-opts'),
+						'desc'		=> __('Example: <b>opacity: 0.5;</b>', 'mfn-opts'),
 					),
 					
 								

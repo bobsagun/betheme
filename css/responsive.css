@@ -411,9 +411,7 @@ html,body{overflow-x:hidden}
 	.four.columns					{margin:auto 0!important;}
 
 	/* -------------------- */
-	
-	.hide-mobile{display:none!important}
-	
+
 	.boxed2fw{padding:0!important}
 	.boxed2fw #Wrapper{margin:0!important;max-width:100%!important;width:100%!important}
 	
@@ -428,6 +426,9 @@ html,body{overflow-x:hidden}
 	.equal-height-wrap .mcb-wrap .mcb-wrap-inner{top:0!important;-webkit-transform:none!important;-moz-transform:none!important;-ms-transform:none!important;-o-transform:none!important;transform:none!important}
 	.section.has-navi .section-nav.prev{top:10px}
 	.section.has-navi .section-nav.next{bottom:10px}
+	
+	/* .hide-mobile{display:none!important} */
+	.hide-mobile{display:block!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important}
 	
 	/* Sidebar */
 	.widget-area{border:0!important;padding:0!important;margin:30px auto!important;min-height:0!important}
@@ -448,7 +449,7 @@ html,body{overflow-x:hidden}
 	#Top_bar #menu{float:left;position:static!important;width:100%!important;padding-bottom:20px}
 	#Top_bar .logo{position:static;float:left;width:100%;text-align:center;margin:0}
 	#Top_bar .logo #logo{padding:0!important;margin:10px 50px}
-	#Top_bar .logo #logo img{height:auto!important}
+	/* #Top_bar .logo #logo img{height:auto!important} */
 	#Top_bar #logo img.logo-main{display:none}
 	#Top_bar #logo img.logo-mobile{display:inline-block}
 	#Top_bar #logo img.logo-mobile-sticky{display:none}
@@ -457,7 +458,7 @@ html,body{overflow-x:hidden}
 
 	.mobile-sticky #Top_bar.is-sticky #logo img:not(.svg){width:auto!important}
 	.mobile-sticky #Top_bar.is-sticky #logo img.logo-mobile{display:none}
-	.mobile-sticky #Top_bar.is-sticky #logo img.logo-mobile-sticky{display:inline-block;width:auto!important}
+	.mobile-sticky #Top_bar.is-sticky #logo img.logo-mobile-sticky{display:inline-block}
 
 	.logo-overflow #Top_bar .logo{height:auto!important}
 	#Top_bar .search_wrapper{top:auto;bottom:-129px}

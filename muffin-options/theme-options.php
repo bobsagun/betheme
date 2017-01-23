@@ -5436,7 +5436,7 @@ if( ! function_exists( 'mfn_opts_show' ) )
  */
 if( ! function_exists( 'mfn_upload_mimes' ) )
 {
-	function mfn_upload_mimes( $existing_mimes=array() ){
+	function mfn_upload_mimes( $existing_mimes = array() ){
 		$existing_mimes['woff'] = 'font/woff';
 		$existing_mimes['ttf'] 	= 'font/ttf';
 		$existing_mimes['svg'] 	= 'font/svg';
@@ -5444,4 +5444,4 @@ if( ! function_exists( 'mfn_upload_mimes' ) )
 		return $existing_mimes;
 	}
 }
-add_filter('upload_mimes', 'mfn_upload_mimes');
+add_filter( 'upload_mimes', 'mfn_upload_mimes' );

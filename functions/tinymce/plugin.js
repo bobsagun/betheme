@@ -322,7 +322,7 @@
 				}, {
 					text : 'Hover Color',
 					onclick : function() {
-						editor.insertContent('[hover_color background="#2991D6" background_hover="#236A9C" border="" border_hover="" padding="40px 30px" link="" target="" class="" style=""]Insert your content here[/hover_color]');
+						editor.insertContent('[hover_color background="#2991D6" background_hover="#236A9C" border="" border_hover="" border_width="2px" padding="40px 30px" link="" target="" class="" style=""]Insert your content here[/hover_color]');
 					}				
 				}, {
 					text : 'How It Works',

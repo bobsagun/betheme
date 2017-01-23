@@ -780,6 +780,7 @@ class mfnImport {
 								<option value="wedding">Wedding</option>
 								<option value="wedding2">Wedding 2</option>
 								<option value="wine">Wine</option>
+								<option value="wine2">Wine 2</option>
 								<option value="writer">Writer</option>
 								<option value="xmas">Xmas</option>
 								<option value="xmas2">Xmas 2</option>

@@ -2515,6 +2515,7 @@ if( ! function_exists( 'sc_hover_color' ) )
 			'background_hover'	=> '',
 			'border'			=> '',
 			'border_hover'		=> '',
+			'border_width'		=> '',
 			'padding'			=> '',
 			'link'				=> '',
 			'class'				=> '',
@@ -2547,7 +2548,7 @@ if( ! function_exists( 'sc_hover_color' ) )
 		}
 		
 		$output = '<div class="hover_color" style="background:'. $background_hover .';border-color:'. $border_hover .';'. esc_attr( $style ) .'" ontouchstart="this.classList.toggle(\'hover\');">';
-			$output .= '<div class="hover_color_bg" style="background:'. $background .';border-color:'. $border .';">';
+			$output .= '<div class="hover_color_bg" style="background:'. $background .';border-color:'. $border .';border-width:'. $border_width .';">';
 				if( $link ) $output .= '<a href="'. $link .'" '. $class .' '. $rel .' '. $target .'>';
 					$output .= '<div class="hover_color_wrapper" '. $padding .'>';
 						$output .= do_shortcode($content);
