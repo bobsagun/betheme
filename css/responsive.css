@@ -276,10 +276,12 @@ html,body{overflow-x:hidden}
 	.hover_color{word-wrap:break-word}
 	
 	/* How it works */
-	.how_it_works .image{width:120px;height:120px;line-height:120px}
+	.how_it_works .image{width:116px;height:116px;line-height:114px}
 	.how_it_works .image img{max-width:66px!important;max-height:66px!important}
 	.how_it_works .image .number{bottom:0;right:0}
 	.how_it_works.has_border:after{top:60px}
+	
+	.how_it_works.fill .image img{border-radius:100%;max-width:116px!important;max-height:116px!important;}
 	
 	/* Opening Hours */
 	.opening_hours{padding-left:20px;word-wrap:break-word}
@@ -798,10 +800,13 @@ html,body{overflow-x:hidden}
 	.google-map-contact-wrapper .get_in_touch:after{display:none;}
 	
 	/* How it works */
-	.how_it_works .image,.with_aside .how_it_works .image{width:200px;height:200px;line-height:200px}
+	.how_it_works .image,.with_aside .how_it_works .image{width:196px;height:196px;line-height:194px}
 	.how_it_works .image img{max-width:116px!important;max-height:116px!important}
 	.how_it_works .image .number,.with_aside .how_it_works .image .number{bottom:10px;right:10px}
 	.how_it_works.has_border:after{display:none}
+	
+	.with_aside .how_it_works .image img{max-width:116px!important;max-height:116px!important}
+	.with_aside .how_it_works.fill .image img{max-width:196px!important;max-height:196px!important}
 	
 	/* Offer slider */
 	.offer .offer_li .image_wrapper{width:100%;float:none;margin-bottom:15px;overflow:hidden}

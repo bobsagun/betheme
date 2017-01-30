@@ -2734,6 +2734,11 @@ if( ! function_exists( 'mfn_opts_setup' ) )
 						''														=> __('Default', 'mfn-opts'),
 						'5;one-fifth;one-fifth;one-fifth;one-fifth;one-fifth;'	=> '1/5 1/5 1/5 1/5 1/5 (for narrow widgets only)',
 						'4;one-fourth;one-fourth;one-fourth;one-fourth'			=> '1/4 1/4 1/4 1/4',
+							
+						'3;one-fifth;two-fifth;two-fifth'						=> '1/5 2/5 2/5',
+						'3;two-fifth;one-fifth;two-fifth'						=> '2/5 1/5 2/5',
+						'3;two-fifth;two-fifth;one-fifth'						=> '2/5 2/5 1/5',
+
 						'3;one-fourth;one-fourth;one-second;'					=> '1/4 1/4 1/2',
 						'3;one-fourth;one-second;one-fourth;'					=> '1/4 1/2 1/4',
 						'3;one-second;one-fourth;one-fourth;'					=> '1/2 1/4 1/4',

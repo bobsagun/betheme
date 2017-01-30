@@ -3044,6 +3044,15 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'validate'	=> 'html',
 					),
 						
+					// style
+					array(
+						'id' 		=> 'info_style',
+						'type' 		=> 'info',
+						'title' 	=> '',
+						'desc' 		=> __('Style', 'mfn-opts'),
+						'class' 	=> 'mfn-info',
+					),
+	
 					array(
 						'id' 		=> 'border',
 						'type' 		=> 'select',
@@ -3052,6 +3061,17 @@ if( ! function_exists( 'mfn_get_fields_item' ) )
 						'options' 	=> array( 
 							0 => __( 'No', 'mfn-opts' ),
 							1 => __( 'Yes', 'mfn-opts' ),
+						),
+					),
+						
+					array(
+						'id' 		=> 'style',
+						'type' 		=> 'select',
+						'title' 	=> __('Style', 'mfn-opts'),
+						'sub_desc' 	=> __('Background Image style', 'mfn-opts'),
+						'options' 	=> array(
+							'' 			=> __( 'Small centered image (image size: max 116px)', 'mfn-opts' ),
+							'fill' 		=> __( 'Fill the circle (image size: 200px x 200px)', 'mfn-opts' ),
 						),
 					),
 
