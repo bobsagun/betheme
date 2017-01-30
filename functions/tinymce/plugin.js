@@ -327,7 +327,7 @@
 				}, {
 					text : 'How It Works',
 					onclick : function() {
-						editor.insertContent('[how_it_works image="" number="" title="" border="1" link="" target="" animate=""]Insert your content here[/how_it_works]');
+						editor.insertContent('[how_it_works image="" number="" title="" style="centered" border="1" link="" target="" animate=""]Insert your content here[/how_it_works]');
 					}
 				}, {
 					text : 'Icon Box',

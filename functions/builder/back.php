@@ -773,7 +773,11 @@ if( ! function_exists( 'mfn_builder_save' ) )
 				// $section['attr'] - section attributes
 				if( key_exists('mfn-rows', $_POST) && is_array($_POST['mfn-rows'])){
 					foreach ( $_POST['mfn-rows'] as $section_attr_k => $section_attr ){
-						$section['attr'][$section_attr_k] = $section_attr[$sectionID_k];
+						
+// 						$section['attr'][$section_attr_k] = $section_attr[$sectionID_k];	// before 16.6. TO REMOVE
+						
+						$section['attr'][$section_attr_k] = stripslashes( $section_attr[$sectionID_k] );
+
 					}
 				}
 				

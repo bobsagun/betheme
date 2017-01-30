@@ -842,9 +842,13 @@ if( ! function_exists( 'sc_how_it_works' ) )
 			'image' 	=> '',
 			'number' 	=> '',
 			'title' 	=> '',
+			
 			'border' 	=> '',
+			'style' 	=> '',
+			
 			'link' 		=> '',
 			'target' 	=> '',
+			
 			'animate' 	=> '',
 		), $attr));
 		
@@ -867,7 +871,7 @@ if( ! function_exists( 'sc_how_it_works' ) )
 			$target = false;
 		}
 				
-		$output = '<div class="how_it_works '. $border .'">';
+		$output = '<div class="how_it_works '. esc_attr( $border ) .' '. esc_attr( $style ) .'">';
 			if( $animate ) $output .= '<div class="animate" data-anim-type="'. $animate .'">';
 			
 					if( $link ) $output .= '<a href="'. $link .'" '. $target .'>';
@@ -2549,7 +2553,7 @@ if( ! function_exists( 'sc_hover_color' ) )
 		
 		$output = '<div class="hover_color" style="background:'. $background_hover .';border-color:'. $border_hover .';'. esc_attr( $style ) .'" ontouchstart="this.classList.toggle(\'hover\');">';
 			$output .= '<div class="hover_color_bg" style="background:'. $background .';border-color:'. $border .';border-width:'. $border_width .';">';
-				if( $link ) $output .= '<a href="'. $link .'" '. $class .' '. $rel .' '. $target .'>';
+				if( $link ) $output .= '<a href="'. $link .'" class="'. esc_attr( $class ) .'" '. $rel .' '. $target .'>';
 					$output .= '<div class="hover_color_wrapper" '. $padding .'>';
 						$output .= do_shortcode($content);
 					$output .= '</div>';

@@ -120,6 +120,8 @@ blockquote:after{content:"";width:55px;height:40px;background:url(../images/bloc
 .if-zoom .image_frame:hover .image_wrapper img,.if-zoom .image_frame.hover .image_wrapper img{-moz-transform:scale(1.1);-webkit-transform:scale(1.1);-o-transform:scale(1.1)}
 .if-zoom .image_frame.no_link:hover .image_wrapper img,.if-zoom image_frame.no_link.hover .image_wrapper img{-moz-transform:scale(1);-webkit-transform:scale(1);-o-transform:scale(1)}
 
+.if-zoom #Content .image_frame .image_wrapper img{max-width:100.1%}
+
 /* Style | Disable hover effect */
 .if-disable .image_frame .image_wrapper .image_links{display:none}
 .if-disable .image_frame:not(.no_link) .image_wrapper img:not(.ls-l){margin-bottom:0!important}
@@ -828,6 +830,8 @@ body.table-hover:not(.woocommerce-page) table tr:hover td{-webkit-transition:all
 .zoom_box:hover .desc{opacity:1;-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1)}
 .zoom_box .desc .desc_img img{max-width:30%!important;padding-bottom:15px}
 .zoom_box .desc .desc_txt{padding:0 40px;font-size:26px;line-height:30px;color:#fff}
+
+#Content .zoom_box .photo img{max-width:100.1%}
 	
 /* Counter --------------------------------------------------------------------------- */
 .counter{padding:20px;background-image:url(../images/stripes/stripes_10_b.png);text-align:center;position:relative}
@@ -1041,12 +1045,17 @@ a.icon_bar_dribbble span.b{background:#ec4a89;color:#fff}
 /* How it works ---------------------------------------------------------------------- */	
 .how_it_works{text-align:center;position:relative}
 .how_it_works.has_border:after{content:"";display:block;width:12%;height:4px;background:rgba(0,0,0,.03);-webkit-border-radius:2px;border-radius:2px;position:absolute;right:-10.5%;top:100px}
-.how_it_works .image{width:200px;height:200px;line-height:200px;text-align:center;position:relative;margin:0 auto 15px;background:#fff;border-width:2px;border-style:solid;-webkit-border-radius:100%;border-radius:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.how_it_works .image{width:196px;height:196px;line-height:194px;text-align:center;position:relative;margin:0 auto 15px;background:#fff;border-width:2px;border-style:solid;border-radius:100%}
 .how_it_works .image img{max-width:116px!important;max-height:116px!important;vertical-align:middle}
-.how_it_works .image .number{position:absolute;right:10px;bottom:10px;width:35px;height:35px;line-height:35px;font-size:15px;text-align:center;-webkit-border-radius:100%;border-radius:100%;-webkit-box-shadow:inset 0 0 0 2px rgba(0,0,0,.1);box-shadow:inset 0 0 0 2px rgba(0,0,0,.1)}
-.with_aside .how_it_works .image{width:150px;height:150px;line-height:150px}
+.how_it_works .image .number{position:absolute;right:10px;bottom:10px;width:35px;height:35px;line-height:35px;font-size:15px;text-align:center;border-radius:100%;-webkit-box-shadow:inset 0 0 0 2px rgba(0,0,0,.1);box-shadow:inset 0 0 0 2px rgba(0,0,0,.1)}
+
+.with_aside .how_it_works .image{width:146px;height:146px;line-height:144px}
+.with_aside .how_it_works .image img{max-width:90px!important;max-height:90px!important}
 .with_aside .how_it_works .image .number{bottom:4px;right:4px}
 .with_aside .how_it_works.has_border:after{top:75px}
+
+.how_it_works.fill .image img{border-radius:100%;max-width:196px!important;max-height:196px!important;}
+.with_aside .how_it_works.fill .image img{max-width:146px!important;max-height:146px!important}
 
 /* Google maps ----------------------------------------------------------------------- */
 .google-map-wrapper{position:relative}
